@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "browser-sync": "^3.0.4",
+    "elmstatic": "^0.7.3"
+  }
+}
