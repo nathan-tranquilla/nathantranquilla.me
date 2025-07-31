@@ -113,7 +113,7 @@ layout title contentItems =
            , div [ class "content" ]
                 ([ h1 [] [ text title ] ] ++ contentItems)
            , footer
-           , Elmstatic.stylesheet "/styles.css"
+           , Elmstatic.stylesheet "/output.css"
            , Styles.styles
            ]
 

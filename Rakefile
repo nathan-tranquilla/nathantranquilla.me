@@ -1,4 +1,18 @@
-task :start do
+
+
+task :tailwind do 
+    Dir.chdir('src/') do
+        system('npx @tailwindcss/cli -i ./_resources/input.css -o ./_site/output.css')
+    end
+end
+
+task :build do 
+    Dir.chdir('src') do 
+        system('npx elmstatic build')
+    end
+end
+
+task :start => [:build, :tailwind] do
     Dir.chdir('src/_site') do
         system('npx browser-sync start --server --files "." --no-ui --reload-delay 500 --reload-debounce 500')
     end

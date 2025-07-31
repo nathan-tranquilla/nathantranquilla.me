@@ -9133,7 +9133,7 @@ var $author$project$Page$layout = F2(
 					$elm$html$Html$div,
 					_List_fromArray(
 						[
-							$elm$html$Html$Attributes$class('content')
+							$elm$html$Html$Attributes$class('content flex')
 						]),
 					_Utils_ap(
 						_List_fromArray(
@@ -9148,7 +9148,7 @@ var $author$project$Page$layout = F2(
 							]),
 						contentItems)),
 					$author$project$Page$footer,
-					$author$project$Elmstatic$stylesheet('/styles.css'),
+					$author$project$Elmstatic$stylesheet('/output.css'),
 					$author$project$Styles$styles
 				]));
 	});
