@@ -1,0 +1,46 @@
+---
+import "../styles/global.css";
+import Body from "../components/Body.astro"
+import Header from "../components/Header.astro";
+
+const { title } = Astro.props;
+
+const websiteUrl = "https://nathantranquilla.me";
+const canonicalUrl = new URL(Astro.url.pathname, websiteUrl).href;
+
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=2"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>{title}</title>
+    <meta
+      name="description"
+      content="Nathan Tranquilla is a Next-Gen Web Development Consultant specializing in making web applications more robust through technology choices of the future"
+    />
+    <meta name="author" content="Nathan Tranquilla" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    
+    <!-- <link rel="icon" href={`${logo.src}`} type="image/png" />
+    <link rel="apple-touch-icon" href={`${appleIcon.src}`} />
+    <script type="application/ld+json" set:html={localBusinessProfile} /> -->
+    <meta name="email" content="tranquilla.nathan@pm.me" />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <meta
+      name="keywords"
+      content="Next-Gen Web Dev"
+    />
+  </head>
+  <Body>
+    <Header />
+    <main class="md:px-4 px-2 row-start-2 col-start-1 col-end-4">
+      <slot />
+    </main>
+  </Body>
+</html>

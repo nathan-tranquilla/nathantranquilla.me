@@ -1,16 +1,10 @@
 ---
-import '../styles/global.css' 
+import Main from "../layouts/Main.astro";
+import Hero from "../components/Hero.astro";
 ---
+<Main title="nathantranquilla.me | Next Gen Web Dev">
+	<Hero />
+	<div class="w-full h-[500px] bg-white rounded-md">
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+	</div>
+</Main>

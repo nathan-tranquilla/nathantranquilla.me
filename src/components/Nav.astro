@@ -1,0 +1,57 @@
+---
+
+let linkStyles = "md:p-0 p-2 cursor-pointer hover:underline hover:text-lime-700 focus:underline focus:text-lime-700 font-semibold underline-offset-4 decoration-2 decoration-lime-700"
+---
+<nav class="md:block hidden pl-10 mx-auto w-full h-full flex justify-start items-center">
+  <ul class="w-full h-full max-w-[300px] flex justify-around items-center">
+    <li class="flex">
+      <a class={linkStyles} href="/Welcome">
+        Welcome
+      </a>
+    </li>
+    <li class="flex">
+      <a class={linkStyles} href="/about">
+        About 
+      </a>
+    </li>
+    <li class="flex">
+      <a class={linkStyles} href="/services">
+        Services
+      </a>
+    </li>
+
+  </ul>
+</nav>
+<nav class="md:hidden w-full flex justify-end items-center self-center">
+  <input type="checkbox" id="menu-toggle" class="peer hidden" />
+  <label
+    for="menu-toggle"
+    class="flex h-[13.5px] w-[24px] cursor-pointer flex-col justify-between"
+  >
+    {
+      Array(3)
+        .fill(null)
+        .map(() => (
+          <span class="block h-[2px] w-full rounded-xs bg-[#5A5A5A] shrink-0" />
+        ))
+    }
+  </label>
+  <ul class="shadow-md bg-white z-10 w-full h-fit absolute top-[calc(var(--mobile-nav-height)-10px)] left-0 right-0 hidden peer-checked:flex flex-col justify-around items-center">
+    <li class="flex">
+      <a class={linkStyles} href="/Welcome">
+        Welcome
+      </a>
+    </li>
+    <li class="flex">
+      <a class={linkStyles} href="/about">
+        About 
+      </a>
+    </li>
+    <li class="flex">
+      <a class={linkStyles} href="/services">
+        Services
+      </a>
+    </li>
+
+  </ul>
+</nav>

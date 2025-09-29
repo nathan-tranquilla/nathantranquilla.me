@@ -1,0 +1,24 @@
+---
+import { Image } from "astro:assets";
+import Button from "./Button.astro";
+import Profile from "../assets/Profile.jpg"
+---
+<div class="p-2 w-full h-[80vh] flex flex-col justify-start items-center pt-[5vh] w-full max-w-[825px] mx-auto">
+  <Image src={Profile} 
+    alt="Nathan Tranquilla Profile" 
+    class="md:w-[400px] w-[200px] md:h-[400px] h-[200px] rounded-full shadow-xl " 
+    layout="constrained"/>
+  <h1 class="font-serif font-semibold italic md:text-3xl text:lg text-slate-700 pt-4">
+    Nathan Tranquilla | Next Gen Web Dev 
+  </h1>
+  <div class="flex md:flex-row flex-col justify-center items-center">
+    <p class="md:pr-6 font-sans md:text-xl text-slate-700 py-4 w-full">
+      I help teams build high-performance, secure, and reliable front-end web applications using cutting-edge, strongly typed languages. Move beyond JavaScript and TypeScript for a safer, more robust web experience.
+    </p>
+    <Button>
+      Book Consultation
+    </Button>
+  </div>
+  
+  
+</div>
