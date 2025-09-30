@@ -2,8 +2,9 @@
 import { Image } from "astro:assets";
 import Button from "./Button.astro";
 import Profile from "../assets/Profile.jpg"
+import Container from "./Container.astro";
 ---
-<div class="p-2 w-full h-[80vh] flex flex-col justify-start items-center pt-[5vh] w-full md:max-w-[630px] max-w-[350px] mx-auto">
+<Container classes="pt-2 w-full h-fit max-h-[80vh] flex flex-col justify-start items-center pt-[5vh] w-full md:max-w-[640px] max-w-[350px] mx-auto">
   <Image src={Profile} 
     alt="Nathan Tranquilla Profile" 
     class="md:w-[400px] w-[200px] md:h-[400px] h-[200px] rounded-full shadow-xl " 
@@ -17,6 +18,4 @@ import Profile from "../assets/Profile.jpg"
   <Button>
     Book Consultation
   </Button>
-  
-  
-</div>
+</Container>
