@@ -1,0 +1,47 @@
+---
+import Button from "./Button.astro";
+let linkStyle =
+  "text-wrap cursor-pointer hover:underline hover:text-lime-700 focus:underline focus:text-lime-700 underline-offset-4 decoration-2 decoration-lime-700";
+---
+
+<footer
+  class="px-auto grid w-screen grid-cols-2 justify-center gap-4 bg-slate-700 px-4 py-8 font-sans text-white md:grid-cols-[minmax(100px,250px)_250px_250px_minmax(100px,250px)] md:py-20"
+>
+  <div class="">
+    <h3 class="pb-6 text-lg font-semibold">Pages</h3>
+    <ul>
+      <li><a class={linkStyle} href="/">Welcome</a></li>
+      <li><a class={linkStyle} href="/about">About</a></li>
+      <li><a class={linkStyle} href="/services">Services</a></li>
+    </ul>
+  </div>
+  <div class="">
+    <h3 class="pb-6 text-lg font-semibold">Services</h3>
+    <ul>
+      <li>
+        <a class={linkStyle} href="/services/next-gen-web-dev"
+          >Next Gen Web App Development</a>
+      </li>
+      <li>
+        <a class={linkStyle} href="/services/custom-webpage"
+          >Custom Website For Your Business</a>
+      </li>
+    </ul>
+  </div>
+  <div class="">
+    <h3 class="pb-6 text-lg font-semibold">Contact Information</h3>
+    <ul>
+      <li>Fredericton, NB</li>
+      <li>
+        <a
+          class={`${linkStyle} flex flex-wrap`}
+          href="mailto:tranquilla.nathan@pm.me?subject=Inquiry"
+          ><span>tranquilla</span><span>.nathan@pm.me</span></a>
+      </li>
+    </ul>
+  </div>
+  <div class="flex flex-col items-center justify-center">
+    <p class="pb-6 font-semibold">Take the next step. Book today!</p>
+    <Button>Book Consultation</Button>
+  </div>
+</footer>

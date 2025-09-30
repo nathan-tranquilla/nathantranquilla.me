@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import Body from "../components/Body.astro";
 import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 
 const { title } = Astro.props;
 
@@ -38,6 +39,8 @@ const canonicalUrl = new URL(Astro.url.pathname, websiteUrl).href;
     <main class="col-start-1 col-end-4 row-start-2">
       <slot />
     </main>
+    <Footer />
   </Body>
+
 
 </html>
