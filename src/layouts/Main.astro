@@ -1,13 +1,12 @@
 ---
 import "../styles/global.css";
-import Body from "../components/Body.astro"
+import Body from "../components/Body.astro";
 import Header from "../components/Header.astro";
 
 const { title } = Astro.props;
 
 const websiteUrl = "https://nathantranquilla.me";
 const canonicalUrl = new URL(Astro.url.pathname, websiteUrl).href;
-
 ---
 
 <html lang="en">
@@ -25,22 +24,20 @@ const canonicalUrl = new URL(Astro.url.pathname, websiteUrl).href;
     />
     <meta name="author" content="Nathan Tranquilla" />
     <link rel="sitemap" href="/sitemap-index.xml" />
-    
+
     <!-- <link rel="icon" href={`${logo.src}`} type="image/png" />
     <link rel="apple-touch-icon" href={`${appleIcon.src}`} />
     <script type="application/ld+json" set:html={localBusinessProfile} /> -->
     <meta name="email" content="tranquilla.nathan@pm.me" />
     <link rel="canonical" href={canonicalUrl} />
 
-    <meta
-      name="keywords"
-      content="Next-Gen Web Dev"
-    />
+    <meta name="keywords" content="Next-Gen Web Dev" />
   </head>
   <Body>
     <Header />
-    <main class="row-start-2 col-start-1 col-end-4">
+    <main class="col-start-1 col-end-4 row-start-2">
       <slot />
     </main>
   </Body>
+
 </html>

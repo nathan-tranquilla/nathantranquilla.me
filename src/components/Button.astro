@@ -1,9 +1,12 @@
 ---
 export interface Props {
-  classes?: string
+  classes?: string;
 }
 const { classes } = Astro.props;
 ---
-<button class={`text-nowrap transition-all rounded-md bg-lime-700 text-white py-2 px-4 cursor-pointer hover:scale-102 shadow-md w-fit h-fit ${classes || ""}`}>
+
+<button
+  class={`text-nowrap transition-all rounded-md bg-lime-700 text-white py-2 px-4 cursor-pointer hover:scale-102 shadow-md w-fit h-fit ${classes || ""}`}
+>
   <slot />
 </button>

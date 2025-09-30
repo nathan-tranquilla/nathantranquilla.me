@@ -1,21 +1,28 @@
 ---
 import { Image } from "astro:assets";
 import Button from "./Button.astro";
-import Profile from "../assets/Profile.jpg"
+import Profile from "../assets/Profile.jpg";
 import Container from "./Container.astro";
 ---
-<Container classes="pt-2 w-full h-fit max-h-[80vh] flex flex-col justify-start items-center pt-[5vh] w-full md:max-w-[640px] max-w-[350px] mx-auto">
-  <Image src={Profile} 
-    alt="Nathan Tranquilla Profile" 
-    class="md:w-[400px] w-[200px] md:h-[400px] h-[200px] rounded-full shadow-xl " 
-    layout="constrained"/>
-  <h1 class="text-nowrap font-serif font-semibold italic md:text-3xl text:lg text-slate-700 pt-4">
-    Nathan Tranquilla | Next Gen Web Dev 
+
+<Container
+  classes="pt-2 w-full h-fit max-h-[80vh] flex flex-col justify-start items-center pt-[5vh] w-full md:max-w-[640px] max-w-[350px] mx-auto"
+>
+  <Image
+    src={Profile}
+    alt="Nathan Tranquilla Profile"
+    class="h-[200px] w-[200px] rounded-full shadow-xl md:h-[400px] md:w-[400px]"
+    layout="constrained"
+  />
+  <h1
+    class="text:lg pt-4 font-serif font-semibold text-nowrap text-slate-700 italic md:text-3xl"
+  >
+    Nathan Tranquilla | Next Gen Web Dev
   </h1>
-  <p class="font-sans md:text-xl text-slate-700 py-4 w-full ">
-    I help teams build high-performance, secure, and reliable front-end web applications using cutting-edge, strongly typed languages. Move beyond JavaScript and TypeScript for a safer, more robust web experience.
+  <p class="w-full py-4 font-sans text-slate-700 md:text-xl">
+    I help teams build high-performance, secure, and reliable front-end web
+    applications using cutting-edge, strongly typed languages. Move beyond
+    JavaScript and TypeScript for a safer, more robust web experience.
   </p>
-  <Button>
-    Book Consultation
-  </Button>
+  <Button> Book Consultation </Button>
 </Container>

@@ -3,75 +3,185 @@ import Main from "../layouts/Main.astro";
 import { Image } from "astro:assets";
 import Hero from "../components/Hero.astro";
 import Container from "../components/Container.astro";
-import JSTS from "../assets/TypeScriptJavaScript.png"
-import Other from "../assets/OtherLangs2.png"
+import JSTS from "../assets/TypeScriptJavaScript.png";
+import Other from "../assets/OtherLangs2.png";
 ---
+
 <Main title="nathantranquilla.me | Next Gen Web Dev">
-	<Hero />
-	<Container classes="text-white bg-slate-900 w-full grid grid-rows-[2rem_auto] md:grid-cols-[320px_320px] px-auto justify-center md:p-4 p-2 gap-4">
-		<h2 class="font-sans font-semibold md:text-2xl text-xl text-white">Vision of Next Gen Web Dev</h2>
-		<p class="font-sans text-white row-start-2 col-start-1">
-			 Next-Gen Web Dev aims for reliable, secure web applications free from preventable errors. It requires a shift to robust, strongly typed languages that eliminate entire classes of bugs, ensuring developers trust their tools and users trust their apps.
-		</p>
-		<Image class="bg-white md:block hidden mx-auto col-start-2 row-start-1 row-end-3" src={Other} alt="Other languages logos"/>
-	</Container>
-	<Container classes="text-black w-full flex flex-col md:grid md:grid-cols-[320px_320px] px-auto justify-center md:p-4 p-2 gap-4">
-		<h2 class="col-start-2 font-sans font-semibold md:text-2xl text-xl">The current status quo</h2>
-		<p class="col-start-2 font-sans row-start-2 col-start-1">
-			 JavaScript’s weak typing, implicit coercions, and runtime errors make it unsuitable for modern web development. TypeScript, while an improvement, falls short of a strong type system. It permits unsafe array access, lacks full null safety, allows implicit conversions, and misses exhaustive type checking. These flaws make it inadequate for reliable server-side (SSR) or client-side (CSR) applications. The web needs languages that guarantee correctness, not just suggest it.
-		</p>
-		<Image class="md:block hidden col-start-1 row-start-1 row-end-3" src={JSTS} alt="JavaScript and TypeScript logos"/>
-	</Container>
-	<Container classes="text-white bg-slate-900 font-sans text-black w-full grid grid-cols-1 md:grid-cols-[640px] px-auto justify-center md:p-4 p-2 gap-4">
-		<h2 class="font-semibold md:text-2xl text-xl">Principles: The Strong Type System</h2>
-		<p class="py-4 row-start-2 col-start-1">
-			 At the core of Next Gen Web Dev are languages with strong type systems. Therefore a Next Gen Web Language will have:
-		</p>
-		<table class="w-full border-collapse border border-gray-300">
-			<thead>
-				<tr>
-					<th class="bg-inherit border border-gray-300 bg-gray-100 px-4 py-2 text-left font-semibold">Feature</th>
-					<th class="bg-inherit border border-gray-300 bg-gray-100 px-4 py-2 text-left font-semibold">Description</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td class="border border-gray-300 px-4 py-2 font-medium md:whitespace-nowrap">Type Safety</td>
-					<td class="border border-gray-300 px-4 py-2">Invalid operations are caught at compile-time.</td>
-				</tr>
-				<tr>
-					<td class="border border-gray-300 px-4 py-2 font-medium md:whitespace-nowrap">Static Type Checking</td>
-					<td class="border border-gray-300 px-4 py-2">Types are enforced before execution.</td>
-				</tr>
-				<tr>
-					<td class="border border-gray-300 px-4 py-2 font-medium md:whitespace-nowrap">No Implicit Coercion</td>
-					<td class="border border-gray-300 px-4 py-2">Automatic conversions are prohibited.</td>
-				</tr>
-				<tr>
-					<td class="border border-gray-300 px-4 py-2 font-medium md:whitespace-nowrap">Expressive Types</td>
-					<td class="border border-gray-300 px-4 py-2">Algebraic data types and pattern matching for precise data modeling.</td>
-				</tr>
-				<tr>
-					<td class="border border-gray-300 px-4 py-2 font-medium md:whitespace-nowrap">Compile-Time Null Safety</td>
-					<td class="border border-gray-300 px-4 py-2">Explicit handling of null/undefined.</td>
-				</tr>
-				<tr>
-					<td class="border border-gray-300 px-4 py-2 font-medium md:whitespace-nowrap">Exhaustive Matching</td>
-					<td class="border border-gray-300 px-4 py-2">All cases in logic must be covered.</td>
-				</tr>
-				<tr>
-					<td class="border border-gray-300 px-4 py-2 font-medium md:whitespace-nowrap">Type Inference</td>
-					<td class="border border-gray-300 px-4 py-2">Automatic type deduction without compromising safety.</td>
-				</tr>
-				<tr>
-					<td class="border border-gray-300 px-4 py-2 font-medium md:whitespace-nowrap">Soundness</td>
-					<td class="border border-gray-300 px-4 py-2">No type errors at runtime.</td>
-				</tr>
-				<tr>
-					<td class="border border-gray-300 px-4 py-2 font-medium md:whitespace-nowrap">Safe Array Access</td>
-					<td class="border border-gray-300 px-4 py-2">Bounds checking to prevent crashes.</td>
-				</tr>
-			</tbody>
-		</table>
-	</Container>
+  <Hero />
+  <Container
+    classes="text-white bg-slate-900 w-full grid grid-rows-[2rem_auto] md:grid-cols-[320px_320px] px-auto justify-center md:p-4 p-2 gap-4"
+  >
+    <h2 class="font-sans text-xl font-semibold text-white md:text-2xl">
+      Vision of Next Gen Web Dev
+    </h2>
+    <p class="col-start-1 row-start-2 font-sans text-white">
+      Next-Gen Web Dev aims for reliable, secure web applications free from
+      preventable errors. It requires a shift to robust, strongly typed
+      languages that eliminate entire classes of bugs, ensuring developers trust
+      their tools and users trust their apps.
+    </p>
+    <Image
+      class="col-start-2 row-start-1 row-end-3 mx-auto hidden bg-white md:block"
+      src={Other}
+      alt="Other languages logos"
+    />
+  </Container>
+  <Container
+    classes="text-black w-full flex flex-col md:grid md:grid-cols-[320px_320px] px-auto justify-center md:p-4 p-2 gap-4"
+  >
+    <h2 class="col-start-2 font-sans text-xl font-semibold md:text-2xl">
+      The current status quo
+    </h2>
+    <p class="col-start-1 col-start-2 row-start-2 font-sans">
+      JavaScript’s weak typing, implicit coercions, and runtime errors make it
+      unsuitable for modern web development. TypeScript, while an improvement,
+      falls short of a strong type system. It permits unsafe array access, lacks
+      full null safety, allows implicit conversions, and misses exhaustive type
+      checking. These flaws make it inadequate for reliable server-side (SSR) or
+      client-side (CSR) applications. The web needs languages that guarantee
+      correctness, not just suggest it.
+    </p>
+    <Image
+      class="col-start-1 row-start-1 row-end-3 hidden md:block"
+      src={JSTS}
+      alt="JavaScript and TypeScript logos"
+    />
+  </Container>
+  <Container
+    classes="text-white bg-slate-900 font-sans text-black w-full grid grid-cols-1 md:grid-cols-[640px] px-auto justify-center md:p-4 p-2 gap-4"
+  >
+    <h2 class="text-xl font-semibold md:text-2xl">
+      Principles: The Strong Type System
+    </h2>
+    <p class="col-start-1 row-start-2 py-4">
+      At the core of Next Gen Web Dev are languages with strong type systems.
+      Therefore a Next Gen Web Language will have:
+    </p>
+    <table class="w-full border-collapse border border-gray-300">
+      <thead>
+        <tr>
+          <th
+            class="border border-gray-300 bg-gray-100 bg-inherit px-4 py-2 text-left font-semibold"
+            >Feature</th
+          >
+          <th
+            class="border border-gray-300 bg-gray-100 bg-inherit px-4 py-2 text-left font-semibold"
+            >Description</th
+          >
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td
+            class="border border-gray-300 px-4 py-2 font-medium md:whitespace-nowrap"
+            >Type Safety</td
+          >
+          <td class="border border-gray-300 px-4 py-2"
+            >Invalid operations are caught at compile-time.</td
+          >
+        </tr>
+        <tr>
+          <td
+            class="border border-gray-300 px-4 py-2 font-medium md:whitespace-nowrap"
+            >Static Type Checking</td
+          >
+          <td class="border border-gray-300 px-4 py-2"
+            >Types are enforced before execution.</td
+          >
+        </tr>
+        <tr>
+          <td
+            class="border border-gray-300 px-4 py-2 font-medium md:whitespace-nowrap"
+            >No Implicit Coercion</td
+          >
+          <td class="border border-gray-300 px-4 py-2"
+            >Automatic conversions are prohibited.</td
+          >
+        </tr>
+        <tr>
+          <td
+            class="border border-gray-300 px-4 py-2 font-medium md:whitespace-nowrap"
+            >Expressive Types</td
+          >
+          <td class="border border-gray-300 px-4 py-2"
+            >Algebraic data types and pattern matching for precise data
+            modeling.</td
+          >
+        </tr>
+        <tr>
+          <td
+            class="border border-gray-300 px-4 py-2 font-medium md:whitespace-nowrap"
+            >Compile-Time Null Safety</td
+          >
+          <td class="border border-gray-300 px-4 py-2"
+            >Explicit handling of null/undefined.</td
+          >
+        </tr>
+        <tr>
+          <td
+            class="border border-gray-300 px-4 py-2 font-medium md:whitespace-nowrap"
+            >Exhaustive Matching</td
+          >
+          <td class="border border-gray-300 px-4 py-2"
+            >All cases in logic must be covered.</td
+          >
+        </tr>
+        <tr>
+          <td
+            class="border border-gray-300 px-4 py-2 font-medium md:whitespace-nowrap"
+            >Type Inference</td
+          >
+          <td class="border border-gray-300 px-4 py-2"
+            >Automatic type deduction without compromising safety.</td
+          >
+        </tr>
+        <tr>
+          <td
+            class="border border-gray-300 px-4 py-2 font-medium md:whitespace-nowrap"
+            >Soundness</td
+          >
+          <td class="border border-gray-300 px-4 py-2"
+            >No type errors at runtime.</td
+          >
+        </tr>
+        <tr>
+          <td
+            class="border border-gray-300 px-4 py-2 font-medium md:whitespace-nowrap"
+            >Safe Array Access</td
+          >
+          <td class="border border-gray-300 px-4 py-2"
+            >Bounds checking to prevent crashes.</td
+          >
+        </tr>
+      </tbody>
+    </table>
+  </Container>
+  <Container classes="text-black w-full flex flex-col md:p-4 p-2">
+    <h2 class="font-sans text-xl font-semibold md:text-2xl">
+      The Committment of Next Gen Web Dev
+    </h2>
+    <ul class="list-inside list-disc py-6">
+      <li class="py-2">
+        <strong>Adopt Type-Safe Languages:</strong> Prioritize strongly typed languages
+        for SSR and CSR to reduce bugs and maintenance costs.
+      </li>
+      <li class="py-2">
+        <strong>Reduce JavaScript’s Role:</strong> Transition JavaScript to a compilation
+        target for safer, scalable systems.
+      </li>
+      <li class="py-2">
+        <strong>Move Beyond TypeScript:</strong> Replace TypeScript with languages
+        offering sound type systems to minimize runtime errors.
+      </li>
+      <li class="py-2">
+        <strong>Enhance Productivity:</strong> Use tools that catch errors at compile-time
+        to streamline development and improve reliability.
+      </li>
+      <li class="py-2">
+        <strong>Build for the Future:</strong> Embrace robust, type-safe languages
+        for stable, secure, and competitive web platforms.
+      </li>
+    </ul>
+  </Container>
 </Main>
