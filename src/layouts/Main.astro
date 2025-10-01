@@ -4,6 +4,16 @@ import Body from "../components/Body.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
+// Import logo assets
+import logo16 from "../assets/logo_16x16.jpg";
+import logo32 from "../assets/logo_32x32.jpg";
+import logo48 from "../assets/logo_48x48.jpg";
+import logo96 from "../assets/logo_96x96.jpg";
+import logo180 from "../assets/logo_180x180.jpg";
+import logo192 from "../assets/logo_192x192.jpg";
+import logo256 from "../assets/logo_256x256.jpg";
+import logo512 from "../assets/logo_512x512.jpg";
+
 const { title } = Astro.props;
 
 const websiteUrl = "https://nathantranquilla.me";
@@ -26,9 +36,23 @@ const canonicalUrl = new URL(Astro.url.pathname, websiteUrl).href;
     <meta name="author" content="Nathan Tranquilla" />
     <link rel="sitemap" href="/sitemap-index.xml" />
 
-    <!-- <link rel="icon" href={`${logo.src}`} type="image/png" />
-    <link rel="apple-touch-icon" href={`${appleIcon.src}`} />
-    <script type="application/ld+json" set:html={localBusinessProfile} /> -->
+    <!-- Favicon and Icons -->
+    <link rel="icon" type="image/jpeg" sizes="16x16" href={logo16.src} />
+    <link rel="icon" type="image/jpeg" sizes="32x32" href={logo32.src} />
+    <link rel="icon" type="image/jpeg" sizes="48x48" href={logo48.src} />
+    <link rel="icon" type="image/jpeg" sizes="96x96" href={logo96.src} />
+    
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href={logo180.src} />
+    
+    <!-- Android/Chrome Icons -->
+    <link rel="icon" type="image/jpeg" sizes="192x192" href={logo192.src} />
+    <link rel="icon" type="image/jpeg" sizes="256x256" href={logo256.src} />
+    <link rel="icon" type="image/jpeg" sizes="512x512" href={logo512.src} />
+    
+    <!-- Default favicon -->
+    <link rel="shortcut icon" href={logo32.src} />
+    
     <meta name="email" content="tranquilla.nathan@pm.me" />
     <link rel="canonical" href={canonicalUrl} />
 
