@@ -1,0 +1,59 @@
+---
+import Main from "../layouts/Main.astro";
+import aboutPhoto from "../assets/about.png";
+import { Image } from "astro:assets";
+
+const containerLayout = "lg:grid lg:gap-6 lg:grid-cols-2 flex flex-col justify-start items-center"
+const h1Styles = "text-lg py-6 font-serif font-semibold text-nowrap text-slate-700 italic lg:text-3xl"
+---
+
+<Main
+  title="nathantranquilla.me | About Nathan Tranquilla"
+  classes={`${containerLayout} w-full max-w-[1000px] mx-auto px-4 my-10 font-sans`}
+>
+  <h1
+    class={`${h1Styles} lg:hidden`}
+  >
+    About Nathan Tranquilla
+  </h1>
+  <div class="lg:col-start-2 lg:col-end-3 lg:row-start-1 h-full w-full overflow-hidden lg:pt-[7rem] flex flex-col justify-start items-center">
+    <Image
+      src={aboutPhoto}
+      alt="Photo of Nathan"
+    />
+  </div>
+  <div class="mb-auto lg:col-start-1 lg:col-end-2 lg:row-start-1 flex flex-col items-start justify-start">
+    <h1
+      class={`${h1Styles} lg:block hidden`}
+    >
+      About Nathan Tranquilla
+    </h1>
+    <p class="mt-4 text-sm leading-relaxed text-gray-700 lg:text-base">
+      I'm on a mission to shape the next generation of web development.
+    </p>
+    <p class="mt-3 text-sm leading-relaxed text-gray-700 lg:text-base">
+      My journey began at BlueSpurs, a small startup where I built my first site
+      in PHP for a local newspaper—discovering that perfect blend of art and
+      logic. As JavaScript frameworks evolved, I eagerly embraced each wave:
+      Backbone for better structure, then React and Angular as they
+      revolutionized the frontend landscape, eventually crafting fast, intuitive
+      dashboards that consistently impressed both teams and clients.
+    </p>
+    <p class="mt-3 text-sm leading-relaxed text-gray-700 lg:text-base">
+      But success bred clarity. The deeper I went, the more I realized something
+      was fundamentally wrong. I was spending more time fighting the tools than
+      building solutions. What should have felt like mastery felt like
+      constantly working around limitations. I began to see that we weren't
+      solving problems—we were just getting better at managing chaos.
+    </p>
+    <p class="row-start-1 col-start-1 col-end-2 mt-3 text-sm leading-relaxed text-gray-700 lg:text-base">
+      Now I'm leveraging years of React mastery and deep JavaScript expertise to
+      pioneer Next Gen Web Development. Every lesson learned debugging complex
+      state management, every insight from building scalable applications, every
+      hard-won understanding of JavaScript's quirks—I'm channeling it all into
+      defining a more robust, reliable, and delightful future for web
+      development.
+    </p>
+  </div>
+  
+</Main>
