@@ -15,12 +15,12 @@ import logo256 from "../assets/logo_256x256.jpg";
 import logo512 from "../assets/logo_512x512.jpg";
 
 export interface Props {
-  title: string,
-  classes?: string,
-  nonav?: boolean
+  title: string;
+  classes?: string;
+  nonav?: boolean;
 }
 
-const { title, classes, nonav } = Astro.props;
+const { title, classes, nonav = false } = Astro.props;
 
 const websiteUrl = "https://nathantranquilla.me";
 const canonicalUrl = new URL(Astro.url.pathname, websiteUrl).href;
@@ -65,11 +65,11 @@ const canonicalUrl = new URL(Astro.url.pathname, websiteUrl).href;
     <meta name="keywords" content="Next-Gen Web Dev" />
   </head>
   <Body>
-    { nonav ? <></> : <Header /> }
+    {!nonav && <Header />}
     <main class={`col-start-1 col-end-4 row-start-2 ${classes || ""}`}>
       <slot />
     </main>
-    { nonav ? <></> : <Footer /> }
+    {!nonav && <Footer />}
   </Body>
 
 

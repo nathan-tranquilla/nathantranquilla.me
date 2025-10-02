@@ -6,7 +6,9 @@ export interface Props {
 const { classes, href } = Astro.props;
 ---
 
-<a href={href} class={`text-nowrap transition-all rounded-md bg-lime-700 text-white py-2 px-4 cursor-pointer hover:scale-102 shadow-md w-fit h-fit ${classes || ""}`}
+<a
+  href={href}
+  class={`text-nowrap transition-all rounded-md bg-lime-700 text-white py-2 px-4 cursor-pointer hover:scale-102 shadow-md w-fit h-fit ${classes || ""}`}
 >
   <slot />
 </a>

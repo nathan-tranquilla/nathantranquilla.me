@@ -1,6 +1,7 @@
 ---
-const { classes } = Astro.props
+const { classes } = Astro.props;
 ---
+
 <p class={`font-sans ${classes || ""}`}>
   <slot />
 </p>

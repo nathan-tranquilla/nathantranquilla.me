@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import Button from "./Button.astro";
-import FredMap from "../assets/FrederictonMap.png"
+import FredMap from "../assets/FrederictonMap.png";
 let linkStyle =
   "text-wrap cursor-pointer hover:underline hover:text-lime-700 focus:underline focus:text-lime-700 underline-offset-4 decoration-2 decoration-lime-700";
 ---
@@ -21,9 +21,7 @@ let linkStyle =
     <h3 class="pb-6 text-lg font-semibold">Services</h3>
     <ul>
       <li>
-        <a class={linkStyle} href="/services"
-          >Next Gen Web App Development</a
-        >
+        <a class={linkStyle} href="/services">Next Gen Web App Development</a>
       </li>
       <li>
         <a class={linkStyle} href="/services"
@@ -32,11 +30,17 @@ let linkStyle =
       </li>
     </ul>
   </div>
-  <div class="sm:col-span-1 col-span-full">
+  <div class="col-span-full sm:col-span-1">
     <h3 class="pb-6 text-lg font-semibold">Contact Information</h3>
     <ul>
-      <li class="sm:w-[250px] sm:h-[175px] max-w-[382px] h-[267px] mx-auto">
-        <Image style="content-visibility: auto;" src={FredMap} alt="Map of Fredericton, NB" width={788} height={552}/>
+      <li class="mx-auto h-[267px] max-w-[382px] sm:h-[175px] sm:w-[250px]">
+        <Image
+          style="content-visibility: auto;"
+          src={FredMap}
+          alt="Map of Fredericton, NB"
+          width={788}
+          height={552}
+        />
       </li>
       <li><p>Fredericton, NB</p></li>
       <li>
@@ -48,11 +52,15 @@ let linkStyle =
       </li>
     </ul>
   </div>
-  <div class="sm:col-span-1 col-span-full flex flex-col items-start justify-start">
+  <div
+    class="col-span-full flex flex-col items-start justify-start sm:col-span-1"
+  >
     <p class="pb-6 font-semibold">Take the next step. Book today!</p>
-    <Button href="/consultation" >Book Now!</Button>
+    <Button href="/consultation">Book Now!</Button>
   </div>
-  <div class="col-span-2 md:col-span-4 mt-8 pt-6 border-t border-slate-600 text-center">
+  <div
+    class="col-span-2 mt-8 border-t border-slate-600 pt-6 text-center md:col-span-4"
+  >
     <p class="text-sm text-slate-300">
       © {new Date().getFullYear()} Nathan Tranquilla. All rights reserved.
     </p>

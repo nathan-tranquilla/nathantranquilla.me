@@ -1,7 +1,9 @@
 ---
-const { classes } = Astro.props
+const { classes } = Astro.props;
 ---
-<h1 class={`text-2xl font-serif font-semibold text-nowrap text-slate-700 md:text-3xl ${classes || ""}`}>
+
+<h1
+  class={`text-2xl font-serif font-semibold text-nowrap text-slate-700 md:text-3xl ${classes || ""}`}
+>
   <slot />
 </h1>
-  

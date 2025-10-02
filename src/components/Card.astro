@@ -1,6 +1,7 @@
 ---
-const { classes } = Astro.props
+const { classes } = Astro.props;
 ---
+
 <div class={`shadow-2xl h-full w-full ${classes || ""}`}>
   <slot />
 </div>
