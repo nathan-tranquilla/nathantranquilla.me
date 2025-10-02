@@ -8,6 +8,9 @@
       },
       "pnpm": {
         "pkg-path": "pnpm"
+      },
+      "ruby": {
+        "pkg-path": "ruby"
       }
     },
     "hook": {},
@@ -250,6 +253,126 @@
       ],
       "outputs": {
         "out": "/nix/store/967gn7p1p47ic924r2fx4rgbfp49fhsy-pnpm-10.15.1"
+      },
+      "system": "x86_64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "ruby",
+      "broken": false,
+      "derivation": "/nix/store/hxxfl995w3h4y46s0587i511kww8cbvr-ruby-3.3.9.drv",
+      "description": "Object-oriented language for quick and easy programming",
+      "install_id": "ruby",
+      "license": "Ruby",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=8eaee110344796db060382e15d3af0a9fc396e0e",
+      "name": "ruby-3.3.9",
+      "pname": "ruby",
+      "rev": "8eaee110344796db060382e15d3af0a9fc396e0e",
+      "rev_count": 864002,
+      "rev_date": "2025-09-19T10:20:10Z",
+      "scrape_date": "2025-09-21T05:40:15.872938Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "3.3.9",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "devdoc": "/nix/store/c87jvm51yx1wyabjcmlfncrx24j48n1z-ruby-3.3.9-devdoc",
+        "out": "/nix/store/b2jray7ww0d2640z53kdzs5kpp9m3zh7-ruby-3.3.9"
+      },
+      "system": "aarch64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "ruby",
+      "broken": false,
+      "derivation": "/nix/store/v2gxdjjbnc0bamwjw7rbncz23pqk3wqb-ruby-3.3.9.drv",
+      "description": "Object-oriented language for quick and easy programming",
+      "install_id": "ruby",
+      "license": "Ruby",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=8eaee110344796db060382e15d3af0a9fc396e0e",
+      "name": "ruby-3.3.9",
+      "pname": "ruby",
+      "rev": "8eaee110344796db060382e15d3af0a9fc396e0e",
+      "rev_count": 864002,
+      "rev_date": "2025-09-19T10:20:10Z",
+      "scrape_date": "2025-09-21T06:12:22.494281Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "3.3.9",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "devdoc": "/nix/store/izqvjzd7nmh7yjwkdsi95kc9bjf34mwp-ruby-3.3.9-devdoc",
+        "out": "/nix/store/6avvhisrha25x9p438lhq0pln019bc7q-ruby-3.3.9"
+      },
+      "system": "aarch64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "ruby",
+      "broken": false,
+      "derivation": "/nix/store/bbyy305974g1cvazzq30bz0qh2d8jjrs-ruby-3.3.9.drv",
+      "description": "Object-oriented language for quick and easy programming",
+      "install_id": "ruby",
+      "license": "Ruby",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=8eaee110344796db060382e15d3af0a9fc396e0e",
+      "name": "ruby-3.3.9",
+      "pname": "ruby",
+      "rev": "8eaee110344796db060382e15d3af0a9fc396e0e",
+      "rev_count": 864002,
+      "rev_date": "2025-09-19T10:20:10Z",
+      "scrape_date": "2025-09-21T06:40:30.273010Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "3.3.9",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "devdoc": "/nix/store/0r6dfj6n0hj9lw6sqwgr961pgxr6qy6r-ruby-3.3.9-devdoc",
+        "out": "/nix/store/54iz5i3x0m6x3brr9dfy2pj92qfr2lkn-ruby-3.3.9"
+      },
+      "system": "x86_64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "ruby",
+      "broken": false,
+      "derivation": "/nix/store/kmx8kkggm5i2r17s6l67v022jz9gc4c5-ruby-3.3.9.drv",
+      "description": "Object-oriented language for quick and easy programming",
+      "install_id": "ruby",
+      "license": "Ruby",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=8eaee110344796db060382e15d3af0a9fc396e0e",
+      "name": "ruby-3.3.9",
+      "pname": "ruby",
+      "rev": "8eaee110344796db060382e15d3af0a9fc396e0e",
+      "rev_count": 864002,
+      "rev_date": "2025-09-19T10:20:10Z",
+      "scrape_date": "2025-09-21T07:13:08.861364Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "3.3.9",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "devdoc": "/nix/store/mhaqxxmavvvsy6p2vb1qi3s02z1d2315-ruby-3.3.9-devdoc",
+        "out": "/nix/store/mp4rpz283gw3abvxyb4lbh4vp9pmayp2-ruby-3.3.9"
       },
       "system": "x86_64-linux",
       "group": "toplevel",

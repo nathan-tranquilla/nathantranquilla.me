@@ -27,20 +27,13 @@ jobs:
       
     - name: Setup Pages
       uses: actions/configure-pages@v4
-      
-    - name: Install dependencies
-      uses: flox/activate-action@v1
-      env:
-        FLOX_DISABLE_METRICS: true
-      with:
-        command: pnpm install
         
     - name: Build Astro site
       uses: flox/activate-action@v1
       env:
         FLOX_DISABLE_METRICS: true
       with:
-        command: pnpm astro build
+        command: rake build
           
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3
