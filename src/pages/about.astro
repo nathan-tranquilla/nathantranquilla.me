@@ -2,6 +2,7 @@
 import Main from "../layouts/Main.astro";
 import aboutPhoto from "../assets/about.png";
 import { Image } from "astro:assets";
+import Button from "../components/Button.astro";
 
 const containerLayout = "lg:grid lg:gap-6 lg:grid-cols-2 flex flex-col justify-start items-center"
 const h1Styles = "text-lg py-6 font-serif font-semibold text-nowrap text-slate-700 italic lg:text-3xl"
@@ -46,7 +47,7 @@ const h1Styles = "text-lg py-6 font-serif font-semibold text-nowrap text-slate-7
       constantly working around limitations. I began to see that we weren't
       solving problems—we were just getting better at managing chaos.
     </p>
-    <p class="row-start-1 col-start-1 col-end-2 mt-3 text-sm leading-relaxed text-gray-700 lg:text-base">
+    <p class="row-start-1 col-start-1 col-end-2 mt-3 text-sm leading-relaxed text-gray-700 lg:text-base mb-10">
       Now I'm leveraging years of React mastery and deep JavaScript expertise to
       pioneer Next Gen Web Development. Every lesson learned debugging complex
       state management, every insight from building scalable applications, every
@@ -54,6 +55,7 @@ const h1Styles = "text-lg py-6 font-serif font-semibold text-nowrap text-slate-7
       defining a more robust, reliable, and delightful future for web
       development.
     </p>
+    <Button classes="mx-auto" href="/consultation">Book A Consultation Today</Button>
   </div>
   
 </Main>
