@@ -1,5 +1,7 @@
 ---
+import { Image } from "astro:assets";
 import Button from "./Button.astro";
+import FredMap from "../assets/FrederictonMap.png"
 let linkStyle =
   "text-wrap cursor-pointer hover:underline hover:text-lime-700 focus:underline focus:text-lime-700 underline-offset-4 decoration-2 decoration-lime-700";
 ---
@@ -30,10 +32,13 @@ let linkStyle =
       </li>
     </ul>
   </div>
-  <div class="">
+  <div class="sm:col-span-1 col-span-full">
     <h3 class="pb-6 text-lg font-semibold">Contact Information</h3>
     <ul>
-      <li>Fredericton, NB</li>
+      <li>
+        <Image src={FredMap} alt="Map of Fredericton, NB" width={788} height={552}/>
+        <p>Fredericton, NB</p>
+      </li>
       <li>
         <a
           class={`${linkStyle} flex flex-wrap`}
@@ -43,7 +48,7 @@ let linkStyle =
       </li>
     </ul>
   </div>
-  <div class="flex flex-col items-start justify-center">
+  <div class="sm:col-span-1 col-span-full flex flex-col items-start justify-start">
     <p class="pb-6 font-semibold">Take the next step. Book today!</p>
     <Button href="/consultation" >Book Now!</Button>
   </div>
