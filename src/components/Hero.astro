@@ -8,13 +8,15 @@ import Container from "./Container.astro";
 <Container
   classes="pt-2 w-full h-fit flex flex-col justify-start items-center pt-[5vh] w-full md:max-w-[640px] max-w-[350px] mx-auto"
 >
-  <Image
-    src={Profile}
-    alt="Nathan Tranquilla Profile"
-    class="h-[200px] w-[200px] rounded-full shadow-xl md:h-[400px] md:w-[400px]"
-    widths={[350]}
-    layout="constrained"
-  />
+  <figure class="h-[200px] w-[200px] md:h-[400px] md:w-[400px]">
+    <Image
+      src={Profile}
+      alt="Nathan Tranquilla Profile"
+      class="rounded-full shadow-xl"
+      widths={[350, 550]}
+      layout="constrained"
+    />
+  </figure>
   <h1
     class="text:lg pt-4 font-serif font-semibold text-nowrap text-slate-700 italic md:text-3xl"
   >
