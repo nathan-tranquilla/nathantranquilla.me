@@ -12,4 +12,8 @@ export default defineConfig({
   },
   site: 'https://nathantranquilla.me',
   integrations: [sitemap()],
+
+  build: {
+    inlineStylesheets: "always",
+  },
 });
