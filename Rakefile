@@ -8,6 +8,10 @@ task :clean do
   sh "rm -rf node_modules"
 end
 
+task :format => [:install] do 
+  sh "pnpm exec prettier ./src --write"
+end
+
 task :dev => [:install] do 
   sh "pnpm astro dev --host"
 end 
