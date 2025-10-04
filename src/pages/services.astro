@@ -2,6 +2,7 @@
 import Card from "../components/Card.astro";
 import Main from "../layouts/Main.astro";
 import H1 from "../components/HTMLElements/H1.astro";
+import H2 from "../components/HTMLElements/H2.astro";
 import Button from "../components/Button.astro";
 import Container from "../components/Container.astro";
 ---
@@ -12,11 +13,11 @@ import Container from "../components/Container.astro";
   >
     <H1 classes="col-span-full flex justify-center">My Services</H1>
     <Card classes="flex flex-col items-stretch p-6">
-      <h2
+      <H2
         class="mb-4 font-serif text-lg font-semibold text-slate-700 md:text-3xl"
       >
         Next Gen Web App Consulting
-      </h2>
+      </H2>
       <p class="mb-4 text-sm leading-relaxed text-gray-700">
         Transform your development process with strongly-typed, type-safe
         languages that eliminate entire classes of bugs. Move beyond
@@ -77,11 +78,11 @@ import Container from "../components/Container.astro";
       <Button href="/consultation" classes="mx-auto">Book Now!</Button>
     </Card>
     <Card classes="flex flex-col items-stretch p-6">
-      <h2
+      <H2
         class="mb-4 font-serif text-lg font-semibold text-slate-700 md:text-3xl"
       >
         Custom Website Development
-      </h2>
+      </H2>
       <p class="mb-4 text-sm leading-relaxed text-gray-700">
         Get a lightning-fast, search-optimized website that ranks on Google's
         first page. I build custom sites that don't just look professional—they

@@ -1,6 +1,7 @@
 ---
 import Main from "../layouts/Main.astro";
 import { Image } from "astro:assets";
+import H2 from "../components/HTMLElements/H2.astro";
 import Hero from "../components/Hero.astro";
 import Container from "../components/Container.astro";
 import JSTS from "../assets/TypeScriptJavaScript.png";
@@ -12,9 +13,9 @@ import Other from "../assets/OtherLangs2.png";
   <Container
     classes="text-white bg-slate-900 w-full grid grid-rows-[2rem_auto] md:grid-cols-[320px_320px] px-auto justify-center md:p-4 p-2 gap-4"
   >
-    <h2 class="font-sans text-xl font-semibold text-white md:text-2xl">
+    <H2 class="font-sans text-xl font-semibold text-white md:text-2xl">
       Vision of Next Gen Web Dev
-    </h2>
+    </H2>
     <p class="col-start-1 row-start-2 font-sans text-white">
       Next-Gen Web Dev aims for reliable, secure web applications free from
       preventable errors. It requires a shift to robust, strongly typed
@@ -30,9 +31,9 @@ import Other from "../assets/OtherLangs2.png";
   <Container
     classes="text-black w-full flex flex-col md:grid md:grid-cols-[320px_320px] px-auto justify-center md:p-4 p-2 gap-4"
   >
-    <h2 class="col-start-2 font-sans text-xl font-semibold md:text-2xl">
+    <H2 class="col-start-2 font-sans text-xl font-semibold md:text-2xl">
       The current status quo
-    </h2>
+    </H2>
     <p class="col-start-1 col-start-2 row-start-2 font-sans">
       JavaScript’s weak typing, implicit coercions, and runtime errors make it
       unsuitable for modern web development. TypeScript, while an improvement,
@@ -51,9 +52,9 @@ import Other from "../assets/OtherLangs2.png";
   <Container
     classes="text-white bg-slate-900 font-sans text-black w-full grid grid-cols-1 md:grid-cols-[640px] px-auto justify-center md:p-4 p-2 gap-4"
   >
-    <h2 class="text-xl font-semibold md:text-2xl">
+    <H2 class="text-xl font-semibold md:text-2xl">
       Principles: The Strong Type System
-    </h2>
+    </H2>
     <p class="col-start-1 row-start-2 py-4">
       At the core of Next Gen Web Dev are languages with strong type systems.
       Therefore a Next Gen Web Language will have:
@@ -160,9 +161,9 @@ import Other from "../assets/OtherLangs2.png";
   <Container
     classes="text-black w-full grid grid-cols-1 md:grid-cols-[640px] px-auto justify-center md:p-4 p-2"
   >
-    <h2 class="font-sans text-xl font-semibold md:text-2xl">
+    <H2 class="font-sans text-xl font-semibold md:text-2xl">
       The Committment of Next Gen Web Dev
-    </h2>
+    </H2>
     <ul class="list-inside list-disc py-6">
       <li class="py-2">
         <strong>Adopt Type-Safe Languages:</strong> Prioritize strongly typed languages
