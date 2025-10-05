@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/Blog.astro
-title: 5 ways ReScript Fixes TypeScript
+title: 5 Ways ReScript Fixes TypeScript
 author: Nathan Tranquilla
 ---
 
@@ -8,7 +8,7 @@ ReScript is like TypeScript except better. Some say that ReScript is what JavaSc
 
 ### Unsafe Array Access
 
-In TypeScript, you can unsafely access array elements and receive undefined, even with strict settings enabled. This happens because TypeScript's goal is to be a <i>static</i> overlay on JavaScript for compatibility reasons. Consequently, dynamic array access and its inherent safety risks cannot be prevented at compile time.
+In TypeScript, you can unsafely access array elements and receive `undefined`, even with strict settings enabled. This happens because TypeScript's goal is to be a *static* overlay on JavaScript for compatibility reasons. Consequently, dynamic array access and its inherent safety risks cannot be prevented at compile time.
 
 ![Unsafe Array Access in TypeScript](../../assets/blog/5-ways-rescript-fixes-typescript/UnsafeArrayAccessTS.png)
 
@@ -16,15 +16,15 @@ In ReScript, it's not possible to access elements of arrays unsafely, no matter 
 
 ![Safe Array Access In ReScript](../../assets/blog/5-ways-rescript-fixes-typescript/ReScriptArrayAccess.png)
 
-No matter which way you choose, you are always protected with the Option type, which forces the developer to code all cases.
+No matter which way you choose, you are always protected with the `option` type, which forces the developer to code all cases.
 
 ### Null Safety
 
-TypeScript improves upon JavaScript's lack of null safety; you must acknowledge a type is nullable through a typed union. For example, when accessing the DOM, the element might be null.
+TypeScript improves upon JavaScript's lack of null safety; you must acknowledge a type is nullable through a typed union. For example, when accessing the DOM, the element might be `null`.
 
 ![Null Safety in TypeScript](../../assets/blog/5-ways-rescript-fixes-typescript/TSNullSafety.png)
 
-Do you know what's better than handling `null`s? Not having `null`s at all, which is the case with ReScript, which eliminates an entire class of bugs. In ReScript, if we want to handle the presence or absence of something, we use the `Option` type.
+Do you know what's better than handling `null`s? Not having `null`s at all—which is the case with ReScript, which eliminates an entire class of bugs. In ReScript, if we want to handle the presence or absence of something, we use the `option` type.
 
 ![ReScript Option Type](../../assets/blog/5-ways-rescript-fixes-typescript/ReScriptOptionType.png)
 
