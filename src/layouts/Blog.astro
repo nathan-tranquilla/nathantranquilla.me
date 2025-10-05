@@ -1,0 +1,58 @@
+---
+import Main from "./Main.astro";
+import H1 from "../components/HTMLElements/H1.astro";
+import H2 from "../components/HTMLElements/H2.astro";
+import Container from "../components/Container.astro";
+
+const { frontmatter } = Astro.props;
+---
+
+<style is:global>
+  article h3 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: var(--color-slate-700);
+    font-family: var(--font-family-sans);
+    font-size: 1.125rem; /* text-lg */
+    font-weight: 600; /* font-semibold */
+  }
+
+  @media (min-width: 768px) {
+    article h3 {
+      font-size: 1.25rem; /* md:text-xl */
+    }
+  }
+  article p {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    line-height: 1.75rem;
+  }
+  article ul {
+    list-style-type: disc;
+    list-style-position: inside;
+  }
+  article img {
+    width: 90vw;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 5px 5px 15px 5px rgb(0 0 0 / 0.5);
+    border-radius: 0.5rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    content-visibility: auto;
+  }
+</style>
+<Main title={`nathantraquilla.me | Blog Post | ${frontmatter.seoTitle}`}>
+  <Container classes="w-full max-w-[1000px] mx-auto font-sans">
+    <article>
+      <section class="mb-4 flex flex-col items-start justify-start">
+        <H1 classes="text-wrap">{frontmatter.title}</H1>
+        <p class="text-slate-700">author: {frontmatter.author}</p>
+      </section>
+      <section class="body">
+        <slot />
+      </section>
+    </article>
+  </Container>
+</Main>
