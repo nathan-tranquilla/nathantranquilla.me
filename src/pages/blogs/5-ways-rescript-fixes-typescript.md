@@ -8,7 +8,7 @@ ReScript is like TypeScript except better. Some say that ReScript is what JavaSc
 
 ### Unsafe Array Access
 
-In TypeScript, you can unsafely access array elements and receive `undefined`, even with strict settings enabled. This happens because TypeScript's goal is to be a *static* overlay on JavaScript for compatibility reasons. Consequently, dynamic array access and its inherent safety risks cannot be prevented at compile time.
+In TypeScript, you can unsafely access array elements and receive `undefined`, even with strict settings enabled. This happens because TypeScript's goal is to be a _static_ overlay on JavaScript for compatibility reasons. Consequently, dynamic array access and its inherent safety risks cannot be prevented at compile time.
 
 ![Unsafe Array Access in TypeScript](../../assets/blog/5-ways-rescript-fixes-typescript/UnsafeArrayAccessTS.png)
 
