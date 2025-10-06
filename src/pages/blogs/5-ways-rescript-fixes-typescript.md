@@ -36,7 +36,7 @@ TypeScript makes implicit conversion harder to do, but it's still possible to st
 
 ![TypeScript Implicit Conversion](../../assets/blog/5-ways-rescript-fixes-typescript/TSImplicitConversion.png)
 
-This example is relatable to a JavaScript developer. Numbers are often represented as strings, and it would be tempting to allow `a` and `b` to be of type `string | number` instead of coercing the string to a number at the source. Fifty-percent of test cases will pass, due to implicit conversion, if the developer happens to be unfortunate enough to test `compareValues` incompletely. 
+This example is relatable to a JavaScript developer. Numbers are often represented as strings, and it would be tempting to allow `a` and `b` to be of type `string | number` instead of coercing the string to a number at the source. Fifty-percent of test cases will pass, due to implicit conversion, if the developer happens to be unfortunate enough to test `compareValues` incompletely.
 
 ReScript does not allow implicit conversion at all. You must explicitly convert from one type to another, if it is allowable. This eliminates an entire category of runtime surprises that plague JavaScript and can still occur in TypeScript.
 
@@ -52,7 +52,7 @@ In ReScript, type compatibility is based on explicit type names or declarations 
 
 ### Exhaustiveness Checking
 
-In TypeScript, you can achieve exhaustiveness checking if you have the right settings enabled, and if you code the switch statement correctly. It involves using the `never` keyword. Here is an valid example of a TypeScript `switch` statement that works, but doesn't use the `never` keyword in the default case. If any additional types variants are added, the code still compiles, resulting in runtime errors, because the `never` keyword is not used in the coding of this switch statement. 
+In TypeScript, you can achieve exhaustiveness checking if you have the right settings enabled, and if you code the switch statement correctly. It involves using the `never` keyword. Here is a valid example of a TypeScript `switch` statement that works, but doesn't use the `never` keyword in the default case. If any additional types variants are added, the code still compiles, resulting in runtime errors, because the `never` keyword is not used in the coding of this switch statement.
 
 ![Exhaustiveness Checking In TypeScript](../../assets/blog/5-ways-rescript-fixes-typescript/TSExhaustivenessChecking.png)
 
