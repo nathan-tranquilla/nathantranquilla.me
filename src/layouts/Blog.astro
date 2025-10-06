@@ -8,7 +8,7 @@ const { frontmatter } = Astro.props;
 
 <style is:global>
   /* Enhanced Headings */
-.blog-post   article h3 {
+  .blog-post article h3 {
     margin-top: 3rem;
     margin-bottom: 1.5rem;
     color: #1e293b; /* slate-800 */
@@ -78,8 +78,9 @@ const { frontmatter } = Astro.props;
     margin: 3rem auto;
     display: block;
     border-radius: 1rem;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25),
-                0 10px 20px -8px rgba(0, 0, 0, 0.1);
+    box-shadow:
+      0 25px 50px -12px rgba(0, 0, 0, 0.25),
+      0 10px 20px -8px rgba(0, 0, 0, 0.1);
     transition: all 0.4s ease;
     content-visibility: auto;
     border: 1px solid #e2e8f0;
@@ -150,9 +151,16 @@ const { frontmatter } = Astro.props;
 <Main title={`nathantraquilla.me | Blog Post | ${frontmatter.seoTitle}`}>
   <Container classes="blog-post w-full max-w-[1000px] mx-auto font-sans">
     <article>
-      <section class="bg-gradient-to-br from-slate-800 to-slate-600 text-white p-8 md:p-12 rounded-2xl mb-12 shadow-2xl relative overflow-hidden border-t-4 border-lime-500">
-        <H1 classes="text-wrap !text-white !mb-4 !text-3xl md:!text-4xl !font-extrabold !leading-tight drop-shadow-sm">{frontmatter.title}</H1>
-        <p class="!text-white text-lg font-medium tracking-wide">by {frontmatter.author}</p>
+      <section
+        class="relative mb-12 overflow-hidden rounded-2xl border-t-4 border-lime-500 bg-gradient-to-br from-slate-800 to-slate-600 p-8 text-white shadow-2xl md:p-12"
+      >
+        <H1
+          classes="text-wrap !text-white !mb-4 !text-3xl md:!text-4xl !font-extrabold !leading-tight drop-shadow-sm"
+          >{frontmatter.title}</H1
+        >
+        <p class="text-lg font-medium tracking-wide !text-white">
+          by {frontmatter.author}
+        </p>
       </section>
       <section class="blog-body">
         <slot />

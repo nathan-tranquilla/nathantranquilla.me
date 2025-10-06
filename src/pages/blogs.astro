@@ -14,75 +14,97 @@ type Post = {
   };
 };
 
-const posts = Object.values(import.meta.glob<Post>('./blogs/*.md', { eager: true }))
-  .sort((a, b) => new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime());
+const posts = Object.values(
+  import.meta.glob<Post>("./blogs/*.md", { eager: true }),
+).sort(
+  (a, b) =>
+    new Date(b.frontmatter.date).getTime() -
+    new Date(a.frontmatter.date).getTime(),
+);
 
 function formatDate(dateString: string) {
-  return new Date(dateString).toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
+  return new Date(dateString).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
   });
 }
 ---
 
 <Main title="nathantranquilla.me | Blog Posts">
   <Container classes="w-full max-w-4xl mx-auto py-8 px-4">
-    <div class="text-center mb-12">
+    <div class="mb-12 text-center">
       <H1 classes="mb-4">Next Gen Web Dev Blog</H1>
-      <p class="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
-        Insights on strongly-typed languages, type safety, and the future of web development
+      <p class="mx-auto max-w-2xl text-xl leading-relaxed text-slate-600">
+        Insights on strongly-typed languages, type safety, and the future of web
+        development
       </p>
     </div>
 
     <div class="grid gap-8 md:gap-12">
-      {posts.map((post) => (
-        <article class="group bg-white rounded-xl shadow-lg hover:shadow-xl overflow-hidden border border-slate-100">
-          <div class="p-8">
-            <header class="mb-4">
-              <H2>
-                <a href={post.url} class="block">
-                  {post.frontmatter.title}
+      {
+        posts.map((post) => (
+          <article class="group overflow-hidden rounded-xl border border-slate-100 bg-white shadow-lg hover:shadow-xl">
+            <div class="p-8">
+              <header class="mb-4">
+                <H2>
+                  <a href={post.url} class="block">
+                    {post.frontmatter.title}
+                  </a>
+                </H2>
+                <div class="flex items-center text-sm text-slate-500">
+                  <span class="font-medium">{post.frontmatter.author}</span>
+                  <span class="mx-2">•</span>
+                  <time datetime={post.frontmatter.date}>
+                    {formatDate(post.frontmatter.date)}
+                  </time>
+                </div>
+              </header>
+
+              <div class="flex items-center justify-between">
+                <a
+                  href={post.url}
+                  class="inline-flex items-center font-semibold text-lime-700 hover:text-lime-800"
+                >
+                  Read Article
+                  <svg
+                    class="ml-2 h-4 w-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
                 </a>
-              </H2>
-              <div class="flex items-center text-slate-500 text-sm">
-                <span class="font-medium">{post.frontmatter.author}</span>
-                <span class="mx-2">•</span>
-                <time datetime={post.frontmatter.date}>
-                  {formatDate(post.frontmatter.date)}
-                </time>
-              </div>
-            </header>
-            
-            <div class="flex items-center justify-between">
-              <a 
-                href={post.url}
-                class="inline-flex items-center text-lime-700 font-semibold hover:text-lime-800"
-              >
-                Read Article
-                <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                </svg>
-              </a>
-              <div class="flex gap-2">
-                {post.frontmatter.tags.map((tag: string) => (
-                  <span class="px-3 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">
-                    {tag}
-                  </span>
-                ))}
+                <div class="flex gap-2">
+                  {post.frontmatter.tags.map((tag: string) => (
+                    <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-700">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
-        </article>
-      ))}
+          </article>
+        ))
+      }
     </div>
 
-    {posts.length === 0 && (
-      <div class="text-center py-16">
-        <div class="text-6xl mb-4">📝</div>
-        <h2 class="text-2xl font-bold text-slate-900 mb-2">No posts yet</h2>
-        <p class="text-slate-600">Check back soon for insights on Next Gen Web Development!</p>
-      </div>
-    )}
+    {
+      posts.length === 0 && (
+        <div class="py-16 text-center">
+          <div class="mb-4 text-6xl">📝</div>
+          <h2 class="mb-2 text-2xl font-bold text-slate-900">No posts yet</h2>
+          <p class="text-slate-600">
+            Check back soon for insights on Next Gen Web Development!
+          </p>
+        </div>
+      )
+    }
   </Container>
 </Main>

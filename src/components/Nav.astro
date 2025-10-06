@@ -14,11 +14,15 @@ const navLinks = [
   class="mx-auto flex hidden h-full w-full items-center justify-start pl-10 md:block"
 >
   <ul class="flex h-full w-full max-w-[300px] items-center justify-around">
-    {navLinks.map((link) => (
-      <li class="flex">
-        <a class={linkStyles} href={link.href}>{link.label}</a>
-      </li>
-    ))}
+    {
+      navLinks.map((link) => (
+        <li class="flex">
+          <a class={linkStyles} href={link.href}>
+            {link.label}
+          </a>
+        </li>
+      ))
+    }
   </ul>
 </nav>
 <nav class="flex w-full items-center justify-end self-center md:hidden">
@@ -38,10 +42,14 @@ const navLinks = [
   <ul
     class="absolute top-[calc(var(--mobile-nav-height)-10px)] right-0 left-0 z-10 hidden h-fit w-full flex-col items-center justify-around bg-white shadow-md peer-checked:flex"
   >
-    {navLinks.map((link) => (
-      <li class="flex">
-        <a class={linkStyles} href={link.href}>{link.label}</a>
-      </li>
-    ))}
+    {
+      navLinks.map((link) => (
+        <li class="flex">
+          <a class={linkStyles} href={link.href}>
+            {link.label}
+          </a>
+        </li>
+      ))
+    }
   </ul>
 </nav>
