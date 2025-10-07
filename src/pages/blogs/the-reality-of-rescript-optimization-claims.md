@@ -3,7 +3,7 @@ layout: ../../layouts/Blog.astro
 title: The Reality Of ReScript Optimization Claims
 author: Nathan Tranquilla
 date: "2025-10-08"
-tags: ["Next-Gen Web Dev", "ReScript"]
+tags: ["ReScript"]
 ---
 
 ReScript makes a bold claim about performance optimization:
