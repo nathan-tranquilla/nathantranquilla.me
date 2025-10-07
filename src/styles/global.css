@@ -8,3 +8,10 @@
 @theme {
   --bg-default: #f0efea;
 }
+
+.astro-code {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  max-height: 400px;
+  overflow-y: scroll;
+}

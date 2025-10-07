@@ -2,7 +2,7 @@
 layout: ../../layouts/Blog.astro
 title: 5 Ways ReScript Fixes TypeScript
 author: Nathan Tranquilla
-date: "2025-10-05"
+date: "2025-10-06"
 tags: ["Next-Gen Web Dev"]
 ---
 
