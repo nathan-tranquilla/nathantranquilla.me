@@ -1,18 +1,24 @@
 ---
 export interface Props {
-  title: string,
-  link?: string 
+  title: string;
+  link?: string;
 }
-const { title, link } = Astro.props; 
-import H3 from './HTMLElements/H3.astro';
-import RightArrow from './RightArrow.astro'
+const { title, link } = Astro.props;
+import H3 from "./HTMLElements/H3.astro";
+import RightArrow from "./RightArrow.astro";
 ---
 
-<div class="bg-white text-black font-sans flex flex-col justify-start items-stretch rounded-lg shadow-lg p-4 md:p-8 min-h-[400px]">
+<div
+  class="flex min-h-[400px] flex-col items-stretch justify-start rounded-lg bg-white p-4 font-sans text-black shadow-lg md:p-8"
+>
   <H3 classes="w-full flex justify-start items-center pb-4">
     {title}
   </H3>
   <slot />
-  <div class="grow"/>
-  <a href={link} class="mt-6 flex items-center font-semibold text-lime-700 hover:text-lime-800">Learn More <RightArrow /></a>
+  <div class="grow"></div>
+  <a
+    href={link}
+    class="mt-6 flex items-center font-semibold text-lime-700 hover:text-lime-800"
+    >Learn More <RightArrow /></a
+  >
 </div>
