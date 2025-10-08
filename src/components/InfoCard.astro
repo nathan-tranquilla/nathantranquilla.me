@@ -17,8 +17,11 @@ import RightArrow from "./RightArrow.astro";
   <slot />
   <div class="grow"></div>
   <a
-    href={link}
-    class="mt-6 flex items-center font-semibold text-lime-700 hover:text-lime-800"
+    href={link || undefined}
+    aria-disabled={!link ? "true" : "false"}
+    class={`mt-6 flex items-center font-semibold ${
+      link ? "text-lime-700 hover:text-lime-800" : "text-gray-400 cursor-not-allowed"
+    }`}
     >Learn More <RightArrow /></a
   >
 </div>
