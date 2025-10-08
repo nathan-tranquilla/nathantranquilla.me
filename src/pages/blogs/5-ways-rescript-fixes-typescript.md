@@ -3,7 +3,7 @@ layout: ../../layouts/Blog.astro
 title: 5 Ways ReScript Fixes TypeScript
 author: Nathan Tranquilla
 date: "2025-10-06"
-tags: ["Next-Gen Web Dev"]
+tags: ["ReScript"]
 ---
 
 ReScript is like TypeScript except better. Some say that ReScript is what JavaScript would have been if it had more time in the oven. Its type system, which is the focus of this post, is much more complete than TypeScript's, making it a great choice as a Next Generation Web Development language. The goal of _**Next Gen Web Dev**_ is to make web apps more reliable and robust, making the process safer for developers, and the experience of the web more enjoyable. Here are 5 problematic areas in TypeScript's type system that are fixed in ReScript.
@@ -75,3 +75,7 @@ For **Next Gen Web Development**, this distinction is crucial. We're not just lo
 While TypeScript represents an improvement over plain JavaScript, ReScript represents the future: a language designed from the ground up for reliability, safety, and developer confidence. For teams serious about building robust web applications, ReScript offers the type safety guarantees that TypeScript simply cannot provide.
 
 The choice is clear: continue managing JavaScript's chaos with increasingly complex tooling, or embrace a language that eliminates the chaos entirely. That's the Next Gen Web Development difference.
+
+---
+
+_**Ready to eliminate TypeScript's compromises and build truly reliable web applications?** [Schedule a consultation →](/consultation)_
