@@ -22,7 +22,7 @@ Despite its benefits, TypeScript inherits JavaScript's fundamental flaws and int
 
 **Partial Null Safety**: While `strictNullChecks` helps, it doesn't eliminate null/undefined errors. Configuration inconsistencies across teams create varying developer experiences, and escape hatches like the `!` operator let unsafe code slip through, undermining confidence in the type system.
 
-**Unsafe Array Access**: Dynamic array access like `users[dynamicIndex]` always compiles in TypeScript, even when the index might be out of bounds. This returns `undefined` at runtime, causing the very crashes that type systems should prevent. 
+**Unsafe Array Access**: Dynamic array access like `users[dynamicIndex]` always compiles in TypeScript, even when the index might be out of bounds. This returns `undefined` at runtime, causing the very crashes that type systems should prevent.
 
 These aren't edge cases—they're fundamental limitations that make TypeScript unsuitable for truly reliable applications. The promise of type safety remains incomplete.
 

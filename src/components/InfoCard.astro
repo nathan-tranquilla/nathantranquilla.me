@@ -20,8 +20,9 @@ import RightArrow from "./RightArrow.astro";
     href={link || undefined}
     aria-disabled={!link ? "true" : "false"}
     class={`mt-6 flex items-center font-semibold ${
-      link ? "text-lime-700 hover:text-lime-800" : "text-gray-400 cursor-not-allowed"
-    }`}
-    >Learn More <RightArrow /></a
+      link
+        ? "text-lime-700 hover:text-lime-800"
+        : "text-gray-400 cursor-not-allowed"
+    }`}>Learn More <RightArrow /></a
   >
 </div>
