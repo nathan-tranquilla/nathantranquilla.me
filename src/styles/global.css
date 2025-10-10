@@ -15,3 +15,7 @@
   max-height: 400px;
   overflow-y: scroll;
 }
+
+@view-transition {
+  navigation: auto;
+}
