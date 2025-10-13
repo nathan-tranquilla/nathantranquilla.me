@@ -70,8 +70,8 @@ function compareValues(a: string | number, b: string | number): boolean {
 
 // Examples
 console.log(compareValues("10", "2"));  // true (lexicographical comparison), but should be false
-console.log(compareValues(10, "2"));    // false 
-console.log(compareValues("2", "10"));  // false (lexicographical comparison), but should be true  
+console.log(compareValues(10, "2"));    // false
+console.log(compareValues("2", "10"));  // false (lexicographical comparison), but should be true
 console.log(compareValues("2", 10));    // true
 
 // Right 50% of the time, and might even pass unit tests if not tested carefully
@@ -115,7 +115,7 @@ interface UserProfile {
 interface PaymentDetails {
   id: string,
   balance: number;
-  dueDate?: string 
+  dueDate?: string
 }
 
 const displayFunds = (profile: UserProfile) => `Funds : ${profile.balance}`;
@@ -135,13 +135,13 @@ type Shape = { kind: 'circle'; radius: number } | { kind: 'square'; side: number
 function area(shape: Shape) {
   switch (shape.kind) {
     case 'circle': return Math.PI * shape.radius ** 2;
-    default: 
+    default:
       return shape.side ** 2
   }
 }
 
 const s: Shape = { kind: 'square', side: 4 };
-console.log(area(s)); 
+console.log(area(s));
 ```
 
 In ReScript, there is true exhaustiveness checking built into the language. The compiler needs no additional input from the developer to understand that all cases must be covered. If you add a new variant to a union type, the compiler will immediately flag every pattern match that doesn't handle the new case.
