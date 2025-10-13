@@ -2,8 +2,11 @@
 import Main from "./Main.astro";
 import H1 from "../components/HTMLElements/H1.astro";
 import Container from "../components/Container.astro";
+import { getPostIndex } from "../utils/posts";
 
 const { frontmatter } = Astro.props;
+
+const i = getPostIndex(frontmatter.title);
 ---
 
 <style is:global>
@@ -140,7 +143,8 @@ const { frontmatter } = Astro.props;
 <Main title={`nathantraquilla.me | ${frontmatter.title}`}>
   <Container classes="blog-post w-full max-w-[1000px] mx-auto font-sans">
     <article>
-      <section
+      <header
+        id={`article-${i}`}
         class="relative mb-12 overflow-hidden rounded-2xl border-t-4 border-lime-500 bg-gradient-to-br from-slate-800 to-slate-600 p-8 text-white shadow-2xl md:p-12"
       >
         <H1
@@ -150,7 +154,7 @@ const { frontmatter } = Astro.props;
         <p class="text-lg font-medium tracking-wide !text-white">
           by {frontmatter.author}
         </p>
-      </section>
+      </header>
       <section class="blog-body">
         <slot />
       </section>

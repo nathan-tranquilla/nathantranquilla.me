@@ -19,3 +19,23 @@
 @view-transition {
   navigation: auto;
 }
+
+#article-0 {
+  view-transition-name: title-0;
+}
+
+#article-1 {
+  view-transition-name: title-1;
+}
+
+#article-2 {
+  view-transition-name: title-2;
+}
+
+#article-3 {
+  view-transition-name: title-3;
+}
+
+#article-4 {
+  view-transition-name: title-4;
+}

@@ -3,24 +3,9 @@ import Container from "../components/Container.astro";
 import Main from "../layouts/Main.astro";
 import H1 from "../components/HTMLElements/H1.astro";
 import H2 from "../components/HTMLElements/H2.astro";
+import { getPosts } from "../utils/posts";
 
-type Post = {
-  url: string;
-  frontmatter: {
-    title: string;
-    author: string;
-    date: string; // yyyy-mm-dd
-    tags: Array<string>;
-  };
-};
-
-const posts = Object.values(
-  import.meta.glob<Post>("./blogs/*.md", { eager: true }),
-).sort(
-  (a, b) =>
-    new Date(b.frontmatter.date).getTime() -
-    new Date(a.frontmatter.date).getTime(),
-);
+const posts = getPosts();
 
 function formatDate(dateString: string) {
   return new Date(dateString).toLocaleDateString("en-US", {
@@ -51,51 +36,52 @@ posts.forEach((post) => {
 
     <div class="grid gap-8 md:gap-12">
       {
-        posts.map((post) => (
-          <article class="group overflow-hidden rounded-xl border border-slate-100 bg-white shadow-lg hover:shadow-xl">
-            <div class="p-8">
-              <header class="mb-4">
-                <H2>
-                  <a href={post.url} class="block">
-                    {post.frontmatter.title}
-                  </a>
-                </H2>
-                <div class="flex items-center text-sm text-slate-500">
-                  <span class="font-medium">{post.frontmatter.author}</span>
-                  <span class="mx-2">•</span>
-                  <time datetime={post.frontmatter.date}>
-                    {formatDate(post.frontmatter.date)}
-                  </time>
-                </div>
-              </header>
-
-              <div class="flex items-center justify-between">
-                <a
-                  href={post.url}
-                  class="inline-flex items-center font-semibold text-lime-700 hover:text-lime-800"
-                >
-                  Read Article
-                  <svg
-                    class="ml-2 h-4 w-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
+        posts.map((post, i) => (
+          <article
+            id={`article-${i}`}
+            class="group overflow-hidden rounded-xl border border-slate-100 bg-white p-8 shadow-lg hover:shadow-xl"
+          >
+            <header class="article-header mb-4">
+              <H2>
+                <a href={post.url} class="block">
+                  {post.frontmatter.title}
                 </a>
-                <div class="flex gap-2">
-                  {post.frontmatter.tags.map((tag: string) => (
-                    <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-700">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+              </H2>
+              <div class="flex items-center text-sm text-slate-500">
+                <span class="font-medium">{post.frontmatter.author}</span>
+                <span class="mx-2">•</span>
+                <time datetime={post.frontmatter.date}>
+                  {formatDate(post.frontmatter.date)}
+                </time>
+              </div>
+            </header>
+
+            <div class="flex items-center justify-between">
+              <a
+                href={post.url}
+                class="inline-flex items-center font-semibold text-lime-700 hover:text-lime-800"
+              >
+                Read Article
+                <svg
+                  class="ml-2 h-4 w-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </a>
+              <div class="flex gap-2">
+                {post.frontmatter.tags.map((tag: string) => (
+                  <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-700">
+                    {tag}
+                  </span>
+                ))}
               </div>
             </div>
           </article>
