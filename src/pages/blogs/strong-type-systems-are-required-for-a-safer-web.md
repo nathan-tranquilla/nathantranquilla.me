@@ -2,7 +2,7 @@
 layout: ../../layouts/Blog.astro
 title: Strong Type Systems Are Required For A Safer Web
 author: Nathan Tranquilla
-date: "2025-10-09"
+date: "2025/10/08"
 tags: ["Type Safety"]
 ---
 

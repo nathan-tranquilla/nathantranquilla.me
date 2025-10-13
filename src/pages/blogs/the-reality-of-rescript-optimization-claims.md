@@ -2,7 +2,7 @@
 layout: ../../layouts/Blog.astro
 title: The Reality Of ReScript Optimization Claims
 author: Nathan Tranquilla
-date: "2025-10-08"
+date: "2025/10/01"
 tags: ["ReScript"]
 ---
 
