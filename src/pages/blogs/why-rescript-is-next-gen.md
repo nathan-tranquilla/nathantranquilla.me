@@ -16,9 +16,9 @@ Sometimes, between each generation of languages, you need an intermediary step t
 
 ### ReScript
 
-ReScript is a _**Next Gen Web Dev**_ language. It fixes the problems of the past while feeling familiar to JavaScript and TypeScript developers. Where TypeScript, with its compromises, fails to bring safety to JavaScript, ReScript succeeds. Its type system is strong and completes what TypeScript lacks, yet it remains familiar with strong type inference and excellent React support. 
+ReScript is a _**Next-Gen Web Dev**_ language. It fixes the problems of the past while feeling familiar to JavaScript and TypeScript developers. Where TypeScript, with its compromises, fails to bring safety to JavaScript, ReScript succeeds. Its type system is strong and completes what TypeScript lacks, yet it remains familiar with strong type inference and excellent React support. 
 
-There are four principles that define _*Next Gen Web Dev*_ languages:
+There are four principles that define _*Next-Gen Web Dev*_ languages:
 
 * **Strong Type System**: Enables web development to deliver robust applications with confidence
 * **Language Heritage**: Maintains a strong connection to the past while addressing familiar concerns
@@ -27,13 +27,13 @@ There are four principles that define _*Next Gen Web Dev*_ languages:
 
 ReScript satisfies each of these principles:
 
-* **Fixes gaps in TypeScript's type system** - If you'd like to read about this in detail, see [5 Ways ReScript Fixes TypeScript](/blogs/5-ways-rescript-fixes-typescript)
-* **Connected to the past** - It has excellent type inference, which makes it feel like vanilla JavaScript. ReScript continues JavaScript's functional paradigm and improves upon it. The `Belt` utility library provides functional tools, while treating constructs like `if` and `switch` as expressions rather than statements creates more predictable code flow.
-* **Fully supports modern React** - Complete support for [React versions (>= v18.0)](https://rescript-lang.org/docs/react/latest/introduction)
-* **Enables depth-first adoption** - Unlike TypeScript's breadth-first approach, ReScript can be incorporated incrementally. You can try it out by writing vanilla ReScript code for core functions, utilities, or state management (like Redux), or by writing React components and incorporating them one by one 
+* **Fixes gaps in TypeScript's type system**: If you'd like to read about this in detail, see [5 Ways ReScript Fixes TypeScript](/blogs/5-ways-rescript-fixes-typescript)
+* **Connected to the past**: It has excellent type inference, which makes it feel like vanilla JavaScript. ReScript continues JavaScript's functional paradigm and improves upon it. The `Belt` utility library provides functional tools, while treating constructs like `if` and `switch` as expressions rather than statements creates more predictable code flow.
+* **Fully supports modern React**: Complete support for [React versions (>= v18.0)](https://rescript-lang.org/docs/react/latest/introduction)
+* **Enables depth-first adoption**: Unlike TypeScript's breadth-first approach, ReScript can be incorporated incrementally. You can try it out by writing vanilla ReScript code for core functions, utilities, or state management (like Redux), or by writing React components and incorporating them one by one 
 
-Among _*Next Gen Web Dev*_ candidates for client-side development, no other contender scores well across all four of these principles like ReScript does. 
+Among _*Next-Gen Web Dev*_ candidates for client-side development, no other contender scores well across all four of these principles like ReScript does. 
 
 ---
 
-**Ready to embrace _Next Gen Web Dev_ delopment in your projects?** Whether you're starting fresh or upgrading an existing project to align with the future of web development, my ReScript expertise can guide your transition. <a href="/services" target="_blank" rel="noopener noreferrer">Schedule a consultation to explore how ReScript can transform your development experience →</a>
+**Ready to embrace _Next-Gen Web Dev_ delopment in your projects?** Whether you're starting fresh or upgrading an existing project to align with the future of web development, my ReScript expertise can guide your transition. <a href="/services" target="_blank" rel="noopener noreferrer">Schedule a consultation to explore how ReScript can transform your development experience →</a>
