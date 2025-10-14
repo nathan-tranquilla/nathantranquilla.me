@@ -28,7 +28,7 @@ There are four principles that define _*Next Gen Web Dev*_ languages:
 ReScript satisfies each of these principles:
 
 * **Fixes gaps in TypeScript's type system** - If you'd like to read about this in detail, see [5 Ways ReScript Fixes TypeScript](/blogs/5-ways-rescript-fixes-typescript)
-* **Feels like JavaScript and TypeScript** - It has excellent type inference, which is why it often feels like vanilla JavaScript
+* **Feels like JavaScript and TypeScript** - It has excellent type inference, which makes it feel like vanilla JavaScript. ReScript continues JavaScript's functional paradigm and improves upon it. The `Belt` utility library provides functional tools, while treating constructs like `if` and `switch` as expressions rather than statements creates more predictable code flow.
 * **Fully supports modern React** - Complete support for [React versions (>= v18.0)](https://rescript-lang.org/docs/react/latest/introduction)
 * **Enables depth-first adoption** - Unlike TypeScript's breadth-first approach, ReScript can be incorporated incrementally. You can try it out by writing vanilla ReScript code for core functions, utilities, or state management (like Redux), or by writing React components and incorporating them one by one 
 
