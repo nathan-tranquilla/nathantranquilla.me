@@ -5,7 +5,7 @@ author: Nathan Tranquilla
 date: "2025/10/22"
 tags: []
 ---
-I have witnessed the evolution of web development for more than a decade, which has given me insight into web development trends that I want to share with you. This perspective can help you navigate your path forward towards a more stable and maintainable next-gen web application.
+I have witnessed the evolution of web development for more than a decade, which has given me insight into web development trends that I want to share with you. The landscape is changing rapidly right now, people are rethinking TypeScript, and this perspective can help you navigate your path forward beyond TypeScript and towards a more stable and maintainable next-gen web application.
 
 Modern web development has been dominated by the growth of JavaScript. Its footprint used to be small, served with some PHP. Then PHP with a little jQuery. But soon the demands of the modern web would outgrow what jQuery could provide. Then came the emergence of fledgling UI frameworks like Backbone, which brought some organization and structure to development. Then Angular, React, and others. 
 
