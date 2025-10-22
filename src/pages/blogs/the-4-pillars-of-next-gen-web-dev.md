@@ -7,7 +7,7 @@ tags: []
 ---
 I have witnessed the evolution of web development for more than a decade, which has given me insight into web development trends that I want to share with you. This perspective can help you navigate your path forward towards a stable and maintainable next-gen web application.
 
-Modern web development has been overshadowed by JavaScript. Its footprint used to be small, served with some PHP. Then PHP with a little jQuery. But soon the demands of the modern web would outgrow what jQuery could provide. Then came the emergence of fledgling UI frameworks like Backbone, which brought some organization and structure to development. Then Angular, React, and others. 
+Modern web development has been dominated by the growth of JavaScript. Its footprint used to be small, served with some PHP. Then PHP with a little jQuery. But soon the demands of the modern web would outgrow what jQuery could provide. Then came the emergence of fledgling UI frameworks like Backbone, which brought some organization and structure to development. Then Angular, React, and others. 
 
 JavaScript seems like it is here to stay - at least for the next little while. Each iteration has solved a problem, but also hints at what will be next. I can see the trends and I believe the next generation of web development languages will be selected based on these 4 solid pillars. 
 
