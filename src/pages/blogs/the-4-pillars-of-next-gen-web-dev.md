@@ -5,7 +5,7 @@ author: Nathan Tranquilla
 date: "2025/10/22"
 tags: []
 ---
-I have witnessed the evolution of web development for more than a decade, which has given me insight into web development trends that I want to share with you. This perspective can help you navigate your path forward towards a stable and maintainable next-gen web application.
+I have witnessed the evolution of web development for more than a decade, which has given me insight into web development trends that I want to share with you. This perspective can help you navigate your path forward towards a more stable and maintainable next-gen web application.
 
 Modern web development has been dominated by the growth of JavaScript. Its footprint used to be small, served with some PHP. Then PHP with a little jQuery. But soon the demands of the modern web would outgrow what jQuery could provide. Then came the emergence of fledgling UI frameworks like Backbone, which brought some organization and structure to development. Then Angular, React, and others. 
 
@@ -34,12 +34,12 @@ Next-Gen Web Dev languages must fix the problems with the current language, but 
 
 It's important to understand how languages evolve; they give clues of their deficiencies by adding features that attempt to solve them. For example, TypeScript brought a stronger type system to JavaScript, because JavaScript developers wanted more stable, maintainable applications. JavaScript also saw the addition of functional libraries like lodash, underscore, and frameworks like React, because JavaScript developers wanted more mathematical certainty in their applications, and simpler reasoning. 
 
-Next-Gen Web Dev languages will have a strong type system that fixes the problems with the current language, but also feels familiar. But it's not complete without being ready for the web. 
+Next-Gen Web Dev languages will have a strong type system that fixes the problems of their parent language, but also feel familiar. But they're not complete without being ready for the web. 
 
 ### Framework Readiness
-The web is a complex place, and without a framework to guide development, you're essentially back to the days of jQuery, where spaghetti code abounded, and each web application was broken in its own unique ways. A framework provides an opinionated way to develop web apps that matches the complexity of the modern web. This has been the power of React, Angular, Vue, and others, as it has enabled web applications to be developed in consistent ways, cross-project, cross-team, and cross-company. 
+The web is a complex place, and without a framework to guide development, you're essentially back to the days of jQuery, where spaghetti code abounded, and each web application was broken in its own unique ways. A framework provides an opinionated way to develop web apps that works for the complexity of the modern web. This has been the power of React, Angular, Vue, and others, as it has enabled web applications to be developed in consistent ways, cross-project, cross-team, and cross-company. 
 
-A Next-Gen Web Dev language will either have a battle-tested framework or provide bindings to existing frameworks. But the transition to Next-Gen Web Dev should be an evolution out of your current state.
+A Next-Gen Web Dev language will either have a battle-tested framework or provide bindings to existing frameworks. But the transition to Next-Gen Web Dev should be gradual.
 
 ### Incremental Adoption
 The path towards Next-Gen Web Dev should be an evolution. This is to manage your risk, learn from mistakes, and gauge the success. Frameworks like Elm have provided insights into the industry that have proven beneficial. For example, Elm provided the insight that the view should be the outcome of changes to the state model. This concept was adopted enthusiastically by the creators of Redux, which continued to borrow other concepts from Elm like immutability, and the functional style. But Elm is not easily integrated into existing web applications, and so has served as more of an ideal to aspire to. On the other hand, languages like ReScript and PureScript compile to JavaScript, which makes incremental adoption possible, and enables the evolution towards Next-Gen Web Dev.
