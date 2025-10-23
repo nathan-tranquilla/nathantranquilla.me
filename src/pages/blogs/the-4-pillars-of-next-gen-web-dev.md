@@ -9,7 +9,7 @@ I have witnessed the evolution of web development for more than a decade, which 
 
 Modern web development has been dominated by the growth of JavaScript. Its footprint used to be small, served with some PHP. Then PHP with a little jQuery. But soon the demands of the modern web would outgrow what jQuery could provide. Then came the emergence of fledgling UI frameworks like Backbone, which brought some organization and structure to development. Then Angular, React, and others. 
 
-JavaScript seems like it is here to stay. But now there are many languages that compile to JavaScript or WebAssembly, and they're challenging TypeScript. I believe the next generation of web development languages will be selected based on these 4 criteria. 
+JavaScript seems like it is here to stay. But now there are many languages with strong type systems that compile to JavaScript or WebAssembly that are challenging TypeScript's dominance. I believe the next generation of web development languages will be selected based on these 4 criteria. 
 
 
 ### Strong Type System
