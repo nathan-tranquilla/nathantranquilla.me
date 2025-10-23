@@ -6,7 +6,7 @@ date: "2025/09/24"
 tags: ["ReScript"]
 ---
 
-ReScript is like TypeScript except better. Some say that ReScript is what JavaScript would have been if it had more time in the oven. Its type system, which is the focus of this post, is much more complete than TypeScript's, making it a great choice as a Next Generation Web Development language. The goal of _**Next Gen Web Dev**_ is to make web apps more reliable and robust, making the process safer for developers, and the experience of the web more enjoyable. Here are 5 problematic areas in TypeScript's type system that are fixed in ReScript.
+ReScript is like TypeScript except better. Some say that ReScript is what JavaScript would have been if it had more time in the oven. Its type system, which is the focus of this post, is much more complete than TypeScript's, making it a great choice as a Next Generation Web Development language. The goal of _**Next-Gen Web Dev**_ is to make web apps more reliable and robust, making the process safer for developers, and the experience of the web more enjoyable. Here are 5 problematic areas in TypeScript's type system that are fixed in ReScript.
 
 ### Unsafe Array Access
 
@@ -168,7 +168,7 @@ Js.log(area(s))  // Outputs: 16.0
 
 These five examples highlight a fundamental difference in philosophy. TypeScript aims to add static typing to JavaScript while maintaining compatibility and familiar syntax. ReScript, on the other hand, prioritizes correctness and safety above all else.
 
-For **Next Gen Web Development**, this distinction is crucial. We're not just looking for better tooling—we're looking for languages that eliminate entire classes of bugs before they reach production. ReScript delivers on this promise:
+For **Next-Gen Web Development**, this distinction is crucial. We're not just looking for better tooling—we're looking for languages that eliminate entire classes of bugs before they reach production. ReScript delivers on this promise:
 
 - **Zero runtime exceptions** from null/undefined access
 - **Guaranteed array bounds safety**
@@ -178,7 +178,7 @@ For **Next Gen Web Development**, this distinction is crucial. We're not just lo
 
 While TypeScript represents an improvement over plain JavaScript, ReScript represents the future: a language designed from the ground up for reliability, safety, and developer confidence. For teams serious about building robust web applications, ReScript offers the type safety guarantees that TypeScript simply cannot provide.
 
-The choice is clear: continue managing JavaScript's chaos with increasingly complex tooling, or embrace a language that eliminates the chaos entirely. That's the Next Gen Web Development difference.
+The choice is clear: continue managing JavaScript's chaos with increasingly complex tooling, or embrace a language that eliminates the chaos entirely. That's the Next-Gen Web Development difference.
 
 ---
 

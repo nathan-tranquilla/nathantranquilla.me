@@ -20,7 +20,7 @@ This is elborated upon in the next paragraph
 
 These statements sound impressive, but they're surprisingly vague. What exactly does "friendly to optimizations by default" mean? Does ReScript automatically rewrite your code to use the fastest JavaScript patterns? Does it somehow magically avoid common performance pitfalls?
 
-As someone committed to **Next Gen Web Development**, I believe in evidence-based decision making. Marketing claims need to be backed by measurable results. So I decided to put ReScript's optimization promises to the test with real benchmarks.
+As someone committed to **Next-Gen Web Development**, I believe in evidence-based decision making. Marketing claims need to be backed by measurable results. So I decided to put ReScript's optimization promises to the test with real benchmarks.
 
 ### The Setup
 
@@ -342,9 +342,9 @@ After seeing these results, I revisited the ReScript documentation more carefull
 
 Let me be clear: **ReScript isn't generating magically optimized JavaScript.** The performance benefits, when they exist, come from ReScript's type system nudging you toward predictable, monomorphic code patterns that V8 optimizes well. When you're forced to be explicit about types, you're less likely to write the kind of shape-shifting code that breaks V8's assumptions.
 
-### The Next Gen Web Development Perspective
+### The Next-Gen Web Development Perspective
 
-As advocates for **Next Gen Web Development**, we need to be honest about our tools' capabilities. ReScript offers significant benefits:
+As advocates for **Next-Gen Web Development**, we need to be honest about our tools' capabilities. ReScript offers significant benefits:
 
 - **Type safety** eliminates entire classes of runtime errors
 - **Functional programming** paradigms lead to more predictable code
@@ -362,7 +362,7 @@ But performance optimization isn't automatically one of them. **You still need t
 
 ReScript's optimization claims are **technically true but misleading**. The type system does encourage some patterns that work well with JavaScript engines, but it's not doing the performance work for you.
 
-**For Next Gen Web Development, this is actually good news.** We don't want tools that hide performance complexity behind magical optimizations—we want tools that help us write better code while still giving us control over performance-critical decisions.
+**For Next-Gen Web Development, this is actually good news.** We don't want tools that hide performance complexity behind magical optimizations—we want tools that help us write better code while still giving us control over performance-critical decisions.
 
 ReScript delivers on its primary promise: **type safety and functional programming for JavaScript.** The performance benefits, when they occur, are a pleasant side effect of good software engineering practices, not compiler magic.
 
@@ -370,6 +370,6 @@ If you're choosing ReScript, choose it for type safety, not performance optimiza
 
 ---
 
-_Building the future of web development means making informed decisions based on evidence, not marketing claims. ReScript is a valuable tool in the Next Gen Web Dev toolkit—just not for the reasons its documentation suggests._
+_Building the future of web development means making informed decisions based on evidence, not marketing claims. ReScript is a valuable tool in the Next-Gen Web Dev toolkit—just not for the reasons its documentation suggests._
 
 _[Schedule a consultation →](/consultation)_

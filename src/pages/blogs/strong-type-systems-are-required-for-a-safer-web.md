@@ -28,9 +28,9 @@ These aren't edge cases—they're fundamental limitations that make TypeScript u
 
 ### What Strong Type Systems Provide
 
-The limitations above aren't inevitable—they're artifacts of TypeScript's compromise approach. At the core of Next Gen Web Dev are languages with truly strong type systems that eliminate these problems entirely.
+The limitations above aren't inevitable—they're artifacts of TypeScript's compromise approach. At the core of Next-Gen Web Dev are languages with truly strong type systems that eliminate these problems entirely.
 
-A Next Gen Web language will have:
+A Next-Gen Web language will have:
 
 - **Type Safety**: Invalid operations are caught at compile-time.
 
@@ -52,13 +52,13 @@ A Next Gen Web language will have:
 
 ### Beyond Type Systems
 
-While strong type systems are foundational to safer web development, they're only one component of the **Next Gen Web Dev** equation. A truly viable language for modern web development must excel across multiple dimensions:
+While strong type systems are foundational to safer web development, they're only one component of the **Next-Gen Web Dev** equation. A truly viable language for modern web development must excel across multiple dimensions:
 
 **Language Lineage** matters because developers adopt languages that feel familiar while solving critical problems. The most successful transitions happen when languages provide recognizable syntax with fundamental improvements—like how TypeScript's popularity proves developers want JavaScript with better safety guarantees.
 
-**Framework Readiness** determines real-world viability. A language with perfect type safety but no ecosystem dies in academia. Next Gen languages need mature frameworks, robust libraries, and full-stack solutions that rival traditional web development stacks.
+**Framework Readiness** determines real-world viability. A language with perfect type safety but no ecosystem dies in academia. Next-Gen languages need mature frameworks, robust libraries, and full-stack solutions that rival traditional web development stacks.
 
-**Incremental Adoption** enables practical migration strategies. Unlike TypeScript's breadth-first approach that adds surface-level types everywhere, Next Gen languages should support depth-first adoption—allowing teams to achieve complete type safety in critical modules while legacy code continues running unchanged.
+**Incremental Adoption** enables practical migration strategies. Unlike TypeScript's breadth-first approach that adds surface-level types everywhere, Next-Gen languages should support depth-first adoption—allowing teams to achieve complete type safety in critical modules while legacy code continues running unchanged.
 
 Strong type systems provide the mathematical foundation for reliable software, but **language familiarity**, **ecosystem maturity**, and **migration practicality** determine whether developers can actually build the safer web that users deserve.
 
@@ -66,4 +66,4 @@ The future of web development isn't just about better types—it's about better 
 
 ---
 
-_**Tired of debugging production crashes that strong types could prevent?** Let's discuss how to transition your team to Next Gen Web Development languages that guarantee safety at compile-time. [Schedule a consultation →](/consultation)_
+_**Tired of debugging production crashes that strong types could prevent?** Let's discuss how to transition your team to Next-Gen Web Development languages that guarantee safety at compile-time. [Schedule a consultation →](/consultation)_
