@@ -10,7 +10,7 @@ ReScript is the best of JavaScript and TypeScript combined. This is because it f
 
 TypeScript has done well to warm JavaScript developers up to strong type systems. Now that people are rethinking TypeScript, there is an opportunity to make the natural jump from a transitionary language like TypeScript to a strongly typed language that is a natural and compelling extension from both JavaScript and TypeScript. That option is ReScript.
 
-In the example we go through, there are 7 similarities between ReScript and its parents, JavaScript and TypeScript, which make it likely to be adopted. But first, let's introduce the example.
+In this example, I note 7 similarities between ReScript and its parents, JavaScript and TypeScript, which make it likely to be adopted:
 
 ### Fetching Data, Combining Results
 
