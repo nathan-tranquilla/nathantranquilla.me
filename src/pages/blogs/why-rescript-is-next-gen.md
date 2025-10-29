@@ -36,4 +36,4 @@ Among _*Next-Gen Web Dev*_ candidates for client-side development, no other cont
 
 ---
 
-**Ready to embrace _Next-Gen Web Dev_ development in your projects?** Whether you're starting fresh or upgrading an existing project to align with the future of web development, my ReScript expertise can guide your transition. <a href="/services" target="_blank" rel="noopener noreferrer">Schedule a consultation to explore how ReScript can transform your development experience →</a>
+[Sign up to my newsletter](https://nathantranquilla.kit.com/0d8a3f84b7) to get more Next-Gen Web Dev insights!

@@ -370,6 +370,4 @@ If you're choosing ReScript, choose it for type safety, not performance optimiza
 
 ---
 
-_Building the future of web development means making informed decisions based on evidence, not marketing claims. ReScript is a valuable tool in the Next-Gen Web Dev toolkit—just not for the reasons its documentation suggests._
-
-_[Schedule a consultation →](/consultation)_
+[Sign up to my newsletter](https://nathantranquilla.kit.com/0d8a3f84b7) to get more Next-Gen Web Dev insights!

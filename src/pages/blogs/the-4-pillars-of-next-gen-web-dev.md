@@ -52,4 +52,4 @@ In the near term, these 4 pillars form a solid foundation for you to advance int
 
 ---
 
-**Ready to build or evolve your web applications based on all four pillars of Next-Gen Web Development?** Whether you're evaluating strongly-typed languages, planning an incremental migration strategy, or looking to modernize your development approach, my expertise can guide your transformation. <a href="/services" target="_blank" rel="noopener noreferrer">Schedule a consultation to discover how Next-Gen Web Dev can elevate your projects →</a>
+[Sign up to my newsletter](https://nathantranquilla.kit.com/0d8a3f84b7) to get more Next-Gen Web Dev insights!

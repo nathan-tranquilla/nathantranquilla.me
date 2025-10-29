@@ -66,4 +66,4 @@ The future of web development isn't just about better types—it's about better 
 
 ---
 
-_**Tired of debugging production crashes that strong types could prevent?** Let's discuss how to transition your team to Next-Gen Web Development languages that guarantee safety at compile-time. [Schedule a consultation →](/consultation)_
+[Sign up to my newsletter](https://nathantranquilla.kit.com/0d8a3f84b7) to get more Next-Gen Web Dev insights!
