@@ -293,7 +293,8 @@ In this way, ReScript satisfies one of the 4 pillars of Next-Gen Web Dev: Langua
 
 ---
 
-If you would like to hear more about ReScript and other Next-Gen Web Dev languages, then subscribe to my newsletter to get notified. 
+[Sign up to my newsletter](https://nathantranquilla.kit.com/0d8a3f84b7) to get more Next-Gen Web Dev insights!
+
 
 
 
