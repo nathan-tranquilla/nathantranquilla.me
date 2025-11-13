@@ -6,11 +6,11 @@ date: "2025/11/11"
 tags: ["ReScript"]
 ---
 
-As a professional web developer, I have watched web development evolve from JavaScript to TypeScript and was eagerly awaiting what comes next. When I investigated ReScript, it clicked for me; this is just like JavaScript and TypeScript combined, with a reimagined type system! Here are 3 ways you can evolve your React application beyond TypeScript today!
+As a professional web developer, I have watched web development evolve from JavaScript to TypeScript and have been eagerly awaiting what comes next. When I investigated ReScript, it clicked for me—this is just like JavaScript and TypeScript combined, with a reimagined type system! Here are 3 ways you can evolve your React application beyond TypeScript today!
 
 ### What is ReScript?
 
-ReScript is a web development language that has emerged from the OCaml ecosystem. It has the familiarity of JavaScript and TypeScript with excellent type inference, so you don't have to annotate everything with types. It compiles to safe JavaScript code, making it easily usable in web development projects. It also has first-class bindings for React both on the server and client. With that context, let's look at the first way you can evolve your React app beyond TypeScript. 
+ReScript is a web development language that has emerged from the OCaml ecosystem. It has the familiarity of JavaScript and TypeScript with excellent type inference, so you don't have to annotate everything with types. It compiles to safe JavaScript code, making it easily usable in web development projects. It also has first-class bindings for React, both on the server and client. With that context, let's look at the first way you can evolve your React app beyond TypeScript. 
 
 **Note**: If you want to know how to integrate ReScript and its React bindings into your project and build system, check out [this video](https://youtu.be/xWsPcGocgNI?t=142&si=aCqqDMMaO92t9_h3).
 
@@ -20,11 +20,10 @@ The simplest way to evolve your application is to add a new ReScript React compo
 
 **A. Creating a ReScript React Component**
 ```js
-
 // ./src/components/User.res
 
 @react.component
-let make = (~username: string) => {
+let make = (~username) => {
 
   <span>
     {React.string(username)}
@@ -32,7 +31,9 @@ let make = (~username: string) => {
 } 
 ```
 
-Then simply import and use in your TypeScript or JavaScript file:
+Let's go over some syntax. First, we have the `@react.component` annotation, which creates a submodule with `make` and `props` type. We use this annotation to make things simple. Second, note that JSX syntax is used to create our React element. Third, `React.string` is of type `React.element`—strings must be converted to `React.element` through the `React.string` method. The same is true for `React.int`, `React.float`, and `React.array`. Finally, props are labeled arguments in ReScript. In this case, we've added `username`. Thanks to type inference, we did not need to specify the type of the prop, but we could have easily done so: `~username: string`.
+
+Simply import and use it in your TypeScript or JavaScript file:
 
 ```js
 import { make as User } from 'components/User.res.mjs'
@@ -72,13 +73,13 @@ let make = (~username: string, ~id: string) => {
 } 
 ```
 
-Though real-world applications are more complex, the strategy remains the same. Here's a deep dive on the subject: <TODO: video link here>
+Though real-world applications are more complex, the strategy remains the same. Here is a video showing an example of mixing TypeScript and ReScript components within the same app: <TODO: video link here>
 
 ### 2. Upgrade Your Redux Reducers
 
-You don't have to write React code with ReScript. You can take advantage of ReScript's improved ergonomics to write better logic. ReScript has improved the ergonomics of JavaScript's `switch` and `if` statements. In ReScript, `switch` and `if` are expressions that evaluate to values that you can bind directly from the expressions, and the `switch` expression is truly exhaustive without tweaking settings.
+You don't have to write React code with ReScript. You can take advantage of ReScript's improved ergonomics to write better logic. ReScript has improved the ergonomics of JavaScript's `switch` and `if` statements. In ReScript, `switch` and `if` are expressions that evaluate to values, which you can bind directly from the expressions, and the `switch` expression is truly exhaustive without tweaking settings.
 
-Let's say your reducer switches on the Redux action type. You can write a function in ReScript and import it in your Redux code for use inside the reducer.
+Let's say your reducer switches on the Redux action type. You can write a function in ReScript and import it into your Redux code for use inside the reducer.
 
 ```js
 // ./src/reducers/userReducerLogic.res
@@ -166,7 +167,7 @@ export {
 
 ### 3. Handle Complex Data Types
 
-You can also use ReScript to solve those tough-to-represent scenarios that often occur when parsing data. Here's an example of a heterogeneous array—a tough problem to solve in TypeScript—and how ReScript handles parsing those elements.
+You can also use ReScript to solve those tough-to-represent scenarios that often occur when parsing data. Here's an example of a heterogeneous array—a tough problem to solve in TypeScript—and how ReScript handles parsing these elements.
 
 ```js
 // ReScript version - ./src/utils/processItems.res
@@ -218,7 +219,7 @@ export {
 }
 ```
 
-Just by examining the output, we can see that the interop between this generated code and JavaScript code is seamless; this function can be used directly in TypeScript or JavaScript codebases as-is.
+By examining the output, we can see that the interop between this generated code and JavaScript code is seamless—this function can be used directly in TypeScript or JavaScript codebases as-is.
 
 **Note:** If you have a keen eye, you might have noticed some limitations: there's no way to distinguish between two unboxed types at runtime (e.g., `String1(string) | String2(string)`). 
 
