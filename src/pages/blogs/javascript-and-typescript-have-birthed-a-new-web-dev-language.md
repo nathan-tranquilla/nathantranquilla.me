@@ -2,7 +2,7 @@
 layout: ../../layouts/Blog.astro
 title: JavaScript And TypeScript Have Birthed A New Web-Dev Language
 author: Nathan Tranquilla
-date: "2025/10/29"
+date: "2025/12/02"
 tags: ["Next-Gen Web Dev"]
 ---
 
@@ -23,7 +23,7 @@ from project to project. Developers can carry assumptions about how TypeScript "
 one project to another, which is dangerous, since type systems are meant to eliminate 
 assumptions about how code works. 
 
-This means TypeScript is _unsound_; this is how TypeScript describes itself. This means that 
+TypeScript is also _unsound_; this is how TypeScript describes itself. This means that 
 its type system can't determine if some operations are safe at compile time. That's 
 unfortunate, because that is essentially the point of having a type system—to have certainty 
 about the soundness of your code before it goes live. TypeScript's gradual nature creates 
