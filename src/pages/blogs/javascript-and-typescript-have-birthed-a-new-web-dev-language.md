@@ -6,7 +6,7 @@ date: "2025/10/29"
 tags: ["Next-Gen Web Dev"]
 ---
 
-JavaScript and TypeScript have birthed a new web development language. This new language fixes the problems of TypeScript while maintaining the feel of JavaScript. First, I will discuss how TypeScript's goal of _gradual adoption_, as this will help us understand the limitations of TypeScript and why they exist. Then I will show how this new language is a huge improvement, providing a completely sound type system. Lastly, I will show you how you can get started today. 
+JavaScript and TypeScript have birthed a new web development language. This new language fixes the problems of TypeScript while maintaining the feel of JavaScript. First, I will discuss TypeScript's goal of _gradual adoption_, as this will help us understand the limitations and why they exist. Then I will show how this new language is a huge improvement, providing a completely sound type system. Lastly, I will show you how you can get started today. 
 
 ### Gradual Adoption
 TypeScript is described as _gradual_. It's a superset of JavaScript that comes with settings that allow for its adoption with varying degrees of typing in JavaScript codebases. This was a game-changer for JavaScript, as TypeScript could be applied on top of existing JavaScript codebases to provide types at compile time. Unfortunately, _gradual_ adoption has made the experience of type safety different for each codebase, creating an inconsistent experience from project to project. Developers can carry assumptions about how TypeScript "works" from one project to another, which is dangerous, since type systems are meant to eliminate assumptions about how code works. 
@@ -15,33 +15,7 @@ This means TypeScript is _unsound_; this is how TypeScript describes itself. Thi
 
 ### Unsoundness in TypeScript
 
-1. Structural Typing
-
-TypeScript does not distinguish nominally between types. This has been referred to as _duck typing_; "if it walks like a duck and quacks like a duck, it's a duck" as the saying goes. This can lead to all kinds of semantic errors. 
-
-Say you have an object representing `Debt` and another object representing `Credit`. There are no settings in TypeScript that we can apply to solve this problem. 
-
-```typescript
-type Debt = {
-  userId: string,
-  balance: number
-}
-
-type Credit = {
-  userId: string,
-  balance: number
-}
-
-function processCredit(credit: Credit) {
-  console.log(`User ${credit.userId} has $${credit.balance} available to spend`)
-}
-
-// This compiles but is semantically wrong!
-let debt: Debt = { userId: "12e3r4", balance: 1234.59 }
-processCredit(debt) 
-```
-
-2. Unsafe Array Access
+1. Unsafe Array Access
 
 TypeScript has a setting that prevents _some_ but not all unsafe array access (`--noUncheckedIndexedAccess`). However, when using a dynamic index to access an array, access remains unsafe. Here is an example that is simple to understand; one need only imagine that `elements` is a list of users, and `i` is a real index (not randomly generated) to see how this becomes problematic. 
 
@@ -51,7 +25,7 @@ let elements = [1,2,3,4,5]
 console.log(elements[i]) 
 ```
 
-3. Exhaustive Type-Checking
+2. Exhaustive Type-Checking
 
 TypeScript has exhaustive type-checking, with an _asterisk_: you have to have the correct settings and you have to code it correctly for the compiler to reveal unmatched cases. This involves specifying a `default` case and using the `never` type. Neither is required for you to write fully functioning, compiling TypeScript code. 
 
@@ -85,21 +59,39 @@ const move2 = (direction: Direction) => {
 
 If we assume the only two directions will ever be `up` and `down`, then we'll be completely surprised one day when we add `right` and `left`. The code will compile, but we'll find it completely broken. This is an example where gradual typing and unsoundness overlap to produce a bug. 
 
-4. Null Safety
+3. Null Safety
 
 TypeScript manages the presence of null or undefined in JavaScript. Due to gradual typing, there are many ways in which null can resurface at runtime, depending on your settings. Whether it's through the use of the `any` type or through assertions such as the non-null assertion operator (`!`), the presence of `null` remains a threat that TypeScript has not eliminated. 
 
 ### The Birth of a New Language
 
-There is a new language that is completely sound and as lightweight as JavaScript that solves all of the above problems. It is lightweight because its strong type inference does not require you to annotate your code very much, or at all. It is so syntactically similar to JavaScript that you might forget you're not writing JavaScript. Let me go through some of what makes this language great!
+There is a new language that is completely sound and as lightweight as JavaScript that solves all of the above problems. It is lightweight because its strong type inference does not require you to annotate your code very much, or at all. It is so syntactically similar to JavaScript that you might forget you're not writing JavaScript. This new language is ReScript!
 
-1. Compiles to JavaScript
+*Familiar Syntax*
 
-It compiles to JavaScript in your codebase, which gives it great interop with JavaScript. Interop with TypeScript is easy as well, as you can go so far as to generate TypeScript types from its source code.
+ReScript has been designed to look a lot like JavaScript. It accomplishes this through its strong type inference, which allows you to annotate the code as little or as much as you like, often leaving code that [resembles JavaScript](https://rescript-lang.org/docs/manual/overview#comparison-to-js).
 
-2. Null Safety
+*Interoperability*
 
-Null doesn't exist in this language; you manage the presence or absence of values through the `option` type. TypeScript's strategy is to manage the reality of null in JavaScript codebases; this language's strategy is to remove null altogether while generating null-safe JavaScript code. 
+ReScript not only looks like JavaScript, but compiles to JavaScript in your codebase, which gives it great interoperability with JavaScript. Any package that you use in JavaScript can be [imported](https://rescript-lang.org/docs/manual/import-from-export-to-js) into your ReScript. The ReScript source code binds to [mocha](https://github.com/rescript-lang/rescript/blob/1b3f523b0e2d65b1e37387989e23cc222bb85015/tests/tests/src/mocha.res) and Node [assertions](https://github.com/rescript-lang/rescript/blob/1b3f523b0e2d65b1e37387989e23cc222bb85015/tests/tests/src/node_assert.res) for its test suite. But more importantly, it has bindings for React.
+
+*Bindings For React*
+
+The core team maintains first-class [bindings](https://rescript-lang.org/docs/react/introduction) for React, and supports JSX. This makes ReScript ready for the web today. When ReScript compiles to JavaScript, the JSX is preserved so that you can leverage your existing toolchain.
+
+*Fast Compiler*
+
+When demonstrating TypeScript's deficiencies around exhaustiveness checking, we also saw that JavaScript allows you to write switch statements in a variety of ways. In ReScript, there is one way to write a switch statement. This is intentional, as ReScript is a curated subset of JavaScript, which they explicitly correlate with the speed of the compiler. 
+
+*Sound type system*
+
+ReScript has a completely sound type system. This means we can have certainty about an operation's safety at compile-time. This is a stronger guarantee than TypeScript. There is no configurability, because its type system is _not gradual_. Thankfully, this means ReScript works the same for everyone, so there is a consistent experience from project to project. Let's demonstrate ReScript's strengths where TypeScript is weak. 
+
+### ReScript outshines TypeScript
+
+1. Null Safety
+
+Null doesn't exist in ReScript; you manage the presence or absence of values through the `option` type. TypeScript's strategy is to manage the reality of null in JavaScript codebases; ReScript's strategy is to remove null altogether while generating null-safe JavaScript code. 
 
 ```
 type user = {name: string, email: string}
@@ -118,9 +110,9 @@ let displayUser = (id: string) =>
   }
 ```
 
-3. Exhaustiveness Checking
+2. Exhaustiveness Checking
 
-Exhaustive checking is complete; there is no way to craft a switch statement that accidentally causes runtime errors. There are no settings to adjust to make it behave differently. It just works.
+Exhaustive checking is complete; there is no way to craft a switch statement that accidentally causes runtime errors.  There are no settings to adjust to make it behave differently. It just works.
 
 ```
 type direction = Up | Down | Left | Right
@@ -134,35 +126,11 @@ let move = (direction: direction) =>
   }
 ```
 
-4. Safe Array Access
+3. Safe Array Access
 
 No matter how you access an array element, you have to deal with the option type. It's either present or it's not. If you want to access it unsafely, it is glaringly obvious that you are doing so, as method names indicate it clearly (e.g., `getUnsafe`).
 
 
-5. Nominal Typing
+### Getting Started With ReScript Today!
 
-The problem with structural typing is improved, but not entirely removed. In TypeScript, structural typing is the default. Due to strong type inference, semantic errors can still creep in if types are not explicitly stated. However, this example is a bit exceptional, as the types are collocated in the same file. Normally this is not the case, and the type inference would work perfectly to deduce the correct type. 
-
-```
-type debt = {
-  userId: string,
-  balance: float,
-}
-
-type credit = {
-  userId: string,
-  balance: float,
-}
-
-let processCredit = (credit: credit) => {
-  Console.log(`User ${credit.userId} has $${credit.balance->Float.toString} available to spend`)
-}
-
-// Without the explicit `debt` type, this would still compile 
-let debt: debt = {userId: "12e3r4", balance: 1234.59} 
-processCredit(debt) // Fails to compile
-```
-
-### The Big Reveal
-
-This new language is called ReScript! If you want a step-by-step guide on how to get started with ReScript, check out [this video](https://youtu.be/wvjN5CIFEdU?si=fm2rjhafCMIADXbT) to see how to integrate ReScript into your codebase today.
+If you want a step-by-step guide on how to get started with ReScript, check out [this video](https://youtu.be/wvjN5CIFEdU?si=fm2rjhafCMIADXbT) to see how to integrate ReScript into your codebase today.
