@@ -2,7 +2,7 @@
 layout: ../../layouts/Blog.astro
 title: JavaScript And TypeScript Have Birthed A New Web-Dev Language
 author: Nathan Tranquilla
-date: "2025/10/29"
+date: "2025/12/02"
 tags: ["Next-Gen Web Dev"]
 ---
 
