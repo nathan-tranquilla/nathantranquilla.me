@@ -2,7 +2,7 @@
 layout: ../../layouts/Blog.astro
 title: JavaScript And TypeScript Have Birthed A New Web-Dev Language
 author: Nathan Tranquilla
-date: "2025/12/02"
+date: "2025/10/29"
 tags: ["Next-Gen Web Dev"]
 ---
 
@@ -17,13 +17,13 @@ can get started today.
 TypeScript is described as _gradually-typed_. It's a superset of JavaScript that comes with settings 
 that allow for its adoption with varying degrees of typing in JavaScript codebases. This was 
 a game-changer for JavaScript, as TypeScript could be applied on top of existing JavaScript 
-codebases to provide types at compile time. Unfortunately,  adoption has made the 
+codebases to provide types at compile time. Unfortunately, _gradual_ adoption has made the 
 experience of type safety different for each codebase, creating an inconsistent experience 
 from project to project. Developers can carry assumptions about how TypeScript "works" from 
 one project to another, which is dangerous, since type systems are meant to eliminate 
 assumptions about how code works. 
 
-TypeScript is also _unsound_; this is how TypeScript describes itself. This means that 
+This means TypeScript is _unsound_; this is how TypeScript describes itself. This means that 
 its type system can't determine if some operations are safe at compile time. That's 
 unfortunate, because that is essentially the point of having a type system—to have certainty 
 about the soundness of your code before it goes live. TypeScript's gradual nature creates 
