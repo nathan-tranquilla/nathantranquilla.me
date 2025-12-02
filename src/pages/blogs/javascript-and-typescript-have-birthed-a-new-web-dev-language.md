@@ -6,16 +6,7 @@ date: "2025/10/29"
 tags: ["Next-Gen Web Dev"]
 ---
 
-JavaScri### Getting Started With ReScript Today!
-
-ReScript represents the next evolution in JavaScript development—offering the safety and 
-reliability that TypeScript promised, but with true soundness and simplicity. As the web 
-ecosystem continues to demand higher reliability and performance, ReScript provides a clear 
-path forward without sacrificing the JavaScript feel we know and love.
-
-If you want a step-by-step guide on how to get started with ReScript, check out 
-[this video](https://youtu.be/wvjN5CIFEdU?si=fm2rjhafCMIADXbT) to see how to integrate 
-ReScript into your codebase today.d TypeScript have birthed a new web development language. This new language 
+JavaScript and TypeScript have birthed a new web development language. This new language 
 fixes the problems of TypeScript while maintaining the feel of JavaScript. First, I will 
 discuss TypeScript's goal of _gradual adoption_, as this will help us understand the 
 limitations of its type system and why they exist. Then I will show how this new language is 
@@ -26,7 +17,7 @@ can get started today.
 TypeScript is described as _gradually-typed_. It's a superset of JavaScript that comes with settings 
 that allow for its adoption with varying degrees of typing in JavaScript codebases. This was 
 a game-changer for JavaScript, as TypeScript could be applied on top of existing JavaScript 
-codebases to provide types at compile time. Unfortunately, gradual adoption has made the 
+codebases to provide types at compile time. Unfortunately,  adoption has made the 
 experience of type safety different for each codebase, creating an inconsistent experience 
 from project to project. Developers can carry assumptions about how TypeScript "works" from 
 one project to another, which is dangerous, since type systems are meant to eliminate 
