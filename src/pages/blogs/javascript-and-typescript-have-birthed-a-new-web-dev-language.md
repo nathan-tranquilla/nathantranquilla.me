@@ -23,10 +23,10 @@ a huge improvement, providing a completely sound type system. Lastly, I will sho
 can get started today. 
 
 ### Gradual Adoption
-TypeScript is described as _gradual_. It's a superset of JavaScript that comes with settings 
+TypeScript is described as _gradually-typed_. It's a superset of JavaScript that comes with settings 
 that allow for its adoption with varying degrees of typing in JavaScript codebases. This was 
 a game-changer for JavaScript, as TypeScript could be applied on top of existing JavaScript 
-codebases to provide types at compile time. Unfortunately, _gradual_ adoption has made the 
+codebases to provide types at compile time. Unfortunately, gradual adoption has made the 
 experience of type safety different for each codebase, creating an inconsistent experience 
 from project to project. Developers can carry assumptions about how TypeScript "works" from 
 one project to another, which is dangerous, since type systems are meant to eliminate 
