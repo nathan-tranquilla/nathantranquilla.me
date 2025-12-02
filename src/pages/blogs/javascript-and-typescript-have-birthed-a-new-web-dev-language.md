@@ -6,12 +6,12 @@ date: "2025/10/29"
 tags: ["Next-Gen Web Dev"]
 ---
 
-JavaScript and TypeScript have birthed a new web development language. This new language fixes the problems of TypeScript while maintaining the feel of JavaScript. First, I will discuss how TypeScript is described as _gradual_ and _unsound_, and explain what this means. I will use this to outline some of the problems with TypeScript, then show how this new language is completely sound, and finally reveal its name. 
+JavaScript and TypeScript have birthed a new web development language. This new language fixes the problems of TypeScript while maintaining the feel of JavaScript. First, I will discuss how TypeScript's goal of _gradual adoption_, as this will help us understand the limitations of TypeScript and why they exist. Then I will show how this new language is a huge improvement, providing a completely sound type system. Lastly, I will show you how you can get started today. 
 
-### How TypeScript Is Described
+### Gradual Adoption
 TypeScript is described as _gradual_. It's a superset of JavaScript that comes with settings that allow for its adoption with varying degrees of typing in JavaScript codebases. This was a game-changer for JavaScript, as TypeScript could be applied on top of existing JavaScript codebases to provide types at compile time. Unfortunately, _gradual_ adoption has made the experience of type safety different for each codebase, creating an inconsistent experience from project to project. Developers can carry assumptions about how TypeScript "works" from one project to another, which is dangerous, since type systems are meant to eliminate assumptions about how code works. 
 
-Secondly, TypeScript is described as _unsound_. This means that its type system can't determine if some operations are safe at compile time. That's unfortunate, because that is essentially the point of having a type system—to have certainty about the soundness of your code before it goes live. I need not say more about this; it's time to go through some examples. 
+This means TypeScript is _unsound_; this is how TypeScript describes itself. This means that its type system can't determine if some operations are safe at compile time. That's unfortunate, because that is essentially the point of having a type system—to have certainty about the soundness of your code before it goes live. Let's look at some sources of unsoundness in TypeScript's type system:
 
 ### Unsoundness in TypeScript
 
@@ -55,7 +55,7 @@ console.log(elements[i])
 
 TypeScript has exhaustive type-checking, with an _asterisk_: you have to have the correct settings and you have to code it correctly for the compiler to reveal unmatched cases. This involves specifying a `default` case and using the `never` type. Neither is required for you to write fully functioning, compiling TypeScript code. 
 
-Let's use the example from their documentation. Both of these functions compile but are not safe to iterate upon:
+Let's use the example from their documentation. Both of these functions compile but are not safe to iterate over:
 
 ```typescript
 type Direction = 'up' | 'down';
@@ -91,7 +91,7 @@ TypeScript manages the presence of null or undefined in JavaScript. Due to gradu
 
 ### The Birth of a New Language
 
-There is a new language that is completely sound and as light as JavaScript that solves all of the above problems. It is light because its strong type inference does not require you to annotate your code very much, or at all. It is so syntactically similar to JavaScript that you might forget you're not writing JavaScript. Let me go through some of what makes this language great!
+There is a new language that is completely sound and as lightweight as JavaScript that solves all of the above problems. It is lightweight because its strong type inference does not require you to annotate your code very much, or at all. It is so syntactically similar to JavaScript that you might forget you're not writing JavaScript. Let me go through some of what makes this language great!
 
 1. Compiles to JavaScript
 
@@ -99,7 +99,7 @@ It compiles to JavaScript in your codebase, which gives it great interop with Ja
 
 2. Null Safety
 
-Null doesn't exist in this language; you manage the presence or absence through the `option` type. TypeScript's strategy is to manage the reality of null in JavaScript codebases; this language's strategy is to remove null altogether but generate null-safe JavaScript code. 
+Null doesn't exist in this language; you manage the presence or absence of values through the `option` type. TypeScript's strategy is to manage the reality of null in JavaScript codebases; this language's strategy is to remove null altogether while generating null-safe JavaScript code. 
 
 ```
 type user = {name: string, email: string}
@@ -136,12 +136,12 @@ let move = (direction: direction) =>
 
 4. Safe Array Access
 
-No matter how you access an array's element, you have to deal with the option type. It's either present or it's not. If you want to access it unsafely, it is glaringly obvious that you are doing so, as method names indicate it clearly (e.g., `getUnsafe`).
+No matter how you access an array element, you have to deal with the option type. It's either present or it's not. If you want to access it unsafely, it is glaringly obvious that you are doing so, as method names indicate it clearly (e.g., `getUnsafe`).
 
 
 5. Nominal Typing
 
-The problem with structural typing is improved, but not entirely removed. In TypeScript, structural typing is the default. Due to strong type inference, semantic errors can still creep in if types are not explicitly stated. However, this example is a bit exceptional, as the types are collocated in the same file. Normally this is not so, and the type inference would work perfectly to deduce the correct type. 
+The problem with structural typing is improved, but not entirely removed. In TypeScript, structural typing is the default. Due to strong type inference, semantic errors can still creep in if types are not explicitly stated. However, this example is a bit exceptional, as the types are collocated in the same file. Normally this is not the case, and the type inference would work perfectly to deduce the correct type. 
 
 ```
 type debt = {
@@ -165,4 +165,4 @@ processCredit(debt) // Fails to compile
 
 ### The Big Reveal
 
-This new language is ReScript! 
+This new language is called ReScript! If you want a step-by-step guide on how to get started with ReScript, check out [this video](https://youtu.be/wvjN5CIFEdU?si=fm2rjhafCMIADXbT) to see how to integrate ReScript into your codebase today.
