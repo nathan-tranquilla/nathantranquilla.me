@@ -6,7 +6,7 @@ date: "2025/10/29"
 tags: ["Next-Gen Web Dev"]
 ---
 
-JavaScript and TypeScript have birthed a new web development language. This new language fixes the problems of TypeScript while maintaining the feel of JavaScript. First, I will discuss TypeScript's goal of _gradual adoption_, as this will help us understand the limitations and why they exist. Then I will show how this new language is a huge improvement, providing a completely sound type system. Lastly, I will show you how you can get started today. 
+JavaScript and TypeScript have birthed a new web development language. This new language fixes the problems of TypeScript while maintaining the feel of JavaScript. First, I will discuss TypeScript's goal of _gradual adoption_, as this will help us understand the limitations of its type system and why they exist. Then I will show how this new language is a huge improvement, providing a completely sound type system. Lastly, I will show you how you can get started today. 
 
 ### Gradual Adoption
 TypeScript is described as _gradual_. It's a superset of JavaScript that comes with settings that allow for its adoption with varying degrees of typing in JavaScript codebases. This was a game-changer for JavaScript, as TypeScript could be applied on top of existing JavaScript codebases to provide types at compile time. Unfortunately, _gradual_ adoption has made the experience of type safety different for each codebase, creating an inconsistent experience from project to project. Developers can carry assumptions about how TypeScript "works" from one project to another, which is dangerous, since type systems are meant to eliminate assumptions about how code works. 
@@ -15,23 +15,23 @@ This means TypeScript is _unsound_; this is how TypeScript describes itself. Thi
 
 ### Unsoundness in TypeScript
 
-1. Unsafe Array Access
+#### Unsafe Array Access
 
 TypeScript has a setting that prevents _some_ but not all unsafe array access (`--noUncheckedIndexedAccess`). However, when using a dynamic index to access an array, access remains unsafe. Here is an example that is simple to understand; one need only imagine that `elements` is a list of users, and `i` is a real index (not randomly generated) to see how this becomes problematic. 
 
-```typescript
+```javascript
 let i = Math.floor(Math.random() * 10) 
 let elements = [1,2,3,4,5] 
 console.log(elements[i]) 
 ```
 
-2. Exhaustive Type-Checking
+#### Exhaustive Type-Checking
 
 TypeScript has exhaustive type-checking, with an _asterisk_: you have to have the correct settings and you have to code it correctly for the compiler to reveal unmatched cases. This involves specifying a `default` case and using the `never` type. Neither is required for you to write fully functioning, compiling TypeScript code. 
 
 Let's use the example from their documentation. Both of these functions compile but are not safe to iterate over:
 
-```typescript
+```javascript
 type Direction = 'up' | 'down';
 
 const move1 = (direction: Direction) => {
@@ -59,7 +59,7 @@ const move2 = (direction: Direction) => {
 
 If we assume the only two directions will ever be `up` and `down`, then we'll be completely surprised one day when we add `right` and `left`. The code will compile, but we'll find it completely broken. This is an example where gradual typing and unsoundness overlap to produce a bug. 
 
-3. Null Safety
+#### Null Safety
 
 TypeScript manages the presence of null or undefined in JavaScript. Due to gradual typing, there are many ways in which null can resurface at runtime, depending on your settings. Whether it's through the use of the `any` type or through assertions such as the non-null assertion operator (`!`), the presence of `null` remains a threat that TypeScript has not eliminated. 
 
@@ -89,11 +89,11 @@ ReScript has a completely sound type system. This means we can have certainty ab
 
 ### ReScript outshines TypeScript
 
-1. Null Safety
+#### Null Safety
 
 Null doesn't exist in ReScript; you manage the presence or absence of values through the `option` type. TypeScript's strategy is to manage the reality of null in JavaScript codebases; ReScript's strategy is to remove null altogether while generating null-safe JavaScript code. 
 
-```
+```javascript
 type user = {name: string, email: string}
 
 let findUser = (id: string): option<user> =>
@@ -110,11 +110,11 @@ let displayUser = (id: string) =>
   }
 ```
 
-2. Exhaustiveness Checking
+#### Exhaustiveness Checking
 
 Exhaustive checking is complete; there is no way to craft a switch statement that accidentally causes runtime errors.  There are no settings to adjust to make it behave differently. It just works.
 
-```
+```javascript
 type direction = Up | Down | Left | Right
 
 let move = (direction: direction) =>
@@ -126,7 +126,7 @@ let move = (direction: direction) =>
   }
 ```
 
-3. Safe Array Access
+#### Safe Array Access
 
 No matter how you access an array element, you have to deal with the option type. It's either present or it's not. If you want to access it unsafely, it is glaringly obvious that you are doing so, as method names indicate it clearly (e.g., `getUnsafe`).
 
