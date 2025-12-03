@@ -74,7 +74,7 @@ Give your AI assistant small fragments to work on. This keeps you from getting o
 missing important details. Small problems mean digestible outputs; you will have the time to
 critique and give feedback. Give it small functions to craft, or single tests to write. The smaller
 you start, the more likely you are to strike the right balance between the time and energy you save
-by crafting a good prompt and the results you get. Small problems naturally lead to better prompting
+by crafting a good prompt, and the results you get. Small problems naturally lead to better prompting
 skills.
 
 #### Solution 3: Craft detailed constraints (Solves Mistake #2)
@@ -89,13 +89,12 @@ much fuss. Once you can craft detailed constraints, you're ready for the final s
 
 Once you have 80-90% of a particular task figured out, you should get AI to complete it. At this
 point, it's grunt work, and you should save your time and energy for the _thinking_, not the
-_doing_. This touches on the *core insight* of AI-assisted development: _the best AI-assisted
+_doing_. This touches on the __core insight__ of AI-assisted development: __the best AI-assisted
 developers get AI to write things they already know how to do, accelerating their development with
-minimal friction_.
+minimal friction__.
 
 ### Final thoughts
 
 AI-assisted developers can be a real powerhouse of productivity. In my opinion, the best developers
 devote their time and energy to thinking clearly about small problems with detailed constraints,
-unburdening themselves of tasks they already know how to do very well. If you would like to see this
-in action, be sure to watch [this video].
+unburdening themselves of tasks they already know how to do very well.
