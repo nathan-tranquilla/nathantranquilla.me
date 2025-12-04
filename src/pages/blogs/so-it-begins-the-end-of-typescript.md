@@ -8,12 +8,20 @@ tags: ["Next-Gen Web Dev"]
 
 So it begins... For years, TypeScript has been growing in dominance as the standard for 
 strong typing in the web development world. I have been in the software development industry 
-for 14 years, and ever since its release, TypeScript's position has only become more entrenched. But TypeScript is not without flaws, inviting challenge from new languages with better promise. One language stands above them all, combining the best pieces of both JavaScript and TypeScript with a truly sound type system. In today's video, we're going to examine what this language is and, more importantly, why it's a game-changer for front-end software development, enabling developers to work with greater certainty and confidence in their code, reduce bugs, write simpler code, and unlock the benefits of stable long-term maintenance.
+for 14 years, and ever since its release, TypeScript's position has only become more entrenched. But
+TypeScript is not without flaws, inviting challenge from new languages with better promise. One
+language stands above them all, combining the best pieces of both JavaScript and TypeScript with a
+truly sound type system. In today's video, we're going to examine what this language is and, more
+importantly, why it's a game-changer for front-end software development, enabling developers to work
+with greater certainty and confidence in their code, reduce bugs, write simpler code, and unlock the
+benefits of stable long-term maintenance.
 
-But first, what makes TypeScript so vulnerable to being displaced? To answer that, we'll talk first about how TypeScript is a _gradually-typed_ language and how this compromises the type system. Then we'll be positioned to understand its limitations and why this new language is needed.
+But first, what makes TypeScript so vulnerable to being displaced? To answer that, we'll talk first
+about how TypeScript is a _gradually-typed_ language and how this compromises the type system. Then
+we'll be positioned to understand its limitations and why this new language is needed.
 
 ### Gradual Adoption
-TypeScript is described as _gradually-typed_. It's a superset of JavaScript that comes with settings 
+TypeScript is described as _gradually-typed_. It's a superset of JavaScript that comes with settings
 that allow for its adoption with varying degrees of typing in JavaScript codebases. This was 
 a game-changer for JavaScript, as TypeScript could be applied on top of existing JavaScript 
 codebases to provide types at compile time. Unfortunately, _gradual_ adoption has made the 
@@ -95,7 +103,9 @@ eliminated.
 
 ### The Game-Changer
 
-So why is this new language a top contender? For one, it fixes all of the above problems in TypeScript, but it also has excellent interoperability with the JavaScript ecosystem, and its syntax is very similar to JavaScript and TypeScript, making it very easy to learn. 
+So why is this new language a top contender? For one, it fixes all of the above problems in
+TypeScript, but it also has excellent interoperability with the JavaScript ecosystem, and its syntax
+is very similar to JavaScript and TypeScript, making it very easy to learn.
 
 Welcome to ReScript! Some of you may have heard of it, as it has started 
 to gain traction recently, but even if you have, there's a very high probability that you 
@@ -105,21 +115,25 @@ are unaware of the amazing features of this language. Let's start with familiari
 
 ReScript has been designed to look a lot like JavaScript. It accomplishes this through its 
 strong type inference, which allows you to annotate the code as little or as much as you 
-like, often leaving code that [resembles JavaScript](https://rescript-lang.org/docs/manual/overview#comparison-to-js).
+like, often leaving code that [resembles
+JavaScript](https://rescript-lang.org/docs/manual/overview#comparison-to-js).
 
 #### Interoperability
 
 ReScript not only looks like JavaScript, but compiles to JavaScript in your codebase, which 
 provides excellent interoperability with JavaScript. Any package that you use in JavaScript 
 can be [imported](https://rescript-lang.org/docs/manual/import-from-export-to-js) into your 
-ReScript code. The ReScript source code binds to [mocha](https://github.com/rescript-lang/rescript/blob/1b3f523b0e2d65b1e37387989e23cc222bb85015/tests/tests/src/mocha.res) and Node 
-[assertions](https://github.com/rescript-lang/rescript/blob/1b3f523b0e2d65b1e37387989e23cc222bb85015/tests/tests/src/node_assert.res) 
+ReScript code. The ReScript source code binds to
+[mocha](https://github.com/rescript-lang/rescript/blob/1b3f523b0e2d65b1e37387989e23cc222bb85015/tests/tests/src/mocha.res)
+and Node
+[assertions](https://github.com/rescript-lang/rescript/blob/1b3f523b0e2d65b1e37387989e23cc222bb85015/tests/tests/src/node_assert.res)
 for its test suite. 
 
 But more importantly, it has bindings for React. 
 
 #### Bindings for React
-The core team maintains first-class [bindings](https://rescript-lang.org/docs/react/introduction) for React and supports JSX. This makes ReScript ready for the web today. When ReScript 
+The core team maintains first-class [bindings](https://rescript-lang.org/docs/react/introduction)
+for React and supports JSX. This makes ReScript ready for the web today. When ReScript
 compiles to JavaScript, the JSX is preserved so that you can leverage your existing 
 toolchain to process your ReScript output just as you would any other JavaScript file. 
 
@@ -206,7 +220,10 @@ you are doing so, as method names indicate this clearly (e.g., `getUnsafe`).
 ReScript represents the next evolution in JavaScript development, offering the safety and 
 reliability that TypeScript promised, but with true soundness and simplicity. As the web 
 ecosystem continues to demand higher reliability and performance, ReScript provides a clear 
-path forward without sacrificing the JavaScript feel we know and love. With no opportunities to bikeshed on settings, the experience from project to project remains the same, unlocking the benefits of a stable maintenance cost. 
+path forward without sacrificing the JavaScript feel we know and love. With no opportunities to
+bikeshed on settings, the experience from project to project remains the same, unlocking the
+benefits of a stable maintenance cost.
 
-If you want a step-by-step guide on how to get started with ReScript, check out [this video](https://youtu.be/wvjN5CIFEdU) 
+If you want a step-by-step guide on how to get started with ReScript, check out [this
+video](https://youtu.be/wvjN5CIFEdU)
 to see how to integrate ReScript into your codebase today.
