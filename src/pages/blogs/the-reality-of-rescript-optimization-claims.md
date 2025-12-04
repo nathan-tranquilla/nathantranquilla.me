@@ -8,29 +8,43 @@ tags: ["ReScript"]
 
 ReScript makes a bold claim about performance optimization:
 
-> "[The] type system and compiler naturally guide you toward writing code that's very often performant by default"
+> "[The] type system and compiler naturally guide you toward writing code that's very often
+performant by default"
 >
 > — [ReScript Documentation](https://rescript-lang.org/docs/manual/v11.0.0/introduction)
 
 This is elborated upon in the next paragraph
 
-> "ReScript gives you a real one [type system] and generates code that's friendly to optimizations by default."
+> "ReScript gives you a real one [type system] and generates code that's friendly to optimizations
+by default."
 >
 > — [ReScript Documentation](https://rescript-lang.org/docs/manual/v11.0.0/introduction)
 
-These statements sound impressive, but they're surprisingly vague. What exactly does "friendly to optimizations by default" mean? Does ReScript automatically rewrite your code to use the fastest JavaScript patterns? Does it somehow magically avoid common performance pitfalls?
+These statements sound impressive, but they're surprisingly vague. What exactly does "friendly to
+optimizations by default" mean? Does ReScript automatically rewrite your code to use the fastest
+JavaScript patterns? Does it somehow magically avoid common performance pitfalls?
 
-As someone committed to **Next-Gen Web Development**, I believe in evidence-based decision making. Marketing claims need to be backed by measurable results. So I decided to put ReScript's optimization promises to the test with real benchmarks.
+As someone committed to **Next-Gen Web Development**, I believe in evidence-based decision making.
+Marketing claims need to be backed by measurable results. So I decided to put ReScript's
+optimization promises to the test with real benchmarks.
 
 ### The Setup
 
-Borrowing from [JavaScript performance is weird... Write scientifically faster code with benchmarking](https://www.youtube.com/watch?v=_pWA4rbzvIg) and [this blog post](https://richardartoul.github.io/jekyll/update/2015/04/26/hidden-classes.html), I decided I would benchmark performance on array iteration and V8 optimizations on ReScript output to see if the performance was any different from handwritten JavaScript.
+Borrowing from [JavaScript performance is weird... Write scientifically faster code with
+benchmarking](https://www.youtube.com/watch?v=_pWA4rbzvIg) and [this blog
+post](https://richardartoul.github.io/jekyll/update/2015/04/26/hidden-classes.html), I decided I
+would benchmark performance on array iteration and V8 optimizations on ReScript output to see if the
+performance was any different from handwritten JavaScript.
 
 ### Test 1: Array Iteration Performance
 
-My first test focused on one of the most common performance bottlenecks in JavaScript: array iteration. If ReScript truly generates "optimization-friendly" code, surely it would choose the fastest iteration methods regardless of how I write the ReScript source.
+My first test focused on one of the most common performance bottlenecks in JavaScript: array
+iteration. If ReScript truly generates "optimization-friendly" code, surely it would choose the
+fastest iteration methods regardless of how I write the ReScript source.
 
-Following the methodology from `Beyond Fireship`'s excellent video on JavaScript performance, I set up 4 different loops (`for`, `for of`, `forEach`, and `reduce`) and benchmarked them using Deno for one million iterations on an array of 1000 integers.
+Following the methodology from `Beyond Fireship`'s excellent video on JavaScript performance, I set
+up 4 different loops (`for`, `for of`, `forEach`, and `reduce`) and benchmarked them using Deno for
+one million iterations on an array of 1000 integers.
 
 ```js
 export function sumForLoop(arr) {
@@ -61,13 +75,18 @@ export function sumForEach(arr) {
 }
 ```
 
-As expected, the handwritten JavaScript results confirmed what we know about V8 optimization: traditional `for` loops dominate, `for...of` follows closely, while `forEach` and `reduce` lag significantly behind due to function call overhead.
+As expected, the handwritten JavaScript results confirmed what we know about V8 optimization:
+traditional `for` loops dominate, `for...of` follows closely, while `forEach` and `reduce` lag
+significantly behind due to function call overhead.
 
-![Benchmark for JS Iterations](../../assets/blog/the-reality-of-rescript-optimization-claims/JSIterationsBenchmark.png)
+![Benchmark for JS
+Iterations](../../assets/blog/the-reality-of-rescript-optimization-claims/JSIterationsBenchmark.png)
 
-**Now for the crucial test**: Would ReScript's compiler automatically optimize my iteration style to generate fast JavaScript, regardless of how I wrote the ReScript source?
+**Now for the crucial test**: Would ReScript's compiler automatically optimize my iteration style to
+generate fast JavaScript, regardless of how I wrote the ReScript source?
 
-I translated the same algorithms to ReScript (excluding `for...of` since ReScript doesn't have that syntax):
+I translated the same algorithms to ReScript (excluding `for...of` since ReScript doesn't have that
+syntax):
 
 ```js
 let sumForLoop = (arr: array<int>) => {
@@ -96,11 +115,15 @@ let sumReduce = (arr: array<int>) => {
 
 **The results were disappointing but not surprising:**
 
-![Benchmark for ReScript Iterations](../../assets/blog/the-reality-of-rescript-optimization-claims/ReScriptIterationsBenchmark.png)
+![Benchmark for ReScript
+Iterations](../../assets/blog/the-reality-of-rescript-optimization-claims/ReScriptIterationsBenchmark.png)
 
-ReScript's performance mirrored the JavaScript patterns exactly. The `for` loop was fastest, while `Array.reduce` lagged behind significantly. **ReScript didn't automatically optimize anything**.
+ReScript's performance mirrored the JavaScript patterns exactly. The `for` loop was fastest, while
+`Array.reduce` lagged behind significantly. **ReScript didn't automatically optimize anything**.
 
-I had suspected this would be the case after examining the generated JavaScript output. Rather than converting everything to optimized `for` loops, ReScript maintains a fairly direct translation of your source code patterns:
+I had suspected this would be the case after examining the generated JavaScript output. Rather than
+converting everything to optimized `for` loops, ReScript maintains a fairly direct translation of
+your source code patterns:
 
 ```js
 // Generated by ReScript, PLEASE EDIT WITH CARE
@@ -137,7 +160,8 @@ export { sumForLoop, sumForOf, sumReduce };
 /* No side effect */
 ```
 
-**Clearly, ReScript wasn't doing algorithmic optimizations.** Maybe the "optimization-friendly" claims referred to something more subtle?
+**Clearly, ReScript wasn't doing algorithmic optimizations.** Maybe the "optimization-friendly"
+claims referred to something more subtle?
 
 The documentation mentions specific V8 optimization techniques:
 
@@ -145,22 +169,31 @@ The documentation mentions specific V8 optimization techniques:
 >
 > — [ReScript Documentation](https://rescript-lang.org/docs/manual/v11.0.0/introduction)
 
-This seemed more promising. Perhaps ReScript generates JavaScript that better leverages V8's internal optimization strategies.
+This seemed more promising. Perhaps ReScript generates JavaScript that better leverages V8's
+internal optimization strategies.
 
 ### Test 2: V8 Engine Optimizations
 
-V8's optimization engine is incredibly sophisticated, but it relies on predictable code patterns. The most critical optimizations involve:
+V8's optimization engine is incredibly sophisticated, but it relies on predictable code patterns.
+The most critical optimizations involve:
 
-If you would like to understand hidden classes and inline caching, I suggest reading [this article](https://richardartoul.github.io/jekyll/update/2015/04/26/hidden-classes.html) by _Richard Artoul_. For the sake of this article, I simply want to establish that the V8 engine performs specific optimizations based on how object properties are created and accessed—maintaining consistent property ordering and avoiding dynamic property additions can significantly improve performance through hidden class stability and inline caching.
+If you would like to understand hidden classes and inline caching, I suggest reading [this
+article](https://richardartoul.github.io/jekyll/update/2015/04/26/hidden-classes.html) by _Richard
+Artoul_. For the sake of this article, I simply want to establish that the V8 engine performs
+specific optimizations based on how object properties are created and accessed—maintaining
+consistent property ordering and avoiding dynamic property additions can significantly improve
+performance through hidden class stability and inline caching.
 
 **The Test Design:**
 
 To isolate these optimizations, I created two scenarios:
 
-1. **Optimal case**: Objects always get properties added in the same order (maintains hidden class consistency)
+1. **Optimal case**: Objects always get properties added in the same order (maintains hidden class
+consistency)
 2. **Suboptimal case**: Properties are added in random order (breaks hidden class optimization)
 
-If ReScript truly generates "optimization-friendly" code, it should somehow avoid the performance penalty of the suboptimal case.
+If ReScript truly generates "optimization-friendly" code, it should somehow avoid the performance
+penalty of the suboptimal case.
 
 ```js
 function Point(x, y) {
@@ -208,15 +241,19 @@ function hotAccess(points, numObjects, iters) {
 }
 ```
 
-The `addPropsFixed` method adds properties in a consistent order, while `addPropsRandom` randomizes the order—a pattern that should destroy V8's hidden class optimization.
+The `addPropsFixed` method adds properties in a consistent order, while `addPropsRandom` randomizes
+the order—a pattern that should destroy V8's hidden class optimization.
 
 **JavaScript baseline results** (10,000 objects accessed 100,000 times each):
 
-![JS Hidden Classes Benchmark](../../assets/blog/the-reality-of-rescript-optimization-claims/JSHiddenClassesBenchmark.png)
+![JS Hidden Classes
+Benchmark](../../assets/blog/the-reality-of-rescript-optimization-claims/JSHiddenClassesBenchmark.png)
 
-Perfect! The results show exactly what we'd expect: consistent property ordering is dramatically faster. V8's hidden class optimization is working as designed.
+Perfect! The results show exactly what we'd expect: consistent property ordering is dramatically
+faster. V8's hidden class optimization is working as designed.
 
-**Now the critical question**: Would ReScript somehow generate more optimization-friendly JavaScript, even when I write potentially suboptimal ReScript patterns?
+**Now the critical question**: Would ReScript somehow generate more optimization-friendly
+JavaScript, even when I write potentially suboptimal ReScript patterns?
 
 ```js
 type point = {x: int, y: int}
@@ -265,9 +302,12 @@ let hotAccess = (points, numObjects, iters) => {
 
 **The results tell the story:**
 
-![ReSCript Hidden Classes Benchmark](../../assets/blog/the-reality-of-rescript-optimization-claims/ReScriptHiddenClassesBenchmark.png)
+![ReSCript Hidden Classes
+Benchmark](../../assets/blog/the-reality-of-rescript-optimization-claims/ReScriptHiddenClassesBenchmark.png)
 
-ReScript's performance mirrors JavaScript exactly—no magical optimization here either. The fixed-order version is fast, the random-order version is slow. **ReScript doesn't solve V8 optimization challenges for you.**
+ReScript's performance mirrors JavaScript exactly—no magical optimization here either. The
+fixed-order version is fast, the random-order version is slow. **ReScript doesn't solve V8
+optimization challenges for you.**
 
 Looking at the generated JavaScript confirms this:
 
@@ -326,32 +366,43 @@ export { createPoints, addPropsFixed, addPropsRandom, hotAccess };
 /* No side effect */
 ```
 
-The generated code is essentially identical to handwritten JavaScript. ReScript isn't reordering property assignments or converting to more optimization-friendly patterns.
+The generated code is essentially identical to handwritten JavaScript. ReScript isn't reordering
+property assignments or converting to more optimization-friendly patterns.
 
 ### The Reality Behind the Claims
 
-After seeing these results, I revisited the ReScript documentation more carefully. Buried deeper in the introduction, there's a more honest explanation:
+After seeing these results, I revisited the ReScript documentation more carefully. Buried deeper in
+the introduction, there's a more honest explanation:
 
-> "A widespread adage to write fast JavaScript code is to write as if there's a type system (in order to trigger JS engines' good optimization heuristics). ReScript gives you a real one and generates code that's friendly to optimizations by default."
+> "A widespread adage to write fast JavaScript code is to write as if there's a type system (in
+order to trigger JS engines' good optimization heuristics). ReScript gives you a real one and
+generates code that's friendly to optimizations by default."
 >
 > — [ReScript Documentation](https://rescript-lang.org/docs/manual/v11.0.0/introduction)
 
-**Ah, there it is.** The "optimization-friendly" claim isn't about the compiler generating faster code—it's about the type system encouraging patterns that happen to work well with JavaScript engines.
+**Ah, there it is.** The "optimization-friendly" claim isn't about the compiler generating faster
+code—it's about the type system encouraging patterns that happen to work well with JavaScript
+engines.
 
 ### What ReScript Actually Provides
 
-Let me be clear: **ReScript isn't generating magically optimized JavaScript.** The performance benefits, when they exist, come from ReScript's type system nudging you toward predictable, monomorphic code patterns that V8 optimizes well. When you're forced to be explicit about types, you're less likely to write the kind of shape-shifting code that breaks V8's assumptions.
+Let me be clear: **ReScript isn't generating magically optimized JavaScript.** The performance
+benefits, when they exist, come from ReScript's type system nudging you toward predictable,
+monomorphic code patterns that V8 optimizes well. When you're forced to be explicit about types,
+you're less likely to write the kind of shape-shifting code that breaks V8's assumptions.
 
 ### The Next-Gen Web Development Perspective
 
-As advocates for **Next-Gen Web Development**, we need to be honest about our tools' capabilities. ReScript offers significant benefits:
+As advocates for **Next-Gen Web Development**, we need to be honest about our tools' capabilities.
+ReScript offers significant benefits:
 
 - **Type safety** eliminates entire classes of runtime errors
 - **Functional programming** paradigms lead to more predictable code
 - **Excellent interop** with existing JavaScript ecosystems
 - **Mature tooling** with solid IDE support
 
-But performance optimization isn't automatically one of them. **You still need to understand JavaScript performance principles.** You still need to:
+But performance optimization isn't automatically one of them. **You still need to understand
+JavaScript performance principles.** You still need to:
 
 - Choose appropriate algorithms and data structures
 - Understand V8 optimization patterns
@@ -360,14 +411,23 @@ But performance optimization isn't automatically one of them. **You still need t
 
 ### The Verdict
 
-ReScript's optimization claims are **technically true but misleading**. The type system does encourage some patterns that work well with JavaScript engines, but it's not doing the performance work for you.
+ReScript's optimization claims are **technically true but misleading**. The type system does
+encourage some patterns that work well with JavaScript engines, but it's not doing the performance
+work for you.
 
-**For Next-Gen Web Development, this is actually good news.** We don't want tools that hide performance complexity behind magical optimizations—we want tools that help us write better code while still giving us control over performance-critical decisions.
+**For Next-Gen Web Development, this is actually good news.** We don't want tools that hide
+performance complexity behind magical optimizations—we want tools that help us write better code
+while still giving us control over performance-critical decisions.
 
-ReScript delivers on its primary promise: **type safety and functional programming for JavaScript.** The performance benefits, when they occur, are a pleasant side effect of good software engineering practices, not compiler magic.
+ReScript delivers on its primary promise: **type safety and functional programming for JavaScript.**
+The performance benefits, when they occur, are a pleasant side effect of good software engineering
+practices, not compiler magic.
 
-If you're choosing ReScript, choose it for type safety, not performance optimization. And remember: **there's no substitute for understanding the platform you're targeting.** Even with the best tools, JavaScript performance expertise remains essential for building truly fast web applications.
+If you're choosing ReScript, choose it for type safety, not performance optimization. And remember:
+**there's no substitute for understanding the platform you're targeting.** Even with the best tools,
+JavaScript performance expertise remains essential for building truly fast web applications.
 
 ---
 
-[Sign up to my newsletter](https://nathantranquilla.kit.com/0d8a3f84b7) to get more Next-Gen Web Dev insights!
+[Sign up to my newsletter](https://nathantranquilla.kit.com/0d8a3f84b7) to get more Next-Gen Web Dev
+insights!
