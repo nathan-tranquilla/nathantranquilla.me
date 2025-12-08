@@ -1,24 +1,26 @@
 ---
 layout: ../../layouts/Blog.astro
-title: So It Begins... The End Of TypeScript
+title: So It Begins... The End Of TypeScript's Dominance
 author: Nathan Tranquilla
 date: "2025/12/02"
 tags: ["Next-Gen Web Dev"]
 ---
 
-So it begins... For years, TypeScript has been growing in dominance as the standard for 
-strong typing in the web development world. I have been in the software development industry 
-for 14 years, and ever since its release, TypeScript's position has only become more entrenched. But
-TypeScript is not without flaws, inviting challenge from new languages with better promise. One
-language stands above them all, combining the best pieces of both JavaScript and TypeScript with a
-truly sound type system. In today's video, we're going to examine what this language is and, more
-importantly, why it's a game-changer for front-end software development, enabling developers to work
-with greater certainty and confidence in their code, reduce bugs, write simpler code, and unlock the
+So it begins... The end of TypeScript's dominance has begun. I have been a web developer for 14 
+years, and since its release, TypeScript has filled an important gap in the safety and 
+maintainability of front-end applications by providing static typing for JavaScript codebases. But 
+a new challenger is emerging that threatens TypeScript's position. This new language is the best 
+of both JavaScript and TypeScript combined. In today's video, we're going to examine what this 
+language is and, more importantly, why it's a game-changer for the front-end. I will show you how it
+enables developers to write simpler code with greater certainty and confidence, while unlocking the
 benefits of stable long-term maintenance.
 
-But first, what makes TypeScript so vulnerable to being displaced? To answer that, we'll talk first
-about how TypeScript is a _gradually-typed_ language and how this compromises the type system. Then
-we'll be positioned to understand its limitations and why this new language is needed.
+But first, what makes TypeScript so vulnerable to being displaced? Recent industry signals 
+suggest growing frustration with TypeScript's limitations. High-profile projects like Svelte 
+have cited tooling friction, while companies like Basecamp have pointed to ergonomic issues 
+that force developers into complex workarounds. These concerns open the door for alternatives. 
+
+Before we discuss a promising alternative, let's talk first about how TypeScript is a _gradually-typed_ language and how this compromises the type system. Then we'll be positioned to understand its limitations and why this new language is needed.
 
 ### Gradual Adoption
 TypeScript is described as _gradually-typed_. It's a superset of JavaScript that comes with settings
@@ -132,6 +134,7 @@ for its test suite.
 But more importantly, it has bindings for React. 
 
 #### Bindings for React
+
 The core team maintains first-class [bindings](https://rescript-lang.org/docs/react/introduction)
 for React and supports JSX. This makes ReScript ready for the web today. When ReScript
 compiles to JavaScript, the JSX is preserved so that you can leverage your existing 
@@ -142,6 +145,7 @@ This means they fit anywhere in the component hierarchy of your TypeScript/React
 If you would like to see an example of this, check out [this video](https://youtu.be/wvjN5CIFEdU).
 
 ### Ease of Integration
+
 Unlike TypeScript, ReScript is incorporated depth-first in your codebase. This means it's 
 not intrusive to introduce. TypeScript is applied across the entire codebase, affecting 
 your entire application, making it somewhat intrusive to introduce. Not so with ReScript; 
@@ -161,6 +165,10 @@ operation's safety at compile-time. This is a stronger guarantee than TypeScript
 no configurability, because its type system is _not gradual_. Thankfully, this means 
 ReScript works the same for everyone, so there is a consistent experience from project to 
 project. Let's demonstrate ReScript's strengths where TypeScript is weak. 
+
+#### Simplicity
+
+ReScript covers a curated subset of the JavaScript feature set, unlike TypeScript which attempts to provide types for all of JavaScript. This makes ReScript simpler with no configurability and completely sound. 
 
 ### ReScript Type System Outshines TypeScript
 
