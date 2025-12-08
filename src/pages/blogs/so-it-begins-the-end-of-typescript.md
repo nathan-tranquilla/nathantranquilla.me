@@ -36,7 +36,7 @@ assumptions about how code works.
 
 This means TypeScript is _unsound_; this is how TypeScript describes itself. This means that 
 its type system can't determine if some operations are safe at compile time. That's 
-unfortunate, because that is essentially the point of having a type system—to have certainty 
+unfortunate, because that is essentially the point of having a type system, to have certainty 
 about the soundness of your code before it goes live. TypeScript's gradual nature creates 
 several concrete problems in real codebases:
 
