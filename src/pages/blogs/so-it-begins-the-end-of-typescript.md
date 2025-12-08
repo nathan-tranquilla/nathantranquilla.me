@@ -20,7 +20,9 @@ suggest growing frustration with TypeScript's limitations. High-profile projects
 have cited tooling friction, while companies like Basecamp have pointed to ergonomic issues 
 that force developers into complex workarounds. These concerns open the door for alternatives. 
 
-Before we discuss a promising alternative, let's talk first about how TypeScript is a _gradually-typed_ language and how this compromises the type system. Then we'll be positioned to understand its limitations and why this new language is needed.
+Before we discuss a promising alternative, let's talk first about how TypeScript is a
+_gradually-typed_ language and how this compromises the type system. Then we'll be positioned to
+understand its limitations and why this new language is needed.
 
 ### Gradual Adoption
 TypeScript is described as _gradually-typed_. It's a superset of JavaScript that comes with settings
