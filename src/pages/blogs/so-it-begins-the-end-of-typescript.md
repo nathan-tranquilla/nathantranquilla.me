@@ -168,7 +168,10 @@ project. Let's demonstrate ReScript's strengths where TypeScript is weak.
 
 #### Simplicity
 
-ReScript covers a curated subset of the JavaScript feature set, unlike TypeScript which attempts to provide types for all of JavaScript. This makes ReScript simpler with no configurability and completely sound. 
+ReScript covers a curated subset of the JavaScript feature set, unlike TypeScript which 
+attempts to provide types for all of JavaScript. This makes ReScript simpler with no 
+configurability and completely sound. There are generally fewer ways to accomplish the same 
+task, the switch statement being a good example, which we will see shortly.
 
 ### ReScript Type System Outshines TypeScript
 
