@@ -7,7 +7,7 @@ tags: ["Career"]
 ---
 
 In today's job market, the job search consumes your time and energy with a low probability of
-success. Your time is consumed searching for jobs, writing cover letters, adjusting your resume,
+success. Your time is spent searching for jobs, writing cover letters, adjusting your resume,
 going through interviews, doing take-home exams, and thinking endlessly about how it went. The
 emotional rollercoaster is exhausting—you can lose whole weeks with just a single interview process.
 You may even arrive on the job already burnt out from applying! Worse, you are likely to accept a
