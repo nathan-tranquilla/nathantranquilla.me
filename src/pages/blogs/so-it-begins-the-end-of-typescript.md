@@ -6,14 +6,14 @@ date: "2025/12/02"
 tags: ["Next-Gen Web Dev"]
 ---
 
-So it begins... The end of TypeScript's dominance has begun. I have been a web developer for 14 
-years, and since its release, TypeScript has filled an important gap in the safety and 
-maintainability of front-end applications by providing static typing for JavaScript codebases. But 
-a new challenger is emerging that threatens TypeScript's position. This new language is the best 
-of both JavaScript and TypeScript combined. In today's video, we're going to examine what this 
-language is and, more importantly, why it's a game-changer for the front-end. I will show you how it
-enables developers to write simpler code with greater certainty and confidence, while unlocking the
-benefits of stable long-term maintenance.
+So it begins... TypeScript has been dominant in the web development space, filling an important gap 
+in the safety and maintainability of front-end applications. But a new challenger is emerging that 
+threatens TypeScript's dominance, and will change the way you develop front-end. I have been a 
+web-developer for 14 years, and I've dedicated the last year to researching new web-dev technologies. 
+This new challenger has the best of both JavaScript and TypeScript, plus a lot more. In this video, 
+I tell what this challenger is and, more importantly, why it's a game-changer for the front-end. 
+I will show you how it enables developers to write simpler, more maintainable code, with greater 
+speed and confidence.
 
 But first, what makes TypeScript so vulnerable to being displaced? Recent industry signals 
 suggest growing frustration with TypeScript's limitations. High-profile projects like Svelte 
