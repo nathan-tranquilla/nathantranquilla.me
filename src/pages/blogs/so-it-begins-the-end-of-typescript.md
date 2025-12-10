@@ -6,33 +6,32 @@ date: "2025/12/02"
 tags: ["Next-Gen Web Dev"]
 ---
 
-So it begins... TypeScript has been dominant in the web development space, filling an important gap 
+So it begins... TypeScript has been dominant in the web development space, filling an important gap
 in the safety and maintainability of front-end applications. But a new challenger is emerging that 
 threatens TypeScript's dominance, and will change the way you develop front-end. I have been a 
-web-developer for 14 years, and I've dedicated the last year to researching new web-dev technologies. 
-This new challenger has the best of both JavaScript and TypeScript, plus a lot more. In this video, 
+web-developer for 14 years, and I've dedicated the last year to researching new web-dev
+technologies.
+This new challenger has the best of both JavaScript and TypeScript, plus a lot more. In this video,
 I tell what this challenger is and, more importantly, why it's a game-changer for the front-end. 
 I will show you how it enables developers to write simpler, more maintainable code, with greater 
 speed and confidence.
 
-But first, what makes TypeScript so vulnerable to being displaced? Recent industry signals 
+But first, are there signals that TypeScript is losing its dominance? Recent industry signals 
 suggest growing frustration with TypeScript's limitations. High-profile projects like Svelte 
 have cited tooling friction, while companies like Basecamp have pointed to ergonomic issues 
-that force developers into complex workarounds. These concerns open the door for alternatives. 
+that force developers into complex workarounds. This leaves room to discuss alternatives.
 
-Before we discuss a promising alternative, let's talk first about how TypeScript is a
-_gradually-typed_ language and how this compromises the type system. Then we'll be positioned to
-understand its limitations and why this new language is needed.
+Before we discuss our challenger, let's talk first about how TypeScript is deficient. 
+Then we'll be positioned to understand its limitations and why this new language is needed.
 
 ### Gradual Adoption
 TypeScript is described as _gradually-typed_. It's a superset of JavaScript that comes with settings
-that allow for its adoption with varying degrees of typing in JavaScript codebases. This was 
-a game-changer for JavaScript, as TypeScript could be applied on top of existing JavaScript 
-codebases to provide types at compile time. Unfortunately, _gradual_ adoption has made the 
-experience of type safety different for each codebase, creating an inconsistent experience 
-from project to project. Developers can carry assumptions about how TypeScript "works" from 
-one project to another, which is dangerous, since type systems are meant to eliminate 
-assumptions about how code works. 
+that allow for its adoption with varying degrees of typing. This was a game-changer for JavaScript,
+as TypeScript could be applied on top of existing JavaScript codebases to provide types at compile
+time. Unfortunately, _gradual_ adoption has made the experience of type safety different for each
+codebase, creating an inconsistent experience from project to project. Developers can carry
+assumptions about how TypeScript "works" from one project to another, which is dangerous, since type
+systems are meant to eliminate assumptions about how code works.
 
 This means TypeScript is _unsound_; this is how TypeScript describes itself. This means that 
 its type system can't determine if some operations are safe at compile time. That's 
@@ -131,9 +130,7 @@ ReScript code. The ReScript source code binds to
 [mocha](https://github.com/rescript-lang/rescript/blob/1b3f523b0e2d65b1e37387989e23cc222bb85015/tests/tests/src/mocha.res)
 and Node
 [assertions](https://github.com/rescript-lang/rescript/blob/1b3f523b0e2d65b1e37387989e23cc222bb85015/tests/tests/src/node_assert.res)
-for its test suite. 
-
-But more importantly, it has bindings for React. 
+for its test suite.  
 
 #### Bindings for React
 
@@ -153,12 +150,11 @@ not intrusive to introduce. TypeScript is applied across the entire codebase, af
 your entire application, making it somewhat intrusive to introduce. Not so with ReScript; 
 you can try it out with minimal risk. 
 
-#### Fast Compiler
+#### Fast Incremental Compilation
 
-When demonstrating TypeScript's deficiencies around exhaustiveness checking, we also saw 
-that JavaScript allows you to write switch statements in a variety of ways. In ReScript, 
-there is one way to write a switch statement. This is intentional, as ReScript is a curated 
-subset of JavaScript, which they explicitly correlate with the speed of the compiler. 
+ReScript 12's new build system is very fast and outperforms TypeScript for incremental compilation.
+ReScript compiles files in isolation, and since the module graph is a strict DAG, features like
+parallelization and precise incremental builds are made possible.
 
 #### Sound Type System
 
@@ -230,12 +226,13 @@ you are doing so, as method names indicate this clearly (e.g., `getUnsafe`).
 
 ### Getting Started With ReScript Today!
 
-ReScript represents the next evolution in JavaScript development, offering the safety and 
-reliability that TypeScript promised, but with true soundness and simplicity. As the web 
-ecosystem continues to demand higher reliability and performance, ReScript provides a clear 
-path forward without sacrificing the JavaScript feel we know and love. With no opportunities to
-bikeshed on settings, the experience from project to project remains the same, unlocking the
-benefits of a stable maintenance cost.
+ReScript presents a serious challenge to TypeScript's dominance. Industry signals show us that
+TypeScript is being questioned, which leaves room to explore other options. ReScript is by far the
+strongest challenger, offering the safety and reliability that TypeScript promised, but with true
+soundness and simplicity. As the web ecosystem continues to demand higher reliability and
+performance, ReScript provides a clear path forward without sacrificing the JavaScript feel we know
+and love. With no opportunities to bikeshed on settings, the experience from project to project
+remains the same, simplifying maintenance.
 
 If you want a step-by-step guide on how to get started with ReScript, check out [this
 video](https://youtu.be/wvjN5CIFEdU)
