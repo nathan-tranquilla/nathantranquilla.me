@@ -10,11 +10,10 @@ So it begins... TypeScript has been dominant in the web development space, filli
 in the safety and maintainability of front-end applications. But a new challenger is emerging that 
 threatens TypeScript's dominance, and will change the way you develop front-end. I have been a 
 web-developer for 14 years, and I've dedicated the last year to researching new web-dev
-technologies.
-This new challenger has the best of both JavaScript and TypeScript, plus a lot more. In this video,
-I tell what this challenger is and, more importantly, why it's a game-changer for the front-end. 
-I will show you how it enables developers to write simpler, more maintainable code, with greater 
-speed and confidence.
+technologies. This new challenger has the best of both JavaScript and TypeScript, plus a lot more.
+In this video, I tell what this challenger is and, more importantly, why it's a game-changer for the
+front-end. I will show you how it enables developers to write simpler, more maintainable code, with
+greater speed and confidence.
 
 But first, are there signals that TypeScript is losing its dominance? Recent industry signals 
 suggest growing frustration with TypeScript's limitations. High-profile projects like Svelte 
