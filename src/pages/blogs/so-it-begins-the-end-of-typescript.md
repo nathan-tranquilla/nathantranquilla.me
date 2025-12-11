@@ -38,8 +38,6 @@ unfortunate, because that is essentially the point of having a type system, to h
 about the soundness of your code before it goes live. TypeScript's gradual nature creates 
 several concrete problems in real codebases:
 
-### Unsoundness in TypeScript
-
 #### Unsafe Array Access
 
 TypeScript has a setting that prevents _some_ but not all unsafe array access 
