@@ -98,7 +98,7 @@ produce bugs.
 #### Null Safety
 
 TypeScript manages the presence of null or undefined in JavaScript. Due to gradual typing, 
-there are many ways in which null can resurface at runtime, depending on your settings. 
+there are many ways in which null can resurface at runtime, depending on your tsconfig settings. 
 Whether it's through the use of the `any` type or through assertions such as the non-null 
 assertion operator (`!`), the presence of `null` remains a threat that TypeScript has not 
 eliminated. 
