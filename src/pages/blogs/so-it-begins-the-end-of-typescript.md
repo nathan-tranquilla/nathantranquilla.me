@@ -20,7 +20,8 @@ suggest growing frustration with TypeScript's limitations. High-profile projects
 have cited tooling friction, while companies like Basecamp have pointed to ergonomic issues 
 that force developers into complex workarounds. This leaves room to discuss alternatives.
 
-Before we discuss our challenger, let's talk first about how TypeScript is deficient. 
+Before we discuss our challenger, let's talk first about how TypeScript's design. This will help
+us understand it's deficiencies and why it's challenger is a game-changer.  
 
 ### Gradual Adoption
 TypeScript is described as _gradually-typed_. It's a superset of JavaScript that comes with settings
@@ -144,11 +145,11 @@ If you would like to see an example of this, check out [this video](https://yout
 
 ### Ease of Integration
 
-TypeScript's appraoch to integration (gradual typing) is to adjust the level of typing across the
+TypeScript's approach to integration (gradual typing) is to adjust the level of typing across the
 entire codebase. ReScript's approach is also gradual but in a different way. Instead of adjusting
 the level of typing in your entire codebase, you have a new language that is compiled independently of
 the rest of your code, with a sound type system that isn't configurable. You gradually add more ReScript
-as needed.
+as needed. 
 
 #### Fast Incremental Compilation
 
