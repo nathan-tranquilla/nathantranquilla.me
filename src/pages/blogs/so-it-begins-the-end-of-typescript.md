@@ -92,7 +92,7 @@ const move2 = (direction: Direction) => {
 
 If we assume the only two directions will ever be `up` and `down`, then we'll be completely 
 surprised one day when we add `right` and `left`. The code will compile, but we'll discover 
-it's completely broken. This is an example where gradual typing and unsoundness overlap to 
+it's completely broken at runtime. This is an example where gradual typing and unsoundness overlap to 
 produce bugs. 
 
 #### Null Safety
