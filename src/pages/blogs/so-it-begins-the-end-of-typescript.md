@@ -105,7 +105,7 @@ eliminated.
 
 ### The Game-Changer
 
-So why is this new language a top contender? For one, it fixes all of the above problems in
+So what make this new language a top challenger? For one, it fixes all of the above problems in
 TypeScript, but it also has excellent interoperability with the JavaScript ecosystem, and its syntax
 is very similar to JavaScript and TypeScript, making it very easy to learn.
 
