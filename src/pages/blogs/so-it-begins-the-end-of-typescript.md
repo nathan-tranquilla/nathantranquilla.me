@@ -56,11 +56,12 @@ console.log(elements[i])
 #### Exhaustive Type-Checking
 
 TypeScript has exhaustive type-checking, with an _asterisk_: you have to have the correct 
-compiler options set the in ts config file, and you have to code it correctly for the compiler to reveal unmatched cases. This 
-involves specifying a `default` case and using the `never` type. Neither is required for you 
-to TypeScript code that compiles. 
+compiler options set the in ts config file, and you have to code it correctly for the compiler to
+reveal unmatched cases. This involves specifying a `default` case and using the `never` type.
+Neither is required for you to TypeScript code that compiles.
 
-Let's use the example from TypeScript's own documentation. Both of these functions compile but are not 
+Let's use the example from TypeScript's own documentation. Both of these functions compile but are
+not
 safe against future code changes.
 
 ```javascript
@@ -115,7 +116,7 @@ are unaware of the amazing features of this language. Let's start with familiari
 #### Familiar Syntax
 
 ReScript has been designed to look a lot like JavaScript. It accomplishes this through its 
-strong type inference, which allows you to annotate the code with as little or as many types as you 
+strong type inference, which allows you to annotate the code with as little or as many types as you
 like, often leaving code that [resembles
 JavaScript](https://rescript-lang.org/docs/manual/overview#comparison-to-js).
 
@@ -145,10 +146,8 @@ If you would like to see an example of this, check out [this video](https://yout
 
 TypeScript's appraoch to integration (gradual typing) is to adjust the level of typing across the
 entire codebase. ReScript's approach is also gradual but in a different way. Instead of adjusting
-the
-level of typing in your entire codebase, you have a new language that is compiled independently of
-the
-rest of your code, with a sound type system that isn't configurable. You gradually add more ReScript
+the level of typing in your entire codebase, you have a new language that is compiled independently of
+the rest of your code, with a sound type system that isn't configurable. You gradually add more ReScript
 as needed.
 
 #### Fast Incremental Compilation
@@ -181,7 +180,8 @@ Now let's get into how ReScript fixes the flaws we examined specifically in Type
 Null doesn't exist in ReScript; you manage the presence or absence of values through the 
 `option` type. TypeScript's strategy is to manage the reality of null in JavaScript 
 codebases; ReScript's strategy is to remove null altogether while generating null-safe 
-JavaScript code. In short, this means you will never have null-related bugs in your code appear at runtime.
+JavaScript code. In short, this means you will never have null-related bugs in your code appear at
+runtime.
 
 ```javascript
 type user = {name: string, email: string}
