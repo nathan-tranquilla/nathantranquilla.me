@@ -105,7 +105,7 @@ eliminated.
 
 ### The Game-Changer
 
-So what make this new language a top challenger? For one, it fixes all of the above problems in
+The top challenger is a new web-dev language! It fixes all of the above problems in
 TypeScript, but it also has excellent interoperability with the JavaScript ecosystem, and its syntax
 is very similar to JavaScript and TypeScript, making it very easy to learn.
 
