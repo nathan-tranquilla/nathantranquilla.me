@@ -28,7 +28,7 @@ that allow for its adoption with varying degrees of typing. This was a game-chan
 as TypeScript could be applied on top of existing JavaScript codebases to provide types at compile
 time. Unfortunately, TypeScript's approach towards adoption has made the experience of type 
 safety different for each codebase, creating an inconsistent experience from project to project. 
-Developers can carry assumptions about how TypeScript "works" from one project to another, which is 
+Developers can carry assumptions about how TypeScript "works" from one project to another, which is
 dangerous, since type systems are meant to eliminate assumptions about how code works.
 
 This means TypeScript is _unsound_; this is how TypeScript describes itself. This means that 
@@ -144,9 +144,12 @@ If you would like to see an example of this, check out [this video](https://yout
 ### Ease of Integration
 
 TypeScript's appraoch to integration (gradual typing) is to adjust the level of typing across the
-entire codebase. ReScript's approach is also gradual but in a different way. Instead of adjusting the 
-level of typing in your entire codebase, you have a new language that is compiled independently of the 
-rest of your code, with a sound type system that isn't configurable. You gradually add more ReScript as needed.
+entire codebase. ReScript's approach is also gradual but in a different way. Instead of adjusting
+the
+level of typing in your entire codebase, you have a new language that is compiled independently of
+the
+rest of your code, with a sound type system that isn't configurable. You gradually add more ReScript
+as needed.
 
 #### Fast Incremental Compilation
 
@@ -228,9 +231,9 @@ ReScript presents a serious challenge to TypeScript's dominance. Industry signal
 TypeScript is being questioned, which leaves room to explore other options. ReScript is by far the
 strongest challenger, offering the safety and reliability that TypeScript promised, but with true
 soundness and simplicity. As the web ecosystem continues to demand higher reliability and
-performance, ReScript provides a clear path forward without sacrificing the JavaScript feel we know
-and love. With no opportunities to bikeshed on settings, the experience from project to project
-remains the same, simplifying maintenance.
+performance, ReScript is ready for the web today, providing a clear path forward without sacrificing
+the JavaScript feel we know and love. With no opportunities to bikeshed on settings, the experience
+from project to project remains the same, simplifying maintenance.
 
 If you want a step-by-step guide on how to get started with ReScript, check out [this
 video](https://youtu.be/wvjN5CIFEdU)
