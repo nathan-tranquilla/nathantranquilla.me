@@ -21,7 +21,6 @@ have cited tooling friction, while companies like Basecamp have pointed to ergon
 that force developers into complex workarounds. This leaves room to discuss alternatives.
 
 Before we discuss our challenger, let's talk first about how TypeScript is deficient. 
-Then we'll be positioned to understand its limitations and why this new language is needed.
 
 ### Gradual Adoption
 TypeScript is described as _gradually-typed_. It's a superset of JavaScript that comes with settings
