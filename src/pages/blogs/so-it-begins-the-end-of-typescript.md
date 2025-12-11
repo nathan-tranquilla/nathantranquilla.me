@@ -8,12 +8,12 @@ tags: ["Next-Gen Web Dev"]
 
 So it begins... TypeScript has been dominant in the web development space, filling an important gap
 in the safety and maintainability of front-end applications. But a new challenger is here that 
-threatens TypeScript's dominance, and will change the way you develop front-end. I have been a 
+outperforms TypeScript, and will change the way you develop front-end. I have been a 
 web-developer for 14 years, and I've dedicated the last year to researching new web-dev
 technologies. This new challenger has the best of both JavaScript and TypeScript, plus a lot more.
 In this video, I tell what this challenger is and, more importantly, why it's a game-changer for the
-front-end. I will show you how it does a better job than TypeScript at enabling developers to write simpler, more maintainable code, with greater speed and confidence.
-greater speed and confidence.
+front-end. I will show you how it outperforms TypeScript at enabling developers to write
+simpler, more maintainable code, with greater speed and confidence.
 
 But first, are there signals that TypeScript is losing its dominance? Recent industry signals 
 suggest growing frustration with TypeScript's limitations. High-profile projects like Svelte 
@@ -26,10 +26,10 @@ Before we discuss our challenger, let's talk first about how TypeScript is defic
 TypeScript is described as _gradually-typed_. It's a superset of JavaScript that comes with settings
 that allow for its adoption with varying degrees of typing. This was a game-changer for JavaScript,
 as TypeScript could be applied on top of existing JavaScript codebases to provide types at compile
-time. Unfortunately, _gradual_ adoption has made the experience of type safety different for each
-codebase, creating an inconsistent experience from project to project. Developers can carry
-assumptions about how TypeScript "works" from one project to another, which is dangerous, since type
-systems are meant to eliminate assumptions about how code works.
+time. Unfortunately, TypeScript's approach towards adoption has made the experience of type 
+safety different for each codebase, creating an inconsistent experience from project to project. 
+Developers can carry assumptions about how TypeScript "works" from one project to another, which is 
+dangerous, since type systems are meant to eliminate assumptions about how code works.
 
 This means TypeScript is _unsound_; this is how TypeScript describes itself. This means that 
 its type system can't determine if some operations are safe at compile time. That's 
@@ -91,8 +91,8 @@ const move2 = (direction: Direction) => {
 
 If we assume the only two directions will ever be `up` and `down`, then we'll be completely 
 surprised one day when we add `right` and `left`. The code will compile, but we'll discover 
-it's completely broken at runtime. This is an example where gradual typing and unsoundness overlap to 
-produce bugs. 
+it's completely broken at runtime. This is an example where gradual typing and unsoundness overlap
+to produce bugs. 
 
 #### Null Safety
 
@@ -143,10 +143,10 @@ If you would like to see an example of this, check out [this video](https://yout
 
 ### Ease of Integration
 
-Unlike TypeScript, ReScript is incorporated depth-first in your codebase. This means it's 
-not intrusive to introduce. TypeScript is applied across the entire codebase, affecting 
-your entire application, making it somewhat intrusive to introduce. Not so with ReScript; 
-you can try it out with minimal risk. 
+TypeScript's appraoch to integration (gradual typing) is to adjust the level of typing across the
+entire codebase. ReScript's approach is also gradual but in a different way. Instead of adjusting the 
+level of typing in your entire codebase, you have a new language that is compiled independently of the 
+rest of your code, with a sound type system that isn't configurable. You gradually add more ReScript as needed.
 
 #### Fast Incremental Compilation
 
