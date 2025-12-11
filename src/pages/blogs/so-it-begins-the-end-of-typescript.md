@@ -151,7 +151,7 @@ you can try it out with minimal risk.
 
 #### Fast Incremental Compilation
 
-ReScript 12's new build system is very fast and outperforms TypeScript for incremental compilation.
+ReScript new build system is very fast and outperforms TypeScript for incremental compilation.
 ReScript compiles files in isolation, and since the module graph is a strict DAG, features like
 parallelization and precise incremental builds are made possible.
 
