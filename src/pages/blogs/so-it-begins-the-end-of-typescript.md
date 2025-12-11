@@ -56,12 +56,12 @@ console.log(elements[i])
 #### Exhaustive Type-Checking
 
 TypeScript has exhaustive type-checking, with an _asterisk_: you have to have the correct 
-settings and you have to code it correctly for the compiler to reveal unmatched cases. This 
+compiler options set the in ts config file, and you have to code it correctly for the compiler to reveal unmatched cases. This 
 involves specifying a `default` case and using the `never` type. Neither is required for you 
-to write fully functioning, compiling TypeScript code. 
+to TypeScript code that compiles. 
 
-Let's use the example from their documentation. Both of these functions compile but are not 
-safe to iterate over:
+Let's use the example from TypeScript's own documentation. Both of these functions compile but are not 
+safe against future code changes.
 
 ```javascript
 type Direction = 'up' | 'down';
@@ -115,7 +115,7 @@ are unaware of the amazing features of this language. Let's start with familiari
 #### Familiar Syntax
 
 ReScript has been designed to look a lot like JavaScript. It accomplishes this through its 
-strong type inference, which allows you to annotate the code as little or as much as you 
+strong type inference, which allows you to annotate the code with as little or as many types as you 
 like, often leaving code that [resembles
 JavaScript](https://rescript-lang.org/docs/manual/overview#comparison-to-js).
 
@@ -181,7 +181,7 @@ Now let's get into how ReScript fixes the flaws we examined specifically in Type
 Null doesn't exist in ReScript; you manage the presence or absence of values through the 
 `option` type. TypeScript's strategy is to manage the reality of null in JavaScript 
 codebases; ReScript's strategy is to remove null altogether while generating null-safe 
-JavaScript code. 
+JavaScript code. In short, this means you will never have null-related bugs in your code appear at runtime.
 
 ```javascript
 type user = {name: string, email: string}
