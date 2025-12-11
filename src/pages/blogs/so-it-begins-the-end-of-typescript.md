@@ -60,8 +60,7 @@ reveal unmatched cases. This involves specifying a `default` case and using the 
 Neither is required for you to TypeScript code that compiles.
 
 Let's use the example from TypeScript's own documentation. Both of these functions compile but are
-not
-safe against future code changes.
+not safe against future code changes.
 
 ```javascript
 type Direction = 'up' | 'down';
@@ -104,9 +103,10 @@ eliminated.
 
 ### The Game-Changer
 
-The top challenger is a new web-dev language! It fixes all of the above problems in
-TypeScript, but it also has excellent interoperability with the JavaScript ecosystem, and its syntax
-is very similar to JavaScript and TypeScript, making it very easy to learn.
+The top challenger is a _new_ web-dev language! It fixes all of the above problems in
+TypeScript, but it also has excellent interoperability with the JavaScript ecosystem, integrates
+with minimal friction, and its syntax is very similar to JavaScript and TypeScript, making 
+it ergonomic and easy to learn.
 
 Welcome to ReScript! Some of you may have heard of it, as it has started 
 to gain traction recently, but even if you have, there's a very high probability that you 
@@ -145,9 +145,10 @@ If you would like to see an example of this, check out [this video](https://yout
 
 TypeScript's approach to integration (gradual typing) is to adjust the level of typing across the
 entire codebase. ReScript's approach is also gradual but in a different way. Instead of adjusting
-the level of typing in your entire codebase, you have a new language that is compiled independently of
-the rest of your code, with a sound type system that isn't configurable. You gradually add more ReScript
-as needed. 
+the level of typing in your entire codebase, you have a new language that is compiled independently
+of the rest of your code, with a sound type system that isn't configurable. You gradually add more
+ReScript as needed. To see just how easy it is to install, stay tuned until the end, where I'll 
+share a video on how to integrate ReScript.
 
 #### Fast Incremental Compilation
 
@@ -161,14 +162,13 @@ ReScript has a completely sound type system. This means we can have certainty ab
 operation's safety at compile-time. This is a stronger guarantee than TypeScript. There is 
 no configurability, because its type system is _not gradual_. Thankfully, this means 
 ReScript works the same for everyone, so there is a consistent experience from project to 
-project. Let's demonstrate ReScript's strengths where TypeScript is weak. 
+project. 
 
 #### Simplicity
 
-ReScript covers a curated subset of the JavaScript feature set, unlike TypeScript which 
-attempts to provide types for all of JavaScript. This makes ReScript simpler with no 
-configurability and completely sound. There are generally fewer ways to accomplish the same 
-task, the switch statement being a good example, which we will see shortly.
+TypeScript's type system is unsound partly because it covers the entire feature set of JavaScript.
+ReScript's approach has been to provide a sound type system for a smaller JavaScript feature set,
+focusing on data and functions over classes. 
 
 ### ReScript Type System Outshines TypeScript
 
