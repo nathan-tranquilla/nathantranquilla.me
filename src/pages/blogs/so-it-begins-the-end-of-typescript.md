@@ -7,7 +7,7 @@ tags: ["Next-Gen Web Dev"]
 ---
 
 So it begins... TypeScript has been dominant in the web development space, filling an important gap
-in the safety and maintainability of front-end applications. But a new challenger is emerging that 
+in the safety and maintainability of front-end applications. But a new challenger is here that 
 threatens TypeScript's dominance, and will change the way you develop front-end. I have been a 
 web-developer for 14 years, and I've dedicated the last year to researching new web-dev
 technologies. This new challenger has the best of both JavaScript and TypeScript, plus a lot more.
