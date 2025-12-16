@@ -98,3 +98,5 @@ minimal friction__.
 AI-assisted developers can be a real powerhouse of productivity. In my opinion, the best developers
 devote their time and energy to thinking clearly about small problems with detailed constraints,
 unburdening themselves of tasks they already know how to do very well.
+
+If you'd like to see an excellent example of AI-assisted programming in practice, check out this video: [link to video]
