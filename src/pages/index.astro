@@ -18,7 +18,7 @@ import InfoCard from "../components/InfoCard.astro";
       Vision of Next-Gen Web Dev
     </H2>
     <p class="col-start-1 row-start-2 font-sans text-white">
-      Next-Gen Web Dev aims for reliable, secure web applications free from
+      Next-Gen Web Dev aims for reliable, more maintainable web applications free from
       preventable errors. It requires a shift to robust, strongly typed
       languages that eliminate entire classes of bugs, ensuring developers trust
       their tools and users trust their apps.
@@ -37,12 +37,13 @@ import InfoCard from "../components/InfoCard.astro";
     </H2>
     <p class="col-start-1 col-start-2 row-start-2 font-sans">
       JavaScript’s weak typing, implicit coercions, and runtime errors make it
-      unsuitable for modern web development. TypeScript, while an improvement,
-      falls short of a strong type system. It permits unsafe array access, lacks
-      full null safety, allows implicit conversions, and misses exhaustive type
-      checking. These flaws make it inadequate for reliable server-side (SSR) or
-      client-side (CSR) applications. The web needs languages that guarantee
-      correctness, not just suggest it.
+      challenging for modern web development. TypeScript, while an improvement,
+      describes itself as <i>unsound</i>; it lacks complete null safety, 
+      allows implicit conversions in some cases, and misses exhaustive type checking. 
+      Additionally, its type system requires frequent use of <i>undefined</i> 
+      to model JavaScript's reality, indicating a lack of expressiveness. These limitations make it suboptimal for 
+      mission-critical server-side (SSR) or client-side (CSR) applications. 
+      The web needs languages that guarantee correctness, not just suggest it.
     </p>
     <Image
       class="col-start-1 row-start-1 row-end-3 hidden md:block"
@@ -50,125 +51,6 @@ import InfoCard from "../components/InfoCard.astro";
       alt="JavaScript and TypeScript logos"
     />
   </Container>
-  <!-- <Container
-    classes="text-white bg-slate-900 font-sans text-black w-full grid grid-cols-1 md:grid-cols-[640px] px-auto justify-center md:p-4 p-2 gap-4"
-  >
-    <H2 class="text-xl font-semibold md:text-2xl">
-      Principles: The Strong Type System
-    </H2>
-    <p class="col-start-1 row-start-2 py-4">
-      At the core of Next-Gen Web Dev are languages with strong type systems.
-      Therefore a Next-Gen Web Language will have:
-    </p>
-    <table
-      class="w-full border-separate border-spacing-0 overflow-hidden rounded-xl bg-white shadow-2xl"
-    >
-      <thead>
-        <tr>
-          <th
-            class="bg-lime-900 px-6 py-4 text-left font-semibold text-white first:rounded-tl-xl last:rounded-tr-xl"
-            >Feature</th
-          >
-          <th
-            class="bg-lime-900 px-6 py-4 text-left font-semibold text-white first:rounded-tl-xl last:rounded-tr-xl"
-            >Description</th
-          >
-        </tr>
-      </thead>
-      <tbody>
-        <tr
-          class="transition-all duration-200 hover:-translate-y-0.5 hover:bg-slate-50 hover:shadow-md"
-        >
-          <td class="px-6 py-4 font-medium text-slate-900 md:whitespace-nowrap"
-            >Type Safety</td
-          >
-          <td class="px-6 py-4 text-slate-700"
-            >Invalid operations are caught at compile-time.</td
-          >
-        </tr>
-        <tr
-          class="bg-slate-50 transition-all duration-200 hover:-translate-y-0.5 hover:bg-slate-100 hover:shadow-md"
-        >
-          <td class="px-6 py-4 font-medium text-slate-900 md:whitespace-nowrap"
-            >Static Type Checking</td
-          >
-          <td class="px-6 py-4 text-slate-700"
-            >Types are enforced before execution.</td
-          >
-        </tr>
-        <tr
-          class="transition-all duration-200 hover:-translate-y-0.5 hover:bg-slate-50 hover:shadow-md"
-        >
-          <td class="px-6 py-4 font-medium text-slate-900 md:whitespace-nowrap"
-            >No Implicit Coercion</td
-          >
-          <td class="px-6 py-4 text-slate-700"
-            >Automatic conversions are prohibited.</td
-          >
-        </tr>
-        <tr
-          class="bg-slate-50 transition-all duration-200 hover:-translate-y-0.5 hover:bg-slate-100 hover:shadow-md"
-        >
-          <td class="px-6 py-4 font-medium text-slate-900 md:whitespace-nowrap"
-            >Expressive Types</td
-          >
-          <td class="px-6 py-4 text-slate-700"
-            >Algebraic data types and pattern matching for precise data
-            modeling.</td
-          >
-        </tr>
-        <tr
-          class="transition-all duration-200 hover:-translate-y-0.5 hover:bg-slate-50 hover:shadow-md"
-        >
-          <td class="px-6 py-4 font-medium text-slate-900 md:whitespace-nowrap"
-            >Compile-Time Null Safety</td
-          >
-          <td class="px-6 py-4 text-slate-700"
-            >Explicit handling of null/undefined.</td
-          >
-        </tr>
-        <tr
-          class="bg-slate-50 transition-all duration-200 hover:-translate-y-0.5 hover:bg-slate-100 hover:shadow-md"
-        >
-          <td class="px-6 py-4 font-medium text-slate-900 md:whitespace-nowrap"
-            >Exhaustive Matching</td
-          >
-          <td class="px-6 py-4 text-slate-700"
-            >All cases in logic must be covered.</td
-          >
-        </tr>
-        <tr
-          class="transition-all duration-200 hover:-translate-y-0.5 hover:bg-slate-50 hover:shadow-md"
-        >
-          <td class="px-6 py-4 font-medium text-slate-900 md:whitespace-nowrap"
-            >Type Inference</td
-          >
-          <td class="px-6 py-4 text-slate-700"
-            >Automatic type deduction without compromising safety.</td
-          >
-        </tr>
-        <tr
-          class="bg-slate-50 transition-all duration-200 hover:-translate-y-0.5 hover:bg-slate-100 hover:shadow-md"
-        >
-          <td class="px-6 py-4 font-medium text-slate-900 md:whitespace-nowrap"
-            >Soundness</td
-          >
-          <td class="px-6 py-4 text-slate-700">No type errors at runtime.</td>
-        </tr>
-        <tr
-          class="transition-all duration-200 last:rounded-b-xl hover:-translate-y-0.5 hover:bg-slate-50 hover:shadow-md"
-        >
-          <td
-            class="px-6 py-4 font-medium text-slate-900 last:rounded-bl-xl md:whitespace-nowrap"
-            >Safe Array Access</td
-          >
-          <td class="px-6 py-4 text-slate-700 last:rounded-br-xl"
-            >Bounds checking to prevent crashes.</td
-          >
-        </tr>
-      </tbody>
-    </table>
-  </Container> -->
   <Container
     classes="text-white bg-slate-900 font-sans text-black w-full grid grid-cols-1 lg:grid-cols-[repeat(2,500px)] md:grid-cols-[repeat(2,400px)] px-auto justify-center md:p-4 p-2 gap-4"
   >
@@ -178,36 +60,34 @@ import InfoCard from "../components/InfoCard.astro";
       The Components Of Next-Gen Web Dev
     </H2>
     <InfoCard
-      title="Strong Type System"
+      title="Strong Static Typing"
       link="/blogs/strong-type-systems-are-required-for-a-safer-web"
     >
       <p>
-        A strong type system prevents entire categories of runtime errors by
+        A strong, static type system prevents entire categories of runtime errors by
         catching mistakes at compile-time. Unlike JavaScript's weak typing or
-        TypeScript's compromises, truly strong types eliminate null pointer
-        exceptions, array bounds errors, and type coercion surprises. This means
+        TypeScript's compromises, truly strong type systems eliminate null pointer
+        exceptions, array bounds errors, and type coercion surprises, and are expressive 
+        enough to model the current complexity of the web. Static typing means
         fewer bugs, safer refactoring, and increased developer confidence.
-        Strong types serve as living documentation, making code self-explanatory
+        Strong type systems serve as living documentation, making code self-explanatory
         and maintainable. For Next-Gen Web Dev, strong typing isn't
         optional—it's the foundation of reliable software.
       </p>
     </InfoCard>
-    <InfoCard title="Language Lineage">
+    <InfoCard title="Familiarity & Interoperability">
       <p>
         Developers choose new languages that look familiar but fix critical
-        problems. TypeScript's existence proves developers desperately want
-        strong typing in JavaScript—they're willing to add build complexity just
-        for basic type safety. This pattern repeats throughout programming
-        history: C++ fixed C's safety issues, Kotlin addressed Java's verbosity,
-        Rust solved C++'s memory problems. Next-Gen Web Dev languages follow
-        this lineage, offering JavaScript's familiarity with genuine type
-        safety, null safety, and compile-time guarantees that TypeScript cannot
-        provide.
+        problems. TypeScript's existence indicates a strong trend towards static typing
+        in front-end codebases with the goal of safer, more maintainable code, even at the 
+        cost of complexity. Next-Gen Web Dev languages acknowledge both this goal and the 
+        embededness of the JavaScript ecosystem in web dev, and offer solutions without 
+        abandoning neither the familiarity of JavaScript nor it's ecosystem. 
       </p>
     </InfoCard>
-    <InfoCard title="Framework Readiness">
+    <InfoCard title="Web Readiness">
       <p>
-        Strong types alone aren't enough—Next-Gen languages need mature
+        Strong, static type systems alone aren't enough. Next-Gen languages need mature
         framework ecosystems for real-world adoption. A language becomes viable
         when it offers full-stack solutions: routing, state management, data
         fetching, and UI libraries. Framework readiness means developers can
@@ -218,16 +98,13 @@ import InfoCard from "../components/InfoCard.astro";
         frameworks.
       </p>
     </InfoCard>
-    <InfoCard title="Incremental Adoption">
+    <InfoCard title="Gradual Adoption">
       <p>
-        Next-Gen languages excel at incremental migration through depth-first
-        adoption. Unlike TypeScript's breadth-first approach that adds types
-        everywhere superficially, these languages allow you to fully convert
-        specific modules or components while maintaining perfect interop with
-        existing JavaScript. This means you can achieve complete type safety in
-        critical paths without rewriting entire codebases. Teams can migrate
-        strategically—converting high-value modules first while legacy code
-        continues running unchanged.
+        Next-Gen languages excel at gradual adoption. TypeScript's approach to gradual 
+        adoption is to adjust the level of typing in the codebase, leaving gaps in the type system,
+        depending on compiler configuration. Next-Gen Web Dev languages provide fully sound type 
+        systems yet still offer solutions for gradual adoption in the codebase. Next-Gen Web Dev 
+        languages do not compromise the type system, but grow in their presence in the codebase.
       </p>
     </InfoCard>
   </Container>
@@ -256,7 +133,7 @@ import InfoCard from "../components/InfoCard.astro";
       </li>
       <li class="py-2">
         <strong>Build for the Future:</strong> Embrace robust, type-safe languages
-        for stable, secure, and competitive web platforms.
+        for stable, secure, and maintainable web applications.
       </li>
     </ul>
   </Container>
