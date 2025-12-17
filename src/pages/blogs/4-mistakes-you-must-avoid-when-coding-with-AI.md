@@ -6,9 +6,13 @@ date: "2025/12/03"
 tags: ["AI"]
 ---
 
-Coding with AI can be a superpower, taking your productivity to a whole new level, but if you’re not careful it will quietly cost you far more time than it saves. So in this video, I’m going to show you the 4 mistakes you must avoid when coding with AI, and the 4 fixes that actually let you use it properly, leading to the core insight you need to unlock productive and frictionless coding with AI.
+Coding with AI can be a superpower, taking your productivity to a whole new level, but if you’re not
+careful it will quietly cost you far more time than it saves. So in this video, I’m going to show
+you the 4 mistakes you must avoid when coding with AI, and the 4 fixes that actually let you use it
+properly, leading to the core insight you need to unlock productive and frictionless coding with AI.
 
-My name is Nathan Tranquilla, and I have been a software developer for 14 years, and coding with AI since its inception. Let’s get into it.
+My name is Nathan Tranquilla, and I have been a software developer for 14 years, and coding with AI
+since its inception. Let’s get into it.
 
 ### What it looks like to lose control of your AI assistant
 
@@ -73,7 +77,8 @@ Give your AI assistant small fragments to work on. This keeps you from getting o
 missing important details. Small problems mean digestible outputs; you will have the time to
 critique and give feedback. Give it small functions to craft, or single tests to write. The smaller
 you start, the more likely you are to strike the right balance between the time and energy you save
-by crafting a good prompt, and the results you get. Small problems naturally lead to better prompting
+by crafting a good prompt, and the results you get. Small problems naturally lead to better
+prompting
 skills.
 
 #### Solution 3: Craft detailed constraints (Solves Mistake #2)
@@ -98,4 +103,5 @@ AI-assisted developers can be a real powerhouse of productivity. In my opinion, 
 devote their time and energy to thinking clearly about small problems with detailed constraints,
 unburdening themselves of tasks they already know how to do very well.
 
-If you'd like to see an excellent example of AI-assisted programming in practice, check out this video: [link to video]
+If you'd like to see an excellent example of AI-assisted programming in practice, check out this
+video: [link to video]
