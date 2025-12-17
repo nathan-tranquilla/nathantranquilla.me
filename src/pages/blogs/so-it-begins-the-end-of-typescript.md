@@ -3,7 +3,7 @@ layout: ../../layouts/Blog.astro
 title: So It Begins... The End Of TypeScript's Dominance
 author: Nathan Tranquilla
 date: "2025/12/02"
-tags: ["Next-Gen Web Dev"]
+tags: ["Next-Gen Web Dev","script"]
 ---
 
 So it begins... TypeScript has been dominant in the web development space, addressing the
