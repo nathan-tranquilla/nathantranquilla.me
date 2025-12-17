@@ -6,10 +6,9 @@ date: "2025/12/03"
 tags: ["AI"]
 ---
 
-AI-assisted programming is like walking an energetic dog; if you lose control of the leash, then you
-lose control of the walk. The problem isn't AI, it's how you're using it. Here are 4 mistakes you
-must avoid to keep control of your AI assistant, and 4 counter-examples of high-quality AI-assisted
-coding.
+Coding with AI can be a superpower, taking your productivity to a whole new level, but if you’re not careful it will quietly cost you far more time than it saves. So in this video, I’m going to show you the 4 mistakes you must avoid when coding with AI, and the 4 fixes that actually let you use it properly, leading to the core insight you need to unlock productive and frictionless coding with AI.
+
+My name is Nathan Tranquilla, and I have been a software developer for 14 years, and coding with AI since its inception. Let’s get into it.
 
 ### What it looks like to lose control of your AI assistant
 
@@ -89,9 +88,9 @@ much fuss. Once you can craft detailed constraints, you're ready for the final s
 
 Once you have 80-90% of a particular task figured out, you should get AI to complete it. At this
 point, it's grunt work, and you should save your time and energy for the _thinking_, not the
-_doing_. This touches on the __core insight__ of AI-assisted development: __the best AI-assisted
+_doing_. This touches on the **core insight** of AI-assisted development: **the best AI-assisted
 developers get AI to write things they already know how to do, accelerating their development with
-minimal friction__.
+minimal friction**.
 
 ### Final thoughts
 
