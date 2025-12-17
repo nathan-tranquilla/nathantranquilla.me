@@ -9,14 +9,14 @@ tags: ["ReScript"]
 ReScript makes a bold claim about performance optimization:
 
 > "[The] type system and compiler naturally guide you toward writing code that's very often
-performant by default"
+> performant by default"
 >
 > — [ReScript Documentation](https://rescript-lang.org/docs/manual/v11.0.0/introduction)
 
 This is elborated upon in the next paragraph
 
 > "ReScript gives you a real one [type system] and generates code that's friendly to optimizations
-by default."
+> by default."
 >
 > — [ReScript Documentation](https://rescript-lang.org/docs/manual/v11.0.0/introduction)
 
@@ -189,7 +189,7 @@ performance through hidden class stability and inline caching.
 To isolate these optimizations, I created two scenarios:
 
 1. **Optimal case**: Objects always get properties added in the same order (maintains hidden class
-consistency)
+   consistency)
 2. **Suboptimal case**: Properties are added in random order (breaks hidden class optimization)
 
 If ReScript truly generates "optimization-friendly" code, it should somehow avoid the performance
@@ -375,8 +375,8 @@ After seeing these results, I revisited the ReScript documentation more carefull
 the introduction, there's a more honest explanation:
 
 > "A widespread adage to write fast JavaScript code is to write as if there's a type system (in
-order to trigger JS engines' good optimization heuristics). ReScript gives you a real one and
-generates code that's friendly to optimizations by default."
+> order to trigger JS engines' good optimization heuristics). ReScript gives you a real one and
+> generates code that's friendly to optimizations by default."
 >
 > — [ReScript Documentation](https://rescript-lang.org/docs/manual/v11.0.0/introduction)
 

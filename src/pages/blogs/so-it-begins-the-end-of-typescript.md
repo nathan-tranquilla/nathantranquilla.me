@@ -3,58 +3,59 @@ layout: ../../layouts/Blog.astro
 title: So It Begins... The End Of TypeScript's Dominance
 author: Nathan Tranquilla
 date: "2025/12/02"
-tags: ["Next-Gen Web Dev","script"]
+tags: ["Next-Gen Web Dev", "script"]
 ---
 
 So it begins... TypeScript has been dominant in the web development space, addressing the
-safety and maintainability of front-end applications. But a new challenger is here that 
-outperforms TypeScript, and will change the way you develop front-end. I have been a 
+safety and maintainability of front-end applications. But a new challenger is here that
+outperforms TypeScript, and will change the way you develop front-end. I have been a
 web-developer for 14 years, and I've dedicated the last year to researching new web-dev
 technologies. This new challenger has the best of both JavaScript and TypeScript, plus a lot more.
 In this video, I tell what this challenger is and, more importantly, why it's a game-changer for the
 front-end. I will show you how it outperforms TypeScript at enabling developers to write
 simpler, more maintainable code, with greater speed and confidence.
 
-But first, are there signals that TypeScript is losing its dominance? Recent industry signals 
-suggest growing frustration with TypeScript's limitations. High-profile projects like Svelte 
-have cited tooling friction, while companies like Basecamp have pointed to ergonomic issues 
+But first, are there signals that TypeScript is losing its dominance? Recent industry signals
+suggest growing frustration with TypeScript's limitations. High-profile projects like Svelte
+have cited tooling friction, while companies like Basecamp have pointed to ergonomic issues
 that force developers into complex workarounds. This leaves room to discuss alternatives.
 
 Before we discuss our challenger, let's talk first about how TypeScript's design. This will help
-us understand it's deficiencies and why it's challenger is a game-changer.  
+us understand it's deficiencies and why it's challenger is a game-changer.
 
 ### Gradual Adoption
+
 TypeScript is described as _gradually-typed_. It's a superset of JavaScript that comes with settings
 that allow for its adoption with varying degrees of typing. This was a game-changer for JavaScript,
 as TypeScript could be applied on top of existing JavaScript codebases to provide types at compile
-time. Unfortunately, TypeScript's approach towards adoption has made the experience of type 
-safety different for each codebase, creating an inconsistent experience from project to project. 
+time. Unfortunately, TypeScript's approach towards adoption has made the experience of type
+safety different for each codebase, creating an inconsistent experience from project to project.
 Developers can carry assumptions about how TypeScript "works" from one project to another, which is
 dangerous, since type systems are meant to eliminate assumptions about how code works.
 
-This means TypeScript is _unsound_; this is how TypeScript describes itself. This means that 
-its type system can't determine if some operations are safe at compile time. That's 
-unfortunate, because that is essentially the point of having a type system, to have certainty 
-about the soundness of your code before it goes live. TypeScript's gradual nature creates 
+This means TypeScript is _unsound_; this is how TypeScript describes itself. This means that
+its type system can't determine if some operations are safe at compile time. That's
+unfortunate, because that is essentially the point of having a type system, to have certainty
+about the soundness of your code before it goes live. TypeScript's gradual nature creates
 several concrete problems in real codebases:
 
 #### Unsafe Array Access
 
-TypeScript has a setting that prevents _some_ but not all unsafe array access 
-(`--noUncheckedIndexedAccess`). However, when using a dynamic index to access an array, 
-access remains unsafe. Here is an example that is simple to understand; one need only 
-imagine that `elements` is a list of users, and `i` is a real index (not randomly 
-generated) to see how this becomes problematic. 
+TypeScript has a setting that prevents _some_ but not all unsafe array access
+(`--noUncheckedIndexedAccess`). However, when using a dynamic index to access an array,
+access remains unsafe. Here is an example that is simple to understand; one need only
+imagine that `elements` is a list of users, and `i` is a real index (not randomly
+generated) to see how this becomes problematic.
 
 ```javascript
-let i = Math.floor(Math.random() * 10) 
-let elements = [1,2,3,4,5] 
-console.log(elements[i]) 
+let i = Math.floor(Math.random() * 10);
+let elements = [1, 2, 3, 4, 5];
+console.log(elements[i]);
 ```
 
 #### Exhaustive Type-Checking
 
-TypeScript has exhaustive type-checking, with an _asterisk_: you have to have the correct 
+TypeScript has exhaustive type-checking, with an _asterisk_: you have to have the correct
 compiler options set the in ts config file, and you have to code it correctly for the compiler to
 reveal unmatched cases. This involves specifying a `default` case and using the `never` type.
 Neither is required for you to TypeScript code that compiles.
@@ -88,57 +89,57 @@ const move2 = (direction: Direction) => {
 };
 ```
 
-If we assume the only two directions will ever be `up` and `down`, then we'll be completely 
-surprised one day when we add `right` and `left`. The code will compile, but we'll discover 
+If we assume the only two directions will ever be `up` and `down`, then we'll be completely
+surprised one day when we add `right` and `left`. The code will compile, but we'll discover
 it's completely broken at runtime. This is an example where gradual typing and unsoundness overlap
-to produce bugs. 
+to produce bugs.
 
 #### Null Safety
 
-TypeScript manages the presence of null or undefined in JavaScript. Due to gradual typing, 
-there are many ways in which null can resurface at runtime, depending on your tsconfig settings. 
-Whether it's through the use of the `any` type or through assertions such as the non-null 
-assertion operator (`!`), the presence of `null` remains a threat that TypeScript has not 
-eliminated. 
+TypeScript manages the presence of null or undefined in JavaScript. Due to gradual typing,
+there are many ways in which null can resurface at runtime, depending on your tsconfig settings.
+Whether it's through the use of the `any` type or through assertions such as the non-null
+assertion operator (`!`), the presence of `null` remains a threat that TypeScript has not
+eliminated.
 
 ### The Game-Changer
 
 The top challenger is a _new_ web-dev language! It fixes all of the above problems in
 TypeScript, but it also has excellent interoperability with the JavaScript ecosystem, integrates
-with minimal friction, and its syntax is very similar to JavaScript and TypeScript, making 
+with minimal friction, and its syntax is very similar to JavaScript and TypeScript, making
 it ergonomic and easy to learn.
 
-Welcome to ReScript! Some of you may have heard of it, as it has started 
-to gain traction recently, but even if you have, there's a very high probability that you 
-are unaware of the amazing features of this language. Let's start with familiarity. 
+Welcome to ReScript! Some of you may have heard of it, as it has started
+to gain traction recently, but even if you have, there's a very high probability that you
+are unaware of the amazing features of this language. Let's start with familiarity.
 
 #### Familiar Syntax
 
-ReScript has been designed to look a lot like JavaScript. It accomplishes this through its 
+ReScript has been designed to look a lot like JavaScript. It accomplishes this through its
 strong type inference, which allows you to annotate the code with as little or as many types as you
 like, often leaving code that [resembles
 JavaScript](https://rescript-lang.org/docs/manual/overview#comparison-to-js).
 
 #### Interoperability
 
-ReScript not only looks like JavaScript, but compiles to JavaScript in your codebase, which 
-provides excellent interoperability with JavaScript. Any package that you use in JavaScript 
-can be [imported](https://rescript-lang.org/docs/manual/import-from-export-to-js) into your 
+ReScript not only looks like JavaScript, but compiles to JavaScript in your codebase, which
+provides excellent interoperability with JavaScript. Any package that you use in JavaScript
+can be [imported](https://rescript-lang.org/docs/manual/import-from-export-to-js) into your
 ReScript code. The ReScript source code binds to
 [mocha](https://github.com/rescript-lang/rescript/blob/1b3f523b0e2d65b1e37387989e23cc222bb85015/tests/tests/src/mocha.res)
 and Node
 [assertions](https://github.com/rescript-lang/rescript/blob/1b3f523b0e2d65b1e37387989e23cc222bb85015/tests/tests/src/node_assert.res)
-for its test suite.  
+for its test suite.
 
 #### Bindings for React
 
 The core team maintains first-class [bindings](https://rescript-lang.org/docs/react/introduction)
 for React and supports JSX. This makes ReScript ready for the web today. When ReScript
-compiles to JavaScript, the JSX is preserved so that you can leverage your existing 
-toolchain to process your ReScript output just as you would any other JavaScript file. 
+compiles to JavaScript, the JSX is preserved so that you can leverage your existing
+toolchain to process your ReScript output just as you would any other JavaScript file.
 
-ReScript components can be embedded as children or parents of React/TypeScript components. 
-This means they fit anywhere in the component hierarchy of your TypeScript/React codebase. 
+ReScript components can be embedded as children or parents of React/TypeScript components.
+This means they fit anywhere in the component hierarchy of your TypeScript/React codebase.
 If you would like to see an example of this, check out [this video](https://youtu.be/wvjN5CIFEdU).
 
 ### Ease of Integration
@@ -147,7 +148,7 @@ TypeScript's approach to integration (gradual typing) is to adjust the level of 
 entire codebase. ReScript's approach is also gradual but in a different way. Instead of adjusting
 the level of typing in your entire codebase, you have a new language that is compiled independently
 of the rest of your code, with a sound type system that isn't configurable. You gradually add more
-ReScript as needed. To see just how easy it is to install, stay tuned until the end, where I'll 
+ReScript as needed. To see just how easy it is to install, stay tuned until the end, where I'll
 share a video on how to integrate ReScript.
 
 #### Fast Incremental Compilation
@@ -158,17 +159,17 @@ parallelization and precise incremental builds are made possible.
 
 #### Sound Type System
 
-ReScript has a completely sound type system. This means we can have certainty about an 
-operation's safety at compile-time. This is a stronger guarantee than TypeScript. There is 
-no configurability, because its type system is _not gradual_. Thankfully, this means 
-ReScript works the same for everyone, so there is a consistent experience from project to 
-project. 
+ReScript has a completely sound type system. This means we can have certainty about an
+operation's safety at compile-time. This is a stronger guarantee than TypeScript. There is
+no configurability, because its type system is _not gradual_. Thankfully, this means
+ReScript works the same for everyone, so there is a consistent experience from project to
+project.
 
 #### Simplicity
 
 TypeScript's type system is unsound partly because it covers the entire feature set of JavaScript.
 ReScript's approach has been to provide a sound type system for a smaller JavaScript feature set,
-focusing on data and functions over classes. 
+focusing on data and functions over classes.
 
 ### ReScript Type System Outshines TypeScript
 
@@ -176,9 +177,9 @@ Now let's get into how ReScript fixes the flaws we examined specifically in Type
 
 #### Null Safety
 
-Null doesn't exist in ReScript; you manage the presence or absence of values through the 
-`option` type. TypeScript's strategy is to manage the reality of null in JavaScript 
-codebases; ReScript's strategy is to remove null altogether while generating null-safe 
+Null doesn't exist in ReScript; you manage the presence or absence of values through the
+`option` type. TypeScript's strategy is to manage the reality of null in JavaScript
+codebases; ReScript's strategy is to remove null altogether while generating null-safe
 JavaScript code. In short, this means you will never have null-related bugs in your code appear at
 runtime.
 
@@ -201,8 +202,8 @@ let displayUser = (id: string) =>
 
 #### Exhaustiveness Checking
 
-Exhaustive checking is complete; there's no way to craft a switch statement that 
-accidentally causes runtime errors. There are no settings to adjust to make it behave 
+Exhaustive checking is complete; there's no way to craft a switch statement that
+accidentally causes runtime errors. There are no settings to adjust to make it behave
 differently. It just works.
 
 ```javascript
@@ -219,10 +220,9 @@ let move = (direction: direction) =>
 
 #### Safe Array Access
 
-No matter how you access an array element, you have to deal with the option type. It's 
-either present or it's not. If you want to access it unsafely, it's glaringly obvious that 
+No matter how you access an array element, you have to deal with the option type. It's
+either present or it's not. If you want to access it unsafely, it's glaringly obvious that
 you are doing so, as method names indicate this clearly (e.g., `getUnsafe`).
-
 
 ### Getting Started With ReScript Today!
 

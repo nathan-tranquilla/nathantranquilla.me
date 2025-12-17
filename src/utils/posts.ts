@@ -9,13 +9,13 @@ type Post = {
 };
 
 export const getPosts = () =>
-  Object.values(
-    import.meta.glob<Post>("../pages/blogs/*.md", { eager: true }),
-  ).filter(p => !p.frontmatter.tags.includes("script")).sort(
-    (a, b) =>
-      new Date(b.frontmatter.date).getTime() -
-      new Date(a.frontmatter.date).getTime(),
-  );
+  Object.values(import.meta.glob<Post>("../pages/blogs/*.md", { eager: true }))
+    .filter((p) => !p.frontmatter.tags.includes("script"))
+    .sort(
+      (a, b) =>
+        new Date(b.frontmatter.date).getTime() -
+        new Date(a.frontmatter.date).getTime(),
+    );
 
 export const getPostIndex = (title: string) => {
   let posts = getPosts();
