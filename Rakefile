@@ -8,9 +8,11 @@ task :clean do
   sh "rm -rf node_modules"
 end
 
-task :format => [:install] do 
+task :format_src => [:install] do 
   sh "pnpm exec prettier ./src --write"
 end
+
+task :format => [:format_src, :format_blogs]
 
 task :dev => [:install] do 
   sh "pnpm astro dev --host"
