@@ -14,7 +14,7 @@ curl -L https://install.flox.dev | sh
 flox activate
 
 # Start development server
-pnpm dev
+rake dev
 ```
 
 ## Rake Tasks
