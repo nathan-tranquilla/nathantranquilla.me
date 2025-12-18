@@ -1,7 +1,11 @@
+task :default do 
+  sh "rake -T"
+end 
 
 file 'node_modules' do 
   sh "pnpm install"
 end 
+
 task :install => 'node_modules'
 
 task :clean do 
@@ -14,10 +18,12 @@ end
 
 task :format => [:format_src, :format_blogs]
 
+desc "Dev Server"
 task :dev => [:install] do 
   sh "pnpm astro dev --host"
 end 
 
+desc "Production Build"
 task :build => [:install] do
   sh "pnpm astro build"
 end 
