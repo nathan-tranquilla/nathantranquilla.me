@@ -55,7 +55,7 @@ lack of direction quickly depletes our most crucial resource: mental energy.
 
 #### Mistake 4: Not having enough mental energy
 
-Mental energy is essential for effective AI collaboration. AI amplifies our thought processes. When
+This may seem obvious, but mental energy is essential for effective AI collaboration. It is obvious but important to say. If you are low on energy, you will start to offload your thinking onto AI. AI amplifies our thought processes. When
 our thinking is unclear or underdeveloped, the resulting code will reflect that same lack of
 clarity. In a world demanding immediate results, AI still requires careful, well-thought-out
 mental processes that lead to high-quality solutions.
