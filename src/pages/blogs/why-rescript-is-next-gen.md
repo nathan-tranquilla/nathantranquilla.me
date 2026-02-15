@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/Blog.astro
-title: Why ReScript is Next Gen
+title: Why ReScript is Next-Gen
 author: Nathan Tranquilla
 date: "2025/10/13"
 tags: ["ReScript"]
