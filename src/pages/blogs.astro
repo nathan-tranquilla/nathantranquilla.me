@@ -37,7 +37,7 @@ posts.forEach((post) => {
       {
         posts.map((post, i) => (
           <article
-            id={`article-${i}`}
+            style={`view-transition-name: title-${i}`}
             class="py-8 first:pt-0"
           >
             <a href={post.url} class="group block">
