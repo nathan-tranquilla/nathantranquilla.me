@@ -48,7 +48,7 @@ function handleStatus(status: Status): string {
 
 In the age of AI, web development needs languages with strong type systems that are web-ready, that integrate well with the existing JavaScript ecosystem, and that build fast, both during development and in CI. I want to propose to you that ReScript is that language.
 
-First, ReScript's build system is 6x faster in development and 3x faster in CI today. If you don't believe me, check out my post [The Reality Of ReScript Optimization Claims](/blogs/the-reality-of-rescript-optimization-claims). It's worth noting that the TypeScript compiler is being rewritten in Go, at which point the performance gap should close significantly.
+First, ReScript's build system is 6x faster in development and 3x faster in CI today. If you don't believe me, check out my post [Real-World ReScript vs. TypeScript Benchmarks](https://forum.rescript-lang.org/t/real-world-rescript-vs-typescript-build-performance-complete-dinero-js-core-rewrite/7082). It's worth noting that the TypeScript compiler is being rewritten in Go, at which point the performance gap should close significantly.
 
 Second, there is only one level of strictness in ReScript: maximum. You don't configure how safe you want to be. Having worked with ReScript for the past year, I can tell you that AI is now proficient at even the most recent version, version 12. In fact, the ReScript documentation has a section dedicated to LLMs to ensure that AI knows how to use the most recent version of its API.
 
