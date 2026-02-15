@@ -13,17 +13,24 @@ import logo180 from "../assets/logo_180x180.jpg";
 import logo192 from "../assets/logo_192x192.jpg";
 import logo256 from "../assets/logo_256x256.jpg";
 import logo512 from "../assets/logo_512x512.jpg";
+import ogImageDefault from "../assets/Profile.jpg";
 
 export interface Props {
   title: string;
   classes?: string;
   nonav?: boolean;
+  description?: string;
+  ogImage?: string;
+  ogType?: string;
 }
 
-const { title, classes, nonav = false } = Astro.props;
+const defaultDescription = "Nathan Tranquilla is a Next-Gen Web Development Consultant specializing in making web applications more robust through technology choices of the future";
+
+const { title, classes, nonav = false, description = defaultDescription, ogImage, ogType = "website" } = Astro.props;
 
 const websiteUrl = "https://nathantranquilla.me";
 const canonicalUrl = new URL(Astro.url.pathname, websiteUrl).href;
+const ogImageUrl = ogImage || new URL(ogImageDefault.src, websiteUrl).href;
 ---
 
 <html lang="en">
@@ -47,11 +54,23 @@ const canonicalUrl = new URL(Astro.url.pathname, websiteUrl).href;
     />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>{title}</title>
-    <meta
-      name="description"
-      content="Nathan Tranquilla is a Next-Gen Web Development Consultant specializing in making web applications more robust through technology choices of the future"
-    />
+    <meta name="description" content={description} />
     <meta name="author" content="Nathan Tranquilla" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:site_name" content="nathantranquilla.me" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+
     <link rel="sitemap" href="/sitemap-index.xml" />
 
     <!-- Favicon and Icons -->

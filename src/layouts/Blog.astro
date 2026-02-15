@@ -7,6 +7,9 @@ import ViewCount from "../components/ViewCount.astro";
 const { frontmatter } = Astro.props;
 
 const i = getPostIndex(frontmatter.title);
+const blogDescription = frontmatter.description || `${frontmatter.title} — by ${frontmatter.author}`;
+const websiteUrl = "https://nathantranquilla.me";
+const articleUrl = new URL(Astro.url.pathname, websiteUrl).href;
 
 // Load build-time analytics data
 let viewCount = 0;
@@ -153,8 +156,17 @@ try {
     min-height: 100vh;
   }
 </style>
-<Main title={`nathantraquilla.me | ${frontmatter.title}`}>
+<Main title={`nathantraquilla.me | ${frontmatter.title}`} description={blogDescription} ogType="article">
   <Container classes="blog-post w-full max-w-[1000px] mx-auto font-sans">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": frontmatter.title,
+      "author": { "@type": "Person", "name": frontmatter.author },
+      "datePublished": frontmatter.date.replace(/\//g, "-"),
+      "url": articleUrl,
+      "keywords": frontmatter.tags,
+    })} />
     <article>
       <header
         style={`view-transition-name: title-${i}`}
