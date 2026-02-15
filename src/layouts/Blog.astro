@@ -28,7 +28,7 @@ try {
   .blog-post article h3 {
     margin-top: 3rem;
     margin-bottom: 1rem;
-    color: var(--color-slate-900);
+    color: var(--text-primary);
     font-family: var(--font-sans);
     font-size: 1.25rem;
     font-weight: 700;
@@ -37,7 +37,7 @@ try {
   .blog-post article h4 {
     margin-top: 2rem;
     margin-bottom: 1rem;
-    color: var(--color-slate-800);
+    color: var(--text-primary);
     font-family: var(--font-sans);
     font-size: 1.125rem;
     font-weight: 700;
@@ -58,7 +58,7 @@ try {
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
     line-height: 1.8;
-    color: var(--color-slate-700);
+    color: var(--text-secondary);
     font-size: 1.125rem;
   }
 
@@ -67,7 +67,7 @@ try {
     font-family: var(--font-serif);
     font-size: 1.375rem;
     font-weight: 400;
-    color: var(--color-slate-800);
+    color: var(--text-primary);
     line-height: 1.8;
   }
 
@@ -83,12 +83,12 @@ try {
     position: relative;
     padding-left: 1.5rem;
     line-height: 1.7;
-    color: var(--color-slate-700);
+    color: var(--text-secondary);
   }
 
   .blog-post article ul li::before {
     content: "\25B8";
-    color: var(--color-lime-900);
+    color: var(--accent-strong);
     font-weight: bold;
     position: absolute;
     left: 0;
@@ -104,42 +104,42 @@ try {
     display: block;
     border-radius: 1rem;
     box-shadow:
-      0 25px 50px -12px rgba(0, 0, 0, 0.25),
-      0 10px 20px -8px rgba(0, 0, 0, 0.1);
+      0 25px 50px -12px var(--shadow-heavy),
+      0 10px 20px -8px var(--shadow-color);
     content-visibility: auto;
-    border: 1px solid var(--color-slate-200);
+    border: 1px solid var(--border-primary);
   }
 
   /* Blockquotes */
   .blog-post article blockquote {
     margin: 2rem 0;
     padding: 1.5rem 2rem;
-    background: linear-gradient(135deg, var(--color-slate-50) 0%, var(--color-slate-100) 100%);
-    border-left: 5px solid var(--color-lime-900);
+    background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-secondary) 100%);
+    border-left: 5px solid var(--accent-strong);
     border-radius: 0 0.5rem 0.5rem 0;
     font-style: italic;
-    color: var(--color-slate-600);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    color: var(--text-tertiary);
+    box-shadow: 0 4px 6px -1px var(--shadow-color);
   }
 
   /* Links */
   .blog-body a {
-    color: var(--color-lime-900);
+    color: var(--accent-strong);
     text-decoration: underline;
-    text-decoration-color: var(--color-lime-400);
+    text-decoration-color: var(--text-accent);
     text-underline-offset: 4px;
     text-decoration-thickness: 2px;
     transition: color 0.2s ease, text-decoration-color 0.2s ease;
   }
 
   .blog-body a:hover {
-    color: var(--color-lime-950);
-    text-decoration-color: var(--color-lime-900);
+    color: var(--text-accent-hover);
+    text-decoration-color: var(--accent-strong);
   }
 
   /* Strong text */
   .blog-body strong {
-    color: var(--color-slate-800);
+    color: var(--text-primary);
     font-weight: 700;
   }
 
@@ -158,18 +158,18 @@ try {
     <article>
       <header
         style={`view-transition-name: title-${i}`}
-        class="mb-12 border-b border-slate-200 pb-8 md:pb-12"
+        class="mb-12 border-b border-[var(--border-primary)] pb-8 md:pb-12"
       >
         <h1
-          class="text-wrap mb-3 text-3xl md:text-4xl font-serif font-semibold leading-tight text-slate-900"
+          class="text-wrap mb-3 text-3xl md:text-4xl font-serif font-semibold leading-tight text-[var(--text-primary)]"
           >{frontmatter.title}</h1
         >
         <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
-          <span class="text-base text-slate-500">
+          <span class="text-base text-[var(--text-muted)]">
             {frontmatter.author} · {frontmatter.date}
           </span>
           {frontmatter.tags.map((tag: string) => (
-            <span class="rounded-full bg-slate-100 px-2.5 py-0.5 text-xs font-medium text-slate-600">
+            <span class="rounded-full bg-[var(--bg-secondary)] px-2.5 py-0.5 text-xs font-medium text-[var(--text-tertiary)]">
               {tag}
             </span>
           ))}
@@ -178,7 +178,7 @@ try {
       <section class="blog-body">
         <slot />
       </section>
-      <footer class="mt-12 border-t border-slate-200 pt-6">
+      <footer class="mt-12 border-t border-[var(--border-primary)] pt-6">
         <ViewCount count={viewCount} />
       </footer>
     </article>

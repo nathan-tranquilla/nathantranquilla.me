@@ -3,11 +3,11 @@ import { Image } from "astro:assets";
 import Button from "./Button.astro";
 import FredMap from "../assets/FrederictonMap.png";
 let linkStyle =
-  "text-wrap cursor-pointer hover:underline hover:text-lime-700 focus:underline focus:text-lime-700 underline-offset-4 decoration-2 decoration-lime-700 transition-colors duration-200";
+  "text-wrap cursor-pointer hover:underline hover:text-[var(--text-accent)] focus:underline focus:text-[var(--text-accent)] underline-offset-4 decoration-2 decoration-[var(--text-accent)] transition-colors duration-200";
 ---
 
 <footer
-  class="col-start-1 col-end-4 grid w-full grid-cols-2 justify-center gap-6 bg-slate-800 px-4 py-8 font-sans text-white md:grid-cols-[minmax(100px,250px)_250px_250px_minmax(100px,250px)] md:py-20"
+  class="col-start-1 col-end-4 grid w-full grid-cols-2 justify-center gap-6 bg-[var(--bg-footer)] px-4 py-8 font-sans text-white md:grid-cols-[minmax(100px,250px)_250px_250px_minmax(100px,250px)] md:py-20"
 >
   <div class="">
     <h3 class="pb-6 text-lg font-semibold">Pages</h3>
@@ -48,9 +48,9 @@ let linkStyle =
     <Button href="/consultation">Work With Me</Button>
   </div>
   <div
-    class="col-span-2 mt-8 border-t border-slate-600 pt-6 text-center md:col-span-4"
+    class="col-span-2 mt-8 border-t border-[var(--border-footer)] pt-6 text-center md:col-span-4"
   >
-    <p class="text-sm text-slate-300">
+    <p class="text-sm text-[var(--text-tertiary)]">
       © {new Date().getFullYear()} Nathan Tranquilla. All rights reserved.
     </p>
   </div>

@@ -11,6 +11,75 @@
 
 :root {
   --nav-height: 75px;
+
+  /* Backgrounds */
+  --bg-primary: #fff;
+  --bg-secondary: var(--color-slate-100);
+  --bg-tertiary: var(--color-slate-50);
+  --bg-surface: var(--color-slate-900);
+  --bg-footer: var(--color-slate-800);
+
+  /* Text */
+  --text-primary: var(--color-slate-900);
+  --text-secondary: var(--color-slate-700);
+  --text-tertiary: var(--color-slate-600);
+  --text-muted: var(--color-slate-500);
+  --text-accent: var(--color-lime-700);
+  --text-accent-hover: var(--color-lime-800);
+
+  /* Borders */
+  --border-primary: var(--color-slate-200);
+  --border-secondary: var(--color-slate-100);
+  --border-footer: var(--color-slate-600);
+
+  /* Accent / Buttons */
+  --accent-bg: var(--color-lime-700);
+  --accent-bg-hover: var(--color-lime-800);
+  --accent-strong: var(--color-lime-900);
+
+  /* Header */
+  --header-bg: rgba(255, 255, 255, 0.95);
+
+  /* Shadows */
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --shadow-heavy: rgba(0, 0, 0, 0.25);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+
+    --bg-primary: var(--color-slate-900);
+    --bg-secondary: var(--color-slate-800);
+    --bg-tertiary: var(--color-slate-800);
+    --bg-surface: var(--color-slate-950);
+    --bg-footer: var(--color-slate-950);
+
+    --text-primary: var(--color-slate-100);
+    --text-secondary: var(--color-slate-300);
+    --text-tertiary: var(--color-slate-400);
+    --text-muted: var(--color-slate-500);
+    --text-accent: var(--color-lime-400);
+    --text-accent-hover: var(--color-lime-300);
+
+    --border-primary: var(--color-slate-700);
+    --border-secondary: var(--color-slate-700);
+    --border-footer: var(--color-slate-700);
+
+    --accent-bg: var(--color-lime-600);
+    --accent-bg-hover: var(--color-lime-500);
+    --accent-strong: var(--color-lime-500);
+
+    --header-bg: rgba(15, 23, 42, 0.95);
+
+    --shadow-color: rgba(0, 0, 0, 0.4);
+    --shadow-heavy: rgba(0, 0, 0, 0.5);
+  }
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-secondary);
 }
 
 .astro-code {

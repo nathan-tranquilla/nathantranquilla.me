@@ -6,7 +6,7 @@ const { count } = Astro.props;
 ---
 
 {count > 0 && (
-  <span class="inline-flex items-center gap-1 rounded-full bg-slate-100 px-2.5 py-0.5 text-xs font-medium text-slate-500">
+  <span class="inline-flex items-center gap-1 rounded-full bg-[var(--bg-secondary)] px-2.5 py-0.5 text-xs font-medium text-[var(--text-muted)]">
     {count} views
   </span>
 )}

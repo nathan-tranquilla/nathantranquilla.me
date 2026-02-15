@@ -26,13 +26,13 @@ posts.forEach((post) => {
   <Container classes="w-full max-w-4xl mx-auto py-8 px-4">
     <div class="mb-12 text-center">
       <H1 classes="mb-4">Next-Gen Web Dev Blog</H1>
-      <p class="mx-auto max-w-2xl text-xl leading-relaxed text-slate-600">
+      <p class="mx-auto max-w-2xl text-xl leading-relaxed text-[var(--text-tertiary)]">
         Insights on strongly-typed languages, type safety, and the future of web
         development
       </p>
     </div>
 
-    <div class="divide-y divide-slate-200">
+    <div class="divide-y divide-[var(--border-primary)]">
       {
         posts.map((post, i) => (
           <article
@@ -40,15 +40,15 @@ posts.forEach((post) => {
             class="py-8 first:pt-0"
           >
             <a href={post.url} class="group block">
-              <h2 class="font-serif text-xl text-slate-900 group-hover:text-lime-700 transition-colors duration-200 md:text-2xl mb-2">
+              <h2 class="font-serif text-xl text-[var(--text-primary)] group-hover:text-[var(--text-accent)] transition-colors duration-200 md:text-2xl mb-2">
                 {post.frontmatter.title}
               </h2>
               <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
-                <span class="text-sm text-slate-500">
+                <span class="text-sm text-[var(--text-muted)]">
                   {post.frontmatter.author} · {formatDate(post.frontmatter.date)}
                 </span>
                 {post.frontmatter.tags.map((tag: string) => (
-                  <span class="rounded-full bg-slate-100 px-2.5 py-0.5 text-xs font-medium text-slate-600">
+                  <span class="rounded-full bg-[var(--bg-secondary)] px-2.5 py-0.5 text-xs font-medium text-[var(--text-tertiary)]">
                     {tag}
                   </span>
                 ))}
@@ -63,8 +63,8 @@ posts.forEach((post) => {
       posts.length === 0 && (
         <div class="py-16 text-center">
           <div class="mb-4 text-6xl">📝</div>
-          <h2 class="mb-2 text-2xl font-bold text-slate-900">No posts yet</h2>
-          <p class="text-slate-600">
+          <h2 class="mb-2 text-2xl font-bold text-[var(--text-primary)]">No posts yet</h2>
+          <p class="text-[var(--text-tertiary)]">
             Check back soon for insights on Next-Gen Web Development!
           </p>
         </div>
