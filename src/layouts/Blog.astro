@@ -1,6 +1,5 @@
 ---
 import Main from "./Main.astro";
-import H1 from "../components/HTMLElements/H1.astro";
 import Container from "../components/Container.astro";
 import { getPostIndex } from "../utils/posts";
 
@@ -10,61 +9,53 @@ const i = getPostIndex(frontmatter.title);
 ---
 
 <style is:global>
-  /* Enhanced Headings */
+  /* Headings */
   .blog-post article h3 {
     margin-top: 3rem;
-    margin-bottom: 1.5rem;
-    color: #1e293b; /* slate-800 */
+    margin-bottom: 1rem;
+    color: var(--color-slate-900);
     font-family: var(--font-family-sans);
-    font-size: 1.25rem; /* text-xl */
-    font-weight: 700; /* font-bold */
-    position: relative;
-    padding-left: 1rem;
-    border-left: 4px solid #365314; /* lime-900 accent */
-    padding: 1rem 1rem 1rem 1.5rem;
-    border-radius: 0 0.5rem 0.5rem 0;
-    transition: all 0.3s ease;
+    font-size: 1.25rem;
+    font-weight: 700;
   }
 
   .blog-post article h4 {
     margin-top: 2rem;
     margin-bottom: 1rem;
-    color: #1e293b; /* slate-800 */
+    color: var(--color-slate-800);
     font-family: var(--font-family-sans);
-    font-size: 1.1rem; /* text-xl */
-    font-weight: 700; /* font-bold */
-    position: relative;
-    transition: all 0.3s ease;
+    font-size: 1.125rem;
+    font-weight: 700;
   }
 
   @media (min-width: 768px) {
     .blog-post article h3 {
-      font-size: 1.5rem; /* md:text-2xl */
+      font-size: 1.5rem;
     }
 
     .blog-post article h4 {
-      font-size: 1.25rem; /* md:text-2xl */
+      font-size: 1.25rem;
     }
   }
 
-  /* Enhanced Paragraphs */
-  .blog-post article p {
+  /* Paragraphs */
+  .blog-body p {
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
     line-height: 1.8;
-    color: #374151; /* gray-700 */
-    font-size: 1.1rem;
+    color: var(--color-gray-700);
+    font-size: 1.125rem;
   }
 
-  /* First paragraph special styling */
-  .blog-post article p:first-of-type {
-    font-size: 1.2rem;
+  /* First paragraph in blog body */
+  .blog-body > p:first-child {
+    font-size: 1.25rem;
     font-weight: 500;
-    color: #1f2937; /* gray-800 */
+    color: var(--color-gray-800);
     line-height: 1.7;
   }
 
-  /* Enhanced Lists */
+  /* Lists */
   .blog-post article ul {
     margin: 2rem 0;
     padding-left: 1.5rem;
@@ -76,12 +67,12 @@ const i = getPostIndex(frontmatter.title);
     position: relative;
     padding-left: 1.5rem;
     line-height: 1.7;
-    color: #374151;
+    color: var(--color-gray-700);
   }
 
   .blog-post article ul li::before {
-    content: "▸";
-    color: #365314; /* lime-900 */
+    content: "\25B8";
+    color: var(--color-lime-900);
     font-weight: bold;
     position: absolute;
     left: 0;
@@ -89,9 +80,9 @@ const i = getPostIndex(frontmatter.title);
     font-size: 1.2rem;
   }
 
-  /* Enhanced Images */
+  /* Images */
   .blog-post article img {
-    width: 95vw;
+    width: 100%;
     max-width: 900px;
     margin: 3rem auto;
     display: block;
@@ -99,60 +90,51 @@ const i = getPostIndex(frontmatter.title);
     box-shadow:
       0 25px 50px -12px rgba(0, 0, 0, 0.25),
       0 10px 20px -8px rgba(0, 0, 0, 0.1);
-    transition: all 0.4s ease;
     content-visibility: auto;
-    border: 1px solid #e2e8f0;
+    border: 1px solid var(--color-slate-200);
   }
 
   /* Blockquotes */
   .blog-post article blockquote {
     margin: 2rem 0;
     padding: 1.5rem 2rem;
-    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
-    border-left: 5px solid #365314;
+    background: linear-gradient(135deg, var(--color-slate-50) 0%, var(--color-slate-100) 100%);
+    border-left: 5px solid var(--color-lime-900);
     border-radius: 0 0.5rem 0.5rem 0;
     font-style: italic;
-    color: #475569;
+    color: var(--color-slate-600);
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   }
 
-  /* Links within content */
-  .blog-post article a {
-    color: #365314; /* lime-900 */
+  /* Links */
+  .blog-body a {
+    color: var(--color-lime-900);
     text-decoration: underline;
-    text-decoration-color: #84cc16; /* lime-400 */
+    text-decoration-color: var(--color-lime-400);
     text-underline-offset: 4px;
     text-decoration-thickness: 2px;
-    transition: all 0.2s ease;
+    transition: color 0.2s ease, text-decoration-color 0.2s ease;
   }
 
-  .blog-post article a:hover {
-    color: #1a2e05;
-    text-decoration-color: #365314;
-    background: rgba(132, 204, 22, 0.1);
-    padding: 0.125rem 0.25rem;
-    border-radius: 0.25rem;
+  .blog-body a:hover {
+    color: var(--color-lime-950);
+    text-decoration-color: var(--color-lime-900);
   }
 
-  /* Strong text enhancement */
-  .blog-post article strong {
-    color: #1e293b;
+  /* Strong text */
+  .blog-body strong {
+    color: var(--color-slate-800);
     font-weight: 700;
   }
 
-  /* Enhanced spacing for better readability */
-  .blog-post article > * + * {
-    margin-top: 1.5rem;
-  }
-
-  .blog-post article h3 + p {
+  /* Tighten gap after headings */
+  .blog-body h3 + p {
     margin-top: 1rem;
   }
 
-  /* Enhanced Blog Post Layout */
+  /* Blog post layout */
   .blog-post {
     min-height: 100vh;
-    padding: 2rem 1rem;
   }
 </style>
 <Main title={`nathantraquilla.me | ${frontmatter.title}`}>
@@ -160,14 +142,14 @@ const i = getPostIndex(frontmatter.title);
     <article>
       <header
         id={`article-${i}`}
-        class="relative mb-12 overflow-hidden rounded-2xl border-t-4 border-lime-500 bg-gradient-to-br from-slate-800 to-slate-600 p-8 text-white shadow-2xl md:p-12"
+        class="mb-12 border-b border-slate-200 pb-8 md:pb-12"
       >
-        <H1
-          classes="text-wrap !text-white !mb-4 !text-3xl md:!text-4xl !font-extrabold !leading-tight drop-shadow-sm"
-          >{frontmatter.title}</H1
+        <h1
+          class="text-wrap mb-3 text-3xl md:text-4xl font-bold leading-tight text-slate-900"
+          >{frontmatter.title}</h1
         >
-        <p class="text-lg font-medium tracking-wide !text-white">
-          by {frontmatter.author}
+        <p class="text-base text-slate-500">
+          {frontmatter.author} · {frontmatter.date}
         </p>
       </header>
       <section class="blog-body">
