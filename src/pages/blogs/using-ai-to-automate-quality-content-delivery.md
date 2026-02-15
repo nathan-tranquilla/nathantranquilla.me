@@ -3,7 +3,7 @@ layout: ../../layouts/Blog.astro
 title: How I Classified 60,000+ Office Quotes With AI
 author: Nathan Tranquilla
 date: "2026/02/16"
-tags: ["Claude Code","AI","Phrase Classification"]
+tags: ["AI","Prompt Engineering","Automation"]
 ---
 
 I run [The Office Lines](https://theofficelines.com), a site that lets you search all The Office (US) lines by keyword. I wanted to add a quotes section, divided by topic: love, friendship, work, sarcasm, you get it. The challenge was classifying 60,000+ lines of dialogue by topic, in context, so that I could automatically generate high-quality quote pages. This is the problem I solved with Claude Code.
