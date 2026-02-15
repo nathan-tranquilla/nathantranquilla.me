@@ -31,22 +31,24 @@ const { title, classes, nonav = false, description = defaultDescription, ogImage
 const websiteUrl = "https://nathantranquilla.me";
 const canonicalUrl = new URL(Astro.url.pathname, websiteUrl).href;
 const ogImageUrl = ogImage || new URL(ogImageDefault.src, websiteUrl).href;
+const isProd = import.meta.env.PROD;
 ---
 
 <html lang="en">
   <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MCZFYVP6CG"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-MCZFYVP6CG");
-    </script>
+    {isProd && (
+      <Fragment>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-MCZFYVP6CG"></script>
+        <script is:inline>
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag("js", new Date());
+          gtag("config", "G-MCZFYVP6CG");
+        </script>
+      </Fragment>
+    )}
     <meta charset="UTF-8" />
     <meta
       name="viewport"
