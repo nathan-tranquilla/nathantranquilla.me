@@ -13,6 +13,8 @@
   "dependencies": {
     "@astrojs/react": "^4.4.2",
     "@astrojs/sitemap": "^3.6.0",
+    "@fontsource-variable/inter": "^5.2.8",
+    "@fontsource-variable/playfair-display": "^5.2.8",
     "@rescript/core": "^1.6.1",
     "@rescript/react": "^0.14.1",
     "@rescript/runtime": "^12.1.0",
