@@ -3,7 +3,7 @@ layout: ../../layouts/Blog.astro
 title: TypeScript Has A Big Problem
 author: Nathan Tranquilla
 date: "2026/02/15"
-tags: ["Next-Gen Web Dev"]
+tags: ["Next-Gen Web Dev", "AI"]
 ---
 
 TypeScript has a big problem. In the age of AI, the cost of writing software is collapsing as AI writes more and more code. But that means the bottleneck has shifted. It's no longer about how fast you can write code. It's about how fast your code compiles and how reliable your type system is at preventing bugs in production. In this post, I'll show you why TypeScript's core design makes both of those harder than they need to be, and we'll explore an alternative.
