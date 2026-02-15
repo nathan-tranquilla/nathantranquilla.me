@@ -7,7 +7,8 @@ import ViewCount from "../components/ViewCount.astro";
 const { frontmatter } = Astro.props;
 
 const i = getPostIndex(frontmatter.title);
-const blogDescription = frontmatter.description || `${frontmatter.title} — by ${frontmatter.author}`;
+const tagString = frontmatter.tags?.length ? ` — ${frontmatter.tags.join(", ")}` : "";
+const blogDescription = frontmatter.description || `${frontmatter.title}${tagString} — by ${frontmatter.author}`;
 const websiteUrl = "https://nathantranquilla.me";
 const articleUrl = new URL(Astro.url.pathname, websiteUrl).href;
 
