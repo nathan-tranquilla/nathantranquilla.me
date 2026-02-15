@@ -17,6 +17,16 @@ pnpm-debug.log*
 .env
 .env.production
 
+# ReScript build artifacts
+lib/
+src/**/*.res.mjs
+
+# Generated analytics data
+public/data/
+
+# Local env
+.env.local
+
 # macOS-specific files
 .DS_Store
 

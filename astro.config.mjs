@@ -4,6 +4,7 @@ import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 
 import sitemap from "@astrojs/sitemap";
+import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
@@ -11,7 +12,7 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
   site: 'https://nathantranquilla.me',
-  integrations: [sitemap()],
+  integrations: [react(), sitemap()],
 
   build: {
     inlineStylesheets: "always",

@@ -2,10 +2,25 @@
 import Main from "./Main.astro";
 import Container from "../components/Container.astro";
 import { getPostIndex } from "../utils/posts";
+import ViewCount from "../components/ViewCount.astro";
 
 const { frontmatter } = Astro.props;
 
 const i = getPostIndex(frontmatter.title);
+
+// Load build-time analytics data
+let viewCount = 0;
+try {
+  const fs = await import("node:fs");
+  const path = await import("node:path");
+  const analyticsPath = path.join(process.cwd(), "public", "data", "analytics.json");
+  if (fs.existsSync(analyticsPath)) {
+    const viewCounts: Record<string, number> = JSON.parse(fs.readFileSync(analyticsPath, "utf-8"));
+    viewCount = viewCounts[Astro.url.pathname.replace(/\/$/, "")] ?? 0;
+  }
+} catch {
+  // Analytics data not available
+}
 ---
 
 <style is:global>
@@ -162,6 +177,9 @@ const i = getPostIndex(frontmatter.title);
       <section class="blog-body">
         <slot />
       </section>
+      <footer class="mt-12 border-t border-slate-200 pt-6">
+        <ViewCount count={viewCount} />
+      </footer>
     </article>
   </Container>
 </Main>

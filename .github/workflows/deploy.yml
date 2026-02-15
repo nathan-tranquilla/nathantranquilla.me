@@ -3,6 +3,8 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [ main ]
+  schedule:
+    - cron: '0 6 * * *'
   workflow_dispatch:
 
 permissions:
@@ -32,6 +34,8 @@ jobs:
       uses: flox/activate-action@v1
       env:
         FLOX_DISABLE_METRICS: true
+        GA4_SERVICE_ACCOUNT_JSON: ${{ secrets.GA4_SERVICE_ACCOUNT_JSON }}
+        GA4_PROPERTY_ID: ${{ secrets.GA4_PROPERTY_ID }}
       with:
         command: rake build
           

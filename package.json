@@ -2,14 +2,30 @@
   "name": "src",
   "type": "module",
   "version": "0.0.1",
+  "scripts": {
+    "res:build": "rescript",
+    "res:dev": "rescript build -w",
+    "res:clean": "rescript clean",
+    "fetch:analytics": "node src/scripts/FetchAnalytics.res.mjs",
+    "build": "pnpm res:build && pnpm fetch:analytics && astro build",
+    "dev": "astro dev --host"
+  },
   "dependencies": {
+    "@astrojs/react": "^4.4.2",
     "@astrojs/sitemap": "^3.6.0",
+    "@rescript/core": "^1.6.1",
+    "@rescript/react": "^0.14.1",
+    "@rescript/runtime": "^12.1.0",
     "@tailwindcss/vite": "^4.1.13",
     "astro": "^5.14.1",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "rescript": "^12.1.0",
     "sharp": "^0.34.4",
     "tailwindcss": "^4.1.13"
   },
   "devDependencies": {
+    "@google-analytics/data": "^5.2.1",
     "prettier": "3.6.2",
     "prettier-plugin-astro": "0.14.1",
     "prettier-plugin-tailwindcss": "0.6.14"

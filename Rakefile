@@ -25,8 +25,10 @@ end
 
 desc "Production Build"
 task :build => [:install] do
+  sh "pnpm res:build"
+  sh "pnpm fetch:analytics"
   sh "pnpm astro build"
-end 
+end
 
 task :format_blogs do
   puts "Formatting blog markdown files to 100-character line limits..."
