@@ -1,15 +1,12 @@
 ---
 import Main from "../layouts/Main.astro";
 import Container from "../components/Container.astro";
+import { make as FormTabs } from "../components/FormTabs.res.mjs";
 
 const inputClasses = "w-full rounded-md border border-[var(--border-primary)] bg-[var(--bg-primary)] text-[var(--text-secondary)] px-3 py-2 focus:ring-2 focus:ring-[var(--accent-bg)] focus:outline-none focus:border-[var(--accent-bg)] transition-colors";
 const labelClasses = "block text-sm font-semibold text-[var(--text-primary)] mb-1";
 const webDevAction = import.meta.env.PROD ? "https://formspree.io/f/xzdarlpg" : "#";
 const aiAction = import.meta.env.PROD ? "https://formspree.io/f/mvzbajol" : "#";
-
-const activeTab = "border-b-2 border-[var(--accent-bg)] text-[var(--text-primary)] font-semibold";
-const inactiveTab = "text-[var(--text-muted)] hover:text-[var(--text-secondary)]";
-const tabBase = "pb-2 px-1 text-base cursor-pointer transition-colors";
 const submitClasses = "w-full rounded-md bg-[var(--accent-bg)] hover:bg-[var(--accent-bg-hover)] text-white py-3 px-6 font-semibold cursor-pointer hover:scale-[1.01] hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[var(--accent-bg)] focus:ring-offset-2 shadow-md transition-[transform,box-shadow,background-color] duration-200";
 ---
 
@@ -25,18 +22,8 @@ const submitClasses = "w-full rounded-md bg-[var(--accent-bg)] hover:bg-[var(--a
       Fill out the form below and I'll get back to you within 48 hours.
     </p>
 
-    <!-- Tabs -->
-    <div class="flex gap-6 border-b border-[var(--border-primary)] mb-8" data-testid="tab-bar">
-      <button type="button" id="tab-webdev" class={`${tabBase} ${activeTab}`} data-tab="webdev">
-        Web Development
-      </button>
-      <button type="button" id="tab-ai" class={`${tabBase} ${inactiveTab}`} data-tab="ai">
-        AI Consulting
-      </button>
-    </div>
-
-    <!-- Web Development Form -->
-    <div id="form-webdev">
+    <FormTabs client:load>
+      <div slot="webdev">
       <form action={webDevAction} method="POST" data-testid="webdev-form" class="space-y-6">
         <div>
           <label for="wd-name" class={labelClasses}>Full Name <span class="text-red-500">*</span></label>
@@ -124,10 +111,9 @@ const submitClasses = "w-full rounded-md bg-[var(--accent-bg)] hover:bg-[var(--a
 
         <button type="submit" class={submitClasses}>Submit</button>
       </form>
-    </div>
+      </div>
 
-    <!-- AI Consulting Form -->
-    <div id="form-ai" class="hidden">
+      <div slot="ai">
       <form action={aiAction} method="POST" data-testid="ai-form" class="space-y-6">
         <div>
           <label for="ai-name" class={labelClasses}>Full Name <span class="text-red-500">*</span></label>
@@ -238,38 +224,7 @@ const submitClasses = "w-full rounded-md bg-[var(--accent-bg)] hover:bg-[var(--a
 
         <button type="submit" class={submitClasses}>Submit</button>
       </form>
-    </div>
+      </div>
+    </FormTabs>
   </Container>
 </Main>
-
-<script is:inline>
-  const tabs = document.querySelectorAll("[data-tab]");
-  const webdevForm = document.getElementById("form-webdev");
-  const aiForm = document.getElementById("form-ai");
-
-  const activeClasses = ["border-b-2", "border-[var(--accent-bg)]", "text-[var(--text-primary)]", "font-semibold"];
-  const inactiveClasses = ["text-[var(--text-muted)]"];
-
-  tabs.forEach((tab) => {
-    tab.addEventListener("click", () => {
-      const target = tab.getAttribute("data-tab");
-
-      tabs.forEach((t) => {
-        activeClasses.forEach((c) => t.classList.remove(c));
-        inactiveClasses.forEach((c) => t.classList.remove(c));
-      });
-
-      if (target === "webdev") {
-        webdevForm.classList.remove("hidden");
-        aiForm.classList.add("hidden");
-        activeClasses.forEach((c) => tabs[0].classList.add(c));
-        inactiveClasses.forEach((c) => tabs[1].classList.add(c));
-      } else {
-        webdevForm.classList.add("hidden");
-        aiForm.classList.remove("hidden");
-        activeClasses.forEach((c) => tabs[1].classList.add(c));
-        inactiveClasses.forEach((c) => tabs[0].classList.add(c));
-      }
-    });
-  });
-</script>

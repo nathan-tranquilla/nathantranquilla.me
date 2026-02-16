@@ -3,6 +3,8 @@ import { test, expect } from "@playwright/test";
 test.describe("Consultation Page", () => {
   test.beforeEach(async ({ page }) => {
     await page.goto("/consultation");
+    // Wait for React to hydrate the tab component
+    await page.waitForLoadState("networkidle");
   });
 
   test.describe("Tab switching", () => {

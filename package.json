@@ -9,7 +9,7 @@
     "fetch:analytics": "node src/scripts/FetchAnalytics.res.mjs",
     "build": "pnpm res:build && pnpm fetch:analytics && astro build",
     "dev": "astro dev --host",
-    "test": "playwright test",
+    "test": "playwright test --reporter=list",
     "test:ui": "playwright test --ui"
   },
   "dependencies": {
