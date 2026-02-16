@@ -163,10 +163,30 @@ try {
       "@context": "https://schema.org",
       "@type": "Article",
       "headline": frontmatter.title,
-      "author": { "@type": "Person", "name": frontmatter.author },
+      "description": blogDescription,
+      "author": {
+        "@type": "Person",
+        "name": frontmatter.author,
+        "url": `${websiteUrl}/about`
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Nathan Tranquilla",
+        "url": websiteUrl,
+        "logo": {
+          "@type": "ImageObject",
+          "url": `${websiteUrl}/logo_512x512.jpg`
+        }
+      },
+      "image": `${websiteUrl}/Profile.jpg`,
       "datePublished": frontmatter.date.replace(/\//g, "-"),
+      "dateModified": frontmatter.dateModified?.replace(/\//g, "-") || frontmatter.date.replace(/\//g, "-"),
       "url": articleUrl,
-      "keywords": frontmatter.tags,
+      "keywords": frontmatter.tags.join(", "),
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": articleUrl
+      }
     })} />
     <article>
       <header

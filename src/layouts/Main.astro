@@ -34,6 +34,30 @@ const websiteUrl = "https://nathantranquilla.me";
 const canonicalUrl = new URL(Astro.url.pathname, websiteUrl).href;
 const ogImageUrl = ogImage || new URL(ogImageDefault.src, websiteUrl).href;
 const isProd = import.meta.env.PROD;
+
+// Generate breadcrumb schema
+const pathSegments = Astro.url.pathname.split('/').filter(Boolean);
+const breadcrumbItems = [
+  { "@type": "ListItem", "position": 1, "name": "Home", "item": websiteUrl }
+];
+
+pathSegments.forEach((segment, index) => {
+  const name = breadcrumbTitle && index === pathSegments.length - 1
+    ? breadcrumbTitle
+    : segment.charAt(0).toUpperCase() + segment.slice(1).replace(/-/g, ' ');
+  breadcrumbItems.push({
+    "@type": "ListItem",
+    "position": index + 2,
+    "name": name,
+    "item": `${websiteUrl}/${pathSegments.slice(0, index + 1).join('/')}`
+  });
+});
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": breadcrumbItems
+};
 ---
 
 <html lang="en">
@@ -57,9 +81,13 @@ const isProd = import.meta.env.PROD;
       content="width=device-width, initial-scale=1, maximum-scale=2"
     />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="theme-color" content="#1a1a1a" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1a1a1a" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff" />
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="author" content="Nathan Tranquilla" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 
     <!-- Open Graph -->
     <meta property="og:title" content={title} />
@@ -97,7 +125,9 @@ const isProd = import.meta.env.PROD;
     <meta name="email" content="tranquilla.nathan@pm.me" />
     <link rel="canonical" href={canonicalUrl} />
 
-    <meta name="keywords" content="Next-Gen Web Dev" />
+    <meta name="keywords" content="Next-Gen Web Development, ReScript, TypeScript alternatives, strong type systems, web development consulting, type-safe programming, functional programming, web app development, static typing, JavaScript alternatives, web development consultant, AI consulting, software engineering, Nathan Tranquilla" />
+
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumbSchema)} />
   </head>
   <Body>
     {!nonav && <Header />}
