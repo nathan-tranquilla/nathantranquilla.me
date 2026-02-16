@@ -34,3 +34,6 @@ public/data/
 .idea/
 
 /docs
+
+playwright-report/
+test-results/

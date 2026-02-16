@@ -1,18 +1,115 @@
 ---
 import Main from "../layouts/Main.astro";
+import Container from "../components/Container.astro";
+
+const inputClasses = "w-full rounded-md border border-[var(--border-primary)] bg-[var(--bg-primary)] text-[var(--text-secondary)] px-3 py-2 focus:ring-2 focus:ring-[var(--accent-bg)] focus:outline-none focus:border-[var(--accent-bg)] transition-colors";
+const labelClasses = "block text-sm font-semibold text-[var(--text-primary)] mb-1";
+const formAction = import.meta.env.PROD ? "https://formspree.io/f/xzdarlpg" : "#";
 ---
 
 <Main
-  nonav
   title="nathantranquilla.me | Next-Gen Web Dev Consultation"
   description="Book a consultation with Nathan Tranquilla to discuss Next-Gen Web Development for your project."
-  classes="flex flex-col justify-start items-center"
 >
-  <iframe
-    class="h-[1000vh] max-h-[3000px] w-full max-w-[600px]"
-    src="https://docs.google.com/forms/d/e/1FAIpQLSdscMbeIJIvOBqrpW4OegfQJ1MjemsMzaGkEFzGLoFI-KCinw/viewform?embedded=true"
-    frameborder="0"
-    marginheight="0"
-    marginwidth="0">Loading…</iframe
-  >
+  <Container classes="w-full max-w-[600px] mx-auto font-sans">
+    <h1 class="text-2xl md:text-3xl font-serif font-semibold text-[var(--text-primary)] mb-2">
+      Book a Consultation
+    </h1>
+    <p class="text-[var(--text-muted)] mb-8">
+      Fill out the form below and I'll get back to you within 48 hours.
+    </p>
+
+    <form action={formAction} method="POST" data-testid="consultation-form" class="space-y-6">
+      <div>
+        <label for="name" class={labelClasses}>Full Name <span class="text-red-500">*</span></label>
+        <input type="text" id="name" name="name" required class={inputClasses} />
+      </div>
+
+      <div>
+        <label for="email" class={labelClasses}>Email Address <span class="text-red-500">*</span></label>
+        <input type="email" id="email" name="email" required class={inputClasses} />
+      </div>
+
+      <div>
+        <label for="company" class={labelClasses}>Company Name <span class="text-red-500">*</span></label>
+        <input type="text" id="company" name="company" required class={inputClasses} />
+      </div>
+
+      <div>
+        <label for="website" class={labelClasses}>Company Website URL <span class="text-red-500">*</span></label>
+        <input type="url" id="website" name="website" required placeholder="https://" class={inputClasses} />
+      </div>
+
+      <div>
+        <label for="role" class={labelClasses}>Your Role in the Company <span class="text-red-500">*</span></label>
+        <select id="role" name="role" required class={inputClasses}>
+          <option value="" disabled selected>Select your role</option>
+          <option value="CEO/Founder">CEO/Founder</option>
+          <option value="CTO/Technical Lead">CTO/Technical Lead</option>
+          <option value="VP/Director of Product">VP/Director of Product</option>
+          <option value="Marketing Director">Marketing Director</option>
+          <option value="Head of Engineering">Head of Engineering</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="revenue" class={labelClasses}>Annual Company Revenue <span class="text-red-500">*</span></label>
+        <select id="revenue" name="revenue" required class={inputClasses}>
+          <option value="" disabled selected>Select revenue range</option>
+          <option value="Under $1M">Under $1M</option>
+          <option value="$1M – $5M">$1M – $5M</option>
+          <option value="$5M – $10M">$5M – $10M</option>
+          <option value="$10M – $50M">$10M – $50M</option>
+          <option value="$50M – $100M">$50M – $100M</option>
+          <option value="Over $100M">Over $100M</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="budget" class={labelClasses}>Project Budget Range <span class="text-red-500">*</span></label>
+        <select id="budget" name="budget" required class={inputClasses}>
+          <option value="" disabled selected>Select budget range</option>
+          <option value="Under $100k">Under $100k</option>
+          <option value="$100k – $200k">$100k – $200k</option>
+          <option value="$200k – $500k">$200k – $500k</option>
+          <option value="Over $500k">Over $500k</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="challenge" class={labelClasses}>Brief Description of Your Business and Current Web Challenge <span class="text-red-500">*</span></label>
+        <textarea id="challenge" name="challenge" required rows="4" class={inputClasses}></textarea>
+      </div>
+
+      <div>
+        <label for="goals" class={labelClasses}>Project Goals and Desired Outcome <span class="text-red-500">*</span></label>
+        <textarea id="goals" name="goals" required rows="4" class={inputClasses}></textarea>
+      </div>
+
+      <div>
+        <label for="timeline" class={labelClasses}>Timeline for Starting the Project <span class="text-red-500">*</span></label>
+        <select id="timeline" name="timeline" required class={inputClasses}>
+          <option value="" disabled selected>Select timeline</option>
+          <option value="Immediate (within 1 month)">Immediate (within 1 month)</option>
+          <option value="Within 1–3 months">Within 1–3 months</option>
+          <option value="Within 3–6 months">Within 3–6 months</option>
+          <option value="6–12 months">6–12 months</option>
+          <option value="Flexible/No fixed timeline">Flexible/No fixed timeline</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="why" class={labelClasses}>Why Do You Want to Work with Me Specifically?</label>
+        <textarea id="why" name="why" rows="3" class={inputClasses}></textarea>
+      </div>
+
+      <button
+        type="submit"
+        class="w-full rounded-md bg-[var(--accent-bg)] hover:bg-[var(--accent-bg-hover)] text-white py-3 px-6 font-semibold cursor-pointer hover:scale-[1.01] hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[var(--accent-bg)] focus:ring-offset-2 shadow-md transition-[transform,box-shadow,background-color] duration-200"
+      >
+        Submit
+      </button>
+    </form>
+  </Container>
 </Main>

@@ -17,19 +17,51 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
-    
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-      
+
     - name: Install Flox
       uses: flox/install-flox-action@v2
-      
+
+    - name: Install dependencies
+      uses: flox/activate-action@v1
+      env:
+        FLOX_DISABLE_METRICS: true
+      with:
+        command: pnpm install
+
+    - name: Install Playwright browsers
+      uses: flox/activate-action@v1
+      env:
+        FLOX_DISABLE_METRICS: true
+      with:
+        command: npx playwright install chromium --with-deps
+
+    - name: Run Playwright tests
+      uses: flox/activate-action@v1
+      env:
+        FLOX_DISABLE_METRICS: true
+        CI: true
+      with:
+        command: pnpm test
+
+  build:
+    runs-on: ubuntu-latest
+    needs: test
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Install Flox
+      uses: flox/install-flox-action@v2
+
     - name: Setup Pages
       uses: actions/configure-pages@v4
-        
+
     - name: Build Astro site
       uses: flox/activate-action@v1
       env:
@@ -38,7 +70,7 @@ jobs:
         GA4_PROPERTY_ID: ${{ secrets.GA4_PROPERTY_ID }}
       with:
         command: rake build
-          
+
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3
       with:
@@ -49,7 +81,7 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    needs: build
+    needs: [test, build]
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
