@@ -113,7 +113,7 @@ test.describe("Consultation Page", () => {
       await form.getByLabel(/Email Address/).fill("john@example.com");
       await form.getByLabel(/Company Name/).fill("TechCo");
       await form.getByLabel(/Company Website URL/).fill("https://techco.com");
-      await form.getByLabel(/Your Role in the Company/).selectOption("CEO/Founder");
+      await form.getByLabel(/Your Role in the Company/).selectOption("Owner/Founder");
       await form.getByLabel(/Industry/).fill("Healthcare");
       await form.getByLabel(/Company Size/).selectOption("51-200");
       await form.getByLabel(/What area of your business/).selectOption("Operations");

@@ -24,6 +24,9 @@ const submitClasses = "w-full rounded-md bg-[var(--accent-bg)] hover:bg-[var(--a
 
     <FormTabs client:load>
       <div slot="webdev">
+      <p class="text-[var(--text-secondary)] mb-6 text-sm">
+        This form is for established tech companies looking for a senior engineer to lead complex web development projects. If you're a small business exploring AI solutions, check out the AI Consulting tab.
+      </p>
       <form action={webDevAction} method="POST" data-testid="webdev-form" class="space-y-6">
         <div>
           <label for="wd-name" class={labelClasses}>Full Name <span class="text-red-500">*</span></label>
@@ -114,6 +117,9 @@ const submitClasses = "w-full rounded-md bg-[var(--accent-bg)] hover:bg-[var(--a
       </div>
 
       <div slot="ai">
+      <p class="text-[var(--text-secondary)] mb-6 text-sm">
+        This form is for small to medium-sized businesses looking to integrate AI into their operations. No technical background required—I'll help you identify opportunities and implement practical solutions.
+      </p>
       <form action={aiAction} method="POST" data-testid="ai-form" class="space-y-6">
         <div>
           <label for="ai-name" class={labelClasses}>Full Name <span class="text-red-500">*</span></label>
@@ -139,11 +145,11 @@ const submitClasses = "w-full rounded-md bg-[var(--accent-bg)] hover:bg-[var(--a
           <label for="ai-role" class={labelClasses}>Your Role in the Company <span class="text-red-500">*</span></label>
           <select id="ai-role" name="role" required class={inputClasses}>
             <option value="" disabled selected>Select your role</option>
-            <option value="CEO/Founder">CEO/Founder</option>
-            <option value="CTO/Technical Lead">CTO/Technical Lead</option>
-            <option value="VP/Director of Product">VP/Director of Product</option>
-            <option value="Marketing Director">Marketing Director</option>
-            <option value="Head of Engineering">Head of Engineering</option>
+            <option value="Owner/Founder">Owner/Founder</option>
+            <option value="Manager/Team Lead">Manager/Team Lead</option>
+            <option value="Operations">Operations</option>
+            <option value="Sales/Marketing">Sales/Marketing</option>
+            <option value="Technical/IT">Technical/IT</option>
             <option value="Other">Other</option>
           </select>
         </div>
@@ -214,7 +220,7 @@ const submitClasses = "w-full rounded-md bg-[var(--accent-bg)] hover:bg-[var(--a
 
         <div>
           <label for="ai-budget" class={labelClasses}>Budget Expectation</label>
-          <input type="text" id="ai-budget" name="budget" placeholder="e.g. $5k-$10k, flexible, not sure yet" class={inputClasses} />
+          <input type="text" id="ai-budget" name="budget" placeholder="e.g. $2k-$5k, flexible, not sure yet" class={inputClasses} />
         </div>
 
         <div>
