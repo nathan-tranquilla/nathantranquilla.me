@@ -17,11 +17,36 @@ test.describe("Consultation Page", () => {
       await page.getByRole("button", { name: "AI Consulting" }).click();
       await expect(page.getByTestId("ai-form")).toBeVisible();
       await expect(page.getByTestId("webdev-form")).toBeHidden();
+      expect(page.url()).toContain("#ai");
     });
 
     test("switches back to web dev form", async ({ page }) => {
       await page.getByRole("button", { name: "AI Consulting" }).click();
       await page.getByRole("button", { name: "Web Development" }).click();
+      await expect(page.getByTestId("webdev-form")).toBeVisible();
+      await expect(page.getByTestId("ai-form")).toBeHidden();
+      expect(page.url()).toContain("#webdev");
+    });
+  });
+
+  test.describe("Deep linking", () => {
+    test("shows AI form when navigating to #ai", async ({ page }) => {
+      await page.goto("/consultation#ai");
+      await page.waitForLoadState("networkidle");
+      await expect(page.getByTestId("ai-form")).toBeVisible();
+      await expect(page.getByTestId("webdev-form")).toBeHidden();
+    });
+
+    test("shows web dev form when navigating to #webdev", async ({ page }) => {
+      await page.goto("/consultation#webdev");
+      await page.waitForLoadState("networkidle");
+      await expect(page.getByTestId("webdev-form")).toBeVisible();
+      await expect(page.getByTestId("ai-form")).toBeHidden();
+    });
+
+    test("defaults to web dev form with invalid hash", async ({ page }) => {
+      await page.goto("/consultation#invalid");
+      await page.waitForLoadState("networkidle");
       await expect(page.getByTestId("webdev-form")).toBeVisible();
       await expect(page.getByTestId("ai-form")).toBeHidden();
     });
@@ -78,7 +103,8 @@ test.describe("Consultation Page", () => {
 
   test.describe("AI Consulting form", () => {
     test.beforeEach(async ({ page }) => {
-      await page.getByRole("button", { name: "AI Consulting" }).click();
+      await page.goto("/consultation#ai");
+      await page.waitForLoadState("networkidle");
     });
 
     test("renders all fields", async ({ page }) => {
