@@ -4,112 +4,272 @@ import Container from "../components/Container.astro";
 
 const inputClasses = "w-full rounded-md border border-[var(--border-primary)] bg-[var(--bg-primary)] text-[var(--text-secondary)] px-3 py-2 focus:ring-2 focus:ring-[var(--accent-bg)] focus:outline-none focus:border-[var(--accent-bg)] transition-colors";
 const labelClasses = "block text-sm font-semibold text-[var(--text-primary)] mb-1";
-const formAction = import.meta.env.PROD ? "https://formspree.io/f/xzdarlpg" : "#";
+const webDevAction = import.meta.env.PROD ? "https://formspree.io/f/xzdarlpg" : "#";
+const aiAction = import.meta.env.PROD ? "https://formspree.io/f/mvzbajol" : "#";
+
+const activeTab = "border-b-2 border-[var(--accent-bg)] text-[var(--text-primary)] font-semibold";
+const inactiveTab = "text-[var(--text-muted)] hover:text-[var(--text-secondary)]";
+const tabBase = "pb-2 px-1 text-base cursor-pointer transition-colors";
+const submitClasses = "w-full rounded-md bg-[var(--accent-bg)] hover:bg-[var(--accent-bg-hover)] text-white py-3 px-6 font-semibold cursor-pointer hover:scale-[1.01] hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[var(--accent-bg)] focus:ring-offset-2 shadow-md transition-[transform,box-shadow,background-color] duration-200";
 ---
 
 <Main
-  title="nathantranquilla.me | Next-Gen Web Dev Consultation"
-  description="Book a consultation with Nathan Tranquilla to discuss Next-Gen Web Development for your project."
+  title="nathantranquilla.me | Consultation"
+  description="Book a consultation with Nathan Tranquilla for Web Development or AI Consulting."
 >
   <Container classes="w-full max-w-[600px] mx-auto font-sans">
     <h1 class="text-2xl md:text-3xl font-serif font-semibold text-[var(--text-primary)] mb-2">
       Book a Consultation
     </h1>
-    <p class="text-[var(--text-muted)] mb-8">
+    <p class="text-[var(--text-muted)] mb-6">
       Fill out the form below and I'll get back to you within 48 hours.
     </p>
 
-    <form action={formAction} method="POST" data-testid="consultation-form" class="space-y-6">
-      <div>
-        <label for="name" class={labelClasses}>Full Name <span class="text-red-500">*</span></label>
-        <input type="text" id="name" name="name" required class={inputClasses} />
-      </div>
-
-      <div>
-        <label for="email" class={labelClasses}>Email Address <span class="text-red-500">*</span></label>
-        <input type="email" id="email" name="email" required class={inputClasses} />
-      </div>
-
-      <div>
-        <label for="company" class={labelClasses}>Company Name <span class="text-red-500">*</span></label>
-        <input type="text" id="company" name="company" required class={inputClasses} />
-      </div>
-
-      <div>
-        <label for="website" class={labelClasses}>Company Website URL <span class="text-red-500">*</span></label>
-        <input type="url" id="website" name="website" required placeholder="https://" class={inputClasses} />
-      </div>
-
-      <div>
-        <label for="role" class={labelClasses}>Your Role in the Company <span class="text-red-500">*</span></label>
-        <select id="role" name="role" required class={inputClasses}>
-          <option value="" disabled selected>Select your role</option>
-          <option value="CEO/Founder">CEO/Founder</option>
-          <option value="CTO/Technical Lead">CTO/Technical Lead</option>
-          <option value="VP/Director of Product">VP/Director of Product</option>
-          <option value="Marketing Director">Marketing Director</option>
-          <option value="Head of Engineering">Head of Engineering</option>
-          <option value="Other">Other</option>
-        </select>
-      </div>
-
-      <div>
-        <label for="revenue" class={labelClasses}>Annual Company Revenue <span class="text-red-500">*</span></label>
-        <select id="revenue" name="revenue" required class={inputClasses}>
-          <option value="" disabled selected>Select revenue range</option>
-          <option value="Under $1M">Under $1M</option>
-          <option value="$1M – $5M">$1M – $5M</option>
-          <option value="$5M – $10M">$5M – $10M</option>
-          <option value="$10M – $50M">$10M – $50M</option>
-          <option value="$50M – $100M">$50M – $100M</option>
-          <option value="Over $100M">Over $100M</option>
-        </select>
-      </div>
-
-      <div>
-        <label for="budget" class={labelClasses}>Project Budget Range <span class="text-red-500">*</span></label>
-        <select id="budget" name="budget" required class={inputClasses}>
-          <option value="" disabled selected>Select budget range</option>
-          <option value="Under $100k">Under $100k</option>
-          <option value="$100k – $200k">$100k – $200k</option>
-          <option value="$200k – $500k">$200k – $500k</option>
-          <option value="Over $500k">Over $500k</option>
-        </select>
-      </div>
-
-      <div>
-        <label for="challenge" class={labelClasses}>Brief Description of Your Business and Current Web Challenge <span class="text-red-500">*</span></label>
-        <textarea id="challenge" name="challenge" required rows="4" class={inputClasses}></textarea>
-      </div>
-
-      <div>
-        <label for="goals" class={labelClasses}>Project Goals and Desired Outcome <span class="text-red-500">*</span></label>
-        <textarea id="goals" name="goals" required rows="4" class={inputClasses}></textarea>
-      </div>
-
-      <div>
-        <label for="timeline" class={labelClasses}>Timeline for Starting the Project <span class="text-red-500">*</span></label>
-        <select id="timeline" name="timeline" required class={inputClasses}>
-          <option value="" disabled selected>Select timeline</option>
-          <option value="Immediate (within 1 month)">Immediate (within 1 month)</option>
-          <option value="Within 1–3 months">Within 1–3 months</option>
-          <option value="Within 3–6 months">Within 3–6 months</option>
-          <option value="6–12 months">6–12 months</option>
-          <option value="Flexible/No fixed timeline">Flexible/No fixed timeline</option>
-        </select>
-      </div>
-
-      <div>
-        <label for="why" class={labelClasses}>Why Do You Want to Work with Me Specifically?</label>
-        <textarea id="why" name="why" rows="3" class={inputClasses}></textarea>
-      </div>
-
-      <button
-        type="submit"
-        class="w-full rounded-md bg-[var(--accent-bg)] hover:bg-[var(--accent-bg-hover)] text-white py-3 px-6 font-semibold cursor-pointer hover:scale-[1.01] hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[var(--accent-bg)] focus:ring-offset-2 shadow-md transition-[transform,box-shadow,background-color] duration-200"
-      >
-        Submit
+    <!-- Tabs -->
+    <div class="flex gap-6 border-b border-[var(--border-primary)] mb-8" data-testid="tab-bar">
+      <button type="button" id="tab-webdev" class={`${tabBase} ${activeTab}`} data-tab="webdev">
+        Web Development
       </button>
-    </form>
+      <button type="button" id="tab-ai" class={`${tabBase} ${inactiveTab}`} data-tab="ai">
+        AI Consulting
+      </button>
+    </div>
+
+    <!-- Web Development Form -->
+    <div id="form-webdev">
+      <form action={webDevAction} method="POST" data-testid="webdev-form" class="space-y-6">
+        <div>
+          <label for="wd-name" class={labelClasses}>Full Name <span class="text-red-500">*</span></label>
+          <input type="text" id="wd-name" name="name" required class={inputClasses} />
+        </div>
+
+        <div>
+          <label for="wd-email" class={labelClasses}>Email Address <span class="text-red-500">*</span></label>
+          <input type="email" id="wd-email" name="email" required class={inputClasses} />
+        </div>
+
+        <div>
+          <label for="wd-company" class={labelClasses}>Company Name <span class="text-red-500">*</span></label>
+          <input type="text" id="wd-company" name="company" required class={inputClasses} />
+        </div>
+
+        <div>
+          <label for="wd-website" class={labelClasses}>Company Website URL <span class="text-red-500">*</span></label>
+          <input type="url" id="wd-website" name="website" required placeholder="https://" class={inputClasses} />
+        </div>
+
+        <div>
+          <label for="wd-role" class={labelClasses}>Your Role in the Company <span class="text-red-500">*</span></label>
+          <select id="wd-role" name="role" required class={inputClasses}>
+            <option value="" disabled selected>Select your role</option>
+            <option value="CEO/Founder">CEO/Founder</option>
+            <option value="CTO/Technical Lead">CTO/Technical Lead</option>
+            <option value="VP/Director of Product">VP/Director of Product</option>
+            <option value="Marketing Director">Marketing Director</option>
+            <option value="Head of Engineering">Head of Engineering</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="wd-revenue" class={labelClasses}>Annual Company Revenue <span class="text-red-500">*</span></label>
+          <select id="wd-revenue" name="revenue" required class={inputClasses}>
+            <option value="" disabled selected>Select revenue range</option>
+            <option value="Under $1M">Under $1M</option>
+            <option value="$1M – $5M">$1M – $5M</option>
+            <option value="$5M – $10M">$5M – $10M</option>
+            <option value="$10M – $50M">$10M – $50M</option>
+            <option value="$50M – $100M">$50M – $100M</option>
+            <option value="Over $100M">Over $100M</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="wd-budget" class={labelClasses}>Project Budget Range <span class="text-red-500">*</span></label>
+          <select id="wd-budget" name="budget" required class={inputClasses}>
+            <option value="" disabled selected>Select budget range</option>
+            <option value="Under $100k">Under $100k</option>
+            <option value="$100k – $200k">$100k – $200k</option>
+            <option value="$200k – $500k">$200k – $500k</option>
+            <option value="Over $500k">Over $500k</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="wd-challenge" class={labelClasses}>Brief Description of Your Business and Current Web Challenge <span class="text-red-500">*</span></label>
+          <textarea id="wd-challenge" name="challenge" required rows="4" class={inputClasses}></textarea>
+        </div>
+
+        <div>
+          <label for="wd-goals" class={labelClasses}>Project Goals and Desired Outcome <span class="text-red-500">*</span></label>
+          <textarea id="wd-goals" name="goals" required rows="4" class={inputClasses}></textarea>
+        </div>
+
+        <div>
+          <label for="wd-timeline" class={labelClasses}>Timeline for Starting the Project <span class="text-red-500">*</span></label>
+          <select id="wd-timeline" name="timeline" required class={inputClasses}>
+            <option value="" disabled selected>Select timeline</option>
+            <option value="Immediate (within 1 month)">Immediate (within 1 month)</option>
+            <option value="Within 1–3 months">Within 1–3 months</option>
+            <option value="Within 3–6 months">Within 3–6 months</option>
+            <option value="6–12 months">6–12 months</option>
+            <option value="Flexible/No fixed timeline">Flexible/No fixed timeline</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="wd-why" class={labelClasses}>Why Do You Want to Work with Me Specifically?</label>
+          <textarea id="wd-why" name="why" rows="3" class={inputClasses}></textarea>
+        </div>
+
+        <button type="submit" class={submitClasses}>Submit</button>
+      </form>
+    </div>
+
+    <!-- AI Consulting Form -->
+    <div id="form-ai" class="hidden">
+      <form action={aiAction} method="POST" data-testid="ai-form" class="space-y-6">
+        <div>
+          <label for="ai-name" class={labelClasses}>Full Name <span class="text-red-500">*</span></label>
+          <input type="text" id="ai-name" name="name" required class={inputClasses} />
+        </div>
+
+        <div>
+          <label for="ai-email" class={labelClasses}>Email Address <span class="text-red-500">*</span></label>
+          <input type="email" id="ai-email" name="email" required class={inputClasses} />
+        </div>
+
+        <div>
+          <label for="ai-company" class={labelClasses}>Company Name <span class="text-red-500">*</span></label>
+          <input type="text" id="ai-company" name="company" required class={inputClasses} />
+        </div>
+
+        <div>
+          <label for="ai-website" class={labelClasses}>Company Website URL <span class="text-red-500">*</span></label>
+          <input type="url" id="ai-website" name="website" required placeholder="https://" class={inputClasses} />
+        </div>
+
+        <div>
+          <label for="ai-role" class={labelClasses}>Your Role in the Company <span class="text-red-500">*</span></label>
+          <select id="ai-role" name="role" required class={inputClasses}>
+            <option value="" disabled selected>Select your role</option>
+            <option value="CEO/Founder">CEO/Founder</option>
+            <option value="CTO/Technical Lead">CTO/Technical Lead</option>
+            <option value="VP/Director of Product">VP/Director of Product</option>
+            <option value="Marketing Director">Marketing Director</option>
+            <option value="Head of Engineering">Head of Engineering</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="ai-industry" class={labelClasses}>Industry <span class="text-red-500">*</span></label>
+          <input type="text" id="ai-industry" name="industry" required placeholder="e.g. Healthcare, Finance, Retail" class={inputClasses} />
+        </div>
+
+        <div>
+          <label for="ai-size" class={labelClasses}>Company Size <span class="text-red-500">*</span></label>
+          <select id="ai-size" name="company_size" required class={inputClasses}>
+            <option value="" disabled selected>Select company size</option>
+            <option value="1-10">1-10 employees</option>
+            <option value="11-50">11-50 employees</option>
+            <option value="51-200">51-200 employees</option>
+            <option value="201-500">201-500 employees</option>
+            <option value="500+">500+ employees</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="ai-area" class={labelClasses}>What area of your business do you want to apply AI to? <span class="text-red-500">*</span></label>
+          <select id="ai-area" name="ai_area" required class={inputClasses}>
+            <option value="" disabled selected>Select an area</option>
+            <option value="Operations">Operations</option>
+            <option value="Customer Service">Customer Service</option>
+            <option value="Sales">Sales</option>
+            <option value="Marketing/Content">Marketing/Content</option>
+            <option value="Data/Analytics">Data/Analytics</option>
+            <option value="Internal Tools">Internal Tools</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="ai-challenges" class={labelClasses}>Current challenges you'd like AI to solve <span class="text-red-500">*</span></label>
+          <textarea id="ai-challenges" name="challenges" required rows="4" class={inputClasses}></textarea>
+        </div>
+
+        <div>
+          <label for="ai-experience" class={labelClasses}>Have you used AI tools before? <span class="text-red-500">*</span></label>
+          <select id="ai-experience" name="ai_experience" required class={inputClasses}>
+            <option value="" disabled selected>Select your experience</option>
+            <option value="No">No</option>
+            <option value="Explored but not implemented">Explored but not implemented</option>
+            <option value="Using some AI tools">Using some AI tools</option>
+            <option value="Significant AI adoption">Significant AI adoption</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="ai-success" class={labelClasses}>What does success look like for you? <span class="text-red-500">*</span></label>
+          <textarea id="ai-success" name="success" required rows="4" class={inputClasses}></textarea>
+        </div>
+
+        <div>
+          <label for="ai-timeline" class={labelClasses}>Timeline for Starting the Project <span class="text-red-500">*</span></label>
+          <select id="ai-timeline" name="timeline" required class={inputClasses}>
+            <option value="" disabled selected>Select timeline</option>
+            <option value="Immediate (within 1 month)">Immediate (within 1 month)</option>
+            <option value="Within 1–3 months">Within 1–3 months</option>
+            <option value="Within 3–6 months">Within 3–6 months</option>
+            <option value="6–12 months">6–12 months</option>
+            <option value="Flexible/No fixed timeline">Flexible/No fixed timeline</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="ai-budget" class={labelClasses}>Budget Expectation</label>
+          <input type="text" id="ai-budget" name="budget" placeholder="e.g. $5k-$10k, flexible, not sure yet" class={inputClasses} />
+        </div>
+
+        <div>
+          <label for="ai-why" class={labelClasses}>Why Do You Want to Work with Me Specifically?</label>
+          <textarea id="ai-why" name="why" rows="3" class={inputClasses}></textarea>
+        </div>
+
+        <button type="submit" class={submitClasses}>Submit</button>
+      </form>
+    </div>
   </Container>
 </Main>
+
+<script is:inline>
+  const tabs = document.querySelectorAll("[data-tab]");
+  const webdevForm = document.getElementById("form-webdev");
+  const aiForm = document.getElementById("form-ai");
+
+  const activeClasses = ["border-b-2", "border-[var(--accent-bg)]", "text-[var(--text-primary)]", "font-semibold"];
+  const inactiveClasses = ["text-[var(--text-muted)]"];
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      const target = tab.getAttribute("data-tab");
+
+      tabs.forEach((t) => {
+        activeClasses.forEach((c) => t.classList.remove(c));
+        inactiveClasses.forEach((c) => t.classList.remove(c));
+      });
+
+      if (target === "webdev") {
+        webdevForm.classList.remove("hidden");
+        aiForm.classList.add("hidden");
+        activeClasses.forEach((c) => tabs[0].classList.add(c));
+        inactiveClasses.forEach((c) => tabs[1].classList.add(c));
+      } else {
+        webdevForm.classList.add("hidden");
+        aiForm.classList.remove("hidden");
+        activeClasses.forEach((c) => tabs[1].classList.add(c));
+        inactiveClasses.forEach((c) => tabs[0].classList.add(c));
+      }
+    });
+  });
+</script>
