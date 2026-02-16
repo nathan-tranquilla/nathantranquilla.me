@@ -3,6 +3,7 @@ import "../styles/global.css";
 import Body from "../components/Body.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
 
 // Import logo assets
 import logo16 from "../assets/logo_16x16.jpg";
@@ -22,11 +23,12 @@ export interface Props {
   description?: string;
   ogImage?: string;
   ogType?: string;
+  breadcrumbTitle?: string;
 }
 
 const defaultDescription = "Nathan Tranquilla is a Next-Gen Web Development Consultant specializing in making web applications more robust through technology choices of the future";
 
-const { title, classes, nonav = false, description = defaultDescription, ogImage, ogType = "website" } = Astro.props;
+const { title, classes, nonav = false, description = defaultDescription, ogImage, ogType = "website", breadcrumbTitle } = Astro.props;
 
 const websiteUrl = "https://nathantranquilla.me";
 const canonicalUrl = new URL(Astro.url.pathname, websiteUrl).href;
@@ -100,6 +102,7 @@ const isProd = import.meta.env.PROD;
   <Body>
     {!nonav && <Header />}
     <main class={`col-start-1 col-end-4 row-start-2 ${classes || ""}`}>
+      {!nonav && <Breadcrumb title={breadcrumbTitle} />}
       <slot />
     </main>
     {!nonav && <Footer />}

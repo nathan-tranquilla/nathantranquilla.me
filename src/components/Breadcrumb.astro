@@ -1,0 +1,56 @@
+---
+export interface Props {
+  title?: string;
+}
+
+const { title } = Astro.props;
+const pathname = Astro.url.pathname.replace(/\/$/, "") || "/";
+
+// Don't render on home page
+if (pathname === "/") return;
+
+const segmentLabels: Record<string, string> = {
+  blogs: "Blog",
+  about: "About",
+};
+
+const segments = pathname.split("/").filter(Boolean);
+const crumbs = [{ label: "Home", href: "/" }];
+
+segments.forEach((segment, i) => {
+  const href = "/" + segments.slice(0, i + 1).join("/");
+  const isLast = i === segments.length - 1;
+  const label = isLast && title ? title : segmentLabels[segment] || segment.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+  crumbs.push({ label, href });
+});
+
+const websiteUrl = "https://nathantranquilla.me";
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: crumbs.map((crumb, i) => ({
+    "@type": "ListItem",
+    position: i + 1,
+    name: crumb.label,
+    item: new URL(crumb.href, websiteUrl).href,
+  })),
+};
+---
+
+<nav aria-label="Breadcrumb" class="px-4 md:px-6 pt-4 pb-2 text-sm text-[var(--text-muted)]">
+  <ol class="flex flex-wrap items-center gap-1">
+    {crumbs.map((crumb, i) => (
+      <li class="flex items-center gap-1">
+        {i > 0 && <span aria-hidden="true">/</span>}
+        {i < crumbs.length - 1 ? (
+          <a href={crumb.href} class="text-[var(--text-accent)] hover:text-[var(--text-accent-hover)] transition-colors">
+            {crumb.label}
+          </a>
+        ) : (
+          <span>{crumb.label}</span>
+        )}
+      </li>
+    ))}
+  </ol>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+</nav>

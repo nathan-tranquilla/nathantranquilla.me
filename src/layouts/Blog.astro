@@ -157,7 +157,7 @@ try {
     min-height: 100vh;
   }
 </style>
-<Main title={`nathantraquilla.me | ${frontmatter.title}`} description={blogDescription} ogType="article">
+<Main title={`nathantraquilla.me | ${frontmatter.title}`} description={blogDescription} ogType="article" breadcrumbTitle={frontmatter.title}>
   <Container classes="blog-post w-full max-w-[1000px] mx-auto font-sans">
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
