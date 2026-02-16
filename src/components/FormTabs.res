@@ -1,13 +1,17 @@
 @react.component
 let make = (~webdev: React.element, ~ai: React.element) => {
   let url = RescriptReactRouter.useUrl()
+  let (activeTab, setActiveTab) = React.useState(() => "webdev")
 
-  // Determine active tab from URL hash
-  let activeTab = switch url.hash {
-  | "ai" => "ai"
-  | "webdev" => "webdev"
-  | _ => "webdev"
-  }
+  // Sync with URL hash after hydration (avoids hydration mismatch)
+  React.useEffect1(() => {
+    switch url.hash {
+    | "ai" => setActiveTab(_ => "ai")
+    | "webdev" => setActiveTab(_ => "webdev")
+    | _ => ()
+    }
+    None
+  }, [url.hash])
 
   // Update URL hash when tab changes
   let switchTab = (tab: string) => {
