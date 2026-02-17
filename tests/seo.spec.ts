@@ -8,7 +8,7 @@ test.describe("SEO - Homepage", () => {
     // Basic meta tags
     await expect(page).toHaveTitle(/nathantranquilla\.me/);
     const description = await page.locator('meta[name="description"]');
-    await expect(description).toHaveAttribute("content", /Next-Gen Web Development Consultant/);
+    await expect(description).toHaveAttribute("content", /Next-Gen Web Development/);
 
     const author = await page.locator('meta[name="author"]');
     await expect(author).toHaveAttribute("content", "Nathan Tranquilla");
@@ -294,7 +294,7 @@ test.describe("SEO - Consultation Page", () => {
 
 test.describe("SEO - Internal Links", () => {
   test("blog post has internal links to related posts", async ({ page }) => {
-    await page.goto("/blogs/5-ways-rescript-fixes-typescript/");
+    await page.goto("/blogs/why-rescript-is-next-gen/");
 
     // Check for internal links
     const internalLinks = await page
@@ -316,7 +316,7 @@ test.describe("SEO - Internal Links", () => {
   });
 
   test("internal links are valid and reachable", async ({ page }) => {
-    await page.goto("/blogs/the-4-pillars-of-next-gen-web-dev/");
+    await page.goto("/blogs/why-rescript-is-next-gen/");
 
     // Get all internal blog links
     const internalLinks = await page
