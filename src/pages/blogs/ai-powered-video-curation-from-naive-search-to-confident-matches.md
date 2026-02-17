@@ -22,7 +22,7 @@ The process of video curation was very similar. I was able to add AI into my wor
 <script src="https://theofficelines.com/embed.js" async></script>
 
 ### Result
-As a user of the site myself, I'm genuinely excited when I find a quote I'm curious about and can watch the scene on YouTube. Even the most obscure, yet interacted-with lines seem sufficient for AI to correlate the input with the correct scene from The Office (US) official channel. I encourage you to do a deep-dive and [judge for yourself](https://theofficelines.com/?q=03_18_160) whether the match is correct.
+As a user of the site myself, I'm genuinely excited when I find a quote I'm curious about and can watch the scene on YouTube. Even the most obscure, yet interacted-with lines seem sufficient for AI to correlate the input with the correct scene from The Office (US) official channel. I encourage you to do a deep-dive and <a href="https://theofficelines.com/?q=03_18_160" target="_blank">judge for yourself</a> whether the match is correct.
 
 ![Deep-Dive on Iacocca quote](../../assets/blog/iacocca.webp)
 

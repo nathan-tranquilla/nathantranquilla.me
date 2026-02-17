@@ -80,7 +80,7 @@ traditional `for` loops dominate, `for...of` follows closely, while `forEach` an
 significantly behind due to function call overhead.
 
 ![Benchmark for JS
-Iterations](../../assets/blog/the-reality-of-rescript-optimization-claims/JSIterationsBenchmark.png)
+Iterations](../../assets/blog/the-reality-of-rescript-optimization-claims/JSIterationsBenchmark.webp)
 
 **Now for the crucial test**: Would ReScript's compiler automatically optimize my iteration style to
 generate fast JavaScript, regardless of how I wrote the ReScript source?
@@ -116,7 +116,7 @@ let sumReduce = (arr: array<int>) => {
 **The results were disappointing but not surprising:**
 
 ![Benchmark for ReScript
-Iterations](../../assets/blog/the-reality-of-rescript-optimization-claims/ReScriptIterationsBenchmark.png)
+Iterations](../../assets/blog/the-reality-of-rescript-optimization-claims/ReScriptIterationsBenchmark.webp)
 
 ReScript's performance mirrored the JavaScript patterns exactly. The `for` loop was fastest, while
 `Array.reduce` lagged behind significantly. **ReScript didn't automatically optimize anything**.
@@ -247,7 +247,7 @@ the order—a pattern that should destroy V8's hidden class optimization.
 **JavaScript baseline results** (10,000 objects accessed 100,000 times each):
 
 ![JS Hidden Classes
-Benchmark](../../assets/blog/the-reality-of-rescript-optimization-claims/JSHiddenClassesBenchmark.png)
+Benchmark](../../assets/blog/the-reality-of-rescript-optimization-claims/JSHiddenClassesBenchmark.webp)
 
 Perfect! The results show exactly what we'd expect: consistent property ordering is dramatically
 faster. V8's hidden class optimization is working as designed.
@@ -303,7 +303,7 @@ let hotAccess = (points, numObjects, iters) => {
 **The results tell the story:**
 
 ![ReSCript Hidden Classes
-Benchmark](../../assets/blog/the-reality-of-rescript-optimization-claims/ReScriptHiddenClassesBenchmark.png)
+Benchmark](../../assets/blog/the-reality-of-rescript-optimization-claims/ReScriptHiddenClassesBenchmark.webp)
 
 ReScript's performance mirrors JavaScript exactly—no magical optimization here either. The
 fixed-order version is fast, the random-order version is slow. **ReScript doesn't solve V8
