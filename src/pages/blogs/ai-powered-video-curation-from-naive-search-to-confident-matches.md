@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/Blog.astro
-title: "AI Powered Video Curation: From Naive Search To Confident Matches"
+title: "AI-Powered Video Curation: From Naive Search To Confident Matches"
 author: Nathan Tranquilla
 date: "2026/02/18"
 tags: ["AI","Prompt Engineering", "Automation"]
