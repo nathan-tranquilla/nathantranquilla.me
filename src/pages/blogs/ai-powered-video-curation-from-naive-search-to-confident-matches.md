@@ -13,17 +13,17 @@ This problem of video curation has a similar shape and solution to that with [to
 The process of video curation was very similar. I was able to add AI into my workflow on both ends; to formulate a proper query and to evaluate the YouTube results. In the first prompt, we fed in the line and 10 preceding/following lines of dialog for context. The goal was to get Claude to craft a query that would result in high-quality results from the YouTube API. Our simple YouTube API search sat between the two prompts. Lastly, the second prompt was given the same block of dialog, but a different role as curator of the results. Its job was to examine the results and identify the best match with a confidence score, returning structured data that we could parse and store in our index.
 
 <blockquote data-office-quote
-  data-line="Here is to Mr. Iacocca and his failed experiment, the De Lorean."
+  data-line="Well, thats..."
   data-character="Michael"
-  data-season="03" data-episode="18"
-  data-title="Cocktails">
-  "Here is to Mr. Iacocca and his failed experiment, the De Lorean." — Michael
+  data-season="04" data-episode="13"
+  data-title="Dinner Party">
+  "Well, thats..." — Michael
 </blockquote>
 <script src="https://theofficelines.com/embed.js" async></script>
 
 ### Result
 As a user of the site myself, I'm genuinely excited when I find a quote I'm curious about and can watch the scene on YouTube. Even the most obscure, yet interacted-with lines seem sufficient for AI to correlate the input with the correct scene from The Office (US) official channel. I encourage you to do a deep-dive and <a href="https://theofficelines.com/?q=03_18_160" target="_blank">judge for yourself</a> whether the match is correct.
 
-![Deep-Dive on Iacocca quote](../../assets/blog/iacocca.webp)
+![Obscure quote](../../assets/blog/wellthats.webp)
 
 
