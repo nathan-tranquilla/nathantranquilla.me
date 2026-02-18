@@ -5,12 +5,13 @@ type Post = {
     author: string;
     date: string; // yyyy-mm-dd
     tags: Array<string>;
+    draft?: boolean;
   };
 };
 
 export const getPosts = () =>
   Object.values(import.meta.glob<Post>("../pages/blogs/*.md", { eager: true }))
-    .filter((p) => p.frontmatter?.tags && !p.frontmatter.tags.includes("script"))
+    .filter((p) => !p.frontmatter?.draft)
     .sort(
       (a, b) =>
         new Date(b.frontmatter.date).getTime() -
