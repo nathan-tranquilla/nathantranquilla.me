@@ -11,7 +11,7 @@ type Post = {
 
 export const getPosts = () =>
   Object.values(import.meta.glob<Post>("../pages/blogs/*.md", { eager: true }))
-    .filter((p) => !p.frontmatter?.draft)
+    .filter((p) => import.meta.env.DEV || !p.frontmatter?.draft)
     .sort(
       (a, b) =>
         new Date(b.frontmatter.date).getTime() -
