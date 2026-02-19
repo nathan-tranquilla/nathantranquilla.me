@@ -83,7 +83,7 @@ TypeScript has many versions. And I don't mean releases. What I mean is that eve
     }
     ```
 
-These three settings affect the type safety and control flow patterns of TypeScript in ways that are very impactful. These three settings alone create 8 distinct "versions" of TypeScript that a developer must master. 
+These three settings affect the type safety and control flow patterns of TypeScript in ways that are very impactful. These three settings alone create 2³ = 8 distinct "versions" of TypeScript that a developer must master. 
 
 #### 3. Control flow patterns are error-prone
 `switch` and `try/catch` both have notable issues.
