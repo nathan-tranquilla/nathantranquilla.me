@@ -255,7 +255,7 @@ let theme = getItem("theme") // option<string> — None if key doesn't exist
 
 #### 4. Web-ready
 
-ReScript comes with React bindings, compiling to JavaScript with `react/jsx-runtime`, or if desired, with preserved JSX. This makes it a breeze to use with frameworks like Astro (a personal favorite of mine) both on the server and in the client.
+ReScript comes with React bindings, compiling to JavaScript with `react/jsx-runtime`, or if desired, with preserved JSX. This makes it seamless to use with frameworks like Astro (a personal favorite of mine) both on the server and in the client.
 
 ```javascript
 @react.component
@@ -271,15 +271,8 @@ function Playground(props) {
     children: "Hello, " + props.name
   });
 }
-
-let make = Playground;
-
-export {
-  make,
-}
-/* react/jsx-runtime Not a pure module */
 ```
-<figcaption>The actual ReScript compiler output — readable, debuggable JavaScript.</figcaption>
+<figcaption>The actual ReScript compiler output. </figcaption>
 
 #### 5. A gradual adoption story
 
