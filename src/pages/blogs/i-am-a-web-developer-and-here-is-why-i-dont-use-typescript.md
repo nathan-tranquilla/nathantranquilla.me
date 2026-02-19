@@ -15,7 +15,7 @@ In 2026, <a href="https://navanathjadhav.medium.com/typescript-vs-javascript-in-
 
 #### 1. The type system isn't sound
 
-TypeScript's type system isn't sound by design — it is meant to be gradually adopted to varying degrees of strictness in your codebase. I get that TypeScript is a compromise, and I understand why, but it also means it has these weaknesses:
+TypeScript's type system isn't sound by design: it is meant to be gradually adopted to varying degrees of strictness in your codebase. I get that TypeScript is a compromise, and I understand why, but it also means it has these weaknesses:
 
 1. `as` cast weakening type guarantees
 
@@ -25,22 +25,22 @@ TypeScript's type system isn't sound by design — it is meant to be gradually a
     async function getUser(id: number): Promise<User> {
       const res = await fetch(`/api/users/${id}`);
       const data = await res.json();
-      return data as User; // TypeScript trusts you — no validation happens
+      return data as User; // TypeScript trusts you, no validation happens
     }
 
     const user = await getUser(1);
     console.log(user.email.toUpperCase()); // crashes if API returns unexpected shape
     ```
-    <figcaption>TypeScript trusts the `as` cast without validating the response shape — the crash only surfaces when the data is used.</figcaption>
+    <figcaption>TypeScript trusts the `as` cast without validating the response shape; the crash only surfaces when the data is used.</figcaption>
 
-2. Unsafe indexed access — `noUncheckedIndexedAccess` is off by default and not included in `strict` mode. Matt Pocock of Total TypeScript calls it <a href="https://www.totaltypescript.com/tips/make-accessing-objects-safer-by-enabling-nouncheckedindexedaccess-in-tsconfig" target="_blank" rel="noopener noreferrer">the best feature you've never heard of</a> (Published in 2023), suggesting it's not often enabled in projects.
+2. Unsafe indexed access: `noUncheckedIndexedAccess` is off by default and not included in `strict` mode. Matt Pocock of Total TypeScript calls it <a href="https://www.totaltypescript.com/tips/make-accessing-objects-safer-by-enabling-nouncheckedindexedaccess-in-tsconfig" target="_blank" rel="noopener noreferrer">the best feature you've never heard of</a> (Published in 2023), suggesting it's not often enabled in projects.
 
     ```typescript
     const myObj: Record<string, string[]> = {};
 
-    myObj.foo.push("bar"); // TypeScript: fine. Runtime: TypeError — myObj.foo is undefined
+    myObj.foo.push("bar"); // TypeScript: fine. Runtime: TypeError, myObj.foo is undefined
     ```
-    <figcaption>A missing key returns `undefined` at runtime, but TypeScript assumes it exists. Catching this requires enabling `noUncheckedIndexedAccess` — an opt-in, not the default.</figcaption>
+    <figcaption>A missing key returns `undefined` at runtime, but TypeScript assumes it exists. Catching this requires enabling `noUncheckedIndexedAccess` (an opt-in, not the default).</figcaption>
 
 3. Type narrowing can be invalidated by a function call. TypeScript narrows a variable's type after a null check, but if a called function mutates that variable, the narrowed type no longer holds. This is because TypeScript performs type narrowing based on JavaScript runtime patterns. This is part of what makes TypeScript feel "bolted on" to JavaScript.
     ```typescript
@@ -49,7 +49,7 @@ TypeScript's type system isn't sound by design — it is meant to be gradually a
 
     if (x !== null) {
       clear();           // x is now null
-      x.toUpperCase();   // TypeScript still thinks x is string — crash
+      x.toUpperCase();   // TypeScript still thinks x is string, crash
     }
     ```
     <figcaption>TypeScript narrows `x` to `string` after the null check, but doesn't account for `clear()` mutating it.</figcaption>
@@ -62,7 +62,7 @@ TypeScript has many versions. And I don't mean releases. What I mean is that eve
 1. `noUncheckedIndexedAccess`. Changes the return type to `T | undefined`. 
     ```typescript
     const items = ["a", "b", "c"];
-    const x = items[99]; // type: string (default) — undefined at runtime
+    const x = items[99]; // type: string (default), undefined at runtime
     ```
 
 2. `noImplicitReturns`. This prevents functions from silently returning `undefined` 
@@ -95,7 +95,7 @@ type Shape = { kind: "circle" } | { kind: "square" };
 function area(s: Shape) {
   switch (s.kind) {
     case "circle": return 1;
-    // forgot "square" — no error
+    // forgot "square", no error
   }
 }
 ```
@@ -104,7 +104,7 @@ function area(s: Shape) {
 ```typescript
 switch (status) {
   case "pending":
-    startTimer(); // falls through to "active" — silent
+    startTimer(); // falls through to "active", silent
   case "active":
     render();
 }
@@ -115,14 +115,14 @@ switch (status) {
 
 ```typescript
 function fetchUser(id: number) {
-  // Could throw NetworkError, AuthError, ParseError — TypeScript has no idea
+  // Could throw NetworkError, AuthError, ParseError. TypeScript has no idea
   return fetch(`/api/users/${id}`).then(res => res.json());
 }
 
 try {
   const user = await fetchUser(1);
 } catch (e) {
-  // e is unknown — you must guess what to check for
+  // e is unknown, you must guess what to check for
   if (e instanceof NetworkError) { ... }
   if (e instanceof AuthError) { ... }
   // miss one and it goes unhandled
@@ -134,7 +134,7 @@ try {
 #### 4. The type system is immature 
 TypeScript is missing types that embody common patterns. Let's look at the `result` and `option` types. 
 
-**`result` type**: Computations can either succeed or fail. The `result` type embodies this pattern by allowing the caller to branch on `ok` or `err`. TypeScript has no equivalent — the most accessible pattern for handling errors is `try/catch`, which as we've seen carries no type information about what might be thrown.
+**`result` type**: Computations can either succeed or fail. The `result` type embodies this pattern by allowing the caller to branch on `ok` or `err`. TypeScript has no equivalent; the most accessible pattern for handling errors is `try/catch`, which as we've seen carries no type information about what might be thrown.
 
 ```typescript
 function divide(a: number, b: number): number {
@@ -145,12 +145,12 @@ function divide(a: number, b: number): number {
 try {
   const result = divide(10, 0);
 } catch (e) {
-  // e is unknown — nothing in the type system told you this could throw
+  // e is unknown, nothing in the type system told you this could throw
 }
 ```
 <figcaption>The function signature says nothing about failure. The caller has no way to know a try/catch is needed without reading the implementation.</figcaption>
 
-**`option` type**: used to handle the presence or absence of a value. The `option` type embodies this by allowing you to branch on `some` or `none`. In TypeScript, absence is represented by a union with `null` or `undefined` — ad hoc rather than a principled type.
+**`option` type**: used to handle the presence or absence of a value. The `option` type embodies this by allowing you to branch on `some` or `none`. In TypeScript, absence is represented by a union with `null` or `undefined`, ad hoc rather than a principled type.
 
 ```typescript
 function findUser(id: number): User | undefined {
@@ -167,7 +167,7 @@ if (user !== undefined) {
 ```
 <figcaption>Without an `option` type, the developer must depend on a runtime `undefined` check to branch on the result. There is no type-level construct that enforces handling both cases.</figcaption>
 
-The `Promise` type proves that the concept of the `result` exists in web development — it's just not formalized in TypeScript. 
+The `Promise` type proves that the concept of the `result` exists in web development; it's just not formalized in TypeScript. 
 
 ```typescript
 fetch("/api/user")
@@ -193,7 +193,7 @@ ReScript has no null or undefined. This is a major win, as a class of bugs are e
 ```javascript
 let items = ["a", "b", "c"]
 
-let x = items[99] // option<string> — None, not undefined
+let x = items[99] // option<string>, None not undefined
 
 switch x {
 | Some(s) => Console.log(s)
@@ -238,7 +238,7 @@ function isAdult(age) {
   return age >= 18;
 }
 ```
-<figcaption>No type annotations — ReScript infers them all. The code reads like JavaScript.</figcaption>
+<figcaption>No type annotations: ReScript infers them all. The code reads like JavaScript.</figcaption>
 
 #### 3. Interoperable with the JavaScript ecosystem
 
@@ -248,7 +248,7 @@ The main friction point is creating bindings for existing JavaScript libraries. 
 @val @scope("localStorage") @return(nullable)
 external getItem: string => option<string> = "getItem"
 
-let theme = getItem("theme") // option<string> — None if key doesn't exist
+let theme = getItem("theme") // option<string>, None if key doesn't exist
 ```
 <figcaption>A ReScript binding for `localStorage.getItem` with `option<string>` return type</figcaption>
 
@@ -308,7 +308,7 @@ let describe = value =>
   | #undefined => "undefined"
   }
 ```
-<figcaption>`Type.typeof` returns a `Type.t` variant. Pattern matching on it narrows exhaustively — the compiler errors if any case is missing.</figcaption>
+<figcaption>`Type.typeof` returns a `Type.t` variant. Pattern matching on it narrows exhaustively; the compiler errors if any case is missing.</figcaption>
 
 #### 7. One version of ReScript
 
@@ -337,7 +337,7 @@ exception NotFound(string)
 let result =
   try Some(riskyOperation())
   catch {
-  | NotFound(msg) => None // narrowed — msg is a string
+  | NotFound(msg) => None // narrowed, msg is a string
   }
 ```
 <figcaption>Caught exceptions are typed, not `unknown`. The compiler knows the shape of each error branch.</figcaption>
