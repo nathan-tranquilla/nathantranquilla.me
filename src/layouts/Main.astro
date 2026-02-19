@@ -14,7 +14,7 @@ import logo180 from "../assets/logo_180x180.jpg";
 import logo192 from "../assets/logo_192x192.jpg";
 import logo256 from "../assets/logo_256x256.jpg";
 import logo512 from "../assets/logo_512x512.jpg";
-import ogImageDefault from "../assets/Profile.webp";
+const ogImageDefault = "/og-image.webp";
 
 export interface Props {
   title: string;
@@ -32,7 +32,7 @@ const { title, classes, nonav = false, description = defaultDescription, ogImage
 
 const websiteUrl = "https://nathantranquilla.me";
 const canonicalUrl = new URL(Astro.url.pathname, websiteUrl).href;
-const ogImageUrl = ogImage || new URL(ogImageDefault.src, websiteUrl).href;
+const ogImageUrl = ogImage || `${websiteUrl}${ogImageDefault}`;
 const isProd = import.meta.env.PROD;
 
 // Generate breadcrumb schema
