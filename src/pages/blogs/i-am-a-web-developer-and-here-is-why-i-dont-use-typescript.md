@@ -180,12 +180,12 @@ fetch("/api/user")
 <figcaption>`Promise` handles success and failure as first-class branches, much like the `result` type.</figcaption>
 
 #### 5. TypeScript doesn't attempt to unify the tooling
-The JavaScript ecosystem is fragmented, plaguing the ecosystem for far too long. Just try updating the node version of your package, and you'll find that you have to make a bunch of unrelated changes to `eslint` and `babel` just to accomplish the task. These are unnecessary friction points. Other typed languages solve the problem of formatting and bundling as part of their tooling.
+The JavaScript ecosystem is fragmented. Starting a fresh TypeScript project still means managing `tsconfig.json`, `.eslintrc`, `.prettierrc`, and a bundler config. TypeScript solved the type problem and left everything else exactly where it was. Rust ships `rustfmt` and ReScript ships `rescript format`. TypeScript had the opportunity to consolidate tooling and did not. This has left the ecosystem as fragmented as it was before TypeScript arrived.
 
 ### The Alternative
-One thing TypeScript has done well is warm developers up to static typing and strongly-typed languages. But I do not believe TypeScript has the features to be the final form in the evolution of web development. There are other web development languages that solve these pain points. Let me make my case for ReScript.
+One thing TypeScript has done well is warm developers up to static typing and strongly-typed languages. TypeScript does not have the features to be the final form in the evolution of web development. There are other web development languages that solve these pain points. ReScript is that language.
 
-ReScript is a strongly-typed language that compiles to JavaScript. I have heard it said of ReScript that it is what JavaScript would have been had it spent more time in the oven. That's because its type system is sound, and with strong type inference, it has the feel of JavaScript, making it familiar. 
+ReScript is a strongly-typed language that compiles to JavaScript. It has been said of ReScript that it's what JavaScript would have been had it been `baked` a little longer. That's because its type system is sound, and with strong type inference, it has the feel of JavaScript, making it familiar. 
 
 #### 1. A sound type system
 
