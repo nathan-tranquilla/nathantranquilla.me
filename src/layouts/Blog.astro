@@ -175,6 +175,17 @@ try {
     text-align: center;
   }
 
+  /* Inline code */
+  .blog-body :not(pre) > code {
+    font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, monospace;
+    font-size: 0.875em;
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    padding: 0.15em 0.4em;
+    border-radius: 0.25rem;
+    border: 1px solid var(--border-primary);
+  }
+
   /* Blog post layout */
   .blog-post {
     min-height: 100vh;
