@@ -276,9 +276,9 @@ function Playground(props) {
 
 #### 5. A gradual adoption story
 
-TypeScript types the JavaScript that you have; you apply increasing levels of strictness to your codebase. ReScript generates JavaScript so its type system remains sound, while its presence grows in your codebase. TypeScript's approach is broad; ReScript's approach is surgical.
+TypeScript types the JavaScript that you have; you apply increasing levels of strictness to your codebase. ReScript generates JavaScript so its type system remains sound, while its presence grows in your codebase. TypeScript's approach is broad; ReScript's approach is surgical. 
 
-#### 6. Principled type narrowing
+#### 6. Principled type-narrowing
 
 Type-narrowing is accomplished through type algebra, as one would expect of a sound type system.
 
