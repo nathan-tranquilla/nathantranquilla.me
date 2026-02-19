@@ -218,7 +218,28 @@ if (x !== undefined) {
 
 #### 2. Strong type inference
 
-Its strong type inference means you can annotate the code as little or as much as you want, often leaving the feel of having written JavaScript. Familiarity is one of the reasons developers choose their next language, and ReScript is the only language I see that scores high in this area. 
+Its strong type inference means you can annotate the code as little or as much as you want, and it still reads like JavaScript. Familiarity is a factor in how new languages are chosen, which makes ReScript the most accessible path to a stronger type system. 
+
+```javascript
+let add = (a, b) => a + b            // (int, int) => int
+let greet = name => "Hello, " ++ name // string => string
+let isAdult = age => age >= 18        // int => bool
+
+// Compiles to
+
+function add(a, b) {
+  return a + b | 0;
+}
+
+function greet(name) {
+  return "Hello, " + name;
+}
+
+function isAdult(age) {
+  return age >= 18;
+}
+```
+<figcaption>No type annotations — ReScript infers them all. The code reads like JavaScript.</figcaption>
 
 #### 3. Interoperable with the JavaScript ecosystem
 
