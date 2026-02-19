@@ -43,37 +43,25 @@ TypeScript's type system isn't sound by design — it is meant to be gradually a
     ```
     <figcaption>A missing key returns `undefined` at runtime, but TypeScript assumes it exists. Catching this requires enabling `noUncheckedIndexedAccess` — an opt-in, not the default.</figcaption>
 
-#### 2. Type narrowing is unprincipled
-To illustrate what this means, let's look at this example:
+3. Type narrowing can be invalidated by a function call. TypeScript narrows a variable's type after a null check, but if a called function mutates that variable, the narrowed type no longer holds. This is because TypeScript performs type narrowing based on JavaScript runtime patterns. This is part of what makes TypeScript feel "bolted on" to JavaScript.
+    ```typescript
+    let x: string | null = "hello";
+    const clear = () => { x = null; };
 
-```typescript
-function process(x: string | number) {
-  if (typeof x === "string") {
-    x.toUpperCase(); // string here
-  } else {
-    x.toFixed(2); // number here
-  }
-}
-```
-
-In the above example, TypeScript derives a type constraint from a JavaScript runtime pattern and statically analyzes it. Other recognized patterns include:
-
-```javascript
-if (x !== null)             ...
-if (Array.isArray(x))       ...
-if (x !== undefined)        ...
-if (typeof x === "string")  ...
-```
-
-A disciplined type system would perform type narrowing from a complete set of types amounting to a formal derivation. 
+    if (x !== null) {
+      clear();           // x is now null
+      x.toUpperCase();   // TypeScript still thinks x is string — crash
+    }
+    ```
+    <figcaption>TypeScript narrows `x` to `string` after the null check, but doesn't account for `clear()` mutating it.</figcaption>
 
 
-#### 3. Which version of TypeScript?
+#### 2. Which version of TypeScript?
 
 TypeScript has many versions. And I don't mean releases. What I mean is that every configuration of TypeScript compiler changes how TypeScript works. There are hundreds of configuration options, though probably a dozen common ones for projects. This means that TypeScript behaves differently from project to project, each containing its own "gotchas" that developers have to learn.
 
 
-#### 4. Control flow patterns are error-prone
+#### 3. Control flow patterns are error-prone
 The biggest issue is the switch statement, which can be crafted in a variety of ways that omit cases. Notable issues include `fall-through`, where a missing `break;` causes another case to be processed, and `switch exhaustiveness`, where a missing `never` keyword causes a union member to be missed.
 
 ```typescript
@@ -98,10 +86,10 @@ switch (status) {
 <figcaption>A missed `break;` statement causes both `startTimer()` and `render()` to be invoked</figcaption>
 
 
-#### 5. The type system is immature 
+#### 4. The type system is immature 
 Spend a little time with other languages and you'll notice that their type systems embody patterns such as `Result` and `Option`. In the former, a result can either be `Ok` or `Error`. In the latter, the presence or absence of something is handled with the `Some` or `None`. It's not that the web doesn't contain such concepts, it is that TypeScript is bolted onto JavaScript, and as such, the design is a compromise. 
 
-#### 6. TypeScript doesn't attempt to unify the tooling
+#### 5. TypeScript doesn't attempt to unify the tooling
 The JavaScript ecosystem is fragmented, plaguing the ecosystem for far too long. Just try updating the node version of your package, and you'll find that you have to make a bunch of unrelated changes to `eslint` and `babel` just to accomplish the task. These are unnecessary friction points. Other typed languages solve the problem of formatting and bundling as part of their tooling.
 
 ### The Alternative
