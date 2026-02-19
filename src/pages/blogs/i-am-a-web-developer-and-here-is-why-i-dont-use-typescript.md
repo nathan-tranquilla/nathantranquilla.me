@@ -89,7 +89,7 @@ These 3 settings affect the type safety and control flow patterns of TypeScript 
 #### 3. Control flow patterns are error-prone
 `switch` and `try/catch` both have notable issues.
 
-**`switch`** — can be written with fall-through bugs (missing `break`) and exhaustiveness gaps (missing cases), both of which are silent by default.
+**`switch`**: can be written with fall-through bugs (missing `break`) and exhaustiveness gaps (missing cases), both of which are silent by default.
 
 ```typescript
 type Shape = { kind: "circle" } | { kind: "square" };
@@ -112,7 +112,7 @@ switch (status) {
 ```
 <figcaption>A missed `break;` statement causes both `startTimer()` and `render()` to be invoked</figcaption>
 
-**`try/catch`** — has no typed errors. There is no support for a `throws` annotation that would help inform TypeScript on the type of error that can be caught.
+**`try/catch`**: has no typed errors. There is no support for a `throws` annotation that would help inform TypeScript on the type of error that can be caught.
 
 ```typescript
 function fetchUser(id: number) {
@@ -133,7 +133,51 @@ try {
 
 
 #### 4. The type system is immature 
-Spend a little time with other languages and you'll notice that their type systems embody patterns such as `Result` and `Option`. In the former, a result can either be `Ok` or `Error`. In the latter, the presence or absence of something is handled with the `Some` or `None`. It's not that the web doesn't contain such concepts, it is that TypeScript is bolted onto JavaScript, and as such, the design is a compromise. 
+TypeScript is missing types that embody common patterns. Let's look at the `result` and `option` types. 
+
+**`result` type**: Computations can either succeed or fail. The `result` type embodies this pattern by allowing the caller to branch on `ok` or `err`. TypeScript has no equivalent — the most accessible pattern for handling errors is `try/catch`, which as we've seen carries no type information about what might be thrown.
+
+```typescript
+function divide(a: number, b: number): number {
+  if (b === 0) throw new Error("Division by zero");
+  return a / b;
+}
+
+try {
+  const result = divide(10, 0);
+} catch (e) {
+  // e is unknown — nothing in the type system told you this could throw
+}
+```
+<figcaption>The function signature says nothing about failure. The caller has no way to know a try/catch is needed without reading the implementation.</figcaption>
+
+**`option` type**: used to handle the presence or absence of a value. The `option` type embodies this by allowing you to branch on `some` or `none`. In TypeScript, absence is represented by a union with `null` or `undefined` — ad hoc rather than a principled type.
+
+```typescript
+function findUser(id: number): User | undefined {
+  return users.find(u => u.id === id);
+}
+
+const user = findUser(1);
+
+if (user !== undefined) {
+  console.log(user.name); // safe
+} else {
+  console.log("User not found");
+}
+```
+<figcaption>Without an `option` type, the developer must depend on a runtime `undefined` check to branch on the result. There is no type-level construct that enforces handling both cases.</figcaption>
+
+The `Promise` type proves that the concept of the `result` exists in web development, it's just not formalized in TypeScript. 
+
+```typescript
+fetch("/api/user")
+  .then(res => res.json())  // success branch
+  .catch(err => {           // error branch
+    console.error(err);
+  });
+```
+<figcaption>`Promise` handles success and failure as first-class branches, much like the `result` type.</figcaption>
 
 #### 5. TypeScript doesn't attempt to unify the tooling
 The JavaScript ecosystem is fragmented, plaguing the ecosystem for far too long. Just try updating the node version of your package, and you'll find that you have to make a bunch of unrelated changes to `eslint` and `babel` just to accomplish the task. These are unnecessary friction points. Other typed languages solve the problem of formatting and bundling as part of their tooling.
