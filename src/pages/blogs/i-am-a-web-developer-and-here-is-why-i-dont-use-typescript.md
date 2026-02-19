@@ -2,17 +2,16 @@
 layout: ../../layouts/Blog.astro
 title: "I’m A Web Developer, Here’s Why I DON’T Use TypeScript"
 author: Nathan Tranquilla
-date: "2026/02/24"
-tags: ["TypeScript","Type Safety"]
-draft: true
+date: "2026/02/19"
+tags: ["TypeScript","Type Safety","JavaScript"]
 ---
 
-I stopped using TypeScript. Not because I don't care about type safety. Actually, it's the opposite. I found something that does the job better. In this post I explain why I don't use TypeScript, and what I've replaced it with.
+I stopped using TypeScript. Not because I don't care about type safety. Actually, it's the opposite. I found something that does the job better. In this post, I explain why I don't use TypeScript, and what I've replaced it with.
 
 
 ### Strong resistance to TypeScript
 	
-In 2026, [67.1% of professional developers](https://navanathjadhav.medium.com/typescript-vs-javascript-in-2026-when-should-you-actually-use-typescript-95da08708cc6) use TypeScript. This means that one in three developers have resisted the encroachment of TypeScript onto JavaScript’s dynamic nature. This might be understandable if TypeScript were young, but it is now 13 years old, yet there is still strong resistance to its adoption. At this point, I don’t think this is a case of stubborn developers; TypeScript has flaws and this small group isn’t being heard. Let's enumerate the grievances. 
+In 2026, <a href="https://navanathjadhav.medium.com/typescript-vs-javascript-in-2026-when-should-you-actually-use-typescript-95da08708cc6" target="_blank" rel="noopener noreferrer">67.1% of professional developers</a> use TypeScript. This means that one in three developers has resisted the encroachment of TypeScript onto JavaScript’s dynamic nature. This might be understandable if TypeScript were young, but it is now 13 years old, yet there is still strong resistance to its adoption. At this point, I don’t think this is a case of stubborn developers; TypeScript has flaws and this small group isn’t being heard. Let's enumerate the grievances. 
 
 #### 1. The type system isn't sound
 
@@ -34,7 +33,7 @@ TypeScript's type system isn't sound by design — it is meant to be gradually a
     ```
     <figcaption>TypeScript trusts the `as` cast without validating the response shape — the crash only surfaces when the data is used.</figcaption>
 
-2. Unsafe indexed access — `noUncheckedIndexedAccess` is off by default and not included in `strict` mode. Matt Pocock of Total TypeScript calls it [the best feature you've never heard of](https://www.totaltypescript.com/tips/make-accessing-objects-safer-by-enabling-nouncheckedindexedaccess-in-tsconfig) (Published in 2023), suggesting it's not often enabled in projects.
+2. Unsafe indexed access — `noUncheckedIndexedAccess` is off by default and not included in `strict` mode. Matt Pocock of Total TypeScript calls it <a href="https://www.totaltypescript.com/tips/make-accessing-objects-safer-by-enabling-nouncheckedindexedaccess-in-tsconfig" target="_blank" rel="noopener noreferrer">the best feature you've never heard of</a> (Published in 2023), suggesting it's not often enabled in projects.
 
     ```typescript
     const myObj: Record<string, string[]> = {};
@@ -58,7 +57,7 @@ TypeScript's type system isn't sound by design — it is meant to be gradually a
 
 #### 2. Which version of TypeScript?
 
-TypeScript has many versions. And I don't mean releases. What I mean is that every configuration of TypeScript compiler changes how TypeScript works. There are hundreds of configuration options, though probably a dozen common ones for projects. This means that TypeScript behaves differently from project to project, each containing its own "gotchas" that developers have to learn. Here are a few settings that are off by default and considered [too noisy](https://www.totaltypescript.com/tsconfig-cheat-sheet) to turn on:
+TypeScript has many versions. And I don't mean releases. What I mean is that every configuration of the TypeScript compiler changes how TypeScript works. There are hundreds of configuration options, though probably a dozen common ones for projects. This means that TypeScript behaves differently from project to project, each containing its own "gotchas" that developers have to learn. Here are a few settings that are off by default and considered <a href="https://www.totaltypescript.com/tsconfig-cheat-sheet" target="_blank" rel="noopener noreferrer">too noisy</a> to turn on:
 
 1. `noUncheckedIndexedAccess`. Changes the return type to `T | undefined`. 
     ```typescript
@@ -84,7 +83,7 @@ TypeScript has many versions. And I don't mean releases. What I mean is that eve
     }
     ```
 
-These 3 settings affect the type safety and control flow patterns of TypeScript in ways that are very impactful. These three settings alone create 8 distinct "versions" of TypeScript that a developer must master. 
+These three settings affect the type safety and control flow patterns of TypeScript in ways that are very impactful. These three settings alone create 8 distinct "versions" of TypeScript that a developer must master. 
 
 #### 3. Control flow patterns are error-prone
 `switch` and `try/catch` both have notable issues.
@@ -100,7 +99,7 @@ function area(s: Shape) {
   }
 }
 ```
-<figcaption>Classic case of missed type union member, a vulnerability as code evolves</figcaption>
+<figcaption>Classic case of missed type union member, a vulnerability as code evolves.</figcaption>
 
 ```typescript
 switch (status) {
@@ -110,7 +109,7 @@ switch (status) {
     render();
 }
 ```
-<figcaption>A missed `break;` statement causes both `startTimer()` and `render()` to be invoked</figcaption>
+<figcaption>A missed `break;` statement causes both `startTimer()` and `render()` to be invoked.</figcaption>
 
 **`try/catch`**: has no typed errors. There is no support for a `throws` annotation that would help inform TypeScript on the type of error that can be caught.
 
@@ -168,7 +167,7 @@ if (user !== undefined) {
 ```
 <figcaption>Without an `option` type, the developer must depend on a runtime `undefined` check to branch on the result. There is no type-level construct that enforces handling both cases.</figcaption>
 
-The `Promise` type proves that the concept of the `result` exists in web development, it's just not formalized in TypeScript. 
+The `Promise` type proves that the concept of the `result` exists in web development — it's just not formalized in TypeScript. 
 
 ```typescript
 fetch("/api/user")
@@ -272,11 +271,11 @@ function Playground(props) {
   });
 }
 ```
-<figcaption>The actual ReScript compiler output. </figcaption>
+<figcaption>The actual ReScript compiler output.</figcaption>
 
 #### 5. A gradual adoption story
 
-TypeScript types the JavaScript that you have; you apply increasing levels of strictness to your codebase. ReScript generates JavaScript so its type system remains sound, while its presence grows in your codebase. TypeScript's approach is broad; ReScript's approach is surgical. 
+TypeScript types the JavaScript that you have; you apply increasing levels of strictness to your codebase. ReScript generates JavaScript, so its type system remains sound, while its presence grows in your codebase. TypeScript's approach is broad; ReScript's approach is surgical. 
 
 #### 6. Principled type-narrowing
 
@@ -294,7 +293,7 @@ type t = [
   | #undefined
 ]
 ```
-<figcaption>The [possible types](https://rescript-lang.org/docs/manual/api/stdlib/type/#type-t) of JavaScript values. </figcaption>
+<figcaption>The <a href="https://rescript-lang.org/docs/manual/api/stdlib/type/#type-t" target="_blank" rel="noopener noreferrer">possible types</a> of JavaScript values. </figcaption>
 
 ```javascript
 let describe = value =>
@@ -391,4 +390,4 @@ JavaScript is ReScript's compiler output; there is no need for linting. ReScript
 
 ### Conclusion
 
-TypeScript has done well to make JavaScript safer, but it's a bridge to ReScript. We've become far too attached to TypeScript as the pinnacle of web development. At 13 years of age, only 2/3 of developers use TypeScript. The resistance from community members should not be dismissed, as I've demonstrated that TypeScript has significant weaknesses. If you'd like to learn more about ReScript, check out [this video](https://youtu.be/ANrLu4yjDUY?si=XZwBSq6jQ8tKDVM2).
+TypeScript has done well to make JavaScript safer, but it's a bridge to ReScript. We've become far too attached to TypeScript as the pinnacle of web development. At 13 years of age, only 2/3 of developers use TypeScript. The resistance from community members should not be dismissed, as I've demonstrated that TypeScript has significant weaknesses. If you'd like to learn more about ReScript, check out <a href="https://youtu.be/ANrLu4yjDUY?si=XZwBSq6jQ8tKDVM2" target="_blank" rel="noopener noreferrer">this video</a>.
