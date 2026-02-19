@@ -280,7 +280,7 @@ TypeScript types the JavaScript that you have; you apply increasing levels of st
 
 #### 6. Principled type-narrowing
 
-Type-narrowing is accomplished through type algebra, as one would expect of a sound type system.
+Type-narrowing is accomplished through type algebra, as one would expect of a sound type system. Notice the contrast between TypeScript's type-narrowing approach based on JavaScript runtime patterns versus a principled approach based on types.
 
 ```javascript
 type t = [
@@ -296,13 +296,28 @@ type t = [
 ```
 <figcaption>The [possible types](https://rescript-lang.org/docs/manual/api/stdlib/type/#type-t) of JavaScript values. </figcaption>
 
-#### 7. One level of strictness
+```javascript
+let describe = value =>
+  switch Type.typeof(value) {
+  | #string  => "a string"
+  | #number  => "a number"
+  | #boolean => "a boolean"
+  | #object  => "an object"
+  | #function => "a function"
+  | #bigint  => "a bigint"
+  | #symbol  => "a symbol"
+  | #undefined => "undefined"
+  }
+```
+<figcaption>`Type.typeof` returns a `Type.t` variant. Pattern matching on it narrows exhaustively — the compiler errors if any case is missing.</figcaption>
 
-You can't configure the type system. It has one level of strictness (maximum). This means there is only one version of ReScript you have to learn, and it has a language syntax that Claude has already mastered. Nevertheless, the essential documenation for LLMs can be found [here](https://rescript-lang.org/docs/manual/llms). 
+#### 7. One version of ReScript
+
+You can't configure the type system. It has one level of strictness (maximum). This means there is only one version of ReScript you have to learn. 
 
 #### 8. Safe control flows
 
-Switch statements are truly exhaustive and try/catch blocks allow for narrowing based on the type of error. This is a breath of fresh air compared to TypeScript.
+Switch statements are truly exhaustive and try/catch blocks allow for narrowing based on the type of error, both direct answers to the control flow problems in TypeScript.
 
 ```javascript
 type status = Pending | Active | Closed
@@ -330,7 +345,7 @@ let result =
 
 #### 9. A more advanced type system
 
-Control flow types such as `Result` and `Option` are present as one expects of mature typed languages. This indicates that ReScript patterns are much more developed and suitable for the complexity of the modern web.
+Types such as `Result` and `Option` are present as one expects of mature typed languages. TypeScript acknowledges the `Result` pattern implicitly through `Promise`, but `Result` is a first-class type in ReScript.
 
 ```javascript
 let divide = (a, b) =>
@@ -344,12 +359,35 @@ switch divide(10, 2) {
 | Ok(n)    => Console.log(`Result: ${Int.toString(n)}`)
 | Error(e) => Console.log(`Error: ${e}`)
 }
+
+// Compiles to
+function divide(a, b) {
+  if (b === 0) {
+    return {
+      TAG: "Error",
+      _0: "Division by zero"
+    };
+  } else {
+    return {
+      TAG: "Ok",
+      _0: Primitive_int.div(a, b)
+    };
+  }
+}
+
+let n = divide(10, 2);
+
+if (n.TAG === "Ok") {
+  console.log(`Result: ` + n._0.toString());
+} else {
+  console.log(`Error: ` + n._0);
+}
 ```
 <figcaption>`Result` is a first-class type in ReScript. Success and failure are both represented in the type, forcing the caller to handle both cases.</figcaption>
 
 #### 10. Unified tooling
 
-JavaScript is ReScript's compiler output; there is no need for linting. ReScript comes with a formatting tool for formatting ReScript code. This eliminates the maintenance headaches of typical JavaScript projects.
+JavaScript is ReScript's compiler output; there is no need for linting. ReScript ships with `rescript format`, a built-in formatter. This eliminates the maintenance headaches of typical JavaScript projects.
 
 ### Conclusion
 
