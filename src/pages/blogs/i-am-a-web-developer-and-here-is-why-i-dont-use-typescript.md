@@ -87,7 +87,9 @@ TypeScript has many versions. And I don't mean releases. What I mean is that eve
 These 3 settings affect the type safety and control flow patterns of TypeScript in ways that are very impactful. These three settings alone create 8 distinct "versions" of TypeScript that a developer must master. 
 
 #### 3. Control flow patterns are error-prone
-The biggest issue is the switch statement, which can be crafted in a variety of ways that omit cases. Notable issues include `fall-through`, where a missing `break;` causes another case to be processed, and `switch exhaustiveness`, where a missing `never` keyword causes a union member to be missed.
+`switch` and `try/catch` both have notable issues.
+
+**`switch`** — can be written with fall-through bugs (missing `break`) and exhaustiveness gaps (missing cases), both of which are silent by default.
 
 ```typescript
 type Shape = { kind: "circle" } | { kind: "square" };
@@ -109,6 +111,25 @@ switch (status) {
 }
 ```
 <figcaption>A missed `break;` statement causes both `startTimer()` and `render()` to be invoked</figcaption>
+
+**`try/catch`** — has no typed errors. There is no support for a `throws` annotation that would help inform TypeScript on the type of error that can be caught.
+
+```typescript
+function fetchUser(id: number) {
+  // Could throw NetworkError, AuthError, ParseError — TypeScript has no idea
+  return fetch(`/api/users/${id}`).then(res => res.json());
+}
+
+try {
+  const user = await fetchUser(1);
+} catch (e) {
+  // e is unknown — you must guess what to check for
+  if (e instanceof NetworkError) { ... }
+  if (e instanceof AuthError) { ... }
+  // miss one and it goes unhandled
+}
+```
+<figcaption>TypeScript cannot express what a function may throw. The caller has no way to know what to handle without reading the source.</figcaption>
 
 
 #### 4. The type system is immature 
