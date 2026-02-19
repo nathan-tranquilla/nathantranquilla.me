@@ -12,38 +12,36 @@ I stopped using TypeScript. Not because I don't care about type safety. Actually
 
 ### Strong resistance to TypeScript
 	
-In 2026, [67.1% of professional developers](https://navanathjadhav.medium.com/typescript-vs-javascript-in-2026-when-should-you-actually-use-typescript-95da08708cc6) use TypeScript. This means that one in three developers have resisted the encroachment of TypeScript onto JavaScript’s dynamic nature. This might be understandable if TypeScript was young, but it is now 13 years old, yet there is still strong resistance to its adoption. At this point, I don’t think this is a case of stubborn developers; TypeScript has flaws and this small group isn’t being heard. Let me enumerate what I think the grievances are.
+In 2026, [67.1% of professional developers](https://navanathjadhav.medium.com/typescript-vs-javascript-in-2026-when-should-you-actually-use-typescript-95da08708cc6) use TypeScript. This means that one in three developers have resisted the encroachment of TypeScript onto JavaScript’s dynamic nature. This might be understandable if TypeScript were young, but it is now 13 years old, yet there is still strong resistance to its adoption. At this point, I don’t think this is a case of stubborn developers; TypeScript has flaws and this small group isn’t being heard. Let's enumerate the grievances. 
 
 #### 1. The type system isn't sound
 
-TypeScript's type system isn’t sound by design. It is meant to be gradually adopted to varying degrees of strictness in your codebase. Depending on the configuration, you can introduce type holes with the `any` type, through `as` casts, or through assertion functions. You can allow unsafe array access without the `noUncheckedIndexedAccess` setting, and even then, there are cases where a dynamic index allows unsafe array access. I get that TypeScript is a compromise, and I understand why, but to some, this is a source of its weakness.
+TypeScript's type system isn't sound by design — it is meant to be gradually adopted to varying degrees of strictness in your codebase. I get that TypeScript is a compromise, and I understand why, but it also means it has these weaknesses:
 
-```typescript
-type User = { id: number; name: string; email: string };
+1. `as` cast weakening type guarantees
 
-async function getUser(id: number): Promise<User> {
-  const res = await fetch(`/api/users/${id}`);
-  const data = await res.json();
-  return data as User; // TypeScript trusts you — no validation happens
-}
+    ```typescript
+    type User = { id: number; name: string; email: string };
 
-const user = await getUser(1);
-console.log(user.email.toUpperCase()); // crashes if API returns unexpected shape
-```
-<figcaption>TypeScript does not require the API response to be decoded, causing crashes only once the data is used.</figcaption>
+    async function getUser(id: number): Promise<User> {
+      const res = await fetch(`/api/users/${id}`);
+      const data = await res.json();
+      return data as User; // TypeScript trusts you — no validation happens
+    }
 
-```typescript
-function processItems(items: string[], indices: number[]) {
-  for (const i of indices) {
-    const item = items[i]!;
-    console.log(item.toUpperCase()); 
-  }
-}
+    const user = await getUser(1);
+    console.log(user.email.toUpperCase()); // crashes if API returns unexpected shape
+    ```
+    <figcaption>TypeScript trusts the `as` cast without validating the response shape — the crash only surfaces when the data is used.</figcaption>
 
-processItems(["a", "b"], [0, 999]); // runtime error
-```
-<figcaption>Silencing noUncheckedIndexedAccess with ! trades a compile-time warning for a runtime crash</figcaption>
+2. Unsafe indexed access — `noUncheckedIndexedAccess` is off by default and not included in `strict` mode. Matt Pocock of Total TypeScript calls it [the best feature you've never heard of](https://www.totaltypescript.com/tips/make-accessing-objects-safer-by-enabling-nouncheckedindexedaccess-in-tsconfig).
 
+    ```typescript
+    const myObj: Record<string, string[]> = {};
+
+    myObj.foo.push("bar"); // TypeScript: fine. Runtime: TypeError — myObj.foo is undefined
+    ```
+    <figcaption>A missing key returns `undefined` at runtime, but TypeScript assumes it exists. Catching this requires enabling `noUncheckedIndexedAccess` — an opt-in, not the default.</figcaption>
 
 #### 2. Type narrowing is unprincipled
 To illustrate what this means, let's look at this example:
@@ -123,7 +121,7 @@ Its strong type inference means you can annotate the code as little or as much a
 
 The main friction point is creating bindings for existing JavaScript libraries. However Claude Code is extremely good at this task. Having worked with ReScript for the past year, I've used ReScript with Astro for SSR and in the client with React no problem.
 
-```rescript
+```javascript
 @val @scope("localStorage") @return(nullable)
 external getItem: string => option<string> = "getItem"
 
@@ -135,7 +133,7 @@ let theme = getItem("theme") // option<string> — None if key doesn't exist
 
 ReScript comes with React bindings, compiling to JavaScript with `react/jsx-runtime`, or if desired, with preserved JSX. This makes it a breeze to use with frameworks like Astro (a personal favorite of mine) both on the server and in the client.
 
-```rescript
+```javascript
 @react.component
 let make = (~name) =>
   <p> {React.string("Hello, " ++ name)} </p>
@@ -191,7 +189,7 @@ You can't configure the type system. It has one level of strictness (maximum). T
 
 Switch statements are truly exhaustive and try/catch blocks allow for narrowing based on the type of error. This is a breath of fresh air compared to TypeScript.
 
-```rescript
+```javascript
 type status = Pending | Active | Closed
 
 let label = status =>
@@ -204,7 +202,7 @@ let label = status =>
 ```
 <figcaption>Every case must be handled. Adding a new variant to the type breaks the build until the switch is updated.</figcaption>
 
-```rescript
+```javascript
 exception NotFound(string)
 
 let result =
@@ -219,7 +217,7 @@ let result =
 
 Control flow types such as `Result` and `Option` are present as one expects of mature typed languages. This indicates that ReScript patterns are much more developed and suitable for the complexity of the modern web.
 
-```rescript
+```javascript
 let divide = (a, b) =>
   if b === 0 {
     Error("Division by zero")
