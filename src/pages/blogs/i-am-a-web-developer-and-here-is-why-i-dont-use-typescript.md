@@ -180,7 +180,7 @@ fetch("/api/user")
 <figcaption>`Promise` handles success and failure as first-class branches, much like the `result` type.</figcaption>
 
 #### 5. TypeScript doesn't attempt to unify the tooling
-The JavaScript ecosystem is fragmented. Starting a fresh TypeScript project still means managing `tsconfig.json`, `.eslintrc`, `.prettierrc`, and a bundler config. TypeScript solved the type problem and left everything else exactly where it was. Rust ships `rustfmt` and ReScript ships `rescript format`. TypeScript had the opportunity to consolidate tooling and did not. This has left the ecosystem as fragmented as it was before TypeScript arrived.
+The JavaScript ecosystem is fragmented. Starting a fresh TypeScript project still means managing `tsconfig.json`, `.eslintrc`, `.prettierrc`, and a bundler config, not to mention that eslint and prettier have overlapping concerns. TypeScript solved the type problem and left everything else exactly where it was. Rust ships `rustfmt` and ReScript ships `rescript format`. TypeScript had the opportunity to consolidate tooling and did not. This has left the ecosystem as fragmented as it was before TypeScript arrived.
 
 ### The Alternative
 One thing TypeScript has done well is warm developers up to static typing and strongly-typed languages. TypeScript does not have the features to be the final form in the evolution of web development. There are other web development languages that solve these pain points. ReScript is that language.
