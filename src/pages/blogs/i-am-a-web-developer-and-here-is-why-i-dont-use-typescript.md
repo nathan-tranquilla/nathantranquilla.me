@@ -34,7 +34,7 @@ TypeScript's type system isn't sound by design — it is meant to be gradually a
     ```
     <figcaption>TypeScript trusts the `as` cast without validating the response shape — the crash only surfaces when the data is used.</figcaption>
 
-2. Unsafe indexed access — `noUncheckedIndexedAccess` is off by default and not included in `strict` mode. Matt Pocock of Total TypeScript calls it [the best feature you've never heard of](https://www.totaltypescript.com/tips/make-accessing-objects-safer-by-enabling-nouncheckedindexedaccess-in-tsconfig).
+2. Unsafe indexed access — `noUncheckedIndexedAccess` is off by default and not included in `strict` mode. Matt Pocock of Total TypeScript calls it [the best feature you've never heard of](https://www.totaltypescript.com/tips/make-accessing-objects-safer-by-enabling-nouncheckedindexedaccess-in-tsconfig) (Published in 2023), suggesting it's not often enabled in projects.
 
     ```typescript
     const myObj: Record<string, string[]> = {};
@@ -58,8 +58,33 @@ TypeScript's type system isn't sound by design — it is meant to be gradually a
 
 #### 2. Which version of TypeScript?
 
-TypeScript has many versions. And I don't mean releases. What I mean is that every configuration of TypeScript compiler changes how TypeScript works. There are hundreds of configuration options, though probably a dozen common ones for projects. This means that TypeScript behaves differently from project to project, each containing its own "gotchas" that developers have to learn.
+TypeScript has many versions. And I don't mean releases. What I mean is that every configuration of TypeScript compiler changes how TypeScript works. There are hundreds of configuration options, though probably a dozen common ones for projects. This means that TypeScript behaves differently from project to project, each containing its own "gotchas" that developers have to learn. Here are a few settings that are off by default and considered [too noisy](https://www.totaltypescript.com/tsconfig-cheat-sheet) to turn on:
 
+1. `noUncheckedIndexedAccess`. Changes the return type to `T | undefined`. 
+    ```typescript
+    const items = ["a", "b", "c"];
+    const x = items[99]; // type: string (default) — undefined at runtime
+    ```
+
+2. `noImplicitReturns`. This prevents functions from silently returning `undefined` 
+    ```typescript
+    function getLabel(status: string): string {
+      if (status === "active") return "Active";
+      // Implicit "undefined" return here.
+    }
+    getLabel("inactive").toUpperCase(); // TypeError
+    ```
+3. `noFallthroughCasesInSwitch`. This setting prevents a common `footgun` when writing switch statements. Without it enabled, developers can write switch statements that process multiple case statements unintentionally.
+    ```typescript
+    switch (status) {
+      case "pending":
+        startTimer(); // falls through silently
+      case "active":
+        render();
+    }
+    ```
+
+These 3 settings affect the type safety and control flow patterns of TypeScript in ways that are very impactful. These three settings alone create 8 distinct "versions" of TypeScript that a developer must master. 
 
 #### 3. Control flow patterns are error-prone
 The biggest issue is the switch statement, which can be crafted in a variety of ways that omit cases. Notable issues include `fall-through`, where a missing `break;` causes another case to be processed, and `switch exhaustiveness`, where a missing `never` keyword causes a union member to be missed.
