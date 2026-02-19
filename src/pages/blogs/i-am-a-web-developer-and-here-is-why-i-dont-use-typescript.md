@@ -391,4 +391,4 @@ JavaScript is ReScript's compiler output; there is no need for linting. ReScript
 
 ### Conclusion
 
-TypeScript has done well to make JavaScript safer, but it's only a step in the evolution of web dev languages. We've become far too attached to it as the pinnacle of web development. At 13 years of age, only 2/3 developers use TypeScript. The resistance from community members should get our attention and cause us to open our eyes and ears to look for alternatives. I've made the case here that ReScript is the next step in the evolution of web dev. 
+TypeScript has done well to make JavaScript safer, but it's a bridge to ReScript. We've become far too attached to TypeScript as the pinnacle of web development. At 13 years of age, only 2/3 of developers use TypeScript. The resistance from community members should not be dismissed, as I've demonstrated that TypeScript has significant weaknesses. If you'd like to learn more about ReScript, check out [this video](https://youtu.be/ANrLu4yjDUY?si=XZwBSq6jQ8tKDVM2).
