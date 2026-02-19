@@ -183,13 +183,13 @@ fetch("/api/user")
 The JavaScript ecosystem is fragmented. Starting a fresh TypeScript project still means managing `tsconfig.json`, `.eslintrc`, `.prettierrc`, and a bundler config, not to mention that eslint and prettier have overlapping concerns. TypeScript solved the type problem and left everything else exactly where it was. Rust ships `rustfmt` and ReScript ships `rescript format`. TypeScript had the opportunity to consolidate tooling and did not. This has left the ecosystem as fragmented as it was before TypeScript arrived.
 
 ### The Alternative
-One thing TypeScript has done well is warm developers up to static typing and strongly-typed languages. TypeScript does not have the features to be the final form in the evolution of web development. There are other web development languages that solve these pain points. ReScript is that language.
+One thing TypeScript has done well is warm developers up to static typing and strongly-typed languages. TypeScript isn't the destination, but it is a step in the evolution of web dev. TypeScript bridges to ReScript.
 
-ReScript is a strongly-typed language that compiles to JavaScript. It has been said of ReScript that it's what JavaScript would have been had it been `baked` a little longer. That's because its type system is sound, and with strong type inference, it has the feel of JavaScript, making it familiar. 
+ReScript is a strongly-typed language that compiles to JavaScript. ReScript is what JavaScript would have been had it been "baked" longer. ReScript's type system is sound and has strong type inference, giving it the feel of JavaScript.
 
 #### 1. A sound type system
 
-There are no null or undefined issues in ReScript, which means the JavaScript it generates is free from null/undefined-related errors. This is major win as null/undefined-related bugs are eliminated entirely a class of bug simply by choosing this language. The same cannot be said of TypeScript. 
+There are no null or undefined issues in ReScript, which means the JavaScript it generates is also free from null/undefined-related errors. This is a major win, as an entire class of bug is eliminated simply by choosing this language. The same cannot be said of TypeScript.
 
 #### 2. Strong type inference
 
