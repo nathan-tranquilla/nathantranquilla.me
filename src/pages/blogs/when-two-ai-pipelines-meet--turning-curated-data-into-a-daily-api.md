@@ -2,12 +2,11 @@
 layout: ../../layouts/Blog.astro
 title: "When Two AI Pipelines Meet: Turning Curated Data Into a Daily API"
 author: Nathan Tranquilla
-date: "2026/02/24"
+date: "2026/02/23"
 tags: ["AI","Prompt Engineering", "Automation", "API"]
-draft: true
 ---
 
-I maintain a simple quote of the day API for fans of The Office (US). It returns a quote, a correlated YouTube clip, and it's SFW. Sounds simple, but there are actually tough problems to solve for this to work without human curation. How did I qualify the pool of quotes? How did I correlate quotes to YouTube scenes? How do I cycle it once a day? And how can I afford to make this free to use?
+I maintain a simple [quote of the day API](https://theofficelines.com/api/) for fans of The Office (US). It returns a quote, a correlated YouTube clip, and it's SFW. Sounds simple, but there are actually tough problems to solve for this to work without human curation. How did I qualify the pool of quotes? How did I correlate quotes to YouTube scenes? How do I cycle it once a day? And how can I afford to make this free to use?
 
 
 <figure>
@@ -56,18 +55,19 @@ Rules:
 <figcaption><a href="https://theofficelines.com/quote/03_15_3" target="_blank">A line</a> classified across four topics, with SFW scoring a perfect 10</figcaption>
 </figure>
 
-I think the initial classification of a dozen or so topics cost me about $5 in token usage. I thought this was a very good price for the quantity processed, and the quality of the results.
+The initial classification of a dozen or so topics cost me about $5 in token usage. I thought this was a very good price for the quantity processed, and the quality of the results.
 
 Most lines were not classifiable at all and were discarded. Lines with a confidence score `>=5` were kept. Very few lines were classified with a score of `10`. This gave me an incredible set to work with.
 
 The results were very good. I'm currently using them to generate a content schedule for [theofficelines.com](https://theofficelines.com), and am satisfied with the quality as an actual user of the site.
 
 ### Correlating The Lines With Scenes On YouTube
+
 The second challenge to solve was correlating lines to scenes on the official YouTube channel. Having solved the previous problem with AI, I saw immediately how this problem was similar. Here was my thought process:
 
 1. Feed an AI agent the line with 10 lines of surrounding context. The agent formulates a query for the YouTube search API that is likely to locate this scene. The context is perhaps more important than the given line itself. See figure below for the guidelines.
 2. Submit the agent's query to the YouTube API client and get results.
-3. A second AI agent curates the results and picks the clip that matches best. If there are no good matches, discard. We also asked this agent to provide a reason for its selection. See figure below.
+3. A second AI agent curates the results and picks the clip that matches best. If there are no good matches, discard. I also asked this agent to provide a reason for its selection. See figure below.
 
 <figure>
 
@@ -78,7 +78,7 @@ Rules:
 - Focus on what makes this specific scene memorable and searchable
 - Avoid generic terms that would match compilations (e.g., "best moments", "funniest", "top 10")
 - Keep queries under 10 words
-- Return ONLY the search query string, nothing else. No quotes, no explanation.`
+- Return ONLY the search query string, nothing else. No quotes, no explanation.
 ```
 
 <figcaption>Agent 1: Snippet of prompt. Craft a YouTube search query from the surrounding dialog</figcaption>
@@ -128,7 +128,7 @@ GET https://theofficelines.com/data/qotd-sfw.json
 <figcaption>The two available endpoints, served as static files from a CDN</figcaption>
 </figure>
 
-Given that these files are static, and hosted on a CDN, I can provide it for free and spread the enjoyment of The Office to all! This was such an elegantly simple solution. Most API endpoints require a backend with databases, API keys, and rate limiting. With this solution, there is no cost, it's free and static, and can be cycled daily through a CI schedule. This leaves us with the last problem of cycling the quotes deterministically.
+Given that these files are static, and hosted on a CDN, I can provide it for free and spread the enjoyment of The Office to all! This was such an elegantly simple solution. Most API endpoints require a backend with databases, API keys, and rate limiting. With this solution, it's free and static, and can be cycled daily through a CI schedule. This leaves us with the last problem of cycling the quotes deterministically.
 
 **Note**: _If you need a SFW-only widget, be sure to use the `qotd-sfw.json` endpoint._
 
@@ -158,4 +158,4 @@ let selectIndex = (dateStr: string, poolSize: int): int =>
 </figure>
 
 ### Conclusion
-This was such a fun project for me! Even a simple widget can hide a lot of complexity. Two AI-powered pipelines came together to provide an experience for The Office fans that is not currently available anywhere else, at least that I am aware of. Hosting the data on a CDN makes it free and accessible to all, while the embed widget makes it simple to add to your site. If you would like to either embed the widget in your site, or access the API to build your own widget, you can find the details [here](https://theofficelines.com/api/). I've also created a WordPress plugin for this, though it is currently under review.
+Even a simple widget can hide a lot of complexity. Two AI-powered pipelines came together to provide an experience for The Office fans that is not currently available anywhere else, at least that I am aware of. Hosting the data on a CDN makes it free and accessible to all, while the embed widget makes it simple to add to your site. If you would like to either embed the widget in your site, or access the API to build your own widget, you can find the details [here](https://theofficelines.com/api/). I've also created a WordPress plugin for this, though it is currently under review.
