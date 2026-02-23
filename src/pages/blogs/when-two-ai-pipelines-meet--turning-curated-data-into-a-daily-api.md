@@ -43,6 +43,7 @@ Rules:
 </figure>
 
 <figure>
+
 ```
 "03_15_3": {
   "funny": 7,
