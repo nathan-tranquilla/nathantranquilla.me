@@ -133,7 +133,7 @@ Given that these files are static, and hosted on a CDN, I can provide it for fre
 **Note**: _If you need a SFW-only widget, be sure to use the `qotd-sfw.json` endpoint._
 
 ### Cycling the API Once A Day
-[theofficelines.com](https://theofficelines.com) is still under construction, going through multiple builds a day. I can't simply cycle the API on each build — the selection had to be deterministic, based on the date. This is where AI suggested I use a `djb2` hash-based approach. Here is the relevant code.
+[theofficelines.com](https://theofficelines.com) is still under construction, going through multiple builds a day. I can't simply cycle the API on each build; the selection had to be deterministic, based on the date. This is where AI suggested I use a `djb2` hash-based approach. Here is the relevant code.
 
 <figure>
 
@@ -158,4 +158,4 @@ let selectIndex = (dateStr: string, poolSize: int): int =>
 </figure>
 
 ### Conclusion
-This was such a fun project for me! Even a simple widget can hide a lot of complexity, but I am happy to share it with all fans. If you would like to either embed the widget in your site, or access the API to build your own widget, you can find the detail [here](https://theofficelines.com/api/). I have created a WordPress plugin for this as well, though it is currently under review. 
+This was such a fun project for me! Even a simple widget can hide a lot of complexity. Two AI-powered pipelines came together to provide an experience for The Office fans that is not currently available anywhere else, at least that I am aware of. Hosting the data on a CDN makes it free and accessible to all, while the embed widget makes it simple to add to your site. If you would like to either embed the widget in your site, or access the API to build your own widget, you can find the details [here](https://theofficelines.com/api/). I've also created a WordPress plugin for this, though it is currently under review.
