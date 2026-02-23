@@ -56,16 +56,47 @@ Rules:
 <figcaption><a href="https://theofficelines.com/quote/03_15_3" target="_blank">A line</a> classified across four topics, with SFW scoring a perfect 10</figcaption>
 </figure>
 
-The results were very good. Most lines were not classifiable at all and were discarded. Lines with a confidence score `>=5` were kept. Very few lines were classified with a score of `10`. This gave me an incredible set to work with.
-
 I think the initial classification of a dozen or so topics cost me about $5 in token usage. I thought this was a very good price for the quantity processed, and the quality of the results.
 
-### Correlating The Lines With Scenes On YouTube
-The second challenge to solve was correlating the scenes on the office YouTube channel for The Office. Having solved the previous problem with AI, I saw immediately how this was a job that AI could do well. My thoughts on the pipeline for the curation process were as follows:
+Most lines were not classifiable at all and were discarded. Lines with a confidence score `>=5` were kept. Very few lines were classified with a score of `10`. This gave me an incredible set to work with.
 
-1. Feed an AI agent the line with 10 lines of surrounding context. Get the AI agent to formulate a query for the YouTube search API that is likely to locate this scene. To locate the scene, the context is perhaps more important than the given line itself. 
-2. Submit the agent's query to the YouTube API client and get results. 
-3. Get another AI agent to curate the results and pick the clip that matches best. If there are no good matches, then discard. A similar approach with confidence scores is used here, and we also asked the curator agent to provide a reason for the choice of selection.
+The results were very good. I'm currently using them to generate a content schedule for [theofficelines.com](https://theofficelines.com), and am satisfied with the quality as an actual user of the site.
+
+### Correlating The Lines With Scenes On YouTube
+The second challenge to solve was correlating lines to scenes on the official YouTube channel. Having solved the previous problem with AI, I saw immediately how this problem was similar. Here was my thought process:
+
+1. Feed an AI agent the line with 10 lines of surrounding context. The agent formulates a query for the YouTube search API that is likely to locate this scene. The context is perhaps more important than the given line itself. See figure below for the guidelines.
+2. Submit the agent's query to the YouTube API client and get results.
+3. A second AI agent curates the results and picks the clip that matches best. If there are no good matches, discard. We also asked this agent to provide a reason for its selection. See figure below.
+
+<figure>
+
+```
+Rules:
+- Always start with "The Office"
+- Include character name and a distinctive phrase from the scene
+- Focus on what makes this specific scene memorable and searchable
+- Avoid generic terms that would match compilations (e.g., "best moments", "funniest", "top 10")
+- Keep queries under 10 words
+- Return ONLY the search query string, nothing else. No quotes, no explanation.`
+```
+
+<figcaption>Agent 1: Snippet of prompt. Craft a YouTube search query from the surrounding dialog</figcaption>
+</figure>
+
+<figure>
+
+```
+Be STRICT with confidence scoring:
+- 9-10: Video title clearly references this exact scene or quote AND is a single scene clip
+- 8: Video title matches the episode/moment but not the exact line, still a single scene
+- 5-7: Loosely related, uncertain match, or only tangentially connected
+- 1-4: Wrong scene, generic compilation, montage, "best of", or multi-scene video — ALWAYS reject these
+
+```
+
+<figcaption>Agent 2: Snippet of prompt. Curate YouTube results and score confidence on the match</figcaption>
+</figure>
 
 <figure>
 
@@ -82,10 +113,9 @@ The second challenge to solve was correlating the scenes on the office YouTube c
 <figcaption>A high-confidence match from the curation pipeline, with the AI's reasoning for its selection. <a href="https://theofficelines.com/quote/03_15_3" target="_blank">See the quote</a></figcaption>
 </figure>
 
+I'm currently rate limited by the YouTube API at about 100 correlations per day, which costs about $0.18 in token usage. At this rate, I estimate it will take about 5 months and $27–$36 to correlate all 15-20k lines of interest. The correlation process prioritizes quotes with interactions first, such as likes and shares. If you'd like to see a video correlated with your favorite quote, just go over to [theofficelines.com](https://theofficelines.com) and like or share your favorite quotes; they'll be correlated sooner!
 
-I'm currently rate limited by the YouTube API at about 100 correlations per day. At this rate, I estimate it will take me about 5 months to correlate all lines of interest (about 15-20k lines). The correlation process prioritizes quotes with interactions first, such as likes and shares. If you'd like to see a video correlated with your favorite quote, just go over to https://theofficelines.com and like and shared your favorite quotes; they'll be bumped up in priority!
-
-### Cylcling The API Once A Day
+### Why It's Free To Use
 The API is free because it's just a static json file
 ```
 GET https://theofficelines.com/data/qotd.json
@@ -96,7 +126,7 @@ Given that this is hosted in a CDN, there is no cost to me so I can provide it f
 **Note**: _If it is important for you to embed a SFW widget, be sure to use the `qots-sfw.json` endpoint._
 
 ### Cycling the API Once A Day
-[theofficelines.com](https://theofficelines.com) is still under construction going through multiple builds a day. I can't simply cycle the API on each build, the algorithm needed some more determinism based on the date. This is where AI suggested I use deterministic hash-based approach using the `djb2` algorithm. Here is the relevant code.
+[theofficelines.com](https://theofficelines.com) is still under construction, going through multiple builds a day. I can't simply cycle the API on each build — the selection had to be deterministic, based on the date. This is where AI suggested I use a `djb2` hash-based approach. Here is the relevant code.
 
 <figure>
 
