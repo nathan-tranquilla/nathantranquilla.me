@@ -116,14 +116,21 @@ Be STRICT with confidence scoring:
 I'm currently rate limited by the YouTube API at about 100 correlations per day, which costs about $0.18 in token usage. At this rate, I estimate it will take about 5 months and $27–$36 to correlate all 15-20k lines of interest. The correlation process prioritizes quotes with interactions first, such as likes and shares. If you'd like to see a video correlated with your favorite quote, just go over to [theofficelines.com](https://theofficelines.com) and like or share your favorite quotes; they'll be correlated sooner!
 
 ### Why It's Free To Use
-The API is free because it's just a static json file
+The API is free because it's just a static JSON file.
+
+<figure>
+
 ```
 GET https://theofficelines.com/data/qotd.json
 GET https://theofficelines.com/data/qotd-sfw.json
 ```
-Given that this is hosted in a CDN, there is no cost to me so I can provide it for free and spread the enjoyment of The Office to all!
 
-**Note**: _If it is important for you to embed a SFW widget, be sure to use the `qots-sfw.json` endpoint._
+<figcaption>The two available endpoints, served as static files from a CDN</figcaption>
+</figure>
+
+Given that these files are static, and hosted on a CDN, I can provide it for free and spread the enjoyment of The Office to all! This was such an elegantly simple solution. Most API endpoints require a backend with databases, API keys, and rate limiting. With this solution, there is no cost, it's free and static, and can be cycled daily through a CI schedule. This leaves us with the last problem of cycling the quotes deterministically.
+
+**Note**: _If you need a SFW-only widget, be sure to use the `qotd-sfw.json` endpoint._
 
 ### Cycling the API Once A Day
 [theofficelines.com](https://theofficelines.com) is still under construction, going through multiple builds a day. I can't simply cycle the API on each build — the selection had to be deterministic, based on the date. This is where AI suggested I use a `djb2` hash-based approach. Here is the relevant code.
