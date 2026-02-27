@@ -1,0 +1,98 @@
+---
+import Main from "./Main.astro";
+import Container from "../components/Container.astro";
+
+const { frontmatter } = Astro.props;
+---
+
+<style is:global>
+  .guide-body p {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    font-size: 1.125rem;
+  }
+
+  .guide-body > p:first-child {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+
+  .guide-body h3 {
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+
+  .guide-body h3 + p {
+    margin-top: 1rem;
+  }
+
+  .guide-body ol {
+    margin: 1.5rem 0;
+    padding-left: 1.5rem;
+    list-style: decimal;
+  }
+
+  .guide-body ol li {
+    margin-bottom: 0.75rem;
+    padding-left: 0.5rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+  }
+
+  .guide-body ol li::marker {
+    color: var(--accent-bg);
+    font-weight: 600;
+  }
+
+  .guide-body strong {
+    color: var(--text-primary);
+    font-weight: 700;
+  }
+</style>
+
+<Main
+  title={`${frontmatter.title} | nathantranquilla.me`}
+  description={frontmatter.description}
+  breadcrumbTitle={frontmatter.title}
+>
+  <Container classes="w-full max-w-[680px] mx-auto font-sans">
+    <h1 class="text-2xl md:text-3xl font-serif font-semibold text-[var(--text-primary)] mb-1">
+      {frontmatter.title}
+    </h1>
+    {frontmatter.subtitle && (
+      <p class="text-base text-[var(--text-muted)] mb-6">{frontmatter.subtitle}</p>
+    )}
+
+    <hr class="border-[var(--border-primary)] mb-2" />
+
+    <section class="guide-body">
+      <slot />
+    </section>
+
+    <hr class="border-[var(--border-primary)] mb-8" />
+
+    <div class="text-center py-6">
+      {frontmatter.pageCount && (
+        <p class="text-sm text-[var(--text-muted)] mb-2">{frontmatter.pageCount}-page PDF guide</p>
+      )}
+      <p class="text-3xl font-semibold text-[var(--text-primary)] mb-6">
+        {frontmatter.price} <span class="text-base font-normal text-[var(--text-muted)]">USD</span>
+      </p>
+      <a
+        class="gumroad-button inline-block rounded-md bg-[var(--accent-bg)] hover:bg-[var(--accent-bg-hover)] text-white py-3 px-8 font-semibold cursor-pointer hover:scale-[1.01] hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[var(--accent-bg)] focus:ring-offset-2 shadow-md transition-[transform,box-shadow,background-color] duration-200 no-underline"
+        href={frontmatter.gumroadUrl}
+      >
+        Buy the Guide
+      </a>
+    </div>
+  </Container>
+
+  <script src="https://gumroad.com/js/gumroad.js" is:inline></script>
+</Main>

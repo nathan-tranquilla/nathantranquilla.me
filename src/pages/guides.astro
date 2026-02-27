@@ -1,0 +1,37 @@
+---
+import Container from "../components/Container.astro";
+import Main from "../layouts/Main.astro";
+import H1 from "../components/HTMLElements/H1.astro";
+
+const guides = await Astro.glob("./guides/*.md");
+---
+
+<Main title="nathantranquilla.me | Guides" description="Practical guides for hiring developers and building websites.">
+  <Container classes="w-full max-w-4xl mx-auto py-8 px-4">
+    <div class="mb-12 text-center">
+      <H1 classes="mb-4">Guides</H1>
+      <p class="mx-auto max-w-2xl text-xl leading-relaxed text-[var(--text-tertiary)]">
+        Practical guides for hiring developers and building websites
+      </p>
+    </div>
+
+    <div class="divide-y divide-[var(--border-primary)]">
+      {
+        guides.map((guide) => (
+          <article class="py-8 first:pt-0">
+            <a href={guide.url} class="group block">
+              <h2 class="font-serif text-xl text-[var(--text-primary)] group-hover:text-[var(--text-accent)] transition-colors duration-200 md:text-2xl mb-1">
+                {guide.frontmatter.title}
+              </h2>
+              {guide.frontmatter.subtitle && (
+                <p class="text-sm text-[var(--text-muted)] mb-2">{guide.frontmatter.subtitle}</p>
+              )}
+              <p class="text-[var(--text-secondary)] mb-2">{guide.frontmatter.description}</p>
+              <span class="text-sm font-semibold text-[var(--text-accent)]">{guide.frontmatter.price}</span>
+            </a>
+          </article>
+        ))
+      }
+    </div>
+  </Container>
+</Main>
