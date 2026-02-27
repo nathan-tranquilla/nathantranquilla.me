@@ -78,19 +78,50 @@ const { frontmatter } = Astro.props;
 
     <hr class="border-[var(--border-primary)] mb-8" />
 
-    <div class="text-center py-6">
-      {frontmatter.pageCount && (
-        <p class="text-sm text-[var(--text-muted)] mb-2">{frontmatter.pageCount}-page PDF guide</p>
-      )}
-      <p class="text-3xl font-semibold text-[var(--text-primary)] mb-6">
-        {frontmatter.price} <span class="text-base font-normal text-[var(--text-muted)]">USD</span>
-      </p>
-      <a
-        class="gumroad-button inline-block rounded-md bg-[var(--accent-bg)] hover:bg-[var(--accent-bg-hover)] text-white py-3 px-8 font-semibold cursor-pointer hover:scale-[1.01] hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[var(--accent-bg)] focus:ring-offset-2 shadow-md transition-[transform,box-shadow,background-color] duration-200 no-underline"
-        href={frontmatter.gumroadUrl}
-      >
-        Buy the Guide
-      </a>
+    <div class="grid md:grid-cols-2 gap-6 py-6">
+      <div class="flex flex-col rounded-lg border border-[var(--border-primary)] p-6 text-center">
+        <p class="text-sm font-semibold uppercase tracking-wide text-[var(--text-muted)] mb-2">The Guide</p>
+        <p class="text-lg font-serif font-semibold text-[var(--text-primary)] mb-2">Do it yourself</p>
+        {frontmatter.pageCount && (
+          <p class="text-sm text-[var(--text-muted)] mb-3">{frontmatter.pageCount}-page PDF reference</p>
+        )}
+        <ul class="text-left text-sm text-[var(--text-secondary)] space-y-2 mb-6 flex-1">
+          <li class="flex gap-2"><span class="text-[var(--accent-bg)] shrink-0">&#10003;</span> Pricing breakdown by feature</li>
+          <li class="flex gap-2"><span class="text-[var(--accent-bg)] shrink-0">&#10003;</span> Questions to ask developers</li>
+          <li class="flex gap-2"><span class="text-[var(--accent-bg)] shrink-0">&#10003;</span> Red flags and green flags</li>
+          <li class="flex gap-2"><span class="text-[var(--accent-bg)] shrink-0">&#10003;</span> Compare quotes side by side</li>
+        </ul>
+        <p class="text-2xl font-semibold text-[var(--text-primary)] mb-4">
+          {frontmatter.price} <span class="text-sm font-normal text-[var(--text-muted)]">USD</span>
+        </p>
+        <a
+          class="gumroad-button inline-block rounded-md bg-[var(--accent-bg)] hover:bg-[var(--accent-bg-hover)] text-white py-3 px-6 font-semibold cursor-pointer hover:scale-[1.01] hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[var(--accent-bg)] focus:ring-offset-2 shadow-md transition-[transform,box-shadow,background-color] duration-200 no-underline"
+          href={frontmatter.gumroadUrl}
+        >
+          Buy the Guide
+        </a>
+      </div>
+
+      <div class="flex flex-col rounded-lg border border-[var(--border-primary)] p-6 text-center">
+        <p class="text-sm font-semibold uppercase tracking-wide text-[var(--text-muted)] mb-2">Consultation</p>
+        <p class="text-lg font-serif font-semibold text-[var(--text-primary)] mb-2">Work with me</p>
+        <p class="text-sm text-[var(--text-muted)] mb-3">Hands-on guidance</p>
+        <ul class="text-left text-sm text-[var(--text-secondary)] space-y-2 mb-6 flex-1">
+          <li class="flex gap-2"><span class="text-[var(--accent-bg)] shrink-0">&#10003;</span> Review your quotes together</li>
+          <li class="flex gap-2"><span class="text-[var(--accent-bg)] shrink-0">&#10003;</span> Evaluate your Figma or design</li>
+          <li class="flex gap-2"><span class="text-[var(--accent-bg)] shrink-0">&#10003;</span> Scope the project correctly</li>
+          <li class="flex gap-2"><span class="text-[var(--accent-bg)] shrink-0">&#10003;</span> Or I build the site for you</li>
+        </ul>
+        <p class="text-2xl font-semibold text-[var(--text-primary)] mb-4">
+          Custom <span class="text-sm font-normal text-[var(--text-muted)]">quote</span>
+        </p>
+        <a
+          class="inline-block rounded-md border-2 border-[var(--accent-bg)] text-[var(--accent-bg)] hover:bg-[var(--accent-bg)] hover:text-white py-3 px-6 font-semibold cursor-pointer hover:scale-[1.01] hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[var(--accent-bg)] focus:ring-offset-2 transition-[transform,box-shadow,background-color,color] duration-200 no-underline"
+          href="/consultation"
+        >
+          Book a Consultation
+        </a>
+      </div>
     </div>
   </Container>
 
