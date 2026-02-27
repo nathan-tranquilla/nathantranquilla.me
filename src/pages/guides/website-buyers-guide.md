@@ -2,7 +2,7 @@
 layout: ../../layouts/Guide.astro
 title: "How Much Does a Photography Website Cost? A Buyer's Guide"
 subtitle: "Your Website, Explained"
-description: "How much should a photography website cost? This buyer's guide breaks down what you're actually paying for, what it should cost, and how to evaluate developer quotes."
+description: "How much should a photography website cost? A decision-making framework for evaluating developer quotes, understanding what you're paying for, and hiring with confidence."
 price: "$39"
 pageCount: 6
 gumroadUrl: "https://redwoodrise.gumroad.com/l/your-site-explained"
@@ -20,7 +20,7 @@ Without a framework for evaluating quotes, you're guessing. And guessing with $3
 
 ### What this guide gives you
 
-A 6-page reference that breaks down every component of a photography website — what it costs, how complex it is, and whether you actually need it. You'll know exactly what to ask, what to watch out for, and how to compare quotes side by side.
+Most of the information in this guide exists online — scattered across dozens of articles, forums, and blog posts. The value here is that it's organized into a decision-making framework for someone who doesn't know what questions to ask. Six pages. One read. You walk into your next developer conversation knowing exactly what to say.
 
 1. **Template vs. Custom** — the biggest cost driver, with pros, cons, and price ranges for each
 2. **What You're Paying For** — galleries, design implementation, CMS, e-commerce, SEO, hosting, and maintenance broken down by complexity
