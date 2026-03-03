@@ -29,3 +29,5 @@ Apprenticeships will be the new reality for all workers, not just the trades. So
 
 It's my opinion that this reality is better embraced than resisted. I really enjoy using AI for my personal projects and workflows, but I too have suffered from displacement in the job market. Like all technological innovations of the past, workers do get displaced, but humans adapt and new opportunities open up that were unforeseen.
 
+What do you think? What does the future of knowledge work look like? Comment below &#x2B07;
+
