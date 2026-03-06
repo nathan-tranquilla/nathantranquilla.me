@@ -38,16 +38,16 @@ const breadcrumbSchema = {
 ---
 
 <nav aria-label="Breadcrumb" class="px-4 md:px-6 pt-4 pb-2 text-sm text-[var(--text-muted)]">
-  <ol class="flex flex-wrap items-center gap-1">
+  <ol class="flex items-center gap-1 min-w-0">
     {crumbs.map((crumb, i) => (
-      <li class="flex items-center gap-1">
+      <li class:list={["flex items-center gap-1", i === crumbs.length - 1 && "min-w-0"]}>
         {i > 0 && <span aria-hidden="true">/</span>}
         {i < crumbs.length - 1 ? (
-          <a href={crumb.href} class="text-[var(--text-accent)] hover:text-[var(--text-accent-hover)] transition-colors">
+          <a href={crumb.href} class="text-[var(--text-accent)] hover:text-[var(--text-accent-hover)] transition-colors shrink-0">
             {crumb.label}
           </a>
         ) : (
-          <span>{crumb.label}</span>
+          <span class="truncate">{crumb.label}</span>
         )}
       </li>
     ))}
