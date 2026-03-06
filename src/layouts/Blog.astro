@@ -214,7 +214,7 @@ try {
       },
       "image": `${websiteUrl}/Profile.jpg`,
       "datePublished": frontmatter.date.replace(/\//g, "-"),
-      "dateModified": frontmatter.dateModified?.replace(/\//g, "-") || frontmatter.date.replace(/\//g, "-"),
+      "dateModified": (frontmatter.updated || frontmatter.date).replace(/\//g, "-"),
       "url": articleUrl,
       "keywords": frontmatter.tags.join(", "),
       "mainEntityOfPage": {
@@ -233,7 +233,7 @@ try {
         >
         <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
           <span class="text-base text-[var(--text-muted)]">
-            {frontmatter.author} · {frontmatter.date}
+            {frontmatter.author} · {frontmatter.date}{frontmatter.updated && ` · Updated ${frontmatter.updated}`}
           </span>
           {frontmatter.tags.map((tag: string) => (
             <span class="rounded-full bg-[var(--bg-secondary)] px-2.5 py-0.5 text-xs font-medium text-[var(--text-tertiary)]">

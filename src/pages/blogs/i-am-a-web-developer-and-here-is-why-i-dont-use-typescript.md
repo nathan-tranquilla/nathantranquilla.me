@@ -3,6 +3,7 @@ layout: ../../layouts/Blog.astro
 title: "I’m A Web Developer, Here’s Why I DON’T Use TypeScript"
 author: Nathan Tranquilla
 date: "2026/02/19"
+updated: "2026/03/06"
 tags: ["TypeScript","Type Safety","JavaScript"]
 ---
 
@@ -11,51 +12,58 @@ I stopped using TypeScript. Not because I don't care about type safety. Actually
 
 ### Strong resistance to TypeScript
 	
-In 2026, <a href="https://navanathjadhav.medium.com/typescript-vs-javascript-in-2026-when-should-you-actually-use-typescript-95da08708cc6" target="_blank" rel="noopener noreferrer">67.1% of professional developers</a> use TypeScript. This means that one in three developers has resisted the encroachment of TypeScript onto JavaScript’s dynamic nature. This might be understandable if TypeScript were young, but it is now 13 years old, yet there is still strong resistance to its adoption. At this point, I don’t think this is a case of stubborn developers; TypeScript has flaws and this small group isn’t being heard. Let's enumerate the grievances. 
+In 2026, <a href="https://navanathjadhav.medium.com/typescript-vs-javascript-in-2026-when-should-you-actually-use-typescript-95da08708cc6" target="_blank" rel="noopener noreferrer">67.1% of professional developers</a> use TypeScript. This means that one in three developers has resisted the encroachment of TypeScript onto JavaScript’s dynamic nature. This might be understandable if TypeScript were young, but it is now 13 years old, yet there is still strong resistance to its adoption. At this point, I don’t think this is a case of stubborn developers; TypeScript has flaws and this small group isn’t being heard. Let's enumerate the grievances.
 
-#### 1. The type system isn't sound
+#### 1. `as` casts weaken type guarantees
 
-TypeScript's type system isn't sound by design: it is meant to be gradually adopted to varying degrees of strictness in your codebase. I get that TypeScript is a compromise, and I understand why, but it also means it has these weaknesses:
+TypeScript's type system isn't sound by design: it is meant to be gradually adopted to varying degrees of strictness in your codebase. I get that TypeScript is a compromise, and I understand why, but it also means it has significant weaknesses.
 
-1. `as` cast weakening type guarantees
+```typescript
+type User = { id: number; name: string; email: string };
 
-    ```typescript
-    type User = { id: number; name: string; email: string };
+async function getUser(id: number): Promise<User> {
+  const res = await fetch(`/api/users/${id}`);
+  const data = await res.json();
+  return data as User; // TypeScript trusts you, no validation happens
+}
 
-    async function getUser(id: number): Promise<User> {
-      const res = await fetch(`/api/users/${id}`);
-      const data = await res.json();
-      return data as User; // TypeScript trusts you, no validation happens
-    }
+const user = await getUser(1);
+console.log(user.email.toUpperCase()); // crashes if API returns unexpected shape
+```
+<figcaption>TypeScript trusts the `as` cast without validating the response shape; the crash only surfaces when the data is used.</figcaption>
 
-    const user = await getUser(1);
-    console.log(user.email.toUpperCase()); // crashes if API returns unexpected shape
-    ```
-    <figcaption>TypeScript trusts the `as` cast without validating the response shape; the crash only surfaces when the data is used.</figcaption>
+There are several problems with this approach:
+1. It does not catch serialization errors at the point of contact with the API. Crashes occur further down the callstack, making debugging unnecessarily difficult.
+2. It does not evolve well. If the shape of the data changes from the fetch endpoint, the type system does not provide any runtime safety to catch the errors. Several languages force developers to serialize data at the point of contact, providing logical branches should the data fail to match the expected shape.
 
-2. Unsafe indexed access: `noUncheckedIndexedAccess` is off by default and not included in `strict` mode. Matt Pocock of Total TypeScript calls it <a href="https://www.totaltypescript.com/tips/make-accessing-objects-safer-by-enabling-nouncheckedindexedaccess-in-tsconfig" target="_blank" rel="noopener noreferrer">the best feature you've never heard of</a> (Published in 2023), suggesting it's not often enabled in projects.
+#### 2. `undefined` errors are allowed at runtime
 
-    ```typescript
-    const myObj: Record<string, string[]> = {};
+Even with `strict` mode enabled, `noUncheckedIndexedAccess` is off by default. This is too bad because a missing key can return `undefined` at runtime and the type system is not able to prevent it without this setting enabled. Matt Pocock of Total TypeScript calls it <a href="https://www.totaltypescript.com/tips/make-accessing-objects-safer-by-enabling-nouncheckedindexedaccess-in-tsconfig" target="_blank" rel="noopener noreferrer">the best feature you've never heard of</a> (published in 2023), suggesting it's not often enabled in projects.
 
-    myObj.foo.push("bar"); // TypeScript: fine. Runtime: TypeError, myObj.foo is undefined
-    ```
-    <figcaption>A missing key returns `undefined` at runtime, but TypeScript assumes it exists. Catching this requires enabling `noUncheckedIndexedAccess` (an opt-in, not the default).</figcaption>
+```typescript
+const myObj: Record<string, string[]> = {};
 
-3. Type narrowing can be invalidated by a function call. TypeScript narrows a variable's type after a null check, but if a called function mutates that variable, the narrowed type no longer holds. This is because TypeScript performs type narrowing based on JavaScript runtime patterns. This is part of what makes TypeScript feel "bolted on" to JavaScript.
-    ```typescript
-    let x: string | null = "hello";
-    const clear = () => { x = null; };
+myObj.foo.push("bar"); // TypeScript: fine. Runtime: TypeError, myObj.foo is undefined
+```
+<figcaption>A missing key returns `undefined` at runtime, but TypeScript assumes it exists. Catching this requires enabling `noUncheckedIndexedAccess` (an opt-in, not the default).</figcaption>
 
-    if (x !== null) {
-      clear();           // x is now null
-      x.toUpperCase();   // TypeScript still thinks x is string, crash
-    }
-    ```
-    <figcaption>TypeScript narrows `x` to `string` after the null check, but doesn't account for `clear()` mutating it.</figcaption>
+#### 3. Type-narrowing is flaky
+
+Instead of starting from a point of algebraic data types and pattern matching, TypeScript's type narrowing is based on JavaScript runtime patterns. This is error-prone, and contributes to the feeling that TypeScript is "bolted on" to JavaScript; it provides some safety, but with "gotchas". Below is an example of how TypeScript narrows the type of `x` down to `string` based on the `x !== null` runtime pattern, but a function invocation `clear()` invalidates this, causing a runtime crash.
+
+```typescript
+let x: string | null = "hello";
+const clear = () => { x = null; };
+
+if (x !== null) {
+  clear();           // x is now null
+  x.toUpperCase();   // TypeScript still thinks x is string, crash
+}
+```
+<figcaption>TypeScript narrows `x` to `string` after the null check, but doesn't account for `clear()` mutating it.</figcaption>
 
 
-#### 2. Which version of TypeScript?
+#### 4. Which version of TypeScript?
 
 TypeScript has many versions. And I don't mean releases. What I mean is that every configuration of the TypeScript compiler changes how TypeScript works. There are hundreds of configuration options, though probably a dozen common ones for projects. This means that TypeScript behaves differently from project to project, each containing its own "gotchas" that developers have to learn. Here are a few settings that are off by default and considered <a href="https://www.totaltypescript.com/tsconfig-cheat-sheet" target="_blank" rel="noopener noreferrer">too noisy</a> to turn on:
 
@@ -65,7 +73,7 @@ TypeScript has many versions. And I don't mean releases. What I mean is that eve
     const x = items[99]; // type: string (default), undefined at runtime
     ```
 
-2. `noImplicitReturns`. This prevents functions from silently returning `undefined` 
+2. `noImplicitReturns`. This prevents functions from silently returning `undefined`.
     ```typescript
     function getLabel(status: string): string {
       if (status === "active") return "Active";
@@ -73,7 +81,7 @@ TypeScript has many versions. And I don't mean releases. What I mean is that eve
     }
     getLabel("inactive").toUpperCase(); // TypeError
     ```
-3. `noFallthroughCasesInSwitch`. This setting prevents a common `footgun` when writing switch statements. Without it enabled, developers can write switch statements that process multiple case statements unintentionally.
+3. `noFallthroughCasesInSwitch`. This setting prevents a common footgun when writing switch statements. Without it enabled, developers can write switch statements that process multiple case statements unintentionally.
     ```typescript
     switch (status) {
       case "pending":
@@ -85,7 +93,7 @@ TypeScript has many versions. And I don't mean releases. What I mean is that eve
 
 These three settings affect the type safety and control flow patterns of TypeScript in ways that are very impactful. These three settings alone create 2³ = 8 distinct "versions" of TypeScript that a developer must master. 
 
-#### 3. Control flow patterns are error-prone
+#### 5. Control flow patterns are error-prone
 `switch` and `try/catch` both have notable issues.
 
 **`switch`**: can be written with fall-through bugs (missing `break`) and exhaustiveness gaps (missing cases), both of which are silent by default.
@@ -111,7 +119,7 @@ switch (status) {
 ```
 <figcaption>A missed `break;` statement causes both `startTimer()` and `render()` to be invoked.</figcaption>
 
-**`try/catch`**: has no typed errors. There is no support for a `throws` annotation that would help inform TypeScript on the type of error that can be caught.
+**`try/catch`**: has no typed errors. There is no support for a `throws` annotation that would help inform TypeScript of the type of error that can be caught.
 
 ```typescript
 function fetchUser(id: number) {
@@ -131,7 +139,7 @@ try {
 <figcaption>TypeScript cannot express what a function may throw. The caller has no way to know what to handle without reading the source.</figcaption>
 
 
-#### 4. The type system is immature 
+#### 6. The type system is immature 
 TypeScript is missing types that embody common patterns. Let's look at the `result` and `option` types. 
 
 **`result` type**: Computations can either succeed or fail. The `result` type embodies this pattern by allowing the caller to branch on `ok` or `err`. TypeScript has no equivalent; the most accessible pattern for handling errors is `try/catch`, which as we've seen carries no type information about what might be thrown.
@@ -178,8 +186,8 @@ fetch("/api/user")
 ```
 <figcaption>`Promise` handles success and failure as first-class branches, much like the `result` type.</figcaption>
 
-#### 5. TypeScript doesn't attempt to unify the tooling
-The JavaScript ecosystem is fragmented. Starting a fresh TypeScript project still means managing `tsconfig.json`, `.eslintrc`, `.prettierrc`, and a bundler config, not to mention that eslint and prettier have overlapping concerns. TypeScript solved the type problem and left everything else exactly where it was. Rust ships `rustfmt` and ReScript ships `rescript format`. TypeScript had the opportunity to consolidate tooling and did not. This has left the ecosystem as fragmented as it was before TypeScript arrived.
+#### 7. TypeScript doesn't attempt to unify the tooling
+The JavaScript ecosystem is fragmented. Starting a fresh TypeScript project still means managing `tsconfig.json`, `eslint.config.js`, `.prettierrc`, and a bundler config, not to mention that eslint and prettier have overlapping concerns. TypeScript solved the type problem and left everything else exactly where it was. Rust ships `rustfmt` and ReScript ships `rescript format`. TypeScript had the opportunity to consolidate tooling and did not. This has left the ecosystem as fragmented as it was before TypeScript arrived.
 
 ### The Alternative
 One thing TypeScript has done well is warm developers up to static typing and strongly-typed languages. TypeScript isn't the destination, but it is a step in the evolution of web dev. TypeScript bridges to ReScript.
@@ -188,7 +196,7 @@ ReScript is a strongly-typed language that compiles to JavaScript. ReScript is w
 
 #### 1. A sound type system
 
-ReScript has no null or undefined. This is a major win, as a class of bugs are eliminated simply by choosing this language. The same cannot be said of TypeScript.
+ReScript has no null or undefined. This is a major win, as an entire class of bugs is eliminated simply by choosing this language. The same cannot be said of TypeScript.
 
 ```javascript
 let items = ["a", "b", "c"]
@@ -279,7 +287,7 @@ TypeScript types the JavaScript that you have; you apply increasing levels of st
 
 #### 6. Principled type-narrowing
 
-Type-narrowing is accomplished through type algebra, as one would expect of a sound type system. Notice the contrast between TypeScript's type-narrowing approach based on JavaScript runtime patterns versus a principled approach based on types.
+Type-narrowing is accomplished through algebraic data types and pattern matching, as one would expect of a sound type system. Notice the contrast between TypeScript's type-narrowing approach based on JavaScript runtime patterns versus a principled approach based on types.
 
 ```javascript
 type t = [
@@ -316,7 +324,7 @@ You can't configure the type system. It has one level of strictness (maximum). T
 
 #### 8. Safe control flows
 
-Switch statements are truly exhaustive and try/catch blocks allow for narrowing based on the type of error, both direct answers to the control flow problems in TypeScript.
+Switch statements are truly exhaustive, and try/catch blocks allow for narrowing based on the type of error, both direct answers to the control flow problems in TypeScript.
 
 ```javascript
 type status = Pending | Active | Closed
