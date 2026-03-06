@@ -33,8 +33,8 @@ console.log(user.email.toUpperCase()); // crashes if API returns unexpected shap
 <figcaption>TypeScript trusts the `as` cast without validating the response shape; the crash only surfaces when the data is used.</figcaption>
 
 There are several problems with this approach:
-1. It does not catch serialization errors at the point of contact with the API. Crashes occur further down the callstack, making debugging unnecessarily difficult.
-2. It does not evolve well. If the shape of the data changes from the fetch endpoint, the type system does not provide any runtime safety to catch the errors. Several languages force developers to serialize data at the point of contact, providing logical branches should the data fail to match the expected shape.
+1. It does not catch validation errors at the point of contact with the API. Crashes occur further down the callstack, making debugging unnecessarily difficult.
+2. It does not evolve well. If the shape of the data changes from the fetch endpoint, the type system does not provide any runtime safety to catch the errors. Several languages force developers to validate data at the point of contact, providing logical branches if the data fails to match the expected shape.
 
 #### 2. `undefined` errors are allowed at runtime
 
