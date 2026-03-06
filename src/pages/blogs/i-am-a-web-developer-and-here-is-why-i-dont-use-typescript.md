@@ -63,37 +63,7 @@ if (x !== null) {
 <figcaption>TypeScript narrows `x` to `string` after the null check, but doesn't account for `clear()` mutating it.</figcaption>
 
 
-#### 4. Which version of TypeScript?
-
-TypeScript has many versions. And I don't mean releases. What I mean is that every configuration of the TypeScript compiler changes how TypeScript works. There are hundreds of configuration options, though probably a dozen common ones for projects. This means that TypeScript behaves differently from project to project, each containing its own "gotchas" that developers have to learn. Here are a few settings that are off by default and considered <a href="https://www.totaltypescript.com/tsconfig-cheat-sheet" target="_blank" rel="noopener noreferrer">too noisy</a> to turn on:
-
-1. `noUncheckedIndexedAccess`. Changes the return type to `T | undefined`. 
-    ```typescript
-    const items = ["a", "b", "c"];
-    const x = items[99]; // type: string (default), undefined at runtime
-    ```
-
-2. `noImplicitReturns`. This prevents functions from silently returning `undefined`.
-    ```typescript
-    function getLabel(status: string): string {
-      if (status === "active") return "Active";
-      // Implicit "undefined" return here.
-    }
-    getLabel("inactive").toUpperCase(); // TypeError
-    ```
-3. `noFallthroughCasesInSwitch`. This setting prevents a common footgun when writing switch statements. Without it enabled, developers can write switch statements that process multiple case statements unintentionally.
-    ```typescript
-    switch (status) {
-      case "pending":
-        startTimer(); // falls through silently
-      case "active":
-        render();
-    }
-    ```
-
-These three settings affect the type safety and control flow patterns of TypeScript in ways that are very impactful. These three settings alone create 2³ = 8 distinct "versions" of TypeScript that a developer must master. 
-
-#### 5. Control flow patterns are error-prone
+#### 4. Control flow patterns are error-prone
 `switch` and `try/catch` both have notable issues.
 
 **`switch`**: can be written with fall-through bugs (missing `break`) and exhaustiveness gaps (missing cases), both of which are silent by default.
@@ -138,9 +108,8 @@ try {
 ```
 <figcaption>TypeScript cannot express what a function may throw. The caller has no way to know what to handle without reading the source.</figcaption>
 
-
-#### 6. The type system is immature 
-TypeScript is missing types that embody common patterns. Let's look at the `result` and `option` types. 
+#### 5. The type system is immature
+TypeScript is missing types that embody common patterns. Let's look at the `result` and `option` types.
 
 **`result` type**: Computations can either succeed or fail. The `result` type embodies this pattern by allowing the caller to branch on `ok` or `err`. TypeScript has no equivalent; the most accessible pattern for handling errors is `try/catch`, which as we've seen carries no type information about what might be thrown.
 
@@ -175,7 +144,7 @@ if (user !== undefined) {
 ```
 <figcaption>Without an `option` type, the developer must depend on a runtime `undefined` check to branch on the result. There is no type-level construct that enforces handling both cases.</figcaption>
 
-The `Promise` type proves that the concept of the `result` exists in web development; it's just not formalized in TypeScript. 
+The `Promise` type proves that the concept of the `result` exists in web development; it's just not formalized in TypeScript.
 
 ```typescript
 fetch("/api/user")
@@ -185,6 +154,36 @@ fetch("/api/user")
   });
 ```
 <figcaption>`Promise` handles success and failure as first-class branches, much like the `result` type.</figcaption>
+
+#### 6. Which version of TypeScript?
+
+TypeScript has many versions. And I don't mean releases. What I mean is that every configuration of the TypeScript compiler changes how TypeScript works. There are hundreds of configuration options, though probably a dozen common ones for projects. This means that TypeScript behaves differently from project to project, each containing its own "gotchas" that developers have to learn. Here are a few settings that are off by default and considered <a href="https://www.totaltypescript.com/tsconfig-cheat-sheet" target="_blank" rel="noopener noreferrer">too noisy</a> to turn on:
+
+1. `noUncheckedIndexedAccess`. Changes the return type to `T | undefined`.
+    ```typescript
+    const items = ["a", "b", "c"];
+    const x = items[99]; // type: string (default), undefined at runtime
+    ```
+
+2. `noImplicitReturns`. This prevents functions from silently returning `undefined`.
+    ```typescript
+    function getLabel(status: string): string {
+      if (status === "active") return "Active";
+      // Implicit "undefined" return here.
+    }
+    getLabel("inactive").toUpperCase(); // TypeError
+    ```
+3. `noFallthroughCasesInSwitch`. This setting prevents a common footgun when writing switch statements. Without it enabled, developers can write switch statements that process multiple case statements unintentionally.
+    ```typescript
+    switch (status) {
+      case "pending":
+        startTimer(); // falls through silently
+      case "active":
+        render();
+    }
+    ```
+
+These three settings affect the type safety and control flow patterns of TypeScript in ways that are very impactful. These three settings alone create 2³ = 8 distinct "versions" of TypeScript that a developer must master.
 
 #### 7. TypeScript doesn't attempt to unify the tooling
 The JavaScript ecosystem is fragmented. Starting a fresh TypeScript project still means managing `tsconfig.json`, `eslint.config.js`, `.prettierrc`, and a bundler config, not to mention that eslint and prettier have overlapping concerns. TypeScript solved the type problem and left everything else exactly where it was. Rust ships `rustfmt` and ReScript ships `rescript format`. TypeScript had the opportunity to consolidate tooling and did not. This has left the ecosystem as fragmented as it was before TypeScript arrived.
@@ -223,69 +222,7 @@ if (x !== undefined) {
 ```
 <figcaption>How ReScript compiles to null/undefined-safe JavaScript</figcaption>
 
-#### 2. Strong type inference
-
-Its strong type inference means you can annotate the code as little or as much as you want, and it still reads like JavaScript. Familiarity is a factor in how new languages are chosen, which makes ReScript the most accessible path to a stronger type system. 
-
-```javascript
-let add = (a, b) => a + b            // (int, int) => int
-let greet = name => "Hello, " ++ name // string => string
-let isAdult = age => age >= 18        // int => bool
-
-// Compiles to
-
-function add(a, b) {
-  return a + b | 0;
-}
-
-function greet(name) {
-  return "Hello, " + name;
-}
-
-function isAdult(age) {
-  return age >= 18;
-}
-```
-<figcaption>No type annotations: ReScript infers them all. The code reads like JavaScript.</figcaption>
-
-#### 3. Interoperable with the JavaScript ecosystem
-
-The main friction point is creating bindings for existing JavaScript libraries. However, AI tools have reduced this tension significantly. Having worked with ReScript for the past year, I've used ReScript with Astro for SSR and in the client with React seamlessly.
-
-```javascript
-@val @scope("localStorage") @return(nullable)
-external getItem: string => option<string> = "getItem"
-
-let theme = getItem("theme") // option<string>, None if key doesn't exist
-```
-<figcaption>A ReScript binding for `localStorage.getItem` with `option<string>` return type</figcaption>
-
-#### 4. Web-ready
-
-ReScript comes with React bindings, compiling to JavaScript with `react/jsx-runtime`, or if desired, with preserved JSX. This makes it seamless to use with frameworks like Astro (a personal favorite of mine) both on the server and in the client.
-
-```javascript
-@react.component
-let make = (~name) =>
-  <p> {React.string("Hello, " ++ name)} </p>
-
-// Compiles to
-
-import * as JsxRuntime from "react/jsx-runtime";
-
-function Playground(props) {
-  return JsxRuntime.jsx("p", {
-    children: "Hello, " + props.name
-  });
-}
-```
-<figcaption>The actual ReScript compiler output.</figcaption>
-
-#### 5. A gradual adoption story
-
-TypeScript types the JavaScript that you have; you apply increasing levels of strictness to your codebase. ReScript generates JavaScript, so its type system remains sound, while its presence grows in your codebase. TypeScript's approach is broad; ReScript's approach is surgical. 
-
-#### 6. Principled type-narrowing
+#### 2. Principled type-narrowing
 
 Type-narrowing is accomplished through algebraic data types and pattern matching, as one would expect of a sound type system. Notice the contrast between TypeScript's type-narrowing approach based on JavaScript runtime patterns versus a principled approach based on types.
 
@@ -318,11 +255,7 @@ let describe = value =>
 ```
 <figcaption>`Type.typeof` returns a `Type.t` variant. Pattern matching on it narrows exhaustively; the compiler errors if any case is missing.</figcaption>
 
-#### 7. One version of ReScript
-
-You can't configure the type system. It has one level of strictness (maximum). This means there is only one version of ReScript you have to learn. 
-
-#### 8. Safe control flows
+#### 3. Safe control flows
 
 Switch statements are truly exhaustive, and try/catch blocks allow for narrowing based on the type of error, both direct answers to the control flow problems in TypeScript.
 
@@ -350,7 +283,7 @@ let result =
 ```
 <figcaption>Caught exceptions are typed, not `unknown`. The compiler knows the shape of each error branch.</figcaption>
 
-#### 9. A more advanced type system
+#### 4. A more advanced type system
 
 Types such as `Result` and `Option` are present as one expects of mature typed languages. TypeScript acknowledges the `Result` pattern implicitly through `Promise`, but `Result` is a first-class type in ReScript.
 
@@ -392,9 +325,75 @@ if (n.TAG === "Ok") {
 ```
 <figcaption>`Result` is a first-class type in ReScript. Success and failure are both represented in the type, forcing the caller to handle both cases.</figcaption>
 
-#### 10. Unified tooling
+#### 5. One version of ReScript
+
+You can't configure the type system. It has one level of strictness (maximum). This means there is only one version of ReScript you have to learn.
+
+#### 6. Unified tooling
 
 JavaScript is ReScript's compiler output; there is no need for linting. ReScript ships with `rescript format`, a built-in formatter. This eliminates the maintenance headaches of typical JavaScript projects.
+
+#### 7. Strong type inference
+
+Its strong type inference means you can annotate the code as little or as much as you want, and it still reads like JavaScript. Familiarity is a factor in how new languages are chosen, which makes ReScript the most accessible path to a stronger type system.
+
+```javascript
+let add = (a, b) => a + b            // (int, int) => int
+let greet = name => "Hello, " ++ name // string => string
+let isAdult = age => age >= 18        // int => bool
+
+// Compiles to
+
+function add(a, b) {
+  return a + b | 0;
+}
+
+function greet(name) {
+  return "Hello, " + name;
+}
+
+function isAdult(age) {
+  return age >= 18;
+}
+```
+<figcaption>No type annotations: ReScript infers them all. The code reads like JavaScript.</figcaption>
+
+#### 8. Interoperable with the JavaScript ecosystem
+
+The main friction point is creating bindings for existing JavaScript libraries. However, AI tools have reduced this tension significantly. Having worked with ReScript for the past year, I've used ReScript with Astro for SSR and in the client with React seamlessly.
+
+```javascript
+@val @scope("localStorage") @return(nullable)
+external getItem: string => option<string> = "getItem"
+
+let theme = getItem("theme") // option<string>, None if key doesn't exist
+```
+<figcaption>A ReScript binding for `localStorage.getItem` with `option<string>` return type</figcaption>
+
+#### 9. Web-ready
+
+ReScript comes with React bindings, compiling to JavaScript with `react/jsx-runtime`, or if desired, with preserved JSX. This makes it seamless to use with frameworks like Astro (a personal favorite of mine) both on the server and in the client.
+
+```javascript
+@react.component
+let make = (~name) =>
+  <p> {React.string("Hello, " ++ name)} </p>
+
+// Compiles to
+
+import * as JsxRuntime from "react/jsx-runtime";
+
+function Playground(props) {
+  return JsxRuntime.jsx("p", {
+    children: "Hello, " + props.name
+  });
+}
+```
+<figcaption>The actual ReScript compiler output.</figcaption>
+
+#### 10. A gradual adoption story
+
+TypeScript types the JavaScript that you have; you apply increasing levels of strictness to your codebase. ReScript generates JavaScript, so its type system remains sound, while its presence grows in your codebase. TypeScript's approach is broad; ReScript's approach is surgical.
 
 ### Conclusion
 
