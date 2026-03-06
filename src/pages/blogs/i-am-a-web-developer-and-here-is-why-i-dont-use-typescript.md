@@ -16,7 +16,7 @@ In 2026, <a href="https://navanathjadhav.medium.com/typescript-vs-javascript-in-
 
 #### 1. `as` casts weaken type guarantees
 
-TypeScript's type system isn't sound by design: it is meant to be gradually adopted to varying degrees of strictness in your codebase. I get that TypeScript is a compromise, and I understand why, but it also means it has significant weaknesses.
+TypeScript's type system isn't sound by design: it is meant to be gradually adopted to varying degrees of strictness in your codebase. I get that TypeScript is a compromise, and I understand why, but it also means it has significant weaknesses. Here, the `as` cast makes iterating on this codebase dangerous:
 
 ```typescript
 type User = { id: number; name: string; email: string };
