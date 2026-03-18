@@ -23,7 +23,7 @@
   --text-primary: var(--color-slate-900);
   --text-secondary: var(--color-slate-700);
   --text-tertiary: var(--color-slate-600);
-  --text-muted: var(--color-slate-500);
+  --text-muted: var(--color-slate-600);
   --text-accent: var(--color-lime-700);
   --text-accent-hover: var(--color-lime-800);
 
@@ -58,7 +58,7 @@
     --text-primary: var(--color-slate-100);
     --text-secondary: var(--color-slate-300);
     --text-tertiary: var(--color-slate-400);
-    --text-muted: var(--color-slate-500);
+    --text-muted: var(--color-slate-400);
     --text-accent: var(--color-lime-400);
     --text-accent-hover: var(--color-lime-300);
 
