@@ -21,12 +21,14 @@ const projects = [
   {
     name: "Magnolia Coast Photography",
     url: "https://magnoliacoastsphotography.com",
+    image: "https://magnoliacoastsphotography.com/_astro/Logo.BGOeOxRg.png",
     description:
       "A photography portfolio and client showcase website for Magnolia Coast Photography, featuring gallery displays and a seamless booking experience.",
   },
   {
     name: "The Office Lines",
     url: "https://theofficelines.com",
+    image: "https://theofficelines.com/og-default.png",
     description:
       "A fan site packed with memorable quotes and lines from The Office, with searchable content and daily featured scenes.",
   },
@@ -45,7 +47,13 @@ const projects = [
     <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
       {
         projects.map((project) => (
-          <div class="flex flex-col rounded-lg border border-[var(--border-secondary)] bg-[var(--bg-primary)] p-6 shadow-lg transition-shadow duration-200 hover:shadow-xl md:p-8">
+          <div class="flex flex-col overflow-hidden rounded-lg border border-[var(--border-secondary)] bg-[var(--bg-primary)] shadow-lg transition-shadow duration-200 hover:shadow-xl">
+            <img
+              src={project.image}
+              alt={`${project.name} screenshot`}
+              class="h-48 w-full object-cover"
+            />
+            <div class="flex grow flex-col p-6 md:p-8">
             <H3 classes="pb-4">{project.name}</H3>
             <p class="grow font-sans text-[var(--text-secondary)]">
               {project.description}
@@ -59,6 +67,7 @@ const projects = [
               Visit Site
               <RightArrow />
             </a>
+            </div>
           </div>
         ))
       }
