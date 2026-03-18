@@ -8,7 +8,7 @@ test.describe("SEO - Homepage", () => {
     // Basic meta tags
     await expect(page).toHaveTitle(/nathantranquilla\.me/);
     const description = await page.locator('meta[name="description"]');
-    await expect(description).toHaveAttribute("content", /Next-Gen Web Development/);
+    await expect(description).toHaveAttribute("content", /web developer/i);
 
     const author = await page.locator('meta[name="author"]');
     await expect(author).toHaveAttribute("content", "Nathan Tranquilla");

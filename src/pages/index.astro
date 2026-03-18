@@ -1,148 +1,93 @@
 ---
 import Main from "../layouts/Main.astro";
-import { Image } from "astro:assets";
-import H2 from "../components/HTMLElements/H2.astro";
 import Hero from "../components/Hero.astro";
 import Container from "../components/Container.astro";
-import JSTS from "../assets/TypeScriptJavaScript.webp";
-import Other from "../assets/OtherLangs2.webp";
-import InfoCard from "../components/InfoCard.astro";
+import H2 from "../components/HTMLElements/H2.astro";
+import H3 from "../components/HTMLElements/H3.astro";
+import RightArrow from "../components/RightArrow.astro";
+import { getPosts } from "../utils/posts";
+
+const posts = getPosts().slice(0, 3);
+
+function formatDate(dateString: string) {
+  return new Date(dateString).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+}
+
+const projects = [
+  {
+    name: "Magnolia Coast Photography",
+    url: "https://magnoliacoastsphotgraphy.com",
+    description:
+      "A photography portfolio and client showcase website for Magnolia Coast Photography, featuring gallery displays and a seamless booking experience.",
+  },
+  {
+    name: "The Office Lines",
+    url: "https://theofficelines.com",
+    description:
+      "A fan site packed with memorable quotes and lines from The Office, with searchable content and daily featured scenes.",
+  },
+];
 ---
 
-<Main title="nathantranquilla.me | Next-Gen Web Dev" description="Nathan Tranquilla is pioneering Next-Gen Web Development with strongly-typed languages, type safety, and modern tooling.">
+<Main
+  title="nathantranquilla.me | Web Developer"
+  description="Nathan Tranquilla is a web developer building high-performance, reliable, and maintainable web applications."
+>
   <Hero />
-  <Container
-    classes="text-white bg-[var(--bg-surface)] w-full grid grid-rows-[2rem_auto] md:grid-cols-[320px_320px] mx-auto justify-center md:p-4 p-4 gap-6"
-  >
-    <H2 class="font-serif text-xl font-semibold text-white md:text-2xl">
-      Vision of Next-Gen Web Dev
-    </H2>
-    <p class="col-start-1 row-start-2 font-sans text-white">
-      Next-Gen Web Dev aims for reliable, more maintainable web applications
-      free from preventable errors. It requires a shift to robust, strongly
-      typed languages that eliminate entire classes of bugs, ensuring developers
-      trust their tools and users trust their apps.
-    </p>
-    <Image
-      class="col-start-2 row-start-1 row-end-3 mx-auto hidden rounded-lg bg-[var(--bg-primary)] md:block"
-      src={Other}
-      alt="Other languages logos"
-    />
+
+  <Container classes="w-full max-w-4xl mx-auto">
+    <H2 classes="mb-8 text-[var(--text-primary)]">Projects</H2>
+    <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+      {
+        projects.map((project) => (
+          <div class="flex flex-col rounded-lg border border-[var(--border-secondary)] bg-[var(--bg-primary)] p-6 shadow-lg transition-shadow duration-200 hover:shadow-xl md:p-8">
+            <H3 classes="pb-4">{project.name}</H3>
+            <p class="grow font-sans text-[var(--text-secondary)]">
+              {project.description}
+            </p>
+            <a
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="mt-6 flex items-center font-semibold text-[var(--text-accent)] hover:text-[var(--text-accent-hover)]"
+            >
+              Visit Site
+              <RightArrow />
+            </a>
+          </div>
+        ))
+      }
+    </div>
   </Container>
-  <Container
-    classes="text-[var(--text-primary)] w-full flex flex-col md:grid md:grid-cols-[320px_320px] mx-auto justify-center md:p-4 p-4 gap-6"
-  >
-    <H2 class="col-start-2 font-serif text-xl font-semibold md:text-2xl">
-      The current status quo
-    </H2>
-    <p class="col-start-2 row-start-2 font-sans">
-      JavaScript’s weak typing, implicit coercions, and runtime errors make it
-      challenging for modern web development. TypeScript, while an improvement,
-      describes itself as <i>unsound</i>; it lacks complete null safety, allows
-      implicit conversions in some cases, and misses exhaustive type checking.
-      Additionally, its type system requires frequent use of <i>undefined</i>
-      to model JavaScript's reality, indicating a lack of expressiveness. These limitations
-      make it suboptimal for mission-critical server-side (SSR) or client-side (CSR)
-      applications. The web needs languages that guarantee correctness, not just
-      suggest it.
-    </p>
-    <Image
-      class="col-start-1 row-start-1 row-end-3 hidden md:block"
-      src={JSTS}
-      alt="JavaScript and TypeScript logos"
-    />
-  </Container>
-  <Container
-    classes="text-white bg-[var(--bg-surface)] font-sans w-full grid grid-cols-1 lg:grid-cols-[repeat(2,500px)] md:grid-cols-[repeat(2,400px)] mx-auto justify-center md:p-4 p-4 gap-6"
-  >
-    <H2
-      classes="pb-6 w-full text-xl font-semibold md:text-2xl col-span-full flex justify-center"
+
+  <Container classes="w-full max-w-4xl mx-auto">
+    <H2 classes="mb-8 text-[var(--text-primary)]">Recent Posts</H2>
+    <div class="divide-y divide-[var(--border-primary)]">
+      {
+        posts.map((post) => (
+          <article class="py-6 first:pt-0">
+            <a href={post.url} class="group block">
+              <h3 class="mb-1 font-serif text-lg text-[var(--text-primary)] transition-colors duration-200 group-hover:text-[var(--text-accent)] md:text-xl">
+                {post.frontmatter.title}
+              </h3>
+              <span class="text-sm text-[var(--text-muted)]">
+                {post.frontmatter.author} · {formatDate(post.frontmatter.date)}
+              </span>
+            </a>
+          </article>
+        ))
+      }
+    </div>
+    <a
+      href="/blogs"
+      class="mt-6 inline-flex items-center font-semibold text-[var(--text-accent)] hover:text-[var(--text-accent-hover)]"
     >
-      The Components Of Next-Gen Web Dev
-    </H2>
-    <InfoCard
-      title="Strong Static Typing"
-      link="/blogs/strong-type-systems-are-required-for-a-safer-web"
-    >
-      <p>
-        A strong, static type system prevents entire categories of runtime
-        errors by catching mistakes at compile-time. Unlike JavaScript's weak
-        typing or TypeScript's compromises, truly strong type systems eliminate
-        null pointer exceptions, array bounds errors, and type coercion
-        surprises, and are expressive enough to model the current complexity of
-        the web. Static typing means fewer bugs, safer refactoring, and
-        increased developer confidence. Strong type systems serve as living
-        documentation, making code self-explanatory and maintainable. For
-        Next-Gen Web Dev, strong typing isn't optional—it's the foundation of
-        reliable software.
-      </p>
-    </InfoCard>
-    <InfoCard
-      title="Familiarity & Interoperability"
-      link="https://youtu.be/LQIKaRRkHXA?t=0"
-    >
-      <p>
-        Developers choose new languages that look familiar but fix critical
-        problems. TypeScript's existence indicates a strong trend towards static
-        typing in front-end codebases with the goal of safer, more maintainable
-        code, even at the cost of complexity. Next-Gen Web Dev languages
-        acknowledge both this goal and the embededness of the JavaScript
-        ecosystem in web dev, and offer solutions without abandoning neither the
-        familiarity of JavaScript nor it's ecosystem.
-      </p>
-    </InfoCard>
-    <InfoCard title="Web Readiness" link="https://youtu.be/mzcNlPhqhyw?t=0">
-      <p>
-        Strong, static type systems alone aren't enough. Next-Gen languages need
-        mature framework ecosystems for real-world adoption. A language becomes
-        viable when it offers full-stack solutions: routing, state management,
-        data fetching, and UI libraries. Framework readiness means developers
-        can build complete applications without sacrificing type safety or
-        reverting to JavaScript. Languages like ReScript with React integration,
-        or Elm with its architecture, demonstrate how type-safe languages can
-        provide comprehensive development platforms that rival traditional web
-        frameworks.
-      </p>
-    </InfoCard>
-    <InfoCard title="Gradual Adoption" link="https://youtu.be/wvjN5CIFEdU?t=0">
-      <p>
-        Next-Gen languages excel at gradual adoption. TypeScript's approach to
-        gradual adoption is to adjust the level of typing in the codebase,
-        leaving gaps in the type system, depending on compiler configuration.
-        Next-Gen Web Dev languages provide fully sound type systems yet still
-        offer solutions for gradual adoption in the codebase. Next-Gen Web Dev
-        languages do not compromise the type system, but grow in their presence
-        in the codebase.
-      </p>
-    </InfoCard>
-  </Container>
-  <Container
-    classes="text-[var(--text-primary)] w-full grid grid-cols-1 md:grid-cols-[640px] mx-auto justify-center md:p-4 p-4"
-  >
-    <H2 class="font-serif text-xl font-semibold md:text-2xl">
-      The Committment of Next-Gen Web Dev
-    </H2>
-    <ul class="list-inside list-disc py-6">
-      <li class="py-2">
-        <strong>Adopt Type-Safe Languages:</strong> Prioritize strongly typed languages
-        for SSR and CSR to reduce bugs and maintenance costs.
-      </li>
-      <li class="py-2">
-        <strong>Reduce JavaScript’s Role:</strong> Transition JavaScript to a compilation
-        target for safer, scalable systems.
-      </li>
-      <li class="py-2">
-        <strong>Move Beyond TypeScript:</strong> Replace TypeScript with languages
-        offering sound type systems to minimize runtime errors.
-      </li>
-      <li class="py-2">
-        <strong>Enhance Productivity:</strong> Use tools that catch errors at compile-time
-        to streamline development and improve reliability.
-      </li>
-      <li class="py-2">
-        <strong>Build for the Future:</strong> Embrace robust, type-safe languages
-        for stable, secure, and maintainable web applications.
-      </li>
-    </ul>
+      View all posts
+      <RightArrow />
+    </a>
   </Container>
 </Main>
