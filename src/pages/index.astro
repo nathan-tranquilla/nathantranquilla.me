@@ -20,7 +20,7 @@ function formatDate(dateString: string) {
 const projects = [
   {
     name: "Magnolia Coast Photography",
-    url: "https://magnoliacoastsphotgraphy.com",
+    url: "https://magnoliacoastsphotography.com",
     description:
       "A photography portfolio and client showcase website for Magnolia Coast Photography, featuring gallery displays and a seamless booking experience.",
   },
@@ -39,6 +39,7 @@ const projects = [
 >
   <Hero />
 
+  <div class="bg-[var(--bg-secondary)]">
   <Container classes="w-full max-w-4xl mx-auto">
     <H2 classes="mb-8 text-[var(--text-primary)]">Projects</H2>
     <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
@@ -90,4 +91,5 @@ const projects = [
       <RightArrow />
     </a>
   </Container>
+  </div>
 </Main>
