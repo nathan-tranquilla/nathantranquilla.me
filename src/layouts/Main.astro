@@ -24,11 +24,17 @@ export interface Props {
   ogImage?: string;
   ogType?: string;
   breadcrumbTitle?: string;
+  articleMeta?: {
+    author: string;
+    publishedTime: string;
+    modifiedTime: string;
+    tags: string[];
+  };
 }
 
 const defaultDescription = "Nathan Tranquilla is a Next-Gen Web Development Consultant specializing in making web applications more robust through technology choices of the future";
 
-const { title, classes, nonav = false, description = defaultDescription, ogImage, ogType = "website", breadcrumbTitle } = Astro.props;
+const { title, classes, nonav = false, description = defaultDescription, ogImage, ogType = "website", breadcrumbTitle, articleMeta } = Astro.props;
 
 const websiteUrl = "https://nathantranquilla.me";
 const canonicalUrl = new URL(Astro.url.pathname, websiteUrl).href;
@@ -96,6 +102,18 @@ const breadcrumbSchema = {
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:type" content={ogType} />
     <meta property="og:site_name" content="nathantranquilla.me" />
+    <meta property="og:locale" content="en_US" />
+    {articleMeta && (
+      <Fragment>
+        <meta property="article:author" content={articleMeta.author} />
+        <meta property="article:published_time" content={articleMeta.publishedTime} />
+        <meta property="article:modified_time" content={articleMeta.modifiedTime} />
+        <meta property="article:section" content="Web Development" />
+        {articleMeta.tags.map((tag: string) => (
+          <meta property="article:tag" content={tag} />
+        ))}
+      </Fragment>
+    )}
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -122,8 +140,15 @@ const breadcrumbSchema = {
     <!-- Default favicon -->
     <link rel="shortcut icon" href={logo32.src} />
 
+    <!-- Mobile Web App -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Nathan Tranquilla" />
+
     <meta name="email" content="tranquilla.nathan@pm.me" />
     <link rel="canonical" href={canonicalUrl} />
+    <link rel="author" href="https://nathantranquilla.me/about" />
 
     <meta name="keywords" content="Next-Gen Web Development, ReScript, TypeScript alternatives, strong type systems, web development consulting, type-safe programming, functional programming, web app development, static typing, JavaScript alternatives, web development consultant, AI consulting, software engineering, Nathan Tranquilla" />
 

@@ -42,6 +42,18 @@ const projects = [
   title="nathantranquilla.me | Web Developer"
   description="Nathan Tranquilla helps small businesses stand out online with fast, custom websites that bring in customers and make a great first impression."
 >
+  <script is:inline type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Nathan Tranquilla - Web Developer",
+    "url": "https://nathantranquilla.me",
+    "description": "Nathan Tranquilla helps small businesses stand out online with fast, custom websites that bring in customers and make a great first impression.",
+    "author": {
+      "@type": "Person",
+      "name": "Nathan Tranquilla"
+    },
+    "inLanguage": "en-US"
+  })} />
   <Hero />
 
   <div class="bg-[var(--bg-secondary)]">
