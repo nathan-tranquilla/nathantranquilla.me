@@ -79,7 +79,7 @@ TypeScript lets you write `as User` to escape the type system. The compiler acce
 <figure>
 <figcaption>ReScript — compiler forces you to handle both cases, no runtime crash possible</figcaption>
 
-```rescript
+```javascript
 let getUser = (id: string): option<user> => {
   users->Array.find(u => u.id === id)
 }
