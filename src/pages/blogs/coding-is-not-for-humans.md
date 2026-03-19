@@ -6,7 +6,7 @@ date: "2026/03/19"
 tags: ["AI","Coding"]
 ---
 
-Coding is no longer a human task. Overstatement? At my day job, AI agents write the majority of code. In my personal projects, I no longer write code at all. If coding belongs to AI now, do the human-centric battles around code still matter: clean code patterns or dynamic vs static type systems? What is the role of the human?
+Coding is no longer for humans. At my day job, AI agents write the majority of code. In my personal projects, I no longer write code at all. If coding belongs to AI now, do the human-centric battles around code still matter: clean code patterns or dynamic vs static type systems? What is the role of the human?
 
 
 ### No One Cares About Clean Code (Anymore)
@@ -14,7 +14,7 @@ Coding is no longer a human task. Overstatement? At my day job, AI agents write 
 Clean code is a pattern of writing code that makes it easy for other humans to reason about, facilitating human collaboration across projects and time. A great example of a clean code practice is the `early return` in which exit conditions are placed early in the code block. 
 
 <figure>
-<figcaption>Before</figcaption>
+<figcaption>Nested conditions — the happy path is buried</figcaption>
 
 ```javascript
 function greet(user) {
@@ -37,7 +37,7 @@ function greet(user) {
 </figure>
 
 <figure>
-<figcaption>After</figcaption>
+<figcaption>Early returns — reads like a checklist</figcaption>
 
 ```javascript
 function greet(user) {
@@ -58,7 +58,10 @@ But all this no longer matters because AI reads and writes its own code now, and
 
 Given that coding is now AI-driven, does the battle over dynamic vs statically typed languages matter? This battle has been about human preferences over the art of coding. Dynamic languages let you move faster, but often come with less certainty on the operation of types (product ships quicker but has preventable bugs). Static typing imposes more rigidity at development time, which adds a burden to developers, but type operations are guaranteed (ships slower, but fewer bugs). 
 
-The level of certainty you achieve depends on the *soundness* of the type system. Not all statically typed languages are equal. Consider TypeScript:
+The level of certainty you achieve depends on the *soundness* of the type system. Not all statically typed languages are equal; a sound type system guarantees that if your code compiles, certain classes of errors cannot occur at runtime. Consider TypeScript:
+
+<figure>
+<figcaption>TypeScript — `as User` escapes the type system, crash at runtime</figcaption>
 
 ```typescript
 function getUser(id: string): User {
@@ -69,7 +72,12 @@ const user = getUser("123");
 console.log(user.name); // compiles fine, but crashes at runtime if user wasn't found
 ```
 
+</figure>
+
 TypeScript lets you write `as User` to escape the type system. The compiler accepts it, but the code crashes at runtime. Now consider the same scenario in ReScript, a language with a sound type system:
+
+<figure>
+<figcaption>ReScript — compiler forces you to handle both cases, no runtime crash possible</figcaption>
 
 ```rescript
 let getUser = (id: string): option<user> => {
@@ -82,6 +90,8 @@ switch getUser("123") {
 }
 ```
 
+</figure>
+
 There is no escape hatch. The compiler returns an `option<user>`, and you must handle both cases. If you forget the `None` branch, the code doesn't compile. The result: no null crashes at runtime, guaranteed.
 
 This is the kind of type system we should be picking for AI. Sound types act as a feedback loop; when AI generates incorrect code, the compiler rejects it before it ships. Without that feedback loop, bugs pass silently into production.
@@ -90,10 +100,8 @@ This is the kind of type system we should be picking for AI. Sound types act as 
 
 The proficiency of AI agents at writing code has led to a shift that has many developers questioning their role. What used to occupy a lot of the developer's time (writing code) now takes up much less time. I recently consulted with a non-engineer about their vibe-coded project. It was amazing how quickly an app can be templated. But among the many problems I saw, it was clear that a vibe coder can template an app fast, but they can't establish the patterns that compound. That's the developer's job now.
 
-One aspect of long-term maintenance is stewardship over code patterns that allow AI to extend your codebase with ease. This is a powerful feature of AI-driven development; it can result in compounding gains, or compounding pains. With great patterns established, AI can plan your next feature by examining existing patterns and extending them. But it also means that if the codebase has poor patterns, it is up to the developer to understand this and steer AI down a different path to establish better patterns. 
+AI is great at extending whatever patterns it finds. This can result in compounding gains, or compounding pains. With great patterns established, AI can plan your next feature by examining existing patterns and extending them. But it also means that if the codebase has poor patterns, it is up to the developer to understand this and steer AI down a different path to establish better patterns. 
 
 ### Conclusion
 
-The human's role in coding is taking a backseat, but don't panic. Your knowledge as a software developer is still very valuable. The software developer's career has always been a progression away from the details of coding; AI has simply made this transition happen earlier in your career.
-
-Don't worry about clean code, worry about directing AI towards better patterns. Don't use dynamic languages, your preferences in this area don't matter any longer. Software languages are for AI, and AI doesn't care, so choose type certainty.
+Coding is no longer for humans. Don't worry about clean code, worry about directing AI towards better patterns. Don't use dynamic languages, your preferences in this area don't matter any longer. Software languages are for AI, and AI doesn't care, so choose type certainty.
