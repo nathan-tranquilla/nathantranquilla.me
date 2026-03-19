@@ -11,38 +11,25 @@ Coding is no longer a human task. At my day job, AI agents write the majority of
 
 ### No One Cares About Clean Code (Anymore)
 
-Clean code is a pattern of writing code that makes it easy for other humans to reason about. It is a style of writing that facilitates human collaboration across projects and across time. A great example of a clean code practice is the `early return` in which exit conditions are placed early in the code block. 
+Clean code is a pattern of writing code that makes it easy for other humans to reason about, facilitating human collaboration across projects and time. A great example of a clean code practice is the `early return` in which exit conditions are placed early in the code block. 
 
 <figure>
 <figcaption>Before</figcaption>
 
 ```javascript
-function processOrder(user, cart, promo) {
+function greet(user) {
   if (user) {
     if (user.isActive) {
-      if (cart && cart.items.length > 0) {
-        if (!cart.items.some(i => i.outOfStock)) {
-          if (promo) {
-            if (promo.isValid && promo.expiresAt > Date.now()) {
-              const discount = promo.amount;
-              return checkout(cart, discount);
-            } else {
-              return { error: "Invalid promo" };
-            }
-          } else {
-            return checkout(cart, 0);
-          }
-        } else {
-          return { error: "Item out of stock" };
-        }
+      if (user.name) {
+        return "Hello, " + user.name;
       } else {
-        return { error: "Cart is empty" };
+        return "Hello, stranger";
       }
     } else {
-      return { error: "Account inactive" };
+      return "Account inactive";
     }
   } else {
-    return { error: "No user" };
+    return "No user";
   }
 }
 ```
@@ -53,29 +40,21 @@ function processOrder(user, cart, promo) {
 <figcaption>After</figcaption>
 
 ```javascript
-function processOrder(user, cart, promo) {
-  if (!user)                                return { error: "No user" };
-  if (!user.isActive)                       return { error: "Account inactive" };
-  if (!cart || cart.items.length === 0)     return { error: "Cart is empty" };
-  if (cart.items.some(i => i.outOfStock))   return { error: "Item out of stock" };
-
-  if (!promo) return checkout(cart, 0);
-
-  if (!promo.isValid || promo.expiresAt <= Date.now()) {
-    return { error: "Invalid promo" };
-  }
-
-  return checkout(cart, promo.amount);
+function greet(user) {
+  if (!user)          return "No user";
+  if (!user.isActive) return "Account inactive";
+  if (!user.name)     return "Hello, stranger";
+  return "Hello, " + user.name;
 }
 ```
 
 </figure>
 
-The first is difficult for humans to parse because it requires a human to cognitively hold multiple conditions at once, while the "happy path" is buried in nested conditions. The second is simpler for humans to parse because it does not overload the human cognition; instead it reads more like a checklist, which humans can read and mentally offload immediately. 
+The first is difficult for humans to parse because it requires a human to cognitively hold multiple conditions at once, while the "happy path" is buried in nested conditions. The second is simpler for humans because it does not overload the human's cognition; instead it reads more like a checklist, which humans can read and tick-off immediately. 
 
-But it doesn't matter anymore because AI reads and writes its own code now, and it's generally good at writing code with good practices. There is one caveat to this, "pattern extension," which I will get to later. 
+But all this no longer matters because AI reads and writes its own code now, and it's generally good at writing code that it can read again with ease. That doesn't mean coding standards are completely meaningless; humans still have an important role (more on this later). 
 
-### Human-centric battles of coding disappear... 
+### Human coding preferences
 
 Given that coding will be a predominantly AI-driven task, does the battle over dynamic vs statically typed languages matter? At its core, this has been a battle of human preferences over the art of coding. Dynamic languages let you move faster, but often come with less certainty on the operation of types before the product is shipped, resulting in more bugs. Static typing imposes more rigidity at development time, which is an added burden to developers, but type operations are guaranteed, meaning fewer runtime errors. 
 
