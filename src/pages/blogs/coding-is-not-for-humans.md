@@ -91,6 +91,6 @@ One aspect of long-term maintenance is establishing good coding patterns that al
 
 ### Conclusion
 
-Coding is no longer for humans, but don't panic. Your knowledge as a software developer is still very valuable. It has always been the trajectory of the software developer's career to move further away from code and into more abstract concepts; AI has simply made this transition happen earlier in your career. The time we spent coding has now shifted to time spent planning, architecting, delivering, iterating, and collaborating. There is more space for us to hold the higher-level concepts of a project in our brains, while we push the cognitive load onto AI, for better or for worse. I think it's for the better. 
+Coding is no longer for humans, but don't panic. Your knowledge as a software developer is still very valuable. The software developer's career has always been a progression away from the details of coding; AI has simply made this transition happen earlier in your career.
 
-Don't worry about clean code, worry about directing AI towards better patterns. Don't use dynamic languages, your preferences in this area don't matter any longer. Software languages are for AI, and AI doesn't care, so choose type certainty. 
+Don't worry about clean code, worry about directing AI towards better patterns. Don't use dynamic languages, your preferences in this area don't matter any longer. Software languages are for AI, and AI doesn't care, so choose type certainty.
