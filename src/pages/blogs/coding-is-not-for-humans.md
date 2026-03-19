@@ -54,9 +54,9 @@ The first is difficult for humans to parse because it requires a human to cognit
 
 But all this no longer matters because AI reads and writes its own code now, and it's generally good at writing code that it can read again with ease. That doesn't mean coding standards are completely meaningless; humans still have an important role (more on this later). 
 
-### Human coding preferences
+### Human Preferences Disappear
 
-Given that coding will be a predominantly AI-driven task, does the battle over dynamic vs statically typed languages matter? At its core, this has been a battle of human preferences over the art of coding. Dynamic languages let you move faster, but often come with less certainty on the operation of types before the product is shipped, resulting in more bugs. Static typing imposes more rigidity at development time, which is an added burden to developers, but type operations are guaranteed, meaning fewer runtime errors. 
+Given that coding is now AI-driven, does the battle over dynamic vs statically typed languages matter? This battle has been about human preferences over the art of coding. Dynamic languages let you move faster, but often come with less certainty on the operation of types (product ships quicker but has preventable bugs). Static typing imposes more rigidity at development time, which adds a burden to developers, but type operations are guaranteed (ships slower, but fewer bugs). 
 
 The level of certainty you achieve is directly related to the strength of the type system. For example, Java has a strong type system, but `NullPointerException`s are still possible at runtime.
 
@@ -70,7 +70,7 @@ public class Main {
 }
 ```
 
-TypeScript has a strong type system, but `null/undefined` are still possible at runtime (depending on compiler configuration).
+TypeScript has a strong type system, but `null/undefined` are still possible at runtime (depending on compiler configuration around `strictNullChecks`).
 
 ```typescript
 function getUser(id: string): User {
@@ -81,7 +81,7 @@ const user = getUser("123");
 console.log(user.name); // compiles fine, but crashes at runtime if user wasn't found
 ```
 
-Static type systems have been resisted by many because they impose a rigid structure over a fluid artform. But art matters to humans, it doesn't matter to AI agents. What static type systems have always done is give early feedback on whether the type operations are correct, as opposed to waiting for runtime edge cases (like in production) to reveal errors. Dynamically typed languages are easy for humans to read, and enjoyable, but that doesn't matter anymore. AI writes code now, and so we should be picking strongly typed languages for AI. Why? For the same reason as humans; we want to guide AI agents to write code not only speedily, but correctly... the first time. 
+If AI writes code now, we should be pick strongly typed languages, for the same reason humans adopted them: we want to guide AI agents to write code correctly the first time. 
 
 ### What is the role of the developer?
 
