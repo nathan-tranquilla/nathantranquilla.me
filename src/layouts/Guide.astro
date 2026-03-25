@@ -55,6 +55,11 @@ const { frontmatter } = Astro.props;
     color: var(--text-primary);
     font-weight: 700;
   }
+
+  .notch {
+    corner-shape: notch;
+    border-radius: 8px;
+  }
 </style>
 
 <Main
@@ -79,7 +84,7 @@ const { frontmatter } = Astro.props;
     <hr class="border-[var(--border-primary)] mb-8" />
 
     <div class="grid md:grid-cols-2 gap-6 py-6">
-      <div class="flex flex-col rounded-lg border border-[var(--border-primary)] p-6 text-center">
+      <div class="notch flex flex-col border border-[var(--border-primary)] hover:shadow-lg transition-shadow duration-200 p-6 text-center">
         <p class="text-sm font-semibold uppercase tracking-wide text-[var(--text-muted)] mb-2">The Guide</p>
         <p class="text-lg font-serif font-semibold text-[var(--text-primary)] mb-2">Do it yourself</p>
         {frontmatter.pageCount && (
@@ -102,7 +107,7 @@ const { frontmatter } = Astro.props;
         </a>
       </div>
 
-      <div class="flex flex-col rounded-lg border border-[var(--border-primary)] p-6 text-center">
+      <div class="notch flex flex-col border border-[var(--border-primary)] hover:shadow-lg transition-shadow duration-200 p-6 text-center">
         <p class="text-sm font-semibold uppercase tracking-wide text-[var(--text-muted)] mb-2">Consultation</p>
         <p class="text-lg font-serif font-semibold text-[var(--text-primary)] mb-2">Work with me</p>
         <p class="text-sm text-[var(--text-muted)] mb-3">Hands-on guidance</p>
