@@ -31,13 +31,16 @@ TRIGGER WHEN: reviewing, evaluating, or editing a blog post draft in `src/pages/
 - Numbered lists should use consistent parallel structure.
 - Code references use backticks (e.g. `.claude/skills/`).
 
+## Pre-publish Checklist
+
+Before publishing a blog post in `src/pages/blogs/`, verify the following:
+
+1. **Slug matches title.** The filename (slug) must match the `title` frontmatter, lowercased and hyphenated. For example, a title of "Teach Claude Your Project Once, Benefit Forever" should have the filename `teach-claude-your-project-once-benefit-forever.md`. If they don't match, rename the file to match the title.
+2. **Draft frontmatter is removed.** Remove the `draft` field from the frontmatter entirely, or set it to `false`. Do not leave `draft: true`.
+3. **Date is set to today.** Update the `date` frontmatter to today's date in `YYYY/MM/DD` format.
+
 ## Commit Workflow
 
 - Commit when a section is approved by the author.
 - Do not batch multiple sections into one commit unless asked.
-
-## Related Skills
-
-| Skill | When to use |
-|-------|-------------|
-| blog-publish | When publishing a post (removing draft, updating date, verifying slug) |
+- To publish a post: run the pre-publish checklist, commit, and push. That's it.
