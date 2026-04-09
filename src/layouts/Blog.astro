@@ -11,6 +11,8 @@ const tagString = frontmatter.tags?.length ? ` — ${frontmatter.tags.join(", ")
 const blogDescription = frontmatter.description || `${frontmatter.title}${tagString} — by ${frontmatter.author}`;
 const websiteUrl = "https://nathantranquilla.me";
 const articleUrl = new URL(Astro.url.pathname, websiteUrl).href;
+const slug = Astro.url.pathname.replace(/^\/blogs\//, "").replace(/\/$/, "");
+const ogImage = `${websiteUrl}/og/${slug}.png`;
 
 // Load build-time analytics data
 let viewCount = 0;
@@ -191,7 +193,7 @@ try {
     min-height: 100vh;
   }
 </style>
-<Main title={`nathantraquilla.me | ${frontmatter.title}`} description={blogDescription} ogType="article" breadcrumbTitle={frontmatter.title} articleMeta={{ author: frontmatter.author, publishedTime: frontmatter.date.replace(/\//g, "-"), modifiedTime: (frontmatter.updated || frontmatter.date).replace(/\//g, "-"), tags: frontmatter.tags }}>
+<Main title={`nathantraquilla.me | ${frontmatter.title}`} description={blogDescription} ogImage={ogImage} ogType="article" breadcrumbTitle={frontmatter.title} articleMeta={{ author: frontmatter.author, publishedTime: frontmatter.date.replace(/\//g, "-"), modifiedTime: (frontmatter.updated || frontmatter.date).replace(/\//g, "-"), tags: frontmatter.tags }}>
   <Container classes="blog-post w-full max-w-[1000px] mx-auto font-sans">
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
