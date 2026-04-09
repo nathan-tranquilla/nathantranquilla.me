@@ -2,9 +2,8 @@
 layout: ../../layouts/Blog.astro
 title: Teach Claude Your Project Once, Benefit Forever
 author: Nathan Tranquilla
-date: "2026/04/09"
+date: "2026/04/07"
 tags: ["Claude"]
-draft: true
 ---
 
 Claude is great, but after a while it _should_ know things about your project. Those lessons never stick. That's the gap Claude skills fill. If you're using Claude Code but haven't started writing skills yet, this post is for you. What is a Claude skill? What gaps does it fill? How do you write them? And how can you use them to further accelerate your development?
@@ -27,7 +26,7 @@ Take making commit messages with Claude in a project with pre-commit hooks. Pre-
 
 This is when I realized I needed to add a skill to help Claude understand how to make a commit message correctly the first time. For my particular project, the codebase must be free of linting errors, the commit message body must be no longer than 70 characters, and the title must include the ticket. So I instructed Claude to make a skill that encapsulates this knowledge. 
 
-Here is another pain point. As a web developer who maintains a site, SEO is important to me. But Claude doesn't understand what I value when building a web page. Do I prefer SSR pages or client apps? HTML standards or defaulting to divs and spans? Google on-page SEO hygiene or just building something that looks nice? Asking Claude to add a new page or feature often doesn't result in these standards being met. But with an SEO skill, it has a checklist of values that matter to me. That's the power of a Claude skill. I have one for task completeness, another for code conventions, and another for writing tests. 
+Here is another pain point. As a web developer who maintains a site, SEO is important to me. But Claude doesn't understand what I value when building a web page. Do I prefer SSR pages or client apps? HTML standards or defaulting to divs and spans? Google on-page SEO hygiene or just building something that looks nice? Asking Claude to add a new page or feature often doesn't result in these standards being met. You ask it to build a new page, but it has multiple `<h1>` tags, or fails to use `<article>`. This is a gap that Claude skills can fill. 
 
 ### How Do You Write Them?
 
@@ -66,4 +65,4 @@ This skill-building activity has a compounding benefit. As you add skills, Claud
 3. Mistakes drop off. Claude stops making the same project-specific errors once those patterns are captured in skills.
 4. With enough skills, you can start to use more autonomous agents like GitHub Actions, and have the confidence that the task will be done right. 
 
-Claude skills have enabled me to maintain my side projects easily. Commits land on the first try. New pages ship with proper SEO. Tests get written without me spelling out every convention. A few sentences in a prompt, and Claude handles the rest.
+Claude skills have enabled me to maintain my side projects easily. Commits succeed on the first try. New pages ship with proper SEO. Tests get written without me spelling out every convention. A few sentences in a prompt, and Claude handles the rest.
