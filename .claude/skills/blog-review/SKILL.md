@@ -40,4 +40,4 @@ TRIGGER WHEN: reviewing, evaluating, or editing a blog post draft in `src/pages/
 
 | Skill | When to use |
 |-------|-------------|
-| (none yet) | |
+| blog-publish | When publishing a post (removing draft, updating date, verifying slug) |
