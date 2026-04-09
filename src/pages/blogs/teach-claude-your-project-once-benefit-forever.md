@@ -7,7 +7,7 @@ tags: ["Claude"]
 draft: true
 ---
 
-Tired of overdirecting Claude or watching it waste cycles on things it should already know? That's the gap Claude skills fill. If you're using Claude Code but haven't started writing skills yet, this post is for you. What is a Claude skill? What gap does it fill? How do you write them? And how can you use them to further accelerate your development?
+Tired of overdirecting Claude or watching it waste cycles on things it should already know? That's the gap Claude skills fill. If you're using Claude Code but haven't started writing skills yet, this post is for you. What is a Claude skill? What gap does it fill? How do you write and maintain them? And how can you use them to further accelerate your development?
 
 ## What Is a Claude Skill?
 
