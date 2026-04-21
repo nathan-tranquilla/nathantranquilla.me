@@ -38,7 +38,7 @@ jobs:
       env:
         FLOX_DISABLE_METRICS: true
       with:
-        command: npx playwright install chromium --with-deps
+        command: npx playwright install chromium
 
     - name: Build ReScript files
       uses: flox/activate-action@v1
