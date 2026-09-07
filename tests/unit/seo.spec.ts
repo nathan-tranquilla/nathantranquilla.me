@@ -8,7 +8,7 @@ test.describe("SEO - Homepage", () => {
     // Basic meta tags
     await expect(page).toHaveTitle(/nathantranquilla\.me/);
     const description = await page.locator('meta[name="description"]');
-    await expect(description).toHaveAttribute("content", /small businesses/i);
+    await expect(description).toHaveAttribute("content", /software, theology, and the books/i);
 
     const author = await page.locator('meta[name="author"]');
     await expect(author).toHaveAttribute("content", "Nathan Tranquilla");
@@ -16,7 +16,7 @@ test.describe("SEO - Homepage", () => {
     const keywords = await page.locator('meta[name="keywords"]');
     await expect(keywords).toHaveAttribute(
       "content",
-      /ReScript.*TypeScript alternatives.*strong type systems/
+      /theology.*book reviews/i
     );
 
     const robots = await page.locator('meta[name="robots"]');
@@ -199,7 +199,7 @@ test.describe("SEO - About Page", () => {
     const description = await page.locator('meta[name="description"]');
     await expect(description).toHaveAttribute(
       "content",
-      /pioneering Next-Gen Web Development/
+      /software, theology, and the books/i
     );
   });
 
@@ -226,7 +226,7 @@ test.describe("SEO - About Page", () => {
     expect(personSchema?.name).toBe("Nathan Tranquilla");
     expect(personSchema?.url).toBe("https://nathantranquilla.me");
     expect(personSchema?.image).toBeDefined();
-    expect(personSchema?.jobTitle).toBe("Next-Gen Web Development Consultant");
+    expect(personSchema?.jobTitle).toBe("Software Developer");
     expect(personSchema?.description).toBeDefined();
     expect(personSchema?.email).toBe("tranquilla.nathan@pm.me");
 
@@ -236,6 +236,7 @@ test.describe("SEO - About Page", () => {
     expect(personSchema?.knowsAbout).toContain("ReScript");
     expect(personSchema?.knowsAbout).toContain("TypeScript");
     expect(personSchema?.knowsAbout).toContain("Web Development");
+    expect(personSchema?.knowsAbout).toContain("Theology");
   });
 
   test("has BreadcrumbList schema", async ({ page }) => {

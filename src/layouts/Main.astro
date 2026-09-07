@@ -32,7 +32,7 @@ export interface Props {
   };
 }
 
-const defaultDescription = "Nathan Tranquilla is a Next-Gen Web Development Consultant specializing in making web applications more robust through technology choices of the future";
+const defaultDescription = "Nathan Tranquilla writes about software, theology, and the books he reads.";
 
 const { title, classes, nonav = false, description = defaultDescription, ogImage, ogType = "website", breadcrumbTitle, articleMeta } = Astro.props;
 
@@ -150,7 +150,7 @@ const breadcrumbSchema = {
     <link rel="canonical" href={canonicalUrl} />
     <link rel="author" href="https://nathantranquilla.me/about" />
 
-    <meta name="keywords" content="Next-Gen Web Development, ReScript, TypeScript alternatives, strong type systems, web development consulting, type-safe programming, functional programming, web app development, static typing, JavaScript alternatives, web development consultant, AI consulting, software engineering, Nathan Tranquilla" />
+    <meta name="keywords" content="Nathan Tranquilla, essays, theology, book reviews, reading, software development, web development, ReScript, TypeScript, type systems, functional programming, AI, software engineering" />
 
     <script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumbSchema)} />
   </head>
