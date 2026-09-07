@@ -1,0 +1,75 @@
+---
+import Main from "../layouts/Main.astro";
+import Container from "../components/Container.astro";
+import H1 from "../components/HTMLElements/H1.astro";
+import H3 from "../components/HTMLElements/H3.astro";
+import RightArrow from "../components/RightArrow.astro";
+import { Image } from "astro:assets";
+import magnoliaCoastOg from "../assets/magnolia-coast-og.png";
+import theOfficeLinesOg from "../assets/the-office-lines-og.png";
+
+const projects = [
+  {
+    name: "Magnolia Coast Photography",
+    url: "https://magnoliacoastsphotography.com",
+    image: magnoliaCoastOg,
+    description:
+      "A photography portfolio and client showcase website for Magnolia Coast Photography, featuring gallery displays and a seamless booking experience.",
+  },
+  {
+    name: "The Office Lines",
+    url: "https://theofficelines.com",
+    image: theOfficeLinesOg,
+    description:
+      "A fan site packed with memorable quotes and lines from The Office, with searchable content and daily featured scenes.",
+  },
+];
+---
+
+<Main
+  title="nathantranquilla.me | Portfolio"
+  description="Custom websites Nathan Tranquilla has built for small businesses — fast, distinctive, and made to bring in customers."
+>
+  <Container classes="w-full max-w-4xl mx-auto py-8 px-4">
+    <div class="mb-12 text-center">
+      <H1 classes="mb-4">Portfolio</H1>
+      <p
+        class="mx-auto max-w-2xl text-xl leading-relaxed text-[var(--text-tertiary)]"
+      >
+        Custom websites built for small businesses that need to stand out online
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+      {
+        projects.map((project, i) => (
+          <article class="flex flex-col overflow-hidden rounded-lg border border-[var(--border-secondary)] bg-[var(--bg-primary)] shadow-lg transition-shadow duration-200 hover:shadow-xl">
+            <Image
+              src={project.image}
+              alt={`${project.name} screenshot`}
+              class="h-48 w-full bg-white object-cover"
+              widths={[400, 700]}
+              loading={i === 0 ? "eager" : "lazy"}
+              fetchpriority={i === 0 ? "high" : "auto"}
+            />
+            <div class="flex grow flex-col p-6 md:p-8">
+              <H3 classes="pb-4">{project.name}</H3>
+              <p class="grow font-sans text-[var(--text-secondary)]">
+                {project.description}
+              </p>
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="mt-6 flex items-center font-semibold text-[var(--text-accent)] hover:text-[var(--text-accent-hover)]"
+              >
+                Visit Site
+                <RightArrow />
+              </a>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </Container>
+</Main>

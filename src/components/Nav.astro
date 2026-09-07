@@ -5,6 +5,7 @@ const linkStyles =
 const navLinks = [
   { href: "/", label: "Welcome" },
   { href: "/about", label: "About" },
+  { href: "/portfolio", label: "Portfolio" },
   { href: "/blogs", label: "Blog" },
   { href: "/guides", label: "Guides" },
 ];
@@ -13,7 +14,7 @@ const navLinks = [
 <nav
   class="mx-auto hidden h-full w-full items-center justify-start pl-10 md:flex"
 >
-  <ul class="flex h-full w-full max-w-[300px] items-center justify-around">
+  <ul class="flex h-full w-full max-w-[420px] items-center justify-around">
     {
       navLinks.map((link) => (
         <li class="flex">
