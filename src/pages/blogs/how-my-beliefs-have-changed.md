@@ -14,7 +14,6 @@ felt very worn out, like it was at the end of what it could do for me.
 
 ### Where It Began
 
-
 My story is a common one, in a lot of ways.
 
 I grew up with a wonderful Christian community around me. Lots of kids, lots of people, and we
@@ -24,37 +23,40 @@ and unity with each other. Those were some really great years.
 I felt like I had the answers for everything. Everything I needed for life could be found in friends
 and family in the church. In my particular church.
 
-### The Crack
-
-
-As I grew up, that started to crack. The idea that my church could solve all my problems began to
-crumble. I was losing the joy I once found in the routines of Christian living. I needed some help.
-And I reached outside of my bubble to get it. It was the impetus I needed.
-
-### What My Faith Had Been
-
-
-I should say what my faith actually looked like before that.
-
 I was not good at being regular in prayer. But I was an avid reader, and I loved reading the Bible.
 I believed that in studying it I would find salvation. Enlightenment. Freedom to live a life free
 from sin, or at least a life less encumbered by my own problems. In my own way, I was a follower of
 Jesus in that time.
 
-Then something strange happened. I began having a bodily response to my own
-Christian devotion. It was physical, and I was suddenly unable to do the things I had always done.
+### The Crack
+
+As I grew up, that started to crack. The idea that my church could solve all my problems began to
+crumble. I was losing the joy I once found in the routines of Christian living.
+
+I needed help, and I felt I had to reach outside my Christian bubble to get it. So I did.
+
+That is what started everything. Reaching outside led me to question the thing sitting underneath
+all of it: that my church, my family, and my way of practicing Christianity had all the answers.
+Once that question was open, I started exploring.
+
+### It Came Apart
+
+When I went down that road, my body began reacting to the way I was practicing my devotions. I could
+not do them the way I always had, and I could not find a new way either.
+
+I thought this meant I was being an undisciplined Christian.
+
+This was part of what people call deconstruction, and it just sort of happened. My mind wanted to
+follow Christ. My body was telling me no. I was exhausted, and in the end I had to let it go.
+
+I could not explain it yet. But my body had a sense of something before my mind could grasp it, and
+my mind caught up much later.
 
 Prayer was okay. I could still pray, though I did not do it often. And when I did, it was stripped of
 all ceremony I once knew. And I thought quite often about the scriptures I had read as a boy.
 
-### Stripping It Down
-
-
-What I held onto was one sentence. Jesus said, "you will know the truth, and the truth will set you
-free."
-
-Some people would call what happened next deconstruction. You strip your beliefs down to what you
-actually believe. I stripped everything away until I got to Christ, and I held onto his words.
+It was during this time that I clung to the words of Christ. Jesus said, "you will know the truth,
+and the truth will set you free."
 
 I did not know where I was going. But I set myself a test. I would know I had found the right thing
 when I started experiencing freedom, joy, excitement, and optimism, instead of the dread I had come
@@ -64,29 +66,26 @@ That test is the reason for everything that follows.
 
 ### The Lens I Could Not See
 
-
 Part of what I was working through was that I had a lens.
 
 I was reading scripture through something I had inherited from my childhood and my home church. What
-they gave me was real, and I still carry a lot of it. But I was starting to wonder whether it was
-the full picture.
+they gave me was a wonderful start, and I'm thankful for it. But I was starting to wonder whether it
+was the full picture.
 
 I could not have described the lens at the time. I only knew that I had one, and that I had to find
-out what it was. I had to see whether there was another way of reading scripture that made sense to
-me.
+out what it was.
+
+I was not only looking for another way of reading scripture. I wanted one that would tell me the
+truth, and that would give me the key I needed to practice the kind of Christianity I wanted. There
+was just something insufficient, I felt, about the lens I had.
 
 So I started looking for help, and I had no idea where to go. This was really before AI could help
 you search these things out.
 
 ### A Bold Email
 
-
 My brother-in-law Joey has a podcast, and he brings in a lot of different voices. One of his guests
 was an author whose book had really impacted me, and I listened to the whole episode.
-
-There was something new there. Something fresh. He was clearly interested in things I found
-interesting, like philosophy, and he was deeply read in Christian theology. He was quoting people I
-had never heard of.
 
 Because Joey had him on the show, Joey had his private email. So I asked for it, and I sent a bold
 request for a video call. I got one.
@@ -98,7 +97,6 @@ was far more common than I thought.
 Then he gave me a reading list.
 
 ### Losing My Categories
-
 
 The books took things away from me before they gave me anything back.
 
@@ -123,7 +121,6 @@ in this world, into a renewed creation.
 
 ### The Failure Was Not What I Thought
 
-
 Somewhere in there I read John H. Walton's *The Lost World of Genesis One*, and it changed how I read
 the first chapter of the Bible.
 
@@ -140,7 +137,6 @@ revealed.
 
 ### God Takes On the Cost
 
-
 Reading Genesis this way changed the shape of the whole story for me.
 
 Adam and Eve do what seems right in their own eyes. Suddenly they are naked. They realize they are
@@ -154,7 +150,6 @@ That is the pattern for the rest of scripture. God takes on the cost. He does no
 creation away. He redeems it. He restores it.
 
 ### Where the Hell Is Hell
-
 
 If God is redeeming this world rather than discarding it, then everything else has to move too. I
 started wondering where the hell is hell.
@@ -181,7 +176,6 @@ joined with him, and that heaven and earth would be rejoined. It is a city as we
 which tells me that our own contributions somehow get caught up into this new world.
 
 ### The Gospel Was Bigger Than I Knew
-
 
 Then I read Scot McKnight's *The King Jesus Gospel*, and it named the thing I had been circling for
 years.
@@ -210,7 +204,6 @@ That makes sense to me.
 
 ### What This Did to My Parenting
 
-
 I had felt something like this instinctively, well before I had any reason for it.
 
 I did not want to indoctrinate my children. I wanted to tell them the stories. It was only later,
@@ -226,7 +219,6 @@ I will consider my parenting a success if all I do is equip them with the storie
 ponder and carry with them on their own journey.
 
 ### The Cross Was Never the Climax
-
 
 Here is the part I did not expect.
 
@@ -254,7 +246,6 @@ faith. It takes in mind, body, and spirit. All of me, loyal.
 
 ### Faith and Works
 
-
 I know this raises the tension between faith and works, at least the way I was brought up to
 understand it. I am not the first person to notice it.
 
@@ -265,7 +256,6 @@ do seems to determine our judgment.
 I am not done thinking about this. But this is where I think I am going.
 
 ### Where I Am Today
-
 
 So what is the life that is asked of us? Everything is simplified.
 
@@ -287,7 +277,6 @@ That is where I am landing. That is where I am today.
 I am going to keep exploring, because I am not yet done.
 
 ### I Sing Again
-
 
 All of this took about seven years.
 
