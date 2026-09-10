@@ -36,20 +36,29 @@ invisible button or a font that quietly falls back.
 
 ### 2. Intent-driven
 
-**Record why, not just what.** A diff shows what changed. It rarely shows what the
-change was protecting against, and that is the part someone needs six months later
-in order not to undo it by accident.
+**Capture Intent first, and gate it, before writing anything.** See
+`.claude/skills/intent-driven/SKILL.md` for the full method. In short:
 
-- **Commit bodies carry the intent.** What the change is for, what it replaced, and
-  what would break if someone reverted it. Commit messages travel with the repo;
-  chat logs and local notes do not.
-- **Name the decision that isn't visible in the diff.** If a value was chosen over
-  an obvious alternative, say which and why. If something was deliberately left
-  alone, say so.
-- **Don't reverse a decision without finding its intent first.** If the reason isn't
-  recorded, ask rather than assume it was arbitrary.
-- **Corrections are part of the record.** If a fact turns out to be wrong, write the
-  correction down where the wrong version lived, so it can't come back.
+```
+Intent (gate) → Plan (gate) → [ Tasks → Tests(red) → Code(green) ] → Verify against Intent
+```
+
+Intent is the durable, authoritative artifact. Plan and tasks are disposable
+scaffolding. Tests and code are projections of the Intent.
+
+> **When anything is wrong or changes, edit the highest-level artifact that's wrong
+> and regenerate downstream. Never let the code quietly become the real spec.**
+
+- **Six lines, stated back for red-penning before any code**: Goal, Why, Accept,
+  Non-goals, Open. That gate costs six lines and prevents a built-and-rejected
+  feature.
+- **Each `Accept` line becomes a test.** This is where the two rules meet: the tests
+  are the executable form of the acceptance criteria, written red first.
+- **When the user changes their mind, edit the Intent, not just the code.** The diff
+  to the Intent is the record of why it changed, which is otherwise invisible.
+- **Shipped intent goes in the commit body.** Commit messages travel with the repo;
+  chat logs and `/docs` do not.
+- **Skip it for decision-free changes** — renames, dead code, obvious bugs.
 
 ---
 
