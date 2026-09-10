@@ -9,12 +9,12 @@ test.describe("Homepage hero", () => {
     await expect(headline).not.toContainText("Web Developer");
   });
 
-  test("subtitles with the range of subjects, not a services pitch", async ({ page }) => {
+  test("carries no tagline; the posts below speak for themselves", async ({ page }) => {
     await page.goto("/");
 
-    await expect(
-      page.getByText(/Thoughts on software, theology, and the books I'm reading/)
-    ).toBeVisible();
+    // the block holding the headline should hold the portrait and the name, nothing else
+    const heroBlock = page.locator("h1").locator("..");
+    await expect(heroBlock.locator("p")).toHaveCount(0);
     await expect(page.locator("main")).not.toContainText("small businesses");
   });
 
