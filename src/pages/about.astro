@@ -3,6 +3,10 @@ import Main from "../layouts/Main.astro";
 import aboutPhoto from "../assets/about.webp";
 import { Image } from "astro:assets";
 import Button from "../components/Button.astro";
+import profileImage from "../assets/Profile.png";
+
+// Assets under src/ are hashed into /_astro/, so a hardcoded root path 404s.
+const profileUrl = new URL(profileImage.src, "https://nathantranquilla.me").href;
 
 const containerLayout =
   "lg:grid lg:gap-6 lg:grid-cols-2 flex flex-col justify-start items-center";
@@ -20,7 +24,7 @@ const h1Styles =
     "@type": "Person",
     "name": "Nathan Tranquilla",
     "url": "https://nathantranquilla.me",
-    "image": "https://nathantranquilla.me/Profile.jpg",
+    "image": profileUrl,
     "jobTitle": "Software Developer",
     "description": "Software developer writing about software, theology, and the books he reads",
     "email": "tranquilla.nathan@pm.me",

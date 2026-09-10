@@ -9,7 +9,11 @@ const { frontmatter } = Astro.props;
 const i = getPostIndex(frontmatter.title);
 const tagString = frontmatter.tags?.length ? ` — ${frontmatter.tags.join(", ")}` : "";
 const blogDescription = frontmatter.description || `${frontmatter.title}${tagString} — by ${frontmatter.author}`;
+import faviconLogo from "../assets/favicon-nt-512.png";
+
 const websiteUrl = "https://nathantranquilla.me";
+// Assets under src/ are hashed into /_astro/, so a hardcoded root path 404s.
+const logoUrl = new URL(faviconLogo.src, websiteUrl).href;
 const articleUrl = new URL(Astro.url.pathname, websiteUrl).href;
 const slug = Astro.url.pathname.replace(/^\/blogs\//, "").replace(/\/$/, "");
 const ogImage = `${websiteUrl}/og/${slug}.png`;
@@ -211,10 +215,10 @@ try {
         "url": websiteUrl,
         "logo": {
           "@type": "ImageObject",
-          "url": `${websiteUrl}/logo_512x512.jpg`
+          "url": logoUrl
         }
       },
-      "image": `${websiteUrl}/Profile.jpg`,
+      "image": ogImage,
       "datePublished": frontmatter.date.replace(/\//g, "-"),
       "dateModified": (frontmatter.updated || frontmatter.date).replace(/\//g, "-"),
       "url": articleUrl,

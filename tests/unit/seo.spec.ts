@@ -155,6 +155,29 @@ test.describe("SEO - Blog Post", () => {
     expect(articleSchema?.mainEntityOfPage).toBeDefined();
   });
 
+  test("Article schema image and publisher logo actually resolve", async ({ page }) => {
+    await page.goto("/blogs/the-4-pillars-of-next-gen-web-dev/");
+
+    const scripts = await page.locator('script[type="application/ld+json"]').all();
+    let articleSchema: any = null;
+    for (const script of scripts) {
+      const json = JSON.parse((await script.textContent()) || "{}");
+      if (json["@type"] === "Article") {
+        articleSchema = json;
+        break;
+      }
+    }
+    expect(articleSchema).not.toBeNull();
+
+    // Checking these are *defined* is what let two 404s ship. Fetch them.
+    const urls = [articleSchema.image, articleSchema.publisher.logo.url];
+    for (const url of urls) {
+      const { pathname, search } = new URL(url);
+      const res = await page.request.get(pathname + search);
+      expect(res.status(), `${url} should resolve`).toBe(200);
+    }
+  });
+
   test("has BreadcrumbList schema with blog title", async ({ page }) => {
     await page.goto("/blogs/the-4-pillars-of-next-gen-web-dev/");
 
@@ -237,6 +260,25 @@ test.describe("SEO - About Page", () => {
     expect(personSchema?.knowsAbout).toContain("TypeScript");
     expect(personSchema?.knowsAbout).toContain("Web Development");
     expect(personSchema?.knowsAbout).toContain("Theology");
+  });
+
+  test("Person schema image actually resolves", async ({ page }) => {
+    await page.goto("/about/");
+
+    const scripts = await page.locator('script[type="application/ld+json"]').all();
+    let personSchema: any = null;
+    for (const script of scripts) {
+      const json = JSON.parse((await script.textContent()) || "{}");
+      if (json["@type"] === "Person") {
+        personSchema = json;
+        break;
+      }
+    }
+    expect(personSchema).not.toBeNull();
+
+    const { pathname, search } = new URL(personSchema.image);
+    const res = await page.request.get(pathname + search);
+    expect(res.status(), `${personSchema.image} should resolve`).toBe(200);
   });
 
   test("has BreadcrumbList schema", async ({ page }) => {
