@@ -47,7 +47,7 @@ posts.forEach((post) => {
                   {post.frontmatter.author} · {formatDate(post.frontmatter.date)}
                 </span>
                 {post.frontmatter.tags.map((tag: string) => (
-                  <span class="rounded-full bg-[var(--bg-secondary)] px-2.5 py-0.5 text-xs font-medium text-[var(--text-tertiary)]">
+                  <span class="border border-[var(--border-primary)] bg-[var(--bg-secondary)] px-2.5 py-0.5 font-mono text-xs text-[var(--text-tertiary)]">
                     {tag}
                   </span>
                 ))}
