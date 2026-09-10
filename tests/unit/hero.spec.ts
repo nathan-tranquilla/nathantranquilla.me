@@ -9,12 +9,14 @@ test.describe("Homepage hero", () => {
     await expect(headline).not.toContainText("Web Developer");
   });
 
-  test("carries no tagline; the posts below speak for themselves", async ({ page }) => {
+  test("subtitles with a centred tagline, not a services pitch", async ({ page }) => {
     await page.goto("/");
 
-    // the block holding the headline should hold the portrait and the name, nothing else
-    const heroBlock = page.locator("h1").locator("..");
-    await expect(heroBlock.locator("p")).toHaveCount(0);
+    // string matching normalises whitespace; an anchored regex would not
+    const tagline = page.getByText("Sometimes I write.", { exact: true });
+    await expect(tagline).toBeVisible();
+    // it sits under a centred headline, so it has to be centred too
+    await expect(tagline).toHaveCSS("text-align", "center");
     await expect(page.locator("main")).not.toContainText("small businesses");
   });
 
