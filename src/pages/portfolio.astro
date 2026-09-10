@@ -6,7 +6,7 @@ import H3 from "../components/HTMLElements/H3.astro";
 import RightArrow from "../components/RightArrow.astro";
 import { Image } from "astro:assets";
 import magnoliaCoastOg from "../assets/magnolia-coast-og.png";
-import theOfficeLinesOg from "../assets/the-office-lines-og.png";
+import theOfficeLines from "../assets/the-office-lines.png";
 
 const projects = [
   {
@@ -19,7 +19,9 @@ const projects = [
   {
     name: "The Office Lines",
     url: "https://theofficelines.com",
-    image: theOfficeLinesOg,
+    image: theOfficeLines,
+    // the wordmark sits near the top; a centre crop would lose it
+    imagePosition: "object-top",
     description:
       "A fan site packed with memorable quotes and lines from The Office, with searchable content and daily featured scenes.",
   },
@@ -47,7 +49,7 @@ const projects = [
             <Image
               src={project.image}
               alt={`${project.name} screenshot`}
-              class="h-48 w-full bg-white object-cover"
+              class:list={["h-48 w-full bg-white object-cover", project.imagePosition]}
               widths={[400, 700]}
               loading={i === 0 ? "eager" : "lazy"}
               fetchpriority={i === 0 ? "high" : "auto"}
