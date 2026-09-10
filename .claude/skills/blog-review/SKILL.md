@@ -1,6 +1,9 @@
-# Blog Draft Review
+---
+name: blog-review
+description: Review, critique and edit blog post drafts, preserving the author's voice and applying the house style (no em dashes, short paragraphs, 8th-10th grade reading level). Includes the pre-publish checklist. TRIGGER WHEN: reviewing, evaluating, or editing a blog post draft in `src/pages/blogs/`.
+---
 
-TRIGGER WHEN: reviewing, evaluating, or editing a blog post draft in `src/pages/blogs/`
+# Blog Draft Review
 
 ## Voice and Style
 
