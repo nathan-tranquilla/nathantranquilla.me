@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@import "@fontsource/spectral/400.css";
+@import "@fontsource-variable/literata";
 @import "@fontsource/spectral/500.css";
 @import "@fontsource-variable/source-serif-4";
 @import "@fontsource/ibm-plex-mono/400.css";
@@ -8,8 +8,10 @@
 @theme {
   /* reading type: a text serif sized for long articles */
   --font-sans: "Source Serif 4 Variable", ui-serif, Georgia, Cambria, serif;
-  /* display type: squarer, warmer serif used for headings */
-  --font-serif: "Spectral", ui-serif, Georgia, Cambria, serif;
+  /* display type: sturdy reading serif, used for headings */
+  --font-serif: "Literata Variable", ui-serif, Georgia, Cambria, serif;
+  /* the mark alone keeps Spectral, so the logo is not just a smaller heading */
+  --font-logo: "Spectral", ui-serif, Georgia, Cambria, serif;
   /* chrome type: navigation, dates, bylines, labels */
   --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 
@@ -115,6 +117,17 @@ body {
   font-family: var(--font-mono);
   font-size: 0.86rem;
   border: 1px solid var(--border-primary);
+}
+
+/* The mark. Set in Spectral rather than the display face, so the logo reads
+   as its own thing and not merely a smaller heading. Styled here rather than
+   with a Tailwind arbitrary value, which silently falls back for font-family. */
+[data-logo="nt"] {
+  font-family: var(--font-logo);
+  font-size: 2.1rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.03em;
 }
 
 /* Chrome type: navigation, dates, bylines and labels sit in mono. */

@@ -1,28 +1,9 @@
 ---
 export interface Props {
-  size?: number;
   classes?: string;
 }
 
-const { size = 40, classes } = Astro.props;
+const { classes } = Astro.props;
 ---
 
-<svg
-  data-logo="nt"
-  viewBox="0 0 44 44"
-  width={size}
-  height={size}
-  fill="none"
-  aria-hidden="true"
-  stroke="currentColor"
-  stroke-width="1.15"
-  stroke-linecap="square"
-  class={classes}
->
-  <circle cx="22" cy="22" r="20.4"></circle>
-  <!-- N: left stem, diagonal, right stem shared with the T -->
-  <path d="M13.6 30.4 V14.2 L23.2 30.4 V14.2"></path>
-  <!-- T: crossbar overlapping the N, stem dropping through -->
-  <path d="M19.4 14.2 H31.4"></path>
-  <path d="M26.6 14.2 V30.4"></path>
-</svg>
+<span data-logo="nt" class={classes}>nt</span>
