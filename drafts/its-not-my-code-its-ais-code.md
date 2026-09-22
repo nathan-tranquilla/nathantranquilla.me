@@ -7,10 +7,10 @@ tags: ["AI", "Coding"]
 draft: true
 ---
 
-You submitted AI written code as part of a pull request. It doesn't work. Whose responsibility is it
+You submitted AI-written code as part of a pull request. It doesn't work. Whose responsibility is it
 to make sure it's correct? You don't blame the agent that wrote it for you. It's tempting to think
-that if you had written it yourself, this is a mistake you would not have made. But are we so
-assured in the quality of our handwritten code that being handwritten makes it special? The
+that if you had written it yourself, you would not have made this mistake. But are we so assured of
+the quality of our handwritten code that being handwritten makes it special? The
 certification of our code never lay in our ability to write it by hand. It lies in the ability to
 prove that it's correct.
 
@@ -47,20 +47,17 @@ What I would like to propose is intent-driven development. It is a process that 
 ownership of the code that gets written, even when it was written almost entirely inside a black
 box.
 
-This is the whole point. What you certify is the intent. The tests are the proof that the code
+Here is the whole point. What you certify is the intent. The tests are the proof that the code
 satisfies it, and that is why you can take responsibility for code you did not write and did not
-read.
+read. Tests have always been important. They are even more important in the age of AI.
 
-Tests are important, but they are even more important in the age of AI.
-
-So here is the process. What you want to accomplish, your goal or your ticket, is front loaded into
+So here is the process. What you want to accomplish, your goal or your ticket, is front-loaded into
 the AI's context. In practice it looks like having a long conversation with the agent about what you
-are hoping to achieve. It may require deep, AI assisted research into areas you do not yet
+are hoping to achieve. It may require deep, AI-assisted research into areas you do not yet
 understand. All of that is part of capturing the intent.
 
-Once sufficient context has been gathered, what matters is that the intent of what you are looking
-to accomplish is correctly understood by the agent. In my own development process this is a gating
-phase. The agent and I have to agree on the intent. I use a key phrase for it: capture my intent. At
+Once enough context has been gathered, what matters is that the agent has correctly understood your
+intent. In my own development process this is a gating phase. The agent and I have to agree on the intent. I use a key phrase for it: capture my intent. At
 that point the agent does some light research into the work I want to do. Once this phase is
 approved, we move on to the next one.
 
@@ -85,7 +82,7 @@ to the agent itself.
 Now you might be questioning how an AI can be trusted to write its own tests. How do you know the
 test captures the result correctly? The truth is that we rely heavily on the intent. We rely on a
 strong common understanding at the beginning of a task, scoped properly and narrowly enough that the
-task can be completed trivially, in cycles.
+task can be completed trivially, in cycles of tests and code.
 
 There is still a great deal of skill in this. The reality of a software job has always been about
 thirty percent thinking and seventy percent friction in writing the code. In this new process we
@@ -94,7 +91,7 @@ translate the nuances of a requirement into what the code should mean.
 
 ### Onboarding Your Agent
 
-As you review during the intent driven development process, you may discover that there are
+As you review during the intent-driven development process, you may discover that there are
 conventions, rules and idiosyncrasies in your project that are not being followed. This is the task
 of onboarding your AI to your particular project, and I have written about that
 [extensively elsewhere](/blogs/teach-claude-your-project-once-benefit-forever). The answer is
@@ -109,20 +106,20 @@ the process of intent-driven development is itself a skill.
 
 Rules hold the conventions of your codebase. These are the things that are not obvious, and that an
 agent cannot know unless you tell it. Take your test files. It may be perfectly legitimate in
-general to mock a certain object, but in your project mocking is forbidden and must happen at a
-different level. Perhaps an agent's gut instinct is to mock at the component level, and your
+general to mock a certain object, but in your project mocking it at that level is forbidden and must
+happen somewhere deeper. Perhaps an agent's gut instinct is to mock at the component level, and your
 convention is that mocking happens deeper, at the REST API layer or the service worker. It is your
 responsibility to steer it away from that, with a rule for that test path.
 
-This is a process which improves over time. As it is improved by adding skills and by adding rules,
-the autonomy of your agent increases.
+This is a process that improves over time. As you add skills and rules, the autonomy of your agent
+increases.
 
 ### Closing The Type Holes
 
 There is another kind of enforcement worth investing in, and it is programmatic. You may have to
 increase the type strictness of your application to close the runtime holes an agent writes into it.
-If you have seen a pattern of your agent writing incomplete switch statements, turn it on in your
-TypeScript settings. Asking the agent politely will not hold.
+If you have seen a pattern of your agent writing incomplete switch statements, turn on exhaustiveness
+checking in your TypeScript settings. Asking the agent politely will not hold.
 
 It is worth being specific about what strictness means here, because the defaults leave real holes.
 Unchecked index access is the clearest one. By default, reaching into an array hands you back the
@@ -140,7 +137,7 @@ across your project.
 
 ### The Cascade
 
-So how do you take responsibility over AI generated code? Through a cascade.
+So how do you take responsibility for AI-generated code? Through a cascade.
 
 You do it with ESLint rules, and by increasing the type safety of your project so that it is not
 possible for an agent to write code that will fail at runtime. You do it by adding skills, which
@@ -150,4 +147,4 @@ setting cannot enforce.
 
 And finally, at the core, you do it by certifying the intent. Once the intent and the scope have
 been agreed upon, it is trivial for an agent to write tests and satisfy them. That is how you take
-responsibility over AI written code.
+responsibility for AI-written code.
