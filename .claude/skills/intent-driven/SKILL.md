@@ -50,6 +50,15 @@ for the cost of six lines instead of a built-and-rejected feature.
 test-driven rule in `CLAUDE.md`: the tests are the executable form of the acceptance
 criteria, written red before the code exists.
 
+> **"Capture my intent" means PRESENT the Intent block, not just file it.** The whole
+> point of capturing intent is for the user to *see that you understood them*. So the
+> deliverable of a capture is always the filled-in Intent block **shown back in chat**,
+> in this structure — Goal / Why / Accept / Non-goals / Open — so they can red-pen it.
+> Writing it only to memory or a doc is **not** a capture; persistence is secondary and
+> happens *after* they have seen and confirmed it. Reflect first, file second. A prose
+> summary is not a substitute for the structured block — the structure is what makes the
+> understanding legible and correctable.
+
 ## When to use it, and the escape hatch
 
 - **Use it** for anything with a *decision* in it: a new page, a design or content
