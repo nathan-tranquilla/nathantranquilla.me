@@ -69,7 +69,13 @@ Things that have already cost time. None are obvious from the code.
 **Drafts are not private.** `draft: true` keeps a post out of the `/blogs` listing
 and off the homepage, but the file is still a route. Astro generates the page and
 the sitemap lists it. Merging a draft to `main` publishes a live, crawlable page.
-To keep a post genuinely unpublished, keep it out of `src/pages/blogs/`.
+
+Unfinished posts therefore live in `/drafts` at the repo root, which is tracked but
+is not a route, so a draft can be versioned without being published. Publishing means
+moving the file into `src/pages/blogs/`, where its relative `layout:` path resolves.
+The repo is public, so a committed draft is readable by anyone browsing GitHub; it is
+simply not served on the site or indexed. Anything you would not want read at all
+stays untracked.
 
 **Never hardcode root paths for assets under `src/`.** They are hashed into
 `/_astro/`, so `https://nathantranquilla.me/logo.png` 404s. Import the asset and

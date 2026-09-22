@@ -10,6 +10,7 @@ description: Review, critique and edit blog post drafts, preserving the author's
 - Preserve the author's voice. Only fix what is asked. Do not rewrite sentences to sound "better" unless asked.
 - Never use em dashes. Use colons, semicolons, periods, or restructure the sentence instead.
 - Target an 8th to 10th grade reading level. Use short, clear sentences. Avoid jargon unless the audience expects it. Prefer common words over fancy ones.
+- Avoid paired antithesis constructions ("it's not this, it's that"). Stacked, they are a hallmark of AI writing. Keep one only where the contrast carries the argument; cut any that exist for rhythm, and never write statement, negation, restatement as three beats.
 - Do not add emojis.
 
 ## Review Process
