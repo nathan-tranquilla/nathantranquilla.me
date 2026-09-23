@@ -146,8 +146,15 @@ try {
     box-shadow: 0 4px 6px -1px var(--shadow-color);
   }
 
+  /* A call to action is a control, not prose: it opts out of the link
+     treatment below. Matching .blog-body a on specificity, so order decides. */
+  .blog-body a.blog-cta {
+    text-decoration: none;
+    color: var(--bg-primary);
+  }
+
   /* Links */
-  .blog-body a {
+  .blog-body a:not(.blog-cta) {
     color: var(--accent-strong);
     text-decoration: underline;
     text-decoration-color: var(--text-accent);
@@ -156,7 +163,7 @@ try {
     transition: color 0.2s ease, text-decoration-color 0.2s ease;
   }
 
-  .blog-body a:hover {
+  .blog-body a:not(.blog-cta):hover {
     color: var(--text-accent-hover);
     text-decoration-color: var(--accent-strong);
   }

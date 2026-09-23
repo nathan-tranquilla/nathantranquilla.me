@@ -263,3 +263,17 @@ development: the tests are the executable form of the acceptance criteria.
 - Skip it for trivial, decision-free changes: a rename, dead code removal, an obvious bug
   fix, a typo. Just do them.
 ```
+
+<div class="mt-16 border-t border-[var(--border-primary)] pt-8">
+  <p class="mb-6 font-sans text-[var(--text-secondary)]">
+    Handing more of your codebase to an agent without losing your grip on it is
+    the problem I spend most of my time on. If your team is working through it,
+    I take on a small number of engagements.
+  </p>
+  <a
+    href="/consultation"
+    class="blog-cta text-nowrap font-mono text-sm uppercase tracking-[0.07em] py-2 px-6 w-fit h-fit cursor-pointer border transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 bg-[var(--accent-bg)] text-[var(--bg-primary)] border-[var(--border-primary)] hover:bg-[var(--accent-bg-hover)] focus:ring-[var(--accent-bg)] inline-block no-underline"
+  >
+    Book a consultation
+  </a>
+</div>
