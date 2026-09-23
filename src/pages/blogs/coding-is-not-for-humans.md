@@ -7,7 +7,7 @@ date: "2026/03/19"
 tags: ["AI","Coding"]
 ---
 
-Coding is no longer for humans. At my day job, AI agents write the majority of code. In my personal projects, I no longer write code at all. If coding belongs to AI now, do the human-centric battles around code still matter: clean code patterns or dynamic vs static type systems? What is the role of the human?
+Coding is no longer for humans. At my day job, AI agents write the majority of code. In my personal projects, I no longer write code at all. If coding belongs to AI now, do the human-centric battles around code still matter: clean code patterns or dynamic vs static type systems? [What is the role of the human?](/blogs/taking-responsibility-for-your-ai-generated-code/)
 
 
 ## No One Cares About Clean Code (Anymore)
