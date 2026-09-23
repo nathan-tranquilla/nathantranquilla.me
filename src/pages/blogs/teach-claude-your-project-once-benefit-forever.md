@@ -9,13 +9,13 @@ tags: ["Claude"]
 
 Claude is great, but after a while it _should_ know things about your project. Those lessons never stick. That's the gap Claude skills fill. If you're using Claude Code but haven't started writing skills yet, this post is for you. What is a Claude skill? What gaps does it fill? How do you write them? And how can you use them to further accelerate your development?
 
-### What Is a Claude Skill?
+## What Is a Claude Skill?
 
 Claude skills give Claude Code project-specific knowledge: your conventions, workflows, architecture, and so on. Claude Code is already capable at software development in general, but it doesn't know the particulars of your codebase. Skills bridge that gap. Without them, you'll hit pain points where Claude does things the "right" way in general but the wrong way for your project. 
 
 Think of it this way. You're a software developer of many years. You bring all those years of experience to your next job. But you still have to onboard, learn about the project, and adapt to its workflows. These are skills you acquire, and in the same way, skills are what help Claude onboard too.
 
-### Where I Felt the Pain
+## Where I Felt the Pain
 
 Here are two places where I felt the pain before adding skills.
 
@@ -29,7 +29,7 @@ This is when I realized I needed to add a skill to help Claude understand how to
 
 Here is another pain point. As a web developer who maintains a site, SEO is important to me. But Claude doesn't understand what I value when building a web page. Do I prefer SSR pages or client apps? HTML standards or defaulting to divs and spans? Google on-page SEO hygiene or just building something that looks nice? Asking Claude to add a new page or feature often doesn't result in these standards being met. You ask it to build a new page, but it has multiple `<h1>` tags, or fails to use `<article>`. This is a gap that Claude skills can fill. 
 
-### How Do You Write Them?
+## How Do You Write Them?
 
 Writing Claude skills is simple. They reside in `.claude/skills/<folder-name>/SKILL.md` files. There is no set format for writing a skill, but from experience, I've noticed some conventions help Claude recognize when a skill or set of skills should be used.
 
@@ -57,7 +57,7 @@ TRIGGER WHEN: writing a commit message
 | code-conventions | When writing or modifying code |
 ```
 
-### How Can Skills Accelerate Your Development?
+## How Can Skills Accelerate Your Development?
 
 This skill-building activity has a compounding benefit. As you add skills, Claude builds a web of knowledge that is specific to your project and becomes more proficient at tasks. This saves you time in a few ways:
 

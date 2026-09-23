@@ -28,7 +28,7 @@ now familiar with strong-ish type systems thanks to TypeScript, and that familia
 next generation of languages much easier to adopt. We can thank TypeScript for acting as a bridge
 between JavaScript and the language that truly fixes its problems: ReScript.
 
-### ReScript
+## ReScript
 
 ReScript is a _**Next-Gen Web Dev**_ language. It fixes the problems of the past while feeling
 familiar to JavaScript and TypeScript developers. Where TypeScript, with its compromises, fails to

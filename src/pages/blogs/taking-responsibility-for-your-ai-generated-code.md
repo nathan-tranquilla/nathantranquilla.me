@@ -10,7 +10,7 @@ tags: ["AI", "Coding"]
 AI increases your speed, but it decreases your visibility into the codebase. How do we know the code is correct when we didn't write it? I'll go through three common AI usage patterns and show why only the last one lets you stand behind
 your code without giving up the speed.
 
-### Three Ways To Write Code With AI
+## Three Ways To Write Code With AI
 
 These three differ by one measure: how much of your context the agent holds. They represent modes of
 growing trust between a developer and an agent, because how much you trust it decides how much you
@@ -41,7 +41,7 @@ is behind it, and that is what certifies it as correct. But handwritten code was
 correct on its own. It needed tests, the same as any other code. Taking responsibility
 for your code means being able to show that it works, no matter who typed it.
 
-### Intent-Driven Development
+## Intent-Driven Development
 
 As people lean harder on speed and productivity, a shift in thinking is required. AI is going to do
 more of the coding. The question is how to do that and still stand behind the result.
@@ -121,7 +121,7 @@ satisfied.
 Note where the judgment sits. Every step after your approval is mechanical, which is why your
 approval is the part that carries the weight.
 
-### Where The Tests Come From
+## Where The Tests Come From
 
 Intent-driven development hands the agent both the test writing and the implementation. The person communicates the deep intent of what
 they hope to accomplish. The skill of translating those intents and those plans into tests is left
@@ -143,7 +143,7 @@ There is still a great deal of skill in this. Most of a software job has always 
 thinking, and friction is the part that gets handed off. The thinking is still yours. You are the
 one who decides what a requirement actually means.
 
-### Start With Programmatic Enforcement
+## Start With Programmatic Enforcement
 
 You will not get this working in one pass. What the diagram shows is tidier than what the first few
 attempts feel like, and you build it up over time. Start with the basics: programmatic enforcement.
@@ -169,7 +169,7 @@ codebase is the expensive way to get it. If you have the opportunity to start a 
 otherwise, where type safety is the priority from the beginning, take it. ReScript is one such
 alternative, and it is what I wrote [The Office Lines](https://theofficelines.com) in.
 
-### Onboarding Your Agent
+## Onboarding Your Agent
 
 When you check the agent's output against your intent, you will catch conventions it ignored. If
 those conventions cannot be enforced programmatically, that is where skills and rules come in. This
@@ -192,7 +192,7 @@ level, and steering it away from that is your responsibility.
 
 As you add skills and rules, the agent needs less from you each time.
 
-### The Cascade
+## The Cascade
 
 So how do you take responsibility for AI-generated code? Through a cascade.
 
@@ -209,7 +209,7 @@ left over, unnamed by the intent and beyond what types can express, is the resid
 It is a great deal smaller than what you started with. This is how you take responsibility for
 AI-written code.
 
-### Appendix: The Skill File
+## Appendix: The Skill File
 
 Since intent-driven development is itself a skill, here is what that file looks like. This is
 abridged from the one in this site's repository; the parts I have cut are specific to this project.

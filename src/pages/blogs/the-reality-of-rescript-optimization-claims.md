@@ -29,7 +29,7 @@ As someone committed to **Next-Gen Web Development**, I believe in evidence-base
 Marketing claims need to be backed by measurable results. So I decided to put ReScript's
 optimization promises to the test with real benchmarks.
 
-### The Setup
+## The Setup
 
 Borrowing from [JavaScript performance is weird... Write scientifically faster code with
 benchmarking](https://www.youtube.com/watch?v=_pWA4rbzvIg) and [this blog
@@ -37,7 +37,7 @@ post](https://richardartoul.github.io/jekyll/update/2015/04/26/hidden-classes.ht
 would benchmark performance on array iteration and V8 optimizations on ReScript output to see if the
 performance was any different from handwritten JavaScript.
 
-### Test 1: Array Iteration Performance
+## Test 1: Array Iteration Performance
 
 My first test focused on one of the most common performance bottlenecks in JavaScript: array
 iteration. If ReScript truly generates "optimization-friendly" code, surely it would choose the
@@ -173,7 +173,7 @@ The documentation mentions specific V8 optimization techniques:
 This seemed more promising. Perhaps ReScript generates JavaScript that better leverages V8's
 internal optimization strategies.
 
-### Test 2: V8 Engine Optimizations
+## Test 2: V8 Engine Optimizations
 
 V8's optimization engine is incredibly sophisticated, but it relies on predictable code patterns.
 The most critical optimizations involve:
@@ -370,7 +370,7 @@ export { createPoints, addPropsFixed, addPropsRandom, hotAccess };
 The generated code is essentially identical to handwritten JavaScript. ReScript isn't reordering
 property assignments or converting to more optimization-friendly patterns.
 
-### The Reality Behind the Claims
+## The Reality Behind the Claims
 
 After seeing these results, I revisited the ReScript documentation more carefully. Buried deeper in
 the introduction, there's a more honest explanation:
@@ -385,14 +385,14 @@ the introduction, there's a more honest explanation:
 code—it's about the type system encouraging patterns that happen to work well with JavaScript
 engines.
 
-### What ReScript Actually Provides
+## What ReScript Actually Provides
 
 Let me be clear: **ReScript isn't generating magically optimized JavaScript.** The performance
 benefits, when they exist, come from ReScript's type system nudging you toward predictable,
 monomorphic code patterns that V8 optimizes well. When you're forced to be explicit about types,
 you're less likely to write the kind of shape-shifting code that breaks V8's assumptions.
 
-### The Next-Gen Web Development Perspective
+## The Next-Gen Web Development Perspective
 
 As advocates for **Next-Gen Web Development**, we need to be honest about our tools' capabilities.
 ReScript offers significant benefits:
@@ -410,7 +410,7 @@ JavaScript performance principles.** You still need to:
 - Profile and benchmark your critical paths
 - Make conscious performance trade-offs
 
-### The Verdict
+## The Verdict
 
 ReScript's optimization claims are **technically true but misleading**. The type system does
 encourage some patterns that work well with JavaScript engines, but it's not doing the performance

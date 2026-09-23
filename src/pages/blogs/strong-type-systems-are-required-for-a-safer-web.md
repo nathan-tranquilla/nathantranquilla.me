@@ -19,7 +19,7 @@ TypeScript's popularity proves there's massive demand for type safety in web dev
 TypeScript is a compromise—it fills a gap that continues to grow as web applications become
 increasingly complex, and that gap can be called "safety".
 
-### TypeScript's Limitations
+## TypeScript's Limitations
 
 Despite its benefits, TypeScript inherits JavaScript's fundamental flaws and introduces compromises
 that leave critical safety gaps:
@@ -49,7 +49,7 @@ the very crashes that type systems should prevent.
 These aren't edge cases—they're fundamental limitations that make TypeScript unsuitable for truly
 reliable applications. The promise of type safety remains incomplete.
 
-### What Strong Type Systems Provide
+## What Strong Type Systems Provide
 
 The limitations above aren't inevitable—they're artifacts of TypeScript's compromise approach. At
 the core of Next-Gen Web Dev are languages with truly strong type systems that eliminate these
@@ -75,7 +75,7 @@ A Next-Gen Web language will have:
 
 - **Safe Array Access**: Bounds checking to prevent crashes.
 
-### Beyond Type Systems
+## Beyond Type Systems
 
 While strong type systems are foundational to safer web development, they're only one component of
 the **Next-Gen Web Dev** equation. A truly viable language for modern web development must excel

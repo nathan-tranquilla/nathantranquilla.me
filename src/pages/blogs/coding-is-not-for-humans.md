@@ -10,7 +10,7 @@ tags: ["AI","Coding"]
 Coding is no longer for humans. At my day job, AI agents write the majority of code. In my personal projects, I no longer write code at all. If coding belongs to AI now, do the human-centric battles around code still matter: clean code patterns or dynamic vs static type systems? What is the role of the human?
 
 
-### No One Cares About Clean Code (Anymore)
+## No One Cares About Clean Code (Anymore)
 
 Clean code is a pattern of writing code that makes it easy for other humans to reason about, facilitating human collaboration across projects and time. A great example of a clean code practice is the `early return` in which exit conditions are placed early in the code block. 
 
@@ -55,7 +55,7 @@ The first is difficult for humans to parse because it requires a human to cognit
 
 But all this no longer matters because AI reads and writes its own code now, and it's generally good at writing code that it can read again with ease. We're still stewards of code, but the patterns we curate are for AI agents (more on this later).
 
-### Ergonomics Take A Backseat
+## Ergonomics Take A Backseat
 
 Given that coding is now AI-driven, does the battle over dynamic vs statically typed languages matter? This battle has been about human preferences over the art of coding. Dynamic languages let you move faster, but often come with less certainty on the operation of types (product ships quicker but has preventable bugs). Static typing imposes more rigidity at development time, which adds a burden to developers, but type operations are guaranteed (ships slower, but fewer bugs). 
 
@@ -97,12 +97,12 @@ There is no escape hatch. The compiler returns an `option<user>`, and you must h
 
 This is the kind of type system we should be picking for AI. Sound types act as a feedback loop; when AI generates incorrect code, the compiler rejects it before it ships. Without that feedback loop, bugs pass silently into production.
 
-### What is the role of the developer?
+## What is the role of the developer?
 
 The proficiency of AI agents at writing code has led to a shift that has many developers questioning their role. What used to occupy a lot of the developer's time (writing code) now takes up much less time. I recently consulted with a non-engineer about their vibe-coded project. It was amazing how quickly an app can be templated. But among the many problems I saw, it was clear that a vibe coder can template an app fast, but they can't establish the patterns that compound. That's the developer's job now.
 
 AI is great at extending whatever patterns it finds. This can result in compounding gains, or compounding pains. With great patterns established, AI can plan your next feature by examining existing patterns and extending them. But it also means that if the codebase has poor patterns, it is up to the developer to understand this and steer AI down a different path to establish better patterns. 
 
-### Conclusion
+## Conclusion
 
 Coding is no longer for humans. Don't worry about clean code, worry about directing AI towards better patterns. Don't use dynamic languages, your preferences in this area don't matter any longer. Software languages are for AI, and AI doesn't care, so choose type certainty.

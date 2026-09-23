@@ -20,7 +20,7 @@ I maintain a simple [quote of the day API](https://theofficelines.com/api/) for 
   <figcaption>Today's quote of the day, served from a static JSON file with no backend</figcaption>
 </figure>
 
-### Qualifying The Pool
+## Qualifying The Pool
 
 There are over 60,000 lines from The Office (US). Most of them are uninteresting and not shareable. I had to find a way of classifying each line of The Office by a set of topics. Lines that are funny, for example, would get the topic "funny". This task is impossible for a human to do in a reasonable time frame, and a keyword search of all the lines is a naive approach. I needed a little judgement as part of my workflow, and I felt AI was up to the task.
 
@@ -63,7 +63,7 @@ Most lines were not classifiable at all and were discarded. Lines with a confide
 
 The results were very good. I'm currently using them to generate a content schedule for [theofficelines.com](https://theofficelines.com), and am satisfied with the quality as an actual user of the site.
 
-### Correlating The Lines With Scenes On YouTube
+## Correlating The Lines With Scenes On YouTube
 
 The second challenge to solve was correlating lines to scenes on the official YouTube channel. Having solved the previous problem with AI, I saw immediately how this problem was similar. Here was my thought process:
 
@@ -117,7 +117,7 @@ Be STRICT with confidence scoring:
 
 I'm currently rate limited by the YouTube API at about 100 correlations per day, which costs about $0.18 in token usage. At this rate, I estimate it will take about 5 months and $27–$36 to correlate all 15-20k lines of interest. The correlation process prioritizes quotes with interactions first, such as likes and shares. If you'd like to see a video correlated with your favorite quote, just go over to [theofficelines.com](https://theofficelines.com) and like or share your favorite quotes; they'll be correlated sooner!
 
-### Why It's Free To Use
+## Why It's Free To Use
 The API is free because it's just a static JSON file.
 
 <figure>
@@ -134,7 +134,7 @@ Given that these files are static, and hosted on a CDN, I can provide it for fre
 
 **Note**: _If you need a SFW-only widget, be sure to use the `qotd-sfw.json` endpoint._
 
-### Cycling the API Once A Day
+## Cycling the API Once A Day
 [theofficelines.com](https://theofficelines.com) is still under construction, going through multiple builds a day. I can't simply cycle the API on each build; the selection had to be deterministic, based on the date. This is where AI suggested I use a `djb2` hash-based approach. Here is the relevant code.
 
 <figure>
@@ -159,5 +159,5 @@ let selectIndex = (dateStr: string, poolSize: int): int =>
 <figcaption>Deterministic daily selection in ReScript — same date always picks the same quote</figcaption>
 </figure>
 
-### Conclusion
+## Conclusion
 Even a simple widget can hide a lot of complexity. Two AI-powered pipelines came together to provide an experience for The Office fans that is not currently available anywhere else, at least that I am aware of. Hosting the data on a CDN makes it free and accessible to all, while the embed widget makes it simple to add to your site. If you would like to either embed the widget in your site, or access the API to build your own widget, you can find the details [here](https://theofficelines.com/api/). I've also created a WordPress plugin for this, though it is currently under review.

@@ -14,7 +14,7 @@ The goal of _**Next-Gen Web Dev**_ is to make web apps more reliable and robust,
 safer for developers, and the experience of the web more enjoyable. Here are 5 problematic areas in
 TypeScript's type system that are fixed in ReScript.
 
-### Unsafe Array Access
+## Unsafe Array Access
 
 In TypeScript, you can unsafely access array elements and receive `undefined`, even with strict
 settings enabled. This happens because TypeScript's goal is to be a _static_ overlay on JavaScript
@@ -52,7 +52,7 @@ let tenthItem = myArray->Array.get(10) // None
 No matter which way you choose, you are always protected with the `option` type, which forces the
 developer to code all cases.
 
-### Null Safety
+## Null Safety
 
 TypeScript improves upon JavaScript's lack of null safety; you must acknowledge a type is nullable
 through a typed union. For example, when accessing the DOM, the element might be `null`.
@@ -74,7 +74,7 @@ switch getById("nonexistent") {
 }
 ```
 
-### Implicit Conversion
+## Implicit Conversion
 
 TypeScript makes implicit conversion harder to do, but it's still possible to stumble into it. Below
 is an example where unexpected type coercion can cause runtime errors:
@@ -123,7 +123,7 @@ let a: a = {
 let name = nameFromB(a :> b)
 ```
 
-### Duck Typing
+## Duck Typing
 
 In TypeScript, there is no nominal distinction between types. This means that if objects have the
 same shape, they are treated as the same type. This can lead to semantic errors. Here is an example
@@ -151,7 +151,7 @@ structural shape. This means you can create distinct types that prevent semantic
 they have identical structures. The compiler enforces these distinctions, catching errors that would
 slip through TypeScript's structural typing system.
 
-### Exhaustiveness Checking
+## Exhaustiveness Checking
 
 In TypeScript, you can achieve exhaustiveness checking if you have the right settings enabled, and
 if you code the switch statement correctly. It involves using the `never` keyword. Here is a valid
@@ -197,7 +197,7 @@ let s = Square(4.0)
 Js.log(area(s))  // Outputs: 16.0
 ```
 
-### The Next Generation Web Development Choice
+## The Next Generation Web Development Choice
 
 These five examples highlight a fundamental difference in philosophy. TypeScript aims to add static
 typing to JavaScript while maintaining compatibility and familiar syntax. ReScript, on the other

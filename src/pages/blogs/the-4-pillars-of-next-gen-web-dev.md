@@ -24,7 +24,7 @@ JavaScript seems like it is here to stay. But now there are many languages with 
 that compile to JavaScript or WebAssembly, challenging TypeScript's dominance. I believe the next
 generation of web development languages will be selected based on these four criteria.
 
-### Strong Type System
+## Strong Type System
 
 People choose languages for many reasons that sometimes add nothing of measurable benefit. Sometimes
 it is based on subjective preferences like "pretty syntax" or the use of semicolons or spacing. It
@@ -47,7 +47,7 @@ So we should know how to identify a strong type system. Here's what to look for:
 
 While a strong type system is important, it won't be adopted unless it feels familiar.
 
-### Language Lineage
+## Language Lineage
 
 Next-generation web development languages must fix the problems with current languages while also
 feeling familiar. This familiarity is relative to your team and development ecosystem. For example,
@@ -66,7 +66,7 @@ Next-generation web development languages will have a strong type system that fi
 their parent language while also feeling familiar. However, they're not complete without being ready
 for the web.
 
-### Framework Readiness
+## Framework Readiness
 
 The web is a complex environment, and without a framework to guide development, you're essentially
 back to the days of jQuery, where spaghetti code abounded and each web application, if broken, was
@@ -79,7 +79,7 @@ A next-generation web development language will either have a battle-tested fram
 bindings to existing frameworks. However, the transition to next-generation web development should
 be gradual.
 
-### Incremental Adoption
+## Incremental Adoption
 
 The path towards next-generation web development should be evolutionary. This approach helps manage
 risk, learn from mistakes, and measure success. Frameworks like Elm have provided insights to the
@@ -91,7 +91,7 @@ as an ideal to aspire to. On the other hand, languages like ReScript and PureScr
 JavaScript, which makes incremental adoption possible and enables the evolution towards
 next-generation web development.
 
-### Final Thoughts
+## Final Thoughts
 
 So where are the trends pointing? JavaScript isn't going away—yet. I foresee that JavaScript will be
 reduced to compiler output, while other languages battle for dominance with WebAssembly as their
