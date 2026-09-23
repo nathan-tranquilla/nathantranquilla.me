@@ -1,9 +1,8 @@
 import { test, expect } from "@playwright/test";
+import { postPaths } from "../helpers/posts";
 
 test("post headings descend without skipping a level", async ({ request }) => {
-  const xml = await (await request.get("/sitemap-0.xml")).text();
-  const posts = [...xml.matchAll(/<loc>https:\/\/nathantranquilla\.me(\/blogs\/[a-z0-9-]+\/)<\/loc>/g)]
-    .map((m) => m[1]);
+  const posts = await postPaths(request);
   expect(posts.length).toBeGreaterThan(10);
 
   const bad: string[] = [];

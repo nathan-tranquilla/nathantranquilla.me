@@ -47,6 +47,14 @@ jobs:
       with:
         command: pnpm res:build
 
+    # The sitemap is a build artifact, so the suite needs dist/ to assert on it.
+    - name: Build site
+      uses: flox/activate-action@v1
+      env:
+        FLOX_DISABLE_METRICS: true
+      with:
+        command: pnpm astro build
+
     - name: Run Playwright tests
       uses: flox/activate-action@v1
       env:

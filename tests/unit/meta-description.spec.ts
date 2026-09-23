@@ -1,13 +1,11 @@
 import { test, expect } from "@playwright/test";
+import { postPaths } from "../helpers/posts";
 
 // A description assembled from title + tags + author tells a searcher nothing.
 // It is also og:description and twitter:description, so it is what every
 // shared link shows.
 test("every blog post writes its own meta description", async ({ request }) => {
-  const xml = await (await request.get("/sitemap-0.xml")).text();
-  const posts = [...xml.matchAll(/<loc>https:\/\/nathantranquilla\.me(\/blogs\/[^<]+)<\/loc>/g)]
-    .map((m) => m[1])
-    .filter((p) => p !== "/blogs/");
+  const posts = await postPaths(request);
   expect(posts.length).toBeGreaterThan(10);
 
   const bad: string[] = [];

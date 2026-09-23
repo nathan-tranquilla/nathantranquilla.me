@@ -1,4 +1,5 @@
 import { test, expect } from "@playwright/test";
+import { postPaths } from "../helpers/posts";
 
 test.describe("RSS feed", () => {
   test("is served as XML at /rss.xml", async ({ request }) => {
@@ -11,10 +12,7 @@ test.describe("RSS feed", () => {
     const xml = await (await request.get("/rss.xml")).text();
     const items = [...xml.matchAll(/<item>/g)].length;
 
-    const sitemap = await (await request.get("/sitemap-0.xml")).text();
-    const posts = [...sitemap.matchAll(/<loc>[^<]*\/blogs\/[^<]+<\/loc>/g)].filter(
-      (m) => !m[0].endsWith("/blogs/</loc>")
-    ).length;
+    const posts = (await postPaths(request)).length;
 
     expect(posts).toBeGreaterThan(10);
     expect(items).toBe(posts);

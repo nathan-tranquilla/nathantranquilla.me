@@ -1,13 +1,19 @@
 import { test, expect } from "@playwright/test";
+import { postPaths } from "../helpers/posts";
 
 // The domain is the one string that appears in every search result. It was
 // misspelled "nathantraquilla.me" on all blog posts for months, so this walks
-// every page from the sitemap rather than sampling.
+// every page rather than sampling.
 test("every page titles with the domain spelled correctly", async ({ request }) => {
-  const xml = await (await request.get("/sitemap-0.xml")).text();
-  const paths = [...xml.matchAll(/<loc>https:\/\/nathantranquilla\.me(\/[^<]*)<\/loc>/g)].map(
-    (m) => m[1]
-  );
+  const paths = [
+    "/",
+    "/about/",
+    "/blogs/",
+    "/portfolio/",
+    "/consultation/",
+    "/guides/",
+    ...(await postPaths(request)),
+  ];
   expect(paths.length).toBeGreaterThan(15);
 
   const wrong: string[] = [];
