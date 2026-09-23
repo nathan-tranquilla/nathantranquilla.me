@@ -21,3 +21,10 @@ test("every page titles with the domain spelled correctly", async ({ request }) 
   }
   expect(wrong).toEqual([]);
 });
+
+test("the homepage title says what the site is about", async ({ request }) => {
+  const html = await (await request.get("/")).text();
+  const title = html.match(/<title>([^<]*)<\/title>/)?.[1] ?? "";
+  expect(title).not.toMatch(/theology|books/i);
+  expect(title).toMatch(/type safety/i);
+});
