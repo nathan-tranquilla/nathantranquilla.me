@@ -41,12 +41,12 @@ const navLinks = [
     }
   </label>
   <ul
-    class="absolute top-[calc(var(--nav-height)-10px)] right-0 left-0 z-10 hidden h-fit w-full flex-col items-center justify-around bg-[var(--bg-primary)] shadow-md peer-checked:flex"
+    class="absolute top-[var(--nav-height)] right-0 left-0 z-10 hidden h-fit w-full flex-col border-b border-[var(--border-primary)] [&>li+li]:border-t [&>li+li]:border-[var(--border-primary)] bg-[var(--bg-primary)] peer-checked:flex"
   >
     {
       navLinks.map((link) => (
-        <li class="flex">
-          <a class={linkStyles} href={link.href}>
+        <li class="flex w-full">
+          <a class={`${linkStyles} flex w-full items-center justify-center`} href={link.href}>
             {link.label}
           </a>
         </li>
