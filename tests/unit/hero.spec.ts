@@ -13,7 +13,10 @@ test.describe("Homepage hero", () => {
     await page.goto("/");
 
     // string matching normalises whitespace; an anchored regex would not
-    const tagline = page.getByText("Sometimes I write.", { exact: true });
+    const tagline = page.getByText(
+      "Type safety and AI in software development, and the seam where they meet.",
+      { exact: true }
+    );
     await expect(tagline).toBeVisible();
     // it sits under a centred headline, so it has to be centred too
     await expect(tagline).toHaveCSS("text-align", "center");
