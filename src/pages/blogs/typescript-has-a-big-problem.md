@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Blog.astro
 title: TypeScript Has A Big Problem
+description: "AI collapsed the cost of writing code, so the bottleneck moved to compile times and how reliably your types prevent production bugs. TypeScript's design makes both harder."
 author: Nathan Tranquilla
 date: "2026/02/15"
 tags: ["Next-Gen Web Dev", "AI"]

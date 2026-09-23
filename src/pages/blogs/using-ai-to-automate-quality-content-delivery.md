@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Blog.astro
 title: How I Classified 60,000+ Office Quotes With AI
+description: "Classifying 60,000 lines of Office dialogue by topic, in context, using Claude. How the prompt was engineered, how confidence scoring worked, and what it cost."
 author: Nathan Tranquilla
 date: "2026/02/16"
 tags: ["AI","Prompt Engineering","Automation"]

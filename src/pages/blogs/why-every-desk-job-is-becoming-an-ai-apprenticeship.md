@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Blog.astro
 title: Why Every Desk Job Is Becoming An AI Apprenticeship
+description: "I no longer write code. Reading the agent's plan now takes as long as the work itself, and that inversion is arriving for every desk job, not just software."
 author: Nathan Tranquilla
 date: "2026/03/03"
 tags: ["AI","Future Of Work", "Knowledge Work", "Education"]

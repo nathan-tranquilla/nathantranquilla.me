@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Blog.astro
 title: "When Two AI Pipelines Meet: Turning Curated Data Into a Daily API"
+description: "A free quote of the day API with no human curation: how quotes were qualified, correlated to YouTube scenes, cycled daily, and kept safe for work by two AI pipelines."
 author: Nathan Tranquilla
 date: "2026/02/23"
 tags: ["AI","Prompt Engineering", "Automation", "API"]

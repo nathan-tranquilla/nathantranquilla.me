@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Blog.astro
 title: The Reality Of ReScript Optimization Claims
+description: "ReScript claims its compiler guides you toward performant code by default. I benchmarked that claim against equivalent JavaScript instead of taking it on faith."
 author: Nathan Tranquilla
 date: "2025/10/01"
 tags: ["ReScript"]

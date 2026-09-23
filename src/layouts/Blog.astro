@@ -8,7 +8,7 @@ const { frontmatter } = Astro.props;
 
 const i = getPostIndex(frontmatter.title);
 const tagString = frontmatter.tags?.length ? ` — ${frontmatter.tags.join(", ")}` : "";
-const blogDescription = frontmatter.description || `${frontmatter.title}${tagString} — by ${frontmatter.author}`;
+const blogDescription = frontmatter.description || `${frontmatter.title}. Topics: ${frontmatter.tags.join(", ")}.`;
 import faviconLogo from "../assets/favicon-nt-512.png";
 
 const websiteUrl = "https://nathantranquilla.me";

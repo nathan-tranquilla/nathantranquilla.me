@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Blog.astro
 title: "I’m A Web Developer, Here’s Why I DON’T Use TypeScript"
+description: "One in three professional developers still resists TypeScript after thirteen years. Their grievances are real: as casts, structural holes, and build times. Here is what I use instead."
 author: Nathan Tranquilla
 date: "2026/02/19"
 updated: "2026/03/06"
