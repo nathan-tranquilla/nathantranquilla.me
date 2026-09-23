@@ -32,7 +32,7 @@ export interface Props {
   };
 }
 
-const defaultDescription = "Nathan Tranquilla writes about software, theology, and the books he reads.";
+const defaultDescription = "Nathan Tranquilla writes about type safety and AI in software development.";
 
 const { title, classes, nonav = false, description = defaultDescription, ogImage, ogType = "website", breadcrumbTitle, articleMeta } = Astro.props;
 
@@ -150,7 +150,7 @@ const breadcrumbSchema = {
     <link rel="canonical" href={canonicalUrl} />
     <link rel="author" href="https://nathantranquilla.me/about" />
 
-    <meta name="keywords" content="Nathan Tranquilla, essays, theology, book reviews, reading, software development, web development, ReScript, TypeScript, type systems, functional programming, AI, software engineering" />
+    <meta name="keywords" content="Nathan Tranquilla, software development, web development, type safety, ReScript, TypeScript, type systems, functional programming, AI, AI agents, software engineering" />
 
     <script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumbSchema)} />
   </head>

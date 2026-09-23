@@ -8,7 +8,7 @@ test.describe("SEO - Homepage", () => {
     // Basic meta tags
     await expect(page).toHaveTitle(/nathantranquilla\.me/);
     const description = await page.locator('meta[name="description"]');
-    await expect(description).toHaveAttribute("content", /software, theology, and the books/i);
+    await expect(description).toHaveAttribute("content", /type safety and AI in software development/i);
 
     const author = await page.locator('meta[name="author"]');
     await expect(author).toHaveAttribute("content", "Nathan Tranquilla");
@@ -16,7 +16,7 @@ test.describe("SEO - Homepage", () => {
     const keywords = await page.locator('meta[name="keywords"]');
     await expect(keywords).toHaveAttribute(
       "content",
-      /theology.*book reviews/i
+      /type safety.*AI/i
     );
 
     const robots = await page.locator('meta[name="robots"]');
@@ -222,7 +222,7 @@ test.describe("SEO - About Page", () => {
     const description = await page.locator('meta[name="description"]');
     await expect(description).toHaveAttribute(
       "content",
-      /software, theology, and the books/i
+      /type safety and AI in software development/i
     );
   });
 
