@@ -4,11 +4,19 @@ import Container from "../components/Container.astro";
 import { getPostIndex } from "../utils/posts";
 import ViewCount from "../components/ViewCount.astro";
 
-const { frontmatter } = Astro.props;
+const { frontmatter, rawContent } = Astro.props;
 
 const i = getPostIndex(frontmatter.title);
-const tagString = frontmatter.tags?.length ? ` — ${frontmatter.tags.join(", ")}` : "";
 const blogDescription = frontmatter.description || `${frontmatter.title}. Topics: ${frontmatter.tags.join(", ")}.`;
+
+// Prose words only: code blocks, HTML and markdown syntax are not writing, and
+// counting them would overstate the article to anything reading the schema.
+const wordCount = (rawContent?.() ?? "")
+  .replace(/```[\s\S]*?```/g, " ")
+  .replace(/<[^>]+>/g, " ")
+  .replace(/[#>*_`\[\]()|-]/g, " ")
+  .split(/\s+/)
+  .filter((w: string) => /[a-zA-Z0-9]/.test(w)).length;
 import faviconLogo from "../assets/favicon-nt-512.png";
 
 const websiteUrl = "https://nathantranquilla.me";
@@ -230,6 +238,9 @@ try {
       "dateModified": (frontmatter.updated || frontmatter.date).replace(/\//g, "-"),
       "url": articleUrl,
       "keywords": frontmatter.tags.join(", "),
+      "articleSection": frontmatter.tags?.[0],
+      "inLanguage": "en-US",
+      "wordCount": wordCount,
       "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": articleUrl
