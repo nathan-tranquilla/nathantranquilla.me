@@ -68,18 +68,27 @@ const breadcrumbSchema = {
 
 <html lang="en">
   <head>
+    {/*
+      isProd is decided when the HTML is generated, not when it is served, so a
+      production build opened from localhost (astro preview, a CI smoke run)
+      used to report real page views into the live property. The tag is loaded
+      at runtime and only on the production hostname.
+    */}
     {isProd && (
-      <Fragment>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-MCZFYVP6CG"></script>
-        <script is:inline>
+      <script is:inline>
+        (function () {
+          if (window.location.hostname !== "nathantranquilla.me") return;
+          var id = "G-MCZFYVP6CG";
+          var s = document.createElement("script");
+          s.async = true;
+          s.src = "https://www.googletagmanager.com/gtag/js?id=" + id;
+          document.head.appendChild(s);
           window.dataLayer = window.dataLayer || [];
-          function gtag() {
-            dataLayer.push(arguments);
-          }
-          gtag("js", new Date());
-          gtag("config", "G-MCZFYVP6CG");
-        </script>
-      </Fragment>
+          window.gtag = function () { window.dataLayer.push(arguments); };
+          window.gtag("js", new Date());
+          window.gtag("config", id);
+        })();
+      </script>
     )}
     <meta charset="UTF-8" />
     <meta
