@@ -101,3 +101,36 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  # Analytics is gated on the production hostname, so only the live site can
+  # prove it still fires. The local suite cannot, by construction.
+  smoke:
+    runs-on: ubuntu-latest
+    needs: deploy
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Install Flox
+      uses: flox/install-flox-action@v2
+
+    - name: Install dependencies
+      uses: flox/activate-action@v1
+      env:
+        FLOX_DISABLE_METRICS: true
+      with:
+        command: pnpm install
+
+    - name: Install Playwright browsers
+      uses: flox/activate-action@v1
+      env:
+        FLOX_DISABLE_METRICS: true
+      with:
+        command: npx playwright install chromium
+
+    - name: Smoke test the deployed site
+      uses: flox/activate-action@v1
+      env:
+        FLOX_DISABLE_METRICS: true
+      with:
+        command: pnpm test:smoke

@@ -10,7 +10,8 @@
     "build": "pnpm res:build && pnpm fetch:analytics && astro build",
     "dev": "astro dev --host",
     "test": "playwright test --reporter=list",
-    "test:ui": "playwright test --ui"
+    "test:ui": "playwright test --ui",
+    "test:smoke": "playwright test --config playwright.smoke.config.ts"
   },
   "dependencies": {
     "@astrojs/react": "^4.4.2",
