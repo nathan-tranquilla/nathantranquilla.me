@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Blog.astro
 title: "AI-Powered Video Curation: From Naive Search To Confident Matches"
+hash: "ji59ze"
 description: "Naive YouTube search returned poor clips for The Office Lines, so I put Claude on both ends: one prompt writes the query, another judges the results and scores its confidence."
 author: Nathan Tranquilla
 date: "2026/02/18"

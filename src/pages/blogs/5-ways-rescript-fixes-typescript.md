@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Blog.astro
 title: 5 Ways ReScript Fixes TypeScript
+hash: "5ebfkf"
 description: "Five concrete gaps in TypeScript's type system, and how ReScript closes each one. Sound types, no any, exhaustive matching, and what that buys you day to day."
 author: Nathan Tranquilla
 date: "2025/09/24"

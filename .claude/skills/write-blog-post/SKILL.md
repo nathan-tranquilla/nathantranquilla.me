@@ -78,12 +78,21 @@ specs check that posts link to other posts.
 ---
 layout: ../../layouts/Blog.astro
 title: <Title Case, matching the filename slug>
+hash: "<6 random lowercase letters or digits>"
 author: Nathan Tranquilla
 date: "YYYY/MM/DD"
 tags: ["Tag"]
 draft: true
 ---
 ```
+
+**Generate a fresh `hash` for every new post and never change it afterwards.** It is
+the post's permanent share ID: GA4 share events key on it, and short links will be
+built from it. Generate it randomly (for example
+`python3 -c "import secrets,string;print(''.join(secrets.choice(string.ascii_lowercase+string.digits) for _ in range(6)))"`),
+not from the title or slug, and check no existing post uses it:
+`grep -r '^hash: "<value>"' src/pages/blogs drafts`. The `post-hash` spec fails the
+suite if a post is missing one or shares one.
 
 **`draft: true` does not keep a post private.** The file is still a route; Astro
 builds the page and the sitemap lists it. An unfinished post must stay untracked, out

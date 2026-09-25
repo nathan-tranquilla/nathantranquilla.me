@@ -1,3 +1,5 @@
+import fs from "node:fs";
+import path from "node:path";
 import type { APIRequestContext } from "@playwright/test";
 
 /**
@@ -13,4 +15,13 @@ export async function postPaths(request: APIRequestContext): Promise<string[]> {
   return [...new Set(hrefs.map((h) => h.replace(/href="|"/g, "")))].map((p) =>
     p.endsWith("/") ? p : `${p}/`
   );
+}
+
+export const POSTS_DIR = "src/pages/blogs";
+
+/** A post's frontmatter `hash`, read from its source file. */
+export function postHash(file: string): string | undefined {
+  const source = fs.readFileSync(path.join(POSTS_DIR, file), "utf8");
+  const frontmatter = source.match(/^---\n([\s\S]*?)\n---/)?.[1] ?? "";
+  return frontmatter.match(/^hash:\s*"?([^"\n]*)"?\s*$/m)?.[1];
 }

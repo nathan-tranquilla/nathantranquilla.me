@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Blog.astro
 title: Why ReScript is Next-Gen
+hash: "gk2fht"
 description: "Languages evolve by fixing the previous generation's problems while staying familiar. TypeScript was one such step. ReScript is the next, and it fixes what TypeScript could not."
 author: Nathan Tranquilla
 date: "2025/10/13"

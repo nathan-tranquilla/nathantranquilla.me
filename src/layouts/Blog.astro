@@ -3,6 +3,7 @@ import Main from "./Main.astro";
 import Container from "../components/Container.astro";
 import { getPostIndex } from "../utils/posts";
 import ViewCount from "../components/ViewCount.astro";
+import Button from "../components/Button.astro";
 
 const { frontmatter, rawContent } = Astro.props;
 
@@ -255,17 +256,34 @@ try {
           class="text-wrap mb-3 text-3xl md:text-4xl font-serif font-semibold leading-tight text-[var(--text-primary)]"
           >{frontmatter.title}</h1
         >
-        <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
-          <span class="text-base text-[var(--text-muted)]">
-            {frontmatter.author} · {frontmatter.date}{frontmatter.updated && ` · Updated ${frontmatter.updated}`}
-          </span>
-          {frontmatter.tags.map((tag: string) => (
-            <span class="border border-[var(--border-primary)] bg-[var(--bg-secondary)] px-2.5 py-0.5 font-mono text-xs text-[var(--text-tertiary)]">
-              {tag}
-            </span>
-          ))}
+        <p class="mb-3 text-base text-[var(--text-muted)]">
+          {frontmatter.author} · {frontmatter.date}{frontmatter.updated && ` · Updated ${frontmatter.updated}`}
+        </p>
+        <div class="flex items-center justify-between gap-3">
+          <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+            {frontmatter.tags.map((tag: string) => (
+              <span class="border border-[var(--border-primary)] bg-[var(--bg-secondary)] px-2.5 py-0.5 font-mono text-xs text-[var(--text-tertiary)]">
+                {tag}
+              </span>
+            ))}
+          </div>
+          <Button
+            classes="shrink-0"
+            data-share
+            data-title={frontmatter.title}
+            data-url={articleUrl}
+            data-hash={frontmatter.hash}
+          >
+            Share ↗
+          </Button>
         </div>
       </header>
+      <div
+        role="status"
+        data-share-toast
+        class="pointer-events-none fixed bottom-6 left-1/2 z-50 -translate-x-1/2 bg-[var(--text-primary)] px-4 py-2 font-mono text-xs uppercase tracking-[0.07em] text-[var(--bg-primary)]"
+        hidden
+      ></div>
       <section class="blog-body">
         <slot />
       </section>
@@ -295,3 +313,42 @@ try {
     </article>
   </Container>
 </Main>
+
+<script>
+  // Native share on touch devices; desktop browsers also expose
+  // navigator.share, but there a copied link is what readers expect.
+  const button = document.querySelector<HTMLButtonElement>("[data-share]");
+  const toast = document.querySelector<HTMLElement>("[data-share-toast]");
+  let hideToast: ReturnType<typeof setTimeout> | undefined;
+
+  function showToast(message: string) {
+    if (!toast) return;
+    toast.textContent = message;
+    toast.hidden = false;
+    clearTimeout(hideToast);
+    hideToast = setTimeout(() => {
+      toast.hidden = true;
+      toast.textContent = "";
+    }, 2000);
+  }
+
+  button?.addEventListener("click", async () => {
+    const { title = "", url = location.href, hash } = button.dataset;
+    const native = "share" in navigator && matchMedia("(pointer: coarse)").matches;
+
+    // gtag exists only on the production hostname
+    (window as any).gtag?.("event", "share", {
+      method: native ? "native" : "clipboard",
+      content_type: "article",
+      item_id: hash,
+    });
+
+    if (native) {
+      // a cancelled share sheet rejects; there is nothing to tell the reader
+      await navigator.share({ title, url }).catch(() => {});
+    } else {
+      await navigator.clipboard.writeText(url);
+      showToast("Link copied");
+    }
+  });
+</script>

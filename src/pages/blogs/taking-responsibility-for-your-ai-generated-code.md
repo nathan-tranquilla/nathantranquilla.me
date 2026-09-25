@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Blog.astro
 title: Taking Responsibility for Your AI-Generated Code
+hash: "swto17"
 description: "You can own code you never read, if what you certify is the intent. Acceptance criteria you approve become the tests, and the agent picks the assertion but not what counts as correct."
 author: Nathan Tranquilla
 date: "2026/09/23"
