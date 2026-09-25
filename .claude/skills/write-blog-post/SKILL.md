@@ -87,12 +87,13 @@ draft: true
 ```
 
 **Generate a fresh `hash` for every new post and never change it afterwards.** It is
-the post's permanent share ID: GA4 share events key on it, and short links will be
-built from it. Generate it randomly (for example
+the post's permanent share ID: GA4 share events key on it, and it is the post's short
+link (`nathantranquilla.me/<hash>`), so changing it breaks every link already shared. Generate it randomly (for example
 `python3 -c "import secrets,string;print(''.join(secrets.choice(string.ascii_lowercase+string.digits) for _ in range(6)))"`),
 not from the title or slug, and check no existing post uses it:
 `grep -r '^hash: "<value>"' src/pages/blogs drafts`. The `post-hash` spec fails the
-suite if a post is missing one or shares one.
+suite if a post is missing one or shares one, and `short-links` fails it if the hash
+matches a top-level route (e.g. `guides`).
 
 **`draft: true` does not keep a post private.** The file is still a route; Astro
 builds the page and the sitemap lists it. An unfinished post must stay untracked, out

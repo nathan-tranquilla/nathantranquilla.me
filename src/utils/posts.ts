@@ -2,6 +2,7 @@ type Post = {
   url: string;
   frontmatter: {
     title: string;
+    hash: string;
     author: string;
     date: string; // yyyy-mm-dd
     tags: Array<string>;

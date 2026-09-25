@@ -1,0 +1,34 @@
+---
+// Short link for a post: /<hash> redirects to the post. GitHub Pages cannot
+// redirect on the server, so this is a static page. The UTM tags are how GA4
+// credits the visit to a share; this page loads no analytics of its own, so
+// the landing on the post is the only page view.
+import { getPosts } from "../utils/posts";
+
+export function getStaticPaths() {
+  return getPosts().map((post) => ({
+    params: { hash: post.frontmatter.hash },
+    props: { path: `${post.url}/` },
+  }));
+}
+
+const { hash } = Astro.params;
+const { path } = Astro.props;
+const target = `${path}?utm_source=share&utm_medium=short-link&utm_campaign=${hash}`;
+const canonical = new URL(path, "https://nathantranquilla.me").href;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex" />
+    <meta http-equiv="refresh" content={`0;url=${target}`} />
+    <link rel="canonical" href={canonical} />
+    <title>Redirecting…</title>
+    <script is:inline define:vars={{ target }}>location.replace(target);</script>
+  </head>
+  <body>
+    <a href={target}>Continue to the post</a>
+  </body>
+</html>

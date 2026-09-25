@@ -27,6 +27,17 @@ const postDates = Object.fromEntries(
     .filter(([, d]) => d)
 );
 
+// Short-link redirect pages (/<hash>/) are not content; keep them out of the
+// sitemap so crawlers index the posts they point to.
+const shortLinks = new Set(
+  fs
+    .readdirSync(POSTS_DIR)
+    .filter((f) => f.endsWith(".md"))
+    .map((f) => fs.readFileSync(path.join(POSTS_DIR, f), "utf8").match(/^hash:\s*"?([a-z0-9]+)"?/m)?.[1])
+    .filter(Boolean)
+    .map((hash) => `https://nathantranquilla.me/${hash}/`)
+);
+
 // https://astro.build/config
 export default defineConfig({
   vite: {
@@ -36,6 +47,7 @@ export default defineConfig({
   integrations: [
     react(),
     sitemap({
+      filter: (page) => !shortLinks.has(page),
       serialize(item) {
         const slug = item.url.match(/\/blogs\/([a-z0-9-]+)\/?$/)?.[1];
         const date = slug && postDates[slug];

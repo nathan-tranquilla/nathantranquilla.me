@@ -25,8 +25,8 @@ async function stub(page: Page, { share }: { share: boolean }) {
 const shareButton = (page: Page) =>
   page.locator("article > header").getByRole("button", { name: /Share/ });
 
-const canonical = (page: Page) =>
-  page.locator('link[rel="canonical"]').getAttribute("href");
+// Shares hand out the post's short link, not its full URL.
+const shortLink = `https://nathantranquilla.me/${postHash(FILE)}`;
 
 test.describe("desktop", () => {
   test.use({ hasTouch: false, permissions: ["clipboard-read", "clipboard-write"] });
@@ -76,13 +76,13 @@ test.describe("desktop", () => {
     await expect(shareButton(page)).toHaveAccessibleName("Share");
   });
 
-  test("copies the canonical URL even where navigator.share exists", async ({ page }) => {
+  test("copies the short link even where navigator.share exists", async ({ page }) => {
     await stub(page, { share: true });
     await page.goto(POST);
     await page.waitForLoadState("networkidle");
     await shareButton(page).click();
 
-    expect(await page.evaluate(() => navigator.clipboard.readText())).toBe(await canonical(page));
+    expect(await page.evaluate(() => navigator.clipboard.readText())).toBe(shortLink);
     expect(await page.evaluate(() => (window as any).__shared)).toEqual([]);
   });
 
@@ -134,14 +134,14 @@ test.describe("desktop", () => {
 test.describe("mobile", () => {
   test.use({ hasTouch: true, isMobile: true, viewport: { width: 375, height: 800 } });
 
-  test("opens the native share sheet with the title and canonical URL", async ({ page }) => {
+  test("opens the native share sheet with the title and short link", async ({ page }) => {
     await stub(page, { share: true });
     await page.goto(POST);
     await page.waitForLoadState("networkidle");
     await shareButton(page).click();
 
     expect(await page.evaluate(() => (window as any).__shared)).toEqual([
-      { title: TITLE, url: await canonical(page) },
+      { title: TITLE, url: shortLink },
     ]);
     await expect(page.getByRole("status").filter({ hasText: "Link copied" })).toHaveCount(0);
 
