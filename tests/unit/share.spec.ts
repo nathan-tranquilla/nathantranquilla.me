@@ -52,6 +52,30 @@ test.describe("desktop", () => {
     expect(await shareButton(page).evaluate(look)).toEqual(await workWithMe.evaluate(look));
   });
 
+  test("the arrow is as tall as the button's capitals and sits on the baseline", async ({ page }) => {
+    await page.goto(POST);
+    await page.evaluate(() => document.fonts.ready);
+    const m = await shareButton(page).evaluate((button) => {
+      const arrow = button.querySelector("svg");
+      if (!arrow) return null;
+      const ctx = document.createElement("canvas").getContext("2d")!;
+      ctx.font = getComputedStyle(button).font;
+      const cap = ctx.measureText("H");
+      // a zero-size inline box marks the text baseline
+      const probe = document.createElement("span");
+      probe.style.cssText = "display:inline-block;width:0;height:0";
+      button.append(probe);
+      const baseline = probe.getBoundingClientRect().bottom;
+      probe.remove();
+      const box = arrow.getBoundingClientRect();
+      return { cap: cap.actualBoundingBoxAscent, height: box.height, bottom: box.bottom, baseline };
+    });
+    expect(m, "Share has no SVG arrow").not.toBeNull();
+    expect(Math.abs(m!.height - m!.cap)).toBeLessThan(0.75);
+    expect(Math.abs(m!.bottom - m!.baseline)).toBeLessThan(0.75);
+    await expect(shareButton(page)).toHaveAccessibleName("Share");
+  });
+
   test("copies the canonical URL even where navigator.share exists", async ({ page }) => {
     await stub(page, { share: true });
     await page.goto(POST);
