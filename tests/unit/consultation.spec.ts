@@ -61,6 +61,9 @@ test.describe("Consultation Page", () => {
     });
   }
 
+  // Stands in for an end-to-end test. The field names asserted here were
+  // confirmed against Formspree by a real submission on 2026-09-25. If a
+  // field is renamed or added, submit the live form once to re-confirm.
   test("submitting posts every field without leaving the browser", async ({ page }) => {
     const posts: string[] = [];
     await page.route("**/consultation**", async (route) => {
