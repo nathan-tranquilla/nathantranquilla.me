@@ -61,6 +61,41 @@ test.describe("Consultation Page", () => {
     });
   }
 
+  test("submitting posts every field without leaving the browser", async ({ page }) => {
+    const posts: string[] = [];
+    await page.route("**/consultation**", async (route) => {
+      if (route.request().method() !== "POST") return route.continue();
+      posts.push(route.request().postData() ?? "");
+      await route.fulfill({ status: 200, body: "ok" });
+    });
+
+    const form = page.getByTestId("intake-form");
+    await form.getByRole("button", { name: "Submit" }).click();
+    expect(posts).toHaveLength(0);
+
+    await form.getByLabel(/Name/).fill("Jane Doe");
+    await form.getByLabel(/Email/).fill("jane@example.com");
+    await form.getByLabel(/What do you need help with/).fill("A site rebuild.");
+    await form.getByLabel(/Company or website/).fill("acme.com");
+    await form.getByLabel(/Type of work/).selectOption("AI");
+    await form.getByLabel(/Timeline/).fill("next month");
+    await form.getByLabel(/Budget/).fill("$5k");
+    await form.getByLabel(/How did you find me/).fill("your blog");
+    await form.getByRole("button", { name: "Submit" }).click();
+
+    await expect.poll(() => posts.length).toBe(1);
+    expect(Object.fromEntries(new URLSearchParams(posts[0]))).toEqual({
+      name: "Jane Doe",
+      email: "jane@example.com",
+      message: "A site rebuild.",
+      company: "acme.com",
+      work_type: "AI",
+      timeline: "next month",
+      budget: "$5k",
+      source: "your blog",
+    });
+  });
+
   test("form action is disabled in dev", async ({ page }) => {
     await expect(page.getByTestId("intake-form")).toHaveAttribute("action", "#");
   });
