@@ -9,23 +9,29 @@ import { test, expect } from "@playwright/test";
  * other test stays green. That nearly happened: the first version of the guard
  * emitted a block statement that parsed cleanly and did nothing.
  *
- * This records one real page view each deploy, which is the cost of knowing.
+ * The beacon is inspected and then aborted, so this records nothing in GA4.
+ * The workflow also runs on a daily cron, and a synthetic view per day on one
+ * post would quietly distort which article looks most read.
  */
-test("the deployed site reports a page view to the live property", async ({ page }) => {
+test("the deployed site sends a page view to the live property", async ({ page }) => {
   const tagScript: string[] = [];
   const hits: URL[] = [];
 
+  // Catch the hit, read it, and stop it before it reaches Google.
+  await page.route("**/g/collect*", (route) => {
+    hits.push(new URL(route.request().url()));
+    return route.abort();
+  });
+
   page.on("request", (r) => {
-    const url = r.url();
-    if (url.includes("googletagmanager.com/gtag/js")) tagScript.push(url);
-    if (url.includes("/g/collect")) hits.push(new URL(url));
+    if (r.url().includes("googletagmanager.com/gtag/js")) tagScript.push(r.url());
   });
 
   await page.goto("/blogs/taking-responsibility-for-your-ai-generated-code/");
   await page.waitForTimeout(5000);
 
   expect(tagScript, "gtag was never loaded").not.toHaveLength(0);
-  expect(hits, "no page view was sent").not.toHaveLength(0);
+  expect(hits, "no page view was attempted").not.toHaveLength(0);
 
   const hit = hits[0];
   expect(hit.searchParams.get("tid")).toBe("G-MCZFYVP6CG");
