@@ -1,163 +1,79 @@
 import { test, expect } from "@playwright/test";
+import { existsSync, readFileSync } from "node:fs";
+
+const PAGE_SOURCE = "src/pages/consultation.astro";
 
 test.describe("Consultation Page", () => {
   test.beforeEach(async ({ page }) => {
     await page.goto("/consultation");
-    // Wait for React to hydrate the tab component
     await page.waitForLoadState("networkidle");
   });
 
-  test.describe("Tab switching", () => {
-    test("shows web dev form by default", async ({ page }) => {
-      await expect(page.getByTestId("webdev-form")).toBeVisible();
-      await expect(page.getByTestId("ai-form")).toBeHidden();
-    });
-
-    test("switches to AI form when AI tab is clicked", async ({ page }) => {
-      await page.getByRole("button", { name: "AI Consulting" }).click();
-      await expect(page.getByTestId("ai-form")).toBeVisible();
-      await expect(page.getByTestId("webdev-form")).toBeHidden();
-      expect(page.url()).toContain("#ai");
-    });
-
-    test("switches back to web dev form", async ({ page }) => {
-      await page.getByRole("button", { name: "AI Consulting" }).click();
-      await page.getByRole("button", { name: "Web Development" }).click();
-      await expect(page.getByTestId("webdev-form")).toBeVisible();
-      await expect(page.getByTestId("ai-form")).toBeHidden();
-      expect(page.url()).toContain("#webdev");
-    });
+  test("shows exactly one form and no tabs", async ({ page }) => {
+    await expect(page.locator("main form")).toHaveCount(1);
+    await expect(page.getByTestId("intake-form")).toBeVisible();
+    await expect(page.getByTestId("tab-bar")).toHaveCount(0);
+    await expect(page.getByRole("button", { name: "AI Consulting" })).toHaveCount(0);
   });
 
-  test.describe("Deep linking", () => {
-    test("shows AI form when navigating to #ai", async ({ page }) => {
-      await page.goto("/consultation#ai");
-      await page.waitForLoadState("networkidle");
-      await expect(page.getByTestId("ai-form")).toBeVisible();
-      await expect(page.getByTestId("webdev-form")).toBeHidden();
-    });
-
-    test("shows web dev form when navigating to #webdev", async ({ page }) => {
-      await page.goto("/consultation#webdev");
-      await page.waitForLoadState("networkidle");
-      await expect(page.getByTestId("webdev-form")).toBeVisible();
-      await expect(page.getByTestId("ai-form")).toBeHidden();
-    });
-
-    test("defaults to web dev form with invalid hash", async ({ page }) => {
-      await page.goto("/consultation#invalid");
-      await page.waitForLoadState("networkidle");
-      await expect(page.getByTestId("webdev-form")).toBeVisible();
-      await expect(page.getByTestId("ai-form")).toBeHidden();
-    });
+  test("intro does not split visitors into two audiences", async ({ page }) => {
+    await expect(page.locator("main")).not.toContainText(/AI Consulting tab|This form is for/);
   });
 
-  test.describe("Web Dev form", () => {
-    test("renders all fields", async ({ page }) => {
-      const form = page.getByTestId("webdev-form");
-      await expect(form).toBeVisible();
-
-      await expect(form.getByLabel(/Full Name/)).toBeVisible();
-      await expect(form.getByLabel(/Email Address/)).toBeVisible();
-      await expect(form.getByLabel(/Company Name/)).toBeVisible();
-      await expect(form.getByLabel(/Company Website URL/)).toBeVisible();
-      await expect(form.getByLabel(/Your Role in the Company/)).toBeVisible();
-      await expect(form.getByLabel(/Annual Company Revenue/)).toBeVisible();
-      await expect(form.getByLabel(/Project Budget Range/)).toBeVisible();
-      await expect(form.getByLabel(/Brief Description/)).toBeVisible();
-      await expect(form.getByLabel(/Project Goals/)).toBeVisible();
-      await expect(form.getByLabel(/Timeline/)).toBeVisible();
-      await expect(form.getByLabel(/Why Do You Want/)).toBeVisible();
-    });
-
-    test("prevents submission when required fields are empty", async ({ page }) => {
-      const form = page.getByTestId("webdev-form");
-      await form.getByRole("button", { name: "Submit" }).click();
-      await expect(page).toHaveURL(/\/consultation/);
-    });
-
-    test("can be filled out completely", async ({ page }) => {
-      const form = page.getByTestId("webdev-form");
-      await form.getByLabel(/Full Name/).fill("Jane Doe");
-      await form.getByLabel(/Email Address/).fill("jane@example.com");
-      await form.getByLabel(/Company Name/).fill("Acme Corp");
-      await form.getByLabel(/Company Website URL/).fill("https://acme.com");
-      await form.getByLabel(/Your Role in the Company/).selectOption("CTO/Technical Lead");
-      await form.getByLabel(/Annual Company Revenue/).selectOption("$1M – $5M");
-      await form.getByLabel(/Project Budget Range/).selectOption("$100k – $200k");
-      await form.getByLabel(/Brief Description/).fill("We need to modernize our web stack.");
-      await form.getByLabel(/Project Goals/).fill("Migrate to a modern framework.");
-      await form.getByLabel(/Timeline/).selectOption("Within 1–3 months");
-      await form.getByLabel(/Why Do You Want/).fill("Your blog convinced me.");
-
-      const isValid = await form.evaluate((el: HTMLFormElement) => el.checkValidity());
-      expect(isValid).toBe(true);
-    });
-
-    test("form action is disabled in dev", async ({ page }) => {
-      const form = page.getByTestId("webdev-form");
-      const action = await form.getAttribute("action");
-      expect(action).toBe("#");
-    });
+  test("requires only name, email and what they need help with", async ({ page }) => {
+    const form = page.getByTestId("intake-form");
+    const required = await form
+      .locator("[required]")
+      .evaluateAll((els) => els.map((el) => el.getAttribute("name")).sort());
+    expect(required).toEqual(["email", "message", "name"]);
   });
 
-  test.describe("AI Consulting form", () => {
-    test.beforeEach(async ({ page }) => {
-      await page.goto("/consultation#ai");
-      await page.waitForLoadState("networkidle");
+  test("offers the optional fields", async ({ page }) => {
+    const form = page.getByTestId("intake-form");
+    for (const label of [/Company or website/, /Type of work/, /Timeline/, /Budget/, /How did you find me/]) {
+      const field = form.getByLabel(label);
+      await expect(field).toBeVisible();
+      await expect(field).not.toHaveAttribute("required");
+    }
+    await expect(form.getByLabel(/Type of work/).locator("option")).toContainText([
+      "Web development",
+      "AI",
+      "Not sure",
+    ]);
+  });
+
+  test("is valid with only the three required fields", async ({ page }) => {
+    const form = page.getByTestId("intake-form");
+    await form.getByLabel(/Name/).fill("Jane Doe");
+    await form.getByLabel(/Email/).fill("jane@example.com");
+    await form.getByLabel(/What do you need help with/).fill("A site rebuild.");
+    expect(await form.evaluate((el: HTMLFormElement) => el.checkValidity())).toBe(true);
+  });
+
+  for (const blank of [/Name/, /Email/, /What do you need help with/]) {
+    test(`is invalid when ${blank.source} is empty`, async ({ page }) => {
+      const form = page.getByTestId("intake-form");
+      await form.getByLabel(/Name/).fill("Jane Doe");
+      await form.getByLabel(/Email/).fill("jane@example.com");
+      await form.getByLabel(/What do you need help with/).fill("A site rebuild.");
+      await form.getByLabel(blank).fill("");
+      expect(await form.evaluate((el: HTMLFormElement) => el.checkValidity())).toBe(false);
     });
+  }
 
-    test("renders all fields", async ({ page }) => {
-      const form = page.getByTestId("ai-form");
-      await expect(form).toBeVisible();
+  test("form action is disabled in dev", async ({ page }) => {
+    await expect(page.getByTestId("intake-form")).toHaveAttribute("action", "#");
+  });
+});
 
-      await expect(form.getByLabel(/Full Name/)).toBeVisible();
-      await expect(form.getByLabel(/Email Address/)).toBeVisible();
-      await expect(form.getByLabel(/Company Name/)).toBeVisible();
-      await expect(form.getByLabel(/Company Website URL/)).toBeVisible();
-      await expect(form.getByLabel(/Your Role in the Company/)).toBeVisible();
-      await expect(form.getByLabel(/Industry/)).toBeVisible();
-      await expect(form.getByLabel(/Company Size/)).toBeVisible();
-      await expect(form.getByLabel(/What area of your business/)).toBeVisible();
-      await expect(form.getByLabel(/Current challenges/)).toBeVisible();
-      await expect(form.getByLabel(/Have you used AI tools/)).toBeVisible();
-      await expect(form.getByLabel(/What does success look like/)).toBeVisible();
-      await expect(form.getByLabel(/Timeline/)).toBeVisible();
-      await expect(form.getByLabel(/Budget Expectation/)).toBeVisible();
-      await expect(form.getByLabel(/Why Do You Want/)).toBeVisible();
-    });
+test.describe("Consultation source", () => {
+  test("posts to a single Formspree endpoint in production", () => {
+    const urls = readFileSync(PAGE_SOURCE, "utf8").match(/https:\/\/formspree\.io\/f\/\w+/g) ?? [];
+    expect(urls).toEqual(["https://formspree.io/f/xzdarlpg"]);
+  });
 
-    test("prevents submission when required fields are empty", async ({ page }) => {
-      const form = page.getByTestId("ai-form");
-      await form.getByRole("button", { name: "Submit" }).click();
-      await expect(page).toHaveURL(/\/consultation/);
-    });
-
-    test("can be filled out completely", async ({ page }) => {
-      const form = page.getByTestId("ai-form");
-      await form.getByLabel(/Full Name/).fill("John Smith");
-      await form.getByLabel(/Email Address/).fill("john@example.com");
-      await form.getByLabel(/Company Name/).fill("TechCo");
-      await form.getByLabel(/Company Website URL/).fill("https://techco.com");
-      await form.getByLabel(/Your Role in the Company/).selectOption("Owner/Founder");
-      await form.getByLabel(/Industry/).fill("Healthcare");
-      await form.getByLabel(/Company Size/).selectOption("51-200");
-      await form.getByLabel(/What area of your business/).selectOption("Operations");
-      await form.getByLabel(/Current challenges/).fill("Manual data entry taking too long.");
-      await form.getByLabel(/Have you used AI tools/).selectOption("Explored but not implemented");
-      await form.getByLabel(/What does success look like/).fill("50% reduction in manual processing.");
-      await form.getByLabel(/Timeline/).selectOption("Within 1–3 months");
-      await form.getByLabel(/Budget Expectation/).fill("$10k-$20k");
-      await form.getByLabel(/Why Do You Want/).fill("Saw your blog on AI classification.");
-
-      const isValid = await form.evaluate((el: HTMLFormElement) => el.checkValidity());
-      expect(isValid).toBe(true);
-    });
-
-    test("form action is disabled in dev", async ({ page }) => {
-      const form = page.getByTestId("ai-form");
-      const action = await form.getAttribute("action");
-      expect(action).toBe("#");
-    });
+  test("the tab component is gone", () => {
+    expect(existsSync("src/components/FormTabs.res")).toBe(false);
+    expect(existsSync("src/components/FormTabs.res.mjs")).toBe(false);
   });
 });
