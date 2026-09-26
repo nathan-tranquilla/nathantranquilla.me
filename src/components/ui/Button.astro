@@ -60,6 +60,7 @@ const { classes, href, variant = "primary", type = "button", ...rest } = Astro.p
       --button-bg-hover: var(--button-primary-bg-hover);
       --button-fg: var(--button-primary-fg);
       --button-border: var(--button-primary-border);
+      --button-ring: var(--button-bg);
 
       display: inline-block;
       width: fit-content;
@@ -86,12 +87,21 @@ const { classes, href, variant = "primary", type = "button", ...rest } = Astro.p
       --button-border: var(--button-inverse-border);
     }
 
+    /* A toggle (aria-pressed) that is off: outlined on the page ground, so the
+       pressed one reads as selected. For page-ground use, not dark surfaces. */
+    [data-ui="button"][aria-pressed="false"] {
+      --button-bg: transparent;
+      --button-bg-hover: var(--bg-secondary);
+      --button-fg: var(--text-primary);
+      --button-ring: var(--text-primary);
+    }
+
     [data-ui="button"]:hover {
       background-color: var(--button-bg-hover);
     }
 
     [data-ui="button"]:focus-visible {
-      outline: 2px solid var(--button-bg);
+      outline: 2px solid var(--button-ring);
       outline-offset: 2px;
     }
 

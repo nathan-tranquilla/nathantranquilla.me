@@ -21,7 +21,7 @@ const { hash } = Astro.params;
 const { post } = Astro.props;
 const path = `${post.url}/`;
 const slug = post.url.replace(/^\/blogs\//, "");
-const target = `${path}?utm_source=share&utm_medium=short-link&utm_campaign=${hash}`;
+const target = `${path}?utm_source=share&utm_medium=link&utm_campaign=${hash}`;
 const canonical = new URL(path, websiteUrl).href;
 const title = `nathantranquilla.me | ${post.frontmatter.title}`;
 const description = postDescription(post.frontmatter);

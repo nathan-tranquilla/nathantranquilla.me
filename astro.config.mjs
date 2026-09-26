@@ -38,13 +38,16 @@ const shortLinks = new Set(
     .map((hash) => `https://nathantranquilla.me/${hash}/`)
 );
 
-// The UI library showcase at /ui exists under `astro dev` (and so under the
-// test suite, which runs against the dev server) and never in a build.
-const uiShowcase = {
-  name: "ui-showcase",
+// Dev-only pages: the UI library showcase (/ui) and post analytics
+// (/analytics). They exist under `astro dev` (and so under the test suite,
+// which runs against the dev server) and never in a build.
+const devPages = {
+  name: "dev-pages",
   hooks: {
     "astro:config:setup": ({ command, injectRoute }) => {
-      if (command === "dev") injectRoute({ pattern: "/ui", entrypoint: "./src/dev/ui.astro" });
+      if (command !== "dev") return;
+      injectRoute({ pattern: "/ui", entrypoint: "./src/dev/ui.astro" });
+      injectRoute({ pattern: "/analytics/[...data]", entrypoint: "./src/dev/analytics.astro" });
     },
   },
 };
@@ -56,7 +59,7 @@ export default defineConfig({
   },
   site: 'https://nathantranquilla.me',
   integrations: [
-    uiShowcase,
+    devPages,
     react(),
     sitemap({
       filter: (page) => !shortLinks.has(page),

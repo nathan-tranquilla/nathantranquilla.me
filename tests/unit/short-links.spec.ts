@@ -4,7 +4,8 @@ import { postHash, POSTS_DIR } from "../helpers/posts";
 
 // /<hash> is a static redirect page (GitHub Pages cannot redirect on the
 // server). The UTM tags on its target are how GA4 credits a visit to a share:
-// source "share", medium "short-link", campaign = the post's hash.
+// source "share", medium "link" (which GA4 files under Referral), campaign =
+// the post's hash.
 const SITE = "https://nathantranquilla.me";
 
 const published = fs
@@ -14,7 +15,7 @@ const published = fs
   .map((f) => ({ slug: f.replace(/\.md$/, ""), hash: postHash(f)! }));
 
 const target = ({ slug, hash }: { slug: string; hash: string }) =>
-  `/blogs/${slug}/?utm_source=share&utm_medium=short-link&utm_campaign=${hash}`;
+  `/blogs/${slug}/?utm_source=share&utm_medium=link&utm_campaign=${hash}`;
 
 const example = published.find((p) => p.slug === "taking-responsibility-for-your-ai-generated-code")!;
 

@@ -164,6 +164,16 @@ test.describe("the /ui showcase", () => {
     }
   });
 
+  test("shows toggle buttons, pressed and not, that look different", async ({ page }) => {
+    await page.goto("/ui");
+    const pressed = page.locator('button[data-ui="button"][aria-pressed="true"]').first();
+    const unpressed = page.locator('button[data-ui="button"][aria-pressed="false"]').first();
+    await expect(pressed).toBeVisible();
+    await expect(unpressed).toBeVisible();
+    const bg = (el: Element) => getComputedStyle(el).backgroundColor;
+    expect(await unpressed.evaluate(bg)).not.toBe(await pressed.evaluate(bg));
+  });
+
   test("is a standalone page, not the site layout, but keeps the site's styles", async ({ page }) => {
     await page.goto("/ui");
     await expect(page.locator("nav")).toHaveCount(0);

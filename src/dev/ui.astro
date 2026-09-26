@@ -41,6 +41,15 @@ const surfaces = [
             </div>
           </div>
         ))}
+        <div class="mb-8">
+          <p class="mb-2 font-mono text-xs uppercase tracking-[0.07em] text-[var(--text-muted)]">
+            aria-pressed · Toggles, such as a range switch. On the page ground only.
+          </p>
+          <div class="flex flex-wrap items-center gap-4 border border-[var(--border-primary)] p-6">
+            <Button aria-pressed="true">Pressed</Button>
+            <Button aria-pressed="false">Not pressed</Button>
+          </div>
+        </div>
         <p class="font-mono text-xs text-[var(--text-muted)]">
           In markdown: &lt;a href="…" data-ui="button" data-variant="primary"&gt;…&lt;/a&gt;
         </p>

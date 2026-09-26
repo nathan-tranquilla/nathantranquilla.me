@@ -1,0 +1,199 @@
+---
+// Post analytics. Dev only, like /ui: astro.config.mjs injects /analytics
+// under `astro dev` and nowhere else.
+//
+// The GA4 key lives only in CI, so this page never queries GA. It reads
+// reports/analytics.json, which the Traffic report workflow commits.
+// /analytics/fixture reads the test fixture instead and /analytics/missing
+// shows the empty state. (Paths, not ?query: Astro drops the query string
+// on prerendered pages.)
+import fs from "node:fs";
+import path from "node:path";
+import "../styles/global.css";
+import Button from "../components/ui/Button.astro";
+import { getPosts } from "../utils/posts";
+
+const files: Record<string, string> = {
+  report: "reports/analytics.json",
+  fixture: "tests/fixtures/analytics.json",
+  missing: "reports/does-not-exist.json",
+};
+
+export function getStaticPaths() {
+  return [undefined, "fixture", "missing"].map((data) => ({ params: { data } }));
+}
+
+const file = path.join(process.cwd(), files[Astro.params.data ?? "report"]);
+const data = fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, "utf8")) : null;
+
+const RANGES = [
+  { key: "7", button: "7 days", label: "Last 7 days" },
+  { key: "30", button: "30 days", label: "Last 30 days" },
+  { key: "90", button: "90 days", label: "Last 90 days" },
+  { key: "all", button: "All time", label: "All time" },
+];
+const DEFAULT_RANGE = "all";
+
+const SORTS = [
+  { key: "sessions", button: "Sessions" },
+  { key: "time", button: "Time spent" },
+  { key: "shares", button: "Shares" },
+  { key: "share-visits", button: "Via share links" },
+];
+
+const posts = getPosts()
+  .filter((p) => !p.frontmatter.draft)
+  .map((p) => ({ slug: p.url.replace(/^\/blogs\//, "").replace(/\/$/, ""), title: p.frontmatter.title }));
+
+const n = (v: number | undefined) => (v ? String(v) : "—");
+const time = (s: number | null | undefined) =>
+  s == null ? "—" : s < 60 ? `${s}s` : `${Math.floor(s / 60)}m ${String(s % 60).padStart(2, "0")}s`;
+
+const rowsFor = (key: string) =>
+  posts
+    .map(({ slug, title }) => ({ slug, title, d: data?.ranges?.[key]?.posts?.[slug] }))
+    .sort((a, b) => (b.d?.sessions ?? 0) - (a.d?.sessions ?? 0) || a.title.localeCompare(b.title));
+
+const th = "px-3 py-2 text-left font-mono text-xs font-normal uppercase tracking-[0.07em] text-[var(--text-muted)] whitespace-nowrap";
+const td = "px-3 py-2 align-top font-mono text-sm text-[var(--text-secondary)] whitespace-nowrap";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>Analytics</title>
+  </head>
+  <body>
+    <main class="mx-auto w-full max-w-[1400px] px-4 py-12">
+      <h1 class="mb-2 font-serif text-3xl font-semibold text-[var(--text-primary)]">Analytics</h1>
+
+      {!data ? (
+        <div class="mt-6 max-w-[640px] border border-[var(--border-primary)] p-6">
+          <p class="mb-4 text-[var(--text-secondary)]">
+            No report yet. The GA4 key lives only in CI, so the data comes from the Traffic report workflow:
+          </p>
+          <pre class="overflow-x-auto bg-[var(--bg-secondary)] p-4 font-mono text-sm text-[var(--text-primary)]">gh workflow run traffic-report.yml
+git pull</pre>
+        </div>
+      ) : (
+        <>
+          <p class="mb-8 font-mono text-sm text-[var(--text-muted)]">
+            Generated {data.generatedAt.slice(0, 10)} {data.generatedAt.slice(11, 16)} UTC · refresh with
+            <code>gh workflow run traffic-report.yml</code> then <code>git pull</code> · sessions count visits that started on the post
+          </p>
+
+          <div class="mb-3 flex flex-wrap items-center gap-3">
+            <span class="w-16 font-mono text-xs uppercase tracking-[0.07em] text-[var(--text-muted)]">Range</span>
+            {RANGES.map((r) => (
+              <Button aria-pressed={String(r.key === DEFAULT_RANGE)} data-range-button={r.key}>{r.button}</Button>
+            ))}
+          </div>
+          <div class="mb-8 flex flex-wrap items-center gap-3">
+            <span class="w-16 font-mono text-xs uppercase tracking-[0.07em] text-[var(--text-muted)]">Sort</span>
+            {SORTS.map((s, i) => (
+              <Button aria-pressed={String(i === 0)} data-sort-button={s.key}>{s.button}</Button>
+            ))}
+          </div>
+
+          {RANGES.map((r) => {
+            const range = data.ranges[r.key];
+            return (
+              <section data-range={r.key} hidden={r.key !== DEFAULT_RANGE}>
+                <p data-range-label class="mb-3 font-mono text-sm text-[var(--text-primary)]">
+                  {r.label} · {range?.startDate} to {range?.endDate}
+                </p>
+                <div class="overflow-x-auto border border-[var(--border-primary)]">
+                  <table class="w-full border-collapse">
+                    <thead class="border-b border-[var(--border-primary)]">
+                      <tr>
+                        <th class={th}>Post</th>
+                        <th class={th}>Sessions</th>
+                        <th class={th}>Direct</th>
+                        <th class={th}>Social</th>
+                        <th class={th}>Search</th>
+                        <th class={th}>Referral</th>
+                        <th class={th}>Other</th>
+                        <th class={th}>Via share links</th>
+                        <th class={th}>Top sources</th>
+                        <th class={th}>Time / view</th>
+                        <th class={th}>Shares</th>
+                        <th class={th}>Native</th>
+                        <th class={th}>Copy</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {rowsFor(r.key).map(({ slug, title, d }) => (
+                        <tr
+                          data-post={slug}
+                          data-title={title}
+                          data-sort-sessions={d?.sessions ?? 0}
+                          data-sort-time={d?.engagedSecondsPerView ?? -1}
+                          data-sort-shares={d?.shares?.total ?? 0}
+                          data-sort-share-visits={d?.shortLinkVisits ?? 0}
+                          class="border-b border-[var(--border-secondary)] last:border-b-0"
+                        >
+                          <td class="px-3 py-2 align-top font-serif text-[var(--text-primary)] min-w-[16rem]">{title}</td>
+                          <td class={td} data-col="sessions">{n(d?.sessions)}</td>
+                          <td class={td} data-col="direct">{n(d?.channels?.direct)}</td>
+                          <td class={td} data-col="social">{n(d?.channels?.social)}</td>
+                          <td class={td} data-col="search">{n(d?.channels?.search)}</td>
+                          <td class={td} data-col="referral">{n(d?.channels?.referral)}</td>
+                          <td class={td} data-col="other">{n(d?.channels?.other)}</td>
+                          <td class={td} data-col="share-visits">{n(d?.shortLinkVisits)}</td>
+                          <td class={`${td} whitespace-normal min-w-[12rem]`} data-col="sources">
+                            {d?.sources?.length ? d.sources.map((s: { source: string; sessions: number }) => `${s.source} ${s.sessions}`).join(", ") : "—"}
+                          </td>
+                          <td class={td} data-col="time">{time(d?.engagedSecondsPerView)}</td>
+                          <td class={td} data-col="shares">{n(d?.shares?.total)}</td>
+                          <td class={td} data-col="shares-native">{n(d?.shares?.native)}</td>
+                          <td class={td} data-col="shares-copy">{n(d?.shares?.clipboard)}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </section>
+            );
+          })}
+        </>
+      )}
+    </main>
+
+    <script>
+      const press = (buttons: NodeListOf<HTMLElement>, active: HTMLElement) =>
+        buttons.forEach((b) => b.setAttribute("aria-pressed", String(b === active)));
+
+      const rangeButtons = document.querySelectorAll<HTMLElement>("[data-range-button]");
+      rangeButtons.forEach((button) =>
+        button.addEventListener("click", () => {
+          press(rangeButtons, button);
+          document.querySelectorAll<HTMLElement>("[data-range]").forEach((s) => {
+            s.hidden = s.dataset.range !== button.dataset.rangeButton;
+          });
+        })
+      );
+
+      // Sorts every range's table, so switching range keeps the chosen order.
+      const sortButtons = document.querySelectorAll<HTMLElement>("[data-sort-button]");
+      sortButtons.forEach((button) =>
+        button.addEventListener("click", () => {
+          press(sortButtons, button);
+          const key = button.dataset.sortButton!;
+          const attr = `sort-${key}`.replace(/-([a-z])/g, (_, c) => c.toUpperCase());
+          document.querySelectorAll("tbody").forEach((tbody) => {
+            const rows = [...tbody.querySelectorAll<HTMLElement>("tr")];
+            rows.sort(
+              (a, b) =>
+                Number(b.dataset[attr]) - Number(a.dataset[attr]) ||
+                (a.dataset.title ?? "").localeCompare(b.dataset.title ?? "")
+            );
+            tbody.append(...rows);
+          });
+        })
+      );
+    </script>
+  </body>
+</html>

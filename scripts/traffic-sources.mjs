@@ -9,37 +9,19 @@
 //   pnpm traffic 30         last 30 days
 //   pnpm traffic 365 --csv  CSV of every post x channel x source row
 //
-// Needs GA4_SERVICE_ACCOUNT_JSON and GA4_PROPERTY_ID, from the environment or
-// .env.local (gitignored), the same as `pnpm fetch:analytics`.
-import fs from "node:fs";
-import { BetaAnalyticsDataClient } from "@google-analytics/data";
+// Needs GA4 credentials; see ga4.mjs. In practice they exist only in CI, so
+// run it through the Traffic report workflow.
+import { ga4, blogPaths } from "./ga4.mjs";
 
 const days = Number(process.argv.find((a) => /^\d+$/.test(a)) ?? 90);
 const csv = process.argv.includes("--csv");
 
-if (fs.existsSync(".env.local")) {
-  for (const line of fs.readFileSync(".env.local", "utf8").split("\n")) {
-    const m = line.trim().match(/^([A-Z0-9_]+)=(.*)$/);
-    if (m && !(m[1] in process.env)) process.env[m[1]] = m[2];
-  }
-}
-const { GA4_SERVICE_ACCOUNT_JSON: json, GA4_PROPERTY_ID: propertyId } = process.env;
-if (!json || !propertyId) {
-  console.error("Set GA4_SERVICE_ACCOUNT_JSON and GA4_PROPERTY_ID (env or .env.local).");
-  process.exit(1);
-}
-
-const client = new BetaAnalyticsDataClient({ credentials: JSON.parse(json) });
-const [report] = await client.runReport({
-  property: `properties/${propertyId}`,
+const report = await ga4().run({
   dateRanges: [{ startDate: `${days}daysAgo`, endDate: "today" }],
   dimensions: [{ name: "landingPage" }, { name: "sessionDefaultChannelGroup" }, { name: "sessionSource" }],
   metrics: [{ name: "sessions" }, { name: "engagedSessions" }],
-  dimensionFilter: {
-    filter: { fieldName: "landingPage", stringFilter: { matchType: "BEGINS_WITH", value: "/blogs/" } },
-  },
+  dimensionFilter: blogPaths("landingPage"),
   orderBys: [{ metric: { metricName: "sessions" }, desc: true }],
-  limit: 10000,
 });
 
 const rows = (report.rows ?? []).map((r) => ({

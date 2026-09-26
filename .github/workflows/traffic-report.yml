@@ -2,7 +2,8 @@ name: Traffic report
 
 # Run by hand (Actions tab or `gh workflow run traffic-report.yml`). Queries
 # GA4 with the repo's secrets, so no credentials are needed locally, and
-# commits the report to main; `git pull` to read it.
+# commits reports/ to main; `git pull` to read it. reports/analytics.json
+# feeds the dev-only /analytics page.
 #
 # The repo is public: the committed report is readable by anyone on GitHub.
 # A push made with GITHUB_TOKEN does not trigger the deploy workflow.
@@ -54,7 +55,7 @@ jobs:
         GA4_PROPERTY_ID: ${{ secrets.GA4_PROPERTY_ID }}
         DAYS: ${{ inputs.days }}
       with:
-        command: mkdir -p reports && pnpm -s traffic $DAYS > reports/traffic-sources.txt && pnpm -s traffic $DAYS --csv > reports/traffic-sources.csv
+        command: mkdir -p reports && pnpm -s traffic $DAYS > reports/traffic-sources.txt && pnpm -s traffic $DAYS --csv > reports/traffic-sources.csv && pnpm -s analytics:report
 
     - name: Commit report
       env:

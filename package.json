@@ -8,6 +8,7 @@
     "res:clean": "rescript clean",
     "fetch:analytics": "node src/scripts/FetchAnalytics.res.mjs",
     "traffic": "node scripts/traffic-sources.mjs",
+    "analytics:report": "node scripts/analytics-report.mjs",
     "build": "pnpm res:build && pnpm fetch:analytics && astro build",
     "dev": "astro dev --host",
     "test": "playwright test --reporter=list",
