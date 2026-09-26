@@ -1,18 +1,18 @@
 {
-  "generatedAt": "2026-09-26T14:11:17.933Z",
+  "generatedAt": "2026-09-26T19:53:25.951Z",
   "ranges": {
     "7": {
       "startDate": "2026-09-19",
       "endDate": "2026-09-26",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
-          "sessions": 15,
+          "sessions": 17,
           "channels": {
-            "direct": 5,
+            "direct": 6,
             "social": 7,
             "search": 0,
-            "referral": 0,
-            "other": 3
+            "referral": 2,
+            "other": 2
           },
           "sources": [
             {
@@ -20,21 +20,17 @@
               "sessions": 7
             },
             {
-              "source": "(data not available)",
-              "sessions": 1
-            },
-            {
-              "source": "(not set)",
-              "sessions": 1
-            },
-            {
               "source": "share",
-              "sessions": 1
+              "sessions": 2
+            },
+            {
+              "source": "teams.public.onecdn.static.microsoft",
+              "sessions": 2
             }
           ],
-          "shortLinkVisits": 1,
-          "views": 23,
-          "engagedSecondsPerView": 7,
+          "shortLinkVisits": 2,
+          "views": 25,
+          "engagedSecondsPerView": 6,
           "shares": {
             "native": 1,
             "clipboard": 0,
@@ -54,6 +50,44 @@
           "shortLinkVisits": 0,
           "views": 2,
           "engagedSecondsPerView": 2,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
+        "coding-is-not-for-humans": {
+          "sessions": 1,
+          "channels": {
+            "direct": 1,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 1,
+          "engagedSecondsPerView": 0,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
+        "teach-claude-your-project-once-benefit-forever": {
+          "sessions": 1,
+          "channels": {
+            "direct": 1,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 2,
+          "engagedSecondsPerView": 0,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -159,25 +193,6 @@
             "clipboard": 0,
             "total": 0
           }
-        },
-        "teach-claude-your-project-once-benefit-forever": {
-          "sessions": 0,
-          "channels": {
-            "direct": 0,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 1,
-          "engagedSecondsPerView": 0,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
         }
       }
     },
@@ -186,13 +201,13 @@
       "endDate": "2026-09-26",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
-          "sessions": 15,
+          "sessions": 17,
           "channels": {
-            "direct": 5,
+            "direct": 6,
             "social": 7,
             "search": 0,
-            "referral": 0,
-            "other": 3
+            "referral": 2,
+            "other": 2
           },
           "sources": [
             {
@@ -200,21 +215,17 @@
               "sessions": 7
             },
             {
-              "source": "(data not available)",
-              "sessions": 1
-            },
-            {
-              "source": "(not set)",
-              "sessions": 1
-            },
-            {
               "source": "share",
-              "sessions": 1
+              "sessions": 2
+            },
+            {
+              "source": "teams.public.onecdn.static.microsoft",
+              "sessions": 2
             }
           ],
-          "shortLinkVisits": 1,
-          "views": 23,
-          "engagedSecondsPerView": 7,
+          "shortLinkVisits": 2,
+          "views": 25,
+          "engagedSecondsPerView": 6,
           "shares": {
             "native": 1,
             "clipboard": 0,
@@ -316,6 +327,44 @@
             "total": 0
           }
         },
+        "coding-is-not-for-humans": {
+          "sessions": 1,
+          "channels": {
+            "direct": 1,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 2,
+          "engagedSecondsPerView": 2,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
+        "teach-claude-your-project-once-benefit-forever": {
+          "sessions": 1,
+          "channels": {
+            "direct": 1,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 3,
+          "engagedSecondsPerView": 4,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
         "the-4-pillars-of-next-gen-web-dev": {
           "sessions": 1,
           "channels": {
@@ -416,25 +465,6 @@
             "total": 0
           }
         },
-        "teach-claude-your-project-once-benefit-forever": {
-          "sessions": 0,
-          "channels": {
-            "direct": 0,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 2,
-          "engagedSecondsPerView": 6,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
         "5-ways-rescript-fixes-typescript": {
           "sessions": 0,
           "channels": {
@@ -448,25 +478,6 @@
           "shortLinkVisits": 0,
           "views": 1,
           "engagedSecondsPerView": 1,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
-        "coding-is-not-for-humans": {
-          "sessions": 0,
-          "channels": {
-            "direct": 0,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 1,
-          "engagedSecondsPerView": 3,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -518,13 +529,13 @@
           }
         },
         "taking-responsibility-for-your-ai-generated-code": {
-          "sessions": 15,
+          "sessions": 17,
           "channels": {
-            "direct": 5,
+            "direct": 6,
             "social": 7,
             "search": 0,
-            "referral": 0,
-            "other": 3
+            "referral": 2,
+            "other": 2
           },
           "sources": [
             {
@@ -532,21 +543,17 @@
               "sessions": 7
             },
             {
-              "source": "(data not available)",
-              "sessions": 1
-            },
-            {
-              "source": "(not set)",
-              "sessions": 1
-            },
-            {
               "source": "share",
-              "sessions": 1
+              "sessions": 2
+            },
+            {
+              "source": "teams.public.onecdn.static.microsoft",
+              "sessions": 2
             }
           ],
-          "shortLinkVisits": 1,
-          "views": 23,
-          "engagedSecondsPerView": 7,
+          "shortLinkVisits": 2,
+          "views": 25,
+          "engagedSecondsPerView": 6,
           "shares": {
             "native": 1,
             "clipboard": 0,
@@ -603,6 +610,25 @@
           "sources": [],
           "shortLinkVisits": 0,
           "views": 6,
+          "engagedSecondsPerView": 2,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
+        "teach-claude-your-project-once-benefit-forever": {
+          "sessions": 5,
+          "channels": {
+            "direct": 5,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 7,
           "engagedSecondsPerView": 2,
           "shares": {
             "native": 0,
@@ -710,25 +736,6 @@
             "total": 0
           }
         },
-        "teach-claude-your-project-once-benefit-forever": {
-          "sessions": 4,
-          "channels": {
-            "direct": 4,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 6,
-          "engagedSecondsPerView": 2,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
         "5-ways-rescript-fixes-typescript": {
           "sessions": 3,
           "channels": {
@@ -748,6 +755,25 @@
             "total": 0
           }
         },
+        "coding-is-not-for-humans": {
+          "sessions": 3,
+          "channels": {
+            "direct": 3,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 4,
+          "engagedSecondsPerView": 1,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
         "using-ai-to-automate-quality-content-delivery": {
           "sessions": 3,
           "channels": {
@@ -761,25 +787,6 @@
           "shortLinkVisits": 0,
           "views": 3,
           "engagedSecondsPerView": 0,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
-        "coding-is-not-for-humans": {
-          "sessions": 2,
-          "channels": {
-            "direct": 2,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 3,
-          "engagedSecondsPerView": 1,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -1011,6 +1018,30 @@
             "total": 0
           }
         },
+        "teach-claude-your-project-once-benefit-forever": {
+          "sessions": 19,
+          "channels": {
+            "direct": 12,
+            "social": 7,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [
+            {
+              "source": "linkedin.com",
+              "sessions": 7
+            }
+          ],
+          "shortLinkVisits": 0,
+          "views": 25,
+          "engagedSecondsPerView": 12,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
         "why-rescript-is-next-gen": {
           "sessions": 12,
           "channels": {
@@ -1049,11 +1080,11 @@
             "total": 0
           }
         },
-        "teach-claude-your-project-once-benefit-forever": {
-          "sessions": 18,
+        "coding-is-not-for-humans": {
+          "sessions": 21,
           "channels": {
             "direct": 11,
-            "social": 7,
+            "social": 10,
             "search": 0,
             "referral": 0,
             "other": 0
@@ -1061,12 +1092,12 @@
           "sources": [
             {
               "source": "linkedin.com",
-              "sessions": 7
+              "sessions": 10
             }
           ],
           "shortLinkVisits": 0,
-          "views": 24,
-          "engagedSecondsPerView": 13,
+          "views": 27,
+          "engagedSecondsPerView": 26,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -1097,38 +1128,14 @@
             "total": 0
           }
         },
-        "coding-is-not-for-humans": {
-          "sessions": 20,
-          "channels": {
-            "direct": 10,
-            "social": 10,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [
-            {
-              "source": "linkedin.com",
-              "sessions": 10
-            }
-          ],
-          "shortLinkVisits": 0,
-          "views": 26,
-          "engagedSecondsPerView": 27,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
         "taking-responsibility-for-your-ai-generated-code": {
-          "sessions": 15,
+          "sessions": 17,
           "channels": {
-            "direct": 5,
+            "direct": 6,
             "social": 7,
             "search": 0,
-            "referral": 0,
-            "other": 3
+            "referral": 2,
+            "other": 2
           },
           "sources": [
             {
@@ -1136,21 +1143,17 @@
               "sessions": 7
             },
             {
-              "source": "(data not available)",
-              "sessions": 1
-            },
-            {
-              "source": "(not set)",
-              "sessions": 1
-            },
-            {
               "source": "share",
-              "sessions": 1
+              "sessions": 2
+            },
+            {
+              "source": "teams.public.onecdn.static.microsoft",
+              "sessions": 2
             }
           ],
-          "shortLinkVisits": 1,
-          "views": 23,
-          "engagedSecondsPerView": 7,
+          "shortLinkVisits": 2,
+          "views": 25,
+          "engagedSecondsPerView": 6,
           "shares": {
             "native": 1,
             "clipboard": 0,
