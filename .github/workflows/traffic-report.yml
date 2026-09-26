@@ -1,0 +1,65 @@
+name: Traffic report
+
+# Run by hand (Actions tab or `gh workflow run traffic-report.yml`). Queries
+# GA4 with the repo's secrets, so no credentials are needed locally, and
+# commits the report to main; `git pull` to read it.
+#
+# The repo is public: the committed report is readable by anyone on GitHub.
+# A push made with GITHUB_TOKEN does not trigger the deploy workflow.
+
+on:
+  workflow_dispatch:
+    inputs:
+      days:
+        description: "How many days back to report on"
+        default: "90"
+        required: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: traffic-report
+  cancel-in-progress: false
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Install Flox
+      uses: flox/install-flox-action@v2
+
+    - name: Install dependencies
+      uses: flox/activate-action@v1
+      env:
+        FLOX_DISABLE_METRICS: true
+      with:
+        command: pnpm install
+
+    - name: Query GA4
+      uses: flox/activate-action@v1
+      env:
+        FLOX_DISABLE_METRICS: true
+        GA4_SERVICE_ACCOUNT_JSON: ${{ secrets.GA4_SERVICE_ACCOUNT_JSON }}
+        GA4_PROPERTY_ID: ${{ secrets.GA4_PROPERTY_ID }}
+        DAYS: ${{ inputs.days }}
+      with:
+        command: |
+          case "$DAYS" in ''|*[!0-9]*) echo "days must be a number"; exit 1 ;; esac
+          mkdir -p reports
+          pnpm -s traffic "$DAYS" > reports/traffic-sources.txt
+          pnpm -s traffic "$DAYS" --csv > reports/traffic-sources.csv
+
+    - name: Commit report
+      env:
+        DAYS: ${{ inputs.days }}
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "41898+github-actions[bot]@users.noreply.github.com"
+        git add reports/
+        git diff --cached --quiet && { echo "No change"; exit 0; }
+        git commit -m "chore(reports): traffic sources, last $DAYS days"
+        git push

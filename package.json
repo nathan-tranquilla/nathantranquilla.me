@@ -7,6 +7,7 @@
     "res:dev": "rescript build -w",
     "res:clean": "rescript clean",
     "fetch:analytics": "node src/scripts/FetchAnalytics.res.mjs",
+    "traffic": "node scripts/traffic-sources.mjs",
     "build": "pnpm res:build && pnpm fetch:analytics && astro build",
     "dev": "astro dev --host",
     "test": "playwright test --reporter=list",
