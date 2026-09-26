@@ -1,6 +1,7 @@
 // Writes reports/analytics.json for the dev-only /analytics page: per post,
 // where visits came from, time spent, Share clicks and share-link visits,
-// for the last 7, 30 and 90 days and all time.
+// for the last 7, 30 and 90 days and all time, plus the 7 days before this
+// week ("prev7") for the morning email's week-over-week change.
 //
 //   pnpm analytics:report
 //
@@ -8,15 +9,7 @@
 // workflow, which commits the file.
 import fs from "node:fs";
 import { ga4, blogPaths } from "./ga4.mjs";
-import { buildRange } from "./analytics-model.mjs";
-
-// The earliest date the GA4 Data API accepts.
-const ALL_TIME = "2015-08-14";
-const iso = (d) => d.toISOString().slice(0, 10);
-const daysAgo = (n) => iso(new Date(Date.now() - n * 86400000));
-const today = iso(new Date());
-
-const RANGES = { 7: daysAgo(7), 30: daysAgo(30), 90: daysAgo(90), all: ALL_TIME };
+import { buildRange, reportRanges } from "./analytics-model.mjs";
 
 const ga = ga4();
 const values = (r) => [...r.dimensionValues.map((v) => v.value), ...r.metricValues.map((v) => Number(v.value))];
@@ -70,10 +63,10 @@ async function shares(dateRanges) {
 }
 
 const ranges = {};
-for (const [key, startDate] of Object.entries(RANGES)) {
-  const dateRanges = [{ startDate, endDate: "today" }];
+for (const [key, { startDate, endDate }] of Object.entries(reportRanges())) {
+  const dateRanges = [{ startDate, endDate }];
   const [l, e, s] = await Promise.all([landing(dateRanges), engagement(dateRanges), shares(dateRanges)]);
-  ranges[key] = { startDate, endDate: today, posts: buildRange({ landing: l, engagement: e, shares: s }) };
+  ranges[key] = { startDate, endDate, posts: buildRange({ landing: l, engagement: e, shares: s }) };
   console.log(`  ${key}: ${Object.keys(ranges[key].posts).length} posts with data`);
 }
 

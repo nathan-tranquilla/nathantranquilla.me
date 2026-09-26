@@ -75,3 +75,22 @@ export function buildRange({ landing, engagement, shares }) {
   }
   return posts;
 }
+
+// The earliest date the GA4 Data API accepts.
+const ALL_TIME = "2015-08-14";
+
+/**
+ * Report date ranges, inclusive, ending today. "7" and "prev7" are two
+ * back-to-back seven-day weeks, so week-over-week compares like with like.
+ */
+export function reportRanges(now = new Date()) {
+  const day = (n) => new Date(now.getTime() - n * 86400000).toISOString().slice(0, 10);
+  const today = day(0);
+  return {
+    7: { startDate: day(6), endDate: today },
+    prev7: { startDate: day(13), endDate: day(7) },
+    30: { startDate: day(29), endDate: today },
+    90: { startDate: day(89), endDate: today },
+    all: { startDate: ALL_TIME, endDate: today },
+  };
+}

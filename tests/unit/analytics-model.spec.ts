@@ -1,5 +1,5 @@
 import { test, expect } from "@playwright/test";
-import { buildRange } from "../../scripts/analytics-model.mjs";
+import { buildRange, reportRanges } from "../../scripts/analytics-model.mjs";
 
 // buildRange turns flattened GA4 rows into one record per post. The CI
 // workflow runs the queries; this is the part that can be tested offline.
@@ -104,4 +104,19 @@ test("a post with data in only one query still gets every field", () => {
     engagedSecondsPerView: null,
     shares: { native: 1, clipboard: 0, total: 1 },
   });
+});
+
+// Date ranges for the report. "This week" and "last week" are both exactly
+// seven days, so the email's week-over-week change compares like with like.
+test("this week and last week are back-to-back seven-day spans", () => {
+  const r = reportRanges(new Date("2026-09-26T14:00:00Z"));
+  expect(r["7"]).toEqual({ startDate: "2026-09-20", endDate: "2026-09-26" });
+  expect(r.prev7).toEqual({ startDate: "2026-09-13", endDate: "2026-09-19" });
+});
+
+test("longer ranges end today and all time starts at GA4's earliest date", () => {
+  const r = reportRanges(new Date("2026-09-26T14:00:00Z"));
+  expect(r["30"]).toEqual({ startDate: "2026-08-28", endDate: "2026-09-26" });
+  expect(r["90"]).toEqual({ startDate: "2026-06-29", endDate: "2026-09-26" });
+  expect(r.all).toEqual({ startDate: "2015-08-14", endDate: "2026-09-26" });
 });
