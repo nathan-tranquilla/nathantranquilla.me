@@ -1,12 +1,19 @@
 ---
+import { viewCountPlacement, type ViewCountPlacement } from "../utils/views";
+
 export interface Props {
   count: number;
+  /** Renders only when the count belongs in this spot. */
+  at: Exclude<ViewCountPlacement, "hidden">;
 }
-const { count } = Astro.props;
+const { count, at } = Astro.props;
 ---
 
-{count > 0 && (
-  <span class="inline-flex items-center gap-1 border border-[var(--border-primary)] bg-[var(--bg-secondary)] px-2.5 py-0.5 font-mono text-xs text-[var(--text-muted)]">
-    {count} views
+{viewCountPlacement(count) === at && (
+  <span
+    data-view-count
+    class="inline-flex items-center gap-1 border border-[var(--border-primary)] bg-[var(--bg-secondary)] px-2.5 py-0.5 font-mono text-xs text-[var(--text-muted)]"
+  >
+    {count.toLocaleString("en-US")} views
   </span>
 )}

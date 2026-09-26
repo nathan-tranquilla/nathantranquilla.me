@@ -251,6 +251,7 @@ try {
         >
         <p class="mb-3 text-base text-[var(--text-muted)]">
           {frontmatter.author} · {frontmatter.date}{frontmatter.updated && ` · Updated ${frontmatter.updated}`}
+          <ViewCount count={viewCount} at="top" />
         </p>
         <div class="flex items-center justify-between gap-3">
           <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
@@ -288,7 +289,7 @@ try {
         <slot />
       </section>
       <footer class="mt-12 border-t border-[var(--border-primary)] pt-6">
-        <ViewCount count={viewCount} />
+        <ViewCount count={viewCount} at="bottom" />
       </footer>
 
       <section class="mt-12">

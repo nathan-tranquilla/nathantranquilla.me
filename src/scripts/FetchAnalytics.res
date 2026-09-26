@@ -30,8 +30,10 @@ let loadEnv = () => {
   }
 }
 
-// ISO date string for N days ago
-let daysAgoDate: int => string = %raw(`(n) => new Date(Date.now() - n * 86400000).toISOString().slice(0, 10)`)
+// All-time counts: a post's count decides where it shows (see utils/views.ts),
+// and a rolling window would let a post drop back below a threshold it had
+// already crossed. This is the earliest date the GA4 Data API accepts.
+let allTime = "2015-08-14"
 
 let fetchBlogViews = async (): dict<int> => {
   let serviceAccountJson = Node.processEnv->Dict.get("GA4_SERVICE_ACCOUNT_JSON")
@@ -43,7 +45,7 @@ let fetchBlogViews = async (): dict<int> => {
       let credentials = parseCredentials(jsonStr)
       let client = makeClient({"credentials": credentials})
       let property = `properties/${propId}`
-      let startDate = daysAgoDate(90)
+      let startDate = allTime
       Console.log(`  Date range: ${startDate} to today`)
       let dateRanges: array<dateRange> = [{startDate, endDate: "today"}]
 
