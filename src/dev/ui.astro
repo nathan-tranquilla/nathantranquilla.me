@@ -1,0 +1,41 @@
+---
+// UI library showcase. Dev only: astro.config.mjs injects /ui under
+// `astro dev` and nowhere else, so it never reaches the production build.
+// Switch the OS or devtools color scheme to see the other mode.
+import Main from "../layouts/Main.astro";
+import Container from "../components/Container.astro";
+import Button from "../components/ui/Button.astro";
+
+const surfaces = [
+  { variant: "primary", surface: "bg-[var(--bg-primary)]", note: "Default. On paper and the page ground." },
+  { variant: "inverse", surface: "bg-[var(--bg-footer)]", note: "On dark surfaces, like the footer." },
+] as const;
+---
+
+<Main title="nathantranquilla.me | UI library" description="Dev-only showcase of the UI library.">
+  <Container classes="w-full max-w-[900px] mx-auto">
+    <h1 class="mb-2 font-serif text-3xl font-semibold text-[var(--text-primary)]">UI library</h1>
+    <p class="mb-10 font-mono text-sm text-[var(--text-muted)]">
+      src/components/ui/ · dev only · switch your color scheme to check the other mode
+    </p>
+
+    <section>
+      <h2 class="mb-4 font-serif text-2xl text-[var(--text-primary)]">Button</h2>
+      {surfaces.map(({ variant, surface, note }) => (
+        <div class="mb-8">
+          <p class="mb-2 font-mono text-xs uppercase tracking-[0.07em] text-[var(--text-muted)]">
+            variant="{variant}" · {note}
+          </p>
+          <div class={`flex flex-wrap items-center gap-4 border border-[var(--border-primary)] p-6 ${surface}`}>
+            <Button href="#" variant={variant}>As a link</Button>
+            <Button variant={variant}>As a button</Button>
+            <Button variant={variant} disabled>Disabled</Button>
+          </div>
+        </div>
+      ))}
+      <p class="font-mono text-xs text-[var(--text-muted)]">
+        In markdown: &lt;a href="…" data-ui="button" data-variant="primary"&gt;…&lt;/a&gt;
+      </p>
+    </section>
+  </Container>
+</Main>

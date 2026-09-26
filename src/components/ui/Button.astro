@@ -1,0 +1,105 @@
+---
+// UI library: the only button on the site. Styles live in global.css under
+// [data-ui="button"], so markdown can use the same look as plain HTML:
+//   <a href="/consultation" data-ui="button" data-variant="primary">…</a>
+import type { HTMLAttributes } from "astro/types";
+
+export interface Props extends Omit<HTMLAttributes<"button">, "class"> {
+  classes?: string;
+  /** Renders a link when set; otherwise a `<button>`. */
+  href?: string;
+  /** `inverse` for dark surfaces such as the footer. */
+  variant?: "primary" | "inverse";
+  type?: "button" | "submit";
+}
+const { classes, href, variant = "primary", type = "button", ...rest } = Astro.props;
+---
+
+{href ? (
+  <a href={href} class={classes} data-ui="button" data-variant={variant}>
+    <slot />
+  </a>
+) : (
+  <button type={type} class={classes} data-ui="button" data-variant={variant} {...rest}>
+    <slot />
+  </button>
+)}
+
+<style is:global>
+  /* Global, not scoped: markdown posts use the same look as plain HTML
+     (data-ui="button"), which scoped styles would not reach.
+     The layer order is Tailwind's, restated so it holds whichever stylesheet
+     loads first: components sit above preflight and below utilities, so
+     <Button classes="w-full"> or "hidden md:block" still win. */
+  @layer theme, base, components, utilities;
+
+  /* primary is the default; inverse sits on dark surfaces (the navy footer)
+     and stays yellow in both schemes. */
+  :root {
+    --button-primary-bg: var(--accent-bg);
+    --button-primary-bg-hover: var(--accent-bg-hover);
+    --button-primary-fg: var(--bg-primary);
+    --button-primary-border: var(--border-primary);
+    --button-inverse-bg: #f0eca8;
+    --button-inverse-bg-hover: #f7f4c6;
+    --button-inverse-fg: #12233a;
+    --button-inverse-border: #f0eca8;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --button-inverse-fg: #0c1119;
+    }
+  }
+
+  /* Styled from its data attributes, so the marker the specs look for and
+     the look cannot come apart. */
+  @layer components {
+    [data-ui="button"] {
+      --button-bg: var(--button-primary-bg);
+      --button-bg-hover: var(--button-primary-bg-hover);
+      --button-fg: var(--button-primary-fg);
+      --button-border: var(--button-primary-border);
+
+      display: inline-block;
+      width: fit-content;
+      height: fit-content;
+      padding: 0.5rem 1.5rem;
+      border: 1px solid var(--button-border);
+      background-color: var(--button-bg);
+      color: var(--button-fg);
+      font-family: var(--font-mono);
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      text-decoration: none;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    [data-ui="button"][data-variant="inverse"] {
+      --button-bg: var(--button-inverse-bg);
+      --button-bg-hover: var(--button-inverse-bg-hover);
+      --button-fg: var(--button-inverse-fg);
+      --button-border: var(--button-inverse-border);
+    }
+
+    [data-ui="button"]:hover {
+      background-color: var(--button-bg-hover);
+    }
+
+    [data-ui="button"]:focus-visible {
+      outline: 2px solid var(--button-bg);
+      outline-offset: 2px;
+    }
+
+    [data-ui="button"]:disabled,
+    [data-ui="button"][aria-disabled="true"] {
+      opacity: 0.45;
+      cursor: not-allowed;
+      background-color: var(--button-bg);
+    }
+  }
+</style>

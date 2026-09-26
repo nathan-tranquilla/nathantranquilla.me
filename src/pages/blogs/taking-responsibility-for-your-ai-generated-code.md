@@ -272,10 +272,7 @@ development: the tests are the executable form of the acceptance criteria.
     the problem I spend most of my time on. If your team is working through it,
     I take on a small number of engagements.
   </p>
-  <a
-    href="/consultation"
-    class="blog-cta text-nowrap font-mono text-sm uppercase tracking-[0.07em] py-2 px-6 w-fit h-fit cursor-pointer border transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 bg-[var(--accent-bg)] text-[var(--bg-primary)] border-[var(--border-primary)] hover:bg-[var(--accent-bg-hover)] focus:ring-[var(--accent-bg)] inline-block no-underline"
-  >
+  <a href="/consultation" data-ui="button" data-variant="primary">
     Book a consultation
   </a>
 </div>

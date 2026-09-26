@@ -1,11 +1,11 @@
 ---
 import Main from "../layouts/Main.astro";
 import Container from "../components/Container.astro";
+import Button from "../components/ui/Button.astro";
 
 const inputClasses = "w-full rounded-md border border-[var(--border-primary)] bg-[var(--bg-primary)] text-[var(--text-secondary)] px-3 py-2 focus:ring-2 focus:ring-[var(--accent-bg)] focus:outline-none focus:border-[var(--accent-bg)] transition-colors";
 const labelClasses = "block text-sm font-semibold text-[var(--text-primary)] mb-1";
 const formAction = import.meta.env.PROD ? "https://formspree.io/f/xzdarlpg" : "#";
-const submitClasses = "w-full rounded-md bg-[var(--accent-bg)] hover:bg-[var(--accent-bg-hover)] text-white py-3 px-6 font-semibold cursor-pointer hover:scale-[1.01] hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[var(--accent-bg)] focus:ring-offset-2 shadow-md transition-[transform,box-shadow,background-color] duration-200";
 ---
 
 <Main
@@ -66,7 +66,7 @@ const submitClasses = "w-full rounded-md bg-[var(--accent-bg)] hover:bg-[var(--a
         <input type="text" id="source" name="source" class={inputClasses} />
       </div>
 
-      <button type="submit" class={submitClasses}>Submit</button>
+      <Button type="submit" classes="w-full">Submit</Button>
     </form>
   </Container>
 </Main>

@@ -1,6 +1,7 @@
 ---
 import Main from "./Main.astro";
 import Container from "../components/Container.astro";
+import Button from "../components/ui/Button.astro";
 
 const { frontmatter } = Astro.props;
 ---
@@ -99,12 +100,7 @@ const { frontmatter } = Astro.props;
         <p class="text-2xl font-semibold text-[var(--text-primary)] mb-4">
           {frontmatter.price} <span class="text-sm font-normal text-[var(--text-muted)]">USD</span>
         </p>
-        <a
-          class="gumroad-button inline-block rounded-md bg-[var(--accent-bg)] hover:bg-[var(--accent-bg-hover)] text-white py-3 px-6 font-semibold cursor-pointer hover:scale-[1.01] hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[var(--accent-bg)] focus:ring-offset-2 shadow-md transition-[transform,box-shadow,background-color] duration-200 no-underline"
-          href={frontmatter.gumroadUrl}
-        >
-          Buy the Guide
-        </a>
+        <Button href={frontmatter.gumroadUrl} classes="mx-auto">Buy the Guide</Button>
       </div>
 
       <div class="notch flex flex-col border border-[var(--border-primary)] hover:shadow-lg transition-shadow duration-200 p-6 text-center">
@@ -120,12 +116,7 @@ const { frontmatter } = Astro.props;
         <p class="text-2xl font-semibold text-[var(--text-primary)] mb-4">
           Custom <span class="text-sm font-normal text-[var(--text-muted)]">quote</span>
         </p>
-        <a
-          class="inline-block rounded-md border-2 border-[var(--accent-bg)] text-[var(--accent-bg)] hover:bg-[var(--accent-bg)] hover:text-white py-3 px-6 font-semibold cursor-pointer hover:scale-[1.01] hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[var(--accent-bg)] focus:ring-offset-2 transition-[transform,box-shadow,background-color,color] duration-200 no-underline"
-          href="/consultation"
-        >
-          Book a Consultation
-        </a>
+        <Button href="/consultation" classes="mx-auto">Book a Consultation</Button>
       </div>
     </div>
   </Container>

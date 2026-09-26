@@ -140,5 +140,12 @@ measured from Asterisk, logo treatment after Stripe Press.
   is not themeable in v4 and is handled by hand.
 - **Mono for chrome, serif for content.** That pairing is the most distinctive thing
   about the design. Keep it.
-- **Buttons on dark surfaces need `invert`.** The default navy button is invisible
-  on the navy footer.
+- **Inventory the UI library before building UI.** Before adding or changing any
+  markup under `src/` (pages, layouts, components, or HTML inside posts), list
+  `src/components/ui/` and state which components apply. Reuse one if it fits;
+  if nothing fits, add the new control to the library rather than hand-styling it
+  in place. Five hand-rolled buttons drifted apart and two went unreadable in dark
+  mode before the library existed. Run `pnpm dev` and open `/ui` to see every
+  component and variant.
+- **Buttons on dark surfaces use `variant="inverse"`.** The default navy button is
+  invisible on the navy footer.
