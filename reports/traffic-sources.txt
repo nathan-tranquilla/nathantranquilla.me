@@ -1,0 +1,56 @@
+Sessions landing on blog posts, last 90 days
+
+taking-responsibility-for-your-ai-generated-code  (15 sessions)
+   47%  Organic Social       7   linkedin.com 7
+   33%  Direct               5   (direct) 5
+   13%  Unassigned           2   (not set) 1, share 1
+    7%  Cross-network        1   (data not available) 1
+
+typescript-has-a-big-problem  (11 sessions)
+  100%  Direct              11   (direct) 11
+
+so-it-begins-the-end-of-typescript  (9 sessions)
+  100%  Direct               9   (direct) 9
+
+i-am-a-web-developer-and-here-is-why-i-dont-use-typescript  (6 sessions)
+  100%  Direct               6   (direct) 6
+
+the-reality-of-rescript-optimization-claims  (6 sessions)
+  100%  Direct               6   (direct) 6
+
+why-every-desk-job-is-becoming-an-ai-apprenticeship  (6 sessions)
+  100%  Direct               6   (direct) 6
+
+when-two-ai-pipelines-meet--turning-curated-data-into-a-daily-api  (6 sessions)
+   83%  Direct               5   (direct) 5
+   17%  Organic Social       1   t.co 1
+
+the-4-pillars-of-next-gen-web-dev  (5 sessions)
+  100%  Direct               5   (direct) 5
+
+why-rescript-is-next-gen  (5 sessions)
+  100%  Direct               5   (direct) 5
+
+ai-powered-video-curation-from-naive-search-to-confident-matches  (4 sessions)
+  100%  Direct               4   (direct) 4
+
+strong-type-systems-are-required-for-a-safer-web  (4 sessions)
+  100%  Direct               4   (direct) 4
+
+teach-claude-your-project-once-benefit-forever  (4 sessions)
+  100%  Direct               4   (direct) 4
+
+5-ways-rescript-fixes-typescript  (3 sessions)
+  100%  Direct               3   (direct) 3
+
+using-ai-to-automate-quality-content-delivery  (3 sessions)
+  100%  Direct               3   (direct) 3
+
+coding-is-not-for-humans  (2 sessions)
+  100%  Direct               2   (direct) 2
+
+All posts  (89 sessions)
+   88%  Direct              78
+    9%  Organic Social       8
+    2%  Unassigned           2
+    1%  Cross-network        1
