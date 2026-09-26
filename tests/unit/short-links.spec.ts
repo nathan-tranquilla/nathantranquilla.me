@@ -30,6 +30,32 @@ test("every post's short link redirects to it with the share UTM tags", async ({
   expect(wrong).toEqual([]);
 });
 
+// Link previewers (iMessage, Signal, Slack) never follow the redirect; they
+// read the tags on the short-link page itself, so it must carry the post's.
+const PREVIEW_TAGS = [
+  "description", "og:title", "og:description", "og:image", "og:url", "og:type",
+  "og:site_name", "twitter:card", "twitter:title", "twitter:description", "twitter:image",
+];
+
+function previewOf(html: string) {
+  const tags: Record<string, string | undefined> = {
+    title: html.match(/<title>([^<]*)<\/title>/)?.[1],
+  };
+  for (const key of PREVIEW_TAGS) {
+    tags[key] = html.match(new RegExp(`<meta (?:name|property)="${key}" content="([^"]*)"`))?.[1];
+  }
+  return tags;
+}
+
+test("a short link previews exactly like its post", async ({ request }) => {
+  for (const post of published) {
+    const short = previewOf(await (await request.get(`/${post.hash}`)).text());
+    const full = previewOf(await (await request.get(`/blogs/${post.slug}/`)).text());
+    expect(Object.values(full).every(Boolean), `${post.slug} is missing tags`).toBe(true);
+    expect(short, post.hash).toEqual(full);
+  }
+});
+
 test("following a short link lands on the post", async ({ page }) => {
   await page.goto(`/${example.hash}`);
   await page.waitForURL(`**${target(example)}`);

@@ -1,14 +1,14 @@
 ---
 import Main from "./Main.astro";
 import Container from "../components/Container.astro";
-import { getPostIndex } from "../utils/posts";
+import { getPostIndex, postDescription } from "../utils/posts";
 import ViewCount from "../components/ViewCount.astro";
 import Button from "../components/Button.astro";
 
 const { frontmatter, rawContent } = Astro.props;
 
 const i = getPostIndex(frontmatter.title);
-const blogDescription = frontmatter.description || `${frontmatter.title}. Topics: ${frontmatter.tags.join(", ")}.`;
+const blogDescription = postDescription(frontmatter);
 
 // Prose words only: code blocks, HTML and markdown syntax are not writing, and
 // counting them would overstate the article to anything reading the schema.

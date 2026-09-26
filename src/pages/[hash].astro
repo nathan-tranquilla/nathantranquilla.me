@@ -3,19 +3,29 @@
 // redirect on the server, so this is a static page. The UTM tags are how GA4
 // credits the visit to a share; this page loads no analytics of its own, so
 // the landing on the post is the only page view.
-import { getPosts } from "../utils/posts";
+//
+// Link previewers never follow the redirect, so this page carries the post's
+// own title, description and image tags.
+import { getPosts, postDescription } from "../utils/posts";
+
+const websiteUrl = "https://nathantranquilla.me";
 
 export function getStaticPaths() {
   return getPosts().map((post) => ({
     params: { hash: post.frontmatter.hash },
-    props: { path: `${post.url}/` },
+    props: { post },
   }));
 }
 
 const { hash } = Astro.params;
-const { path } = Astro.props;
+const { post } = Astro.props;
+const path = `${post.url}/`;
+const slug = post.url.replace(/^\/blogs\//, "");
 const target = `${path}?utm_source=share&utm_medium=short-link&utm_campaign=${hash}`;
-const canonical = new URL(path, "https://nathantranquilla.me").href;
+const canonical = new URL(path, websiteUrl).href;
+const title = `nathantranquilla.me | ${post.frontmatter.title}`;
+const description = postDescription(post.frontmatter);
+const image = `${websiteUrl}/og/${slug}.png`;
 ---
 
 <!doctype html>
@@ -25,7 +35,18 @@ const canonical = new URL(path, "https://nathantranquilla.me").href;
     <meta name="robots" content="noindex" />
     <meta http-equiv="refresh" content={`0;url=${target}`} />
     <link rel="canonical" href={canonical} />
-    <title>Redirecting…</title>
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="nathantranquilla.me" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
     <script is:inline define:vars={{ target }}>location.replace(target);</script>
   </head>
   <body>
