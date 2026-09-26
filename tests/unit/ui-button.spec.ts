@@ -164,6 +164,15 @@ test.describe("the /ui showcase", () => {
     }
   });
 
+  test("is a standalone page, not the site layout, but keeps the site's styles", async ({ page }) => {
+    await page.goto("/ui");
+    await expect(page.locator("nav")).toHaveCount(0);
+    await expect(page.locator("footer")).toHaveCount(0);
+    await expect(page.getByRole("link", { name: "Work With Me" })).toHaveCount(0);
+    const body = await page.evaluate(() => getComputedStyle(document.body).backgroundColor);
+    expect(body).toBe("rgb(250, 248, 240)");
+  });
+
   test("never reaches the production build", () => {
     expect(fs.existsSync("dist/index.html"), "run astro build first").toBe(true);
     expect(fs.existsSync("dist/ui")).toBe(false);

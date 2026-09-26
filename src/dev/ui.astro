@@ -2,8 +2,8 @@
 // UI library showcase. Dev only: astro.config.mjs injects /ui under
 // `astro dev` and nowhere else, so it never reaches the production build.
 // Switch the OS or devtools color scheme to see the other mode.
-import Main from "../layouts/Main.astro";
-import Container from "../components/Container.astro";
+// Standalone: no site layout, just the global styles the components use.
+import "../styles/global.css";
 import Button from "../components/ui/Button.astro";
 
 const surfaces = [
@@ -12,30 +12,39 @@ const surfaces = [
 ] as const;
 ---
 
-<Main title="nathantranquilla.me | UI library" description="Dev-only showcase of the UI library.">
-  <Container classes="w-full max-w-[900px] mx-auto">
-    <h1 class="mb-2 font-serif text-3xl font-semibold text-[var(--text-primary)]">UI library</h1>
-    <p class="mb-10 font-mono text-sm text-[var(--text-muted)]">
-      src/components/ui/ · dev only · switch your color scheme to check the other mode
-    </p>
-
-    <section>
-      <h2 class="mb-4 font-serif text-2xl text-[var(--text-primary)]">Button</h2>
-      {surfaces.map(({ variant, surface, note }) => (
-        <div class="mb-8">
-          <p class="mb-2 font-mono text-xs uppercase tracking-[0.07em] text-[var(--text-muted)]">
-            variant="{variant}" · {note}
-          </p>
-          <div class={`flex flex-wrap items-center gap-4 border border-[var(--border-primary)] p-6 ${surface}`}>
-            <Button href="#" variant={variant}>As a link</Button>
-            <Button variant={variant}>As a button</Button>
-            <Button variant={variant} disabled>Disabled</Button>
-          </div>
-        </div>
-      ))}
-      <p class="font-mono text-xs text-[var(--text-muted)]">
-        In markdown: &lt;a href="…" data-ui="button" data-variant="primary"&gt;…&lt;/a&gt;
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>UI library</title>
+  </head>
+  <body>
+    <main class="mx-auto w-full max-w-[900px] px-4 py-12">
+      <h1 class="mb-2 font-serif text-3xl font-semibold text-[var(--text-primary)]">UI library</h1>
+      <p class="mb-10 font-mono text-sm text-[var(--text-muted)]">
+        src/components/ui/ · dev only · switch your color scheme to check the other mode
       </p>
-    </section>
-  </Container>
-</Main>
+
+      <section>
+        <h2 class="mb-4 font-serif text-2xl text-[var(--text-primary)]">Button</h2>
+        {surfaces.map(({ variant, surface, note }) => (
+          <div class="mb-8">
+            <p class="mb-2 font-mono text-xs uppercase tracking-[0.07em] text-[var(--text-muted)]">
+              variant="{variant}" · {note}
+            </p>
+            <div class={`flex flex-wrap items-center gap-4 border border-[var(--border-primary)] p-6 ${surface}`}>
+              <Button href="#" variant={variant}>As a link</Button>
+              <Button variant={variant}>As a button</Button>
+              <Button variant={variant} disabled>Disabled</Button>
+            </div>
+          </div>
+        ))}
+        <p class="font-mono text-xs text-[var(--text-muted)]">
+          In markdown: &lt;a href="…" data-ui="button" data-variant="primary"&gt;…&lt;/a&gt;
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
