@@ -1,10 +1,10 @@
 Sessions landing on blog posts, last 90 days
 
-taking-responsibility-for-your-ai-generated-code  (17 sessions)
-   41%  Organic Social       7   linkedin.com 7
-   35%  Direct               6   (direct) 6
-   12%  Referral             2   teams.public.onecdn.static.microsoft 2
-   12%  Unassigned           2   share 2
+taking-responsibility-for-your-ai-generated-code  (19 sessions)
+   37%  Organic Social       7   linkedin.com 7
+   32%  Direct               6   (direct) 6
+   16%  Referral             3   teams.public.onecdn.static.microsoft 3
+   16%  Unassigned           3   share 3
 
 typescript-has-a-big-problem  (11 sessions)
   100%  Direct              11   (direct) 11
@@ -49,8 +49,8 @@ coding-is-not-for-humans  (3 sessions)
 using-ai-to-automate-quality-content-delivery  (3 sessions)
   100%  Direct               3   (direct) 3
 
-All posts  (93 sessions)
-   87%  Direct              81
-    9%  Organic Social       8
-    2%  Referral             2
-    2%  Unassigned           2
+All posts  (95 sessions)
+   85%  Direct              81
+    8%  Organic Social       8
+    3%  Referral             3
+    3%  Unassigned           3

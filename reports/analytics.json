@@ -1,18 +1,18 @@
 {
-  "generatedAt": "2026-09-27T11:00:45.434Z",
+  "generatedAt": "2026-09-28T10:00:47.102Z",
   "ranges": {
     "7": {
-      "startDate": "2026-09-21",
-      "endDate": "2026-09-27",
+      "startDate": "2026-09-22",
+      "endDate": "2026-09-28",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
-          "sessions": 17,
+          "sessions": 19,
           "channels": {
             "direct": 6,
             "social": 7,
             "search": 0,
-            "referral": 2,
-            "other": 2
+            "referral": 3,
+            "other": 3
           },
           "sources": [
             {
@@ -21,15 +21,15 @@
             },
             {
               "source": "share",
-              "sessions": 2
+              "sessions": 3
             },
             {
               "source": "teams.public.onecdn.static.microsoft",
-              "sessions": 2
+              "sessions": 3
             }
           ],
-          "shortLinkVisits": 2,
-          "views": 25,
+          "shortLinkVisits": 3,
+          "views": 27,
           "engagedSecondsPerView": 6,
           "shares": {
             "native": 1,
@@ -67,7 +67,7 @@
           },
           "sources": [],
           "shortLinkVisits": 0,
-          "views": 2,
+          "views": 3,
           "engagedSecondsPerView": 0,
           "shares": {
             "native": 0,
@@ -178,17 +178,17 @@
       }
     },
     "30": {
-      "startDate": "2026-08-29",
-      "endDate": "2026-09-27",
+      "startDate": "2026-08-30",
+      "endDate": "2026-09-28",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
-          "sessions": 17,
+          "sessions": 19,
           "channels": {
             "direct": 6,
             "social": 7,
             "search": 0,
-            "referral": 2,
-            "other": 2
+            "referral": 3,
+            "other": 3
           },
           "sources": [
             {
@@ -197,15 +197,15 @@
             },
             {
               "source": "share",
-              "sessions": 2
+              "sessions": 3
             },
             {
               "source": "teams.public.onecdn.static.microsoft",
-              "sessions": 2
+              "sessions": 3
             }
           ],
-          "shortLinkVisits": 2,
-          "views": 25,
+          "shortLinkVisits": 3,
+          "views": 27,
           "engagedSecondsPerView": 6,
           "shares": {
             "native": 1,
@@ -338,8 +338,8 @@
           },
           "sources": [],
           "shortLinkVisits": 0,
-          "views": 3,
-          "engagedSecondsPerView": 4,
+          "views": 4,
+          "engagedSecondsPerView": 3,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -468,8 +468,8 @@
       }
     },
     "90": {
-      "startDate": "2026-06-30",
-      "endDate": "2026-09-27",
+      "startDate": "2026-07-01",
+      "endDate": "2026-09-28",
       "posts": {
         "typescript-has-a-big-problem": {
           "sessions": 11,
@@ -510,13 +510,13 @@
           }
         },
         "taking-responsibility-for-your-ai-generated-code": {
-          "sessions": 17,
+          "sessions": 19,
           "channels": {
             "direct": 6,
             "social": 7,
             "search": 0,
-            "referral": 2,
-            "other": 2
+            "referral": 3,
+            "other": 3
           },
           "sources": [
             {
@@ -525,15 +525,15 @@
             },
             {
               "source": "share",
-              "sessions": 2
+              "sessions": 3
             },
             {
               "source": "teams.public.onecdn.static.microsoft",
-              "sessions": 2
+              "sessions": 3
             }
           ],
-          "shortLinkVisits": 2,
-          "views": 25,
+          "shortLinkVisits": 3,
+          "views": 27,
           "engagedSecondsPerView": 6,
           "shares": {
             "native": 1,
@@ -609,27 +609,8 @@
           },
           "sources": [],
           "shortLinkVisits": 0,
-          "views": 7,
+          "views": 8,
           "engagedSecondsPerView": 2,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
-        "the-4-pillars-of-next-gen-web-dev": {
-          "sessions": 5,
-          "channels": {
-            "direct": 5,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 5,
-          "engagedSecondsPerView": 1,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -717,6 +698,25 @@
             "total": 0
           }
         },
+        "the-4-pillars-of-next-gen-web-dev": {
+          "sessions": 4,
+          "channels": {
+            "direct": 4,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 4,
+          "engagedSecondsPerView": 1,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
         "5-ways-rescript-fixes-typescript": {
           "sessions": 3,
           "channels": {
@@ -777,8 +777,8 @@
       }
     },
     "prev7": {
-      "startDate": "2026-09-14",
-      "endDate": "2026-09-20",
+      "startDate": "2026-09-15",
+      "endDate": "2026-09-21",
       "posts": {
         "typescript-has-a-big-problem": {
           "sessions": 3,
@@ -793,25 +793,6 @@
           "shortLinkVisits": 0,
           "views": 3,
           "engagedSecondsPerView": 1,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
-        "strong-type-systems-are-required-for-a-safer-web": {
-          "sessions": 2,
-          "channels": {
-            "direct": 2,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 2,
-          "engagedSecondsPerView": 8,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -879,7 +860,7 @@
     },
     "all": {
       "startDate": "2015-08-14",
-      "endDate": "2026-09-27",
+      "endDate": "2026-09-28",
       "posts": {
         "the-4-pillars-of-next-gen-web-dev": {
           "sessions": 35,
@@ -1116,7 +1097,7 @@
             }
           ],
           "shortLinkVisits": 0,
-          "views": 25,
+          "views": 26,
           "engagedSecondsPerView": 12,
           "shares": {
             "native": 0,
@@ -1211,13 +1192,13 @@
           }
         },
         "taking-responsibility-for-your-ai-generated-code": {
-          "sessions": 17,
+          "sessions": 19,
           "channels": {
             "direct": 6,
             "social": 7,
             "search": 0,
-            "referral": 2,
-            "other": 2
+            "referral": 3,
+            "other": 3
           },
           "sources": [
             {
@@ -1226,15 +1207,15 @@
             },
             {
               "source": "share",
-              "sessions": 2
+              "sessions": 3
             },
             {
               "source": "teams.public.onecdn.static.microsoft",
-              "sessions": 2
+              "sessions": 3
             }
           ],
-          "shortLinkVisits": 2,
-          "views": 25,
+          "shortLinkVisits": 3,
+          "views": 27,
           "engagedSecondsPerView": 6,
           "shares": {
             "native": 1,
