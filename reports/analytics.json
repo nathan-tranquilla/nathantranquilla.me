@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-09-28T10:00:47.102Z",
+  "generatedAt": "2026-09-29T10:00:53.397Z",
   "ranges": {
     "7": {
-      "startDate": "2026-09-22",
-      "endDate": "2026-09-28",
+      "startDate": "2026-09-23",
+      "endDate": "2026-09-29",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 19,
@@ -37,6 +37,25 @@
             "total": 1
           }
         },
+        "5-ways-rescript-fixes-typescript": {
+          "sessions": 1,
+          "channels": {
+            "direct": 1,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 2,
+          "engagedSecondsPerView": 1,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
         "coding-is-not-for-humans": {
           "sessions": 1,
           "channels": {
@@ -57,36 +76,22 @@
           }
         },
         "teach-claude-your-project-once-benefit-forever": {
-          "sessions": 1,
+          "sessions": 2,
           "channels": {
             "direct": 1,
             "social": 0,
             "search": 0,
-            "referral": 0,
+            "referral": 1,
             "other": 0
           },
-          "sources": [],
+          "sources": [
+            {
+              "source": "teams.public.onecdn.static.microsoft",
+              "sessions": 1
+            }
+          ],
           "shortLinkVisits": 0,
-          "views": 3,
-          "engagedSecondsPerView": 0,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
-        "the-4-pillars-of-next-gen-web-dev": {
-          "sessions": 1,
-          "channels": {
-            "direct": 1,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 1,
+          "views": 4,
           "engagedSecondsPerView": 0,
           "shares": {
             "native": 0,
@@ -155,31 +160,12 @@
             "clipboard": 0,
             "total": 0
           }
-        },
-        "5-ways-rescript-fixes-typescript": {
-          "sessions": 0,
-          "channels": {
-            "direct": 0,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 1,
-          "engagedSecondsPerView": 1,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
         }
       }
     },
     "30": {
-      "startDate": "2026-08-30",
-      "endDate": "2026-09-28",
+      "startDate": "2026-08-31",
+      "endDate": "2026-09-29",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 19,
@@ -308,6 +294,25 @@
             "total": 0
           }
         },
+        "5-ways-rescript-fixes-typescript": {
+          "sessions": 1,
+          "channels": {
+            "direct": 1,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 2,
+          "engagedSecondsPerView": 1,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
         "coding-is-not-for-humans": {
           "sessions": 1,
           "channels": {
@@ -328,18 +333,23 @@
           }
         },
         "teach-claude-your-project-once-benefit-forever": {
-          "sessions": 1,
+          "sessions": 2,
           "channels": {
             "direct": 1,
             "social": 0,
             "search": 0,
-            "referral": 0,
+            "referral": 1,
             "other": 0
           },
-          "sources": [],
+          "sources": [
+            {
+              "source": "teams.public.onecdn.static.microsoft",
+              "sessions": 1
+            }
+          ],
           "shortLinkVisits": 0,
-          "views": 4,
-          "engagedSecondsPerView": 3,
+          "views": 5,
+          "engagedSecondsPerView": 2,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -445,31 +455,12 @@
             "clipboard": 0,
             "total": 0
           }
-        },
-        "5-ways-rescript-fixes-typescript": {
-          "sessions": 0,
-          "channels": {
-            "direct": 0,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 1,
-          "engagedSecondsPerView": 1,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
         }
       }
     },
     "90": {
-      "startDate": "2026-07-01",
-      "endDate": "2026-09-28",
+      "startDate": "2026-07-02",
+      "endDate": "2026-09-29",
       "posts": {
         "typescript-has-a-big-problem": {
           "sessions": 11,
@@ -560,25 +551,6 @@
             "total": 0
           }
         },
-        "the-reality-of-rescript-optimization-claims": {
-          "sessions": 6,
-          "channels": {
-            "direct": 6,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 6,
-          "engagedSecondsPerView": 5,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
         "why-every-desk-job-is-becoming-an-ai-apprenticeship": {
           "sessions": 6,
           "channels": {
@@ -599,18 +571,23 @@
           }
         },
         "teach-claude-your-project-once-benefit-forever": {
-          "sessions": 5,
+          "sessions": 6,
           "channels": {
             "direct": 5,
             "social": 0,
             "search": 0,
-            "referral": 0,
+            "referral": 1,
             "other": 0
           },
-          "sources": [],
+          "sources": [
+            {
+              "source": "teams.public.onecdn.static.microsoft",
+              "sessions": 1
+            }
+          ],
           "shortLinkVisits": 0,
-          "views": 8,
-          "engagedSecondsPerView": 2,
+          "views": 9,
+          "engagedSecondsPerView": 1,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -641,25 +618,6 @@
             "total": 0
           }
         },
-        "why-rescript-is-next-gen": {
-          "sessions": 5,
-          "channels": {
-            "direct": 5,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 5,
-          "engagedSecondsPerView": 0,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
         "ai-powered-video-curation-from-naive-search-to-confident-matches": {
           "sessions": 4,
           "channels": {
@@ -679,7 +637,7 @@
             "total": 0
           }
         },
-        "strong-type-systems-are-required-for-a-safer-web": {
+        "the-reality-of-rescript-optimization-claims": {
           "sessions": 4,
           "channels": {
             "direct": 4,
@@ -691,26 +649,7 @@
           "sources": [],
           "shortLinkVisits": 0,
           "views": 4,
-          "engagedSecondsPerView": 4,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
-        "the-4-pillars-of-next-gen-web-dev": {
-          "sessions": 4,
-          "channels": {
-            "direct": 4,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 4,
-          "engagedSecondsPerView": 1,
+          "engagedSecondsPerView": 6,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -755,7 +694,64 @@
             "total": 0
           }
         },
+        "strong-type-systems-are-required-for-a-safer-web": {
+          "sessions": 3,
+          "channels": {
+            "direct": 3,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 3,
+          "engagedSecondsPerView": 5,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
+        "the-4-pillars-of-next-gen-web-dev": {
+          "sessions": 3,
+          "channels": {
+            "direct": 3,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 3,
+          "engagedSecondsPerView": 1,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
         "using-ai-to-automate-quality-content-delivery": {
+          "sessions": 3,
+          "channels": {
+            "direct": 3,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 3,
+          "engagedSecondsPerView": 0,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
+        "why-rescript-is-next-gen": {
           "sessions": 3,
           "channels": {
             "direct": 3,
@@ -777,29 +773,10 @@
       }
     },
     "prev7": {
-      "startDate": "2026-09-15",
-      "endDate": "2026-09-21",
+      "startDate": "2026-09-16",
+      "endDate": "2026-09-22",
       "posts": {
-        "typescript-has-a-big-problem": {
-          "sessions": 3,
-          "channels": {
-            "direct": 3,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 3,
-          "engagedSecondsPerView": 1,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
-        "the-reality-of-rescript-optimization-claims": {
+        "the-4-pillars-of-next-gen-web-dev": {
           "sessions": 1,
           "channels": {
             "direct": 1,
@@ -818,7 +795,7 @@
             "total": 0
           }
         },
-        "using-ai-to-automate-quality-content-delivery": {
+        "the-reality-of-rescript-optimization-claims": {
           "sessions": 1,
           "channels": {
             "direct": 1,
@@ -860,7 +837,7 @@
     },
     "all": {
       "startDate": "2015-08-14",
-      "endDate": "2026-09-28",
+      "endDate": "2026-09-29",
       "posts": {
         "the-4-pillars-of-next-gen-web-dev": {
           "sessions": 35,
@@ -983,6 +960,25 @@
             "total": 0
           }
         },
+        "5-ways-rescript-fixes-typescript": {
+          "sessions": 13,
+          "channels": {
+            "direct": 13,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 14,
+          "engagedSecondsPerView": 2,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
         "the-reality-of-rescript-optimization-claims": {
           "sessions": 13,
           "channels": {
@@ -1062,43 +1058,28 @@
             "total": 0
           }
         },
-        "5-ways-rescript-fixes-typescript": {
-          "sessions": 12,
-          "channels": {
-            "direct": 12,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 13,
-          "engagedSecondsPerView": 2,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
         "teach-claude-your-project-once-benefit-forever": {
-          "sessions": 19,
+          "sessions": 20,
           "channels": {
             "direct": 12,
             "social": 7,
             "search": 0,
-            "referral": 0,
+            "referral": 1,
             "other": 0
           },
           "sources": [
             {
               "source": "linkedin.com",
               "sessions": 7
+            },
+            {
+              "source": "teams.public.onecdn.static.microsoft",
+              "sessions": 1
             }
           ],
           "shortLinkVisits": 0,
-          "views": 26,
-          "engagedSecondsPerView": 12,
+          "views": 27,
+          "engagedSecondsPerView": 11,
           "shares": {
             "native": 0,
             "clipboard": 0,

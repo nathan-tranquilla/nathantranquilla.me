@@ -21,18 +21,19 @@ the-reality-of-rescript-optimization-claims  (6 sessions)
 why-every-desk-job-is-becoming-an-ai-apprenticeship  (6 sessions)
   100%  Direct               6   (direct) 6
 
+teach-claude-your-project-once-benefit-forever  (6 sessions)
+   83%  Direct               5   (direct) 5
+   17%  Referral             1   teams.public.onecdn.static.microsoft 1
+
 when-two-ai-pipelines-meet--turning-curated-data-into-a-daily-api  (6 sessions)
    83%  Direct               5   (direct) 5
    17%  Organic Social       1   t.co 1
 
-teach-claude-your-project-once-benefit-forever  (5 sessions)
-  100%  Direct               5   (direct) 5
-
-the-4-pillars-of-next-gen-web-dev  (5 sessions)
-  100%  Direct               5   (direct) 5
-
 why-rescript-is-next-gen  (5 sessions)
   100%  Direct               5   (direct) 5
+
+5-ways-rescript-fixes-typescript  (4 sessions)
+  100%  Direct               4   (direct) 4
 
 ai-powered-video-curation-from-naive-search-to-confident-matches  (4 sessions)
   100%  Direct               4   (direct) 4
@@ -40,8 +41,8 @@ ai-powered-video-curation-from-naive-search-to-confident-matches  (4 sessions)
 strong-type-systems-are-required-for-a-safer-web  (4 sessions)
   100%  Direct               4   (direct) 4
 
-5-ways-rescript-fixes-typescript  (3 sessions)
-  100%  Direct               3   (direct) 3
+the-4-pillars-of-next-gen-web-dev  (4 sessions)
+  100%  Direct               4   (direct) 4
 
 coding-is-not-for-humans  (3 sessions)
   100%  Direct               3   (direct) 3
@@ -49,8 +50,8 @@ coding-is-not-for-humans  (3 sessions)
 using-ai-to-automate-quality-content-delivery  (3 sessions)
   100%  Direct               3   (direct) 3
 
-All posts  (95 sessions)
-   85%  Direct              81
+All posts  (96 sessions)
+   84%  Direct              81
     8%  Organic Social       8
-    3%  Referral             3
+    4%  Referral             4
     3%  Unassigned           3
