@@ -7,18 +7,23 @@ import Container from "./Container.astro";
 <Container
   classes="w-full h-fit flex flex-col justify-start items-center pt-[5vh] md:max-w-[640px] max-w-[350px] mx-auto"
 >
-  <figure class="h-[200px] w-[200px] md:h-[400px] md:w-[400px]">
-    <!-- The gradient is the photo's own backdrop (sampled from its left and
-         right edges), so the frame shows it, not paper, while the photo loads.
-         Resample if Profile.webp changes; hero.spec.ts checks they match. -->
+  <!-- The frame carries the photo's own backdrop (sampled from its left and
+       right edges), so it shows grey, not paper, while the photo loads; the
+       photo then fades in over it. Resample if Profile.webp changes;
+       hero.spec.ts checks they match. -->
+  <figure
+    class="h-[200px] w-[200px] md:h-[400px] md:w-[400px] border border-[var(--border-primary)] bg-[linear-gradient(to_right,#bcbab6,#b4b1ab)]"
+  >
     <Image
       src={Profile}
       alt="Nathan Tranquilla Profile"
-      class="border border-[var(--border-primary)] bg-[linear-gradient(to_right,#bcbab6,#b4b1ab)]"
+      class="avatar-photo h-full w-full"
       widths={[350, 550]}
       layout="constrained"
+      onload="this.dataset.loaded = ''"
     />
   </figure>
+  <noscript><style>.avatar-photo { opacity: 1 !important; }</style></noscript>
   <h1
     class="pt-5 font-serif text-4xl font-medium tracking-tight text-nowrap text-[var(--text-primary)] md:text-6xl"
   >
@@ -30,3 +35,22 @@ import Container from "./Container.astro";
     Type safety and AI in software development, and the seam where they meet.
   </p>
 </Container>
+
+<style is:global>
+  /* A quick fade that front-loads the change and eases out: most of it lands
+     at once, the tail settles slowly. Hidden only until the inline onload
+     marks it loaded; without JavaScript the noscript rule shows it at once. */
+  .avatar-photo {
+    transition: opacity 450ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .avatar-photo:not([data-loaded]) {
+    opacity: 0;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .avatar-photo {
+      transition: none;
+    }
+  }
+</style>
