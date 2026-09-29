@@ -90,6 +90,70 @@ test.describe("Homepage hero", () => {
     }
   });
 
+  // Behind the photo, a slightly darker silhouette of head and shoulders sits
+  // exactly where they are in the photo, so it loads "into place".
+  const silhouette = (page: Page) => page.locator("figure svg[data-silhouette]");
+
+  test("while the photo loads, a slightly darker silhouette shows in the frame", async ({ page }) => {
+    await page.route(/Profile.*\.webp|_image/, () => {}); // hold the photo back
+    await page.goto("/", { waitUntil: "domcontentloaded" });
+    await expect(silhouette(page)).toBeVisible();
+    const fill = await silhouette(page).locator("path").first().evaluate((el) => getComputedStyle(el).fill);
+    const shade = (fill.match(/\d+/g) ?? []).slice(0, 3).map(Number);
+    const backdrop = [184, 181, 176]; // the gradient's midpoint
+    const darker = backdrop.map((c, i) => c - shade[i]);
+    for (const d of darker) {
+      expect(d, `silhouette ${shade} should be slightly darker than ${backdrop}`).toBeGreaterThanOrEqual(8);
+      expect(d).toBeLessThanOrEqual(35);
+    }
+  });
+
+  test("the silhouette lines up with the head and shoulders in the photo", async ({ page }) => {
+    await page.goto("/");
+    await expect.poll(() => loaded(page)).toBe(true);
+    const svg = await silhouette(page).evaluate((el) => new XMLSerializer().serializeToString(el));
+    const iou = await photo(page).evaluate(async (el, svg) => {
+      const N = 110;
+      const grid = () => {
+        const c = document.createElement("canvas");
+        c.width = c.height = N;
+        return c.getContext("2d", { willReadFrequently: true })!;
+      };
+      // the person in the photo: pixels that stand apart from the backdrop,
+      // which runs from the left edge's grey to the right edge's
+      const p = grid();
+      p.drawImage(el as HTMLImageElement, 0, 0, N, N);
+      const px = (x: number, y: number) => p.getImageData(x, y, 1, 1).data;
+      const edge = (x: number) => {
+        const s = [0, 0, 0];
+        for (const y of [1, 5, 10, 20, 30]) px(x, y).slice(0, 3).forEach((v, i) => (s[i] += v / 5));
+        return s;
+      };
+      const [L, R] = [edge(1), edge(N - 2)];
+      const person: boolean[] = [];
+      for (let y = 0; y < N; y++)
+        for (let x = 0; x < N; x++) {
+          const bg = L.map((l, i) => l + ((R[i] - l) * x) / (N - 1));
+          const d = px(x, y);
+          person.push(Math.hypot(d[0] - bg[0], d[1] - bg[1], d[2] - bg[2]) > 22);
+        }
+      // the silhouette, rasterised at the same size
+      const img = new Image();
+      img.src = "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svg);
+      await img.decode();
+      const s = grid();
+      s.drawImage(img, 0, 0, N, N);
+      let both = 0, either = 0;
+      for (let i = 0; i < N * N; i++) {
+        const inSil = s.getImageData(i % N, Math.floor(i / N), 1, 1).data[3] > 127;
+        if (inSil && person[i]) both++;
+        if (inSil || person[i]) either++;
+      }
+      return both / either;
+    }, svg);
+    expect(iou, "overlap between silhouette and person in the photo").toBeGreaterThan(0.85);
+  });
+
   // A quick fade that front-loads the change and eases out: most of it lands
   // at once, the tail settles slowly.
   test("the photo fades in quickly with a slow tail once it loads", async ({ page }) => {
@@ -101,8 +165,9 @@ test.describe("Homepage hero", () => {
       return { property: s.transitionProperty, duration: parseFloat(s.transitionDuration), easing: s.transitionTimingFunction };
     });
     expect(t.property).toContain("opacity");
-    expect(t.duration).toBeGreaterThanOrEqual(0.25);
-    expect(t.duration).toBeLessThanOrEqual(0.6);
+    // quick to appear, but a long, visible settle at the end
+    expect(t.duration).toBeGreaterThanOrEqual(0.9);
+    expect(t.duration).toBeLessThanOrEqual(1.6);
     const [x1, y1, x2, y2] = (t.easing.match(/cubic-bezier\(([^)]+)\)/)?.[1] ?? "").split(",").map(Number);
     expect(y1, `ease-out curve expected, got ${t.easing}`).toBeGreaterThan(x1 * 3); // steep start
     expect(y2).toBeCloseTo(1, 1); // lands softly

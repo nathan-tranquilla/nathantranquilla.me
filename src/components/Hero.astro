@@ -1,6 +1,8 @@
 ---
 import { Image } from "astro:assets";
 import Profile from "../assets/Profile.webp";
+// Traced from the photo by scripts/avatar-silhouette.mjs; rerun it if the photo changes.
+import silhouette from "../assets/profile-silhouette.svg?raw";
 import Container from "./Container.astro";
 ---
 
@@ -8,16 +10,18 @@ import Container from "./Container.astro";
   classes="w-full h-fit flex flex-col justify-start items-center pt-[5vh] md:max-w-[640px] max-w-[350px] mx-auto"
 >
   <!-- The frame carries the photo's own backdrop (sampled from its left and
-       right edges), so it shows grey, not paper, while the photo loads; the
-       photo then fades in over it. Resample if Profile.webp changes;
-       hero.spec.ts checks they match. -->
+       right edges), so it shows grey, not paper, while the photo loads, with a
+       slightly darker head-and-shoulders silhouette traced from the photo in
+       the same spot; the photo then fades in over it. Resample if
+       Profile.webp changes; hero.spec.ts checks both still match. -->
   <figure
-    class="h-[200px] w-[200px] md:h-[400px] md:w-[400px] border border-[var(--border-primary)] bg-[linear-gradient(to_right,#bcbab6,#b4b1ab)]"
+    class="relative h-[200px] w-[200px] md:h-[400px] md:w-[400px] border border-[var(--border-primary)] bg-[linear-gradient(to_right,#bcbab6,#b4b1ab)]"
   >
+    <div class="absolute inset-0 [&>svg]:h-full [&>svg]:w-full" set:html={silhouette} />
     <Image
       src={Profile}
       alt="Nathan Tranquilla Profile"
-      class="avatar-photo h-full w-full"
+      class="avatar-photo relative h-full w-full"
       widths={[350, 550]}
       layout="constrained"
       onload="this.dataset.loaded = ''"
@@ -41,7 +45,7 @@ import Container from "./Container.astro";
      at once, the tail settles slowly. Hidden only until the inline onload
      marks it loaded; without JavaScript the noscript rule shows it at once. */
   .avatar-photo {
-    transition: opacity 450ms cubic-bezier(0.16, 1, 0.3, 1);
+    transition: opacity 1200ms cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .avatar-photo:not([data-loaded]) {
