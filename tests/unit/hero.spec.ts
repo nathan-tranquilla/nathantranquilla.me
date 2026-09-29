@@ -35,7 +35,7 @@ test.describe("Homepage hero", () => {
 
   // While the photo loads, the frame shows the photo's own backdrop, a grey
   // that darkens slightly left to right, so there is no paper-coloured flash.
-  // The frame (border and backdrop) is the figure; the photo fades in over it.
+  // The frame (border and backdrop) is the figure; the photo appears over it.
   const frame = (page: Page) => page.locator("figure");
   const photo = (page: Page) => page.locator("figure img");
   const loaded = (page: Page) =>
@@ -54,7 +54,6 @@ test.describe("Homepage hero", () => {
     });
     expect(style.bg).toMatch(/^linear-gradient\(to right, rgb/);
     expect(style.border).toBe("1px");
-    expect(await photo(page).evaluate((el) => getComputedStyle(el).opacity)).toBe("0");
   });
 
   test("the gradient's ends match the photo's left and right edges", async ({ page }) => {
@@ -154,41 +153,18 @@ test.describe("Homepage hero", () => {
     expect(iou, "overlap between silhouette and person in the photo").toBeGreaterThan(0.85);
   });
 
-  // A quick fade that front-loads the change and eases out: most of it lands
-  // at once, the tail settles slowly.
-  test("the photo fades in quickly with a slow tail once it loads", async ({ page }) => {
+  // No fade: a fade read as a flutter. The photo simply appears over the
+  // silhouette frame the moment it has loaded.
+  test("the photo appears without any animation once it loads", async ({ page }) => {
     await page.goto("/");
     await expect.poll(() => loaded(page)).toBe(true);
-    await expect.poll(() => photo(page).evaluate((el) => getComputedStyle(el).opacity)).toBe("1");
-    const t = await photo(page).evaluate((el) => {
-      const s = getComputedStyle(el);
-      return { property: s.transitionProperty, duration: parseFloat(s.transitionDuration), easing: s.transitionTimingFunction };
+    const s = await photo(page).evaluate((el) => {
+      const c = getComputedStyle(el);
+      return { opacity: c.opacity, durations: c.transitionDuration.split(",").map(parseFloat), animation: c.animationName };
     });
-    expect(t.property).toContain("opacity");
-    // quick to appear, but a long, visible settle at the end
-    expect(t.duration).toBeGreaterThanOrEqual(0.9);
-    expect(t.duration).toBeLessThanOrEqual(1.6);
-    const [x1, y1, x2, y2] = (t.easing.match(/cubic-bezier\(([^)]+)\)/)?.[1] ?? "").split(",").map(Number);
-    expect(y1, `ease-out curve expected, got ${t.easing}`).toBeGreaterThan(x1 * 3); // steep start
-    expect(y2).toBeCloseTo(1, 1); // lands softly
-    expect(x2).toBeLessThan(0.5);
+    expect(s.opacity).toBe("1");
+    expect(s.durations.every((d) => d === 0), `transition-duration ${s.durations}`).toBe(true);
+    expect(s.animation).toBe("none");
   });
 
-  test("with reduced motion, the photo appears without a fade", async ({ page }) => {
-    await page.emulateMedia({ reducedMotion: "reduce" });
-    await page.goto("/");
-    await expect.poll(() => loaded(page)).toBe(true);
-    expect(await photo(page).evaluate((el) => parseFloat(getComputedStyle(el).transitionDuration))).toBe(0);
-    await expect.poll(() => photo(page).evaluate((el) => getComputedStyle(el).opacity)).toBe("1");
-  });
-
-  test.describe("without JavaScript", () => {
-    test.use({ javaScriptEnabled: false });
-
-    test("the photo still shows", async ({ page }) => {
-      await page.goto("/");
-      await expect.poll(() => loaded(page)).toBe(true);
-      expect(await photo(page).evaluate((el) => getComputedStyle(el).opacity)).toBe("1");
-    });
-  });
 });
