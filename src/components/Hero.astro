@@ -8,10 +8,13 @@ import Container from "./Container.astro";
   classes="w-full h-fit flex flex-col justify-start items-center pt-[5vh] md:max-w-[640px] max-w-[350px] mx-auto"
 >
   <figure class="h-[200px] w-[200px] md:h-[400px] md:w-[400px]">
+    <!-- The gradient is the photo's own backdrop (sampled from its left and
+         right edges), so the frame shows it, not paper, while the photo loads.
+         Resample if Profile.webp changes; hero.spec.ts checks they match. -->
     <Image
       src={Profile}
       alt="Nathan Tranquilla Profile"
-      class="border border-[var(--border-primary)]"
+      class="border border-[var(--border-primary)] bg-[linear-gradient(to_right,#bcbab6,#b4b1ab)]"
       widths={[350, 550]}
       layout="constrained"
     />
