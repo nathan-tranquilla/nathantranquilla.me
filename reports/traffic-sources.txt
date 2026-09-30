@@ -1,10 +1,10 @@
 Sessions landing on blog posts, last 90 days
 
-taking-responsibility-for-your-ai-generated-code  (19 sessions)
-   37%  Organic Social       7   linkedin.com 7
-   32%  Direct               6   (direct) 6
-   16%  Referral             3   teams.public.onecdn.static.microsoft 3
-   16%  Unassigned           3   share 3
+taking-responsibility-for-your-ai-generated-code  (21 sessions)
+   33%  Direct               7   (direct) 7
+   33%  Organic Social       7   linkedin.com 7
+   19%  Referral             4   teams.public.onecdn.static.microsoft 4
+   14%  Unassigned           3   share 3
 
 typescript-has-a-big-problem  (11 sessions)
   100%  Direct              11   (direct) 11
@@ -13,9 +13,6 @@ so-it-begins-the-end-of-typescript  (9 sessions)
   100%  Direct               9   (direct) 9
 
 i-am-a-web-developer-and-here-is-why-i-dont-use-typescript  (6 sessions)
-  100%  Direct               6   (direct) 6
-
-the-reality-of-rescript-optimization-claims  (6 sessions)
   100%  Direct               6   (direct) 6
 
 why-every-desk-job-is-becoming-an-ai-apprenticeship  (6 sessions)
@@ -29,29 +26,32 @@ when-two-ai-pipelines-meet--turning-curated-data-into-a-daily-api  (6 sessions)
    83%  Direct               5   (direct) 5
    17%  Organic Social       1   t.co 1
 
-why-rescript-is-next-gen  (5 sessions)
-  100%  Direct               5   (direct) 5
-
-5-ways-rescript-fixes-typescript  (4 sessions)
-  100%  Direct               4   (direct) 4
-
 ai-powered-video-curation-from-naive-search-to-confident-matches  (4 sessions)
   100%  Direct               4   (direct) 4
 
-strong-type-systems-are-required-for-a-safer-web  (4 sessions)
+the-reality-of-rescript-optimization-claims  (4 sessions)
   100%  Direct               4   (direct) 4
 
-the-4-pillars-of-next-gen-web-dev  (4 sessions)
-  100%  Direct               4   (direct) 4
+5-ways-rescript-fixes-typescript  (3 sessions)
+  100%  Direct               3   (direct) 3
 
 coding-is-not-for-humans  (3 sessions)
+  100%  Direct               3   (direct) 3
+
+strong-type-systems-are-required-for-a-safer-web  (3 sessions)
+  100%  Direct               3   (direct) 3
+
+the-4-pillars-of-next-gen-web-dev  (3 sessions)
   100%  Direct               3   (direct) 3
 
 using-ai-to-automate-quality-content-delivery  (3 sessions)
   100%  Direct               3   (direct) 3
 
-All posts  (96 sessions)
-   84%  Direct              81
-    8%  Organic Social       8
-    4%  Referral             4
+why-rescript-is-next-gen  (3 sessions)
+  100%  Direct               3   (direct) 3
+
+All posts  (91 sessions)
+   82%  Direct              75
+    9%  Organic Social       8
+    5%  Referral             5
     3%  Unassigned           3

@@ -1,40 +1,40 @@
 {
-  "generatedAt": "2026-09-29T10:00:53.397Z",
+  "generatedAt": "2026-09-30T10:01:25.400Z",
   "ranges": {
     "7": {
-      "startDate": "2026-09-23",
-      "endDate": "2026-09-29",
+      "startDate": "2026-09-24",
+      "endDate": "2026-09-30",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
-          "sessions": 19,
+          "sessions": 13,
           "channels": {
-            "direct": 6,
-            "social": 7,
+            "direct": 5,
+            "social": 1,
             "search": 0,
-            "referral": 3,
+            "referral": 4,
             "other": 3
           },
           "sources": [
             {
-              "source": "linkedin.com",
-              "sessions": 7
+              "source": "teams.public.onecdn.static.microsoft",
+              "sessions": 4
             },
             {
               "source": "share",
               "sessions": 3
             },
             {
-              "source": "teams.public.onecdn.static.microsoft",
-              "sessions": 3
+              "source": "linkedin.com",
+              "sessions": 1
             }
           ],
           "shortLinkVisits": 3,
-          "views": 27,
-          "engagedSecondsPerView": 6,
+          "views": 16,
+          "engagedSecondsPerView": 10,
           "shares": {
             "native": 1,
-            "clipboard": 0,
-            "total": 1
+            "clipboard": 1,
+            "total": 2
           }
         },
         "5-ways-rescript-fixes-typescript": {
@@ -164,16 +164,16 @@
       }
     },
     "30": {
-      "startDate": "2026-08-31",
-      "endDate": "2026-09-29",
+      "startDate": "2026-09-01",
+      "endDate": "2026-09-30",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
-          "sessions": 19,
+          "sessions": 21,
           "channels": {
-            "direct": 6,
+            "direct": 7,
             "social": 7,
             "search": 0,
-            "referral": 3,
+            "referral": 4,
             "other": 3
           },
           "sources": [
@@ -182,21 +182,21 @@
               "sessions": 7
             },
             {
-              "source": "share",
-              "sessions": 3
+              "source": "teams.public.onecdn.static.microsoft",
+              "sessions": 4
             },
             {
-              "source": "teams.public.onecdn.static.microsoft",
+              "source": "share",
               "sessions": 3
             }
           ],
           "shortLinkVisits": 3,
-          "views": 27,
+          "views": 29,
           "engagedSecondsPerView": 6,
           "shares": {
             "native": 1,
-            "clipboard": 0,
-            "total": 1
+            "clipboard": 1,
+            "total": 2
           }
         },
         "typescript-has-a-big-problem": {
@@ -459,8 +459,8 @@
       }
     },
     "90": {
-      "startDate": "2026-07-02",
-      "endDate": "2026-09-29",
+      "startDate": "2026-07-03",
+      "endDate": "2026-09-30",
       "posts": {
         "typescript-has-a-big-problem": {
           "sessions": 11,
@@ -501,12 +501,12 @@
           }
         },
         "taking-responsibility-for-your-ai-generated-code": {
-          "sessions": 19,
+          "sessions": 21,
           "channels": {
-            "direct": 6,
+            "direct": 7,
             "social": 7,
             "search": 0,
-            "referral": 3,
+            "referral": 4,
             "other": 3
           },
           "sources": [
@@ -515,40 +515,21 @@
               "sessions": 7
             },
             {
-              "source": "share",
-              "sessions": 3
+              "source": "teams.public.onecdn.static.microsoft",
+              "sessions": 4
             },
             {
-              "source": "teams.public.onecdn.static.microsoft",
+              "source": "share",
               "sessions": 3
             }
           ],
           "shortLinkVisits": 3,
-          "views": 27,
+          "views": 29,
           "engagedSecondsPerView": 6,
           "shares": {
             "native": 1,
-            "clipboard": 0,
-            "total": 1
-          }
-        },
-        "i-am-a-web-developer-and-here-is-why-i-dont-use-typescript": {
-          "sessions": 6,
-          "channels": {
-            "direct": 6,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 6,
-          "engagedSecondsPerView": 0,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
+            "clipboard": 1,
+            "total": 2
           }
         },
         "why-every-desk-job-is-becoming-an-ai-apprenticeship": {
@@ -564,6 +545,25 @@
           "shortLinkVisits": 0,
           "views": 6,
           "engagedSecondsPerView": 2,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
+        "i-am-a-web-developer-and-here-is-why-i-dont-use-typescript": {
+          "sessions": 5,
+          "channels": {
+            "direct": 5,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 5,
+          "engagedSecondsPerView": 0,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -732,25 +732,6 @@
             "total": 0
           }
         },
-        "using-ai-to-automate-quality-content-delivery": {
-          "sessions": 3,
-          "channels": {
-            "direct": 3,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 3,
-          "engagedSecondsPerView": 0,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
         "why-rescript-is-next-gen": {
           "sessions": 3,
           "channels": {
@@ -769,13 +750,56 @@
             "clipboard": 0,
             "total": 0
           }
+        },
+        "using-ai-to-automate-quality-content-delivery": {
+          "sessions": 2,
+          "channels": {
+            "direct": 2,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 2,
+          "engagedSecondsPerView": 0,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
         }
       }
     },
     "prev7": {
-      "startDate": "2026-09-16",
-      "endDate": "2026-09-22",
+      "startDate": "2026-09-17",
+      "endDate": "2026-09-23",
       "posts": {
+        "taking-responsibility-for-your-ai-generated-code": {
+          "sessions": 8,
+          "channels": {
+            "direct": 2,
+            "social": 6,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [
+            {
+              "source": "linkedin.com",
+              "sessions": 6
+            }
+          ],
+          "shortLinkVisits": 0,
+          "views": 13,
+          "engagedSecondsPerView": 1,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
         "the-4-pillars-of-next-gen-web-dev": {
           "sessions": 1,
           "channels": {
@@ -837,7 +861,7 @@
     },
     "all": {
       "startDate": "2015-08-14",
-      "endDate": "2026-09-29",
+      "endDate": "2026-09-30",
       "posts": {
         "the-4-pillars-of-next-gen-web-dev": {
           "sessions": 35,
@@ -1173,12 +1197,12 @@
           }
         },
         "taking-responsibility-for-your-ai-generated-code": {
-          "sessions": 19,
+          "sessions": 21,
           "channels": {
-            "direct": 6,
+            "direct": 7,
             "social": 7,
             "search": 0,
-            "referral": 3,
+            "referral": 4,
             "other": 3
           },
           "sources": [
@@ -1187,21 +1211,21 @@
               "sessions": 7
             },
             {
-              "source": "share",
-              "sessions": 3
+              "source": "teams.public.onecdn.static.microsoft",
+              "sessions": 4
             },
             {
-              "source": "teams.public.onecdn.static.microsoft",
+              "source": "share",
               "sessions": 3
             }
           ],
           "shortLinkVisits": 3,
-          "views": 27,
+          "views": 29,
           "engagedSecondsPerView": 6,
           "shares": {
             "native": 1,
-            "clipboard": 0,
-            "total": 1
+            "clipboard": 1,
+            "total": 2
           }
         }
       }
