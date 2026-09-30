@@ -1,6 +1,6 @@
 ---
 name: write-blog-post
-description: Draft a blog post from the author's dictated thoughts, capturing them faithfully without inventing, and applying the house voice (grade 10 reading level, no em dashes, no AI tells). TRIGGER WHEN: the user wants to start, dictate, or draft a new post in `src/pages/blogs/`. For critiquing or editing an existing draft, use `blog-review` instead.
+description: Write a blog post with the author in three stages (idea, agreed outline, then a first draft built one paragraph at a time from the author's voice-note dumps), capturing them faithfully without inventing, in the house voice (grade 10 reading level, no em dashes, no AI tells). TRIGGER WHEN: the user pitches a post idea, wants to outline or dictate a post, sends a voice-note dump for a paragraph, or wants to start or continue a draft for `src/pages/blogs/`. For critiquing or editing an existing draft, use `blog-review` instead.
 ---
 
 # Writing a Blog Post
@@ -8,6 +8,49 @@ description: Draft a blog post from the author's dictated thoughts, capturing th
 This skill is for getting a post *written*. `blog-review` is for making an existing
 draft better. They compose: draft here, critique there, ship with that skill's
 pre-publish checklist.
+
+## The workflow
+
+This is how every new post is written, up to the first draft. Do not skip ahead.
+
+1. **Ask for the idea.** When the author says they want to write a new post, in any
+   wording, ask for the idea as a whole: a first blurb of what the post is about. It
+   usually arrives as a long voice-note dump. If they point at source material (a
+   sibling repo, an earlier post), study it before going on.
+
+2. **Suggest a breakdown.** Propose the post's structure: numbered sections, and under
+   each the **paragraphs**, one line per paragraph saying what it covers. Mention
+   anything the idea seems to be missing (the thesis, a reader's objection,
+   limitations, a way for readers to start, links to earlier posts on the same theme),
+   as suggestions, not additions.
+
+3. **Collaborate on the breakdown** until the author agrees what goes in each
+   paragraph and in what order. Print the full breakdown each time it changes. The
+   author approves it explicitly before any prose is written.
+
+4. **Go paragraph by paragraph.** Create `drafts/<slug>.md` (untracked until the author
+   says to commit; see Frontmatter) with the frontmatter, the section headings, and one
+   `[ ]` line per agreed paragraph. Then, for each paragraph in order:
+
+   - **Prompt** for it: name its section and number, restate what it covers, and offer
+     two or three short cues that help the author start talking. Cues open doors; they
+     never supply content.
+   - **The author replies with a data dump,** usually a voice note: long, spoken, and
+     out of order. That is the point; it captures the raw idea.
+   - **Distill** the dump into the paragraph (three to five sentences) in the house
+     voice, using only what the author said (see Capturing dictation). Show it, and
+     list briefly what was left out, any transcription guesses, and anything that
+     belongs in a later paragraph (park that as a note under that paragraph).
+   - **On approval,** write it into the draft file, mark it `[x]`, and prompt for the
+     next one. On a correction, redistill and show it again. A dump that covers two
+     paragraphs gets split, and the author is told. If a dump contradicts the agreed
+     breakdown, raise it and update the breakdown first.
+
+5. **First draft.** When every paragraph is checked, the file is the author's first
+   draft. Say so. What happens next (critique, editing, publishing) is `blog-review`.
+
+The draft file is the record of progress, so the process can stop and resume in a
+later session from the first unchecked paragraph.
 
 ## Voice
 
@@ -95,6 +138,7 @@ not from the title or slug, and check no existing post uses it:
 suite if a post is missing one or shares one, and `short-links` fails it if the hash
 matches a top-level route (e.g. `guides`).
 
-**`draft: true` does not keep a post private.** The file is still a route; Astro
-builds the page and the sitemap lists it. An unfinished post must stay untracked, out
-of any commit, until it is ready to be published.
+**`draft: true` does not keep a post private.** A file under `src/pages/blogs/` is a
+route; Astro builds the page and the sitemap lists it. Unfinished posts live in
+`drafts/`, which is not a route. The repo is public, so a draft stays untracked until
+the author says to commit it; publishing means moving the file into `src/pages/blogs/`.
