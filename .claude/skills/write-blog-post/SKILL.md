@@ -28,6 +28,13 @@ This is how every new post is written, up to the first draft. Do not skip ahead.
    paragraph and in what order. Print the full breakdown each time it changes. The
    author approves it explicitly before any prose is written.
 
+   **Save it on approval.** Write the approved outline to `docs/<slug>-outline.md`,
+   where this repo keeps post outlines: the working title, the approval date, every
+   section and paragraph line, and any open questions still to settle. It is the
+   reference for the paragraph loop. `docs/` is gitignored, so it is local-only with
+   no backup. If the breakdown changes later, update the saved outline and note the
+   change and why at the bottom.
+
 4. **Go paragraph by paragraph.** Create `drafts/<slug>.md` (untracked until the author
    says to commit; see Frontmatter) with the frontmatter, the section headings, and one
    `[ ]` line per agreed paragraph. Then, for each paragraph in order:
