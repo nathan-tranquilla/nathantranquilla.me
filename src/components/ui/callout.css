@@ -1,0 +1,38 @@
+/* UI library: Callout. One band that stands apart from the page, with a small
+   mono label. Keyed on data attributes so markdown can use it as plain HTML:
+
+     <aside data-ui="callout">
+     <p data-callout-label>A few terms</p>
+
+     - **Term:** meaning
+
+     </aside>
+
+   Loaded by Callout.astro and by layouts that render markdown (Blog.astro),
+   since a post that only writes the HTML never imports the component.
+
+   Unlayered on purpose: post bodies style p, ul and li with unlayered rules
+   (.blog-body p), which would beat a layered component. The attribute
+   selectors here out-rank those on specificity. */
+[data-ui="callout"] {
+  margin: 2rem 0;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid var(--border-primary);
+  border-radius: 0;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+[data-ui="callout"] [data-callout-label] {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  line-height: 1rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+[data-ui="callout"] > :last-child {
+  margin-bottom: 0;
+}

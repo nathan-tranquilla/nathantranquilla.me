@@ -4,6 +4,9 @@ import Container from "../components/Container.astro";
 import { getPostIndex, postDescription } from "../utils/posts";
 import ViewCount from "../components/ViewCount.astro";
 import Button from "../components/ui/Button.astro";
+// Posts write callouts as plain HTML (data-ui="callout") and never import
+// Callout.astro, so the layout loads the library's callout styles itself.
+import "../components/ui/callout.css";
 
 const { frontmatter, rawContent } = Astro.props;
 

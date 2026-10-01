@@ -1,0 +1,17 @@
+---
+// UI library: a band that stands apart from the page, such as a terms list.
+// Styles live in callout.css so markdown posts can share them; see that file
+// for the plain-HTML form.
+import "./callout.css";
+
+export interface Props {
+  /** Small mono heading above the content, e.g. "A few terms". */
+  label?: string;
+}
+const { label } = Astro.props;
+---
+
+<aside data-ui="callout">
+  {label && <p data-callout-label>{label}</p>}
+  <slot />
+</aside>
