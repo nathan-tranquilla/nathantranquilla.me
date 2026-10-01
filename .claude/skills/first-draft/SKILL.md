@@ -103,7 +103,12 @@ The workflow above is the shape. These are the habits that made it work.
 Jargon only where the audience expects it.
 
 **Never use em dashes.** They read as a tell that a machine wrote the text. Use a
-period, a colon, a semicolon, or restructure the sentence. Semicolons are fine.
+period, a colon, a semicolon, or restructure the sentence.
+
+**Colons and semicolons are not interchangeable.** A colon introduces a list, a "this:"
+lead-in, or a phrase that renames what came before ("a mechanical solution: something
+that…"). Two complete, related sentences are joined with a semicolon, or split with a
+period, never a colon.
 
 **Avoid paired antithesis constructions.** "It's not this, it's that." "Not a
 critique, a field report." Stacked, these are the clearest signal of AI-written

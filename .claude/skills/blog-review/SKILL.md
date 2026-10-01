@@ -30,7 +30,7 @@ description: Review, critique and edit blog post drafts, preserving the author's
 ## Writing Conventions
 
 - Capitalize product names correctly (Claude, Claude Code, Claude skills).
-- Use colons to introduce lists or elaborations, not em dashes.
+- Use colons to introduce lists, "this:" lead-ins, or a phrase that renames what came before, not em dashes. Join two complete, related sentences with a semicolon or a period, never a colon.
 - Keep paragraphs short. Three to five sentences max.
 - Numbered lists should use consistent parallel structure.
 - Code references use backticks (e.g. `.claude/skills/`).
