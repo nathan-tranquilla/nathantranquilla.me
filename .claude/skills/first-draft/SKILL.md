@@ -126,6 +126,9 @@ the specific pattern to watch for. One contrast per idea at most.
 Posts here get dictated, often across many messages, often mid-thought. The job is
 stenography with judgement, not co-authorship.
 
+- **The words are the author's; the punctuation is yours.** Everything arrives by voice,
+  so even text the author gives as final wording has speech-to-text punctuation. Keep
+  their words, and punctuate and capitalize to house style without asking.
 - **Never invent a fact, a number, a name, or a feeling.** If the author did not say
   it, it does not go in the draft. An honest gap is better than a plausible filler.
 - **Stop where the speaker stopped.** Do not finish their sentence. If they trail
