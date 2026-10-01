@@ -108,18 +108,19 @@ Now we're ready to start reconciling, which I do monthly, because monthly feedba
 
 When the reconciliation finishes, it hands off to a second skill, the financial advisor. The advisor relieves me of thinking about, and feeling the burden of, moving money: how much goes where. It can work that out precisely because it has the full financial picture, reconciled in the step before. The order the money flows in is yours to set, and it depends entirely on your situation; you might set aside taxes first, keep a minimum balance in checking, and send the rest to debt. You might pay off the smallest balances first or the highest-interest cards, or, with no debt, put a set amount into savings or an RRSP.
 
-Here is what its advice looks like, with the numbers changed:
+Here is an invented example of what its advice looks like. The household, the accounts, and every number are made up:
 
-> **Money moves, in order**
+> **Money moves, in order** *(invented example)*
 >
-> 1. **Move $600 from business checking to business tax savings.** *This keeps the tax money whole.*
-> 2. **Pay off the business card ($40).** *Business card at $0.*
-> 3. **Pay yourself $5,000,** everything in business checking above the $2,000 floor, sent as $3,000 today and $2,000 tomorrow to stay under the daily transfer limit. *This gets the money to where the expensive debt is.*
-> 4. **Move $1,250 to personal tax savings,** 25% of the payment to yourself. *Personal tax covered.*
-> 5. **Keep $1,250 in personal checking to stay at the $3,000 floor.** *Covers the gap between card bills and paydays.*
-> 6. **Put the remaining $2,500 on the highest-rate card.** *This saves about $45 a month in interest.*
+> After this month's $4,000 deposit:
 >
-> The line of credit gets nothing this round; the whole surplus goes to the card.
+> 1. **Set aside $900 for the quarterly tax instalment.** *Next instalment fully covered.*
+> 2. **Add $400 to the emergency fund.** *That completes three months of expenses.*
+> 3. **Move $350 to the vacation fund.** *On track for the summer trip.*
+> 4. **Pay the full $1,650 card balance.** *No interest this month.*
+> 5. **Send the remaining $700 to the student loan.** *This moves the payoff date two months closer.*
+>
+> Retirement savings stay on their automatic $300 a month.
 
 Finally, there are budgets and reports. A budget is a feature of hledger itself: you define it in hledger files and run it through hledger commands. For me, the last step is a script that generates a report comparing what we budgeted with what we actually spent, broken down by category and set up for our situation. Commands like these are repeatable, but too complex to trust an agent to run the same way every time, so they are enforced programmatically by scripting them, in my case as a rake task.
 
