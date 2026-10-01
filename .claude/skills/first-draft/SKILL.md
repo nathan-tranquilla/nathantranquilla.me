@@ -1,9 +1,9 @@
 ---
-name: write-blog-post
-description: Write a blog post with the author in three stages (idea, agreed outline, then a first draft built one paragraph at a time from the author's voice-note dumps), capturing them faithfully without inventing, in the house voice (grade 10 reading level, no em dashes, no AI tells). TRIGGER WHEN: the user pitches a post idea, wants to outline or dictate a post, sends a voice-note dump for a paragraph, or wants to start or continue a draft for `src/pages/blogs/`. For critiquing or editing an existing draft, use `blog-review` instead.
+name: first-draft
+description: Take a blog post from idea to first draft with the author (idea blurb, agreed breakdown, then the draft built one paragraph at a time from the author's voice-note dumps), capturing them faithfully without inventing, in the house voice (grade 10 reading level, no em dashes, no AI tells). TRIGGER WHEN: the user pitches a post idea, wants to outline or dictate a post, sends a voice-note dump for a paragraph, or wants to start or continue a draft for `src/pages/blogs/`. For critiquing or editing an existing draft, use `blog-review` instead.
 ---
 
-# Writing a Blog Post
+# First Draft
 
 This skill is for getting a post *written*. `blog-review` is for making an existing
 draft better. They compose: draft here, critique there, ship with that skill's
@@ -48,16 +48,54 @@ This is how every new post is written, up to the first draft. Do not skip ahead.
      voice, using only what the author said (see Capturing dictation). Show it, and
      list briefly what was left out, any transcription guesses, and anything that
      belongs in a later paragraph (park that as a note under that paragraph).
-   - **On approval,** write it into the draft file, mark it `[x]`, and prompt for the
-     next one. On a correction, redistill and show it again. A dump that covers two
+   - **On approval,** the prose replaces that paragraph's `[ ]` line in the draft file,
+     and you prompt for the next one. On a correction, redistill and show it again. A dump that covers two
      paragraphs gets split, and the author is told. If a dump contradicts the agreed
      breakdown, raise it and update the breakdown first.
 
-5. **First draft.** When every paragraph is checked, the file is the author's first
-   draft. Say so. What happens next (critique, editing, publishing) is `blog-review`.
+5. **First draft.** When no `[ ]` lines remain, the file is the author's first draft.
+   Say so, and list the loose ends: headings that no longer fit their section, parked
+   decisions, and anything that must be true before publishing. What happens next
+   (critique, editing, publishing) is `blog-review`.
 
 The draft file is the record of progress, so the process can stop and resume in a
 later session from the first unchecked paragraph.
+
+## Principles from practice
+
+The workflow above is the shape. These are the habits that made it work.
+
+- **The breakdown is a living document.** Dumps rarely match the plan. When one covers a
+  different point, reorders the post, or makes a planned paragraph redundant, follow the
+  author's material: propose the outline change alongside the distilled paragraph, then
+  update the saved outline and its change log. Cut a planned paragraph that a dump has
+  already covered instead of prompting for it again.
+- **A paragraph stays open until the author moves on.** Short dumps that follow a shown
+  paragraph are amendments to it (a detail, a tense, an emphasis, a reorder), not new
+  paragraphs. Redistill and show the whole paragraph each time. When asked to read
+  back, show the approved text clean, without commentary.
+- **Fact-check what the post says about the author's own work.** When a paragraph
+  describes a real system, check each concrete claim against the source before it is
+  approved, report what holds and what does not, and correct the prose to match. The
+  post never describes something that does not exist. If the author would rather change
+  the system than the prose, that change is made where the system lives, by whoever
+  owns it, and the paragraph waits on it.
+- **The author may pause drafting to study.** Stop prompting, do the study, report it in
+  plain terms, then resume at the same paragraph.
+- **Examples are made up, and they work.** Snippets and example files use invented
+  names, and are run or validated before they go into the draft.
+- **Ideas, not the author's private details.** The repo and the post are public.
+  Default to the idea over the author's own figures, institutions, and people unless
+  the author asks for them.
+- **Guard the whole post, not just the paragraph.** Watch for a point made twice, a
+  number that disagrees between paragraphs, and an opening without a hook. Raise them as
+  they appear.
+- **Undecided items are parked, not guessed.** When the author moves on without
+  deciding, record the open question in the saved outline and settle it at its paragraph
+  or at the end.
+- **Ideas bigger than the post are saved, not drafted.** A product, a follow-up post, or
+  a change to another project goes into memory or its own plan, and the post states only
+  what is true today.
 
 ## Voice
 
