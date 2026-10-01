@@ -9,7 +9,7 @@ tags: ["AI", "Finance"]
 ---
 
 
-Managing the money for my business and my family now takes me about an hour a month, and it costs me almost nothing emotionally. For a long time, it was a source of dread, and emotionally draining.
+Managing the money for my business and my family now takes me about an hour a month, and it costs me almost nothing emotionally. For a long time, I dreaded it, and it drained me.
 
 As our family grew to five, money got tight, especially over a year spent between jobs. I run my own business, and the business collects taxes it has to remit, so I have to set that money aside and calculate what is owed. Every time I get paid, I also have to work out how much to pay myself and how much to hold back for my personal taxes at the end of the year. Then comes everything a household has: credit cards, lines of credit, checking, and savings, with hundreds of transactions a month running through them.
 
