@@ -37,7 +37,7 @@ This is how every new post is written, up to the first draft. Do not skip ahead.
 
 4. **Go paragraph by paragraph.** Create `drafts/<slug>.md` (untracked until the author
    says to commit; see Frontmatter) with the frontmatter, the section headings, and one
-   `[ ]` line per agreed paragraph. Then, for each paragraph in order:
+   `[ ]` line per agreed paragraph. Section headings are `##`. Then, for each paragraph in order:
 
    - **Prompt** for it: name its section and number, restate what it covers, and offer
      two or three short cues that help the author start talking. Cues open doors; they
@@ -162,7 +162,8 @@ under them loses the thread.
 ## Restructuring into a draft
 
 When asked for a draft, reorder and section, but add no new arguments. Headings are
-`###`, title case, and they are the writer's material to approve. State plainly what
+`##`, title case (the post title is the page's h1, and the headings spec
+rejects a skipped level), and they are the writer's material to approve. State plainly what
 was moved and why.
 
 Link to related posts on this site where the text already gestures at one; the SEO
@@ -174,6 +175,7 @@ specs check that posts link to other posts.
 ---
 layout: ../../layouts/Blog.astro
 title: <Title Case, matching the filename slug>
+description: "<the author's own one or two sentences, 70 to 200 characters, not starting with the title>"
 hash: "<6 random lowercase letters or digits>"
 author: Nathan Tranquilla
 date: "YYYY/MM/DD"
