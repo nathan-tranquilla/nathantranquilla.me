@@ -1,40 +1,40 @@
 {
-  "generatedAt": "2026-10-01T10:00:41.405Z",
+  "generatedAt": "2026-10-02T10:00:40.313Z",
   "ranges": {
     "7": {
-      "startDate": "2026-09-25",
-      "endDate": "2026-10-01",
+      "startDate": "2026-09-26",
+      "endDate": "2026-10-02",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
-          "sessions": 13,
+          "sessions": 6,
           "channels": {
-            "direct": 5,
+            "direct": 1,
             "social": 1,
             "search": 0,
-            "referral": 4,
-            "other": 3
+            "referral": 2,
+            "other": 2
           },
           "sources": [
             {
-              "source": "teams.public.onecdn.static.microsoft",
-              "sessions": 4
+              "source": "share",
+              "sessions": 2
             },
             {
-              "source": "share",
-              "sessions": 3
+              "source": "teams.public.onecdn.static.microsoft",
+              "sessions": 2
             },
             {
               "source": "t.co",
               "sessions": 1
             }
           ],
-          "shortLinkVisits": 3,
-          "views": 16,
-          "engagedSecondsPerView": 11,
+          "shortLinkVisits": 2,
+          "views": 6,
+          "engagedSecondsPerView": 5,
           "shares": {
-            "native": 1,
+            "native": 0,
             "clipboard": 1,
-            "total": 2
+            "total": 1
           }
         },
         "5-ways-rescript-fixes-typescript": {
@@ -48,8 +48,8 @@
           },
           "sources": [],
           "shortLinkVisits": 0,
-          "views": 2,
-          "engagedSecondsPerView": 1,
+          "views": 1,
+          "engagedSecondsPerView": 0,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -91,7 +91,7 @@
             }
           ],
           "shortLinkVisits": 0,
-          "views": 4,
+          "views": 3,
           "engagedSecondsPerView": 0,
           "shares": {
             "native": 0,
@@ -102,8 +102,8 @@
       }
     },
     "30": {
-      "startDate": "2026-09-02",
-      "endDate": "2026-10-01",
+      "startDate": "2026-09-03",
+      "endDate": "2026-10-02",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 22,
@@ -401,8 +401,8 @@
       }
     },
     "90": {
-      "startDate": "2026-07-04",
-      "endDate": "2026-10-01",
+      "startDate": "2026-07-05",
+      "endDate": "2026-10-02",
       "posts": {
         "typescript-has-a-big-problem": {
           "sessions": 11,
@@ -719,31 +719,39 @@
       }
     },
     "prev7": {
-      "startDate": "2026-09-18",
-      "endDate": "2026-09-24",
+      "startDate": "2026-09-19",
+      "endDate": "2026-09-25",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
-          "sessions": 9,
+          "sessions": 16,
           "channels": {
-            "direct": 2,
+            "direct": 6,
             "social": 7,
             "search": 0,
-            "referral": 0,
-            "other": 0
+            "referral": 2,
+            "other": 1
           },
           "sources": [
             {
               "source": "linkedin.com",
               "sessions": 7
+            },
+            {
+              "source": "teams.public.onecdn.static.microsoft",
+              "sessions": 2
+            },
+            {
+              "source": "share",
+              "sessions": 1
             }
           ],
-          "shortLinkVisits": 0,
-          "views": 14,
-          "engagedSecondsPerView": 1,
+          "shortLinkVisits": 1,
+          "views": 24,
+          "engagedSecondsPerView": 7,
           "shares": {
-            "native": 0,
+            "native": 1,
             "clipboard": 0,
-            "total": 0
+            "total": 1
           }
         },
         "why-every-desk-job-is-becoming-an-ai-apprenticeship": {
@@ -845,12 +853,50 @@
             "clipboard": 0,
             "total": 0
           }
+        },
+        "5-ways-rescript-fixes-typescript": {
+          "sessions": 0,
+          "channels": {
+            "direct": 0,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 1,
+          "engagedSecondsPerView": 1,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
+        "teach-claude-your-project-once-benefit-forever": {
+          "sessions": 0,
+          "channels": {
+            "direct": 0,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 1,
+          "engagedSecondsPerView": 0,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
         }
       }
     },
     "all": {
       "startDate": "2015-08-14",
-      "endDate": "2026-10-01",
+      "endDate": "2026-10-02",
       "posts": {
         "the-4-pillars-of-next-gen-web-dev": {
           "sessions": 35,
