@@ -1,10 +1,10 @@
 Sessions landing on blog posts, last 90 days
 
-taking-responsibility-for-your-ai-generated-code  (22 sessions)
-   36%  Organic Social       8   linkedin.com 7, t.co 1
-   32%  Direct               7   (direct) 7
-   18%  Referral             4   teams.public.onecdn.static.microsoft 4
-   14%  Unassigned           3   share 3
+taking-responsibility-for-your-ai-generated-code  (23 sessions)
+   35%  Direct               8   (direct) 8
+   35%  Organic Social       8   linkedin.com 7, t.co 1
+   17%  Referral             4   teams.public.onecdn.static.microsoft 4
+   13%  Unassigned           3   share 3
 
 typescript-has-a-big-problem  (11 sessions)
   100%  Direct              11   (direct) 11
@@ -50,8 +50,8 @@ why-rescript-is-next-gen  (3 sessions)
 using-ai-to-automate-quality-content-delivery  (2 sessions)
   100%  Direct               2   (direct) 2
 
-All posts  (90 sessions)
-   81%  Direct              73
+All posts  (91 sessions)
+   81%  Direct              74
    10%  Organic Social       9
-    6%  Referral             5
+    5%  Referral             5
     3%  Unassigned           3

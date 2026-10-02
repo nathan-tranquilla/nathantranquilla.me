@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-10-02T10:00:40.313Z",
+  "generatedAt": "2026-10-02T13:43:11.327Z",
   "ranges": {
     "7": {
       "startDate": "2026-09-26",
       "endDate": "2026-10-02",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
-          "sessions": 6,
+          "sessions": 7,
           "channels": {
-            "direct": 1,
+            "direct": 2,
             "social": 1,
             "search": 0,
             "referral": 2,
@@ -29,8 +29,8 @@
             }
           ],
           "shortLinkVisits": 2,
-          "views": 6,
-          "engagedSecondsPerView": 5,
+          "views": 7,
+          "engagedSecondsPerView": 4,
           "shares": {
             "native": 0,
             "clipboard": 1,
@@ -106,9 +106,9 @@
       "endDate": "2026-10-02",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
-          "sessions": 22,
+          "sessions": 23,
           "channels": {
-            "direct": 7,
+            "direct": 8,
             "social": 8,
             "search": 0,
             "referral": 4,
@@ -133,7 +133,7 @@
             }
           ],
           "shortLinkVisits": 3,
-          "views": 30,
+          "views": 31,
           "engagedSecondsPerView": 6,
           "shares": {
             "native": 1,
@@ -443,9 +443,9 @@
           }
         },
         "taking-responsibility-for-your-ai-generated-code": {
-          "sessions": 22,
+          "sessions": 23,
           "channels": {
-            "direct": 7,
+            "direct": 8,
             "social": 8,
             "search": 0,
             "referral": 4,
@@ -470,7 +470,7 @@
             }
           ],
           "shortLinkVisits": 3,
-          "views": 30,
+          "views": 31,
           "engagedSecondsPerView": 6,
           "shares": {
             "native": 1,
@@ -1232,9 +1232,9 @@
           }
         },
         "taking-responsibility-for-your-ai-generated-code": {
-          "sessions": 22,
+          "sessions": 23,
           "channels": {
-            "direct": 7,
+            "direct": 8,
             "social": 8,
             "search": 0,
             "referral": 4,
@@ -1259,7 +1259,7 @@
             }
           ],
           "shortLinkVisits": 3,
-          "views": 30,
+          "views": 31,
           "engagedSecondsPerView": 6,
           "shares": {
             "native": 1,
