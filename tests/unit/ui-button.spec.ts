@@ -66,7 +66,9 @@ for (const scheme of SCHEMES) {
               return (window as any).__opaque((window as any).__rgb(s.backgroundColor)) ||
                 (parseFloat(s.borderTopWidth) > 0 && parseFloat(s.paddingLeft) >= 12);
             })
-            .filter((el) => el.dataset.ui !== "button")
+            // any UI library component counts (Button, FilterChip, ...); only
+            // hand-rolled button-styled elements are strays
+            .filter((el) => !el.dataset.ui)
             .map((el) => `${el.tagName} "${el.innerText.trim().slice(0, 30)}"`)
         );
         expect(stray).toEqual([]);

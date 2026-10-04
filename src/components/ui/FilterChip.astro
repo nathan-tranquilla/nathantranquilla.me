@@ -1,0 +1,55 @@
+---
+// UI library: one filter toggle for the blog index. Unpressed it looks like a
+// Tag (so the link to the tags on each post reads naturally); pressed it fills
+// with the primary button colour. An optional count sits after the label.
+export interface Props {
+  label: string;
+  count?: number;
+  pressed?: boolean;
+}
+const { label, count, pressed = false } = Astro.props;
+---
+
+<button type="button" data-ui="filter-chip" data-label={label} aria-pressed={String(pressed)}>
+  {label}{count !== undefined && <span data-count>{count}</span>}
+</button>
+
+<style>
+  [data-ui="filter-chip"] {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.125rem 0.625rem;
+    border: 1px solid var(--border-primary);
+    background-color: var(--tag-bg, var(--bg-secondary));
+    color: var(--text-tertiary);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+    cursor: pointer;
+    transition: background-color 0.15s, color 0.15s;
+  }
+
+  [data-ui="filter-chip"] [data-count] {
+    color: var(--text-muted);
+  }
+
+  [data-ui="filter-chip"][aria-pressed="false"]:hover {
+    border-color: var(--text-accent);
+  }
+
+  [data-ui="filter-chip"][aria-pressed="true"] {
+    border-color: var(--accent-bg);
+    background-color: var(--accent-bg);
+    color: var(--bg-primary);
+  }
+
+  [data-ui="filter-chip"][aria-pressed="true"] [data-count] {
+    color: var(--bg-primary);
+  }
+
+  [data-ui="filter-chip"]:focus-visible {
+    outline: 2px solid var(--text-primary);
+    outline-offset: 2px;
+  }
+</style>

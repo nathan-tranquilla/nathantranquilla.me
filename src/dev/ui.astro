@@ -9,6 +9,11 @@ import Callout from "../components/ui/Callout.astro";
 import Tag from "../components/ui/Tag.astro";
 import PostMeta from "../components/ui/PostMeta.astro";
 import PostEntry from "../components/ui/PostEntry.astro";
+import FilterRow from "../components/ui/FilterRow.astro";
+import { getPosts } from "../utils/posts";
+import { tagCounts } from "../utils/tags";
+
+const counts = tagCounts(getPosts().filter((p) => !p.frontmatter.draft));
 
 // A made-up post for the specimens; its hash is unique to this page.
 const samplePost = {
@@ -100,6 +105,19 @@ const surfaces = [
             <Button slot="actions">Share</Button>
           </PostMeta>
         </div>
+      </section>
+
+      <section class="mt-12">
+        <h2 class="mb-4 font-serif text-2xl text-[var(--text-primary)]">FilterRow and FilterChip</h2>
+        <p class="mb-4 font-mono text-xs text-[var(--text-muted)]">
+          For the blog index. Real post counts. Several tags narrow to posts with all of them. Look only: no behaviour yet.
+        </p>
+        <p class="mb-2 font-mono text-xs uppercase tracking-[0.07em] text-[var(--text-muted)]">Nothing selected</p>
+        <div class="mb-6 border border-[var(--border-primary)] p-6"><FilterRow counts={counts} /></div>
+        <p class="mb-2 font-mono text-xs uppercase tracking-[0.07em] text-[var(--text-muted)]">One tag</p>
+        <div class="mb-6 border border-[var(--border-primary)] p-6"><FilterRow counts={counts} selected={["AI"]} /></div>
+        <p class="mb-2 font-mono text-xs uppercase tracking-[0.07em] text-[var(--text-muted)]">Two tags: posts with both</p>
+        <div class="border border-[var(--border-primary)] p-6"><FilterRow counts={counts} selected={["AI", "Coding"]} /></div>
       </section>
 
       <section class="mt-12">

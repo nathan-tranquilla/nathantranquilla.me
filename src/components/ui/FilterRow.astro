@@ -1,0 +1,19 @@
+---
+// UI library: the blog index's tag filter. "All" plus one FilterChip per
+// approved tag, each with its post count. "All" is pressed when no tag is.
+// Selecting several tags narrows to posts that carry every one of them
+// (behaviour lands in phase 2; this component is the look).
+import FilterChip from "./FilterChip.astro";
+import { TAGS } from "../../utils/tags";
+
+export interface Props {
+  counts: Record<string, number>;
+  selected?: string[];
+}
+const { counts, selected = [] } = Astro.props;
+---
+
+<div data-ui="filter-row" role="group" aria-label="Filter posts by tag" class="flex flex-wrap items-center gap-x-3 gap-y-2">
+  <FilterChip label="All" pressed={selected.length === 0} />
+  {TAGS.map((tag) => <FilterChip label={tag} count={counts[tag]} pressed={selected.includes(tag)} />)}
+</div>
