@@ -31,11 +31,19 @@ const { label, count, pressed = false } = Astro.props;
   }
 
   /* The count reads as a count, not part of the label: much smaller (9px
-     against the label's 12px), in the muted colour. No divider. */
+     against the label's 12px), in the muted colour, framed in a small square
+     box drawn in its own colour. */
   [data-ui="filter-chip"] [data-count] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0.875rem;
+    height: 0.875rem;
+    padding: 0 0.125rem;
+    border: 1px solid currentColor;
     color: var(--text-muted);
     font-size: 0.5625rem;
-    line-height: 1rem;
+    line-height: 1;
   }
 
   [data-ui="filter-chip"][aria-pressed="false"]:hover {

@@ -84,19 +84,31 @@ for (const scheme of ["light", "dark"] as const) {
 }
 
 // The count must read as a count, not as part of the label: clearly smaller,
-// with no divider (the author tried one and didn't want it).
-test("the count is visibly distinct from the label", async ({ page }) => {
+// and framed in a small square box (border on every side, about as wide as it
+// is tall for a single digit).
+test("the count is a small framed square, distinct from the label", async ({ page }) => {
   await page.goto("/ui");
   const looks = await page.locator('[data-ui="filter-chip"] [data-count]').evaluateAll((counts) =>
     counts.map((c) => {
       const chip = getComputedStyle(c.closest('[data-ui="filter-chip"]')!);
       const s = getComputedStyle(c);
-      return { label: parseFloat(chip.fontSize), count: parseFloat(s.fontSize), divider: parseFloat(s.borderLeftWidth) || 0 };
+      const r = c.getBoundingClientRect();
+      return {
+        text: c.textContent?.trim() ?? "",
+        label: parseFloat(chip.fontSize),
+        count: parseFloat(s.fontSize),
+        borders: [s.borderTopWidth, s.borderRightWidth, s.borderBottomWidth, s.borderLeftWidth].map(parseFloat),
+        ratio: r.width / r.height,
+      };
     })
   );
   expect(looks.length).toBeGreaterThan(0);
   for (const l of looks) {
     expect(l.count).toBeLessThanOrEqual(l.label * 0.85);
-    expect(l.divider).toBe(0);
+    for (const b of l.borders) expect(b, `${l.text} border`).toBeGreaterThanOrEqual(1);
+    if (l.text.length === 1) {
+      expect(l.ratio, `${l.text} squareness`).toBeGreaterThanOrEqual(0.85);
+      expect(l.ratio).toBeLessThanOrEqual(1.2);
+    }
   }
 });
