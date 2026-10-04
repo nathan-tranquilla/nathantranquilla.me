@@ -30,8 +30,14 @@ const { label, count, pressed = false } = Astro.props;
     transition: background-color 0.15s, color 0.15s;
   }
 
+  /* The count reads as a badge, not part of the label: smaller, and set off
+     by a hairline divider in the chip's own text colour. */
   [data-ui="filter-chip"] [data-count] {
+    padding-left: 0.4rem;
+    border-left: 1px solid currentColor;
     color: var(--text-muted);
+    font-size: 0.625rem;
+    line-height: 1rem;
   }
 
   [data-ui="filter-chip"][aria-pressed="false"]:hover {

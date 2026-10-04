@@ -82,3 +82,21 @@ for (const scheme of ["light", "dark"] as const) {
     });
   });
 }
+
+// The count must read as a count, not as part of the label: smaller, and set
+// off from the label by a hairline divider.
+test("the count is visibly distinct from the label", async ({ page }) => {
+  await page.goto("/ui");
+  const looks = await page.locator('[data-ui="filter-chip"] [data-count]').evaluateAll((counts) =>
+    counts.map((c) => {
+      const chip = getComputedStyle(c.closest('[data-ui="filter-chip"]')!);
+      const s = getComputedStyle(c);
+      return { label: parseFloat(chip.fontSize), count: parseFloat(s.fontSize), divider: parseFloat(s.borderLeftWidth) };
+    })
+  );
+  expect(looks.length).toBeGreaterThan(0);
+  for (const l of looks) {
+    expect(l.count).toBeLessThanOrEqual(l.label * 0.85);
+    expect(l.divider).toBeGreaterThanOrEqual(1);
+  }
+});
