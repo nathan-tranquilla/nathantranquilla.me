@@ -5,7 +5,7 @@ hash: "70gqqg"
 description: "A free quote of the day API with no human curation: how quotes were qualified, correlated to YouTube scenes, cycled daily, and kept safe for work by two AI pipelines."
 author: Nathan Tranquilla
 date: "2026/02/23"
-tags: ["AI","Prompt Engineering", "Automation", "API"]
+tags: ["AI", "Automation"]
 ---
 
 I maintain a simple [quote of the day API](https://theofficelines.com/api/) for fans of The Office (US). It returns a quote, a correlated YouTube clip, and it's SFW. Sounds simple, but there are actually tough problems to solve for this to work without human curation. How did I qualify the pool of quotes? How did I correlate quotes to YouTube scenes? How do I cycle it once a day? And how can I afford to make this free to use?

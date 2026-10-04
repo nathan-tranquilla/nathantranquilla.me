@@ -6,7 +6,7 @@ description: "One in three professional developers still resists TypeScript afte
 author: Nathan Tranquilla
 date: "2026/02/19"
 updated: "2026/03/06"
-tags: ["TypeScript","Type Safety","JavaScript"]
+tags: ["Type Safety", "ReScript"]
 ---
 
 I stopped using TypeScript. Not because I don't care about type safety. Actually, it's the opposite. I found something that does the job better. In this post, I explain why I don't use TypeScript, and what I've replaced it with.

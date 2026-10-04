@@ -5,7 +5,7 @@ hash: "s8bsp6"
 description: "TypeScript is showing cracks: slow builds, incomplete safety, and partial abandonment by large companies. Four criteria for judging what replaces it."
 author: Nathan Tranquilla
 date: "2025/10/22"
-tags: []
+tags: ["Type Safety", "ReScript"]
 ---
 
 Having witnessed the evolution of web development for more than a decade, we are now at a moment

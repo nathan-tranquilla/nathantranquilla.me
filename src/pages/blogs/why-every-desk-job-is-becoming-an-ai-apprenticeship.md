@@ -5,7 +5,7 @@ hash: "li3keg"
 description: "I no longer write code. Reading the agent's plan now takes as long as the work itself, and that inversion is arriving for every desk job, not just software."
 author: Nathan Tranquilla
 date: "2026/03/03"
-tags: ["AI","Future Of Work", "Knowledge Work", "Education"]
+tags: ["AI"]
 ---
 
 I don't write code anymore. I'm a software developer, and writing code used to be a big part of my job. Now AI does it for me. What used to take hours takes minutes. And this isn't just happening to developers, it's coming for every desk job.

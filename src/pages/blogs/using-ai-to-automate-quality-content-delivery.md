@@ -5,7 +5,7 @@ hash: "mxtd2k"
 description: "Classifying 60,000 lines of Office dialogue by topic, in context, using Claude. How the prompt was engineered, how confidence scoring worked, and what it cost."
 author: Nathan Tranquilla
 date: "2026/02/16"
-tags: ["AI","Prompt Engineering","Automation"]
+tags: ["AI", "Automation"]
 ---
 
 I run [The Office Lines](https://theofficelines.com), a site that lets you search all The Office (US) lines by keyword. I wanted to add a quotes section, divided by topic: love, friendship, work, sarcasm, you get it. The challenge was classifying 60,000+ lines of dialogue by topic, in context, so that I could automatically generate high-quality quote pages. This is the problem I solved with Claude.

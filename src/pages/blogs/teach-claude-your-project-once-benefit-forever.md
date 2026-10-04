@@ -5,7 +5,7 @@ hash: "h6myvk"
 description: "Claude Code knows software development but not your project. Skills are how you teach it your conventions once, so the lessons stick instead of being re-explained every session."
 author: Nathan Tranquilla
 date: "2026/04/07"
-tags: ["Claude"]
+tags: ["AI", "Coding"]
 ---
 
 Claude is great, but after a while it _should_ know things about your project. Those lessons never stick. That's the gap Claude skills fill. If you're using Claude Code but haven't started writing skills yet, this post is for you. What is a Claude skill? What gaps does it fill? How do you write them? And how can you use them to further accelerate your development?

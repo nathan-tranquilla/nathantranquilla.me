@@ -5,7 +5,7 @@ hash: "5ebfkf"
 description: "Five concrete gaps in TypeScript's type system, and how ReScript closes each one. Sound types, no any, exhaustive matching, and what that buys you day to day."
 author: Nathan Tranquilla
 date: "2025/09/24"
-tags: ["ReScript"]
+tags: ["ReScript", "Type Safety"]
 ---
 
 ReScript is like TypeScript except better. Some say that ReScript is what JavaScript would have been

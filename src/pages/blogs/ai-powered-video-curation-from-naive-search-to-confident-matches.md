@@ -5,7 +5,7 @@ hash: "ji59ze"
 description: "Naive YouTube search returned poor clips for The Office Lines, so I put Claude on both ends: one prompt writes the query, another judges the results and scores its confidence."
 author: Nathan Tranquilla
 date: "2026/02/18"
-tags: ["AI","Prompt Engineering", "Automation"]
+tags: ["AI", "Automation"]
 ---
 
 I run [The Office Lines](https://theofficelines.com), a site where fans can search every line of dialog from The Office (US) and deep-dive on scenes to explore the surrounding context. While I was able to make some positive correlations between the dialog and the scene on YouTube, I wasn't satisfied as a user. What I needed was a curator, and I chose AI as mine.

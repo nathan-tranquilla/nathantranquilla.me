@@ -5,7 +5,7 @@ hash: "qkysep"
 description: "AI writes most of my code now. If code is no longer written for humans to read, do clean code patterns and static types still matter, and what is left for the developer to do?"
 author: Nathan Tranquilla
 date: "2026/03/19"
-tags: ["AI","Coding"]
+tags: ["AI", "Coding"]
 ---
 
 Coding is no longer for humans. At my day job, AI agents write the majority of code. In my personal projects, I no longer write code at all. If coding belongs to AI now, do the human-centric battles around code still matter: clean code patterns or dynamic vs static type systems? [What is the role of the human?](/blogs/taking-responsibility-for-your-ai-generated-code/)
