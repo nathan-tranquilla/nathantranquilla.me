@@ -10,6 +10,7 @@ import Tag from "../components/ui/Tag.astro";
 import PostMeta from "../components/ui/PostMeta.astro";
 import PostEntry from "../components/ui/PostEntry.astro";
 import FilterRow from "../components/ui/FilterRow.astro";
+import FilterBar from "../components/ui/FilterBar.astro";
 import { getPosts } from "../utils/posts";
 import { tagCounts } from "../utils/tags";
 
@@ -118,6 +119,17 @@ const surfaces = [
         <div class="mb-6 border border-[var(--border-primary)] p-6"><FilterRow counts={counts} selected={["AI"]} /></div>
         <p class="mb-2 font-mono text-xs uppercase tracking-[0.07em] text-[var(--text-muted)]">Two tags: posts with both</p>
         <div class="border border-[var(--border-primary)] p-6"><FilterRow counts={counts} selected={["AI", "Coding"]} /></div>
+      </section>
+
+      <section class="mt-12">
+        <h2 class="mb-2 font-serif text-2xl text-[var(--text-primary)]">FilterBar</h2>
+        <p class="mb-4 font-mono text-xs text-[var(--text-muted)]">
+          The blog index's control bar, sticky under the header. Phone: a Filter button opens the chips in a native
+          popover. Desktop: the chips sit inline. Narrow this window to see the phone form.
+        </p>
+        <div class="border border-[var(--border-primary)] px-4">
+          <FilterBar counts={counts} total={15} selected={["AI"]} id="ui-filter-panel" />
+        </div>
       </section>
 
       <section class="mt-12">

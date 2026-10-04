@@ -3,7 +3,7 @@ import PostEntry from "../components/ui/PostEntry.astro";
 import Container from "../components/Container.astro";
 import Main from "../layouts/Main.astro";
 import H1 from "../components/HTMLElements/H1.astro";
-import FilterRow from "../components/ui/FilterRow.astro";
+import FilterBar from "../components/ui/FilterBar.astro";
 import Button from "../components/ui/Button.astro";
 import { getPosts } from "../utils/posts";
 import { tagCounts } from "../utils/tags";
@@ -41,11 +41,13 @@ posts.forEach((post) => {
       </p>
     </div>
 
-    <div data-filter hidden class="mb-10">
-      <FilterRow counts={counts} />
+    <!-- display: contents, so the sticky bar sticks within the page column,
+         not this wrapper (which only exists to stay hidden without JS) -->
+    <div data-filter hidden class="contents">
+      <FilterBar counts={counts} total={postsData.length} />
     </div>
 
-    <div data-filterable class="divide-y divide-[var(--border-primary)]">
+    <div data-filterable class="mt-10 divide-y divide-[var(--border-primary)]">
       {
         posts.map((post) => <PostEntry post={post} level={2} />)
       }
@@ -86,6 +88,8 @@ posts.forEach((post) => {
   const filter = document.querySelector<HTMLElement>("[data-filter]")!;
   const list = document.querySelector<HTMLElement>("[data-filterable]")!;
   const empty = document.querySelector<HTMLElement>("[data-filter-empty]")!;
+  const count = filter.querySelector<HTMLElement>("[data-filter-count]")!;
+  const summary = filter.querySelector<HTMLElement>("[data-filter-summary]")!;
   const chips = [...filter.querySelectorAll<HTMLButtonElement>('[data-ui="filter-chip"]')];
   const entries = [...list.querySelectorAll<HTMLElement>('[data-ui="post-entry"]')];
 
@@ -107,6 +111,8 @@ posts.forEach((post) => {
       if (keep) shown++;
     }
     empty.hidden = shown > 0;
+    count.textContent = `${shown} of ${entries.length}`;
+    summary.textContent = sel.length === 0 ? "" : sel.length === 1 ? ` · ${sel[0]}` : ` · ${sel.length} tags`;
   }
 
   function apply(sel: string[]) {

@@ -1,0 +1,119 @@
+---
+// UI library: the blog index's control bar. Sticky just under the site
+// header, with the result count on the right.
+//
+// Phone: the chips live in a native popover, opened by the Filter button
+// (popovertarget). Light dismiss and Escape come from the browser; the
+// open/close animation is CSS (@starting-style, display and overlay
+// transitions). The panel sits under the button by CSS anchor positioning,
+// with a fixed-position fallback where that isn't supported.
+// Desktop: CSS overrides the popover so the same chips sit inline in one row;
+// the button is hidden. No fades anywhere: the design is hard-edged.
+//
+// Script on the page fills in what HTML can't: the filtering itself, the
+// count ([data-filter-count]) and the button's summary ([data-filter-summary]).
+import Button from "./Button.astro";
+import FilterRow from "./FilterRow.astro";
+
+export interface Props {
+  counts: Record<string, number>;
+  total: number;
+  /** Shown selected in the static markup (the showcase); the page script sets it live. */
+  selected?: string[];
+  id?: string;
+}
+const { counts, total, selected = [], id = "filter-panel" } = Astro.props;
+const summary = selected.length === 0 ? "" : selected.length === 1 ? ` · ${selected[0]}` : ` · ${selected.length} tags`;
+---
+
+<div data-ui="filter-bar">
+  <div class="flex items-center justify-between gap-4">
+    <Button data-filter-toggle popovertarget={id} classes="md:hidden">
+      Filter<span data-filter-summary>{summary}</span>&nbsp;▾
+    </Button>
+    <div id={id} popover data-filter-panel>
+      <FilterRow counts={counts} selected={selected} />
+    </div>
+    <p data-filter-count aria-live="polite" class="shrink-0 font-mono text-xs text-[var(--text-muted)]">
+      {total} of {total}
+    </p>
+  </div>
+</div>
+
+<style>
+  [data-ui="filter-bar"] {
+    position: sticky;
+    top: var(--nav-height);
+    z-index: 9;
+    padding-block: 0.75rem;
+    border-bottom: 1px solid var(--border-primary);
+    background-color: var(--bg-primary);
+  }
+
+  [data-filter-toggle] {
+    anchor-name: --filter-toggle;
+  }
+
+  /* Phone: a popover panel under the Filter button. */
+  [data-filter-panel] {
+    position-anchor: --filter-toggle;
+    position-area: bottom span-right;
+    inset: auto;
+    margin: 0.5rem 0 0;
+    width: min(24rem, calc(100vw - 2rem));
+    padding: 1rem;
+    border: 1px solid var(--border-primary);
+    background-color: var(--bg-primary);
+    color: inherit;
+    opacity: 0;
+    translate: 0 -0.25rem;
+    transition:
+      opacity 180ms ease,
+      translate 180ms ease,
+      display 180ms allow-discrete,
+      overlay 180ms allow-discrete;
+  }
+
+  [data-filter-panel]:popover-open {
+    opacity: 1;
+    translate: 0 0;
+  }
+
+  @starting-style {
+    [data-filter-panel]:popover-open {
+      opacity: 0;
+      translate: 0 -0.25rem;
+    }
+  }
+
+  @supports not (position-area: bottom) {
+    [data-filter-panel] {
+      position: fixed;
+      top: calc(var(--nav-height) + 4rem);
+      left: 1rem;
+    }
+  }
+
+  /* Desktop: the same chips, inline in one row. No button, no popup. */
+  @media (min-width: 768px) {
+    [data-filter-panel] {
+      display: block;
+      position: static;
+      flex: 1;
+      width: auto;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      opacity: 1;
+      translate: none;
+      overflow: visible;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    [data-filter-panel] {
+      transition: none;
+    }
+  }
+</style>
