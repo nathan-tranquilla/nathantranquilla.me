@@ -158,3 +158,37 @@ footer h3 {
 @view-transition {
   navigation: auto;
 }
+
+/* Page-to-page morph timing. One value drives both the morph of a post's
+   title, byline and tags and the Share button's delay, so the button fades in
+   exactly as the morph ends, and the two cannot drift apart. CSS only: no
+   script hooks. A page opened directly runs no transition, so the button
+   shows at once there; back and forward navigation get the same treatment
+   wherever the browser runs view transitions on traversal. */
+:root {
+  --vt-morph: 300ms;
+  --vt-share-fade: 250ms;
+}
+
+::view-transition-group(*) {
+  animation-duration: var(--vt-morph);
+}
+
+::view-transition-new(post-share) {
+  animation: vt-fade-in var(--vt-share-fade) ease-out var(--vt-morph) both;
+}
+
+@keyframes vt-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-new(post-share) {
+    animation: none;
+  }
+}
