@@ -107,3 +107,53 @@ test("the count says how many posts are showing, and updates as you filter", asy
   const shown = await page.locator('[data-ui="post-entry"]:not([data-out])').count();
   await expect(count).toHaveText(`${shown} of ${total}`);
 });
+
+// The panel must open directly under the Filter button, whether the browser
+// positions it with CSS anchor positioning or (where that's missing, as in
+// older Safari) the script places it. Checked before and after scrolling, so
+// it holds whether or not the bar has stuck under the header yet.
+const underButton = async (page: Page) => {
+  const [b, p] = await page.evaluate(() => {
+    const r = (s: string) => {
+      const x = document.querySelector(s)!.getBoundingClientRect();
+      return { left: x.left, bottom: x.bottom, top: x.top };
+    };
+    return [r("[data-filter-toggle]"), r("[data-filter-panel]")];
+  });
+  return { gap: p.top - b.bottom, leftDiff: Math.abs(p.left - b.left) };
+};
+
+for (const anchoring of ["with CSS anchor positioning", "without CSS anchor positioning"] as const) {
+  test.describe(`on a phone, ${anchoring}`, () => {
+    test.use({ viewport: { width: 414, height: 800 } });
+
+    if (anchoring.startsWith("without")) {
+      test.beforeEach(async ({ page }) => {
+        // Pretend to be a browser without anchor positioning: the script
+        // checks CSS.supports, and the anchor properties stop applying.
+        await page.addInitScript(() => {
+          const real = CSS.supports.bind(CSS);
+          (CSS as any).supports = (...args: any[]) =>
+            String(args[0]).includes("position-area") || String(args[0]).includes("anchor") ? false : real(...(args as [string]));
+        });
+      });
+    }
+
+    for (const scrolled of [false, true]) {
+      test(`the panel opens right under the Filter button${scrolled ? " after scrolling" : ""}`, async ({ page }) => {
+        await page.goto("/blogs/");
+        if (anchoring.startsWith("without")) {
+          await page.addStyleTag({ content: "[data-filter-panel] { position-area: none !important; position-anchor: none !important; }" });
+        }
+        if (scrolled) await page.evaluate(() => window.scrollTo(0, 600));
+        await page.locator("[data-filter-toggle]").click();
+        await expect(page.locator("[data-filter-panel]")).toBeVisible();
+        await page.waitForTimeout(250); // let the open transition settle
+        const { gap, leftDiff } = await underButton(page);
+        expect(gap, "panel top sits just below the button").toBeGreaterThanOrEqual(0);
+        expect(gap).toBeLessThanOrEqual(16);
+        expect(leftDiff, "panel lines up with the button's left edge").toBeLessThanOrEqual(2);
+      });
+    }
+  });
+}

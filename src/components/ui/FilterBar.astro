@@ -5,8 +5,10 @@
 // Phone: the chips live in a native popover, opened by the Filter button
 // (popovertarget). Light dismiss and Escape come from the browser; the
 // open/close animation is CSS (@starting-style, display and overlay
-// transitions). The panel sits under the button by CSS anchor positioning,
-// with a fixed-position fallback where that isn't supported.
+// transitions). The panel sits under the button by CSS anchor positioning;
+// where that isn't supported (older Safari, so every iOS browser before it),
+// the script below places it by hand. That is the one job here the platform
+// can't do everywhere yet.
 // Desktop: CSS overrides the popover so the same chips sit inline in one row;
 // the button is hidden. No fades anywhere: the design is hard-edged.
 //
@@ -39,6 +41,39 @@ const summary = selected.length === 0 ? "" : selected.length === 1 ? ` · ${sele
     </p>
   </div>
 </div>
+
+<script>
+  // Without CSS anchor positioning, put the open panel just under its Filter
+  // button, and keep it there while the page scrolls (the bar is sticky, so
+  // the button moves until it pins under the header). Inline styles are
+  // cleared on close so they never leak into the desktop's inline layout.
+  if (!CSS.supports("position-area: bottom")) {
+    for (const bar of document.querySelectorAll<HTMLElement>('[data-ui="filter-bar"]')) {
+      const toggle = bar.querySelector<HTMLElement>("[data-filter-toggle]");
+      const panel = bar.querySelector<HTMLElement>("[data-filter-panel]");
+      if (!toggle || !panel) continue;
+
+      const place = () => {
+        const r = toggle.getBoundingClientRect();
+        Object.assign(panel.style, { position: "fixed", inset: "auto", margin: "0", top: `${r.bottom + 8}px`, left: `${r.left}px` });
+      };
+      const follow = () => {
+        if (panel.matches(":popover-open")) place();
+      };
+
+      panel.addEventListener("beforetoggle", (event) => {
+        if ((event as ToggleEvent).newState === "open") place();
+      });
+      panel.addEventListener("toggle", (event) => {
+        if ((event as ToggleEvent).newState === "closed") {
+          for (const prop of ["position", "inset", "margin", "top", "left"]) panel.style.removeProperty(prop);
+        }
+      });
+      addEventListener("scroll", follow, { passive: true });
+      addEventListener("resize", follow);
+    }
+  }
+</script>
 
 <style>
   [data-ui="filter-bar"] {
@@ -83,14 +118,6 @@ const summary = selected.length === 0 ? "" : selected.length === 1 ? ` · ${sele
     [data-filter-panel]:popover-open {
       opacity: 0;
       translate: 0 -0.25rem;
-    }
-  }
-
-  @supports not (position-area: bottom) {
-    [data-filter-panel] {
-      position: fixed;
-      top: calc(var(--nav-height) + 4rem);
-      left: 1rem;
     }
   }
 
