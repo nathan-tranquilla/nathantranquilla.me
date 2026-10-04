@@ -16,7 +16,6 @@
 import Tag from "./Tag.astro";
 import { formatPostDate, isoPostDate } from "../../utils/dates";
 import { postTransition } from "../../utils/transitions";
-import { tagSlug } from "../../utils/tags";
 
 export interface Props {
   author: string;
@@ -25,10 +24,8 @@ export interface Props {
   tags: string[];
   hash: string;
   size?: "entry" | "header";
-  /** Link each tag to the blog index filtered by it (not inside an index row, which is already a link). */
-  linkTags?: boolean;
 }
-const { author, date, updated, tags, hash, size = "entry", linkTags = false } = Astro.props;
+const { author, date, updated, tags, hash, size = "entry" } = Astro.props;
 const byline = size === "header" ? "mb-3 text-base" : "mb-2 text-sm";
 ---
 
@@ -40,7 +37,7 @@ const byline = size === "header" ? "mb-3 text-base" : "mb-2 text-sm";
   </p>
   <div class="flex items-center justify-between gap-3">
     <div style={postTransition(hash, "tags")} class="flex flex-wrap items-center gap-x-3 gap-y-1">
-      {tags.map((tag) => <Tag href={linkTags ? `/blogs/?tag=${tagSlug(tag)}` : undefined}>{tag}</Tag>)}
+      {tags.map((tag) => <Tag>{tag}</Tag>)}
     </div>
     <slot name="actions" />
   </div>

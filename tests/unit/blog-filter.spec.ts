@@ -7,7 +7,8 @@ import { TAGS } from "../../src/utils/tags";
 // the chips filter in the browser, several chips narrowing to posts that carry
 // all of them. The selection lives in the URL (?tag=type-safety&tag=ai), so a
 // filtered view is shareable and the back button steps through it. Without
-// JavaScript every post shows and the filter row stays hidden.
+// JavaScript every post shows and the filter row stays hidden. Tags themselves
+// are plain labels, never links.
 const published = fs
   .readdirSync(POSTS_DIR)
   .filter((f) => f.endsWith(".md"))
@@ -117,10 +118,10 @@ test.describe("without JavaScript", () => {
   });
 });
 
-test("tags on a post page link to the index filtered by that tag", async ({ page }) => {
-  await page.goto("/blogs/making-my-money-decisions-mechanical-with-ai-and-plain-text-accounting/");
-  const finance = page.locator('article > header a[data-ui="tag"]', { hasText: "Finance" });
-  await expect(finance).toHaveAttribute("href", "/blogs/?tag=finance");
-  await finance.click();
-  await expect.poll(() => shown(page)).toEqual(hashes(withAll("Finance")));
+test("tags are plain labels everywhere, never links", async ({ page }) => {
+  for (const url of ["/", "/blogs/", "/blogs/making-my-money-decisions-mechanical-with-ai-and-plain-text-accounting/"]) {
+    await page.goto(url);
+    expect(await page.locator('a[data-ui="tag"]').count(), url).toBe(0);
+    expect(await page.locator('[data-ui="tag"]').count(), url).toBeGreaterThan(0);
+  }
 });
