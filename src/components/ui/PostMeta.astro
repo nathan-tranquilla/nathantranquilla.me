@@ -1,7 +1,7 @@
 ---
 // UI library: a post's metadata (author, date in words, tags). It owns the
-// view-transition names for the byline and tags, so every page that shows a
-// post's metadata morphs the same way.
+// byline's view-transition name, so every page that shows a post's metadata
+// morphs the same way. Tags do not animate; they simply appear.
 //
 //   layout="inline"   index rows: byline and tags on one wrapping line
 //   layout="stacked"  the post header: byline, then tags with room for
@@ -29,7 +29,7 @@ const tagRow = "flex flex-wrap items-center gap-x-3 gap-y-1";
       {author} · <time datetime={isoPostDate(date)}>{formatPostDate(date)}</time>
       {updated && <> · Updated <time datetime={isoPostDate(updated)}>{formatPostDate(updated)}</time></>}
     </span>
-    <span style={postTransition(hash, "tags")} class={tagRow}>
+    <span class={tagRow}>
       {tags.map((tag) => <Tag>{tag}</Tag>)}
     </span>
   </div>
@@ -41,7 +41,7 @@ const tagRow = "flex flex-wrap items-center gap-x-3 gap-y-1";
       <slot name="byline-end" />
     </p>
     <div class="flex items-center justify-between gap-3">
-      <div style={postTransition(hash, "tags")} class={tagRow}>
+      <div class={tagRow}>
         {tags.map((tag) => <Tag>{tag}</Tag>)}
       </div>
       <slot name="actions" />
