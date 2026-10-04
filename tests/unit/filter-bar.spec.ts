@@ -1,8 +1,9 @@
 import { test, expect, type Page } from "@playwright/test";
 
 // UI library: FilterBar, the blog index's control bar. The chips sit inline
-// in one row, on a tray: the yellow field with a 1px navy border (chips in
-// paper on it); where
+// in one row, on a tray: the page colour inside a 1px navy border (chips in
+// paper on it, set apart by their ink outline). The tray is one horizontal
+// bar holding the result count too, spanning the content column evenly; where
 // they don't fit (a phone) the row scrolls sideways within it, and each end
 // of the tray that still hides chips gets an inverted square with a chevron.
 // The tray is what makes the squares read as the ends of a scrolling window
@@ -158,14 +159,14 @@ test("the count says how many posts are showing, and updates as you filter", asy
   await expect(count).toHaveText(`${shown} of ${total}`);
 });
 
-// The tray: the yellow field inside a 1px navy border (both from tokens, so
+// The tray: the page colour inside a 1px navy border (both from tokens, so
 // dark mode flips them), with the arrow squares in the border's colour; the
 // chips, pressed or not, distinct from the tray, and clear of its edges.
 for (const scheme of ["light", "dark"] as const) {
   test.describe(`${scheme} mode, on a phone`, () => {
     test.use({ colorScheme: scheme, viewport: { width: 414, height: 800 } });
 
-    test("the chips sit on a yellow tray with a navy border", async ({ page }) => {
+    test("the chips sit on a page-coloured tray with a navy border", async ({ page }) => {
       await page.goto("/blogs/");
       await expect(page.locator(cue("end"))).toBeVisible();
       const t = await page.evaluate(
@@ -189,7 +190,7 @@ for (const scheme of ["light", "dark"] as const) {
             borders: [s.borderTopWidth, s.borderRightWidth, s.borderBottomWidth, s.borderLeftWidth].map(parseFloat),
             tray: s.backgroundColor,
             token: Object.fromEntries(
-              ["--bg-secondary", "--accent-bg"].map((name) => {
+              ["--bg-primary", "--bg-secondary", "--accent-bg"].map((name) => {
                 const probe = document.createElement("div");
                 probe.style.backgroundColor = `var(${name})`;
                 document.body.append(probe);
@@ -206,26 +207,61 @@ for (const scheme of ["light", "dark"] as const) {
             on: fill(`${traySel} [data-ui="filter-chip"][aria-pressed="true"]`),
             above: chip.top - r.top,
             below: r.bottom - chip.bottom,
+            outline: ratio(
+              rgb(getComputedStyle(document.querySelector(`${traySel} [data-ui="filter-chip"][aria-pressed="false"]`)!).borderTopColor),
+              rgb(s.backgroundColor)
+            ),
             chevron: ratio(rgb(getComputedStyle(cueEl).color), rgb(getComputedStyle(cueEl).backgroundColor)),
             squareOnTray: ratio(rgb(getComputedStyle(cueEl).backgroundColor), rgb(s.backgroundColor)),
           };
         },
-        ["[data-filter-track]", bar]
+        ["[data-filter-tray]", bar]
       );
       expect(t.borders).toEqual([1, 1, 1, 1]);
       expect(new Set(t.styles)).toEqual(new Set(["solid"]));
       expect(new Set(t.borderColours), "the border is navy (--accent-bg)").toEqual(new Set([t.token["--accent-bg"]]));
       expect(t.tray, "the tray is filled").not.toMatch(/rgba\(0, 0, 0, 0\)|transparent/);
-      expect(t.tray, "the tray stands apart from the bar").not.toBe(t.bar);
-      expect(t.tray, "the tray is the yellow field").toBe(t.token["--bg-secondary"]);
+      expect(t.tray, "the tray is the page colour, no yellow").toBe(t.token["--bg-primary"]);
       expect(t.cue, "the arrow squares are the border's colour").toBe(t.token["--accent-bg"]);
       expect(t.cue, "the arrow squares stand apart from the tray").not.toBe(t.tray);
-      expect(t.off, "an unpressed chip stands apart from the tray").not.toBe(t.tray);
+      // a chip stands apart from the tray by its fill, or else by its outline
+      expect(t.off !== t.tray || t.outline >= 3, "an unpressed chip stands apart from the tray").toBe(true);
+      if (scheme === "light") expect(t.off, "no yellow chips in light mode").not.toBe(t.token["--bg-secondary"]);
       expect(t.on, "a pressed chip stands apart from the tray").not.toBe(t.tray);
       expect(t.chevron, "the chevron reads on its square").toBeGreaterThanOrEqual(4.5);
       expect(t.squareOnTray, "the square reads on the tray").toBeGreaterThanOrEqual(3);
       expect(t.above, "room above the chips").toBeGreaterThanOrEqual(3);
       expect(t.below, "room below the chips").toBeGreaterThanOrEqual(3);
     });
+  });
+}
+
+// One bar: the tray holds the chips and the result count, and spans the
+// content column with the same margin on either side.
+for (const width of [414, 1280]) {
+  test(`at ${width}px the tray is one bar, count included, even on both sides`, async ({ page }) => {
+    await page.setViewportSize({ width, height: 800 });
+    await page.goto("/blogs/");
+    const r = await page.evaluate((barSel) => {
+      const rect = (sel: string) => document.querySelector(sel)!.getBoundingClientRect();
+      const tray = rect(`${barSel} [data-filter-tray]`);
+      const count = rect(`${barSel} [data-filter-count]`);
+      const scroll = rect(`${barSel} [data-filter-scroller]`);
+      const column = document.querySelector(barSel)!.getBoundingClientRect();
+      return {
+        countInside: count.left >= tray.left && count.right <= tray.right && count.top >= tray.top && count.bottom <= tray.bottom,
+        scrollInside: scroll.left >= tray.left && scroll.right <= tray.right,
+        countAfterChips: count.left >= scroll.right - 1,
+        left: tray.left - column.left,
+        right: column.right - tray.right,
+        width: tray.width,
+        columnWidth: column.width,
+      };
+    }, bar);
+    expect(r.countInside, "the count sits inside the tray").toBe(true);
+    expect(r.scrollInside, "the chips sit inside the tray").toBe(true);
+    expect(r.countAfterChips, "the count follows the chips").toBe(true);
+    expect(Math.abs(r.left - r.right), "even on both sides").toBeLessThanOrEqual(1);
+    expect(r.width, "spans the column").toBeGreaterThanOrEqual(r.columnWidth - 2 * Math.max(r.left, 0) - 1);
   });
 }

@@ -2,9 +2,11 @@
 // UI library: the blog index's control bar. Sticky just under the site
 // header, with the result count on the right.
 //
-// The chips sit inline in one row, on a tray: the yellow field inside a 1px
-// navy border, with the chips in paper on it (through the --tag-bg surface
-// variable). Dark mode flips both through their tokens. Where they
+// One horizontal tray spans the column: the page colour inside a 1px navy
+// border, holding the chips and, at its right end, the result count. The
+// chips sit inline in one row in it, with the chips in paper on it in light mode (through the
+// --tag-bg surface variable), set apart by their ink outline. Dark mode flips
+// the border through its token and keeps the chips' slate fill. Where they
 // don't fit (a phone), the row scrolls sideways within it, and each end that
 // still hides chips gets a cue: a small inverted square with a chevron, the
 // tray's full height. Chips slide under it with a clean cut. The tray is what
@@ -28,7 +30,7 @@ const { counts, total, selected = [] } = Astro.props;
 ---
 
 <div data-ui="filter-bar">
-  <div class="flex items-center gap-4">
+  <div data-filter-tray>
     <div data-filter-track>
       <div data-filter-scroller>
         <FilterRow counts={counts} selected={selected} />
@@ -36,7 +38,7 @@ const { counts, total, selected = [] } = Astro.props;
       <span data-filter-more="start" aria-hidden="true">‹</span>
       <span data-filter-more="end" aria-hidden="true">›</span>
     </div>
-    <p data-filter-count aria-live="polite" class="shrink-0 font-mono text-xs text-[var(--text-muted)]">
+    <p data-filter-count aria-live="polite" class="shrink-0 px-3 font-mono text-xs text-[var(--text-muted)]">
       {total} of {total}
     </p>
   </div>
@@ -70,15 +72,31 @@ const { counts, total, selected = [] } = Astro.props;
     --cue: 1.5rem;
   }
 
-  /* The tray: the yellow field inside a 1px navy border, a crisp edge rather
-     than a fill fading into the page. On it the chips take the paper colour. */
-  [data-filter-track] {
+  /* The tray: one bar across the column, the page colour inside a 1px navy
+     border, a crisp edge and no fill. It holds the scrolling chips and the
+     result count. In light mode the chips take the paper colour too, set
+     apart by their ink outline (no yellow). In dark mode their outline is
+     too faint for that, so they keep their usual slate fill. */
+  [data-filter-tray] {
     --tag-bg: var(--bg-primary);
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--accent-bg);
+    background-color: var(--bg-primary);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    [data-filter-tray] {
+      --tag-bg: var(--bg-secondary);
+    }
+  }
+
+  /* The scrolling part of the tray; the cues pin to its ends. */
+  [data-filter-track] {
     position: relative;
     flex: 1;
     min-width: 0;
-    border: 1px solid var(--accent-bg);
-    background-color: var(--bg-secondary);
+    align-self: stretch;
   }
 
   [data-filter-scroller] {
