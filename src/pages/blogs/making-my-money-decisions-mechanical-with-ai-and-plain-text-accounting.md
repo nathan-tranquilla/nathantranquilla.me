@@ -5,7 +5,7 @@ hash: "95cdjm"
 description: "An AI agent keeps my business and household books once hledger checks its work. The monthly money decisions now take about an hour and are no longer draining."
 author: Nathan Tranquilla
 date: "2026/10/01"
-tags: ["AI", "Finance"]
+tags: ["AI", "Finance", "Automation"]
 ---
 
 
