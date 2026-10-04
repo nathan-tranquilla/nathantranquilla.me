@@ -11,3 +11,6 @@ export const tagCounts = (posts: { frontmatter: { tags: string[] } }[]) =>
     TagName,
     number
   >;
+
+/** "Type Safety" -> "type-safety", for ?tag= in the blog index URL. */
+export const tagSlug = (tag: string) => tag.toLowerCase().replace(/\s+/g, "-");

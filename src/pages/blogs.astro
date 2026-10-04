@@ -3,8 +3,24 @@ import PostEntry from "../components/ui/PostEntry.astro";
 import Container from "../components/Container.astro";
 import Main from "../layouts/Main.astro";
 import H1 from "../components/HTMLElements/H1.astro";
+import FilterRow from "../components/ui/FilterRow.astro";
+import Button from "../components/ui/Button.astro";
 import { getPosts } from "../utils/posts";
+import { tagCounts } from "../utils/tags";
 const posts = getPosts();
+
+// Every published post, embedded for the tag filter, which runs in the
+// browser. Without JavaScript the filter row stays hidden and every post shows.
+const postsData = posts
+  .filter((p) => !p.frontmatter.draft)
+  .map((p) => ({
+    title: p.frontmatter.title,
+    url: `${p.url}/`,
+    date: p.frontmatter.date,
+    tags: p.frontmatter.tags,
+    hash: p.frontmatter.hash,
+  }));
+const counts = tagCounts(posts.filter((p) => !p.frontmatter.draft));
 
 
 posts.forEach((post) => {
@@ -25,11 +41,22 @@ posts.forEach((post) => {
       </p>
     </div>
 
-    <div class="divide-y divide-[var(--border-primary)]">
+    <div data-filter hidden class="mb-10">
+      <FilterRow counts={counts} />
+    </div>
+
+    <div data-filterable class="divide-y divide-[var(--border-primary)]">
       {
         posts.map((post) => <PostEntry post={post} level={2} />)
       }
     </div>
+
+    <div data-filter-empty hidden class="py-12 text-center">
+      <p class="mb-6 text-[var(--text-secondary)]">No posts have all of these tags.</p>
+      <Button data-filter-clear>Clear filters</Button>
+    </div>
+
+    <script id="posts-data" type="application/json" is:inline set:html={JSON.stringify(postsData)} />
 
     {
       posts.length === 0 && (
@@ -44,3 +71,107 @@ posts.forEach((post) => {
     }
   </Container>
 </Main>
+
+<script>
+  // Tag filter for the blog index. Several selected tags narrow to posts that
+  // carry all of them. The selection lives in the URL (?tag=type-safety), so a
+  // filtered view can be shared and the back button steps through changes.
+  // This script only marks rows in or out; the CSS below animates the change.
+  import { TAGS, tagSlug } from "../utils/tags";
+
+  const data: { hash: string; tags: string[] }[] = JSON.parse(document.getElementById("posts-data")!.textContent ?? "[]");
+  const tagsOf = new Map(data.map((p) => [p.hash, p.tags]));
+  const bySlug = new Map<string, string>(TAGS.map((t) => [tagSlug(t), t]));
+
+  const filter = document.querySelector<HTMLElement>("[data-filter]")!;
+  const list = document.querySelector<HTMLElement>("[data-filterable]")!;
+  const empty = document.querySelector<HTMLElement>("[data-filter-empty]")!;
+  const chips = [...filter.querySelectorAll<HTMLButtonElement>('[data-ui="filter-chip"]')];
+  const entries = [...list.querySelectorAll<HTMLElement>('[data-ui="post-entry"]')];
+
+  const inOrder = (tags: string[]) => TAGS.filter((t) => tags.includes(t));
+  const fromUrl = () =>
+    inOrder(new URL(location.href).searchParams.getAll("tag").map((s) => bySlug.get(s)).filter((t): t is string => !!t));
+  const selected = () => chips.filter((c) => c.dataset.label !== "All" && c.getAttribute("aria-pressed") === "true").map((c) => c.dataset.label!);
+
+  function render(sel: string[]) {
+    for (const c of chips) {
+      const on = c.dataset.label === "All" ? sel.length === 0 : sel.includes(c.dataset.label!);
+      c.setAttribute("aria-pressed", String(on));
+    }
+    let shown = 0;
+    for (const e of entries) {
+      const tags = tagsOf.get(e.dataset.hash!) ?? [];
+      const keep = sel.every((t) => tags.includes(t));
+      e.toggleAttribute("data-out", !keep);
+      if (keep) shown++;
+    }
+    empty.hidden = shown > 0;
+  }
+
+  function apply(sel: string[]) {
+    render(sel);
+    const url = new URL(location.href);
+    url.searchParams.delete("tag");
+    for (const t of sel) url.searchParams.append("tag", tagSlug(t));
+    history.pushState(null, "", url);
+  }
+
+  for (const c of chips) {
+    c.addEventListener("click", () => {
+      const label = c.dataset.label!;
+      const sel = selected();
+      if (label === "All") return apply([]);
+      apply(inOrder(sel.includes(label) ? sel.filter((t) => t !== label) : [...sel, label]));
+    });
+  }
+  document.querySelector("[data-filter-clear]")!.addEventListener("click", () => apply([]));
+  addEventListener("popstate", () => render(fromUrl()));
+
+  render(fromUrl());
+  filter.hidden = false;
+  // Only now do rows animate, so the first paint doesn't.
+  requestAnimationFrame(() => list.setAttribute("data-animate", ""));
+</script>
+
+<style is:global>
+  /* Global, not scoped: the rows are rendered by PostEntry, which scoped page
+     styles would not reach.
+
+     Filtering animation, CSS only: a row leaving fades and folds away, a row
+     returning unfolds and fades in, and the rows around it close or open the
+     gap. Where height can't animate (no interpolate-size), rows just fade. */
+  [data-filterable] [data-ui="post-entry"][data-out] {
+    display: none;
+  }
+
+  [data-filterable][data-animate] [data-ui="post-entry"] {
+    interpolate-size: allow-keywords;
+    overflow: clip;
+    transition:
+      opacity 220ms ease,
+      height 280ms ease,
+      padding-block 280ms ease,
+      display 280ms allow-discrete;
+  }
+
+  [data-filterable][data-animate] [data-ui="post-entry"][data-out] {
+    opacity: 0;
+    height: 0;
+    padding-block: 0;
+  }
+
+  @starting-style {
+    [data-filterable][data-animate] [data-ui="post-entry"]:not([data-out]) {
+      opacity: 0;
+      height: 0;
+      padding-block: 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    [data-filterable][data-animate] [data-ui="post-entry"] {
+      transition: none;
+    }
+  }
+</style>

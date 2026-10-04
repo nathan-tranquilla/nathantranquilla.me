@@ -3,11 +3,22 @@
 // Its fill is the yellow field on the paper ground. A surface that is itself
 // the yellow band sets --tag-bg (to the paper colour) so the chip still stands
 // apart: add the class [--tag-bg:var(--bg-primary)] to that surface.
+// With href it is a link (the post page links each tag to the filtered index);
+// without, a plain label (inside an index row, which is already one link).
+export interface Props {
+  href?: string;
+}
+const { href } = Astro.props;
+const look =
+  "border border-[var(--border-primary)] bg-[var(--tag-bg,var(--bg-secondary))] px-2.5 py-0.5 font-mono text-xs text-[var(--text-tertiary)]";
 ---
 
-<span
-  data-ui="tag"
-  class="border border-[var(--border-primary)] bg-[var(--tag-bg,var(--bg-secondary))] px-2.5 py-0.5 font-mono text-xs text-[var(--text-tertiary)]"
->
-  <slot />
-</span>
+{href ? (
+  <a data-ui="tag" href={href} class={`${look} no-underline transition-colors hover:border-[var(--text-accent)] hover:text-[var(--text-primary)]`}>
+    <slot />
+  </a>
+) : (
+  <span data-ui="tag" class={look}>
+    <slot />
+  </span>
+)}

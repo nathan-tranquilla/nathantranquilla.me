@@ -19,7 +19,7 @@ const { title, author, date, updated, tags, hash } = post.frontmatter;
 const Heading = `h${level}`;
 ---
 
-<article data-ui="post-entry" class="py-8 first:pt-0">
+<article data-ui="post-entry" data-hash={hash} class="py-8 first:pt-0">
   <a href={post.url} class="group block">
     <Heading
       style={postTransition(hash, "title")}

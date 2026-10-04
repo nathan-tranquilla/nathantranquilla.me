@@ -20,7 +20,8 @@ const strayTags = (page: Page, names: string[]) =>
   page.evaluate((names) => {
     return [...document.querySelectorAll("main *")]
       .filter((el) => el.children.length === 0 && names.includes(el.textContent?.trim() ?? ""))
-      .filter((el) => !el.closest('[data-ui="tag"]'))
+      // a tag name inside a Tag, or a FilterChip's label, is the library's own
+      .filter((el) => !el.closest('[data-ui="tag"], [data-ui="filter-chip"]'))
       .map((el) => `${el.tagName} "${el.textContent?.trim()}"`);
   }, names);
 
