@@ -67,7 +67,8 @@ for (const scheme of ["light", "dark"] as const) {
             pressed: e.getAttribute("aria-pressed"),
             bg: bg.join(","),
             label: ratio(rgb(getComputedStyle(e).color).slice(0, 3), bg),
-            count: count ? ratio(rgb(getComputedStyle(count).color).slice(0, 3), bg) : 99,
+            // the count sits on its own filled box, so measure it against that
+            count: count ? ratio(rgb(getComputedStyle(count).color).slice(0, 3), bgOf(count)) : 99,
           };
         });
       });
@@ -84,31 +85,57 @@ for (const scheme of ["light", "dark"] as const) {
 }
 
 // The count must read as a count, not as part of the label: clearly smaller,
-// and framed in a small square box (border on every side, about as wide as it
-// is tall for a single digit).
-test("the count is a small framed square, distinct from the label", async ({ page }) => {
+// inverted (the number in the chip's colour on a solid fill), and set as a
+// segment at the right end of the chip, running its full inner height.
+test("the count is a filled segment flush to the chip's right edge, full height", async ({ page }) => {
   await page.goto("/ui");
   const looks = await page.locator('[data-ui="filter-chip"] [data-count]').evaluateAll((counts) =>
     counts.map((c) => {
-      const chip = getComputedStyle(c.closest('[data-ui="filter-chip"]')!);
+      const chipEl = c.closest('[data-ui="filter-chip"]')!;
+      const chip = getComputedStyle(chipEl);
       const s = getComputedStyle(c);
       const r = c.getBoundingClientRect();
+      const k = chipEl.getBoundingClientRect();
+      const bw = (v: string) => parseFloat(v) || 0;
       return {
         text: c.textContent?.trim() ?? "",
         label: parseFloat(chip.fontSize),
         count: parseFloat(s.fontSize),
-        borders: [s.borderTopWidth, s.borderRightWidth, s.borderBottomWidth, s.borderLeftWidth].map(parseFloat),
-        ratio: r.width / r.height,
+        fill: s.backgroundColor,
+        chipFill: chip.backgroundColor,
+        top: r.top - (k.top + bw(chip.borderTopWidth)),
+        bottom: k.bottom - bw(chip.borderBottomWidth) - r.bottom,
+        right: k.right - bw(chip.borderRightWidth) - r.right,
       };
     })
   );
   expect(looks.length).toBeGreaterThan(0);
   for (const l of looks) {
     expect(l.count).toBeLessThanOrEqual(l.label * 0.85);
-    for (const b of l.borders) expect(b, `${l.text} border`).toBeGreaterThanOrEqual(1);
-    if (l.text.length === 1) {
-      expect(l.ratio, `${l.text} squareness`).toBeGreaterThanOrEqual(0.85);
-      expect(l.ratio).toBeLessThanOrEqual(1.2);
+    expect(l.fill, `${l.text} is filled`).not.toMatch(/rgba\(0, 0, 0, 0\)|transparent/);
+    expect(l.fill, `${l.text} differs from the chip`).not.toBe(l.chipFill);
+    for (const [edge, gap] of [["top", l.top], ["bottom", l.bottom], ["right", l.right]] as const) {
+      expect(Math.abs(gap), `${l.text} ${edge} edge`).toBeLessThanOrEqual(0.5);
     }
   }
 });
+
+// The count keeps one colour pattern whether its chip is pressed or not.
+for (const scheme of ["light", "dark"] as const) {
+  test.describe(`${scheme} mode`, () => {
+    test.use({ colorScheme: scheme });
+
+    test("the count looks the same in pressed and unpressed chips", async ({ page }) => {
+      await page.goto("/ui");
+      const look = (pressed: boolean) =>
+        page
+          .locator(`[data-ui="filter-chip"][aria-pressed="${pressed}"] [data-count]`)
+          .first()
+          .evaluate((c) => {
+            const s = getComputedStyle(c);
+            return [s.backgroundColor, s.color];
+          });
+      expect(await look(true)).toEqual(await look(false));
+    });
+  });
+}
