@@ -3,8 +3,8 @@ import { test, expect, type Page } from "@playwright/test";
 // UI library: FilterBar, the blog index's control bar: the chips alone,
 // across the column, no tray. Where they don't fit on one line (a phone)
 // they wrap, so every chip is visible above the bar's rule: nothing scrolls
-// sideways. No fades: the design is hard-edged. The bar is sticky just under
-// the site header. The result count is not in the bar: it captions the list,
+// sideways. No fades: the design is hard-edged. The bar sits in the page and
+// scrolls away with it. The result count is not in the bar: it captions the list,
 // just below it ("Showing N of M posts").
 const bar = '[data-ui="filter-bar"]';
 
@@ -55,17 +55,14 @@ test.describe("on a phone", () => {
     expect(await noFades(page)).toBe(0);
   });
 
-  test("the bar stays pinned under the header while the list scrolls", async ({ page }) => {
+  test("the bar is part of the page: it scrolls away with the list, not pinned", async ({ page }) => {
     await page.goto("/blogs/");
+    const before = await page.locator(bar).evaluate((el) => el.getBoundingClientRect().top);
     await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight / 2));
-    const [barTop, navHeight] = await page.evaluate(
-      (sel) => [
-        document.querySelector(sel)!.getBoundingClientRect().top,
-        parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--nav-height")),
-      ],
-      bar
-    );
-    expect(Math.abs(barTop - navHeight)).toBeLessThanOrEqual(1);
+    const [after, position] = await page.locator(bar).evaluate((el) => [el.getBoundingClientRect().top, getComputedStyle(el).position]);
+    expect(position).not.toMatch(/sticky|fixed/);
+    expect(after, "it scrolled off the top").toBeLessThan(0);
+    expect(before).toBeGreaterThan(0);
   });
 });
 

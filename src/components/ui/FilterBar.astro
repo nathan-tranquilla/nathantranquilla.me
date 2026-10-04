@@ -1,6 +1,6 @@
 ---
-// UI library: the blog index's control bar, sticky just under the site
-// header. The chips alone, across the column, in their own approved look: no
+// UI library: the blog index's control bar, part of the page: it scrolls
+// away with the list, not pinned. The chips alone, across the column, in their own approved look: no
 // tray, no frame. Where they don't fit on one line (a phone), they wrap, so
 // every chip is visible above the bar's rule and nothing scrolls sideways.
 // No fades anywhere: the design is hard-edged.
@@ -22,11 +22,7 @@ const { counts, selected = [] } = Astro.props;
 
 <style>
   [data-ui="filter-bar"] {
-    position: sticky;
-    top: var(--nav-height);
-    z-index: 9;
     padding-block: 0.75rem;
     border-bottom: 1px solid var(--border-primary);
-    background-color: var(--bg-primary);
   }
 </style>

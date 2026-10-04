@@ -41,8 +41,8 @@ posts.forEach((post) => {
       </p>
     </div>
 
-    <!-- display: contents, so the sticky bar sticks within the page column,
-         not this wrapper (which only exists to stay hidden without JS) -->
+    <!-- only exists to stay hidden without JS; display: contents keeps it
+         out of the layout -->
     <div data-filter hidden class="contents">
       <FilterBar counts={counts} />
       <p data-filter-count aria-live="polite" class="mt-4 text-right font-mono text-xs text-[var(--text-muted)]">
