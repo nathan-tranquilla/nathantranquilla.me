@@ -6,6 +6,15 @@
 import "../styles/global.css";
 import Button from "../components/ui/Button.astro";
 import Callout from "../components/ui/Callout.astro";
+import Tag from "../components/ui/Tag.astro";
+import PostMeta from "../components/ui/PostMeta.astro";
+import PostEntry from "../components/ui/PostEntry.astro";
+
+// A made-up post for the specimens; its hash is unique to this page.
+const samplePost = {
+  url: "/ui",
+  frontmatter: { title: "A Sample Post Title", author: "Nathan Tranquilla", date: "2026/10/01", tags: ["AI", "Finance"], hash: "uidemo" },
+};
 
 const surfaces = [
   { variant: "primary", surface: "bg-[var(--bg-primary)]", note: "Default. On paper and the page ground." },
@@ -67,6 +76,37 @@ const surfaces = [
         <p class="font-mono text-xs text-[var(--text-muted)]">
           In markdown: &lt;aside data-ui="callout"&gt;&lt;p data-callout-label&gt;Label&lt;/p&gt; …markdown… &lt;/aside&gt; (blank lines around the markdown)
         </p>
+      </section>
+
+      <section class="mt-12">
+        <h2 class="mb-4 font-serif text-2xl text-[var(--text-primary)]">Tag</h2>
+        <div class="mb-3 flex gap-3 border border-[var(--border-primary)] p-6">
+          <Tag>AI</Tag><Tag>Finance</Tag>
+        </div>
+        <div class="flex gap-3 border border-[var(--border-primary)] bg-[var(--bg-secondary)] p-6">
+          <Tag>On the yellow band</Tag>
+        </div>
+      </section>
+
+      <section class="mt-12">
+        <h2 class="mb-4 font-serif text-2xl text-[var(--text-primary)]">PostMeta</h2>
+        <p class="mb-2 font-mono text-xs uppercase tracking-[0.07em] text-[var(--text-muted)]">layout="inline" · index rows</p>
+        <div class="mb-6 border border-[var(--border-primary)] p-6">
+          <PostMeta author="Nathan Tranquilla" date="2026/10/01" tags={["AI", "Finance"]} hash="uimeta1" />
+        </div>
+        <p class="mb-2 font-mono text-xs uppercase tracking-[0.07em] text-[var(--text-muted)]">layout="stacked" · the post header, with an action</p>
+        <div class="border border-[var(--border-primary)] p-6">
+          <PostMeta layout="stacked" author="Nathan Tranquilla" date="2026/10/01" tags={["AI", "Finance"]} hash="uimeta2">
+            <Button slot="actions">Share</Button>
+          </PostMeta>
+        </div>
+      </section>
+
+      <section class="mt-12">
+        <h2 class="mb-4 font-serif text-2xl text-[var(--text-primary)]">PostEntry</h2>
+        <div class="divide-y divide-[var(--border-primary)] border border-[var(--border-primary)] p-6">
+          <PostEntry post={samplePost} />
+        </div>
       </section>
     </main>
   </body>

@@ -1,0 +1,70 @@
+---
+// UI library: a post's metadata (author, date in words, tags). It owns the
+// view-transition names for the byline and tags, so every page that shows a
+// post's metadata morphs the same way.
+//
+//   layout="inline"   index rows: byline and tags on one wrapping line
+//   layout="stacked"  the post header: byline, then tags with room for
+//                     actions (the Share button) via <slot name="actions">;
+//                     extras after the date go in <slot name="byline-end">
+import Tag from "./Tag.astro";
+import { formatPostDate, isoPostDate } from "../../utils/dates";
+import { postTransition } from "../../utils/transitions";
+
+export interface Props {
+  author: string;
+  date: string;
+  updated?: string;
+  tags: string[];
+  hash: string;
+  layout?: "inline" | "stacked";
+}
+const { author, date, updated, tags, hash, layout = "inline" } = Astro.props;
+const tagRow = "flex flex-wrap items-center gap-x-3 gap-y-1";
+---
+
+{layout === "inline" ? (
+  <div data-ui="post-meta" class={tagRow}>
+    <span data-byline style={postTransition(hash, "byline")} class="text-sm text-[var(--text-muted)]">
+      {author} · <time datetime={isoPostDate(date)}>{formatPostDate(date)}</time>
+      {updated && <> · Updated <time datetime={isoPostDate(updated)}>{formatPostDate(updated)}</time></>}
+    </span>
+    <span style={postTransition(hash, "tags")} class={tagRow}>
+      {tags.map((tag) => <Tag>{tag}</Tag>)}
+    </span>
+  </div>
+) : (
+  <div data-ui="post-meta">
+    <p data-byline style={postTransition(hash, "byline")} class="mb-3 text-base text-[var(--text-muted)]">
+      {author} · <time datetime={isoPostDate(date)}>{formatPostDate(date)}</time>
+      {updated && <> · Updated <time datetime={isoPostDate(updated)}>{formatPostDate(updated)}</time></>}
+      <slot name="byline-end" />
+    </p>
+    <div class="flex items-center justify-between gap-3">
+      <div style={postTransition(hash, "tags")} class={tagRow}>
+        {tags.map((tag) => <Tag>{tag}</Tag>)}
+      </div>
+      <slot name="actions" />
+    </div>
+  </div>
+)}
+
+<style>
+  /* The byline sits slightly into the page, like letterpress: a faint
+     highlight under each letter's lower edge and a fainter shadow above. A
+     deliberate exception to the flat style, kept subtle; byline.spec.ts
+     holds it to 4.5:1 contrast in both schemes. */
+  [data-byline] {
+    text-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.85),
+      0 -1px 0 rgba(0, 0, 0, 0.05);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    [data-byline] {
+      text-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.05),
+        0 -1px 0 rgba(0, 0, 0, 0.6);
+    }
+  }
+</style>

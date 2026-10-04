@@ -3,9 +3,9 @@ import Main from "./Main.astro";
 import Container from "../components/Container.astro";
 import { postDescription } from "../utils/posts";
 import { postTransition } from "../utils/transitions";
-import { formatPostDate, isoPostDate } from "../utils/dates";
 import ViewCount from "../components/ViewCount.astro";
 import Button from "../components/ui/Button.astro";
+import PostMeta from "../components/ui/PostMeta.astro";
 // Posts write callouts as plain HTML (data-ui="callout") and never import
 // Callout.astro, so the layout loads the library's callout styles itself.
 import "../components/ui/callout.css";
@@ -47,23 +47,6 @@ try {
 ---
 
 <style is:global>
-  /* The byline sits slightly into the page, like letterpress: a faint
-     highlight under each letter's lower edge and a fainter shadow above. A
-     deliberate exception to the flat style, kept subtle; byline.spec.ts
-     holds it to 4.5:1 contrast in both schemes. */
-  [data-byline] {
-    text-shadow:
-      0 1px 0 rgba(255, 255, 255, 0.85),
-      0 -1px 0 rgba(0, 0, 0, 0.05);
-  }
-
-  @media (prefers-color-scheme: dark) {
-    [data-byline] {
-      text-shadow:
-        0 1px 0 rgba(255, 255, 255, 0.05),
-        0 -1px 0 rgba(0, 0, 0, 0.6);
-    }
-  }
 
   /* Headings */
   .blog-post article h2 {
@@ -271,20 +254,17 @@ try {
           class="text-wrap mb-3 text-3xl md:text-4xl font-serif font-semibold leading-tight text-[var(--text-primary)]"
           >{frontmatter.title}</h1
         >
-        <p data-byline style={postTransition(frontmatter.hash, "byline")} class="mb-3 text-base text-[var(--text-muted)]">
-          {frontmatter.author} · <time datetime={isoPostDate(frontmatter.date)}>{formatPostDate(frontmatter.date)}</time>
-          {frontmatter.updated && <> · Updated <time datetime={isoPostDate(frontmatter.updated)}>{formatPostDate(frontmatter.updated)}</time></>}
-          <ViewCount count={viewCount} at="top" />
-        </p>
-        <div class="flex items-center justify-between gap-3">
-          <div style={postTransition(frontmatter.hash, "tags")} class="flex flex-wrap items-center gap-x-3 gap-y-1">
-            {frontmatter.tags.map((tag: string) => (
-              <span class="border border-[var(--border-primary)] bg-[var(--bg-secondary)] px-2.5 py-0.5 font-mono text-xs text-[var(--text-tertiary)]">
-                {tag}
-              </span>
-            ))}
-          </div>
+        <PostMeta
+          layout="stacked"
+          author={frontmatter.author}
+          date={frontmatter.date}
+          updated={frontmatter.updated}
+          tags={frontmatter.tags}
+          hash={frontmatter.hash}
+        >
+          <ViewCount slot="byline-end" count={viewCount} at="top" />
           <Button
+            slot="actions"
             classes="shrink-0"
             data-share
             data-title={frontmatter.title}
@@ -300,7 +280,7 @@ try {
               stroke-width="1.4"
             ><path d="M0.7 9.3 9.3 0.7M2.5 0.7h6.8v6.8" /></svg>
           </Button>
-        </div>
+        </PostMeta>
       </header>
       <div
         role="status"

@@ -1,0 +1,32 @@
+---
+// UI library: one row in a post index (the home page's recent posts, the blog
+// list): the linked title plus PostMeta. It owns the title's view-transition
+// name. Only the background differs between the two indexes, and that comes
+// from the page around it.
+import PostMeta from "./PostMeta.astro";
+import { postTransition } from "../../utils/transitions";
+
+export interface Props {
+  post: {
+    url: string;
+    frontmatter: { title: string; author: string; date: string; updated?: string; tags: string[]; hash: string };
+  };
+  /** Heading level for the title: 3 under the home page's "Recent Posts", 2 on the blog list. */
+  level?: 2 | 3;
+}
+const { post, level = 2 } = Astro.props;
+const { title, author, date, updated, tags, hash } = post.frontmatter;
+const Heading = `h${level}`;
+---
+
+<article data-ui="post-entry" class="py-8 first:pt-0">
+  <a href={post.url} class="group block">
+    <Heading
+      style={postTransition(hash, "title")}
+      class="mb-2 font-serif text-xl text-[var(--text-primary)] transition-colors duration-200 group-hover:text-[var(--text-accent)] md:text-2xl"
+    >
+      {title}
+    </Heading>
+    <PostMeta author={author} date={date} updated={updated} tags={tags} hash={hash} />
+  </a>
+</article>
