@@ -1,12 +1,18 @@
 ---
 // UI library: a post's metadata (author, date in words, tags). It owns the
-// byline's view-transition name, so every page that shows a post's metadata
-// morphs the same way. Tags do not animate; they simply appear.
+// view-transition names for the byline and tags, so every page that shows a
+// post's metadata morphs the same way.
 //
-//   layout="inline"   index rows: byline and tags on one wrapping line
-//   layout="stacked"  the post header: byline, then tags with room for
-//                     actions (the Share button) via <slot name="actions">;
-//                     extras after the date go in <slot name="byline-end">
+// One structure everywhere: the byline on its own line, then the tag row.
+// Tags never sit beside the byline, so between an index and a post every
+// piece moves in one shared direction and nothing crosses anything else
+// (view-transitions.spec.ts). The byline is sized to its text with
+// proportional line height, so its shape holds and the morph scales it evenly.
+//
+//   size="entry"   index rows
+//   size="header"  the post header; extras after the date go in
+//                  <slot name="byline-end">, actions (the Share button) in
+//                  <slot name="actions"> at the end of the tag row
 import Tag from "./Tag.astro";
 import { formatPostDate, isoPostDate } from "../../utils/dates";
 import { postTransition } from "../../utils/transitions";
@@ -17,37 +23,25 @@ export interface Props {
   updated?: string;
   tags: string[];
   hash: string;
-  layout?: "inline" | "stacked";
+  size?: "entry" | "header";
 }
-const { author, date, updated, tags, hash, layout = "inline" } = Astro.props;
-const tagRow = "flex flex-wrap items-center gap-x-3 gap-y-1";
+const { author, date, updated, tags, hash, size = "entry" } = Astro.props;
+const byline = size === "header" ? "mb-3 text-base" : "mb-2 text-sm";
 ---
 
-{layout === "inline" ? (
-  <div data-ui="post-meta" class={tagRow}>
-    <span data-byline style={postTransition(hash, "byline")} class="text-sm text-[var(--text-muted)]">
-      {author} · <time datetime={isoPostDate(date)}>{formatPostDate(date)}</time>
-      {updated && <> · Updated <time datetime={isoPostDate(updated)}>{formatPostDate(updated)}</time></>}
-    </span>
-    <span class={tagRow}>
+<div data-ui="post-meta">
+  <p data-byline style={postTransition(hash, "byline")} class={`${byline} w-fit leading-[1.5] text-[var(--text-muted)]`}>
+    {author} · <time datetime={isoPostDate(date)}>{formatPostDate(date)}</time>
+    {updated && <> · Updated <time datetime={isoPostDate(updated)}>{formatPostDate(updated)}</time></>}
+    <slot name="byline-end" />
+  </p>
+  <div class="flex items-center justify-between gap-3">
+    <div style={postTransition(hash, "tags")} class="flex flex-wrap items-center gap-x-3 gap-y-1">
       {tags.map((tag) => <Tag>{tag}</Tag>)}
-    </span>
-  </div>
-) : (
-  <div data-ui="post-meta">
-    <p data-byline style={postTransition(hash, "byline")} class="mb-3 text-base text-[var(--text-muted)]">
-      {author} · <time datetime={isoPostDate(date)}>{formatPostDate(date)}</time>
-      {updated && <> · Updated <time datetime={isoPostDate(updated)}>{formatPostDate(updated)}</time></>}
-      <slot name="byline-end" />
-    </p>
-    <div class="flex items-center justify-between gap-3">
-      <div class={tagRow}>
-        {tags.map((tag) => <Tag>{tag}</Tag>)}
-      </div>
-      <slot name="actions" />
     </div>
+    <slot name="actions" />
   </div>
-)}
+</div>
 
 <style>
   /* The byline sits slightly into the page, like letterpress: a faint

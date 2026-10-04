@@ -255,7 +255,7 @@ try {
           >{frontmatter.title}</h1
         >
         <PostMeta
-          layout="stacked"
+          size="header"
           author={frontmatter.author}
           date={frontmatter.date}
           updated={frontmatter.updated}
@@ -266,6 +266,7 @@ try {
           <Button
             slot="actions"
             classes="shrink-0"
+            style="view-transition-name: post-share"
             data-share
             data-title={frontmatter.title}
             data-url={`${websiteUrl}/${frontmatter.hash}`}

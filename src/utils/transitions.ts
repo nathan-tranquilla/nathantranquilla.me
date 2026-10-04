@@ -3,6 +3,6 @@
 // morphs into place on its own. Keyed on the post's permanent hash, not its
 // position in a list, and unique per page (a duplicate name makes the browser
 // skip the whole transition).
-export type PostPart = "title" | "byline";
+export type PostPart = "title" | "byline" | "tags";
 
 export const postTransition = (hash: string, part: PostPart) => `view-transition-name: post-${hash}-${part}`;
