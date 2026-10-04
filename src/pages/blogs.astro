@@ -44,10 +44,13 @@ posts.forEach((post) => {
     <!-- display: contents, so the sticky bar sticks within the page column,
          not this wrapper (which only exists to stay hidden without JS) -->
     <div data-filter hidden class="contents">
-      <FilterBar counts={counts} total={postsData.length} />
+      <FilterBar counts={counts} />
+      <p data-filter-count aria-live="polite" class="mt-4 text-right font-mono text-xs text-[var(--text-muted)]">
+        Showing {postsData.length} of {postsData.length} posts
+      </p>
     </div>
 
-    <div data-filterable class="mt-10 divide-y divide-[var(--border-primary)]">
+    <div data-filterable class="mt-4 divide-y divide-[var(--border-primary)]">
       {
         posts.map((post) => <PostEntry post={post} level={2} />)
       }
@@ -110,7 +113,7 @@ posts.forEach((post) => {
       if (keep) shown++;
     }
     empty.hidden = shown > 0;
-    count.textContent = `${shown} of ${entries.length}`;
+    count.textContent = `Showing ${shown} of ${entries.length} posts`;
   }
 
   function apply(sel: string[]) {

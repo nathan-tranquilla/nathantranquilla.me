@@ -1,46 +1,31 @@
 ---
-// UI library: the blog index's control bar. Sticky just under the site
-// header, with the result count on the right.
+// UI library: the blog index's control bar, sticky just under the site
+// header. The chips alone, in one row across the column, in their own
+// approved look: no tray, no frame. Where they don't fit (a phone), the row
+// scrolls sideways, and each edge that still hides chips gets a cue: a navy
+// square with a chevron, a little taller than the chips so it reads as its
+// own thing, not a segment of the chip it covers. No fades anywhere: the
+// design is hard-edged. Where everything fits (a desktop), no cue shows.
 //
-// One horizontal tray spans the column: the page colour inside a 1px navy
-// border, holding the chips and, at its right end, the result count. The
-// chips sit inline in one row in it, with the chips in paper on it in light mode (through the
-// --tag-bg surface variable), set apart by their ink outline. Dark mode flips
-// the border through its token and keeps the chips' slate fill. Where they
-// don't fit (a phone), the row scrolls sideways within it, and each end that
-// still hides chips gets a cue: a small inverted square with a chevron, the
-// tray's full height. Chips slide under it with a clean cut. The tray is what
-// makes the squares read as the ends of a scrolling window at first sight,
-// not only once you've scrolled. The squares echo the inverted count segment
-// on each chip, and there are no fades anywhere: the design is hard-edged.
-// Where everything fits (a desktop), no cue shows.
-//
-// The script below only says which edges hide chips; CSS draws the cues. The
-// page's own script does the filtering and fills in the count
-// ([data-filter-count]).
+// The result count is not here: the page captions its list with it.
+// The script below marks which edges hide chips; CSS draws the cues.
 import FilterRow from "./FilterRow.astro";
 
 export interface Props {
   counts: Record<string, number>;
-  total: number;
   /** Shown selected in the static markup (the showcase); the page script sets it live. */
   selected?: string[];
 }
-const { counts, total, selected = [] } = Astro.props;
+const { counts, selected = [] } = Astro.props;
 ---
 
 <div data-ui="filter-bar">
-  <div data-filter-tray>
-    <div data-filter-track>
-      <div data-filter-scroller>
-        <FilterRow counts={counts} selected={selected} />
-      </div>
-      <span data-filter-more="start" aria-hidden="true">‹</span>
-      <span data-filter-more="end" aria-hidden="true">›</span>
+  <div data-filter-track>
+    <div data-filter-scroller>
+      <FilterRow counts={counts} selected={selected} />
     </div>
-    <p data-filter-count aria-live="polite" class="shrink-0 px-3 font-mono text-xs text-[var(--text-muted)]">
-      {total} of {total}
-    </p>
+    <span data-filter-more="start" aria-hidden="true">‹</span>
+    <span data-filter-more="end" aria-hidden="true">›</span>
   </div>
 </div>
 
@@ -72,37 +57,16 @@ const { counts, total, selected = [] } = Astro.props;
     --cue: 1.5rem;
   }
 
-  /* The tray: one bar across the column, the page colour inside a 1px navy
-     border, a crisp edge and no fill. It holds the scrolling chips and the
-     result count. In light mode the chips take the paper colour too, set
-     apart by their ink outline (no yellow). In dark mode their outline is
-     too faint for that, so they keep their usual slate fill. */
-  [data-filter-tray] {
-    --tag-bg: var(--bg-primary);
-    display: flex;
-    align-items: center;
-    border: 1px solid var(--accent-bg);
-    background-color: var(--bg-primary);
-  }
-
-  @media (prefers-color-scheme: dark) {
-    [data-filter-tray] {
-      --tag-bg: var(--bg-secondary);
-    }
-  }
-
-  /* The scrolling part of the tray; the cues pin to its ends. */
+  /* The scrolling row; the cues pin to its ends. */
   [data-filter-track] {
     position: relative;
-    flex: 1;
-    min-width: 0;
-    align-self: stretch;
   }
 
   [data-filter-scroller] {
     overflow-x: auto;
     overscroll-behavior-x: contain;
-    padding: 0.375rem;
+    /* room for the cues to stand a little proud of the chips */
+    padding-block: 0.25rem;
     scrollbar-width: none;
     /* a chip scrolled into view (by focus or by the page script) lands
        clear of the cues */
@@ -118,9 +82,8 @@ const { counts, total, selected = [] } = Astro.props;
     width: max-content;
   }
 
-  /* The cue: a square in the border's colour, the tray's full inner height,
-     so it reads as a solid end-cap on the frame. Navy with a paper chevron;
-     yellow with a dark one in dark mode. */
+  /* The cue: a navy square with a paper chevron (yellow with a dark one in
+     dark mode), standing a little proud of the chips above and below. */
   [data-filter-more] {
     position: absolute;
     inset-block: 0;

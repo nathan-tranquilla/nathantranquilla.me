@@ -1,15 +1,12 @@
 import { test, expect, type Page } from "@playwright/test";
 
-// UI library: FilterBar, the blog index's control bar. The chips sit inline
-// in one row, on a tray: the page colour inside a 1px navy border (chips in
-// paper on it, set apart by their ink outline). The tray is one horizontal
-// bar holding the result count too, spanning the content column evenly; where
-// they don't fit (a phone) the row scrolls sideways within it, and each end
-// of the tray that still hides chips gets an inverted square with a chevron.
-// The tray is what makes the squares read as the ends of a scrolling window
-// before anyone scrolls. No
-// fades: the design is hard-edged. The result count sits on the right, and
-// the bar is sticky just under the site header.
+// UI library: FilterBar, the blog index's control bar: the chips alone, in
+// one row across the column, no tray. Where they don't fit (a phone) the row
+// scrolls sideways, and each edge that still hides chips gets a navy square
+// with a chevron, a little taller than the chips. No fades: the design is
+// hard-edged. The bar is sticky just under the site header. The result count
+// is not in the bar: it captions the list, just below it ("Showing N of M
+// posts").
 const bar = '[data-ui="filter-bar"]';
 const scroller = `${bar} [data-filter-scroller]`;
 const cue = (side: "start" | "end") => `${bar} [data-filter-more="${side}"]`;
@@ -24,7 +21,7 @@ const noFades = (page: Page) =>
 test("the /ui showcase shows the filter bar", async ({ page }) => {
   await page.goto("/ui");
   await expect(page.locator(bar).first()).toBeVisible();
-  await expect(page.locator(`${bar} [data-filter-count]`).first()).toBeVisible();
+  await expect(page.locator(`${bar} [data-filter-scroller] [data-ui="filter-row"]`).first()).toBeVisible();
 });
 
 test.describe("on a phone", () => {
@@ -65,7 +62,7 @@ test.describe("on a phone", () => {
     await expect(page.locator(cue("end"))).toBeVisible();
   });
 
-  test("the cue is an inverted chevron square, the tray's full height, that never catches a tap", async ({ page }) => {
+  test("the cue is a navy chevron square, a little taller than the chips, that never catches a tap", async ({ page }) => {
     await page.goto("/blogs/");
     await expect(page.locator(cue("end"))).toBeVisible();
     const look = await page.evaluate(
@@ -73,20 +70,29 @@ test.describe("on a phone", () => {
         const el = document.querySelector<HTMLElement>(cueSel)!;
         const c = el.getBoundingClientRect();
         const s = document.querySelector(scrollSel)!.getBoundingClientRect();
+        const k = document.querySelector(`${scrollSel} [data-ui="filter-chip"]`)!.getBoundingClientRect();
+        const probe = document.createElement("div");
+        probe.style.backgroundColor = "var(--accent-bg)";
+        document.body.append(probe);
+        const navy = getComputedStyle(probe).backgroundColor;
+        probe.remove();
         return {
           text: el.textContent!.trim(),
+          fill: getComputedStyle(el).backgroundColor,
+          navy,
           right: Math.abs(c.right - s.right),
-          top: Math.abs(c.top - s.top),
-          bottom: Math.abs(c.bottom - s.bottom),
+          above: k.top - c.top,
+          below: c.bottom - k.bottom,
           events: getComputedStyle(el).pointerEvents,
         };
       },
       [cue("end"), scroller]
     );
     expect(look.text).toBe("›");
+    expect(look.fill, "navy (--accent-bg)").toBe(look.navy);
     expect(look.right).toBeLessThanOrEqual(1);
-    expect(look.top).toBeLessThanOrEqual(1);
-    expect(look.bottom).toBeLessThanOrEqual(1);
+    expect(look.above, "taller than the chips, above").toBeGreaterThanOrEqual(2);
+    expect(look.below, "taller than the chips, below").toBeGreaterThanOrEqual(2);
     expect(look.events).toBe("none");
   });
 
@@ -148,120 +154,93 @@ test.describe("on a desktop", () => {
   });
 });
 
-test("the count says how many posts are showing, and updates as you filter", async ({ page }) => {
+test("the count captions the list: below the bar, above the posts, right-aligned, and updates as you filter", async ({ page }) => {
   await page.goto("/blogs/");
-  const count = page.locator(`${bar} [data-filter-count]`);
+  const count = page.locator("[data-filter-count]");
   const total = await page.locator('[data-ui="post-entry"]').count();
-  await expect(count).toHaveText(`${total} of ${total}`);
+  await expect(count).toHaveText(`Showing ${total} of ${total} posts`);
   await expect(count).toHaveAttribute("aria-live", "polite");
+  await expect(page.locator(`${bar} [data-filter-count]`), "not in the bar").toHaveCount(0);
+  const where = await page.evaluate((barSel) => {
+    const r = (sel: string) => document.querySelector(sel)!.getBoundingClientRect();
+    const c = r("[data-filter-count]");
+    const b = r(barSel);
+    const list = r("[data-filterable]");
+    const first = r('[data-ui="post-entry"]');
+    const text = document.createRange();
+    text.selectNodeContents(document.querySelector("[data-filter-count]")!);
+    return {
+      belowBar: c.top >= b.bottom,
+      abovePosts: c.bottom <= first.top,
+      rightGap: Math.abs(list.right - text.getBoundingClientRect().right),
+    };
+  }, bar);
+  expect(where.belowBar).toBe(true);
+  expect(where.abovePosts).toBe(true);
+  expect(where.rightGap, "flush with the list's right edge").toBeLessThanOrEqual(1);
+
   await page.locator('[data-ui="filter-chip"][data-label="Finance"]').click();
   const shown = await page.locator('[data-ui="post-entry"]:not([data-out])').count();
-  await expect(count).toHaveText(`${shown} of ${total}`);
+  await expect(count).toHaveText(`Showing ${shown} of ${total} posts`);
 });
 
-// The tray: the page colour inside a 1px navy border (both from tokens, so
-// dark mode flips them), with the arrow squares in the border's colour; the
-// chips, pressed or not, distinct from the tray, and clear of its edges.
+test.describe("without JavaScript", () => {
+  test.use({ javaScriptEnabled: false });
+
+  test("the count is hidden with the rest of the filter", async ({ page }) => {
+    await page.goto("/blogs/");
+    await expect(page.locator("[data-filter-count]")).toBeHidden();
+  });
+});
+
+// No tray: the chips sit straight on the page in their own approved look
+// (the yellow field in light mode), with no frame or fill around them.
 for (const scheme of ["light", "dark"] as const) {
   test.describe(`${scheme} mode, on a phone`, () => {
     test.use({ colorScheme: scheme, viewport: { width: 414, height: 800 } });
 
-    test("the chips sit on a page-coloured tray with a navy border", async ({ page }) => {
+    test("the chips sit on the page, no tray, in their own colours", async ({ page }) => {
       await page.goto("/blogs/");
-      await expect(page.locator(cue("end"))).toBeVisible();
-      const t = await page.evaluate(
-        ([traySel, barSel]) => {
-          const rgb = (v: string) => (v.match(/[\d.]+/g) ?? []).map(Number).slice(0, 3);
-          const lum = ([r, g, b]: number[]) => {
-            const f = (c: number) => ((c /= 255) <= 0.03928 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4);
-            return 0.2126 * f(r) + 0.7152 * f(g) + 0.0722 * f(b);
-          };
-          const ratio = (a: number[], b: number[]) => {
-            const [x, y] = [lum(a), lum(b)].sort((p, q) => q - p);
-            return (x + 0.05) / (y + 0.05);
-          };
-          const cueEl = document.querySelector<HTMLElement>('[data-filter-more="end"]')!;
-          const tray = document.querySelector<HTMLElement>(traySel)!;
-          const s = getComputedStyle(tray);
-          const fill = (sel: string) => getComputedStyle(document.querySelector(sel)!).backgroundColor;
-          const chip = document.querySelector(`${traySel} [data-ui="filter-chip"]`)!.getBoundingClientRect();
-          const r = tray.getBoundingClientRect();
-          return {
-            borders: [s.borderTopWidth, s.borderRightWidth, s.borderBottomWidth, s.borderLeftWidth].map(parseFloat),
-            tray: s.backgroundColor,
-            token: Object.fromEntries(
-              ["--bg-primary", "--bg-secondary", "--accent-bg"].map((name) => {
-                const probe = document.createElement("div");
-                probe.style.backgroundColor = `var(${name})`;
-                document.body.append(probe);
-                const c = getComputedStyle(probe).backgroundColor;
-                probe.remove();
-                return [name, c];
-              })
-            ),
-            styles: [s.borderTopStyle, s.borderRightStyle, s.borderBottomStyle, s.borderLeftStyle],
-            borderColours: [s.borderTopColor, s.borderRightColor, s.borderBottomColor, s.borderLeftColor],
-            cue: getComputedStyle(document.querySelector('[data-filter-more="end"]')!).backgroundColor,
-            bar: fill(barSel),
-            off: fill(`${traySel} [data-ui="filter-chip"][aria-pressed="false"]`),
-            on: fill(`${traySel} [data-ui="filter-chip"][aria-pressed="true"]`),
-            above: chip.top - r.top,
-            below: r.bottom - chip.bottom,
-            outline: ratio(
-              rgb(getComputedStyle(document.querySelector(`${traySel} [data-ui="filter-chip"][aria-pressed="false"]`)!).borderTopColor),
-              rgb(s.backgroundColor)
-            ),
-            chevron: ratio(rgb(getComputedStyle(cueEl).color), rgb(getComputedStyle(cueEl).backgroundColor)),
-            squareOnTray: ratio(rgb(getComputedStyle(cueEl).backgroundColor), rgb(s.backgroundColor)),
-          };
-        },
-        ["[data-filter-tray]", bar]
-      );
-      expect(t.borders).toEqual([1, 1, 1, 1]);
-      expect(new Set(t.styles)).toEqual(new Set(["solid"]));
-      expect(new Set(t.borderColours), "the border is navy (--accent-bg)").toEqual(new Set([t.token["--accent-bg"]]));
-      expect(t.tray, "the tray is filled").not.toMatch(/rgba\(0, 0, 0, 0\)|transparent/);
-      expect(t.tray, "the tray is the page colour, no yellow").toBe(t.token["--bg-primary"]);
-      expect(t.cue, "the arrow squares are the border's colour").toBe(t.token["--accent-bg"]);
-      expect(t.cue, "the arrow squares stand apart from the tray").not.toBe(t.tray);
-      // a chip stands apart from the tray by its fill, or else by its outline
-      expect(t.off !== t.tray || t.outline >= 3, "an unpressed chip stands apart from the tray").toBe(true);
-      if (scheme === "light") expect(t.off, "no yellow chips in light mode").not.toBe(t.token["--bg-secondary"]);
-      expect(t.on, "a pressed chip stands apart from the tray").not.toBe(t.tray);
-      expect(t.chevron, "the chevron reads on its square").toBeGreaterThanOrEqual(4.5);
-      expect(t.squareOnTray, "the square reads on the tray").toBeGreaterThanOrEqual(3);
-      expect(t.above, "room above the chips").toBeGreaterThanOrEqual(3);
-      expect(t.below, "room below the chips").toBeGreaterThanOrEqual(3);
+      const t = await page.evaluate((barSel) => {
+        const probe = document.createElement("div");
+        probe.style.backgroundColor = "var(--bg-secondary)";
+        document.body.append(probe);
+        const field = getComputedStyle(probe).backgroundColor;
+        probe.remove();
+        const boxes = [
+          ...document.querySelectorAll<HTMLElement>(`${barSel} [data-filter-track], ${barSel} [data-filter-scroller]`),
+        ].map((e) => getComputedStyle(e));
+        return {
+          borders: boxes.flatMap((s) =>
+            [s.borderTopWidth, s.borderRightWidth, s.borderBottomWidth, s.borderLeftWidth].map(parseFloat)
+          ),
+          fills: boxes.map((s) => s.backgroundColor),
+          chip: getComputedStyle(document.querySelector(`${barSel} [data-ui="filter-chip"][aria-pressed="false"]`)!)
+            .backgroundColor,
+          field,
+          tray: document.querySelectorAll(`${barSel} [data-filter-tray]`).length,
+        };
+      }, bar);
+      expect(t.tray, "no tray element").toBe(0);
+      expect(new Set(t.borders)).toEqual(new Set([0]));
+      expect(new Set(t.fills)).toEqual(new Set(["rgba(0, 0, 0, 0)"]));
+      expect(t.chip, "chips keep their own fill").toBe(t.field);
     });
   });
 }
 
-// One bar: the tray holds the chips and the result count, and spans the
-// content column with the same margin on either side.
+// The chip row runs the full width of the column.
 for (const width of [414, 1280]) {
-  test(`at ${width}px the tray is one bar, count included, even on both sides`, async ({ page }) => {
+  test(`at ${width}px the chip row runs the full width of the column`, async ({ page }) => {
     await page.setViewportSize({ width, height: 800 });
     await page.goto("/blogs/");
     const r = await page.evaluate((barSel) => {
       const rect = (sel: string) => document.querySelector(sel)!.getBoundingClientRect();
-      const tray = rect(`${barSel} [data-filter-tray]`);
-      const count = rect(`${barSel} [data-filter-count]`);
-      const scroll = rect(`${barSel} [data-filter-scroller]`);
-      const column = document.querySelector(barSel)!.getBoundingClientRect();
-      return {
-        countInside: count.left >= tray.left && count.right <= tray.right && count.top >= tray.top && count.bottom <= tray.bottom,
-        scrollInside: scroll.left >= tray.left && scroll.right <= tray.right,
-        countAfterChips: count.left >= scroll.right - 1,
-        left: tray.left - column.left,
-        right: column.right - tray.right,
-        width: tray.width,
-        columnWidth: column.width,
-      };
+      const b = rect(barSel);
+      const s = rect(`${barSel} [data-filter-scroller]`);
+      return { left: Math.abs(s.left - b.left), right: Math.abs(b.right - s.right) };
     }, bar);
-    expect(r.countInside, "the count sits inside the tray").toBe(true);
-    expect(r.scrollInside, "the chips sit inside the tray").toBe(true);
-    expect(r.countAfterChips, "the count follows the chips").toBe(true);
-    expect(Math.abs(r.left - r.right), "even on both sides").toBeLessThanOrEqual(1);
-    expect(r.width, "spans the column").toBeGreaterThanOrEqual(r.columnWidth - 2 * Math.max(r.left, 0) - 1);
+    expect(r.left).toBeLessThanOrEqual(1);
+    expect(r.right).toBeLessThanOrEqual(1);
   });
 }
