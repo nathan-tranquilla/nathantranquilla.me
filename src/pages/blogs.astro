@@ -1,17 +1,11 @@
 ---
+import { formatPostDate } from "../utils/dates";
 import Container from "../components/Container.astro";
 import Main from "../layouts/Main.astro";
 import H1 from "../components/HTMLElements/H1.astro";
 import { getPosts } from "../utils/posts";
 const posts = getPosts();
 
-function formatDate(dateString: string) {
-  return new Date(dateString).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
-}
 
 posts.forEach((post) => {
   if (!/^\d{4}\/\d{2}\/\d{2}$/.test(post.frontmatter.date)) {
@@ -44,7 +38,7 @@ posts.forEach((post) => {
               </h2>
               <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
                 <span class="text-sm text-[var(--text-muted)]">
-                  {post.frontmatter.author} · {formatDate(post.frontmatter.date)}
+                  {post.frontmatter.author} · {formatPostDate(post.frontmatter.date)}
                 </span>
                 {post.frontmatter.tags.map((tag: string) => (
                   <span class="border border-[var(--border-primary)] bg-[var(--bg-secondary)] px-2.5 py-0.5 font-mono text-xs text-[var(--text-tertiary)]">

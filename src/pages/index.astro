@@ -1,4 +1,5 @@
 ---
+import { formatPostDate } from "../utils/dates";
 import Main from "../layouts/Main.astro";
 import Hero from "../components/Hero.astro";
 import Container from "../components/Container.astro";
@@ -8,13 +9,6 @@ import { getPosts } from "../utils/posts";
 
 const posts = getPosts().slice(0, 3);
 
-function formatDate(dateString: string) {
-  return new Date(dateString).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
-}
 ---
 
 <Main
@@ -47,7 +41,7 @@ function formatDate(dateString: string) {
                 {post.frontmatter.title}
               </h3>
               <span class="text-sm text-[var(--text-muted)]">
-                {post.frontmatter.author} · {formatDate(post.frontmatter.date)}
+                {post.frontmatter.author} · {formatPostDate(post.frontmatter.date)}
               </span>
             </a>
           </article>
