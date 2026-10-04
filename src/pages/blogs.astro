@@ -137,10 +137,6 @@ posts.forEach((post) => {
 
   render(fromUrl());
   filter.hidden = false;
-  // On a phone the row scrolls: bring the first chosen chip into view.
-  chips
-    .find((c) => c.dataset.label !== "All" && c.getAttribute("aria-pressed") === "true")
-    ?.scrollIntoView({ block: "nearest", inline: "nearest" });
   // Only now do rows animate, so the first paint doesn't.
   requestAnimationFrame(() => list.setAttribute("data-animate", ""));
 </script>

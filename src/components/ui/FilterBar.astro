@@ -1,14 +1,11 @@
 ---
 // UI library: the blog index's control bar, sticky just under the site
-// header. The chips alone, in one row across the column, in their own
-// approved look: no tray, no frame. Where they don't fit (a phone), the row
-// scrolls sideways, and each edge that still hides chips gets a cue: a navy
-// square with a chevron, a little taller than the chips so it reads as its
-// own thing, not a segment of the chip it covers. No fades anywhere: the
-// design is hard-edged. Where everything fits (a desktop), no cue shows.
+// header. The chips alone, across the column, in their own approved look: no
+// tray, no frame. Where they don't fit on one line (a phone), they wrap, so
+// every chip is visible above the bar's rule and nothing scrolls sideways.
+// No fades anywhere: the design is hard-edged.
 //
 // The result count is not here: the page captions its list with it.
-// The script below marks which edges hide chips; CSS draws the cues.
 import FilterRow from "./FilterRow.astro";
 
 export interface Props {
@@ -20,31 +17,8 @@ const { counts, selected = [] } = Astro.props;
 ---
 
 <div data-ui="filter-bar">
-  <div data-filter-track>
-    <div data-filter-scroller>
-      <FilterRow counts={counts} selected={selected} />
-    </div>
-    <span data-filter-more="start" aria-hidden="true">‹</span>
-    <span data-filter-more="end" aria-hidden="true">›</span>
-  </div>
+  <FilterRow counts={counts} selected={selected} />
 </div>
-
-<script>
-  // Mark which edges of the row still hide chips. A ResizeObserver catches
-  // the first real layout too, since the bar starts hidden until the page
-  // script has applied any filter from the URL.
-  for (const track of document.querySelectorAll<HTMLElement>("[data-filter-track]")) {
-    const scroller = track.querySelector<HTMLElement>("[data-filter-scroller]")!;
-    const mark = () => {
-      const max = scroller.scrollWidth - scroller.clientWidth;
-      track.toggleAttribute("data-more-start", scroller.scrollLeft > 1);
-      track.toggleAttribute("data-more-end", scroller.scrollLeft < max - 1);
-    };
-    scroller.addEventListener("scroll", mark, { passive: true });
-    new ResizeObserver(mark).observe(scroller);
-    mark();
-  }
-</script>
 
 <style>
   [data-ui="filter-bar"] {
@@ -54,61 +28,5 @@ const { counts, selected = [] } = Astro.props;
     padding-block: 0.75rem;
     border-bottom: 1px solid var(--border-primary);
     background-color: var(--bg-primary);
-    --cue: 1.5rem;
-  }
-
-  /* The scrolling row; the cues pin to its ends. */
-  [data-filter-track] {
-    position: relative;
-  }
-
-  [data-filter-scroller] {
-    overflow-x: auto;
-    overscroll-behavior-x: contain;
-    /* room for the cues to stand a little proud of the chips */
-    padding-block: 0.25rem;
-    scrollbar-width: none;
-    /* a chip scrolled into view (by focus or by the page script) lands
-       clear of the cues */
-    scroll-padding-inline: calc(var(--cue) + 0.5rem);
-  }
-
-  [data-filter-scroller]::-webkit-scrollbar {
-    display: none;
-  }
-
-  [data-filter-scroller] :global([data-ui="filter-row"]) {
-    flex-wrap: nowrap;
-    width: max-content;
-  }
-
-  /* The cue: a navy square with a paper chevron (yellow with a dark one in
-     dark mode), standing a little proud of the chips above and below. */
-  [data-filter-more] {
-    position: absolute;
-    inset-block: 0;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    width: var(--cue);
-    background-color: var(--accent-bg);
-    color: var(--bg-primary);
-    font-family: var(--font-mono);
-    font-size: 0.875rem;
-    line-height: 1;
-    pointer-events: none;
-  }
-
-  [data-filter-more="start"] {
-    left: 0;
-  }
-
-  [data-filter-more="end"] {
-    right: 0;
-  }
-
-  [data-more-start] > [data-filter-more="start"],
-  [data-more-end] > [data-filter-more="end"] {
-    display: flex;
   }
 </style>
