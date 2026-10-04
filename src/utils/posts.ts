@@ -20,10 +20,6 @@ export const getPosts = () =>
         new Date(a.frontmatter.date).getTime(),
     );
 
-export const getPostIndex = (title: string) => {
-  let posts = getPosts();
-  return posts.findIndex((post) => post.frontmatter.title === title);
-};
 
 /** A post's meta description, falling back to its title and tags. */
 export const postDescription = (fm: { title: string; description?: string; tags: string[] }) =>

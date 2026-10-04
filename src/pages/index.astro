@@ -1,5 +1,6 @@
 ---
 import { formatPostDate } from "../utils/dates";
+import { postTransition } from "../utils/transitions";
 import Main from "../layouts/Main.astro";
 import Hero from "../components/Hero.astro";
 import Container from "../components/Container.astro";
@@ -37,12 +38,21 @@ const posts = getPosts().slice(0, 3);
         posts.map((post) => (
           <article class="py-6 first:pt-0">
             <a href={post.url} class="group block">
-              <h3 class="mb-1 font-serif text-lg text-[var(--text-primary)] transition-colors duration-200 group-hover:text-[var(--text-accent)] md:text-xl">
+              <h3 style={postTransition(post.frontmatter.hash, "title")} class="mb-1 font-serif text-lg text-[var(--text-primary)] transition-colors duration-200 group-hover:text-[var(--text-accent)] md:text-xl">
                 {post.frontmatter.title}
               </h3>
-              <span class="text-sm text-[var(--text-muted)]">
-                {post.frontmatter.author} · {formatPostDate(post.frontmatter.date)}
-              </span>
+              <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+                <span style={postTransition(post.frontmatter.hash, "byline")} class="text-sm text-[var(--text-muted)]">
+                  {post.frontmatter.author} · {formatPostDate(post.frontmatter.date)}
+                </span>
+                <span style={postTransition(post.frontmatter.hash, "tags")} class="flex flex-wrap items-center gap-x-3 gap-y-1">
+                  {post.frontmatter.tags.map((tag: string) => (
+                    <span class="border border-[var(--border-primary)] bg-[var(--bg-secondary)] px-2.5 py-0.5 font-mono text-xs text-[var(--text-tertiary)]">
+                      {tag}
+                    </span>
+                  ))}
+                </span>
+              </div>
             </a>
           </article>
         ))

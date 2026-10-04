@@ -1,7 +1,8 @@
 ---
 import Main from "./Main.astro";
 import Container from "../components/Container.astro";
-import { getPostIndex, postDescription } from "../utils/posts";
+import { postDescription } from "../utils/posts";
+import { postTransition } from "../utils/transitions";
 import { formatPostDate, isoPostDate } from "../utils/dates";
 import ViewCount from "../components/ViewCount.astro";
 import Button from "../components/ui/Button.astro";
@@ -11,7 +12,6 @@ import "../components/ui/callout.css";
 
 const { frontmatter, rawContent } = Astro.props;
 
-const i = getPostIndex(frontmatter.title);
 const blogDescription = postDescription(frontmatter);
 
 // Prose words only: code blocks, HTML and markdown syntax are not writing, and
@@ -264,20 +264,20 @@ try {
     })} />
     <article>
       <header
-        style={`view-transition-name: title-${i}`}
         class="mb-12 border-b border-[var(--border-primary)] pb-8 md:pb-12"
       >
         <h1
+          style={postTransition(frontmatter.hash, "title")}
           class="text-wrap mb-3 text-3xl md:text-4xl font-serif font-semibold leading-tight text-[var(--text-primary)]"
           >{frontmatter.title}</h1
         >
-        <p data-byline class="mb-3 text-base text-[var(--text-muted)]">
+        <p data-byline style={postTransition(frontmatter.hash, "byline")} class="mb-3 text-base text-[var(--text-muted)]">
           {frontmatter.author} · <time datetime={isoPostDate(frontmatter.date)}>{formatPostDate(frontmatter.date)}</time>
           {frontmatter.updated && <> · Updated <time datetime={isoPostDate(frontmatter.updated)}>{formatPostDate(frontmatter.updated)}</time></>}
           <ViewCount count={viewCount} at="top" />
         </p>
         <div class="flex items-center justify-between gap-3">
-          <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+          <div style={postTransition(frontmatter.hash, "tags")} class="flex flex-wrap items-center gap-x-3 gap-y-1">
             {frontmatter.tags.map((tag: string) => (
               <span class="border border-[var(--border-primary)] bg-[var(--bg-secondary)] px-2.5 py-0.5 font-mono text-xs text-[var(--text-tertiary)]">
                 {tag}

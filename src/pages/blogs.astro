@@ -1,5 +1,6 @@
 ---
 import { formatPostDate } from "../utils/dates";
+import { postTransition } from "../utils/transitions";
 import Container from "../components/Container.astro";
 import Main from "../layouts/Main.astro";
 import H1 from "../components/HTMLElements/H1.astro";
@@ -28,23 +29,22 @@ posts.forEach((post) => {
     <div class="divide-y divide-[var(--border-primary)]">
       {
         posts.map((post, i) => (
-          <article
-            style={`view-transition-name: title-${i}`}
-            class="py-8 first:pt-0"
-          >
+          <article class="py-8 first:pt-0">
             <a href={post.url} class="group block">
-              <h2 class="font-serif text-xl text-[var(--text-primary)] group-hover:text-[var(--text-accent)] transition-colors duration-200 md:text-2xl mb-2">
+              <h2 style={postTransition(post.frontmatter.hash, "title")} class="font-serif text-xl text-[var(--text-primary)] group-hover:text-[var(--text-accent)] transition-colors duration-200 md:text-2xl mb-2">
                 {post.frontmatter.title}
               </h2>
               <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
-                <span class="text-sm text-[var(--text-muted)]">
+                <span style={postTransition(post.frontmatter.hash, "byline")} class="text-sm text-[var(--text-muted)]">
                   {post.frontmatter.author} · {formatPostDate(post.frontmatter.date)}
                 </span>
-                {post.frontmatter.tags.map((tag: string) => (
-                  <span class="border border-[var(--border-primary)] bg-[var(--bg-secondary)] px-2.5 py-0.5 font-mono text-xs text-[var(--text-tertiary)]">
-                    {tag}
-                  </span>
-                ))}
+                <span style={postTransition(post.frontmatter.hash, "tags")} class="flex flex-wrap items-center gap-x-3 gap-y-1">
+                  {post.frontmatter.tags.map((tag: string) => (
+                    <span class="border border-[var(--border-primary)] bg-[var(--bg-secondary)] px-2.5 py-0.5 font-mono text-xs text-[var(--text-tertiary)]">
+                      {tag}
+                    </span>
+                  ))}
+                </span>
               </div>
             </a>
           </article>
