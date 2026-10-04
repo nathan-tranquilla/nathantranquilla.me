@@ -1,4 +1,6 @@
 import { test, expect, type Page } from "@playwright/test";
+import fs from "node:fs";
+import { POSTS_DIR } from "../helpers/posts";
 
 // UI library: Tag (one chip), PostMeta (author, date, tags) and PostEntry
 // (one index row: linked title plus PostMeta). The home page, the blog list
@@ -41,7 +43,7 @@ test("the post page shows its metadata through PostMeta and Tag", async ({ page 
   await page.goto(POST);
   const meta = page.locator('article > header [data-ui="post-meta"]');
   await expect(meta).toHaveCount(1);
-  await expect(meta.locator('[data-ui="tag"]')).toHaveText(["AI", "Finance"]);
+  await expect(meta.locator('[data-ui="tag"]')).toHaveText(["AI", "Finance", "Automation"]);
   await expect(page.locator("article > header").getByRole("button", { name: /Share/ })).toBeVisible();
   expect(await strayTags(page, TAG_NAMES)).toEqual([]);
 });
@@ -130,5 +132,29 @@ for (const scheme of ["light", "dark"] as const) {
         expect(same).toEqual([]);
       });
     }
+  });
+}
+
+// A post's tags stay on one line in its header on a phone, as they do in the
+// blog list, so the list-to-post morph never stretches them. When they don't
+// fit beside the Share button, Share moves under them instead.
+for (const width of [375, 414]) {
+  test(`every post's header tags sit on one line at ${width}px, with Share still on screen`, async ({ page }) => {
+    await page.setViewportSize({ width, height: 800 });
+    const posts = fs
+      .readdirSync(POSTS_DIR)
+      .filter((f) => f.endsWith(".md") && !/^draft:\s*true/m.test(fs.readFileSync(`${POSTS_DIR}/${f}`, "utf8")));
+    const wrapped: string[] = [];
+    for (const f of posts) {
+      await page.goto(`/blogs/${f.replace(/\.md$/, "")}/`);
+      const r = await page.evaluate(() => {
+        const meta = document.querySelector('article > header [data-ui="post-meta"]')!;
+        const tops = [...meta.querySelectorAll('[data-ui="tag"]')].map((t) => Math.round(t.getBoundingClientRect().top));
+        const share = meta.querySelector('[data-ui="button"]')!.getBoundingClientRect();
+        return { lines: new Set(tops).size, shareOnScreen: share.left >= 0 && share.right <= innerWidth };
+      });
+      if (r.lines !== 1 || !r.shareOnScreen) wrapped.push(`${f}: ${r.lines} lines, share on screen ${r.shareOnScreen}`);
+    }
+    expect(wrapped).toEqual([]);
   });
 }

@@ -35,7 +35,11 @@ const byline = size === "header" ? "mb-3 text-base" : "mb-2 text-sm";
     {updated && <> · Updated <time datetime={isoPostDate(updated)}>{formatPostDate(updated)}</time></>}
     <slot name="byline-end" />
   </p>
-  <div class="flex items-center justify-between gap-3">
+  <!-- wraps so that, when the tags and Share don't fit on one line, Share
+       moves under the tags rather than squeezing them onto two lines: the
+       tag row keeps the shape it has in the list, so the morph scales it
+       evenly (ui-post.spec.ts) -->
+  <div class="flex flex-wrap items-center justify-between gap-3">
     <div style={postTransition(hash, "tags")} class="flex flex-wrap items-center gap-x-3 gap-y-1">
       {tags.map((tag) => <Tag>{tag}</Tag>)}
     </div>
