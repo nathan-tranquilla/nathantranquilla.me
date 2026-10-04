@@ -103,3 +103,31 @@ for (const scheme of ["light", "dark"] as const) {
     });
   });
 }
+
+// A tag's fill must differ from whatever surrounds it: yellow chips on the
+// paper ground, paper chips on the yellow band. Same-colour-on-same-colour
+// leaves only an outline.
+for (const scheme of ["light", "dark"] as const) {
+  test.describe(`${scheme} mode`, () => {
+    test.use({ colorScheme: scheme });
+
+    for (const url of ["/ui", "/", "/blogs/"]) {
+      test(`tags on ${url} stand apart from their background`, async ({ page }) => {
+        await page.goto(url);
+        const same = await page.locator('[data-ui="tag"]').evaluateAll((tags) =>
+          tags
+            .filter((t) => {
+              const fill = getComputedStyle(t).backgroundColor;
+              for (let e = t.parentElement; e; e = e.parentElement) {
+                const bg = getComputedStyle(e).backgroundColor;
+                if (bg !== "rgba(0, 0, 0, 0)" && bg !== "transparent") return bg === fill;
+              }
+              return false;
+            })
+            .map((t) => t.textContent?.trim())
+        );
+        expect(same).toEqual([]);
+      });
+    }
+  });
+}

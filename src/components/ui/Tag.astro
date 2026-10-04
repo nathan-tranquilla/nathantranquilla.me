@@ -1,11 +1,13 @@
 ---
-// UI library: one tag chip, like "AI" or "Finance". Mono, outlined, square,
-// on the yellow field.
+// UI library: one tag chip, like "AI" or "Finance". Mono, outlined, square.
+// Its fill is the yellow field on the paper ground. A surface that is itself
+// the yellow band sets --tag-bg (to the paper colour) so the chip still stands
+// apart: add the class [--tag-bg:var(--bg-primary)] to that surface.
 ---
 
 <span
   data-ui="tag"
-  class="border border-[var(--border-primary)] bg-[var(--bg-secondary)] px-2.5 py-0.5 font-mono text-xs text-[var(--text-tertiary)]"
+  class="border border-[var(--border-primary)] bg-[var(--tag-bg,var(--bg-secondary))] px-2.5 py-0.5 font-mono text-xs text-[var(--text-tertiary)]"
 >
   <slot />
 </span>
