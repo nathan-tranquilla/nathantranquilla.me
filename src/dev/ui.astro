@@ -124,11 +124,13 @@ const surfaces = [
       <section class="mt-12">
         <h2 class="mb-2 font-serif text-2xl text-[var(--text-primary)]">FilterBar</h2>
         <p class="mb-4 font-mono text-xs text-[var(--text-muted)]">
-          The blog index's control bar, sticky under the header. Phone: a Filter button opens the chips in a native
-          popover. Desktop: the chips sit inline. Narrow this window to see the phone form.
+          The blog index's control bar, sticky under the header. The chips sit in one row on a yellow tray with a navy
+          border; where they don't fit, the row scrolls sideways and a navy chevron cap marks each end that still
+          hides chips. Narrow this window to
+          see the phone form.
         </p>
         <div class="border border-[var(--border-primary)] px-4">
-          <FilterBar counts={counts} total={15} selected={["AI"]} id="ui-filter-panel" />
+          <FilterBar counts={counts} total={15} selected={["AI"]} />
         </div>
       </section>
 

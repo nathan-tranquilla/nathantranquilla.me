@@ -2,19 +2,20 @@
 // UI library: the blog index's control bar. Sticky just under the site
 // header, with the result count on the right.
 //
-// Phone: the chips live in a native popover, opened by the Filter button
-// (popovertarget). Light dismiss and Escape come from the browser; the
-// open/close animation is CSS (@starting-style, display and overlay
-// transitions). The panel sits under the button by CSS anchor positioning;
-// where that isn't supported (older Safari, so every iOS browser before it),
-// the script below places it by hand. That is the one job here the platform
-// can't do everywhere yet.
-// Desktop: CSS overrides the popover so the same chips sit inline in one row;
-// the button is hidden. No fades anywhere: the design is hard-edged.
+// The chips sit inline in one row, on a tray: the yellow field inside a 1px
+// navy border, with the chips in paper on it (through the --tag-bg surface
+// variable). Dark mode flips both through their tokens. Where they
+// don't fit (a phone), the row scrolls sideways within it, and each end that
+// still hides chips gets a cue: a small inverted square with a chevron, the
+// tray's full height. Chips slide under it with a clean cut. The tray is what
+// makes the squares read as the ends of a scrolling window at first sight,
+// not only once you've scrolled. The squares echo the inverted count segment
+// on each chip, and there are no fades anywhere: the design is hard-edged.
+// Where everything fits (a desktop), no cue shows.
 //
-// Script on the page fills in what HTML can't: the filtering itself, the
-// count ([data-filter-count]) and the button's summary ([data-filter-summary]).
-import Button from "./Button.astro";
+// The script below only says which edges hide chips; CSS draws the cues. The
+// page's own script does the filtering and fills in the count
+// ([data-filter-count]).
 import FilterRow from "./FilterRow.astro";
 
 export interface Props {
@@ -22,19 +23,18 @@ export interface Props {
   total: number;
   /** Shown selected in the static markup (the showcase); the page script sets it live. */
   selected?: string[];
-  id?: string;
 }
-const { counts, total, selected = [], id = "filter-panel" } = Astro.props;
-const summary = selected.length === 0 ? "" : selected.length === 1 ? ` · ${selected[0]}` : ` · ${selected.length} tags`;
+const { counts, total, selected = [] } = Astro.props;
 ---
 
 <div data-ui="filter-bar">
-  <div class="flex items-center justify-between gap-4">
-    <Button data-filter-toggle popovertarget={id} classes="md:hidden">
-      Filter<span data-filter-summary>{summary}</span>&nbsp;▾
-    </Button>
-    <div id={id} popover data-filter-panel>
-      <FilterRow counts={counts} selected={selected} />
+  <div class="flex items-center gap-4">
+    <div data-filter-track>
+      <div data-filter-scroller>
+        <FilterRow counts={counts} selected={selected} />
+      </div>
+      <span data-filter-more="start" aria-hidden="true">‹</span>
+      <span data-filter-more="end" aria-hidden="true">›</span>
     </div>
     <p data-filter-count aria-live="polite" class="shrink-0 font-mono text-xs text-[var(--text-muted)]">
       {total} of {total}
@@ -43,35 +43,19 @@ const summary = selected.length === 0 ? "" : selected.length === 1 ? ` · ${sele
 </div>
 
 <script>
-  // Without CSS anchor positioning, put the open panel just under its Filter
-  // button, and keep it there while the page scrolls (the bar is sticky, so
-  // the button moves until it pins under the header). Inline styles are
-  // cleared on close so they never leak into the desktop's inline layout.
-  if (!CSS.supports("position-area: bottom")) {
-    for (const bar of document.querySelectorAll<HTMLElement>('[data-ui="filter-bar"]')) {
-      const toggle = bar.querySelector<HTMLElement>("[data-filter-toggle]");
-      const panel = bar.querySelector<HTMLElement>("[data-filter-panel]");
-      if (!toggle || !panel) continue;
-
-      const place = () => {
-        const r = toggle.getBoundingClientRect();
-        Object.assign(panel.style, { position: "fixed", inset: "auto", margin: "0", top: `${r.bottom + 8}px`, left: `${r.left}px` });
-      };
-      const follow = () => {
-        if (panel.matches(":popover-open")) place();
-      };
-
-      panel.addEventListener("beforetoggle", (event) => {
-        if ((event as ToggleEvent).newState === "open") place();
-      });
-      panel.addEventListener("toggle", (event) => {
-        if ((event as ToggleEvent).newState === "closed") {
-          for (const prop of ["position", "inset", "margin", "top", "left"]) panel.style.removeProperty(prop);
-        }
-      });
-      addEventListener("scroll", follow, { passive: true });
-      addEventListener("resize", follow);
-    }
+  // Mark which edges of the row still hide chips. A ResizeObserver catches
+  // the first real layout too, since the bar starts hidden until the page
+  // script has applied any filter from the URL.
+  for (const track of document.querySelectorAll<HTMLElement>("[data-filter-track]")) {
+    const scroller = track.querySelector<HTMLElement>("[data-filter-scroller]")!;
+    const mark = () => {
+      const max = scroller.scrollWidth - scroller.clientWidth;
+      track.toggleAttribute("data-more-start", scroller.scrollLeft > 1);
+      track.toggleAttribute("data-more-end", scroller.scrollLeft < max - 1);
+    };
+    scroller.addEventListener("scroll", mark, { passive: true });
+    new ResizeObserver(mark).observe(scroller);
+    mark();
   }
 </script>
 
@@ -83,64 +67,67 @@ const summary = selected.length === 0 ? "" : selected.length === 1 ? ` · ${sele
     padding-block: 0.75rem;
     border-bottom: 1px solid var(--border-primary);
     background-color: var(--bg-primary);
+    --cue: 1.5rem;
   }
 
-  [data-filter-toggle] {
-    anchor-name: --filter-toggle;
+  /* The tray: the yellow field inside a 1px navy border, a crisp edge rather
+     than a fill fading into the page. On it the chips take the paper colour. */
+  [data-filter-track] {
+    --tag-bg: var(--bg-primary);
+    position: relative;
+    flex: 1;
+    min-width: 0;
+    border: 1px solid var(--accent-bg);
+    background-color: var(--bg-secondary);
   }
 
-  /* Phone: a popover panel under the Filter button. */
-  [data-filter-panel] {
-    position-anchor: --filter-toggle;
-    position-area: bottom span-right;
-    inset: auto;
-    margin: 0.5rem 0 0;
-    width: min(24rem, calc(100vw - 2rem));
-    padding: 1rem;
-    border: 1px solid var(--border-primary);
-    background-color: var(--bg-primary);
-    color: inherit;
-    opacity: 0;
-    translate: 0 -0.25rem;
-    transition:
-      opacity 180ms ease,
-      translate 180ms ease,
-      display 180ms allow-discrete,
-      overlay 180ms allow-discrete;
+  [data-filter-scroller] {
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    padding: 0.375rem;
+    scrollbar-width: none;
+    /* a chip scrolled into view (by focus or by the page script) lands
+       clear of the cues */
+    scroll-padding-inline: calc(var(--cue) + 0.5rem);
   }
 
-  [data-filter-panel]:popover-open {
-    opacity: 1;
-    translate: 0 0;
+  [data-filter-scroller]::-webkit-scrollbar {
+    display: none;
   }
 
-  @starting-style {
-    [data-filter-panel]:popover-open {
-      opacity: 0;
-      translate: 0 -0.25rem;
-    }
+  [data-filter-scroller] :global([data-ui="filter-row"]) {
+    flex-wrap: nowrap;
+    width: max-content;
   }
 
-  /* Desktop: the same chips, inline in one row. No button, no popup. */
-  @media (min-width: 768px) {
-    [data-filter-panel] {
-      display: block;
-      position: static;
-      flex: 1;
-      width: auto;
-      margin: 0;
-      padding: 0;
-      border: 0;
-      background: transparent;
-      opacity: 1;
-      translate: none;
-      overflow: visible;
-    }
+  /* The cue: a square in the border's colour, the tray's full inner height,
+     so it reads as a solid end-cap on the frame. Navy with a paper chevron;
+     yellow with a dark one in dark mode. */
+  [data-filter-more] {
+    position: absolute;
+    inset-block: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: var(--cue);
+    background-color: var(--accent-bg);
+    color: var(--bg-primary);
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    line-height: 1;
+    pointer-events: none;
   }
 
-  @media (prefers-reduced-motion: reduce) {
-    [data-filter-panel] {
-      transition: none;
-    }
+  [data-filter-more="start"] {
+    left: 0;
+  }
+
+  [data-filter-more="end"] {
+    right: 0;
+  }
+
+  [data-more-start] > [data-filter-more="start"],
+  [data-more-end] > [data-filter-more="end"] {
+    display: flex;
   }
 </style>

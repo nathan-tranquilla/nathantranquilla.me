@@ -1,14 +1,17 @@
 import { test, expect, type Page } from "@playwright/test";
 
-// UI library: FilterBar, the blog index's control bar. On a phone the chips
-// live in a native popover opened by a "Filter" button (popovertarget; light
-// dismiss and Escape come from the browser; the open/close animation is CSS).
-// On a desktop the same chips sit inline in one row, with no button and no
-// popup. The result count sits on the right, and the bar is sticky just under
-// the site header. No fades: the design is hard-edged.
+// UI library: FilterBar, the blog index's control bar. The chips sit inline
+// in one row, on a tray: the yellow field with a 1px navy border (chips in
+// paper on it); where
+// they don't fit (a phone) the row scrolls sideways within it, and each end
+// of the tray that still hides chips gets an inverted square with a chevron.
+// The tray is what makes the squares read as the ends of a scrolling window
+// before anyone scrolls. No
+// fades: the design is hard-edged. The result count sits on the right, and
+// the bar is sticky just under the site header.
 const bar = '[data-ui="filter-bar"]';
-const panel = `${bar} [data-filter-panel]`;
-const toggle = `${bar} [data-filter-toggle]`;
+const scroller = `${bar} [data-filter-scroller]`;
+const cue = (side: "start" | "end") => `${bar} [data-filter-more="${side}"]`;
 
 const noFades = (page: Page) =>
   page.locator(`${bar}, ${bar} *`).evaluateAll((els) =>
@@ -26,47 +29,92 @@ test("the /ui showcase shows the filter bar", async ({ page }) => {
 test.describe("on a phone", () => {
   test.use({ viewport: { width: 414, height: 800 } });
 
-  test("the chips sit in a popover that the Filter button opens", async ({ page }) => {
+  test("the chips sit inline in one row, with no Filter button or popover", async ({ page }) => {
     await page.goto("/blogs/");
-    const button = page.locator(toggle);
-    await expect(button).toBeVisible();
-    await expect(page.locator(panel)).toBeHidden();
-    const target = await button.getAttribute("popovertarget");
-    expect(await page.locator(panel).getAttribute("id")).toBe(target);
-    expect(await page.locator(panel).getAttribute("popover")).not.toBeNull();
-
-    await button.click();
-    await expect(page.locator(panel)).toBeVisible();
-    expect(await page.locator(panel).evaluate((el) => el.matches(":popover-open"))).toBe(true);
+    await expect(page.locator(`${bar} [data-filter-toggle]`)).toHaveCount(0);
+    await expect(page.locator(`${bar} [popover]`)).toHaveCount(0);
+    const tops = await page
+      .locator(`${bar} [data-ui="filter-chip"]`)
+      .evaluateAll((els) => [...new Set(els.map((e) => Math.round(e.getBoundingClientRect().top)))]);
+    expect(tops).toHaveLength(1);
   });
 
-  test("choosing a chip in the popover filters, and the button says what is selected", async ({ page }) => {
+  test("the row scrolls sideways; the page never does, and nothing fades", async ({ page }) => {
     await page.goto("/blogs/");
-    await page.locator(toggle).click();
-    await page.locator('[data-ui="filter-chip"][data-label="Finance"]').click();
-    await expect(page.locator(toggle)).toContainText("Finance");
-    const shown = await page.locator('[data-ui="post-entry"]:not([data-out])').count();
-    await expect(page.locator(`${bar} [data-filter-count]`)).toHaveText(new RegExp(`^${shown} of `));
-  });
-
-  test("Escape and a tap outside close the popover", async ({ page }) => {
-    await page.goto("/blogs/");
-    await page.locator(toggle).click();
-    await expect(page.locator(panel)).toBeVisible();
-    await page.keyboard.press("Escape");
-    await expect(page.locator(panel)).toBeHidden();
-    await page.locator(toggle).click();
-    await expect(page.locator(panel)).toBeVisible();
-    await page.mouse.click(5, 790);
-    await expect(page.locator(panel)).toBeHidden();
-  });
-
-  test("the page never scrolls sideways, and nothing fades", async ({ page }) => {
-    await page.goto("/blogs/");
+    const [scrollW, clientW] = await page.locator(scroller).evaluate((el) => [el.scrollWidth, el.clientWidth]);
+    expect(scrollW).toBeGreaterThan(clientW);
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
     expect(overflow).toBe(0);
     expect(await noFades(page)).toBe(0);
   });
+
+  test("a solid cue marks whichever edge still hides chips", async ({ page }) => {
+    await page.goto("/blogs/");
+    await expect(page.locator(cue("end"))).toBeVisible();
+    await expect(page.locator(cue("start"))).toBeHidden();
+    const fill = await page.locator(cue("end")).evaluate((el) => getComputedStyle(el).backgroundColor);
+    expect(fill).not.toMatch(/rgba\(0, 0, 0, 0\)|transparent/);
+
+    await page.locator(scroller).evaluate((el) => el.scrollTo({ left: el.scrollWidth }));
+    await expect(page.locator(cue("start"))).toBeVisible();
+    await expect(page.locator(cue("end"))).toBeHidden();
+
+    await page.locator(scroller).evaluate((el) => el.scrollTo({ left: el.scrollWidth / 3 }));
+    await expect(page.locator(cue("start"))).toBeVisible();
+    await expect(page.locator(cue("end"))).toBeVisible();
+  });
+
+  test("the cue is an inverted chevron square, the tray's full height, that never catches a tap", async ({ page }) => {
+    await page.goto("/blogs/");
+    await expect(page.locator(cue("end"))).toBeVisible();
+    const look = await page.evaluate(
+      ([cueSel, scrollSel]) => {
+        const el = document.querySelector<HTMLElement>(cueSel)!;
+        const c = el.getBoundingClientRect();
+        const s = document.querySelector(scrollSel)!.getBoundingClientRect();
+        return {
+          text: el.textContent!.trim(),
+          right: Math.abs(c.right - s.right),
+          top: Math.abs(c.top - s.top),
+          bottom: Math.abs(c.bottom - s.bottom),
+          events: getComputedStyle(el).pointerEvents,
+        };
+      },
+      [cue("end"), scroller]
+    );
+    expect(look.text).toBe("›");
+    expect(look.right).toBeLessThanOrEqual(1);
+    expect(look.top).toBeLessThanOrEqual(1);
+    expect(look.bottom).toBeLessThanOrEqual(1);
+    expect(look.events).toBe("none");
+  });
+
+  // Finance is last, so it lands at the very end; ReScript is not, so the end
+  // cue stays up beside it and must not cover it.
+  for (const label of ["Finance", "ReScript"]) {
+    test(`a chosen chip that starts off-screen (${label}) is scrolled into view, clear of the cues`, async ({ page }) => {
+      await page.goto(`/blogs/?tag=${label.toLowerCase()}`);
+      const chip = page.locator(`${bar} [data-ui="filter-chip"][data-label="${label}"]`);
+      await expect(chip).toHaveAttribute("aria-pressed", "true");
+      await expect
+        .poll(() =>
+          page.evaluate(
+            ([chipSel, scrollSel]) => {
+              const k = document.querySelector(chipSel)!.getBoundingClientRect();
+              const s = document.querySelector(scrollSel)!.getBoundingClientRect();
+              const blockers = [...document.querySelectorAll<HTMLElement>("[data-filter-more]")]
+                .filter((e) => e.checkVisibility())
+                .map((e) => e.getBoundingClientRect());
+              const inside = k.left >= s.left - 1 && k.right <= s.right + 1;
+              const clear = blockers.every((b) => k.right <= b.left + 1 || k.left >= b.right - 1);
+              return inside && clear;
+            },
+            [`${bar} [data-ui="filter-chip"][data-label="${label}"]`, scroller]
+          )
+        )
+        .toBe(true);
+    });
+  }
 
   test("the bar stays pinned under the header while the list scrolls", async ({ page }) => {
     await page.goto("/blogs/");
@@ -87,13 +135,15 @@ test.describe("on a desktop", () => {
 
   test("the chips sit inline in one row, with no Filter button", async ({ page }) => {
     await page.goto("/blogs/");
-    await expect(page.locator(toggle)).toBeHidden();
-    await expect(page.locator(panel)).toBeVisible();
+    await expect(page.locator(`${bar} [data-filter-toggle]`)).toHaveCount(0);
     const tops = await page
       .locator(`${bar} [data-ui="filter-chip"]`)
       .evaluateAll((els) => [...new Set(els.map((e) => Math.round(e.getBoundingClientRect().top)))]);
     expect(tops).toHaveLength(1);
     expect(await noFades(page)).toBe(0);
+    // everything fits, so no cue shows
+    await expect(page.locator(cue("start"))).toBeHidden();
+    await expect(page.locator(cue("end"))).toBeHidden();
   });
 });
 
@@ -108,52 +158,74 @@ test("the count says how many posts are showing, and updates as you filter", asy
   await expect(count).toHaveText(`${shown} of ${total}`);
 });
 
-// The panel must open directly under the Filter button, whether the browser
-// positions it with CSS anchor positioning or (where that's missing, as in
-// older Safari) the script places it. Checked before and after scrolling, so
-// it holds whether or not the bar has stuck under the header yet.
-const underButton = async (page: Page) => {
-  const [b, p] = await page.evaluate(() => {
-    const r = (s: string) => {
-      const x = document.querySelector(s)!.getBoundingClientRect();
-      return { left: x.left, bottom: x.bottom, top: x.top };
-    };
-    return [r("[data-filter-toggle]"), r("[data-filter-panel]")];
-  });
-  return { gap: p.top - b.bottom, leftDiff: Math.abs(p.left - b.left) };
-};
+// The tray: the yellow field inside a 1px navy border (both from tokens, so
+// dark mode flips them), with the arrow squares in the border's colour; the
+// chips, pressed or not, distinct from the tray, and clear of its edges.
+for (const scheme of ["light", "dark"] as const) {
+  test.describe(`${scheme} mode, on a phone`, () => {
+    test.use({ colorScheme: scheme, viewport: { width: 414, height: 800 } });
 
-for (const anchoring of ["with CSS anchor positioning", "without CSS anchor positioning"] as const) {
-  test.describe(`on a phone, ${anchoring}`, () => {
-    test.use({ viewport: { width: 414, height: 800 } });
-
-    if (anchoring.startsWith("without")) {
-      test.beforeEach(async ({ page }) => {
-        // Pretend to be a browser without anchor positioning: the script
-        // checks CSS.supports, and the anchor properties stop applying.
-        await page.addInitScript(() => {
-          const real = CSS.supports.bind(CSS);
-          (CSS as any).supports = (...args: any[]) =>
-            String(args[0]).includes("position-area") || String(args[0]).includes("anchor") ? false : real(...(args as [string]));
-        });
-      });
-    }
-
-    for (const scrolled of [false, true]) {
-      test(`the panel opens right under the Filter button${scrolled ? " after scrolling" : ""}`, async ({ page }) => {
-        await page.goto("/blogs/");
-        if (anchoring.startsWith("without")) {
-          await page.addStyleTag({ content: "[data-filter-panel] { position-area: none !important; position-anchor: none !important; }" });
-        }
-        if (scrolled) await page.evaluate(() => window.scrollTo(0, 600));
-        await page.locator("[data-filter-toggle]").click();
-        await expect(page.locator("[data-filter-panel]")).toBeVisible();
-        await page.waitForTimeout(250); // let the open transition settle
-        const { gap, leftDiff } = await underButton(page);
-        expect(gap, "panel top sits just below the button").toBeGreaterThanOrEqual(0);
-        expect(gap).toBeLessThanOrEqual(16);
-        expect(leftDiff, "panel lines up with the button's left edge").toBeLessThanOrEqual(2);
-      });
-    }
+    test("the chips sit on a yellow tray with a navy border", async ({ page }) => {
+      await page.goto("/blogs/");
+      await expect(page.locator(cue("end"))).toBeVisible();
+      const t = await page.evaluate(
+        ([traySel, barSel]) => {
+          const rgb = (v: string) => (v.match(/[\d.]+/g) ?? []).map(Number).slice(0, 3);
+          const lum = ([r, g, b]: number[]) => {
+            const f = (c: number) => ((c /= 255) <= 0.03928 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4);
+            return 0.2126 * f(r) + 0.7152 * f(g) + 0.0722 * f(b);
+          };
+          const ratio = (a: number[], b: number[]) => {
+            const [x, y] = [lum(a), lum(b)].sort((p, q) => q - p);
+            return (x + 0.05) / (y + 0.05);
+          };
+          const cueEl = document.querySelector<HTMLElement>('[data-filter-more="end"]')!;
+          const tray = document.querySelector<HTMLElement>(traySel)!;
+          const s = getComputedStyle(tray);
+          const fill = (sel: string) => getComputedStyle(document.querySelector(sel)!).backgroundColor;
+          const chip = document.querySelector(`${traySel} [data-ui="filter-chip"]`)!.getBoundingClientRect();
+          const r = tray.getBoundingClientRect();
+          return {
+            borders: [s.borderTopWidth, s.borderRightWidth, s.borderBottomWidth, s.borderLeftWidth].map(parseFloat),
+            tray: s.backgroundColor,
+            token: Object.fromEntries(
+              ["--bg-secondary", "--accent-bg"].map((name) => {
+                const probe = document.createElement("div");
+                probe.style.backgroundColor = `var(${name})`;
+                document.body.append(probe);
+                const c = getComputedStyle(probe).backgroundColor;
+                probe.remove();
+                return [name, c];
+              })
+            ),
+            styles: [s.borderTopStyle, s.borderRightStyle, s.borderBottomStyle, s.borderLeftStyle],
+            borderColours: [s.borderTopColor, s.borderRightColor, s.borderBottomColor, s.borderLeftColor],
+            cue: getComputedStyle(document.querySelector('[data-filter-more="end"]')!).backgroundColor,
+            bar: fill(barSel),
+            off: fill(`${traySel} [data-ui="filter-chip"][aria-pressed="false"]`),
+            on: fill(`${traySel} [data-ui="filter-chip"][aria-pressed="true"]`),
+            above: chip.top - r.top,
+            below: r.bottom - chip.bottom,
+            chevron: ratio(rgb(getComputedStyle(cueEl).color), rgb(getComputedStyle(cueEl).backgroundColor)),
+            squareOnTray: ratio(rgb(getComputedStyle(cueEl).backgroundColor), rgb(s.backgroundColor)),
+          };
+        },
+        ["[data-filter-track]", bar]
+      );
+      expect(t.borders).toEqual([1, 1, 1, 1]);
+      expect(new Set(t.styles)).toEqual(new Set(["solid"]));
+      expect(new Set(t.borderColours), "the border is navy (--accent-bg)").toEqual(new Set([t.token["--accent-bg"]]));
+      expect(t.tray, "the tray is filled").not.toMatch(/rgba\(0, 0, 0, 0\)|transparent/);
+      expect(t.tray, "the tray stands apart from the bar").not.toBe(t.bar);
+      expect(t.tray, "the tray is the yellow field").toBe(t.token["--bg-secondary"]);
+      expect(t.cue, "the arrow squares are the border's colour").toBe(t.token["--accent-bg"]);
+      expect(t.cue, "the arrow squares stand apart from the tray").not.toBe(t.tray);
+      expect(t.off, "an unpressed chip stands apart from the tray").not.toBe(t.tray);
+      expect(t.on, "a pressed chip stands apart from the tray").not.toBe(t.tray);
+      expect(t.chevron, "the chevron reads on its square").toBeGreaterThanOrEqual(4.5);
+      expect(t.squareOnTray, "the square reads on the tray").toBeGreaterThanOrEqual(3);
+      expect(t.above, "room above the chips").toBeGreaterThanOrEqual(3);
+      expect(t.below, "room below the chips").toBeGreaterThanOrEqual(3);
+    });
   });
 }

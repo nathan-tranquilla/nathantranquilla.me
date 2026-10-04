@@ -89,7 +89,6 @@ posts.forEach((post) => {
   const list = document.querySelector<HTMLElement>("[data-filterable]")!;
   const empty = document.querySelector<HTMLElement>("[data-filter-empty]")!;
   const count = filter.querySelector<HTMLElement>("[data-filter-count]")!;
-  const summary = filter.querySelector<HTMLElement>("[data-filter-summary]")!;
   const chips = [...filter.querySelectorAll<HTMLButtonElement>('[data-ui="filter-chip"]')];
   const entries = [...list.querySelectorAll<HTMLElement>('[data-ui="post-entry"]')];
 
@@ -112,7 +111,6 @@ posts.forEach((post) => {
     }
     empty.hidden = shown > 0;
     count.textContent = `${shown} of ${entries.length}`;
-    summary.textContent = sel.length === 0 ? "" : sel.length === 1 ? ` · ${sel[0]}` : ` · ${sel.length} tags`;
   }
 
   function apply(sel: string[]) {
@@ -136,6 +134,10 @@ posts.forEach((post) => {
 
   render(fromUrl());
   filter.hidden = false;
+  // On a phone the row scrolls: bring the first chosen chip into view.
+  chips
+    .find((c) => c.dataset.label !== "All" && c.getAttribute("aria-pressed") === "true")
+    ?.scrollIntoView({ block: "nearest", inline: "nearest" });
   // Only now do rows animate, so the first paint doesn't.
   requestAnimationFrame(() => list.setAttribute("data-animate", ""));
 </script>
