@@ -1,51 +1,28 @@
 {
-  "generatedAt": "2026-10-05T10:00:42.892Z",
+  "generatedAt": "2026-10-06T10:00:45.545Z",
   "ranges": {
     "7": {
-      "startDate": "2026-09-29",
-      "endDate": "2026-10-05",
+      "startDate": "2026-09-30",
+      "endDate": "2026-10-06",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
-          "sessions": 7,
+          "sessions": 5,
           "channels": {
-            "direct": 5,
+            "direct": 4,
             "social": 1,
             "search": 0,
-            "referral": 1,
+            "referral": 0,
             "other": 0
           },
           "sources": [
             {
               "source": "t.co",
               "sessions": 1
-            },
-            {
-              "source": "teams.public.onecdn.static.microsoft",
-              "sessions": 1
             }
           ],
           "shortLinkVisits": 0,
-          "views": 7,
+          "views": 5,
           "engagedSecondsPerView": 17,
-          "shares": {
-            "native": 0,
-            "clipboard": 1,
-            "total": 1
-          }
-        },
-        "5-ways-rescript-fixes-typescript": {
-          "sessions": 1,
-          "channels": {
-            "direct": 1,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 1,
-          "engagedSecondsPerView": 0,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -93,8 +70,8 @@
       }
     },
     "30": {
-      "startDate": "2026-09-06",
-      "endDate": "2026-10-05",
+      "startDate": "2026-09-07",
+      "endDate": "2026-10-06",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 26,
@@ -132,25 +109,6 @@
             "total": 2
           }
         },
-        "why-every-desk-job-is-becoming-an-ai-apprenticeship": {
-          "sessions": 4,
-          "channels": {
-            "direct": 4,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 4,
-          "engagedSecondsPerView": 4,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
         "typescript-has-a-big-problem": {
           "sessions": 3,
           "channels": {
@@ -164,6 +122,25 @@
           "shortLinkVisits": 0,
           "views": 3,
           "engagedSecondsPerView": 1,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
+        "why-every-desk-job-is-becoming-an-ai-apprenticeship": {
+          "sessions": 3,
+          "channels": {
+            "direct": 3,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 3,
+          "engagedSecondsPerView": 3,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -411,8 +388,8 @@
       }
     },
     "90": {
-      "startDate": "2026-07-08",
-      "endDate": "2026-10-05",
+      "startDate": "2026-07-09",
+      "endDate": "2026-10-06",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 26,
@@ -526,30 +503,6 @@
             "total": 0
           }
         },
-        "teach-claude-your-project-once-benefit-forever": {
-          "sessions": 6,
-          "channels": {
-            "direct": 5,
-            "social": 0,
-            "search": 0,
-            "referral": 1,
-            "other": 0
-          },
-          "sources": [
-            {
-              "source": "teams.public.onecdn.static.microsoft",
-              "sessions": 1
-            }
-          ],
-          "shortLinkVisits": 0,
-          "views": 9,
-          "engagedSecondsPerView": 1,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
         "ai-powered-video-curation-from-naive-search-to-confident-matches": {
           "sessions": 4,
           "channels": {
@@ -644,6 +597,30 @@
           "shortLinkVisits": 0,
           "views": 3,
           "engagedSecondsPerView": 5,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
+        "teach-claude-your-project-once-benefit-forever": {
+          "sessions": 4,
+          "channels": {
+            "direct": 3,
+            "social": 0,
+            "search": 0,
+            "referral": 1,
+            "other": 0
+          },
+          "sources": [
+            {
+              "source": "teams.public.onecdn.static.microsoft",
+              "sessions": 1
+            }
+          ],
+          "shortLinkVisits": 0,
+          "views": 7,
+          "engagedSecondsPerView": 2,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -748,16 +725,16 @@
       }
     },
     "prev7": {
-      "startDate": "2026-09-22",
-      "endDate": "2026-09-28",
+      "startDate": "2026-09-23",
+      "endDate": "2026-09-29",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
-          "sessions": 19,
+          "sessions": 21,
           "channels": {
-            "direct": 6,
+            "direct": 7,
             "social": 7,
             "search": 0,
-            "referral": 3,
+            "referral": 4,
             "other": 3
           },
           "sources": [
@@ -766,21 +743,40 @@
               "sessions": 7
             },
             {
-              "source": "share",
-              "sessions": 3
+              "source": "teams.public.onecdn.static.microsoft",
+              "sessions": 4
             },
             {
-              "source": "teams.public.onecdn.static.microsoft",
+              "source": "share",
               "sessions": 3
             }
           ],
           "shortLinkVisits": 3,
-          "views": 27,
+          "views": 29,
           "engagedSecondsPerView": 6,
           "shares": {
             "native": 1,
+            "clipboard": 1,
+            "total": 2
+          }
+        },
+        "5-ways-rescript-fixes-typescript": {
+          "sessions": 1,
+          "channels": {
+            "direct": 1,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 2,
+          "engagedSecondsPerView": 1,
+          "shares": {
+            "native": 0,
             "clipboard": 0,
-            "total": 1
+            "total": 0
           }
         },
         "coding-is-not-for-humans": {
@@ -819,25 +815,6 @@
           ],
           "shortLinkVisits": 0,
           "views": 4,
-          "engagedSecondsPerView": 0,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
-        "the-4-pillars-of-next-gen-web-dev": {
-          "sessions": 1,
-          "channels": {
-            "direct": 1,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 1,
           "engagedSecondsPerView": 0,
           "shares": {
             "native": 0,
@@ -906,31 +883,12 @@
             "clipboard": 0,
             "total": 0
           }
-        },
-        "5-ways-rescript-fixes-typescript": {
-          "sessions": 0,
-          "channels": {
-            "direct": 0,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 1,
-          "engagedSecondsPerView": 1,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
         }
       }
     },
     "all": {
       "startDate": "2015-08-14",
-      "endDate": "2026-10-05",
+      "endDate": "2026-10-06",
       "posts": {
         "the-4-pillars-of-next-gen-web-dev": {
           "sessions": 35,
