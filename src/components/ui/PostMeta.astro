@@ -1,5 +1,5 @@
 ---
-// UI library: a post's metadata (author, date in words, tags). It owns the
+// UI library: a post's metadata (author, date in words, reading time, tags). It owns the
 // view-transition names for the byline and tags, so every page that shows a
 // post's metadata morphs the same way.
 //
@@ -23,17 +23,24 @@ export interface Props {
   updated?: string;
   tags: string[];
   hash: string;
+  /** Estimated reading time, from readingMinutes() in utils/reading. */
+  minutes: number;
   size?: "entry" | "header";
 }
-const { author, date, updated, tags, hash, size = "entry" } = Astro.props;
+const { author, date, updated, tags, hash, minutes, size = "entry" } = Astro.props;
 const byline = size === "header" ? "mb-3 text-base" : "mb-2 text-sm";
 ---
 
 <div data-ui="post-meta">
   <p data-byline style={postTransition(hash, "byline")} class={`${byline} w-fit leading-[1.5] text-[var(--text-muted)]`}>
     {author} · <time datetime={isoPostDate(date)}>{formatPostDate(date)}</time>
-    {updated && <> · Updated <time datetime={isoPostDate(updated)}>{formatPostDate(updated)}</time></>}
+    {updated && <><span data-byline-sep> · </span><span data-updated class="whitespace-nowrap">Updated <time datetime={isoPostDate(updated)}>{formatPostDate(updated)}</time></span></>}
     <slot name="byline-end" />
+    <span data-byline-sep> · </span><span data-reading-time class="whitespace-nowrap"
+      ><svg aria-hidden="true" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"
+        ><circle cx="8" cy="8" r="6.3"></circle><path d="M8 4.6V8l2.4 1.5"></path></svg
+      >{minutes} min read</span
+    >
   </p>
   <!-- wraps so that, when the tags and Share don't fit on one line, Share
        moves under the tags rather than squeezing them onto two lines: the
@@ -52,6 +59,32 @@ const byline = size === "header" ? "mb-3 text-base" : "mb-2 text-sm";
      highlight under each letter's lower edge and a fainter shadow above. A
      deliberate exception to the flat style, kept subtle; byline.spec.ts
      holds it to 4.5:1 contrast in both schemes. */
+  /* On a phone the byline can't hold everything on one line, and it would
+     wrap in the post header (larger text) but not in the list. So the
+     update date and the reading time each take their own line in both, and
+     the byline keeps one shape between them for the morph
+     (reading-time.spec.ts). */
+  @media (max-width: 767px) {
+    [data-byline-sep] {
+      display: none;
+    }
+
+    [data-updated],
+    [data-reading-time] {
+      display: block;
+      width: fit-content;
+    }
+  }
+
+  /* the tiny clock: line drawn in the text colour, sized to the text */
+  [data-reading-time] svg {
+    display: inline-block;
+    width: 0.8em;
+    height: 0.8em;
+    margin-right: 0.3em;
+    vertical-align: -0.05em;
+  }
+
   [data-byline] {
     text-shadow:
       0 1px 0 rgba(255, 255, 255, 0.85),

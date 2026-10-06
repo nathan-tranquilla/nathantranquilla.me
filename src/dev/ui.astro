@@ -20,6 +20,7 @@ const counts = tagCounts(getPosts().filter((p) => !p.frontmatter.draft));
 const samplePost = {
   url: "/ui",
   frontmatter: { title: "A Sample Post Title", author: "Nathan Tranquilla", date: "2026/10/01", tags: ["AI", "Finance"], hash: "uidemo" },
+  rawContent: () => "A made-up post. ".repeat(400),
 };
 
 const surfaces = [
@@ -98,11 +99,11 @@ const surfaces = [
         <h2 class="mb-4 font-serif text-2xl text-[var(--text-primary)]">PostMeta</h2>
         <p class="mb-2 font-mono text-xs uppercase tracking-[0.07em] text-[var(--text-muted)]">size="entry" · index rows</p>
         <div class="mb-6 border border-[var(--border-primary)] p-6">
-          <PostMeta author="Nathan Tranquilla" date="2026/10/01" tags={["AI", "Finance"]} hash="uimeta1" />
+          <PostMeta author="Nathan Tranquilla" date="2026/10/01" tags={["AI", "Finance"]} hash="uimeta1" minutes={8} />
         </div>
         <p class="mb-2 font-mono text-xs uppercase tracking-[0.07em] text-[var(--text-muted)]">size="header" · the post header, with an action</p>
         <div class="border border-[var(--border-primary)] p-6">
-          <PostMeta size="header" author="Nathan Tranquilla" date="2026/10/01" tags={["AI", "Finance"]} hash="uimeta2">
+          <PostMeta size="header" author="Nathan Tranquilla" date="2026/10/01" tags={["AI", "Finance"]} hash="uimeta2" minutes={8}>
             <Button slot="actions">Share</Button>
           </PostMeta>
         </div>

@@ -9,6 +9,8 @@ type Post = {
     tags: Array<string>;
     draft?: boolean;
   };
+  /** The markdown body, without frontmatter (for the reading time). */
+  rawContent: () => string;
 };
 
 export const getPosts = () =>

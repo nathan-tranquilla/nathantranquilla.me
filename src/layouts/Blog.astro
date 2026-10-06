@@ -6,6 +6,7 @@ import { postTransition } from "../utils/transitions";
 import ViewCount from "../components/ViewCount.astro";
 import Button from "../components/ui/Button.astro";
 import PostMeta from "../components/ui/PostMeta.astro";
+import { proseWordCount, readingMinutes } from "../utils/reading";
 // Posts write callouts as plain HTML (data-ui="callout") and never import
 // Callout.astro, so the layout loads the library's callout styles itself.
 import "../components/ui/callout.css";
@@ -14,14 +15,8 @@ const { frontmatter, rawContent } = Astro.props;
 
 const blogDescription = postDescription(frontmatter);
 
-// Prose words only: code blocks, HTML and markdown syntax are not writing, and
-// counting them would overstate the article to anything reading the schema.
-const wordCount = (rawContent?.() ?? "")
-  .replace(/```[\s\S]*?```/g, " ")
-  .replace(/<[^>]+>/g, " ")
-  .replace(/[#>*_`\[\]()|-]/g, " ")
-  .split(/\s+/)
-  .filter((w: string) => /[a-zA-Z0-9]/.test(w)).length;
+const wordCount = proseWordCount(rawContent?.() ?? "");
+const minutes = readingMinutes(wordCount);
 import faviconLogo from "../assets/favicon-nt-512.png";
 
 const websiteUrl = "https://nathantranquilla.me";
@@ -240,6 +235,7 @@ try {
       "articleSection": frontmatter.tags?.[0],
       "inLanguage": "en-US",
       "wordCount": wordCount,
+      "timeRequired": `PT${minutes}M`,
       "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": articleUrl
@@ -261,6 +257,7 @@ try {
           updated={frontmatter.updated}
           tags={frontmatter.tags}
           hash={frontmatter.hash}
+          minutes={minutes}
         >
           <ViewCount slot="byline-end" count={viewCount} at="top" />
           <Button

@@ -5,11 +5,13 @@
 // from the page around it.
 import PostMeta from "./PostMeta.astro";
 import { postTransition } from "../../utils/transitions";
+import { proseWordCount, readingMinutes } from "../../utils/reading";
 
 export interface Props {
   post: {
     url: string;
     frontmatter: { title: string; author: string; date: string; updated?: string; tags: string[]; hash: string };
+    rawContent: () => string;
   };
   /** Heading level for the title: 3 under the home page's "Recent Posts", 2 on the blog list. */
   level?: 2 | 3;
@@ -17,6 +19,7 @@ export interface Props {
 const { post, level = 2 } = Astro.props;
 const { title, author, date, updated, tags, hash } = post.frontmatter;
 const Heading = `h${level}`;
+const minutes = readingMinutes(proseWordCount(post.rawContent()));
 ---
 
 <article data-ui="post-entry" data-hash={hash} class="py-8 first:pt-0">
@@ -27,6 +30,6 @@ const Heading = `h${level}`;
     >
       {title}
     </Heading>
-    <PostMeta author={author} date={date} updated={updated} tags={tags} hash={hash} />
+    <PostMeta author={author} date={date} updated={updated} tags={tags} hash={hash} minutes={minutes} />
   </a>
 </article>
