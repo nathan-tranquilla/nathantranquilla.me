@@ -2,7 +2,7 @@
 layout: ../../layouts/Blog.astro
 title: Teach Claude Your Project Once, Benefit Forever
 hash: "h6myvk"
-description: "Claude Code knows software development but not your project. Skills are how you teach it your conventions once, so the lessons stick instead of being re-explained every session."
+description: "Claude Code knows software development but not your project. Skills teach it your conventions once, so you stop re-explaining them every session."
 author: Nathan Tranquilla
 date: "2026/04/07"
 tags: ["AI", "Coding"]

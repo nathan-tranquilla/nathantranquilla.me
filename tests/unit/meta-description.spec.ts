@@ -12,13 +12,15 @@ test("every blog post writes its own meta description", async ({ request }) => {
   for (const path of posts) {
     const html = await (await request.get(path)).text();
     const desc = html.match(/<meta name="description" content="([^"]*)"/)?.[1] ?? "";
-    const title = html.match(/<title>([^<]*)<\/title>/)?.[1]?.split(" | ").pop() ?? "";
+    const title = html.match(/<title>([^<]*)<\/title>/)?.[1]?.split(" | ")[0] ?? "";
 
     if (!desc) bad.push(`${path}: missing`);
     else if (desc.startsWith(title)) bad.push(`${path}: starts with the title`);
     else if (desc.includes("by Nathan Tranquilla")) bad.push(`${path}: author boilerplate`);
     else if (desc.includes("—")) bad.push(`${path}: contains an em dash`);
-    else if (desc.length < 70 || desc.length > 200) bad.push(`${path}: ${desc.length} chars`);
+    // Google cuts snippets off at about 160 characters, so anything past that
+    // is unread, and the words placed last for search are the ones lost.
+    else if (desc.length < 70 || desc.length > 160) bad.push(`${path}: ${desc.length} chars`);
   }
   expect(bad).toEqual([]);
 });

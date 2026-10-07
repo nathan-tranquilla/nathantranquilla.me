@@ -2,7 +2,7 @@
 layout: ../../layouts/Blog.astro
 title: "Coding Is Not For Humans"
 hash: "qkysep"
-description: "AI writes most of my code now. If code is no longer written for humans to read, do clean code patterns and static types still matter, and what is left for the developer to do?"
+description: "AI writes most of my code now. If code isn't written for humans to read, do clean code and static types still matter, and what is left for the developer?"
 author: Nathan Tranquilla
 date: "2026/03/19"
 tags: ["AI", "Coding", "Type Safety"]

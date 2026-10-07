@@ -2,7 +2,7 @@
 layout: ../../layouts/Blog.astro
 title: TypeScript Has A Big Problem
 hash: "b536mh"
-description: "AI collapsed the cost of writing code, so the bottleneck moved to compile times and how reliably your types prevent production bugs. TypeScript's design makes both harder."
+description: "AI made code cheap to write, so the bottleneck moved to compile times and how reliably types prevent production bugs. TypeScript's design makes both harder."
 author: Nathan Tranquilla
 date: "2026/02/15"
 tags: ["Type Safety", "ReScript", "AI"]

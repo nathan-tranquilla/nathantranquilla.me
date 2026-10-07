@@ -2,7 +2,7 @@
 layout: ../../layouts/Blog.astro
 title: Strong Type Systems Are Required For A Safer Web
 hash: "yk01no"
-description: "Developers, product managers and companies all want the same thing from types: fewer production incidents. TypeScript was built to deliver that, and it only partly does."
+description: "Developers, product managers and companies want one thing from types: fewer production incidents. TypeScript was built to deliver that, and only partly does."
 author: Nathan Tranquilla
 date: "2025/10/08"
 tags: ["Type Safety"]
