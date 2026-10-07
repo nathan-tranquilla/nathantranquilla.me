@@ -8,6 +8,8 @@ import {
   afterMainMovedDecision,
   isReportsOnly,
   testServer,
+  WORKTREE_TEST,
+  testsFailedMessage,
 } from "../../scripts/ship-lib.mjs";
 
 // rake ship is the only way main moves from this machine: it tests the exact
@@ -74,6 +76,22 @@ test.describe("testServer: ship's run never reuses or disturbs the dev server on
   });
   test("TEST_PORT moves the run off 4321 and never reuses what is there", () => {
     expect(testServer({ TEST_PORT: "4331" })).toEqual({ port: "4331", reuse: false });
+  });
+});
+
+// A flake on 2026-10-07 left nothing to diagnose: the error scrolled away and a
+// re-run overwrote the results. A failed ship keeps a trace and says where it is.
+test.describe("a failed ship keeps its evidence", () => {
+  test("the worktree run keeps a Playwright trace for every failure", () => {
+    expect(WORKTREE_TEST).toMatch(/^pnpm test /);
+    expect(WORKTREE_TEST).toContain("--trace=retain-on-failure");
+  });
+  test("the failure message points at the traces and warns against re-running there", () => {
+    const msg = testsFailedMessage("5a039814808d", "/tmp/nathantranquilla-ship-5a039814808d");
+    expect(msg).toContain("Nothing pushed");
+    expect(msg).toContain("/tmp/nathantranquilla-ship-5a039814808d/test-results");
+    expect(msg).toContain("npx playwright show-trace");
+    expect(msg).toMatch(/overwrite/i);
   });
 });
 

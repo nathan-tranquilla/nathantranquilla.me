@@ -39,3 +39,14 @@ export const testServer = (env) => ({
   port: env.TEST_PORT ?? "4321",
   reuse: !env.CI && !env.TEST_PORT,
 });
+
+// The suite in ship's worktree keeps a trace of every failure. A flake on 2026-10-07 could not be diagnosed:
+// its error scrolled away, and re-running the failed test in the worktree overwrote test-results/.
+export const WORKTREE_TEST = "pnpm test --trace=retain-on-failure";
+
+export const testsFailedMessage = (sha, wt) =>
+  [
+    `tests failed for ${sha}. Nothing pushed.`,
+    `  Traces: ${wt}/test-results (open one with: npx playwright show-trace <trace.zip>)`,
+    `  Read them before re-running anything in that worktree: a re-run overwrites test-results.`,
+  ].join("\n");

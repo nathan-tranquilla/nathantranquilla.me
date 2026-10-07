@@ -15,7 +15,9 @@ Claude's permissions. Pushing to main deploys, so confirm with the user first, a
    is against this commit, not whatever happens to be on 4321.
 4. Green: pushes that exact commit. If main moved meanwhile, it rebases only over traffic-report
    commits (`reports/`); anything else, or commits you made during the run, stops it. Re-run.
-5. Red: nothing is pushed; the worktree is kept and its path printed.
+5. Red: nothing is pushed; the worktree is kept, with a Playwright trace for every failure in its
+   `test-results/`. **Read the traces before re-running anything there**: a re-run overwrites them.
+   Open one with `npx playwright show-trace <trace.zip>`, or unzip it and read the error and network.
 6. Waits for the "Deploy to GitHub Pages" run **for the shipped SHA** and exits with its result.
 
 `DRY=1 rake ship` runs the test pass without pushing.

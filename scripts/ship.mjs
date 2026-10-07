@@ -15,7 +15,7 @@ import { execSync } from "node:child_process";
 import { existsSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import { afterMainMovedDecision } from "./ship-lib.mjs";
+import { WORKTREE_TEST, afterMainMovedDecision, testsFailedMessage } from "./ship-lib.mjs";
 
 const DRY = process.env.DRY === "1";
 const TEST_PORT = "4331";
@@ -63,9 +63,9 @@ try {
   run("pnpm res:build", { cwd: wt, env });
   // The sitemap spec asserts on dist/, as in CI.
   run("pnpm astro build", { cwd: wt, env });
-  run("pnpm test", { cwd: wt, env });
+  run(WORKTREE_TEST, { cwd: wt, env });
 } catch {
-  stop(`tests failed for ${sha.slice(0, 12)}. Nothing pushed. Worktree kept for inspection: ${wt}`);
+  stop(testsFailedMessage(sha.slice(0, 12), wt));
 }
 const mins = ((Date.now() - started) / 60000).toFixed(1);
 console.log(`\n✔ full suite passed for ${sha.slice(0, 12)} in ${mins} min`);
