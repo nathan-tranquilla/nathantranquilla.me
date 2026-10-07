@@ -1,28 +1,23 @@
 {
-  "generatedAt": "2026-10-06T10:00:45.545Z",
+  "generatedAt": "2026-10-07T10:00:40.329Z",
   "ranges": {
     "7": {
-      "startDate": "2026-09-30",
-      "endDate": "2026-10-06",
+      "startDate": "2026-10-01",
+      "endDate": "2026-10-07",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
-          "sessions": 5,
+          "sessions": 4,
           "channels": {
             "direct": 4,
-            "social": 1,
+            "social": 0,
             "search": 0,
             "referral": 0,
             "other": 0
           },
-          "sources": [
-            {
-              "source": "t.co",
-              "sessions": 1
-            }
-          ],
+          "sources": [],
           "shortLinkVisits": 0,
-          "views": 5,
-          "engagedSecondsPerView": 17,
+          "views": 4,
+          "engagedSecondsPerView": 22,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -70,8 +65,8 @@
       }
     },
     "30": {
-      "startDate": "2026-09-07",
-      "endDate": "2026-10-06",
+      "startDate": "2026-09-08",
+      "endDate": "2026-10-07",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 26,
@@ -388,8 +383,8 @@
       }
     },
     "90": {
-      "startDate": "2026-07-09",
-      "endDate": "2026-10-06",
+      "startDate": "2026-07-10",
+      "endDate": "2026-10-07",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 26,
@@ -725,23 +720,19 @@
       }
     },
     "prev7": {
-      "startDate": "2026-09-23",
-      "endDate": "2026-09-29",
+      "startDate": "2026-09-24",
+      "endDate": "2026-09-30",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
-          "sessions": 21,
+          "sessions": 14,
           "channels": {
-            "direct": 7,
-            "social": 7,
+            "direct": 5,
+            "social": 2,
             "search": 0,
             "referral": 4,
             "other": 3
           },
           "sources": [
-            {
-              "source": "linkedin.com",
-              "sessions": 7
-            },
             {
               "source": "teams.public.onecdn.static.microsoft",
               "sessions": 4
@@ -749,11 +740,19 @@
             {
               "source": "share",
               "sessions": 3
+            },
+            {
+              "source": "linkedin.com",
+              "sessions": 1
+            },
+            {
+              "source": "t.co",
+              "sessions": 1
             }
           ],
           "shortLinkVisits": 3,
-          "views": 29,
-          "engagedSecondsPerView": 6,
+          "views": 17,
+          "engagedSecondsPerView": 10,
           "shares": {
             "native": 1,
             "clipboard": 1,
@@ -888,7 +887,7 @@
     },
     "all": {
       "startDate": "2015-08-14",
-      "endDate": "2026-10-06",
+      "endDate": "2026-10-07",
       "posts": {
         "the-4-pillars-of-next-gen-web-dev": {
           "sessions": 35,

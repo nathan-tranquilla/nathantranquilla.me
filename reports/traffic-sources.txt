@@ -15,10 +15,6 @@ so-it-begins-the-end-of-typescript  (8 sessions)
 why-every-desk-job-is-becoming-an-ai-apprenticeship  (6 sessions)
   100%  Direct               6   (direct) 6
 
-teach-claude-your-project-once-benefit-forever  (6 sessions)
-   83%  Direct               5   (direct) 5
-   17%  Referral             1   teams.public.onecdn.static.microsoft 1
-
 i-am-a-web-developer-and-here-is-why-i-dont-use-typescript  (5 sessions)
   100%  Direct               5   (direct) 5
 
@@ -31,6 +27,10 @@ ai-powered-video-curation-from-naive-search-to-confident-matches  (4 sessions)
 
 the-reality-of-rescript-optimization-claims  (4 sessions)
   100%  Direct               4   (direct) 4
+
+teach-claude-your-project-once-benefit-forever  (4 sessions)
+   75%  Direct               3   (direct) 3
+   25%  Referral             1   teams.public.onecdn.static.microsoft 1
 
 5-ways-rescript-fixes-typescript  (3 sessions)
   100%  Direct               3   (direct) 3
@@ -53,8 +53,8 @@ using-ai-to-automate-quality-content-delivery  (2 sessions)
 making-my-money-decisions-mechanical-with-ai-and-plain-text-accounting  (1 sessions)
   100%  Direct               1   (direct) 1
 
-All posts  (90 sessions)
-   81%  Direct              73
+All posts  (88 sessions)
+   81%  Direct              71
    10%  Organic Social       9
     6%  Referral             5
     3%  Unassigned           3
