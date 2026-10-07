@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/Blog.astro
 title: Filling the Test-Driven Development Gap Between Figma and Your Component
-description: "Even with the Figma MCP, AI agents build components that are close but not exact. A Claude skill for exhaustive specs makes their styles testable in Playwright or Vitest."
+description: "Even with the Figma MCP, AI agents build components that are close but not exact. A Claude skill makes their styles testable in Playwright or Vitest."
 hash: "po4bik"
 author: Nathan Tranquilla
 date: "2026/10/07"
@@ -136,7 +136,7 @@ To start, get into a [test-driven development workflow](/blogs/taking-responsibi
 ```markdown
 ---
 name: figma-exhaustive-spec
-description: "Even with the Figma MCP, AI agents build components that are close but not exact. A Claude skill for exhaustive specs makes their styles testable in Playwright or Vitest."
+description: "Even with the Figma MCP, AI agents build components that are close but not exact. A Claude skill makes their styles testable in Playwright or Vitest."
 ---
 
 # Figma Exhaustive Spec
