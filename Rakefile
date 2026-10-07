@@ -1,3 +1,7 @@
+# Every rake task installs the git hooks, so a fresh clone is guarded the first
+# time it runs anything. The pre-push hook sends pushes to main through rake ship.
+system("git config core.hooksPath .githooks") if File.exist?(".git")
+
 task :default do 
   sh "rake -T"
 end 
@@ -115,3 +119,9 @@ task :format_blogs do
   
   puts "Blog formatting complete!"
 end 
+
+desc "Ship: test the exact commit in a clean worktree, push it, wait for its deploy (DRY=1: test only)"
+task :ship do
+  # Under flox so node, pnpm and ruby match CI. See scripts/ship.mjs.
+  sh "flox activate -- node scripts/ship.mjs"
+end

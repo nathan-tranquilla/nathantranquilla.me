@@ -1,4 +1,8 @@
 import { defineConfig } from "@playwright/test";
+import { testServer } from "./scripts/ship-lib.mjs";
+
+// rake ship sets TEST_PORT so its run neither reuses nor disturbs the dev server on 4321.
+const server = testServer(process.env);
 
 export default defineConfig({
   testDir: "./tests",
@@ -10,7 +14,7 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   reporter: "html",
   use: {
-    baseURL: "http://localhost:4321",
+    baseURL: `http://localhost:${server.port}`,
   },
   projects: [
     {
@@ -19,8 +23,8 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: "flox activate -- pnpm dev",
-    url: "http://localhost:4321",
-    reuseExistingServer: !process.env.CI,
+    command: `flox activate -- pnpm dev --port ${server.port}`,
+    url: `http://localhost:${server.port}`,
+    reuseExistingServer: server.reuse,
   },
 });

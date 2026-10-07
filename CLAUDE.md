@@ -83,10 +83,11 @@ build the URL from its `.src`. Three URLs in the JSON-LD shipped broken this way
 and the specs passed because they only checked the fields were *defined*. Assert
 that URLs resolve, not that they exist.
 
-**The test port collides.** `playwright.config.ts` hardcodes `localhost:4321` with
-`reuseExistingServer`. If another Astro project is already on 4321, `pnpm test`
-either hangs or, worse, runs the suite against the wrong site. Check what is on the
-port before trusting a green run.
+**The test port collides.** `pnpm test` defaults to `localhost:4321` with
+`reuseExistingServer`. If another Astro project is already on 4321, it either hangs
+or, worse, runs the suite against the wrong site. Check what is on the port before
+trusting a green run. `rake ship` sidesteps this: it sets `TEST_PORT=4331` and never
+reuses a server.
 
 **Run `pnpm res:build` before testing a fresh clone.** The consultation page uses
 `FormTabs.res`; without the compiled output its tests fail for reasons that look
@@ -112,11 +113,16 @@ about 60 days of repository inactivity. If nothing has deployed in a while, chec
 
 - **Trunk-based. Commit to `main`.** No feature branches and no PRs unless
   explicitly asked for.
+- **Ship with `rake ship`, never `git push`.** It tests the exact commit in a
+  throwaway worktree on port 4331, pushes it, and waits for the deploy run for that
+  SHA. Raw `git push` to main is blocked by `.githooks/pre-push` (installed by any
+  `rake` task) and denied in Claude's permissions. See the `ship` skill.
 - **Pushing to `main` deploys.** The workflow triggers on push to `main`, a daily
-  6am cron, and manual dispatch. Confirm before pushing anything outward-facing.
+  6am cron, and manual dispatch. Confirm before shipping anything outward-facing.
 - **Match the deploy run by SHA, not by "latest".** Querying for the most recent run
   immediately after a push returns the *previous* commit's run, which is already
   green, and reports a success that has nothing to do with the change just pushed.
+  `rake ship` does this for you.
 - **Verify against the live site, not the workflow status.** Fetch the page and
   check the thing that was supposed to change.
 - **The repo is public.** Anything committed is published, including notes.

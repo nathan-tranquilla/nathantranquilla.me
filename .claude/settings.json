@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(rake ship:*)"
+    ],
+    "deny": [
+      "Bash(git push:*)"
+    ]
+  }
+}

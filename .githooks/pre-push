@@ -1,0 +1,4 @@
+#!/bin/sh
+# Only `rake ship` (or CI) may move main. Logic and tests: scripts/ship-lib.mjs.
+# Installed by any rake task (core.hooksPath).
+exec node "$(dirname "$0")/../scripts/pre-push.mjs"
