@@ -384,3 +384,28 @@ test.describe("SEO - Internal Links", () => {
     }
   });
 });
+
+// The layout and the visible Breadcrumb component each emitted a
+// BreadcrumbList, and the two disagreed ("Blogs" against "Blog"). Their URLs
+// also lacked the trailing slash, so on GitHub Pages every one answered with a
+// 301. The dev server does not redirect, so the slash is asserted directly.
+test.describe("SEO - Breadcrumb schema", () => {
+  for (const path of ["/blogs/", "/about/", "/blogs/the-4-pillars-of-next-gen-web-dev/"]) {
+    test(`${path} has one BreadcrumbList, with canonical URLs that load`, async ({ request }) => {
+      const html = await (await request.get(path)).text();
+      const lists = [...html.matchAll(/<script type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)]
+        .map((m) => JSON.parse(m[1]))
+        .filter((json) => json["@type"] === "BreadcrumbList");
+      expect(lists).toHaveLength(1);
+
+      const items = lists[0].itemListElement;
+      for (const item of items) {
+        expect(item.item, "breadcrumb URLs end in a slash").toMatch(/\/$/);
+        const res = await request.get(new URL(item.item).pathname, { maxRedirects: 0 });
+        expect(res.status(), `${item.item} should load`).toBe(200);
+      }
+      const canonical = html.match(/<link rel="canonical" href="([^"]*)"/)?.[1];
+      expect(items.at(-1).item).toBe(canonical);
+    });
+  }
+});

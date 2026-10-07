@@ -44,7 +44,7 @@ const isProd = import.meta.env.PROD;
 // Generate breadcrumb schema
 const pathSegments = Astro.url.pathname.split('/').filter(Boolean);
 const breadcrumbItems = [
-  { "@type": "ListItem", "position": 1, "name": "Home", "item": websiteUrl }
+  { "@type": "ListItem", "position": 1, "name": "Home", "item": `${websiteUrl}/` }
 ];
 
 pathSegments.forEach((segment, index) => {
@@ -55,7 +55,7 @@ pathSegments.forEach((segment, index) => {
     "@type": "ListItem",
     "position": index + 2,
     "name": name,
-    "item": `${websiteUrl}/${pathSegments.slice(0, index + 1).join('/')}`
+    "item": `${websiteUrl}/${pathSegments.slice(0, index + 1).join('/')}/`
   });
 });
 

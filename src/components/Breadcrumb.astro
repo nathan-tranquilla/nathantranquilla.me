@@ -24,17 +24,6 @@ segments.forEach((segment, i) => {
   crumbs.push({ label, href });
 });
 
-const websiteUrl = "https://nathantranquilla.me";
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: crumbs.map((crumb, i) => ({
-    "@type": "ListItem",
-    position: i + 1,
-    name: crumb.label,
-    item: new URL(crumb.href, websiteUrl).href,
-  })),
-};
 ---
 
 <nav aria-label="Breadcrumb" class="px-4 md:px-6 pt-4 pb-2 text-sm text-[var(--text-muted)]">
@@ -52,5 +41,4 @@ const breadcrumbSchema = {
       </li>
     ))}
   </ol>
-  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
 </nav>

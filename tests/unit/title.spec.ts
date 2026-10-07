@@ -20,8 +20,8 @@ test("every page titles with the domain spelled correctly", async ({ request }) 
   for (const path of paths) {
     const html = await (await request.get(path)).text();
     const title = html.match(/<title>([^<]*)<\/title>/)?.[1] ?? "";
-    // Pages use two orders (domain first on posts, title first on guides).
-    // What matters here is that the domain is spelled right wherever it sits.
+    // Pages use two orders (headline first on posts and guides, domain first
+    // elsewhere). What matters here is that the domain is spelled right.
     const ok = title.includes("nathantranquilla.me") && !title.includes("nathantraquilla");
     if (!ok) wrong.push(`${path} -> ${title}`);
   }
@@ -33,4 +33,21 @@ test("the homepage title says what the site is about", async ({ request }) => {
   const title = html.match(/<title>([^<]*)<\/title>/)?.[1] ?? "";
   expect(title).not.toMatch(/theology|books/i);
   expect(title).toMatch(/type safety/i);
+});
+
+// Google shows about 60 characters of a title. With the domain first, a
+// post's search result showed the domain and half the headline, and the words
+// a searcher typed were the ones cut off. The headline leads; the domain trails.
+test("every post title leads with its headline and ends with the domain", async ({ request }) => {
+  const paths = await postPaths(request);
+  expect(paths.length).toBeGreaterThan(10);
+
+  const wrong: string[] = [];
+  for (const path of paths) {
+    const html = await (await request.get(path)).text();
+    const title = html.match(/<title>([^<]*)<\/title>/)?.[1] ?? "";
+    const h1 = html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/)?.[1].replace(/<[^>]*>/g, "").trim() ?? "";
+    if (title !== `${h1} | nathantranquilla.me`) wrong.push(`${path} -> ${title}`);
+  }
+  expect(wrong).toEqual([]);
 });
