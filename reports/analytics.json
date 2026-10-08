@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-08T10:00:46.210Z",
+  "generatedAt": "2026-10-08T17:57:07.354Z",
   "ranges": {
     "7": {
       "startDate": "2026-10-02",
@@ -56,6 +56,25 @@
           "shortLinkVisits": 0,
           "views": 1,
           "engagedSecondsPerView": 5,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
+        "filling-the-test-driven-development-gap-between-figma-and-your-component": {
+          "sessions": 0,
+          "channels": {
+            "direct": 0,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 1,
+          "engagedSecondsPerView": 52,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -374,6 +393,25 @@
           "shortLinkVisits": 0,
           "views": 1,
           "engagedSecondsPerView": 0,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
+        "filling-the-test-driven-development-gap-between-figma-and-your-component": {
+          "sessions": 0,
+          "channels": {
+            "direct": 0,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 1,
+          "engagedSecondsPerView": 52,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -711,6 +749,25 @@
           "shortLinkVisits": 0,
           "views": 1,
           "engagedSecondsPerView": 0,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
+        "filling-the-test-driven-development-gap-between-figma-and-your-component": {
+          "sessions": 0,
+          "channels": {
+            "direct": 0,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 1,
+          "engagedSecondsPerView": 52,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -1205,6 +1262,25 @@
           "shortLinkVisits": 0,
           "views": 1,
           "engagedSecondsPerView": 0,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
+        "filling-the-test-driven-development-gap-between-figma-and-your-component": {
+          "sessions": 0,
+          "channels": {
+            "direct": 0,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 1,
+          "engagedSecondsPerView": 52,
           "shares": {
             "native": 0,
             "clipboard": 0,
