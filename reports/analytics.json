@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-10-07T10:00:40.329Z",
+  "generatedAt": "2026-10-08T10:00:46.210Z",
   "ranges": {
     "7": {
-      "startDate": "2026-10-01",
-      "endDate": "2026-10-07",
+      "startDate": "2026-10-02",
+      "endDate": "2026-10-08",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
-          "sessions": 4,
+          "sessions": 5,
           "channels": {
-            "direct": 4,
+            "direct": 5,
             "social": 0,
             "search": 0,
             "referral": 0,
@@ -16,8 +16,8 @@
           },
           "sources": [],
           "shortLinkVisits": 0,
-          "views": 4,
-          "engagedSecondsPerView": 22,
+          "views": 5,
+          "engagedSecondsPerView": 46,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -65,13 +65,13 @@
       }
     },
     "30": {
-      "startDate": "2026-09-08",
-      "endDate": "2026-10-07",
+      "startDate": "2026-09-09",
+      "endDate": "2026-10-08",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
-          "sessions": 26,
+          "sessions": 27,
           "channels": {
-            "direct": 11,
+            "direct": 12,
             "social": 8,
             "search": 0,
             "referral": 4,
@@ -96,8 +96,8 @@
             }
           ],
           "shortLinkVisits": 3,
-          "views": 34,
-          "engagedSecondsPerView": 8,
+          "views": 35,
+          "engagedSecondsPerView": 12,
           "shares": {
             "native": 1,
             "clipboard": 1,
@@ -383,13 +383,13 @@
       }
     },
     "90": {
-      "startDate": "2026-07-10",
-      "endDate": "2026-10-07",
+      "startDate": "2026-07-11",
+      "endDate": "2026-10-08",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
-          "sessions": 26,
+          "sessions": 27,
           "channels": {
-            "direct": 11,
+            "direct": 12,
             "social": 8,
             "search": 0,
             "referral": 4,
@@ -414,8 +414,8 @@
             }
           ],
           "shortLinkVisits": 3,
-          "views": 34,
-          "engagedSecondsPerView": 8,
+          "views": 35,
+          "engagedSecondsPerView": 12,
           "shares": {
             "native": 1,
             "clipboard": 1,
@@ -720,14 +720,14 @@
       }
     },
     "prev7": {
-      "startDate": "2026-09-24",
-      "endDate": "2026-09-30",
+      "startDate": "2026-09-25",
+      "endDate": "2026-10-01",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
-          "sessions": 14,
+          "sessions": 13,
           "channels": {
             "direct": 5,
-            "social": 2,
+            "social": 1,
             "search": 0,
             "referral": 4,
             "other": 3
@@ -742,17 +742,13 @@
               "sessions": 3
             },
             {
-              "source": "linkedin.com",
-              "sessions": 1
-            },
-            {
               "source": "t.co",
               "sessions": 1
             }
           ],
           "shortLinkVisits": 3,
-          "views": 17,
-          "engagedSecondsPerView": 10,
+          "views": 16,
+          "engagedSecondsPerView": 11,
           "shares": {
             "native": 1,
             "clipboard": 1,
@@ -820,74 +816,12 @@
             "clipboard": 0,
             "total": 0
           }
-        },
-        "when-two-ai-pipelines-meet--turning-curated-data-into-a-daily-api": {
-          "sessions": 2,
-          "channels": {
-            "direct": 1,
-            "social": 1,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [
-            {
-              "source": "t.co",
-              "sessions": 1
-            }
-          ],
-          "shortLinkVisits": 0,
-          "views": 2,
-          "engagedSecondsPerView": 0,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
-        "why-every-desk-job-is-becoming-an-ai-apprenticeship": {
-          "sessions": 1,
-          "channels": {
-            "direct": 1,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 1,
-          "engagedSecondsPerView": 0,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
-        "why-rescript-is-next-gen": {
-          "sessions": 1,
-          "channels": {
-            "direct": 1,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 1,
-          "engagedSecondsPerView": 0,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
         }
       }
     },
     "all": {
       "startDate": "2015-08-14",
-      "endDate": "2026-10-07",
+      "endDate": "2026-10-08",
       "posts": {
         "the-4-pillars-of-next-gen-web-dev": {
           "sessions": 35,
@@ -1108,6 +1042,42 @@
             "total": 0
           }
         },
+        "taking-responsibility-for-your-ai-generated-code": {
+          "sessions": 27,
+          "channels": {
+            "direct": 12,
+            "social": 8,
+            "search": 0,
+            "referral": 4,
+            "other": 3
+          },
+          "sources": [
+            {
+              "source": "linkedin.com",
+              "sessions": 7
+            },
+            {
+              "source": "teams.public.onecdn.static.microsoft",
+              "sessions": 4
+            },
+            {
+              "source": "share",
+              "sessions": 3
+            },
+            {
+              "source": "t.co",
+              "sessions": 1
+            }
+          ],
+          "shortLinkVisits": 3,
+          "views": 35,
+          "engagedSecondsPerView": 12,
+          "shares": {
+            "native": 1,
+            "clipboard": 1,
+            "total": 2
+          }
+        },
         "teach-claude-your-project-once-benefit-forever": {
           "sessions": 20,
           "channels": {
@@ -1196,42 +1166,6 @@
             "native": 0,
             "clipboard": 0,
             "total": 0
-          }
-        },
-        "taking-responsibility-for-your-ai-generated-code": {
-          "sessions": 26,
-          "channels": {
-            "direct": 11,
-            "social": 8,
-            "search": 0,
-            "referral": 4,
-            "other": 3
-          },
-          "sources": [
-            {
-              "source": "linkedin.com",
-              "sessions": 7
-            },
-            {
-              "source": "teams.public.onecdn.static.microsoft",
-              "sessions": 4
-            },
-            {
-              "source": "share",
-              "sessions": 3
-            },
-            {
-              "source": "t.co",
-              "sessions": 1
-            }
-          ],
-          "shortLinkVisits": 3,
-          "views": 34,
-          "engagedSecondsPerView": 8,
-          "shares": {
-            "native": 1,
-            "clipboard": 1,
-            "total": 2
           }
         },
         "when-two-ai-pipelines-meet--turning-curated-data-into-a-daily-api": {
