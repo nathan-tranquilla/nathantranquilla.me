@@ -1,9 +1,40 @@
 ---
+import { VIEW_BOX, PASSES } from "../assets/nt-mark";
+
 export interface Props {
+  size?: number;
   classes?: string;
 }
 
-const { classes } = Astro.props;
+const { size = 40, classes } = Astro.props;
 ---
 
-<span data-logo="nt" class={classes}>nt</span>
+<!-- The lines take the link's text colour, so the mark follows the theme.
+     The link's aria-label names it. -->
+<svg
+  data-logo="nt"
+  viewBox={VIEW_BOX}
+  width={size}
+  height={size}
+  aria-hidden="true"
+  class={classes}
+>
+  <defs>
+    <mask id="nt-lines" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+      {
+        PASSES.map((pass) =>
+          pass.paths.map((d) => (
+            <path
+              d={d}
+              stroke={pass.ink}
+              stroke-width={pass.width}
+              stroke-linejoin="round"
+              fill="none"
+            />
+          ))
+        )
+      }
+    </mask>
+  </defs>
+  <rect width="100" height="100" fill="currentColor" mask="url(#nt-lines)"></rect>
+</svg>

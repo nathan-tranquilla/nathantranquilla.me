@@ -135,8 +135,12 @@ Named direction: **Swiss Editorial**. Structure from Works in Progress, palette
 measured from Asterisk, logo treatment after Stripe Press.
 
 - **Type**, all self-hosted via `@fontsource`. Literata for display, Source Serif 4
-  for reading, IBM Plex Mono for navigation, dates, bylines and labels. Spectral is
-  reserved for the `nt` mark alone, so the logo is not merely a smaller heading.
+  for reading, IBM Plex Mono for navigation, dates, bylines and labels.
+- **The mark** is "Joined": three parallel lines draw the N, and its last stroke
+  rises into the T's crossbar. It is one colour and takes the text colour around it.
+  The paths live in `src/assets/nt-mark.ts`, and the header logo and every favicon
+  are drawn from them. After changing it, run `node scripts/favicon-nt.mjs` to
+  regenerate the PNGs.
 - **Palette.** Paper `#faf8f0`, yellow field `#f0eca8` used as one band rather than
   a ground, ink navy `#12233a` for surfaces, `#1a6fa8` for links, `#15161a` for
   hairline rules.
