@@ -1,30 +1,11 @@
 {
-  "generatedAt": "2026-10-09T10:00:47.087Z",
+  "generatedAt": "2026-10-10T10:00:41.147Z",
   "ranges": {
     "7": {
-      "startDate": "2026-10-03",
-      "endDate": "2026-10-09",
+      "startDate": "2026-10-04",
+      "endDate": "2026-10-10",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
-          "sessions": 3,
-          "channels": {
-            "direct": 3,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 3,
-          "engagedSecondsPerView": 48,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
-        "making-my-money-decisions-mechanical-with-ai-and-plain-text-accounting": {
           "sessions": 1,
           "channels": {
             "direct": 1,
@@ -36,7 +17,7 @@
           "sources": [],
           "shortLinkVisits": 0,
           "views": 1,
-          "engagedSecondsPerView": 0,
+          "engagedSecondsPerView": 144,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -84,8 +65,8 @@
       }
     },
     "30": {
-      "startDate": "2026-09-10",
-      "endDate": "2026-10-09",
+      "startDate": "2026-09-11",
+      "endDate": "2026-10-10",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 27,
@@ -402,8 +383,8 @@
       }
     },
     "90": {
-      "startDate": "2026-07-12",
-      "endDate": "2026-10-09",
+      "startDate": "2026-07-13",
+      "endDate": "2026-10-10",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 27,
@@ -758,23 +739,19 @@
       }
     },
     "prev7": {
-      "startDate": "2026-09-26",
-      "endDate": "2026-10-02",
+      "startDate": "2026-09-27",
+      "endDate": "2026-10-03",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 8,
           "channels": {
-            "direct": 3,
+            "direct": 5,
             "social": 1,
             "search": 0,
             "referral": 2,
-            "other": 2
+            "other": 0
           },
           "sources": [
-            {
-              "source": "share",
-              "sessions": 2
-            },
             {
               "source": "teams.public.onecdn.static.microsoft",
               "sessions": 2
@@ -784,7 +761,7 @@
               "sessions": 1
             }
           ],
-          "shortLinkVisits": 2,
+          "shortLinkVisits": 0,
           "views": 8,
           "engagedSecondsPerView": 15,
           "shares": {
@@ -812,7 +789,7 @@
             "total": 0
           }
         },
-        "coding-is-not-for-humans": {
+        "making-my-money-decisions-mechanical-with-ai-and-plain-text-accounting": {
           "sessions": 1,
           "channels": {
             "direct": 1,
@@ -832,9 +809,9 @@
           }
         },
         "teach-claude-your-project-once-benefit-forever": {
-          "sessions": 2,
+          "sessions": 1,
           "channels": {
-            "direct": 1,
+            "direct": 0,
             "social": 0,
             "search": 0,
             "referral": 1,
@@ -847,7 +824,7 @@
             }
           ],
           "shortLinkVisits": 0,
-          "views": 3,
+          "views": 2,
           "engagedSecondsPerView": 0,
           "shares": {
             "native": 0,
@@ -859,7 +836,7 @@
     },
     "all": {
       "startDate": "2015-08-14",
-      "endDate": "2026-10-09",
+      "endDate": "2026-10-10",
       "posts": {
         "the-4-pillars-of-next-gen-web-dev": {
           "sessions": 35,
