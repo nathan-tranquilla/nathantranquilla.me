@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-11T10:00:36.109Z",
+  "generatedAt": "2026-10-12T10:00:44.231Z",
   "ranges": {
     "7": {
-      "startDate": "2026-10-05",
-      "endDate": "2026-10-11",
+      "startDate": "2026-10-06",
+      "endDate": "2026-10-12",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 1,
@@ -46,8 +46,8 @@
       }
     },
     "30": {
-      "startDate": "2026-09-12",
-      "endDate": "2026-10-11",
+      "startDate": "2026-09-13",
+      "endDate": "2026-10-12",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 27,
@@ -364,8 +364,8 @@
       }
     },
     "90": {
-      "startDate": "2026-07-14",
-      "endDate": "2026-10-11",
+      "startDate": "2026-07-15",
+      "endDate": "2026-10-12",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 27,
@@ -720,8 +720,8 @@
       }
     },
     "prev7": {
-      "startDate": "2026-09-28",
-      "endDate": "2026-10-04",
+      "startDate": "2026-09-29",
+      "endDate": "2026-10-05",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 7,
@@ -789,30 +789,6 @@
             "total": 0
           }
         },
-        "teach-claude-your-project-once-benefit-forever": {
-          "sessions": 1,
-          "channels": {
-            "direct": 0,
-            "social": 0,
-            "search": 0,
-            "referral": 1,
-            "other": 0
-          },
-          "sources": [
-            {
-              "source": "teams.public.onecdn.static.microsoft",
-              "sessions": 1
-            }
-          ],
-          "shortLinkVisits": 0,
-          "views": 1,
-          "engagedSecondsPerView": 0,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
         "why-every-desk-job-is-becoming-an-ai-apprenticeship": {
           "sessions": 1,
           "channels": {
@@ -836,7 +812,7 @@
     },
     "all": {
       "startDate": "2015-08-14",
-      "endDate": "2026-10-11",
+      "endDate": "2026-10-12",
       "posts": {
         "the-4-pillars-of-next-gen-web-dev": {
           "sessions": 35,
