@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-12T10:00:44.231Z",
+  "generatedAt": "2026-10-13T10:00:40.079Z",
   "ranges": {
     "7": {
-      "startDate": "2026-10-06",
-      "endDate": "2026-10-12",
+      "startDate": "2026-10-07",
+      "endDate": "2026-10-13",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 1,
@@ -46,8 +46,8 @@
       }
     },
     "30": {
-      "startDate": "2026-09-13",
-      "endDate": "2026-10-12",
+      "startDate": "2026-09-14",
+      "endDate": "2026-10-13",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 27,
@@ -155,25 +155,6 @@
           "shortLinkVisits": 0,
           "views": 2,
           "engagedSecondsPerView": 1,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
-        "ai-powered-video-curation-from-naive-search-to-confident-matches": {
-          "sessions": 1,
-          "channels": {
-            "direct": 1,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 1,
-          "engagedSecondsPerView": 0,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -364,8 +345,8 @@
       }
     },
     "90": {
-      "startDate": "2026-07-15",
-      "endDate": "2026-10-12",
+      "startDate": "2026-07-16",
+      "endDate": "2026-10-13",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 27,
@@ -460,10 +441,10 @@
             "total": 0
           }
         },
-        "i-am-a-web-developer-and-here-is-why-i-dont-use-typescript": {
-          "sessions": 5,
+        "ai-powered-video-curation-from-naive-search-to-confident-matches": {
+          "sessions": 4,
           "channels": {
-            "direct": 5,
+            "direct": 4,
             "social": 0,
             "search": 0,
             "referral": 0,
@@ -471,7 +452,7 @@
           },
           "sources": [],
           "shortLinkVisits": 0,
-          "views": 5,
+          "views": 4,
           "engagedSecondsPerView": 0,
           "shares": {
             "native": 0,
@@ -479,7 +460,7 @@
             "total": 0
           }
         },
-        "ai-powered-video-curation-from-naive-search-to-confident-matches": {
+        "i-am-a-web-developer-and-here-is-why-i-dont-use-typescript": {
           "sessions": 4,
           "channels": {
             "direct": 4,
@@ -720,50 +701,27 @@
       }
     },
     "prev7": {
-      "startDate": "2026-09-29",
-      "endDate": "2026-10-05",
+      "startDate": "2026-09-30",
+      "endDate": "2026-10-06",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
-          "sessions": 7,
+          "sessions": 5,
           "channels": {
-            "direct": 5,
+            "direct": 4,
             "social": 1,
             "search": 0,
-            "referral": 1,
+            "referral": 0,
             "other": 0
           },
           "sources": [
             {
               "source": "t.co",
               "sessions": 1
-            },
-            {
-              "source": "teams.public.onecdn.static.microsoft",
-              "sessions": 1
             }
           ],
           "shortLinkVisits": 0,
-          "views": 7,
+          "views": 5,
           "engagedSecondsPerView": 17,
-          "shares": {
-            "native": 0,
-            "clipboard": 1,
-            "total": 1
-          }
-        },
-        "5-ways-rescript-fixes-typescript": {
-          "sessions": 1,
-          "channels": {
-            "direct": 1,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 1,
-          "engagedSecondsPerView": 0,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -812,7 +770,7 @@
     },
     "all": {
       "startDate": "2015-08-14",
-      "endDate": "2026-10-12",
+      "endDate": "2026-10-13",
       "posts": {
         "the-4-pillars-of-next-gen-web-dev": {
           "sessions": 35,
