@@ -1,10 +1,11 @@
 Sessions landing on blog posts, last 90 days
 
-taking-responsibility-for-your-ai-generated-code  (27 sessions)
-   44%  Direct              12   (direct) 12
-   30%  Organic Social       8   linkedin.com 7, t.co 1
-   15%  Referral             4   teams.public.onecdn.static.microsoft 4
+taking-responsibility-for-your-ai-generated-code  (28 sessions)
+   43%  Direct              12   (direct) 12
+   29%  Organic Social       8   linkedin.com 7, t.co 1
+   14%  Referral             4   teams.public.onecdn.static.microsoft 4
    11%  Unassigned           3   share 3
+    4%  Organic Video        1   youtube.com 1
 
 typescript-has-a-big-problem  (9 sessions)
   100%  Direct               9   (direct) 9
@@ -15,14 +16,14 @@ so-it-begins-the-end-of-typescript  (8 sessions)
 why-every-desk-job-is-becoming-an-ai-apprenticeship  (6 sessions)
   100%  Direct               6   (direct) 6
 
-i-am-a-web-developer-and-here-is-why-i-dont-use-typescript  (5 sessions)
-  100%  Direct               5   (direct) 5
-
 when-two-ai-pipelines-meet--turning-curated-data-into-a-daily-api  (5 sessions)
    80%  Direct               4   (direct) 4
    20%  Organic Social       1   t.co 1
 
 ai-powered-video-curation-from-naive-search-to-confident-matches  (4 sessions)
+  100%  Direct               4   (direct) 4
+
+i-am-a-web-developer-and-here-is-why-i-dont-use-typescript  (4 sessions)
   100%  Direct               4   (direct) 4
 
 the-reality-of-rescript-optimization-claims  (4 sessions)
@@ -54,7 +55,8 @@ making-my-money-decisions-mechanical-with-ai-and-plain-text-accounting  (1 sessi
   100%  Direct               1   (direct) 1
 
 All posts  (89 sessions)
-   81%  Direct              72
+   80%  Direct              71
    10%  Organic Social       9
     6%  Referral             5
     3%  Unassigned           3
+    1%  Organic Video        1

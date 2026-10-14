@@ -1,23 +1,28 @@
 {
-  "generatedAt": "2026-10-13T10:00:40.079Z",
+  "generatedAt": "2026-10-14T10:00:41.417Z",
   "ranges": {
     "7": {
-      "startDate": "2026-10-07",
-      "endDate": "2026-10-13",
+      "startDate": "2026-10-08",
+      "endDate": "2026-10-14",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 1,
           "channels": {
-            "direct": 1,
+            "direct": 0,
             "social": 0,
             "search": 0,
             "referral": 0,
-            "other": 0
+            "other": 1
           },
-          "sources": [],
+          "sources": [
+            {
+              "source": "youtube.com",
+              "sessions": 1
+            }
+          ],
           "shortLinkVisits": 0,
           "views": 1,
-          "engagedSecondsPerView": 144,
+          "engagedSecondsPerView": 0,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -46,17 +51,17 @@
       }
     },
     "30": {
-      "startDate": "2026-09-14",
-      "endDate": "2026-10-13",
+      "startDate": "2026-09-15",
+      "endDate": "2026-10-14",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
-          "sessions": 27,
+          "sessions": 28,
           "channels": {
             "direct": 12,
             "social": 8,
             "search": 0,
             "referral": 4,
-            "other": 3
+            "other": 4
           },
           "sources": [
             {
@@ -74,10 +79,14 @@
             {
               "source": "t.co",
               "sessions": 1
+            },
+            {
+              "source": "youtube.com",
+              "sessions": 1
             }
           ],
           "shortLinkVisits": 3,
-          "views": 35,
+          "views": 36,
           "engagedSecondsPerView": 12,
           "shares": {
             "native": 1,
@@ -117,25 +126,6 @@
           "shortLinkVisits": 0,
           "views": 3,
           "engagedSecondsPerView": 3,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
-        "strong-type-systems-are-required-for-a-safer-web": {
-          "sessions": 2,
-          "channels": {
-            "direct": 2,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 2,
-          "engagedSecondsPerView": 8,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -345,17 +335,17 @@
       }
     },
     "90": {
-      "startDate": "2026-07-16",
-      "endDate": "2026-10-13",
+      "startDate": "2026-07-17",
+      "endDate": "2026-10-14",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
-          "sessions": 27,
+          "sessions": 28,
           "channels": {
             "direct": 12,
             "social": 8,
             "search": 0,
             "referral": 4,
-            "other": 3
+            "other": 4
           },
           "sources": [
             {
@@ -373,10 +363,14 @@
             {
               "source": "t.co",
               "sessions": 1
+            },
+            {
+              "source": "youtube.com",
+              "sessions": 1
             }
           ],
           "shortLinkVisits": 3,
-          "views": 35,
+          "views": 36,
           "engagedSecondsPerView": 12,
           "shares": {
             "native": 1,
@@ -701,27 +695,22 @@
       }
     },
     "prev7": {
-      "startDate": "2026-09-30",
-      "endDate": "2026-10-06",
+      "startDate": "2026-10-01",
+      "endDate": "2026-10-07",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 5,
           "channels": {
-            "direct": 4,
-            "social": 1,
+            "direct": 5,
+            "social": 0,
             "search": 0,
             "referral": 0,
             "other": 0
           },
-          "sources": [
-            {
-              "source": "t.co",
-              "sessions": 1
-            }
-          ],
+          "sources": [],
           "shortLinkVisits": 0,
           "views": 5,
-          "engagedSecondsPerView": 17,
+          "engagedSecondsPerView": 46,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -770,7 +759,7 @@
     },
     "all": {
       "startDate": "2015-08-14",
-      "endDate": "2026-10-13",
+      "endDate": "2026-10-14",
       "posts": {
         "the-4-pillars-of-next-gen-web-dev": {
           "sessions": 35,
@@ -992,13 +981,13 @@
           }
         },
         "taking-responsibility-for-your-ai-generated-code": {
-          "sessions": 27,
+          "sessions": 28,
           "channels": {
             "direct": 12,
             "social": 8,
             "search": 0,
             "referral": 4,
-            "other": 3
+            "other": 4
           },
           "sources": [
             {
@@ -1016,10 +1005,14 @@
             {
               "source": "t.co",
               "sessions": 1
+            },
+            {
+              "source": "youtube.com",
+              "sessions": 1
             }
           ],
           "shortLinkVisits": 3,
-          "views": 35,
+          "views": 36,
           "engagedSecondsPerView": 12,
           "shares": {
             "native": 1,
