@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-14T10:00:41.417Z",
+  "generatedAt": "2026-10-15T10:00:40.722Z",
   "ranges": {
     "7": {
-      "startDate": "2026-10-08",
-      "endDate": "2026-10-14",
+      "startDate": "2026-10-09",
+      "endDate": "2026-10-15",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 1,
@@ -28,31 +28,12 @@
             "clipboard": 0,
             "total": 0
           }
-        },
-        "filling-the-test-driven-development-gap-between-figma-and-your-component": {
-          "sessions": 0,
-          "channels": {
-            "direct": 0,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 1,
-          "engagedSecondsPerView": 52,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
         }
       }
     },
     "30": {
-      "startDate": "2026-09-15",
-      "endDate": "2026-10-14",
+      "startDate": "2026-09-16",
+      "endDate": "2026-10-15",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 28,
@@ -92,25 +73,6 @@
             "native": 1,
             "clipboard": 1,
             "total": 2
-          }
-        },
-        "typescript-has-a-big-problem": {
-          "sessions": 3,
-          "channels": {
-            "direct": 3,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 3,
-          "engagedSecondsPerView": 1,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
           }
         },
         "why-every-desk-job-is-becoming-an-ai-apprenticeship": {
@@ -251,25 +213,6 @@
             "total": 0
           }
         },
-        "using-ai-to-automate-quality-content-delivery": {
-          "sessions": 1,
-          "channels": {
-            "direct": 1,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 1,
-          "engagedSecondsPerView": 0,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
         "when-two-ai-pipelines-meet--turning-curated-data-into-a-daily-api": {
           "sessions": 2,
           "channels": {
@@ -335,8 +278,8 @@
       }
     },
     "90": {
-      "startDate": "2026-07-17",
-      "endDate": "2026-10-14",
+      "startDate": "2026-07-18",
+      "endDate": "2026-10-15",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 28,
@@ -695,8 +638,8 @@
       }
     },
     "prev7": {
-      "startDate": "2026-10-01",
-      "endDate": "2026-10-07",
+      "startDate": "2026-10-02",
+      "endDate": "2026-10-08",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 5,
@@ -754,12 +697,31 @@
             "clipboard": 0,
             "total": 0
           }
+        },
+        "filling-the-test-driven-development-gap-between-figma-and-your-component": {
+          "sessions": 0,
+          "channels": {
+            "direct": 0,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 1,
+          "engagedSecondsPerView": 52,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
         }
       }
     },
     "all": {
       "startDate": "2015-08-14",
-      "endDate": "2026-10-14",
+      "endDate": "2026-10-15",
       "posts": {
         "the-4-pillars-of-next-gen-web-dev": {
           "sessions": 35,
