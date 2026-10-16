@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-15T10:00:40.722Z",
+  "generatedAt": "2026-10-16T10:00:44.875Z",
   "ranges": {
     "7": {
-      "startDate": "2026-10-09",
-      "endDate": "2026-10-15",
+      "startDate": "2026-10-10",
+      "endDate": "2026-10-16",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 1,
@@ -32,8 +32,8 @@
       }
     },
     "30": {
-      "startDate": "2026-09-16",
-      "endDate": "2026-10-15",
+      "startDate": "2026-09-17",
+      "endDate": "2026-10-16",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 28,
@@ -278,8 +278,8 @@
       }
     },
     "90": {
-      "startDate": "2026-07-18",
-      "endDate": "2026-10-15",
+      "startDate": "2026-07-19",
+      "endDate": "2026-10-16",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 28,
@@ -638,13 +638,13 @@
       }
     },
     "prev7": {
-      "startDate": "2026-10-02",
-      "endDate": "2026-10-08",
+      "startDate": "2026-10-03",
+      "endDate": "2026-10-09",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
-          "sessions": 5,
+          "sessions": 3,
           "channels": {
-            "direct": 5,
+            "direct": 3,
             "social": 0,
             "search": 0,
             "referral": 0,
@@ -652,8 +652,8 @@
           },
           "sources": [],
           "shortLinkVisits": 0,
-          "views": 5,
-          "engagedSecondsPerView": 46,
+          "views": 3,
+          "engagedSecondsPerView": 48,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -721,7 +721,7 @@
     },
     "all": {
       "startDate": "2015-08-14",
-      "endDate": "2026-10-15",
+      "endDate": "2026-10-16",
       "posts": {
         "the-4-pillars-of-next-gen-web-dev": {
           "sessions": 35,
