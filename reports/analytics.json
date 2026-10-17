@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-16T10:00:44.875Z",
+  "generatedAt": "2026-10-17T10:00:36.202Z",
   "ranges": {
     "7": {
-      "startDate": "2026-10-10",
-      "endDate": "2026-10-16",
+      "startDate": "2026-10-11",
+      "endDate": "2026-10-17",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 1,
@@ -32,8 +32,8 @@
       }
     },
     "30": {
-      "startDate": "2026-09-17",
-      "endDate": "2026-10-16",
+      "startDate": "2026-09-18",
+      "endDate": "2026-10-17",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 28,
@@ -278,8 +278,8 @@
       }
     },
     "90": {
-      "startDate": "2026-07-19",
-      "endDate": "2026-10-16",
+      "startDate": "2026-07-20",
+      "endDate": "2026-10-17",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 28,
@@ -638,29 +638,10 @@
       }
     },
     "prev7": {
-      "startDate": "2026-10-03",
-      "endDate": "2026-10-09",
+      "startDate": "2026-10-04",
+      "endDate": "2026-10-10",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
-          "sessions": 3,
-          "channels": {
-            "direct": 3,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 3,
-          "engagedSecondsPerView": 48,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
-        "making-my-money-decisions-mechanical-with-ai-and-plain-text-accounting": {
           "sessions": 1,
           "channels": {
             "direct": 1,
@@ -672,7 +653,7 @@
           "sources": [],
           "shortLinkVisits": 0,
           "views": 1,
-          "engagedSecondsPerView": 0,
+          "engagedSecondsPerView": 144,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -721,7 +702,7 @@
     },
     "all": {
       "startDate": "2015-08-14",
-      "endDate": "2026-10-16",
+      "endDate": "2026-10-17",
       "posts": {
         "the-4-pillars-of-next-gen-web-dev": {
           "sessions": 35,
