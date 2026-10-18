@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-17T10:00:36.202Z",
+  "generatedAt": "2026-10-18T10:00:36.950Z",
   "ranges": {
     "7": {
-      "startDate": "2026-10-11",
-      "endDate": "2026-10-17",
+      "startDate": "2026-10-12",
+      "endDate": "2026-10-18",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 1,
@@ -32,8 +32,8 @@
       }
     },
     "30": {
-      "startDate": "2026-09-18",
-      "endDate": "2026-10-17",
+      "startDate": "2026-09-19",
+      "endDate": "2026-10-18",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 28,
@@ -278,8 +278,8 @@
       }
     },
     "90": {
-      "startDate": "2026-07-20",
-      "endDate": "2026-10-17",
+      "startDate": "2026-07-21",
+      "endDate": "2026-10-18",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 28,
@@ -321,10 +321,10 @@
             "total": 2
           }
         },
-        "typescript-has-a-big-problem": {
-          "sessions": 9,
+        "so-it-begins-the-end-of-typescript": {
+          "sessions": 7,
           "channels": {
-            "direct": 9,
+            "direct": 7,
             "social": 0,
             "search": 0,
             "referral": 0,
@@ -332,18 +332,18 @@
           },
           "sources": [],
           "shortLinkVisits": 0,
-          "views": 9,
-          "engagedSecondsPerView": 4,
+          "views": 7,
+          "engagedSecondsPerView": 5,
           "shares": {
             "native": 0,
             "clipboard": 0,
             "total": 0
           }
         },
-        "so-it-begins-the-end-of-typescript": {
-          "sessions": 8,
+        "typescript-has-a-big-problem": {
+          "sessions": 7,
           "channels": {
-            "direct": 8,
+            "direct": 7,
             "social": 0,
             "search": 0,
             "referral": 0,
@@ -351,8 +351,8 @@
           },
           "sources": [],
           "shortLinkVisits": 0,
-          "views": 8,
-          "engagedSecondsPerView": 5,
+          "views": 7,
+          "engagedSecondsPerView": 1,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -435,30 +435,6 @@
             "total": 0
           }
         },
-        "when-two-ai-pipelines-meet--turning-curated-data-into-a-daily-api": {
-          "sessions": 5,
-          "channels": {
-            "direct": 4,
-            "social": 1,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [
-            {
-              "source": "t.co",
-              "sessions": 1
-            }
-          ],
-          "shortLinkVisits": 0,
-          "views": 5,
-          "engagedSecondsPerView": 0,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
         "5-ways-rescript-fixes-typescript": {
           "sessions": 3,
           "channels": {
@@ -534,6 +510,30 @@
           "shortLinkVisits": 0,
           "views": 3,
           "engagedSecondsPerView": 1,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
+        "when-two-ai-pipelines-meet--turning-curated-data-into-a-daily-api": {
+          "sessions": 4,
+          "channels": {
+            "direct": 3,
+            "social": 1,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [
+            {
+              "source": "t.co",
+              "sessions": 1
+            }
+          ],
+          "shortLinkVisits": 0,
+          "views": 4,
+          "engagedSecondsPerView": 0,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -638,8 +638,8 @@
       }
     },
     "prev7": {
-      "startDate": "2026-10-04",
-      "endDate": "2026-10-10",
+      "startDate": "2026-10-05",
+      "endDate": "2026-10-11",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 1,
@@ -654,25 +654,6 @@
           "shortLinkVisits": 0,
           "views": 1,
           "engagedSecondsPerView": 144,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
-        "why-every-desk-job-is-becoming-an-ai-apprenticeship": {
-          "sessions": 1,
-          "channels": {
-            "direct": 1,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 1,
-          "engagedSecondsPerView": 5,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -702,7 +683,7 @@
     },
     "all": {
       "startDate": "2015-08-14",
-      "endDate": "2026-10-17",
+      "endDate": "2026-10-18",
       "posts": {
         "the-4-pillars-of-next-gen-web-dev": {
           "sessions": 35,
