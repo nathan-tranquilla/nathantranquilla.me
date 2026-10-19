@@ -1,10 +1,48 @@
 {
-  "generatedAt": "2026-10-18T10:00:36.950Z",
+  "generatedAt": "2026-10-19T10:00:41.880Z",
   "ranges": {
     "7": {
-      "startDate": "2026-10-12",
-      "endDate": "2026-10-18",
+      "startDate": "2026-10-13",
+      "endDate": "2026-10-19",
       "posts": {
+        "filling-the-test-driven-development-gap-between-figma-and-your-component": {
+          "sessions": 1,
+          "channels": {
+            "direct": 1,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 1,
+          "engagedSecondsPerView": 0,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
+        "i-am-a-web-developer-and-here-is-why-i-dont-use-typescript": {
+          "sessions": 1,
+          "channels": {
+            "direct": 1,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 1,
+          "engagedSecondsPerView": 0,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
         "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 1,
           "channels": {
@@ -28,12 +66,31 @@
             "clipboard": 0,
             "total": 0
           }
+        },
+        "why-every-desk-job-is-becoming-an-ai-apprenticeship": {
+          "sessions": 1,
+          "channels": {
+            "direct": 1,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 1,
+          "engagedSecondsPerView": 5,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
         }
       }
     },
     "30": {
-      "startDate": "2026-09-19",
-      "endDate": "2026-10-18",
+      "startDate": "2026-09-20",
+      "endDate": "2026-10-19",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 28,
@@ -76,9 +133,9 @@
           }
         },
         "why-every-desk-job-is-becoming-an-ai-apprenticeship": {
-          "sessions": 3,
+          "sessions": 4,
           "channels": {
-            "direct": 3,
+            "direct": 4,
             "social": 0,
             "search": 0,
             "referral": 0,
@@ -86,8 +143,8 @@
           },
           "sources": [],
           "shortLinkVisits": 0,
-          "views": 3,
-          "engagedSecondsPerView": 3,
+          "views": 4,
+          "engagedSecondsPerView": 4,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -114,6 +171,44 @@
           }
         },
         "coding-is-not-for-humans": {
+          "sessions": 1,
+          "channels": {
+            "direct": 1,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 1,
+          "engagedSecondsPerView": 0,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
+        "filling-the-test-driven-development-gap-between-figma-and-your-component": {
+          "sessions": 1,
+          "channels": {
+            "direct": 1,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 2,
+          "engagedSecondsPerView": 26,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
+        "i-am-a-web-developer-and-here-is-why-i-dont-use-typescript": {
           "sessions": 1,
           "channels": {
             "direct": 1,
@@ -194,25 +289,6 @@
             "total": 0
           }
         },
-        "the-reality-of-rescript-optimization-claims": {
-          "sessions": 1,
-          "channels": {
-            "direct": 1,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 1,
-          "engagedSecondsPerView": 0,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
         "when-two-ai-pipelines-meet--turning-curated-data-into-a-daily-api": {
           "sessions": 2,
           "channels": {
@@ -255,31 +331,12 @@
             "clipboard": 0,
             "total": 0
           }
-        },
-        "filling-the-test-driven-development-gap-between-figma-and-your-component": {
-          "sessions": 0,
-          "channels": {
-            "direct": 0,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 1,
-          "engagedSecondsPerView": 52,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
         }
       }
     },
     "90": {
-      "startDate": "2026-07-21",
-      "endDate": "2026-10-18",
+      "startDate": "2026-07-22",
+      "endDate": "2026-10-19",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 28,
@@ -360,9 +417,9 @@
           }
         },
         "why-every-desk-job-is-becoming-an-ai-apprenticeship": {
-          "sessions": 6,
+          "sessions": 7,
           "channels": {
-            "direct": 6,
+            "direct": 7,
             "social": 0,
             "search": 0,
             "referral": 0,
@@ -370,7 +427,7 @@
           },
           "sources": [],
           "shortLinkVisits": 0,
-          "views": 6,
+          "views": 7,
           "engagedSecondsPerView": 3,
           "shares": {
             "native": 0,
@@ -378,10 +435,10 @@
             "total": 0
           }
         },
-        "ai-powered-video-curation-from-naive-search-to-confident-matches": {
-          "sessions": 4,
+        "i-am-a-web-developer-and-here-is-why-i-dont-use-typescript": {
+          "sessions": 5,
           "channels": {
-            "direct": 4,
+            "direct": 5,
             "social": 0,
             "search": 0,
             "referral": 0,
@@ -389,7 +446,7 @@
           },
           "sources": [],
           "shortLinkVisits": 0,
-          "views": 4,
+          "views": 5,
           "engagedSecondsPerView": 0,
           "shares": {
             "native": 0,
@@ -397,7 +454,7 @@
             "total": 0
           }
         },
-        "i-am-a-web-developer-and-here-is-why-i-dont-use-typescript": {
+        "ai-powered-video-curation-from-naive-search-to-confident-matches": {
           "sessions": 4,
           "channels": {
             "direct": 4,
@@ -597,6 +654,25 @@
             "total": 0
           }
         },
+        "filling-the-test-driven-development-gap-between-figma-and-your-component": {
+          "sessions": 1,
+          "channels": {
+            "direct": 1,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 2,
+          "engagedSecondsPerView": 26,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
         "making-my-money-decisions-mechanical-with-ai-and-plain-text-accounting": {
           "sessions": 1,
           "channels": {
@@ -615,31 +691,12 @@
             "clipboard": 0,
             "total": 0
           }
-        },
-        "filling-the-test-driven-development-gap-between-figma-and-your-component": {
-          "sessions": 0,
-          "channels": {
-            "direct": 0,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 1,
-          "engagedSecondsPerView": 52,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
         }
       }
     },
     "prev7": {
-      "startDate": "2026-10-05",
-      "endDate": "2026-10-11",
+      "startDate": "2026-10-06",
+      "endDate": "2026-10-12",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 1,
@@ -683,36 +740,12 @@
     },
     "all": {
       "startDate": "2015-08-14",
-      "endDate": "2026-10-18",
+      "endDate": "2026-10-19",
       "posts": {
-        "the-4-pillars-of-next-gen-web-dev": {
-          "sessions": 35,
+        "i-am-a-web-developer-and-here-is-why-i-dont-use-typescript": {
+          "sessions": 37,
           "channels": {
             "direct": 19,
-            "social": 16,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [
-            {
-              "source": "linkedin.com",
-              "sessions": 16
-            }
-          ],
-          "shortLinkVisits": 0,
-          "views": 36,
-          "engagedSecondsPerView": 9,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
-        "i-am-a-web-developer-and-here-is-why-i-dont-use-typescript": {
-          "sessions": 36,
-          "channels": {
-            "direct": 18,
             "social": 13,
             "search": 0,
             "referral": 4,
@@ -741,8 +774,32 @@
             }
           ],
           "shortLinkVisits": 0,
-          "views": 44,
+          "views": 45,
           "engagedSecondsPerView": 15,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
+        "the-4-pillars-of-next-gen-web-dev": {
+          "sessions": 35,
+          "channels": {
+            "direct": 19,
+            "social": 16,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [
+            {
+              "source": "linkedin.com",
+              "sessions": 16
+            }
+          ],
+          "shortLinkVisits": 0,
+          "views": 36,
+          "engagedSecondsPerView": 9,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -807,9 +864,9 @@
           }
         },
         "why-every-desk-job-is-becoming-an-ai-apprenticeship": {
-          "sessions": 19,
+          "sessions": 20,
           "channels": {
-            "direct": 14,
+            "direct": 15,
             "social": 4,
             "search": 0,
             "referral": 0,
@@ -826,8 +883,8 @@
             }
           ],
           "shortLinkVisits": 0,
-          "views": 24,
-          "engagedSecondsPerView": 21,
+          "views": 25,
+          "engagedSecondsPerView": 20,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -1058,6 +1115,25 @@
             "total": 0
           }
         },
+        "filling-the-test-driven-development-gap-between-figma-and-your-component": {
+          "sessions": 1,
+          "channels": {
+            "direct": 1,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 2,
+          "engagedSecondsPerView": 26,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
         "making-my-money-decisions-mechanical-with-ai-and-plain-text-accounting": {
           "sessions": 1,
           "channels": {
@@ -1071,25 +1147,6 @@
           "shortLinkVisits": 0,
           "views": 1,
           "engagedSecondsPerView": 0,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
-        "filling-the-test-driven-development-gap-between-figma-and-your-component": {
-          "sessions": 0,
-          "channels": {
-            "direct": 0,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 1,
-          "engagedSecondsPerView": 52,
           "shares": {
             "native": 0,
             "clipboard": 0,

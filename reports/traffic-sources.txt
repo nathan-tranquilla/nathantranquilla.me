@@ -7,23 +7,19 @@ taking-responsibility-for-your-ai-generated-code  (28 sessions)
    11%  Unassigned           3   share 3
     4%  Organic Video        1   youtube.com 1
 
-typescript-has-a-big-problem  (9 sessions)
-  100%  Direct               9   (direct) 9
+so-it-begins-the-end-of-typescript  (7 sessions)
+  100%  Direct               7   (direct) 7
 
-so-it-begins-the-end-of-typescript  (8 sessions)
-  100%  Direct               8   (direct) 8
+typescript-has-a-big-problem  (7 sessions)
+  100%  Direct               7   (direct) 7
 
-why-every-desk-job-is-becoming-an-ai-apprenticeship  (6 sessions)
-  100%  Direct               6   (direct) 6
+why-every-desk-job-is-becoming-an-ai-apprenticeship  (7 sessions)
+  100%  Direct               7   (direct) 7
 
-when-two-ai-pipelines-meet--turning-curated-data-into-a-daily-api  (5 sessions)
-   80%  Direct               4   (direct) 4
-   20%  Organic Social       1   t.co 1
+i-am-a-web-developer-and-here-is-why-i-dont-use-typescript  (5 sessions)
+  100%  Direct               5   (direct) 5
 
 ai-powered-video-curation-from-naive-search-to-confident-matches  (4 sessions)
-  100%  Direct               4   (direct) 4
-
-i-am-a-web-developer-and-here-is-why-i-dont-use-typescript  (4 sessions)
   100%  Direct               4   (direct) 4
 
 the-reality-of-rescript-optimization-claims  (4 sessions)
@@ -32,6 +28,10 @@ the-reality-of-rescript-optimization-claims  (4 sessions)
 teach-claude-your-project-once-benefit-forever  (4 sessions)
    75%  Direct               3   (direct) 3
    25%  Referral             1   teams.public.onecdn.static.microsoft 1
+
+when-two-ai-pipelines-meet--turning-curated-data-into-a-daily-api  (4 sessions)
+   75%  Direct               3   (direct) 3
+   25%  Organic Social       1   t.co 1
 
 5-ways-rescript-fixes-typescript  (3 sessions)
   100%  Direct               3   (direct) 3
@@ -51,11 +51,14 @@ coding-is-not-for-humans  (2 sessions)
 using-ai-to-automate-quality-content-delivery  (2 sessions)
   100%  Direct               2   (direct) 2
 
+filling-the-test-driven-development-gap-between-figma-and-your-component  (1 sessions)
+  100%  Direct               1   (direct) 1
+
 making-my-money-decisions-mechanical-with-ai-and-plain-text-accounting  (1 sessions)
   100%  Direct               1   (direct) 1
 
-All posts  (89 sessions)
-   80%  Direct              71
+All posts  (88 sessions)
+   80%  Direct              70
    10%  Organic Social       9
     6%  Referral             5
     3%  Unassigned           3
