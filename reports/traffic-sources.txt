@@ -1,11 +1,11 @@
 Sessions landing on blog posts, last 90 days
 
-taking-responsibility-for-your-ai-generated-code  (28 sessions)
-   43%  Direct              12   (direct) 12
-   29%  Organic Social       8   linkedin.com 7, t.co 1
+taking-responsibility-for-your-ai-generated-code  (29 sessions)
+   45%  Direct              13   (direct) 13
+   28%  Organic Social       8   linkedin.com 7, t.co 1
    14%  Referral             4   teams.public.onecdn.static.microsoft 4
-   11%  Unassigned           3   share 3
-    4%  Organic Video        1   youtube.com 1
+   10%  Unassigned           3   share 3
+    3%  Organic Video        1   youtube.com 1
 
 so-it-begins-the-end-of-typescript  (7 sessions)
   100%  Direct               7   (direct) 7
@@ -16,10 +16,13 @@ typescript-has-a-big-problem  (7 sessions)
 why-every-desk-job-is-becoming-an-ai-apprenticeship  (7 sessions)
   100%  Direct               7   (direct) 7
 
+ai-powered-video-curation-from-naive-search-to-confident-matches  (5 sessions)
+  100%  Direct               5   (direct) 5
+
 i-am-a-web-developer-and-here-is-why-i-dont-use-typescript  (5 sessions)
   100%  Direct               5   (direct) 5
 
-ai-powered-video-curation-from-naive-search-to-confident-matches  (4 sessions)
+strong-type-systems-are-required-for-a-safer-web  (4 sessions)
   100%  Direct               4   (direct) 4
 
 the-reality-of-rescript-optimization-claims  (4 sessions)
@@ -34,9 +37,6 @@ when-two-ai-pipelines-meet--turning-curated-data-into-a-daily-api  (4 sessions)
    25%  Organic Social       1   t.co 1
 
 5-ways-rescript-fixes-typescript  (3 sessions)
-  100%  Direct               3   (direct) 3
-
-strong-type-systems-are-required-for-a-safer-web  (3 sessions)
   100%  Direct               3   (direct) 3
 
 the-4-pillars-of-next-gen-web-dev  (3 sessions)
@@ -57,9 +57,9 @@ filling-the-test-driven-development-gap-between-figma-and-your-component  (1 ses
 making-my-money-decisions-mechanical-with-ai-and-plain-text-accounting  (1 sessions)
   100%  Direct               1   (direct) 1
 
-All posts  (88 sessions)
-   80%  Direct              70
+All posts  (91 sessions)
+   80%  Direct              73
    10%  Organic Social       9
-    6%  Referral             5
+    5%  Referral             5
     3%  Unassigned           3
     1%  Organic Video        1
