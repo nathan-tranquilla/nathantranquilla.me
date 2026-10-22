@@ -7,10 +7,10 @@ taking-responsibility-for-your-ai-generated-code  (29 sessions)
    10%  Unassigned           3   share 3
     3%  Organic Video        1   youtube.com 1
 
-so-it-begins-the-end-of-typescript  (7 sessions)
-  100%  Direct               7   (direct) 7
+typescript-has-a-big-problem  (8 sessions)
+  100%  Direct               8   (direct) 8
 
-typescript-has-a-big-problem  (7 sessions)
+so-it-begins-the-end-of-typescript  (7 sessions)
   100%  Direct               7   (direct) 7
 
 why-every-desk-job-is-becoming-an-ai-apprenticeship  (7 sessions)
@@ -42,13 +42,13 @@ when-two-ai-pipelines-meet--turning-curated-data-into-a-daily-api  (4 sessions)
 the-4-pillars-of-next-gen-web-dev  (3 sessions)
   100%  Direct               3   (direct) 3
 
+using-ai-to-automate-quality-content-delivery  (3 sessions)
+  100%  Direct               3   (direct) 3
+
 why-rescript-is-next-gen  (3 sessions)
   100%  Direct               3   (direct) 3
 
 coding-is-not-for-humans  (2 sessions)
-  100%  Direct               2   (direct) 2
-
-using-ai-to-automate-quality-content-delivery  (2 sessions)
   100%  Direct               2   (direct) 2
 
 filling-the-test-driven-development-gap-between-figma-and-your-component  (1 sessions)
@@ -57,8 +57,8 @@ filling-the-test-driven-development-gap-between-figma-and-your-component  (1 ses
 making-my-money-decisions-mechanical-with-ai-and-plain-text-accounting  (1 sessions)
   100%  Direct               1   (direct) 1
 
-All posts  (91 sessions)
-   80%  Direct              73
+All posts  (93 sessions)
+   81%  Direct              75
    10%  Organic Social       9
     5%  Referral             5
     3%  Unassigned           3

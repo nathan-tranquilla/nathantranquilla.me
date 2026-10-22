@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-21T10:00:46.133Z",
+  "generatedAt": "2026-10-22T10:00:40.592Z",
   "ranges": {
     "7": {
-      "startDate": "2026-10-15",
-      "endDate": "2026-10-21",
+      "startDate": "2026-10-16",
+      "endDate": "2026-10-22",
       "posts": {
         "ai-powered-video-curation-from-naive-search-to-confident-matches": {
           "sessions": 1,
@@ -100,6 +100,44 @@
             "total": 0
           }
         },
+        "typescript-has-a-big-problem": {
+          "sessions": 1,
+          "channels": {
+            "direct": 1,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 1,
+          "engagedSecondsPerView": 0,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
+        "using-ai-to-automate-quality-content-delivery": {
+          "sessions": 1,
+          "channels": {
+            "direct": 1,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 1,
+          "engagedSecondsPerView": 0,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
         "why-every-desk-job-is-becoming-an-ai-apprenticeship": {
           "sessions": 1,
           "channels": {
@@ -122,8 +160,8 @@
       }
     },
     "30": {
-      "startDate": "2026-09-22",
-      "endDate": "2026-10-21",
+      "startDate": "2026-09-23",
+      "endDate": "2026-10-22",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 29,
@@ -341,7 +379,26 @@
             "total": 0
           }
         },
-        "the-4-pillars-of-next-gen-web-dev": {
+        "typescript-has-a-big-problem": {
+          "sessions": 1,
+          "channels": {
+            "direct": 1,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 1,
+          "engagedSecondsPerView": 0,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
+        "using-ai-to-automate-quality-content-delivery": {
           "sessions": 1,
           "channels": {
             "direct": 1,
@@ -406,8 +463,8 @@
       }
     },
     "90": {
-      "startDate": "2026-07-24",
-      "endDate": "2026-10-21",
+      "startDate": "2026-07-25",
+      "endDate": "2026-10-22",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 29,
@@ -449,6 +506,25 @@
             "total": 2
           }
         },
+        "typescript-has-a-big-problem": {
+          "sessions": 8,
+          "channels": {
+            "direct": 8,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 8,
+          "engagedSecondsPerView": 1,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
         "so-it-begins-the-end-of-typescript": {
           "sessions": 7,
           "channels": {
@@ -462,25 +538,6 @@
           "shortLinkVisits": 0,
           "views": 7,
           "engagedSecondsPerView": 5,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
-        "typescript-has-a-big-problem": {
-          "sessions": 7,
-          "channels": {
-            "direct": 7,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 7,
-          "engagedSecondsPerView": 1,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -644,6 +701,25 @@
             "total": 0
           }
         },
+        "using-ai-to-automate-quality-content-delivery": {
+          "sessions": 3,
+          "channels": {
+            "direct": 3,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 3,
+          "engagedSecondsPerView": 0,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
         "when-two-ai-pipelines-meet--turning-curated-data-into-a-daily-api": {
           "sessions": 4,
           "channels": {
@@ -706,25 +782,6 @@
             "total": 0
           }
         },
-        "using-ai-to-automate-quality-content-delivery": {
-          "sessions": 2,
-          "channels": {
-            "direct": 2,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 2,
-          "engagedSecondsPerView": 0,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
         "filling-the-test-driven-development-gap-between-figma-and-your-component": {
           "sessions": 1,
           "channels": {
@@ -766,8 +823,8 @@
       }
     },
     "prev7": {
-      "startDate": "2026-10-08",
-      "endDate": "2026-10-14",
+      "startDate": "2026-10-09",
+      "endDate": "2026-10-15",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 1,
@@ -792,31 +849,12 @@
             "clipboard": 0,
             "total": 0
           }
-        },
-        "filling-the-test-driven-development-gap-between-figma-and-your-component": {
-          "sessions": 0,
-          "channels": {
-            "direct": 0,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 1,
-          "engagedSecondsPerView": 52,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
         }
       }
     },
     "all": {
       "startDate": "2015-08-14",
-      "endDate": "2026-10-21",
+      "endDate": "2026-10-22",
       "posts": {
         "i-am-a-web-developer-and-here-is-why-i-dont-use-typescript": {
           "sessions": 37,
@@ -902,9 +940,9 @@
           }
         },
         "typescript-has-a-big-problem": {
-          "sessions": 16,
+          "sessions": 17,
           "channels": {
-            "direct": 16,
+            "direct": 17,
             "social": 0,
             "search": 0,
             "referral": 0,
@@ -912,7 +950,7 @@
           },
           "sources": [],
           "shortLinkVisits": 0,
-          "views": 18,
+          "views": 19,
           "engagedSecondsPerView": 4,
           "shares": {
             "native": 0,
@@ -961,6 +999,38 @@
           "shortLinkVisits": 0,
           "views": 25,
           "engagedSecondsPerView": 20,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
+        "using-ai-to-automate-quality-content-delivery": {
+          "sessions": 21,
+          "channels": {
+            "direct": 14,
+            "social": 6,
+            "search": 0,
+            "referral": 0,
+            "other": 1
+          },
+          "sources": [
+            {
+              "source": "linkedin.com",
+              "sessions": 5
+            },
+            {
+              "source": "t.co",
+              "sessions": 1
+            },
+            {
+              "source": "youtube.com",
+              "sessions": 1
+            }
+          ],
+          "shortLinkVisits": 0,
+          "views": 29,
+          "engagedSecondsPerView": 38,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -1039,38 +1109,6 @@
           "shortLinkVisits": 0,
           "views": 13,
           "engagedSecondsPerView": 2,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
-        "using-ai-to-automate-quality-content-delivery": {
-          "sessions": 20,
-          "channels": {
-            "direct": 13,
-            "social": 6,
-            "search": 0,
-            "referral": 0,
-            "other": 1
-          },
-          "sources": [
-            {
-              "source": "linkedin.com",
-              "sessions": 5
-            },
-            {
-              "source": "t.co",
-              "sessions": 1
-            },
-            {
-              "source": "youtube.com",
-              "sessions": 1
-            }
-          ],
-          "shortLinkVisits": 0,
-          "views": 28,
-          "engagedSecondsPerView": 40,
           "shares": {
             "native": 0,
             "clipboard": 0,
