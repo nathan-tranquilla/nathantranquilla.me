@@ -1,10 +1,48 @@
 {
-  "generatedAt": "2026-10-22T10:00:40.592Z",
+  "generatedAt": "2026-10-23T10:00:44.823Z",
   "ranges": {
     "7": {
-      "startDate": "2026-10-16",
-      "endDate": "2026-10-22",
+      "startDate": "2026-10-17",
+      "endDate": "2026-10-23",
       "posts": {
+        "strong-type-systems-are-required-for-a-safer-web": {
+          "sessions": 5,
+          "channels": {
+            "direct": 5,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 5,
+          "engagedSecondsPerView": 0,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
+        "taking-responsibility-for-your-ai-generated-code": {
+          "sessions": 2,
+          "channels": {
+            "direct": 2,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 2,
+          "engagedSecondsPerView": 107,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
         "ai-powered-video-curation-from-naive-search-to-confident-matches": {
           "sessions": 1,
           "channels": {
@@ -62,7 +100,7 @@
             "total": 0
           }
         },
-        "strong-type-systems-are-required-for-a-safer-web": {
+        "teach-claude-your-project-once-benefit-forever": {
           "sessions": 1,
           "channels": {
             "direct": 1,
@@ -73,27 +111,8 @@
           },
           "sources": [],
           "shortLinkVisits": 0,
-          "views": 1,
-          "engagedSecondsPerView": 0,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
-        "taking-responsibility-for-your-ai-generated-code": {
-          "sessions": 1,
-          "channels": {
-            "direct": 1,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 1,
-          "engagedSecondsPerView": 63,
+          "views": 2,
+          "engagedSecondsPerView": 11,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -160,23 +179,19 @@
       }
     },
     "30": {
-      "startDate": "2026-09-23",
-      "endDate": "2026-10-22",
+      "startDate": "2026-09-24",
+      "endDate": "2026-10-23",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
-          "sessions": 29,
+          "sessions": 22,
           "channels": {
-            "direct": 13,
-            "social": 8,
+            "direct": 12,
+            "social": 2,
             "search": 0,
             "referral": 4,
             "other": 4
           },
           "sources": [
-            {
-              "source": "linkedin.com",
-              "sessions": 7
-            },
             {
               "source": "teams.public.onecdn.static.microsoft",
               "sessions": 4
@@ -184,6 +199,10 @@
             {
               "source": "share",
               "sessions": 3
+            },
+            {
+              "source": "linkedin.com",
+              "sessions": 1
             },
             {
               "source": "t.co",
@@ -195,12 +214,31 @@
             }
           ],
           "shortLinkVisits": 3,
-          "views": 37,
-          "engagedSecondsPerView": 13,
+          "views": 25,
+          "engagedSecondsPerView": 25,
           "shares": {
             "native": 1,
             "clipboard": 1,
             "total": 2
+          }
+        },
+        "strong-type-systems-are-required-for-a-safer-web": {
+          "sessions": 5,
+          "channels": {
+            "direct": 5,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 5,
+          "engagedSecondsPerView": 0,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
           }
         },
         "why-every-desk-job-is-becoming-an-ai-apprenticeship": {
@@ -216,6 +254,30 @@
           "shortLinkVisits": 0,
           "views": 3,
           "engagedSecondsPerView": 3,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
+        "teach-claude-your-project-once-benefit-forever": {
+          "sessions": 3,
+          "channels": {
+            "direct": 2,
+            "social": 0,
+            "search": 0,
+            "referral": 1,
+            "other": 0
+          },
+          "sources": [
+            {
+              "source": "teams.public.onecdn.static.microsoft",
+              "sessions": 1
+            }
+          ],
+          "shortLinkVisits": 0,
+          "views": 6,
+          "engagedSecondsPerView": 4,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -336,49 +398,6 @@
             "total": 0
           }
         },
-        "strong-type-systems-are-required-for-a-safer-web": {
-          "sessions": 1,
-          "channels": {
-            "direct": 1,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 1,
-          "engagedSecondsPerView": 0,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
-        "teach-claude-your-project-once-benefit-forever": {
-          "sessions": 2,
-          "channels": {
-            "direct": 1,
-            "social": 0,
-            "search": 0,
-            "referral": 1,
-            "other": 0
-          },
-          "sources": [
-            {
-              "source": "teams.public.onecdn.static.microsoft",
-              "sessions": 1
-            }
-          ],
-          "shortLinkVisits": 0,
-          "views": 4,
-          "engagedSecondsPerView": 0,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
         "typescript-has-a-big-problem": {
           "sessions": 1,
           "channels": {
@@ -463,13 +482,13 @@
       }
     },
     "90": {
-      "startDate": "2026-07-25",
-      "endDate": "2026-10-22",
+      "startDate": "2026-07-26",
+      "endDate": "2026-10-23",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
-          "sessions": 29,
+          "sessions": 30,
           "channels": {
-            "direct": 13,
+            "direct": 14,
             "social": 8,
             "search": 0,
             "referral": 4,
@@ -498,12 +517,31 @@
             }
           ],
           "shortLinkVisits": 3,
-          "views": 37,
-          "engagedSecondsPerView": 13,
+          "views": 38,
+          "engagedSecondsPerView": 17,
           "shares": {
             "native": 1,
             "clipboard": 1,
             "total": 2
+          }
+        },
+        "strong-type-systems-are-required-for-a-safer-web": {
+          "sessions": 8,
+          "channels": {
+            "direct": 8,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 8,
+          "engagedSecondsPerView": 2,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
           }
         },
         "typescript-has-a-big-problem": {
@@ -601,18 +639,23 @@
             "total": 0
           }
         },
-        "strong-type-systems-are-required-for-a-safer-web": {
-          "sessions": 4,
+        "teach-claude-your-project-once-benefit-forever": {
+          "sessions": 5,
           "channels": {
             "direct": 4,
             "social": 0,
             "search": 0,
-            "referral": 0,
+            "referral": 1,
             "other": 0
           },
-          "sources": [],
+          "sources": [
+            {
+              "source": "teams.public.onecdn.static.microsoft",
+              "sessions": 1
+            }
+          ],
           "shortLinkVisits": 0,
-          "views": 4,
+          "views": 9,
           "engagedSecondsPerView": 4,
           "shares": {
             "native": 0,
@@ -652,30 +695,6 @@
           "shortLinkVisits": 0,
           "views": 4,
           "engagedSecondsPerView": 0,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
-        "teach-claude-your-project-once-benefit-forever": {
-          "sessions": 4,
-          "channels": {
-            "direct": 3,
-            "social": 0,
-            "search": 0,
-            "referral": 1,
-            "other": 0
-          },
-          "sources": [
-            {
-              "source": "teams.public.onecdn.static.microsoft",
-              "sessions": 1
-            }
-          ],
-          "shortLinkVisits": 0,
-          "views": 7,
-          "engagedSecondsPerView": 2,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -823,8 +842,8 @@
       }
     },
     "prev7": {
-      "startDate": "2026-10-09",
-      "endDate": "2026-10-15",
+      "startDate": "2026-10-10",
+      "endDate": "2026-10-16",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 1,
@@ -854,8 +873,27 @@
     },
     "all": {
       "startDate": "2015-08-14",
-      "endDate": "2026-10-22",
+      "endDate": "2026-10-23",
       "posts": {
+        "strong-type-systems-are-required-for-a-safer-web": {
+          "sessions": 22,
+          "channels": {
+            "direct": 22,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 23,
+          "engagedSecondsPerView": 4,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
         "i-am-a-web-developer-and-here-is-why-i-dont-use-typescript": {
           "sessions": 37,
           "channels": {
@@ -914,25 +952,6 @@
           "shortLinkVisits": 0,
           "views": 36,
           "engagedSecondsPerView": 9,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
-        "strong-type-systems-are-required-for-a-safer-web": {
-          "sessions": 18,
-          "channels": {
-            "direct": 18,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 19,
-          "engagedSecondsPerView": 5,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -1005,6 +1024,46 @@
             "total": 0
           }
         },
+        "taking-responsibility-for-your-ai-generated-code": {
+          "sessions": 30,
+          "channels": {
+            "direct": 14,
+            "social": 8,
+            "search": 0,
+            "referral": 4,
+            "other": 4
+          },
+          "sources": [
+            {
+              "source": "linkedin.com",
+              "sessions": 7
+            },
+            {
+              "source": "teams.public.onecdn.static.microsoft",
+              "sessions": 4
+            },
+            {
+              "source": "share",
+              "sessions": 3
+            },
+            {
+              "source": "t.co",
+              "sessions": 1
+            },
+            {
+              "source": "youtube.com",
+              "sessions": 1
+            }
+          ],
+          "shortLinkVisits": 3,
+          "views": 38,
+          "engagedSecondsPerView": 17,
+          "shares": {
+            "native": 1,
+            "clipboard": 1,
+            "total": 2
+          }
+        },
         "using-ai-to-automate-quality-content-delivery": {
           "sessions": 21,
           "channels": {
@@ -1056,14 +1115,14 @@
             "total": 0
           }
         },
-        "taking-responsibility-for-your-ai-generated-code": {
-          "sessions": 29,
+        "teach-claude-your-project-once-benefit-forever": {
+          "sessions": 21,
           "channels": {
             "direct": 13,
-            "social": 8,
+            "social": 7,
             "search": 0,
-            "referral": 4,
-            "other": 4
+            "referral": 1,
+            "other": 0
           },
           "sources": [
             {
@@ -1072,28 +1131,16 @@
             },
             {
               "source": "teams.public.onecdn.static.microsoft",
-              "sessions": 4
-            },
-            {
-              "source": "share",
-              "sessions": 3
-            },
-            {
-              "source": "t.co",
-              "sessions": 1
-            },
-            {
-              "source": "youtube.com",
               "sessions": 1
             }
           ],
-          "shortLinkVisits": 3,
-          "views": 37,
-          "engagedSecondsPerView": 13,
+          "shortLinkVisits": 0,
+          "views": 29,
+          "engagedSecondsPerView": 11,
           "shares": {
-            "native": 1,
-            "clipboard": 1,
-            "total": 2
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
           }
         },
         "the-reality-of-rescript-optimization-claims": {
@@ -1128,34 +1175,6 @@
           "shortLinkVisits": 0,
           "views": 13,
           "engagedSecondsPerView": 0,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
-        "teach-claude-your-project-once-benefit-forever": {
-          "sessions": 20,
-          "channels": {
-            "direct": 12,
-            "social": 7,
-            "search": 0,
-            "referral": 1,
-            "other": 0
-          },
-          "sources": [
-            {
-              "source": "linkedin.com",
-              "sessions": 7
-            },
-            {
-              "source": "teams.public.onecdn.static.microsoft",
-              "sessions": 1
-            }
-          ],
-          "shortLinkVisits": 0,
-          "views": 27,
-          "engagedSecondsPerView": 11,
           "shares": {
             "native": 0,
             "clipboard": 0,
