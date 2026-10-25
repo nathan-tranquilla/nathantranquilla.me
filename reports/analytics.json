@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-24T10:00:44.109Z",
+  "generatedAt": "2026-10-25T10:00:41.503Z",
   "ranges": {
     "7": {
-      "startDate": "2026-10-18",
-      "endDate": "2026-10-24",
+      "startDate": "2026-10-19",
+      "endDate": "2026-10-25",
       "posts": {
         "strong-type-systems-are-required-for-a-safer-web": {
           "sessions": 5,
@@ -81,6 +81,25 @@
             "total": 0
           }
         },
+        "the-reality-of-rescript-optimization-claims": {
+          "sessions": 1,
+          "channels": {
+            "direct": 1,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 1,
+          "engagedSecondsPerView": 0,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
         "typescript-has-a-big-problem": {
           "sessions": 1,
           "channels": {
@@ -118,49 +137,30 @@
             "clipboard": 0,
             "total": 0
           }
-        },
-        "why-every-desk-job-is-becoming-an-ai-apprenticeship": {
-          "sessions": 1,
-          "channels": {
-            "direct": 1,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 1,
-          "engagedSecondsPerView": 5,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
         }
       }
     },
     "30": {
-      "startDate": "2026-09-25",
-      "endDate": "2026-10-24",
+      "startDate": "2026-09-26",
+      "endDate": "2026-10-25",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
-          "sessions": 21,
+          "sessions": 14,
           "channels": {
-            "direct": 12,
+            "direct": 8,
             "social": 1,
             "search": 0,
-            "referral": 4,
-            "other": 4
+            "referral": 2,
+            "other": 3
           },
           "sources": [
             {
-              "source": "teams.public.onecdn.static.microsoft",
-              "sessions": 4
+              "source": "share",
+              "sessions": 2
             },
             {
-              "source": "share",
-              "sessions": 3
+              "source": "teams.public.onecdn.static.microsoft",
+              "sessions": 2
             },
             {
               "source": "t.co",
@@ -171,13 +171,13 @@
               "sessions": 1
             }
           ],
-          "shortLinkVisits": 3,
-          "views": 24,
-          "engagedSecondsPerView": 26,
+          "shortLinkVisits": 2,
+          "views": 14,
+          "engagedSecondsPerView": 34,
           "shares": {
-            "native": 1,
+            "native": 0,
             "clipboard": 1,
-            "total": 2
+            "total": 1
           }
         },
         "strong-type-systems-are-required-for-a-safer-web": {
@@ -215,7 +215,7 @@
             }
           ],
           "shortLinkVisits": 0,
-          "views": 6,
+          "views": 5,
           "engagedSecondsPerView": 4,
           "shares": {
             "native": 0,
@@ -253,8 +253,8 @@
           },
           "sources": [],
           "shortLinkVisits": 0,
-          "views": 2,
-          "engagedSecondsPerView": 1,
+          "views": 1,
+          "engagedSecondsPerView": 0,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -356,6 +356,25 @@
             "total": 0
           }
         },
+        "the-reality-of-rescript-optimization-claims": {
+          "sessions": 1,
+          "channels": {
+            "direct": 1,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 1,
+          "engagedSecondsPerView": 0,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
         "typescript-has-a-big-problem": {
           "sessions": 1,
           "channels": {
@@ -397,8 +416,8 @@
       }
     },
     "90": {
-      "startDate": "2026-07-27",
-      "endDate": "2026-10-24",
+      "startDate": "2026-07-28",
+      "endDate": "2026-10-25",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 30,
@@ -535,10 +554,10 @@
             "total": 0
           }
         },
-        "ai-powered-video-curation-from-naive-search-to-confident-matches": {
-          "sessions": 4,
+        "the-reality-of-rescript-optimization-claims": {
+          "sessions": 5,
           "channels": {
-            "direct": 4,
+            "direct": 5,
             "social": 0,
             "search": 0,
             "referral": 0,
@@ -546,8 +565,8 @@
           },
           "sources": [],
           "shortLinkVisits": 0,
-          "views": 4,
-          "engagedSecondsPerView": 0,
+          "views": 5,
+          "engagedSecondsPerView": 5,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -578,25 +597,6 @@
             "total": 0
           }
         },
-        "the-reality-of-rescript-optimization-claims": {
-          "sessions": 4,
-          "channels": {
-            "direct": 4,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 4,
-          "engagedSecondsPerView": 6,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
         "5-ways-rescript-fixes-typescript": {
           "sessions": 3,
           "channels": {
@@ -609,6 +609,25 @@
           "sources": [],
           "shortLinkVisits": 0,
           "views": 4,
+          "engagedSecondsPerView": 0,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
+        "ai-powered-video-curation-from-naive-search-to-confident-matches": {
+          "sessions": 3,
+          "channels": {
+            "direct": 3,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 3,
           "engagedSecondsPerView": 0,
           "shares": {
             "native": 0,
@@ -757,8 +776,8 @@
       }
     },
     "prev7": {
-      "startDate": "2026-10-11",
-      "endDate": "2026-10-17",
+      "startDate": "2026-10-12",
+      "endDate": "2026-10-18",
       "posts": {
         "filling-the-test-driven-development-gap-between-figma-and-your-component": {
           "sessions": 1,
@@ -821,12 +840,31 @@
             "clipboard": 0,
             "total": 0
           }
+        },
+        "why-every-desk-job-is-becoming-an-ai-apprenticeship": {
+          "sessions": 1,
+          "channels": {
+            "direct": 1,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 1,
+          "engagedSecondsPerView": 5,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
         }
       }
     },
     "all": {
       "startDate": "2015-08-14",
-      "endDate": "2026-10-24",
+      "endDate": "2026-10-25",
       "posts": {
         "strong-type-systems-are-required-for-a-safer-web": {
           "sessions": 22,
@@ -1017,6 +1055,25 @@
             "total": 2
           }
         },
+        "the-reality-of-rescript-optimization-claims": {
+          "sessions": 14,
+          "channels": {
+            "direct": 14,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 14,
+          "engagedSecondsPerView": 2,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
         "using-ai-to-automate-quality-content-delivery": {
           "sessions": 21,
           "channels": {
@@ -1090,25 +1147,6 @@
           "shortLinkVisits": 0,
           "views": 29,
           "engagedSecondsPerView": 11,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
-        "the-reality-of-rescript-optimization-claims": {
-          "sessions": 13,
-          "channels": {
-            "direct": 13,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 13,
-          "engagedSecondsPerView": 2,
           "shares": {
             "native": 0,
             "clipboard": 0,

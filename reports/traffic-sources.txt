@@ -19,17 +19,17 @@ so-it-begins-the-end-of-typescript  (7 sessions)
 why-every-desk-job-is-becoming-an-ai-apprenticeship  (7 sessions)
   100%  Direct               7   (direct) 7
 
-ai-powered-video-curation-from-naive-search-to-confident-matches  (5 sessions)
+i-am-a-web-developer-and-here-is-why-i-dont-use-typescript  (5 sessions)
   100%  Direct               5   (direct) 5
 
-i-am-a-web-developer-and-here-is-why-i-dont-use-typescript  (5 sessions)
+the-reality-of-rescript-optimization-claims  (5 sessions)
   100%  Direct               5   (direct) 5
 
 teach-claude-your-project-once-benefit-forever  (5 sessions)
    80%  Direct               4   (direct) 4
    20%  Referral             1   teams.public.onecdn.static.microsoft 1
 
-the-reality-of-rescript-optimization-claims  (4 sessions)
+ai-powered-video-curation-from-naive-search-to-confident-matches  (4 sessions)
   100%  Direct               4   (direct) 4
 
 when-two-ai-pipelines-meet--turning-curated-data-into-a-daily-api  (4 sessions)
