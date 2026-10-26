@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-25T10:00:41.503Z",
+  "generatedAt": "2026-10-26T10:00:42.991Z",
   "ranges": {
     "7": {
-      "startDate": "2026-10-19",
-      "endDate": "2026-10-25",
+      "startDate": "2026-10-20",
+      "endDate": "2026-10-26",
       "posts": {
         "strong-type-systems-are-required-for-a-safer-web": {
           "sessions": 5,
@@ -24,25 +24,6 @@
             "total": 0
           }
         },
-        "taking-responsibility-for-your-ai-generated-code": {
-          "sessions": 2,
-          "channels": {
-            "direct": 2,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 2,
-          "engagedSecondsPerView": 107,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
         "ai-powered-video-curation-from-naive-search-to-confident-matches": {
           "sessions": 1,
           "channels": {
@@ -56,6 +37,49 @@
           "shortLinkVisits": 0,
           "views": 1,
           "engagedSecondsPerView": 0,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
+        "i-am-a-web-developer-and-here-is-why-i-dont-use-typescript": {
+          "sessions": 2,
+          "channels": {
+            "direct": 1,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 1
+          },
+          "sources": [
+            {
+              "source": "(not set)",
+              "sessions": 1
+            }
+          ],
+          "shortLinkVisits": 0,
+          "views": 2,
+          "engagedSecondsPerView": 0,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
+        "taking-responsibility-for-your-ai-generated-code": {
+          "sessions": 1,
+          "channels": {
+            "direct": 1,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 1,
+          "engagedSecondsPerView": 151,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -141,23 +165,19 @@
       }
     },
     "30": {
-      "startDate": "2026-09-26",
-      "endDate": "2026-10-25",
+      "startDate": "2026-09-27",
+      "endDate": "2026-10-26",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
-          "sessions": 14,
+          "sessions": 12,
           "channels": {
             "direct": 8,
             "social": 1,
             "search": 0,
             "referral": 2,
-            "other": 3
+            "other": 1
           },
           "sources": [
-            {
-              "source": "share",
-              "sessions": 2
-            },
             {
               "source": "teams.public.onecdn.static.microsoft",
               "sessions": 2
@@ -171,9 +191,9 @@
               "sessions": 1
             }
           ],
-          "shortLinkVisits": 2,
-          "views": 14,
-          "engagedSecondsPerView": 34,
+          "shortLinkVisits": 0,
+          "views": 12,
+          "engagedSecondsPerView": 40,
           "shares": {
             "native": 0,
             "clipboard": 1,
@@ -199,24 +219,24 @@
             "total": 0
           }
         },
-        "teach-claude-your-project-once-benefit-forever": {
+        "i-am-a-web-developer-and-here-is-why-i-dont-use-typescript": {
           "sessions": 3,
           "channels": {
             "direct": 2,
             "social": 0,
             "search": 0,
-            "referral": 1,
-            "other": 0
+            "referral": 0,
+            "other": 1
           },
           "sources": [
             {
-              "source": "teams.public.onecdn.static.microsoft",
+              "source": "(not set)",
               "sessions": 1
             }
           ],
           "shortLinkVisits": 0,
-          "views": 5,
-          "engagedSecondsPerView": 4,
+          "views": 3,
+          "engagedSecondsPerView": 0,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -280,25 +300,6 @@
             "total": 0
           }
         },
-        "coding-is-not-for-humans": {
-          "sessions": 1,
-          "channels": {
-            "direct": 1,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 1,
-          "engagedSecondsPerView": 0,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
         "filling-the-test-driven-development-gap-between-figma-and-your-component": {
           "sessions": 1,
           "channels": {
@@ -318,7 +319,7 @@
             "total": 0
           }
         },
-        "i-am-a-web-developer-and-here-is-why-i-dont-use-typescript": {
+        "making-my-money-decisions-mechanical-with-ai-and-plain-text-accounting": {
           "sessions": 1,
           "channels": {
             "direct": 1,
@@ -337,19 +338,24 @@
             "total": 0
           }
         },
-        "making-my-money-decisions-mechanical-with-ai-and-plain-text-accounting": {
-          "sessions": 1,
+        "teach-claude-your-project-once-benefit-forever": {
+          "sessions": 2,
           "channels": {
             "direct": 1,
             "social": 0,
             "search": 0,
-            "referral": 0,
+            "referral": 1,
             "other": 0
           },
-          "sources": [],
+          "sources": [
+            {
+              "source": "teams.public.onecdn.static.microsoft",
+              "sessions": 1
+            }
+          ],
           "shortLinkVisits": 0,
-          "views": 1,
-          "engagedSecondsPerView": 0,
+          "views": 4,
+          "engagedSecondsPerView": 6,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -416,8 +422,8 @@
       }
     },
     "90": {
-      "startDate": "2026-07-28",
-      "endDate": "2026-10-25",
+      "startDate": "2026-07-29",
+      "endDate": "2026-10-26",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 30,
@@ -536,17 +542,22 @@
           }
         },
         "i-am-a-web-developer-and-here-is-why-i-dont-use-typescript": {
-          "sessions": 5,
+          "sessions": 7,
           "channels": {
-            "direct": 5,
+            "direct": 6,
             "social": 0,
             "search": 0,
             "referral": 0,
-            "other": 0
+            "other": 1
           },
-          "sources": [],
+          "sources": [
+            {
+              "source": "(not set)",
+              "sessions": 1
+            }
+          ],
           "shortLinkVisits": 0,
-          "views": 5,
+          "views": 7,
           "engagedSecondsPerView": 0,
           "shares": {
             "native": 0,
@@ -776,8 +787,8 @@
       }
     },
     "prev7": {
-      "startDate": "2026-10-12",
-      "endDate": "2026-10-18",
+      "startDate": "2026-10-13",
+      "endDate": "2026-10-19",
       "posts": {
         "filling-the-test-driven-development-gap-between-figma-and-your-component": {
           "sessions": 1,
@@ -818,9 +829,9 @@
           }
         },
         "taking-responsibility-for-your-ai-generated-code": {
-          "sessions": 1,
+          "sessions": 2,
           "channels": {
-            "direct": 0,
+            "direct": 1,
             "social": 0,
             "search": 0,
             "referral": 0,
@@ -833,8 +844,8 @@
             }
           ],
           "shortLinkVisits": 0,
-          "views": 1,
-          "engagedSecondsPerView": 0,
+          "views": 2,
+          "engagedSecondsPerView": 32,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -864,7 +875,7 @@
     },
     "all": {
       "startDate": "2015-08-14",
-      "endDate": "2026-10-25",
+      "endDate": "2026-10-26",
       "posts": {
         "strong-type-systems-are-required-for-a-safer-web": {
           "sessions": 22,
@@ -886,13 +897,13 @@
           }
         },
         "i-am-a-web-developer-and-here-is-why-i-dont-use-typescript": {
-          "sessions": 37,
+          "sessions": 39,
           "channels": {
-            "direct": 19,
+            "direct": 20,
             "social": 13,
             "search": 0,
             "referral": 4,
-            "other": 1
+            "other": 2
           },
           "sources": [
             {
@@ -908,6 +919,10 @@
               "sessions": 4
             },
             {
+              "source": "(not set)",
+              "sessions": 1
+            },
+            {
               "source": "m.facebook.com",
               "sessions": 1
             },
@@ -917,8 +932,8 @@
             }
           ],
           "shortLinkVisits": 0,
-          "views": 45,
-          "engagedSecondsPerView": 15,
+          "views": 47,
+          "engagedSecondsPerView": 14,
           "shares": {
             "native": 0,
             "clipboard": 0,
