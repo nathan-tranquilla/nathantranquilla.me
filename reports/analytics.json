@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-29T10:01:06.469Z",
+  "generatedAt": "2026-10-30T10:01:10.338Z",
   "ranges": {
     "7": {
-      "startDate": "2026-10-23",
-      "endDate": "2026-10-29",
+      "startDate": "2026-10-24",
+      "endDate": "2026-10-30",
       "posts": {
         "i-am-a-web-developer-and-here-is-why-i-dont-use-typescript": {
           "sessions": 1,
@@ -103,31 +103,27 @@
       }
     },
     "30": {
-      "startDate": "2026-09-30",
-      "endDate": "2026-10-29",
+      "startDate": "2026-10-01",
+      "endDate": "2026-10-30",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
-          "sessions": 9,
+          "sessions": 8,
           "channels": {
             "direct": 7,
-            "social": 1,
+            "social": 0,
             "search": 0,
             "referral": 0,
             "other": 1
           },
           "sources": [
             {
-              "source": "t.co",
-              "sessions": 1
-            },
-            {
               "source": "youtube.com",
               "sessions": 1
             }
           ],
           "shortLinkVisits": 0,
-          "views": 9,
-          "engagedSecondsPerView": 49,
+          "views": 8,
+          "engagedSecondsPerView": 56,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -365,8 +361,8 @@
       }
     },
     "90": {
-      "startDate": "2026-08-01",
-      "endDate": "2026-10-29",
+      "startDate": "2026-08-02",
+      "endDate": "2026-10-30",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 30,
@@ -725,8 +721,8 @@
       }
     },
     "prev7": {
-      "startDate": "2026-10-16",
-      "endDate": "2026-10-22",
+      "startDate": "2026-10-17",
+      "endDate": "2026-10-23",
       "posts": {
         "strong-type-systems-are-required-for-a-safer-web": {
           "sessions": 5,
@@ -903,7 +899,7 @@
     },
     "all": {
       "startDate": "2015-08-14",
-      "endDate": "2026-10-29",
+      "endDate": "2026-10-30",
       "posts": {
         "strong-type-systems-are-required-for-a-safer-web": {
           "sessions": 22,
