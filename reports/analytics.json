@@ -1,10 +1,29 @@
 {
-  "generatedAt": "2026-10-30T10:01:10.338Z",
+  "generatedAt": "2026-10-31T10:01:03.754Z",
   "ranges": {
     "7": {
-      "startDate": "2026-10-24",
-      "endDate": "2026-10-30",
+      "startDate": "2026-10-25",
+      "endDate": "2026-10-31",
       "posts": {
+        "coding-is-not-for-humans": {
+          "sessions": 1,
+          "channels": {
+            "direct": 1,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 1,
+          "engagedSecondsPerView": 0,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
         "i-am-a-web-developer-and-here-is-why-i-dont-use-typescript": {
           "sessions": 1,
           "channels": {
@@ -24,7 +43,7 @@
             "total": 0
           }
         },
-        "the-4-pillars-of-next-gen-web-dev": {
+        "teach-claude-your-project-once-benefit-forever": {
           "sessions": 1,
           "channels": {
             "direct": 1,
@@ -43,7 +62,7 @@
             "total": 0
           }
         },
-        "the-reality-of-rescript-optimization-claims": {
+        "the-4-pillars-of-next-gen-web-dev": {
           "sessions": 1,
           "channels": {
             "direct": 1,
@@ -103,8 +122,8 @@
       }
     },
     "30": {
-      "startDate": "2026-10-01",
-      "endDate": "2026-10-30",
+      "startDate": "2026-10-02",
+      "endDate": "2026-10-31",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 8,
@@ -187,7 +206,45 @@
             "total": 0
           }
         },
+        "teach-claude-your-project-once-benefit-forever": {
+          "sessions": 2,
+          "channels": {
+            "direct": 2,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 3,
+          "engagedSecondsPerView": 7,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
         "ai-powered-video-curation-from-naive-search-to-confident-matches": {
+          "sessions": 1,
+          "channels": {
+            "direct": 1,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 1,
+          "engagedSecondsPerView": 0,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
+        "coding-is-not-for-humans": {
           "sessions": 1,
           "channels": {
             "direct": 1,
@@ -238,25 +295,6 @@
           "shortLinkVisits": 0,
           "views": 1,
           "engagedSecondsPerView": 0,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
-        "teach-claude-your-project-once-benefit-forever": {
-          "sessions": 1,
-          "channels": {
-            "direct": 1,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 2,
-          "engagedSecondsPerView": 11,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -361,8 +399,8 @@
       }
     },
     "90": {
-      "startDate": "2026-08-02",
-      "endDate": "2026-10-30",
+      "startDate": "2026-08-03",
+      "endDate": "2026-10-31",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 30,
@@ -480,19 +518,24 @@
             "total": 0
           }
         },
-        "the-reality-of-rescript-optimization-claims": {
-          "sessions": 5,
+        "teach-claude-your-project-once-benefit-forever": {
+          "sessions": 6,
           "channels": {
             "direct": 5,
             "social": 0,
             "search": 0,
-            "referral": 0,
+            "referral": 1,
             "other": 0
           },
-          "sources": [],
+          "sources": [
+            {
+              "source": "teams.public.onecdn.static.microsoft",
+              "sessions": 1
+            }
+          ],
           "shortLinkVisits": 0,
-          "views": 5,
-          "engagedSecondsPerView": 5,
+          "views": 10,
+          "engagedSecondsPerView": 3,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -512,30 +555,6 @@
           "shortLinkVisits": 0,
           "views": 5,
           "engagedSecondsPerView": 1,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
-        "teach-claude-your-project-once-benefit-forever": {
-          "sessions": 5,
-          "channels": {
-            "direct": 4,
-            "social": 0,
-            "search": 0,
-            "referral": 1,
-            "other": 0
-          },
-          "sources": [
-            {
-              "source": "teams.public.onecdn.static.microsoft",
-              "sessions": 1
-            }
-          ],
-          "shortLinkVisits": 0,
-          "views": 9,
-          "engagedSecondsPerView": 4,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -623,6 +642,25 @@
             "total": 0
           }
         },
+        "coding-is-not-for-humans": {
+          "sessions": 3,
+          "channels": {
+            "direct": 3,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 4,
+          "engagedSecondsPerView": 1,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
         "why-rescript-is-next-gen": {
           "sessions": 3,
           "channels": {
@@ -642,7 +680,7 @@
             "total": 0
           }
         },
-        "coding-is-not-for-humans": {
+        "the-reality-of-rescript-optimization-claims": {
           "sessions": 2,
           "channels": {
             "direct": 2,
@@ -653,8 +691,8 @@
           },
           "sources": [],
           "shortLinkVisits": 0,
-          "views": 3,
-          "engagedSecondsPerView": 1,
+          "views": 2,
+          "engagedSecondsPerView": 0,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -721,8 +759,8 @@
       }
     },
     "prev7": {
-      "startDate": "2026-10-17",
-      "endDate": "2026-10-23",
+      "startDate": "2026-10-18",
+      "endDate": "2026-10-24",
       "posts": {
         "strong-type-systems-are-required-for-a-safer-web": {
           "sessions": 5,
@@ -781,44 +819,6 @@
             "total": 0
           }
         },
-        "filling-the-test-driven-development-gap-between-figma-and-your-component": {
-          "sessions": 1,
-          "channels": {
-            "direct": 1,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 1,
-          "engagedSecondsPerView": 0,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
-        "i-am-a-web-developer-and-here-is-why-i-dont-use-typescript": {
-          "sessions": 1,
-          "channels": {
-            "direct": 1,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 1,
-          "engagedSecondsPerView": 0,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
         "teach-claude-your-project-once-benefit-forever": {
           "sessions": 1,
           "channels": {
@@ -832,6 +832,25 @@
           "shortLinkVisits": 0,
           "views": 2,
           "engagedSecondsPerView": 11,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
+        "the-reality-of-rescript-optimization-claims": {
+          "sessions": 1,
+          "channels": {
+            "direct": 1,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 1,
+          "engagedSecondsPerView": 0,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -899,7 +918,7 @@
     },
     "all": {
       "startDate": "2015-08-14",
-      "endDate": "2026-10-30",
+      "endDate": "2026-10-31",
       "posts": {
         "strong-type-systems-are-required-for-a-safer-web": {
           "sessions": 22,
@@ -1090,6 +1109,34 @@
             "total": 2
           }
         },
+        "teach-claude-your-project-once-benefit-forever": {
+          "sessions": 22,
+          "channels": {
+            "direct": 14,
+            "social": 7,
+            "search": 0,
+            "referral": 1,
+            "other": 0
+          },
+          "sources": [
+            {
+              "source": "linkedin.com",
+              "sessions": 7
+            },
+            {
+              "source": "teams.public.onecdn.static.microsoft",
+              "sessions": 1
+            }
+          ],
+          "shortLinkVisits": 0,
+          "views": 30,
+          "engagedSecondsPerView": 11,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
         "the-reality-of-rescript-optimization-claims": {
           "sessions": 14,
           "channels": {
@@ -1160,34 +1207,6 @@
             "total": 0
           }
         },
-        "teach-claude-your-project-once-benefit-forever": {
-          "sessions": 21,
-          "channels": {
-            "direct": 13,
-            "social": 7,
-            "search": 0,
-            "referral": 1,
-            "other": 0
-          },
-          "sources": [
-            {
-              "source": "linkedin.com",
-              "sessions": 7
-            },
-            {
-              "source": "teams.public.onecdn.static.microsoft",
-              "sessions": 1
-            }
-          ],
-          "shortLinkVisits": 0,
-          "views": 29,
-          "engagedSecondsPerView": 11,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
         "ai-powered-video-curation-from-naive-search-to-confident-matches": {
           "sessions": 12,
           "channels": {
@@ -1201,6 +1220,30 @@
           "shortLinkVisits": 0,
           "views": 13,
           "engagedSecondsPerView": 0,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
+        "coding-is-not-for-humans": {
+          "sessions": 22,
+          "channels": {
+            "direct": 12,
+            "social": 10,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [
+            {
+              "source": "linkedin.com",
+              "sessions": 10
+            }
+          ],
+          "shortLinkVisits": 0,
+          "views": 28,
+          "engagedSecondsPerView": 25,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -1244,30 +1287,6 @@
           "shortLinkVisits": 0,
           "views": 13,
           "engagedSecondsPerView": 1,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
-        "coding-is-not-for-humans": {
-          "sessions": 21,
-          "channels": {
-            "direct": 11,
-            "social": 10,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [
-            {
-              "source": "linkedin.com",
-              "sessions": 10
-            }
-          ],
-          "shortLinkVisits": 0,
-          "views": 27,
-          "engagedSecondsPerView": 26,
           "shares": {
             "native": 0,
             "clipboard": 0,

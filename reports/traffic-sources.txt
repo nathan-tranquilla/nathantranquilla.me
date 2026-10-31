@@ -19,15 +19,15 @@ so-it-begins-the-end-of-typescript  (7 sessions)
 i-am-a-web-developer-and-here-is-why-i-dont-use-typescript  (6 sessions)
   100%  Direct               6   (direct) 6
 
+teach-claude-your-project-once-benefit-forever  (6 sessions)
+   83%  Direct               5   (direct) 5
+   17%  Referral             1   teams.public.onecdn.static.microsoft 1
+
 the-reality-of-rescript-optimization-claims  (5 sessions)
   100%  Direct               5   (direct) 5
 
 typescript-has-a-big-problem  (5 sessions)
   100%  Direct               5   (direct) 5
-
-teach-claude-your-project-once-benefit-forever  (5 sessions)
-   80%  Direct               4   (direct) 4
-   20%  Referral             1   teams.public.onecdn.static.microsoft 1
 
 when-two-ai-pipelines-meet--turning-curated-data-into-a-daily-api  (5 sessions)
    80%  Direct               4   (direct) 4
@@ -42,11 +42,11 @@ the-4-pillars-of-next-gen-web-dev  (4 sessions)
 ai-powered-video-curation-from-naive-search-to-confident-matches  (3 sessions)
   100%  Direct               3   (direct) 3
 
-why-rescript-is-next-gen  (3 sessions)
+coding-is-not-for-humans  (3 sessions)
   100%  Direct               3   (direct) 3
 
-coding-is-not-for-humans  (2 sessions)
-  100%  Direct               2   (direct) 2
+why-rescript-is-next-gen  (3 sessions)
+  100%  Direct               3   (direct) 3
 
 using-ai-to-automate-quality-content-delivery  (2 sessions)
   100%  Direct               2   (direct) 2
@@ -57,8 +57,8 @@ filling-the-test-driven-development-gap-between-figma-and-your-component  (1 ses
 making-my-money-decisions-mechanical-with-ai-and-plain-text-accounting  (1 sessions)
   100%  Direct               1   (direct) 1
 
-All posts  (98 sessions)
-   82%  Direct              80
+All posts  (100 sessions)
+   82%  Direct              82
     9%  Organic Social       9
     5%  Referral             5
     3%  Unassigned           3
