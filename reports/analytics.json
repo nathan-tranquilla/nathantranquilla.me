@@ -1,11 +1,49 @@
 {
-  "generatedAt": "2026-10-31T10:01:03.754Z",
+  "generatedAt": "2026-11-01T11:01:01.009Z",
   "ranges": {
     "7": {
-      "startDate": "2026-10-25",
-      "endDate": "2026-10-31",
+      "startDate": "2026-10-26",
+      "endDate": "2026-11-01",
       "posts": {
-        "coding-is-not-for-humans": {
+        "i-am-a-web-developer-and-here-is-why-i-dont-use-typescript": {
+          "sessions": 2,
+          "channels": {
+            "direct": 2,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 3,
+          "engagedSecondsPerView": 0,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
+        "why-every-desk-job-is-becoming-an-ai-apprenticeship": {
+          "sessions": 2,
+          "channels": {
+            "direct": 2,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 2,
+          "engagedSecondsPerView": 3,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
+        "ai-powered-video-curation-from-naive-search-to-confident-matches": {
           "sessions": 1,
           "channels": {
             "direct": 1,
@@ -24,7 +62,7 @@
             "total": 0
           }
         },
-        "i-am-a-web-developer-and-here-is-why-i-dont-use-typescript": {
+        "coding-is-not-for-humans": {
           "sessions": 1,
           "channels": {
             "direct": 1,
@@ -35,7 +73,7 @@
           },
           "sources": [],
           "shortLinkVisits": 0,
-          "views": 2,
+          "views": 1,
           "engagedSecondsPerView": 0,
           "shares": {
             "native": 0,
@@ -99,56 +137,13 @@
             "clipboard": 0,
             "total": 0
           }
-        },
-        "why-every-desk-job-is-becoming-an-ai-apprenticeship": {
-          "sessions": 1,
-          "channels": {
-            "direct": 1,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 1,
-          "engagedSecondsPerView": 0,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
         }
       }
     },
     "30": {
-      "startDate": "2026-10-02",
-      "endDate": "2026-10-31",
+      "startDate": "2026-10-03",
+      "endDate": "2026-11-01",
       "posts": {
-        "taking-responsibility-for-your-ai-generated-code": {
-          "sessions": 8,
-          "channels": {
-            "direct": 7,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 1
-          },
-          "sources": [
-            {
-              "source": "youtube.com",
-              "sessions": 1
-            }
-          ],
-          "shortLinkVisits": 0,
-          "views": 8,
-          "engagedSecondsPerView": 56,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
         "strong-type-systems-are-required-for-a-safer-web": {
           "sessions": 5,
           "channels": {
@@ -168,7 +163,50 @@
             "total": 0
           }
         },
+        "taking-responsibility-for-your-ai-generated-code": {
+          "sessions": 6,
+          "channels": {
+            "direct": 5,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 1
+          },
+          "sources": [
+            {
+              "source": "youtube.com",
+              "sessions": 1
+            }
+          ],
+          "shortLinkVisits": 0,
+          "views": 6,
+          "engagedSecondsPerView": 60,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
         "why-every-desk-job-is-becoming-an-ai-apprenticeship": {
+          "sessions": 4,
+          "channels": {
+            "direct": 4,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 4,
+          "engagedSecondsPerView": 4,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
+        "i-am-a-web-developer-and-here-is-why-i-dont-use-typescript": {
           "sessions": 3,
           "channels": {
             "direct": 3,
@@ -179,15 +217,15 @@
           },
           "sources": [],
           "shortLinkVisits": 0,
-          "views": 3,
-          "engagedSecondsPerView": 3,
+          "views": 4,
+          "engagedSecondsPerView": 0,
           "shares": {
             "native": 0,
             "clipboard": 0,
             "total": 0
           }
         },
-        "i-am-a-web-developer-and-here-is-why-i-dont-use-typescript": {
+        "ai-powered-video-curation-from-naive-search-to-confident-matches": {
           "sessions": 2,
           "channels": {
             "direct": 2,
@@ -198,7 +236,7 @@
           },
           "sources": [],
           "shortLinkVisits": 0,
-          "views": 3,
+          "views": 2,
           "engagedSecondsPerView": 0,
           "shares": {
             "native": 0,
@@ -219,25 +257,6 @@
           "shortLinkVisits": 0,
           "views": 3,
           "engagedSecondsPerView": 7,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
-        "ai-powered-video-curation-from-naive-search-to-confident-matches": {
-          "sessions": 1,
-          "channels": {
-            "direct": 1,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 1,
-          "engagedSecondsPerView": 0,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -399,8 +418,8 @@
       }
     },
     "90": {
-      "startDate": "2026-08-03",
-      "endDate": "2026-10-31",
+      "startDate": "2026-08-04",
+      "endDate": "2026-11-01",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 30,
@@ -442,6 +461,25 @@
             "total": 2
           }
         },
+        "why-every-desk-job-is-becoming-an-ai-apprenticeship": {
+          "sessions": 9,
+          "channels": {
+            "direct": 9,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 9,
+          "engagedSecondsPerView": 3,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
         "strong-type-systems-are-required-for-a-safer-web": {
           "sessions": 8,
           "channels": {
@@ -461,10 +499,10 @@
             "total": 0
           }
         },
-        "why-every-desk-job-is-becoming-an-ai-apprenticeship": {
-          "sessions": 8,
+        "i-am-a-web-developer-and-here-is-why-i-dont-use-typescript": {
+          "sessions": 7,
           "channels": {
-            "direct": 8,
+            "direct": 7,
             "social": 0,
             "search": 0,
             "referral": 0,
@@ -473,7 +511,7 @@
           "sources": [],
           "shortLinkVisits": 0,
           "views": 8,
-          "engagedSecondsPerView": 3,
+          "engagedSecondsPerView": 0,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -493,25 +531,6 @@
           "shortLinkVisits": 0,
           "views": 7,
           "engagedSecondsPerView": 5,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
-        "i-am-a-web-developer-and-here-is-why-i-dont-use-typescript": {
-          "sessions": 6,
-          "channels": {
-            "direct": 6,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 7,
-          "engagedSecondsPerView": 0,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -555,6 +574,25 @@
           "shortLinkVisits": 0,
           "views": 5,
           "engagedSecondsPerView": 1,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
+        "ai-powered-video-curation-from-naive-search-to-confident-matches": {
+          "sessions": 4,
+          "channels": {
+            "direct": 4,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 4,
+          "engagedSecondsPerView": 0,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -616,25 +654,6 @@
           "sources": [],
           "shortLinkVisits": 0,
           "views": 4,
-          "engagedSecondsPerView": 0,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
-        "ai-powered-video-curation-from-naive-search-to-confident-matches": {
-          "sessions": 3,
-          "channels": {
-            "direct": 3,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 3,
           "engagedSecondsPerView": 0,
           "shares": {
             "native": 0,
@@ -759,8 +778,8 @@
       }
     },
     "prev7": {
-      "startDate": "2026-10-18",
-      "endDate": "2026-10-24",
+      "startDate": "2026-10-19",
+      "endDate": "2026-10-25",
       "posts": {
         "strong-type-systems-are-required-for-a-safer-web": {
           "sessions": 5,
@@ -894,31 +913,12 @@
             "clipboard": 0,
             "total": 0
           }
-        },
-        "why-every-desk-job-is-becoming-an-ai-apprenticeship": {
-          "sessions": 1,
-          "channels": {
-            "direct": 1,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 1,
-          "engagedSecondsPerView": 5,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
         }
       }
     },
     "all": {
       "startDate": "2015-08-14",
-      "endDate": "2026-10-31",
+      "endDate": "2026-11-01",
       "posts": {
         "strong-type-systems-are-required-for-a-safer-web": {
           "sessions": 22,
@@ -940,9 +940,9 @@
           }
         },
         "i-am-a-web-developer-and-here-is-why-i-dont-use-typescript": {
-          "sessions": 38,
+          "sessions": 39,
           "channels": {
-            "direct": 20,
+            "direct": 21,
             "social": 13,
             "search": 0,
             "referral": 4,
@@ -971,7 +971,7 @@
             }
           ],
           "shortLinkVisits": 0,
-          "views": 47,
+          "views": 48,
           "engagedSecondsPerView": 14,
           "shares": {
             "native": 0,
@@ -1023,9 +1023,9 @@
           }
         },
         "why-every-desk-job-is-becoming-an-ai-apprenticeship": {
-          "sessions": 21,
+          "sessions": 22,
           "channels": {
-            "direct": 16,
+            "direct": 17,
             "social": 4,
             "search": 0,
             "referral": 0,
@@ -1042,8 +1042,8 @@
             }
           ],
           "shortLinkVisits": 0,
-          "views": 26,
-          "engagedSecondsPerView": 20,
+          "views": 27,
+          "engagedSecondsPerView": 19,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -1208,9 +1208,9 @@
           }
         },
         "ai-powered-video-curation-from-naive-search-to-confident-matches": {
-          "sessions": 12,
+          "sessions": 13,
           "channels": {
-            "direct": 12,
+            "direct": 13,
             "social": 0,
             "search": 0,
             "referral": 0,
@@ -1218,7 +1218,7 @@
           },
           "sources": [],
           "shortLinkVisits": 0,
-          "views": 13,
+          "views": 14,
           "engagedSecondsPerView": 0,
           "shares": {
             "native": 0,
