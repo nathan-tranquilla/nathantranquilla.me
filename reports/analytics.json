@@ -1,29 +1,10 @@
 {
-  "generatedAt": "2026-11-01T11:01:01.009Z",
+  "generatedAt": "2026-11-02T11:01:03.907Z",
   "ranges": {
     "7": {
-      "startDate": "2026-10-26",
-      "endDate": "2026-11-01",
+      "startDate": "2026-10-27",
+      "endDate": "2026-11-02",
       "posts": {
-        "i-am-a-web-developer-and-here-is-why-i-dont-use-typescript": {
-          "sessions": 2,
-          "channels": {
-            "direct": 2,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 3,
-          "engagedSecondsPerView": 0,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
         "why-every-desk-job-is-becoming-an-ai-apprenticeship": {
           "sessions": 2,
           "channels": {
@@ -63,6 +44,25 @@
           }
         },
         "coding-is-not-for-humans": {
+          "sessions": 1,
+          "channels": {
+            "direct": 1,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 1,
+          "engagedSecondsPerView": 0,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
+        "i-am-a-web-developer-and-here-is-why-i-dont-use-typescript": {
           "sessions": 1,
           "channels": {
             "direct": 1,
@@ -141,8 +141,8 @@
       }
     },
     "30": {
-      "startDate": "2026-10-03",
-      "endDate": "2026-11-01",
+      "startDate": "2026-10-04",
+      "endDate": "2026-11-02",
       "posts": {
         "strong-type-systems-are-required-for-a-safer-web": {
           "sessions": 5,
@@ -157,30 +157,6 @@
           "shortLinkVisits": 0,
           "views": 5,
           "engagedSecondsPerView": 0,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
-        "taking-responsibility-for-your-ai-generated-code": {
-          "sessions": 6,
-          "channels": {
-            "direct": 5,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 1
-          },
-          "sources": [
-            {
-              "source": "youtube.com",
-              "sessions": 1
-            }
-          ],
-          "shortLinkVisits": 0,
-          "views": 6,
-          "engagedSecondsPerView": 60,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -219,6 +195,30 @@
           "shortLinkVisits": 0,
           "views": 4,
           "engagedSecondsPerView": 0,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
+        "taking-responsibility-for-your-ai-generated-code": {
+          "sessions": 4,
+          "channels": {
+            "direct": 3,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 1
+          },
+          "sources": [
+            {
+              "source": "youtube.com",
+              "sessions": 1
+            }
+          ],
+          "shortLinkVisits": 0,
+          "views": 4,
+          "engagedSecondsPerView": 90,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -295,25 +295,6 @@
           "shortLinkVisits": 0,
           "views": 2,
           "engagedSecondsPerView": 26,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
-        "making-my-money-decisions-mechanical-with-ai-and-plain-text-accounting": {
-          "sessions": 1,
-          "channels": {
-            "direct": 1,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 1,
-          "engagedSecondsPerView": 0,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -418,8 +399,8 @@
       }
     },
     "90": {
-      "startDate": "2026-08-04",
-      "endDate": "2026-11-01",
+      "startDate": "2026-08-05",
+      "endDate": "2026-11-02",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 30,
@@ -778,8 +759,8 @@
       }
     },
     "prev7": {
-      "startDate": "2026-10-19",
-      "endDate": "2026-10-25",
+      "startDate": "2026-10-20",
+      "endDate": "2026-10-26",
       "posts": {
         "strong-type-systems-are-required-for-a-safer-web": {
           "sessions": 5,
@@ -800,25 +781,6 @@
             "total": 0
           }
         },
-        "taking-responsibility-for-your-ai-generated-code": {
-          "sessions": 2,
-          "channels": {
-            "direct": 2,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 2,
-          "engagedSecondsPerView": 107,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
         "ai-powered-video-curation-from-naive-search-to-confident-matches": {
           "sessions": 1,
           "channels": {
@@ -832,6 +794,44 @@
           "shortLinkVisits": 0,
           "views": 1,
           "engagedSecondsPerView": 0,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
+        "i-am-a-web-developer-and-here-is-why-i-dont-use-typescript": {
+          "sessions": 1,
+          "channels": {
+            "direct": 1,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 2,
+          "engagedSecondsPerView": 0,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
+        "taking-responsibility-for-your-ai-generated-code": {
+          "sessions": 1,
+          "channels": {
+            "direct": 1,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 1,
+          "engagedSecondsPerView": 151,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -918,7 +918,7 @@
     },
     "all": {
       "startDate": "2015-08-14",
-      "endDate": "2026-11-01",
+      "endDate": "2026-11-02",
       "posts": {
         "strong-type-systems-are-required-for-a-safer-web": {
           "sessions": 22,
