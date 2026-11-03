@@ -10,11 +10,11 @@ taking-responsibility-for-your-ai-generated-code  (30 sessions)
 why-every-desk-job-is-becoming-an-ai-apprenticeship  (9 sessions)
   100%  Direct               9   (direct) 9
 
-strong-type-systems-are-required-for-a-safer-web  (8 sessions)
+i-am-a-web-developer-and-here-is-why-i-dont-use-typescript  (8 sessions)
   100%  Direct               8   (direct) 8
 
-i-am-a-web-developer-and-here-is-why-i-dont-use-typescript  (7 sessions)
-  100%  Direct               7   (direct) 7
+strong-type-systems-are-required-for-a-safer-web  (8 sessions)
+  100%  Direct               8   (direct) 8
 
 so-it-begins-the-end-of-typescript  (7 sessions)
   100%  Direct               7   (direct) 7
@@ -57,8 +57,8 @@ filling-the-test-driven-development-gap-between-figma-and-your-component  (1 ses
 making-my-money-decisions-mechanical-with-ai-and-plain-text-accounting  (1 sessions)
   100%  Direct               1   (direct) 1
 
-All posts  (100 sessions)
-   82%  Direct              82
+All posts  (101 sessions)
+   82%  Direct              83
     9%  Organic Social       9
     5%  Referral             5
     3%  Unassigned           3
