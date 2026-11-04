@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-03T11:01:04.088Z",
+  "generatedAt": "2026-11-04T11:01:03.994Z",
   "ranges": {
     "7": {
-      "startDate": "2026-10-28",
-      "endDate": "2026-11-03",
+      "startDate": "2026-10-29",
+      "endDate": "2026-11-04",
       "posts": {
         "i-am-a-web-developer-and-here-is-why-i-dont-use-typescript": {
           "sessions": 2,
@@ -24,19 +24,24 @@
             "total": 0
           }
         },
-        "why-every-desk-job-is-becoming-an-ai-apprenticeship": {
-          "sessions": 2,
+        "taking-responsibility-for-your-ai-generated-code": {
+          "sessions": 3,
           "channels": {
             "direct": 2,
             "social": 0,
             "search": 0,
-            "referral": 0,
+            "referral": 1,
             "other": 0
           },
-          "sources": [],
+          "sources": [
+            {
+              "source": "teams.public.onecdn.static.microsoft",
+              "sessions": 1
+            }
+          ],
           "shortLinkVisits": 0,
-          "views": 2,
-          "engagedSecondsPerView": 3,
+          "views": 4,
+          "engagedSecondsPerView": 0,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -100,7 +105,7 @@
             "total": 0
           }
         },
-        "when-two-ai-pipelines-meet--turning-curated-data-into-a-daily-api": {
+        "why-every-desk-job-is-becoming-an-ai-apprenticeship": {
           "sessions": 1,
           "channels": {
             "direct": 1,
@@ -112,7 +117,7 @@
           "sources": [],
           "shortLinkVisits": 0,
           "views": 1,
-          "engagedSecondsPerView": 0,
+          "engagedSecondsPerView": 5,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -122,8 +127,8 @@
       }
     },
     "30": {
-      "startDate": "2026-10-05",
-      "endDate": "2026-11-03",
+      "startDate": "2026-10-06",
+      "endDate": "2026-11-04",
       "posts": {
         "strong-type-systems-are-required-for-a-safer-web": {
           "sessions": 5,
@@ -144,6 +149,34 @@
             "total": 0
           }
         },
+        "taking-responsibility-for-your-ai-generated-code": {
+          "sessions": 7,
+          "channels": {
+            "direct": 5,
+            "social": 0,
+            "search": 0,
+            "referral": 1,
+            "other": 1
+          },
+          "sources": [
+            {
+              "source": "teams.public.onecdn.static.microsoft",
+              "sessions": 1
+            },
+            {
+              "source": "youtube.com",
+              "sessions": 1
+            }
+          ],
+          "shortLinkVisits": 0,
+          "views": 8,
+          "engagedSecondsPerView": 45,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
         "i-am-a-web-developer-and-here-is-why-i-dont-use-typescript": {
           "sessions": 4,
           "channels": {
@@ -157,30 +190,6 @@
           "shortLinkVisits": 0,
           "views": 5,
           "engagedSecondsPerView": 0,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
-        "taking-responsibility-for-your-ai-generated-code": {
-          "sessions": 4,
-          "channels": {
-            "direct": 3,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 1
-          },
-          "sources": [
-            {
-              "source": "youtube.com",
-              "sessions": 1
-            }
-          ],
-          "shortLinkVisits": 0,
-          "views": 4,
-          "engagedSecondsPerView": 90,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -380,16 +389,16 @@
       }
     },
     "90": {
-      "startDate": "2026-08-06",
-      "endDate": "2026-11-03",
+      "startDate": "2026-08-07",
+      "endDate": "2026-11-04",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
-          "sessions": 30,
+          "sessions": 33,
           "channels": {
-            "direct": 14,
+            "direct": 16,
             "social": 8,
             "search": 0,
-            "referral": 4,
+            "referral": 5,
             "other": 4
           },
           "sources": [
@@ -399,7 +408,7 @@
             },
             {
               "source": "teams.public.onecdn.static.microsoft",
-              "sessions": 4
+              "sessions": 5
             },
             {
               "source": "share",
@@ -415,8 +424,8 @@
             }
           ],
           "shortLinkVisits": 3,
-          "views": 38,
-          "engagedSecondsPerView": 17,
+          "views": 42,
+          "engagedSecondsPerView": 15,
           "shares": {
             "native": 1,
             "clipboard": 1,
@@ -624,9 +633,9 @@
           }
         },
         "the-4-pillars-of-next-gen-web-dev": {
-          "sessions": 3,
+          "sessions": 2,
           "channels": {
-            "direct": 3,
+            "direct": 2,
             "social": 0,
             "search": 0,
             "referral": 0,
@@ -634,26 +643,7 @@
           },
           "sources": [],
           "shortLinkVisits": 0,
-          "views": 3,
-          "engagedSecondsPerView": 0,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
-        "why-rescript-is-next-gen": {
-          "sessions": 3,
-          "channels": {
-            "direct": 3,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 3,
+          "views": 2,
           "engagedSecondsPerView": 0,
           "shares": {
             "native": 0,
@@ -681,6 +671,25 @@
           }
         },
         "using-ai-to-automate-quality-content-delivery": {
+          "sessions": 2,
+          "channels": {
+            "direct": 2,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 2,
+          "engagedSecondsPerView": 0,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
+        "why-rescript-is-next-gen": {
           "sessions": 2,
           "channels": {
             "direct": 2,
@@ -740,8 +749,8 @@
       }
     },
     "prev7": {
-      "startDate": "2026-10-21",
-      "endDate": "2026-10-27",
+      "startDate": "2026-10-22",
+      "endDate": "2026-10-28",
       "posts": {
         "strong-type-systems-are-required-for-a-safer-web": {
           "sessions": 4,
@@ -857,7 +866,7 @@
             "total": 0
           }
         },
-        "typescript-has-a-big-problem": {
+        "when-two-ai-pipelines-meet--turning-curated-data-into-a-daily-api": {
           "sessions": 1,
           "channels": {
             "direct": 1,
@@ -876,7 +885,7 @@
             "total": 0
           }
         },
-        "using-ai-to-automate-quality-content-delivery": {
+        "why-every-desk-job-is-becoming-an-ai-apprenticeship": {
           "sessions": 1,
           "channels": {
             "direct": 1,
@@ -899,7 +908,7 @@
     },
     "all": {
       "startDate": "2015-08-14",
-      "endDate": "2026-11-03",
+      "endDate": "2026-11-04",
       "posts": {
         "i-am-a-web-developer-and-here-is-why-i-dont-use-typescript": {
           "sessions": 40,
@@ -1031,6 +1040,46 @@
             "total": 0
           }
         },
+        "taking-responsibility-for-your-ai-generated-code": {
+          "sessions": 33,
+          "channels": {
+            "direct": 16,
+            "social": 8,
+            "search": 0,
+            "referral": 5,
+            "other": 4
+          },
+          "sources": [
+            {
+              "source": "linkedin.com",
+              "sessions": 7
+            },
+            {
+              "source": "teams.public.onecdn.static.microsoft",
+              "sessions": 5
+            },
+            {
+              "source": "share",
+              "sessions": 3
+            },
+            {
+              "source": "t.co",
+              "sessions": 1
+            },
+            {
+              "source": "youtube.com",
+              "sessions": 1
+            }
+          ],
+          "shortLinkVisits": 3,
+          "views": 42,
+          "engagedSecondsPerView": 15,
+          "shares": {
+            "native": 1,
+            "clipboard": 1,
+            "total": 2
+          }
+        },
         "so-it-begins-the-end-of-typescript": {
           "sessions": 15,
           "channels": {
@@ -1048,46 +1097,6 @@
             "native": 0,
             "clipboard": 0,
             "total": 0
-          }
-        },
-        "taking-responsibility-for-your-ai-generated-code": {
-          "sessions": 30,
-          "channels": {
-            "direct": 14,
-            "social": 8,
-            "search": 0,
-            "referral": 4,
-            "other": 4
-          },
-          "sources": [
-            {
-              "source": "linkedin.com",
-              "sessions": 7
-            },
-            {
-              "source": "teams.public.onecdn.static.microsoft",
-              "sessions": 4
-            },
-            {
-              "source": "share",
-              "sessions": 3
-            },
-            {
-              "source": "t.co",
-              "sessions": 1
-            },
-            {
-              "source": "youtube.com",
-              "sessions": 1
-            }
-          ],
-          "shortLinkVisits": 3,
-          "views": 38,
-          "engagedSecondsPerView": 17,
-          "shares": {
-            "native": 1,
-            "clipboard": 1,
-            "total": 2
           }
         },
         "teach-claude-your-project-once-benefit-forever": {
