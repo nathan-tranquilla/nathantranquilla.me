@@ -1,10 +1,29 @@
 {
-  "generatedAt": "2026-11-04T11:01:03.994Z",
+  "generatedAt": "2026-11-05T11:01:09.597Z",
   "ranges": {
     "7": {
-      "startDate": "2026-10-29",
-      "endDate": "2026-11-04",
+      "startDate": "2026-10-30",
+      "endDate": "2026-11-05",
       "posts": {
+        "ai-powered-video-curation-from-naive-search-to-confident-matches": {
+          "sessions": 2,
+          "channels": {
+            "direct": 2,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 2,
+          "engagedSecondsPerView": 0,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
         "i-am-a-web-developer-and-here-is-why-i-dont-use-typescript": {
           "sessions": 2,
           "channels": {
@@ -41,25 +60,6 @@
           ],
           "shortLinkVisits": 0,
           "views": 4,
-          "engagedSecondsPerView": 0,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
-        "ai-powered-video-curation-from-naive-search-to-confident-matches": {
-          "sessions": 1,
-          "channels": {
-            "direct": 1,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 1,
           "engagedSecondsPerView": 0,
           "shares": {
             "native": 0,
@@ -105,6 +105,25 @@
             "total": 0
           }
         },
+        "typescript-has-a-big-problem": {
+          "sessions": 1,
+          "channels": {
+            "direct": 1,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 1,
+          "engagedSecondsPerView": 0,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
         "why-every-desk-job-is-becoming-an-ai-apprenticeship": {
           "sessions": 1,
           "channels": {
@@ -127,8 +146,8 @@
       }
     },
     "30": {
-      "startDate": "2026-10-06",
-      "endDate": "2026-11-04",
+      "startDate": "2026-10-07",
+      "endDate": "2026-11-05",
       "posts": {
         "strong-type-systems-are-required-for-a-safer-web": {
           "sessions": 5,
@@ -196,6 +215,25 @@
             "total": 0
           }
         },
+        "ai-powered-video-curation-from-naive-search-to-confident-matches": {
+          "sessions": 3,
+          "channels": {
+            "direct": 3,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 3,
+          "engagedSecondsPerView": 0,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
         "why-every-desk-job-is-becoming-an-ai-apprenticeship": {
           "sessions": 3,
           "channels": {
@@ -215,25 +253,6 @@
             "total": 0
           }
         },
-        "ai-powered-video-curation-from-naive-search-to-confident-matches": {
-          "sessions": 2,
-          "channels": {
-            "direct": 2,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 2,
-          "engagedSecondsPerView": 0,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
         "teach-claude-your-project-once-benefit-forever": {
           "sessions": 2,
           "channels": {
@@ -247,6 +266,25 @@
           "shortLinkVisits": 0,
           "views": 3,
           "engagedSecondsPerView": 7,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
+        "typescript-has-a-big-problem": {
+          "sessions": 2,
+          "channels": {
+            "direct": 2,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 2,
+          "engagedSecondsPerView": 0,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -329,25 +367,6 @@
             "total": 0
           }
         },
-        "typescript-has-a-big-problem": {
-          "sessions": 1,
-          "channels": {
-            "direct": 1,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 1,
-          "engagedSecondsPerView": 0,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
         "using-ai-to-automate-quality-content-delivery": {
           "sessions": 1,
           "channels": {
@@ -389,8 +408,8 @@
       }
     },
     "90": {
-      "startDate": "2026-08-07",
-      "endDate": "2026-11-04",
+      "startDate": "2026-08-08",
+      "endDate": "2026-11-05",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 33,
@@ -508,6 +527,44 @@
             "total": 0
           }
         },
+        "typescript-has-a-big-problem": {
+          "sessions": 6,
+          "channels": {
+            "direct": 6,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 6,
+          "engagedSecondsPerView": 1,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
+        "ai-powered-video-curation-from-naive-search-to-confident-matches": {
+          "sessions": 5,
+          "channels": {
+            "direct": 5,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 5,
+          "engagedSecondsPerView": 0,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
         "teach-claude-your-project-once-benefit-forever": {
           "sessions": 6,
           "channels": {
@@ -526,44 +583,6 @@
           "shortLinkVisits": 0,
           "views": 10,
           "engagedSecondsPerView": 3,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
-        "typescript-has-a-big-problem": {
-          "sessions": 5,
-          "channels": {
-            "direct": 5,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 5,
-          "engagedSecondsPerView": 1,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
-        "ai-powered-video-curation-from-naive-search-to-confident-matches": {
-          "sessions": 4,
-          "channels": {
-            "direct": 4,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 4,
-          "engagedSecondsPerView": 0,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -689,25 +708,6 @@
             "total": 0
           }
         },
-        "why-rescript-is-next-gen": {
-          "sessions": 2,
-          "channels": {
-            "direct": 2,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 2,
-          "engagedSecondsPerView": 0,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
         "filling-the-test-driven-development-gap-between-figma-and-your-component": {
           "sessions": 1,
           "channels": {
@@ -745,17 +745,11 @@
             "clipboard": 0,
             "total": 0
           }
-        }
-      }
-    },
-    "prev7": {
-      "startDate": "2026-10-22",
-      "endDate": "2026-10-28",
-      "posts": {
-        "strong-type-systems-are-required-for-a-safer-web": {
-          "sessions": 4,
+        },
+        "why-rescript-is-next-gen": {
+          "sessions": 1,
           "channels": {
-            "direct": 4,
+            "direct": 1,
             "social": 0,
             "search": 0,
             "referral": 0,
@@ -763,14 +757,20 @@
           },
           "sources": [],
           "shortLinkVisits": 0,
-          "views": 4,
+          "views": 1,
           "engagedSecondsPerView": 0,
           "shares": {
             "native": 0,
             "clipboard": 0,
             "total": 0
           }
-        },
+        }
+      }
+    },
+    "prev7": {
+      "startDate": "2026-10-23",
+      "endDate": "2026-10-29",
+      "posts": {
         "i-am-a-web-developer-and-here-is-why-i-dont-use-typescript": {
           "sessions": 1,
           "channels": {
@@ -784,44 +784,6 @@
           "shortLinkVisits": 0,
           "views": 2,
           "engagedSecondsPerView": 0,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
-        "taking-responsibility-for-your-ai-generated-code": {
-          "sessions": 1,
-          "channels": {
-            "direct": 1,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 1,
-          "engagedSecondsPerView": 151,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
-        "teach-claude-your-project-once-benefit-forever": {
-          "sessions": 1,
-          "channels": {
-            "direct": 1,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 2,
-          "engagedSecondsPerView": 11,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -908,7 +870,7 @@
     },
     "all": {
       "startDate": "2015-08-14",
-      "endDate": "2026-11-04",
+      "endDate": "2026-11-05",
       "posts": {
         "i-am-a-web-developer-and-here-is-why-i-dont-use-typescript": {
           "sessions": 40,
@@ -994,9 +956,9 @@
           }
         },
         "typescript-has-a-big-problem": {
-          "sessions": 17,
+          "sessions": 18,
           "channels": {
-            "direct": 17,
+            "direct": 18,
             "social": 0,
             "search": 0,
             "referral": 0,
@@ -1004,7 +966,7 @@
           },
           "sources": [],
           "shortLinkVisits": 0,
-          "views": 19,
+          "views": 20,
           "engagedSecondsPerView": 4,
           "shares": {
             "native": 0,
@@ -1093,6 +1055,25 @@
           "shortLinkVisits": 0,
           "views": 15,
           "engagedSecondsPerView": 3,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
+        "ai-powered-video-curation-from-naive-search-to-confident-matches": {
+          "sessions": 14,
+          "channels": {
+            "direct": 14,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 15,
+          "engagedSecondsPerView": 0,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -1191,25 +1172,6 @@
           "shortLinkVisits": 0,
           "views": 14,
           "engagedSecondsPerView": 2,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
-        "ai-powered-video-curation-from-naive-search-to-confident-matches": {
-          "sessions": 13,
-          "channels": {
-            "direct": 13,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 14,
-          "engagedSecondsPerView": 0,
           "shares": {
             "native": 0,
             "clipboard": 0,

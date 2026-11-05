@@ -19,19 +19,19 @@ strong-type-systems-are-required-for-a-safer-web  (8 sessions)
 so-it-begins-the-end-of-typescript  (7 sessions)
   100%  Direct               7   (direct) 7
 
+typescript-has-a-big-problem  (6 sessions)
+  100%  Direct               6   (direct) 6
+
 teach-claude-your-project-once-benefit-forever  (6 sessions)
    83%  Direct               5   (direct) 5
    17%  Referral             1   teams.public.onecdn.static.microsoft 1
 
-typescript-has-a-big-problem  (5 sessions)
+ai-powered-video-curation-from-naive-search-to-confident-matches  (5 sessions)
   100%  Direct               5   (direct) 5
 
 when-two-ai-pipelines-meet--turning-curated-data-into-a-daily-api  (5 sessions)
    80%  Direct               4   (direct) 4
    20%  Organic Social       1   t.co 1
-
-ai-powered-video-curation-from-naive-search-to-confident-matches  (4 sessions)
-  100%  Direct               4   (direct) 4
 
 5-ways-rescript-fixes-typescript  (3 sessions)
   100%  Direct               3   (direct) 3
@@ -39,16 +39,16 @@ ai-powered-video-curation-from-naive-search-to-confident-matches  (4 sessions)
 coding-is-not-for-humans  (3 sessions)
   100%  Direct               3   (direct) 3
 
-the-4-pillars-of-next-gen-web-dev  (3 sessions)
-  100%  Direct               3   (direct) 3
-
-why-rescript-is-next-gen  (3 sessions)
-  100%  Direct               3   (direct) 3
+the-4-pillars-of-next-gen-web-dev  (2 sessions)
+  100%  Direct               2   (direct) 2
 
 the-reality-of-rescript-optimization-claims  (2 sessions)
   100%  Direct               2   (direct) 2
 
 using-ai-to-automate-quality-content-delivery  (2 sessions)
+  100%  Direct               2   (direct) 2
+
+why-rescript-is-next-gen  (2 sessions)
   100%  Direct               2   (direct) 2
 
 filling-the-test-driven-development-gap-between-figma-and-your-component  (1 sessions)
