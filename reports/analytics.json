@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-05T11:01:09.597Z",
+  "generatedAt": "2026-11-06T11:01:05.473Z",
   "ranges": {
     "7": {
-      "startDate": "2026-10-30",
-      "endDate": "2026-11-05",
+      "startDate": "2026-10-31",
+      "endDate": "2026-11-06",
       "posts": {
         "ai-powered-video-curation-from-naive-search-to-confident-matches": {
           "sessions": 2,
@@ -67,7 +67,7 @@
             "total": 0
           }
         },
-        "coding-is-not-for-humans": {
+        "the-reality-of-rescript-optimization-claims": {
           "sessions": 1,
           "channels": {
             "direct": 1,
@@ -79,26 +79,7 @@
           "sources": [],
           "shortLinkVisits": 0,
           "views": 1,
-          "engagedSecondsPerView": 0,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
-        "teach-claude-your-project-once-benefit-forever": {
-          "sessions": 1,
-          "channels": {
-            "direct": 1,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 1,
-          "engagedSecondsPerView": 0,
+          "engagedSecondsPerView": 1,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -146,8 +127,8 @@
       }
     },
     "30": {
-      "startDate": "2026-10-07",
-      "endDate": "2026-11-05",
+      "startDate": "2026-10-08",
+      "endDate": "2026-11-06",
       "posts": {
         "strong-type-systems-are-required-for-a-safer-web": {
           "sessions": 5,
@@ -168,10 +149,29 @@
             "total": 0
           }
         },
-        "taking-responsibility-for-your-ai-generated-code": {
-          "sessions": 7,
+        "i-am-a-web-developer-and-here-is-why-i-dont-use-typescript": {
+          "sessions": 4,
           "channels": {
-            "direct": 5,
+            "direct": 4,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 5,
+          "engagedSecondsPerView": 0,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
+        "taking-responsibility-for-your-ai-generated-code": {
+          "sessions": 6,
+          "channels": {
+            "direct": 4,
             "social": 0,
             "search": 0,
             "referral": 1,
@@ -188,27 +188,8 @@
             }
           ],
           "shortLinkVisits": 0,
-          "views": 8,
-          "engagedSecondsPerView": 45,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
-        "i-am-a-web-developer-and-here-is-why-i-dont-use-typescript": {
-          "sessions": 4,
-          "channels": {
-            "direct": 4,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 5,
-          "engagedSecondsPerView": 0,
+          "views": 7,
+          "engagedSecondsPerView": 31,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -266,6 +247,25 @@
           "shortLinkVisits": 0,
           "views": 3,
           "engagedSecondsPerView": 7,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
+        "the-reality-of-rescript-optimization-claims": {
+          "sessions": 2,
+          "channels": {
+            "direct": 2,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 2,
+          "engagedSecondsPerView": 1,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -348,25 +348,6 @@
             "total": 0
           }
         },
-        "the-reality-of-rescript-optimization-claims": {
-          "sessions": 1,
-          "channels": {
-            "direct": 1,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 1,
-          "engagedSecondsPerView": 0,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
         "using-ai-to-automate-quality-content-delivery": {
           "sessions": 1,
           "channels": {
@@ -408,8 +389,8 @@
       }
     },
     "90": {
-      "startDate": "2026-08-08",
-      "endDate": "2026-11-05",
+      "startDate": "2026-08-09",
+      "endDate": "2026-11-06",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 33,
@@ -470,25 +451,6 @@
             "total": 0
           }
         },
-        "i-am-a-web-developer-and-here-is-why-i-dont-use-typescript": {
-          "sessions": 8,
-          "channels": {
-            "direct": 8,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 9,
-          "engagedSecondsPerView": 0,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
         "strong-type-systems-are-required-for-a-safer-web": {
           "sessions": 8,
           "channels": {
@@ -502,6 +464,25 @@
           "shortLinkVisits": 0,
           "views": 8,
           "engagedSecondsPerView": 2,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
+        "i-am-a-web-developer-and-here-is-why-i-dont-use-typescript": {
+          "sessions": 7,
+          "channels": {
+            "direct": 7,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 8,
+          "engagedSecondsPerView": 0,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -651,10 +632,10 @@
             "total": 0
           }
         },
-        "the-4-pillars-of-next-gen-web-dev": {
-          "sessions": 2,
+        "the-reality-of-rescript-optimization-claims": {
+          "sessions": 3,
           "channels": {
-            "direct": 2,
+            "direct": 3,
             "social": 0,
             "search": 0,
             "referral": 0,
@@ -662,7 +643,7 @@
           },
           "sources": [],
           "shortLinkVisits": 0,
-          "views": 2,
+          "views": 3,
           "engagedSecondsPerView": 0,
           "shares": {
             "native": 0,
@@ -670,7 +651,7 @@
             "total": 0
           }
         },
-        "the-reality-of-rescript-optimization-claims": {
+        "the-4-pillars-of-next-gen-web-dev": {
           "sessions": 2,
           "channels": {
             "direct": 2,
@@ -768,9 +749,28 @@
       }
     },
     "prev7": {
-      "startDate": "2026-10-23",
-      "endDate": "2026-10-29",
+      "startDate": "2026-10-24",
+      "endDate": "2026-10-30",
       "posts": {
+        "coding-is-not-for-humans": {
+          "sessions": 1,
+          "channels": {
+            "direct": 1,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 1,
+          "engagedSecondsPerView": 0,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
         "i-am-a-web-developer-and-here-is-why-i-dont-use-typescript": {
           "sessions": 1,
           "channels": {
@@ -783,6 +783,25 @@
           "sources": [],
           "shortLinkVisits": 0,
           "views": 2,
+          "engagedSecondsPerView": 0,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
+        "teach-claude-your-project-once-benefit-forever": {
+          "sessions": 1,
+          "channels": {
+            "direct": 1,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 1,
           "engagedSecondsPerView": 0,
           "shares": {
             "native": 0,
@@ -870,7 +889,7 @@
     },
     "all": {
       "startDate": "2015-08-14",
-      "endDate": "2026-11-05",
+      "endDate": "2026-11-06",
       "posts": {
         "i-am-a-web-developer-and-here-is-why-i-dont-use-typescript": {
           "sessions": 40,
@@ -1061,6 +1080,25 @@
             "total": 0
           }
         },
+        "the-reality-of-rescript-optimization-claims": {
+          "sessions": 15,
+          "channels": {
+            "direct": 15,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 15,
+          "engagedSecondsPerView": 2,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
         "ai-powered-video-curation-from-naive-search-to-confident-matches": {
           "sessions": 14,
           "channels": {
@@ -1102,25 +1140,6 @@
           "shortLinkVisits": 0,
           "views": 30,
           "engagedSecondsPerView": 11,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
-        "the-reality-of-rescript-optimization-claims": {
-          "sessions": 14,
-          "channels": {
-            "direct": 14,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 14,
-          "engagedSecondsPerView": 2,
           "shares": {
             "native": 0,
             "clipboard": 0,
