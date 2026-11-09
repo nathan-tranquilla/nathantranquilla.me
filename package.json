@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "@google-analytics/data": "^5.2.1",
-    "@playwright/test": "^1.58.2",
+    "@playwright/test": "^1.65.0",
     "prettier": "3.6.2",
     "prettier-plugin-astro": "0.14.1",
     "prettier-plugin-tailwindcss": "0.6.14"
