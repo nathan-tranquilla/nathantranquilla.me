@@ -13,14 +13,14 @@ why-every-desk-job-is-becoming-an-ai-apprenticeship  (10 sessions)
 strong-type-systems-are-required-for-a-safer-web  (8 sessions)
   100%  Direct               8   (direct) 8
 
-typescript-has-a-big-problem  (8 sessions)
-  100%  Direct               8   (direct) 8
-
 i-am-a-web-developer-and-here-is-why-i-dont-use-typescript  (7 sessions)
   100%  Direct               7   (direct) 7
 
-so-it-begins-the-end-of-typescript  (7 sessions)
+typescript-has-a-big-problem  (7 sessions)
   100%  Direct               7   (direct) 7
+
+so-it-begins-the-end-of-typescript  (6 sessions)
+  100%  Direct               6   (direct) 6
 
 teach-claude-your-project-once-benefit-forever  (6 sessions)
    83%  Direct               5   (direct) 5
@@ -57,9 +57,9 @@ the-4-pillars-of-next-gen-web-dev  (2 sessions)
 why-rescript-is-next-gen  (1 sessions)
   100%  Direct               1   (direct) 1
 
-All posts  (110 sessions)
-   83%  Direct              91
+All posts  (108 sessions)
+   82%  Direct              89
     8%  Organic Social       9
-    5%  Referral             6
+    6%  Referral             6
     3%  Unassigned           3
     1%  Organic Video        1

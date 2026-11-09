@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-08T11:01:24.588Z",
+  "generatedAt": "2026-11-09T11:01:22.917Z",
   "ranges": {
     "7": {
-      "startDate": "2026-11-02",
-      "endDate": "2026-11-08",
+      "startDate": "2026-11-03",
+      "endDate": "2026-11-09",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 4,
@@ -68,25 +68,6 @@
           }
         },
         "filling-the-test-driven-development-gap-between-figma-and-your-component": {
-          "sessions": 1,
-          "channels": {
-            "direct": 1,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 1,
-          "engagedSecondsPerView": 0,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
-        "i-am-a-web-developer-and-here-is-why-i-dont-use-typescript": {
           "sessions": 1,
           "channels": {
             "direct": 1,
@@ -203,8 +184,8 @@
       }
     },
     "30": {
-      "startDate": "2026-10-10",
-      "endDate": "2026-11-08",
+      "startDate": "2026-10-11",
+      "endDate": "2026-11-09",
       "posts": {
         "strong-type-systems-are-required-for-a-safer-web": {
           "sessions": 5,
@@ -484,8 +465,8 @@
       }
     },
     "90": {
-      "startDate": "2026-08-11",
-      "endDate": "2026-11-08",
+      "startDate": "2026-08-12",
+      "endDate": "2026-11-09",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 34,
@@ -666,9 +647,9 @@
           }
         },
         "when-two-ai-pipelines-meet--turning-curated-data-into-a-daily-api": {
-          "sessions": 6,
+          "sessions": 5,
           "channels": {
-            "direct": 5,
+            "direct": 4,
             "social": 1,
             "search": 0,
             "referral": 0,
@@ -681,7 +662,7 @@
             }
           ],
           "shortLinkVisits": 0,
-          "views": 6,
+          "views": 5,
           "engagedSecondsPerView": 0,
           "shares": {
             "native": 0,
@@ -844,8 +825,8 @@
       }
     },
     "prev7": {
-      "startDate": "2026-10-26",
-      "endDate": "2026-11-01",
+      "startDate": "2026-10-27",
+      "endDate": "2026-11-02",
       "posts": {
         "i-am-a-web-developer-and-here-is-why-i-dont-use-typescript": {
           "sessions": 2,
@@ -858,7 +839,7 @@
           },
           "sources": [],
           "shortLinkVisits": 0,
-          "views": 3,
+          "views": 2,
           "engagedSecondsPerView": 0,
           "shares": {
             "native": 0,
@@ -984,7 +965,7 @@
     },
     "all": {
       "startDate": "2015-08-14",
-      "endDate": "2026-11-08",
+      "endDate": "2026-11-09",
       "posts": {
         "i-am-a-web-developer-and-here-is-why-i-dont-use-typescript": {
           "sessions": 40,
