@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-10T11:01:07.782Z",
+  "generatedAt": "2026-11-11T11:01:03.977Z",
   "ranges": {
     "7": {
-      "startDate": "2026-11-04",
-      "endDate": "2026-11-10",
+      "startDate": "2026-11-05",
+      "endDate": "2026-11-11",
       "posts": {
         "typescript-has-a-big-problem": {
           "sessions": 3,
@@ -24,17 +24,22 @@
             "total": 0
           }
         },
-        "ai-powered-video-curation-from-naive-search-to-confident-matches": {
+        "coding-is-not-for-humans": {
           "sessions": 1,
           "channels": {
-            "direct": 1,
+            "direct": 0,
             "social": 0,
             "search": 0,
-            "referral": 0,
+            "referral": 1,
             "other": 0
           },
-          "sources": [],
-          "shortLinkVisits": 0,
+          "sources": [
+            {
+              "source": "share",
+              "sessions": 1
+            }
+          ],
+          "shortLinkVisits": 1,
           "views": 1,
           "engagedSecondsPerView": 0,
           "shares": {
@@ -92,6 +97,30 @@
           },
           "sources": [],
           "shortLinkVisits": 0,
+          "views": 1,
+          "engagedSecondsPerView": 0,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
+        "the-4-pillars-of-next-gen-web-dev": {
+          "sessions": 1,
+          "channels": {
+            "direct": 0,
+            "social": 0,
+            "search": 0,
+            "referral": 1,
+            "other": 0
+          },
+          "sources": [
+            {
+              "source": "share",
+              "sessions": 1
+            }
+          ],
+          "shortLinkVisits": 1,
           "views": 1,
           "engagedSecondsPerView": 0,
           "shares": {
@@ -179,8 +208,8 @@
       }
     },
     "30": {
-      "startDate": "2026-10-12",
-      "endDate": "2026-11-10",
+      "startDate": "2026-10-13",
+      "endDate": "2026-11-11",
       "posts": {
         "strong-type-systems-are-required-for-a-safer-web": {
           "sessions": 5,
@@ -401,17 +430,22 @@
           }
         },
         "coding-is-not-for-humans": {
-          "sessions": 1,
+          "sessions": 2,
           "channels": {
             "direct": 1,
             "social": 0,
             "search": 0,
-            "referral": 0,
+            "referral": 1,
             "other": 0
           },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 1,
+          "sources": [
+            {
+              "source": "share",
+              "sessions": 1
+            }
+          ],
+          "shortLinkVisits": 1,
+          "views": 2,
           "engagedSecondsPerView": 0,
           "shares": {
             "native": 0,
@@ -439,17 +473,22 @@
           }
         },
         "the-4-pillars-of-next-gen-web-dev": {
-          "sessions": 1,
+          "sessions": 2,
           "channels": {
             "direct": 1,
             "social": 0,
             "search": 0,
-            "referral": 0,
+            "referral": 1,
             "other": 0
           },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 1,
+          "sources": [
+            {
+              "source": "share",
+              "sessions": 1
+            }
+          ],
+          "shortLinkVisits": 1,
+          "views": 2,
           "engagedSecondsPerView": 0,
           "shares": {
             "native": 0,
@@ -460,8 +499,8 @@
       }
     },
     "90": {
-      "startDate": "2026-08-13",
-      "endDate": "2026-11-10",
+      "startDate": "2026-08-14",
+      "endDate": "2026-11-11",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 34,
@@ -618,9 +657,9 @@
           }
         },
         "teach-claude-your-project-once-benefit-forever": {
-          "sessions": 6,
+          "sessions": 5,
           "channels": {
-            "direct": 5,
+            "direct": 4,
             "social": 0,
             "search": 0,
             "referral": 1,
@@ -633,8 +672,8 @@
             }
           ],
           "shortLinkVisits": 0,
-          "views": 10,
-          "engagedSecondsPerView": 3,
+          "views": 9,
+          "engagedSecondsPerView": 4,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -684,25 +723,6 @@
             "total": 0
           }
         },
-        "coding-is-not-for-humans": {
-          "sessions": 3,
-          "channels": {
-            "direct": 3,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 4,
-          "engagedSecondsPerView": 1,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
         "the-reality-of-rescript-optimization-claims": {
           "sessions": 3,
           "channels": {
@@ -735,6 +755,30 @@
           "shortLinkVisits": 0,
           "views": 3,
           "engagedSecondsPerView": 0,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
+        "coding-is-not-for-humans": {
+          "sessions": 3,
+          "channels": {
+            "direct": 2,
+            "social": 0,
+            "search": 0,
+            "referral": 1,
+            "other": 0
+          },
+          "sources": [
+            {
+              "source": "share",
+              "sessions": 1
+            }
+          ],
+          "shortLinkVisits": 1,
+          "views": 4,
+          "engagedSecondsPerView": 1,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -780,17 +824,22 @@
           }
         },
         "the-4-pillars-of-next-gen-web-dev": {
-          "sessions": 2,
+          "sessions": 3,
           "channels": {
             "direct": 2,
             "social": 0,
             "search": 0,
-            "referral": 0,
+            "referral": 1,
             "other": 0
           },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 2,
+          "sources": [
+            {
+              "source": "share",
+              "sessions": 1
+            }
+          ],
+          "shortLinkVisits": 1,
+          "views": 3,
           "engagedSecondsPerView": 0,
           "shares": {
             "native": 0,
@@ -820,9 +869,28 @@
       }
     },
     "prev7": {
-      "startDate": "2026-10-28",
-      "endDate": "2026-11-03",
+      "startDate": "2026-10-29",
+      "endDate": "2026-11-04",
       "posts": {
+        "ai-powered-video-curation-from-naive-search-to-confident-matches": {
+          "sessions": 2,
+          "channels": {
+            "direct": 2,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 2,
+          "engagedSecondsPerView": 0,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
         "i-am-a-web-developer-and-here-is-why-i-dont-use-typescript": {
           "sessions": 2,
           "channels": {
@@ -859,44 +927,6 @@
           ],
           "shortLinkVisits": 0,
           "views": 4,
-          "engagedSecondsPerView": 0,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
-        "why-every-desk-job-is-becoming-an-ai-apprenticeship": {
-          "sessions": 2,
-          "channels": {
-            "direct": 2,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 2,
-          "engagedSecondsPerView": 3,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
-        "ai-powered-video-curation-from-naive-search-to-confident-matches": {
-          "sessions": 1,
-          "channels": {
-            "direct": 1,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 1,
           "engagedSecondsPerView": 0,
           "shares": {
             "native": 0,
@@ -942,7 +972,7 @@
             "total": 0
           }
         },
-        "when-two-ai-pipelines-meet--turning-curated-data-into-a-daily-api": {
+        "why-every-desk-job-is-becoming-an-ai-apprenticeship": {
           "sessions": 1,
           "channels": {
             "direct": 1,
@@ -954,7 +984,7 @@
           "sources": [],
           "shortLinkVisits": 0,
           "views": 1,
-          "engagedSecondsPerView": 0,
+          "engagedSecondsPerView": 5,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -965,7 +995,7 @@
     },
     "all": {
       "startDate": "2015-08-14",
-      "endDate": "2026-11-10",
+      "endDate": "2026-11-11",
       "posts": {
         "i-am-a-web-developer-and-here-is-why-i-dont-use-typescript": {
           "sessions": 40,
@@ -1027,22 +1057,26 @@
           }
         },
         "the-4-pillars-of-next-gen-web-dev": {
-          "sessions": 36,
+          "sessions": 37,
           "channels": {
             "direct": 20,
             "social": 16,
             "search": 0,
-            "referral": 0,
+            "referral": 1,
             "other": 0
           },
           "sources": [
             {
               "source": "linkedin.com",
               "sessions": 16
+            },
+            {
+              "source": "share",
+              "sessions": 1
             }
           ],
-          "shortLinkVisits": 0,
-          "views": 37,
+          "shortLinkVisits": 1,
+          "views": 38,
           "engagedSecondsPerView": 9,
           "shares": {
             "native": 0,
@@ -1298,22 +1332,26 @@
           }
         },
         "coding-is-not-for-humans": {
-          "sessions": 22,
+          "sessions": 23,
           "channels": {
             "direct": 12,
             "social": 10,
             "search": 0,
-            "referral": 0,
+            "referral": 1,
             "other": 0
           },
           "sources": [
             {
               "source": "linkedin.com",
               "sessions": 10
+            },
+            {
+              "source": "share",
+              "sessions": 1
             }
           ],
-          "shortLinkVisits": 0,
-          "views": 28,
+          "shortLinkVisits": 1,
+          "views": 29,
           "engagedSecondsPerView": 25,
           "shares": {
             "native": 0,

@@ -7,8 +7,8 @@ taking-responsibility-for-your-ai-generated-code  (34 sessions)
     9%  Unassigned           3   share 3
     3%  Organic Video        1   youtube.com 1
 
-why-every-desk-job-is-becoming-an-ai-apprenticeship  (10 sessions)
-  100%  Direct              10   (direct) 10
+why-every-desk-job-is-becoming-an-ai-apprenticeship  (9 sessions)
+  100%  Direct               9   (direct) 9
 
 strong-type-systems-are-required-for-a-safer-web  (8 sessions)
   100%  Direct               8   (direct) 8
@@ -33,10 +33,11 @@ when-two-ai-pipelines-meet--turning-curated-data-into-a-daily-api  (5 sessions)
    80%  Direct               4   (direct) 4
    20%  Organic Social       1   t.co 1
 
-5-ways-rescript-fixes-typescript  (3 sessions)
-  100%  Direct               3   (direct) 3
+coding-is-not-for-humans  (4 sessions)
+   75%  Direct               3   (direct) 3
+   25%  Referral             1   share 1
 
-coding-is-not-for-humans  (3 sessions)
+5-ways-rescript-fixes-typescript  (3 sessions)
   100%  Direct               3   (direct) 3
 
 the-reality-of-rescript-optimization-claims  (3 sessions)
@@ -45,21 +46,22 @@ the-reality-of-rescript-optimization-claims  (3 sessions)
 using-ai-to-automate-quality-content-delivery  (3 sessions)
   100%  Direct               3   (direct) 3
 
+the-4-pillars-of-next-gen-web-dev  (3 sessions)
+   67%  Direct               2   (direct) 2
+   33%  Referral             1   share 1
+
 filling-the-test-driven-development-gap-between-figma-and-your-component  (2 sessions)
   100%  Direct               2   (direct) 2
 
 making-my-money-decisions-mechanical-with-ai-and-plain-text-accounting  (2 sessions)
   100%  Direct               2   (direct) 2
 
-the-4-pillars-of-next-gen-web-dev  (2 sessions)
-  100%  Direct               2   (direct) 2
-
 why-rescript-is-next-gen  (1 sessions)
   100%  Direct               1   (direct) 1
 
-All posts  (107 sessions)
-   82%  Direct              88
+All posts  (108 sessions)
+   81%  Direct              87
     8%  Organic Social       9
-    6%  Referral             6
+    7%  Referral             8
     3%  Unassigned           3
     1%  Organic Video        1
