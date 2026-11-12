@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-11-11T11:01:03.977Z",
+  "generatedAt": "2026-11-12T11:01:13.020Z",
   "ranges": {
     "7": {
-      "startDate": "2026-11-05",
-      "endDate": "2026-11-11",
+      "startDate": "2026-11-06",
+      "endDate": "2026-11-12",
       "posts": {
         "typescript-has-a-big-problem": {
-          "sessions": 3,
+          "sessions": 2,
           "channels": {
-            "direct": 3,
+            "direct": 2,
             "social": 0,
             "search": 0,
             "referral": 0,
@@ -16,7 +16,7 @@
           },
           "sources": [],
           "shortLinkVisits": 0,
-          "views": 3,
+          "views": 2,
           "engagedSecondsPerView": 0,
           "shares": {
             "native": 0,
@@ -129,25 +129,6 @@
             "total": 0
           }
         },
-        "the-reality-of-rescript-optimization-claims": {
-          "sessions": 1,
-          "channels": {
-            "direct": 1,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 1,
-          "engagedSecondsPerView": 1,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
         "using-ai-to-automate-quality-content-delivery": {
           "sessions": 1,
           "channels": {
@@ -208,8 +189,8 @@
       }
     },
     "30": {
-      "startDate": "2026-10-13",
-      "endDate": "2026-11-11",
+      "startDate": "2026-10-14",
+      "endDate": "2026-11-12",
       "posts": {
         "strong-type-systems-are-required-for-a-safer-web": {
           "sessions": 5,
@@ -231,27 +212,23 @@
           }
         },
         "taking-responsibility-for-your-ai-generated-code": {
-          "sessions": 7,
+          "sessions": 6,
           "channels": {
             "direct": 5,
             "social": 0,
             "search": 0,
             "referral": 1,
-            "other": 1
+            "other": 0
           },
           "sources": [
             {
               "source": "teams.public.onecdn.static.microsoft",
               "sessions": 1
-            },
-            {
-              "source": "youtube.com",
-              "sessions": 1
             }
           ],
           "shortLinkVisits": 0,
-          "views": 8,
-          "engagedSecondsPerView": 27,
+          "views": 7,
+          "engagedSecondsPerView": 31,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -499,8 +476,8 @@
       }
     },
     "90": {
-      "startDate": "2026-08-14",
-      "endDate": "2026-11-11",
+      "startDate": "2026-08-15",
+      "endDate": "2026-11-12",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 34,
@@ -656,30 +633,6 @@
             "total": 0
           }
         },
-        "teach-claude-your-project-once-benefit-forever": {
-          "sessions": 5,
-          "channels": {
-            "direct": 4,
-            "social": 0,
-            "search": 0,
-            "referral": 1,
-            "other": 0
-          },
-          "sources": [
-            {
-              "source": "teams.public.onecdn.static.microsoft",
-              "sessions": 1
-            }
-          ],
-          "shortLinkVisits": 0,
-          "views": 9,
-          "engagedSecondsPerView": 4,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
         "when-two-ai-pipelines-meet--turning-curated-data-into-a-daily-api": {
           "sessions": 5,
           "channels": {
@@ -717,6 +670,30 @@
           "shortLinkVisits": 0,
           "views": 4,
           "engagedSecondsPerView": 0,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
+        "teach-claude-your-project-once-benefit-forever": {
+          "sessions": 4,
+          "channels": {
+            "direct": 3,
+            "social": 0,
+            "search": 0,
+            "referral": 1,
+            "other": 0
+          },
+          "sources": [
+            {
+              "source": "teams.public.onecdn.static.microsoft",
+              "sessions": 1
+            }
+          ],
+          "shortLinkVisits": 0,
+          "views": 8,
+          "engagedSecondsPerView": 4,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -869,8 +846,8 @@
       }
     },
     "prev7": {
-      "startDate": "2026-10-29",
-      "endDate": "2026-11-04",
+      "startDate": "2026-10-30",
+      "endDate": "2026-11-05",
       "posts": {
         "ai-powered-video-curation-from-naive-search-to-confident-matches": {
           "sessions": 2,
@@ -972,6 +949,44 @@
             "total": 0
           }
         },
+        "the-reality-of-rescript-optimization-claims": {
+          "sessions": 1,
+          "channels": {
+            "direct": 1,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 1,
+          "engagedSecondsPerView": 1,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
+        "typescript-has-a-big-problem": {
+          "sessions": 1,
+          "channels": {
+            "direct": 1,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 1,
+          "engagedSecondsPerView": 0,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
         "why-every-desk-job-is-becoming-an-ai-apprenticeship": {
           "sessions": 1,
           "channels": {
@@ -995,7 +1010,7 @@
     },
     "all": {
       "startDate": "2015-08-14",
-      "endDate": "2026-11-11",
+      "endDate": "2026-11-12",
       "posts": {
         "i-am-a-web-developer-and-here-is-why-i-dont-use-typescript": {
           "sessions": 40,
