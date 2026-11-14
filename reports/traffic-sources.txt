@@ -13,13 +13,10 @@ why-every-desk-job-is-becoming-an-ai-apprenticeship  (9 sessions)
 strong-type-systems-are-required-for-a-safer-web  (8 sessions)
   100%  Direct               8   (direct) 8
 
-i-am-a-web-developer-and-here-is-why-i-dont-use-typescript  (7 sessions)
-  100%  Direct               7   (direct) 7
+typescript-has-a-big-problem  (8 sessions)
+  100%  Direct               8   (direct) 8
 
-typescript-has-a-big-problem  (7 sessions)
-  100%  Direct               7   (direct) 7
-
-so-it-begins-the-end-of-typescript  (6 sessions)
+i-am-a-web-developer-and-here-is-why-i-dont-use-typescript  (6 sessions)
   100%  Direct               6   (direct) 6
 
 ai-powered-video-curation-from-naive-search-to-confident-matches  (5 sessions)
@@ -34,6 +31,9 @@ teach-claude-your-project-once-benefit-forever  (4 sessions)
    25%  Referral             1   teams.public.onecdn.static.microsoft 1
 
 5-ways-rescript-fixes-typescript  (3 sessions)
+  100%  Direct               3   (direct) 3
+
+so-it-begins-the-end-of-typescript  (3 sessions)
   100%  Direct               3   (direct) 3
 
 the-reality-of-rescript-optimization-claims  (3 sessions)
@@ -59,8 +59,8 @@ making-my-money-decisions-mechanical-with-ai-and-plain-text-accounting  (2 sessi
 why-rescript-is-next-gen  (1 sessions)
   100%  Direct               1   (direct) 1
 
-All posts  (105 sessions)
-   80%  Direct              84
+All posts  (102 sessions)
+   79%  Direct              81
     9%  Organic Social       9
     8%  Referral             8
     3%  Unassigned           3

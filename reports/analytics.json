@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-13T11:01:12.508Z",
+  "generatedAt": "2026-11-14T11:01:04.565Z",
   "ranges": {
     "7": {
-      "startDate": "2026-11-07",
-      "endDate": "2026-11-13",
+      "startDate": "2026-11-08",
+      "endDate": "2026-11-14",
       "posts": {
         "coding-is-not-for-humans": {
           "sessions": 1,
@@ -21,44 +21,6 @@
             }
           ],
           "shortLinkVisits": 1,
-          "views": 1,
-          "engagedSecondsPerView": 0,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
-        "filling-the-test-driven-development-gap-between-figma-and-your-component": {
-          "sessions": 1,
-          "channels": {
-            "direct": 1,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 1,
-          "engagedSecondsPerView": 0,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
-        "making-my-money-decisions-mechanical-with-ai-and-plain-text-accounting": {
-          "sessions": 1,
-          "channels": {
-            "direct": 1,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
           "views": 1,
           "engagedSecondsPerView": 0,
           "shares": {
@@ -109,69 +71,12 @@
             "clipboard": 0,
             "total": 0
           }
-        },
-        "using-ai-to-automate-quality-content-delivery": {
-          "sessions": 1,
-          "channels": {
-            "direct": 1,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 1,
-          "engagedSecondsPerView": 0,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
-        "when-two-ai-pipelines-meet--turning-curated-data-into-a-daily-api": {
-          "sessions": 1,
-          "channels": {
-            "direct": 1,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 1,
-          "engagedSecondsPerView": 0,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
-        "why-every-desk-job-is-becoming-an-ai-apprenticeship": {
-          "sessions": 1,
-          "channels": {
-            "direct": 1,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 1,
-          "engagedSecondsPerView": 0,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
         }
       }
     },
     "30": {
-      "startDate": "2026-10-15",
-      "endDate": "2026-11-13",
+      "startDate": "2026-10-16",
+      "endDate": "2026-11-14",
       "posts": {
         "strong-type-systems-are-required-for-a-safer-web": {
           "sessions": 5,
@@ -216,10 +121,10 @@
             "total": 0
           }
         },
-        "i-am-a-web-developer-and-here-is-why-i-dont-use-typescript": {
-          "sessions": 4,
+        "typescript-has-a-big-problem": {
+          "sessions": 5,
           "channels": {
-            "direct": 4,
+            "direct": 5,
             "social": 0,
             "search": 0,
             "referral": 0,
@@ -235,7 +140,7 @@
             "total": 0
           }
         },
-        "typescript-has-a-big-problem": {
+        "i-am-a-web-developer-and-here-is-why-i-dont-use-typescript": {
           "sessions": 4,
           "channels": {
             "direct": 4,
@@ -246,7 +151,7 @@
           },
           "sources": [],
           "shortLinkVisits": 0,
-          "views": 4,
+          "views": 5,
           "engagedSecondsPerView": 0,
           "shares": {
             "native": 0,
@@ -457,8 +362,8 @@
       }
     },
     "90": {
-      "startDate": "2026-08-16",
-      "endDate": "2026-11-13",
+      "startDate": "2026-08-17",
+      "endDate": "2026-11-14",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 34,
@@ -539,9 +444,9 @@
           }
         },
         "typescript-has-a-big-problem": {
-          "sessions": 7,
+          "sessions": 8,
           "channels": {
-            "direct": 7,
+            "direct": 8,
             "social": 0,
             "search": 0,
             "referral": 0,
@@ -549,7 +454,7 @@
           },
           "sources": [],
           "shortLinkVisits": 0,
-          "views": 7,
+          "views": 8,
           "engagedSecondsPerView": 1,
           "shares": {
             "native": 0,
@@ -612,25 +517,6 @@
           ],
           "shortLinkVisits": 0,
           "views": 5,
-          "engagedSecondsPerView": 0,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
-        "5-ways-rescript-fixes-typescript": {
-          "sessions": 3,
-          "channels": {
-            "direct": 3,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 4,
           "engagedSecondsPerView": 0,
           "shares": {
             "native": 0,
@@ -704,6 +590,25 @@
           "sessions": 3,
           "channels": {
             "direct": 3,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 3,
+          "engagedSecondsPerView": 0,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
+        "5-ways-rescript-fixes-typescript": {
+          "sessions": 2,
+          "channels": {
+            "direct": 2,
             "social": 0,
             "search": 0,
             "referral": 0,
@@ -827,8 +732,8 @@
       }
     },
     "prev7": {
-      "startDate": "2026-10-31",
-      "endDate": "2026-11-06",
+      "startDate": "2026-11-01",
+      "endDate": "2026-11-07",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 4,
@@ -854,7 +759,26 @@
             "total": 0
           }
         },
-        "ai-powered-video-curation-from-naive-search-to-confident-matches": {
+        "typescript-has-a-big-problem": {
+          "sessions": 3,
+          "channels": {
+            "direct": 3,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 3,
+          "engagedSecondsPerView": 0,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
+        "why-every-desk-job-is-becoming-an-ai-apprenticeship": {
           "sessions": 2,
           "channels": {
             "direct": 2,
@@ -866,6 +790,44 @@
           "sources": [],
           "shortLinkVisits": 0,
           "views": 2,
+          "engagedSecondsPerView": 3,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
+        "ai-powered-video-curation-from-naive-search-to-confident-matches": {
+          "sessions": 1,
+          "channels": {
+            "direct": 1,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 1,
+          "engagedSecondsPerView": 0,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
+        "filling-the-test-driven-development-gap-between-figma-and-your-component": {
+          "sessions": 1,
+          "channels": {
+            "direct": 1,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 1,
           "engagedSecondsPerView": 0,
           "shares": {
             "native": 0,
@@ -874,9 +836,9 @@
           }
         },
         "i-am-a-web-developer-and-here-is-why-i-dont-use-typescript": {
-          "sessions": 2,
+          "sessions": 1,
           "channels": {
-            "direct": 2,
+            "direct": 1,
             "social": 0,
             "search": 0,
             "referral": 0,
@@ -884,7 +846,7 @@
           },
           "sources": [],
           "shortLinkVisits": 0,
-          "views": 2,
+          "views": 1,
           "engagedSecondsPerView": 0,
           "shares": {
             "native": 0,
@@ -892,10 +854,10 @@
             "total": 0
           }
         },
-        "typescript-has-a-big-problem": {
-          "sessions": 2,
+        "making-my-money-decisions-mechanical-with-ai-and-plain-text-accounting": {
+          "sessions": 1,
           "channels": {
-            "direct": 2,
+            "direct": 1,
             "social": 0,
             "search": 0,
             "referral": 0,
@@ -903,7 +865,7 @@
           },
           "sources": [],
           "shortLinkVisits": 0,
-          "views": 2,
+          "views": 1,
           "engagedSecondsPerView": 0,
           "shares": {
             "native": 0,
@@ -930,7 +892,7 @@
             "total": 0
           }
         },
-        "why-every-desk-job-is-becoming-an-ai-apprenticeship": {
+        "using-ai-to-automate-quality-content-delivery": {
           "sessions": 1,
           "channels": {
             "direct": 1,
@@ -942,7 +904,26 @@
           "sources": [],
           "shortLinkVisits": 0,
           "views": 1,
-          "engagedSecondsPerView": 5,
+          "engagedSecondsPerView": 0,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
+        "when-two-ai-pipelines-meet--turning-curated-data-into-a-daily-api": {
+          "sessions": 1,
+          "channels": {
+            "direct": 1,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 1,
+          "engagedSecondsPerView": 0,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -953,7 +934,7 @@
     },
     "all": {
       "startDate": "2015-08-14",
-      "endDate": "2026-11-13",
+      "endDate": "2026-11-14",
       "posts": {
         "i-am-a-web-developer-and-here-is-why-i-dont-use-typescript": {
           "sessions": 40,
@@ -1014,6 +995,25 @@
             "total": 0
           }
         },
+        "typescript-has-a-big-problem": {
+          "sessions": 21,
+          "channels": {
+            "direct": 21,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 23,
+          "engagedSecondsPerView": 3,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
         "the-4-pillars-of-next-gen-web-dev": {
           "sessions": 37,
           "channels": {
@@ -1036,25 +1036,6 @@
           "shortLinkVisits": 1,
           "views": 38,
           "engagedSecondsPerView": 9,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
-        "typescript-has-a-big-problem": {
-          "sessions": 20,
-          "channels": {
-            "direct": 20,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 22,
-          "engagedSecondsPerView": 3,
           "shares": {
             "native": 0,
             "clipboard": 0,
