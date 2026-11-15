@@ -1,10 +1,29 @@
 {
-  "generatedAt": "2026-11-14T11:01:04.565Z",
+  "generatedAt": "2026-11-15T11:01:08.887Z",
   "ranges": {
     "7": {
-      "startDate": "2026-11-08",
-      "endDate": "2026-11-14",
+      "startDate": "2026-11-09",
+      "endDate": "2026-11-15",
       "posts": {
+        "making-my-money-decisions-mechanical-with-ai-and-plain-text-accounting": {
+          "sessions": 2,
+          "channels": {
+            "direct": 2,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 2,
+          "engagedSecondsPerView": 0,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
         "coding-is-not-for-humans": {
           "sessions": 1,
           "channels": {
@@ -71,12 +90,31 @@
             "clipboard": 0,
             "total": 0
           }
+        },
+        "why-every-desk-job-is-becoming-an-ai-apprenticeship": {
+          "sessions": 1,
+          "channels": {
+            "direct": 1,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 1,
+          "engagedSecondsPerView": 5,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
         }
       }
     },
     "30": {
-      "startDate": "2026-10-16",
-      "endDate": "2026-11-14",
+      "startDate": "2026-10-17",
+      "endDate": "2026-11-15",
       "posts": {
         "strong-type-systems-are-required-for-a-safer-web": {
           "sessions": 5,
@@ -140,6 +178,25 @@
             "total": 0
           }
         },
+        "why-every-desk-job-is-becoming-an-ai-apprenticeship": {
+          "sessions": 5,
+          "channels": {
+            "direct": 5,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 5,
+          "engagedSecondsPerView": 3,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
         "i-am-a-web-developer-and-here-is-why-i-dont-use-typescript": {
           "sessions": 4,
           "channels": {
@@ -159,10 +216,10 @@
             "total": 0
           }
         },
-        "why-every-desk-job-is-becoming-an-ai-apprenticeship": {
-          "sessions": 4,
+        "ai-powered-video-curation-from-naive-search-to-confident-matches": {
+          "sessions": 3,
           "channels": {
-            "direct": 4,
+            "direct": 3,
             "social": 0,
             "search": 0,
             "referral": 0,
@@ -170,15 +227,15 @@
           },
           "sources": [],
           "shortLinkVisits": 0,
-          "views": 4,
-          "engagedSecondsPerView": 3,
+          "views": 3,
+          "engagedSecondsPerView": 0,
           "shares": {
             "native": 0,
             "clipboard": 0,
             "total": 0
           }
         },
-        "ai-powered-video-curation-from-naive-search-to-confident-matches": {
+        "making-my-money-decisions-mechanical-with-ai-and-plain-text-accounting": {
           "sessions": 3,
           "channels": {
             "direct": 3,
@@ -316,25 +373,6 @@
             "total": 0
           }
         },
-        "making-my-money-decisions-mechanical-with-ai-and-plain-text-accounting": {
-          "sessions": 1,
-          "channels": {
-            "direct": 1,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 1,
-          "engagedSecondsPerView": 0,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
         "the-4-pillars-of-next-gen-web-dev": {
           "sessions": 2,
           "channels": {
@@ -362,8 +400,8 @@
       }
     },
     "90": {
-      "startDate": "2026-08-17",
-      "endDate": "2026-11-14",
+      "startDate": "2026-08-18",
+      "endDate": "2026-11-15",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 34,
@@ -406,9 +444,9 @@
           }
         },
         "why-every-desk-job-is-becoming-an-ai-apprenticeship": {
-          "sessions": 9,
+          "sessions": 10,
           "channels": {
-            "direct": 9,
+            "direct": 10,
             "social": 0,
             "search": 0,
             "referral": 0,
@@ -416,7 +454,7 @@
           },
           "sources": [],
           "shortLinkVisits": 0,
-          "views": 9,
+          "views": 10,
           "engagedSecondsPerView": 3,
           "shares": {
             "native": 0,
@@ -493,6 +531,25 @@
           "sources": [],
           "shortLinkVisits": 0,
           "views": 5,
+          "engagedSecondsPerView": 0,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
+        "making-my-money-decisions-mechanical-with-ai-and-plain-text-accounting": {
+          "sessions": 4,
+          "channels": {
+            "direct": 4,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 4,
           "engagedSecondsPerView": 0,
           "shares": {
             "native": 0,
@@ -667,25 +724,6 @@
             "total": 0
           }
         },
-        "making-my-money-decisions-mechanical-with-ai-and-plain-text-accounting": {
-          "sessions": 2,
-          "channels": {
-            "direct": 2,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 2,
-          "engagedSecondsPerView": 0,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
         "the-4-pillars-of-next-gen-web-dev": {
           "sessions": 3,
           "channels": {
@@ -732,8 +770,8 @@
       }
     },
     "prev7": {
-      "startDate": "2026-11-01",
-      "endDate": "2026-11-07",
+      "startDate": "2026-11-02",
+      "endDate": "2026-11-08",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 4,
@@ -772,25 +810,6 @@
           "shortLinkVisits": 0,
           "views": 3,
           "engagedSecondsPerView": 0,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
-        "why-every-desk-job-is-becoming-an-ai-apprenticeship": {
-          "sessions": 2,
-          "channels": {
-            "direct": 2,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 2,
-          "engagedSecondsPerView": 3,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -929,12 +948,31 @@
             "clipboard": 0,
             "total": 0
           }
+        },
+        "why-every-desk-job-is-becoming-an-ai-apprenticeship": {
+          "sessions": 1,
+          "channels": {
+            "direct": 1,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 1,
+          "engagedSecondsPerView": 0,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
         }
       }
     },
     "all": {
       "startDate": "2015-08-14",
-      "endDate": "2026-11-14",
+      "endDate": "2026-11-15",
       "posts": {
         "i-am-a-web-developer-and-here-is-why-i-dont-use-typescript": {
           "sessions": 40,
@@ -1043,9 +1081,9 @@
           }
         },
         "why-every-desk-job-is-becoming-an-ai-apprenticeship": {
-          "sessions": 23,
+          "sessions": 24,
           "channels": {
-            "direct": 18,
+            "direct": 19,
             "social": 4,
             "search": 0,
             "referral": 0,
@@ -1062,7 +1100,7 @@
             }
           ],
           "shortLinkVisits": 0,
-          "views": 28,
+          "views": 29,
           "engagedSecondsPerView": 18,
           "shares": {
             "native": 0,
@@ -1317,6 +1355,25 @@
             "total": 0
           }
         },
+        "making-my-money-decisions-mechanical-with-ai-and-plain-text-accounting": {
+          "sessions": 4,
+          "channels": {
+            "direct": 4,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 4,
+          "engagedSecondsPerView": 0,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
         "filling-the-test-driven-development-gap-between-figma-and-your-component": {
           "sessions": 2,
           "channels": {
@@ -1330,25 +1387,6 @@
           "shortLinkVisits": 0,
           "views": 3,
           "engagedSecondsPerView": 17,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
-        "making-my-money-decisions-mechanical-with-ai-and-plain-text-accounting": {
-          "sessions": 2,
-          "channels": {
-            "direct": 2,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 2,
-          "engagedSecondsPerView": 0,
           "shares": {
             "native": 0,
             "clipboard": 0,
