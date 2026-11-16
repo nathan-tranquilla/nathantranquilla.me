@@ -1,9 +1,9 @@
 Sessions landing on blog posts, last 90 days
 
-taking-responsibility-for-your-ai-generated-code  (34 sessions)
-   50%  Direct              17   (direct) 17
-   24%  Organic Social       8   linkedin.com 7, t.co 1
-   15%  Referral             5   teams.public.onecdn.static.microsoft 5
+taking-responsibility-for-your-ai-generated-code  (35 sessions)
+   51%  Direct              18   (direct) 18
+   23%  Organic Social       8   linkedin.com 7, t.co 1
+   14%  Referral             5   teams.public.onecdn.static.microsoft 5
     9%  Unassigned           3   share 3
     3%  Organic Video        1   youtube.com 1
 
@@ -25,6 +25,9 @@ ai-powered-video-curation-from-naive-search-to-confident-matches  (5 sessions)
 when-two-ai-pipelines-meet--turning-curated-data-into-a-daily-api  (5 sessions)
    80%  Direct               4   (direct) 4
    20%  Organic Social       1   t.co 1
+
+filling-the-test-driven-development-gap-between-figma-and-your-component  (4 sessions)
+  100%  Direct               4   (direct) 4
 
 making-my-money-decisions-mechanical-with-ai-and-plain-text-accounting  (4 sessions)
   100%  Direct               4   (direct) 4
@@ -53,15 +56,12 @@ the-4-pillars-of-next-gen-web-dev  (3 sessions)
 5-ways-rescript-fixes-typescript  (2 sessions)
   100%  Direct               2   (direct) 2
 
-filling-the-test-driven-development-gap-between-figma-and-your-component  (2 sessions)
-  100%  Direct               2   (direct) 2
-
 why-rescript-is-next-gen  (1 sessions)
   100%  Direct               1   (direct) 1
 
-All posts  (104 sessions)
-   80%  Direct              83
-    9%  Organic Social       9
-    8%  Referral             8
+All posts  (107 sessions)
+   80%  Direct              86
+    8%  Organic Social       9
+    7%  Referral             8
     3%  Unassigned           3
     1%  Organic Video        1

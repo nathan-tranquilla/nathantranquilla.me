@@ -1,10 +1,29 @@
 {
-  "generatedAt": "2026-11-15T11:01:08.887Z",
+  "generatedAt": "2026-11-16T11:00:59.472Z",
   "ranges": {
     "7": {
-      "startDate": "2026-11-09",
-      "endDate": "2026-11-15",
+      "startDate": "2026-11-10",
+      "endDate": "2026-11-16",
       "posts": {
+        "filling-the-test-driven-development-gap-between-figma-and-your-component": {
+          "sessions": 2,
+          "channels": {
+            "direct": 2,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 2,
+          "engagedSecondsPerView": 0,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
         "making-my-money-decisions-mechanical-with-ai-and-plain-text-accounting": {
           "sessions": 2,
           "channels": {
@@ -40,6 +59,25 @@
             }
           ],
           "shortLinkVisits": 1,
+          "views": 1,
+          "engagedSecondsPerView": 0,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
+        "taking-responsibility-for-your-ai-generated-code": {
+          "sessions": 1,
+          "channels": {
+            "direct": 1,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
           "views": 1,
           "engagedSecondsPerView": 0,
           "shares": {
@@ -113,9 +151,33 @@
       }
     },
     "30": {
-      "startDate": "2026-10-17",
-      "endDate": "2026-11-15",
+      "startDate": "2026-10-18",
+      "endDate": "2026-11-16",
       "posts": {
+        "taking-responsibility-for-your-ai-generated-code": {
+          "sessions": 7,
+          "channels": {
+            "direct": 6,
+            "social": 0,
+            "search": 0,
+            "referral": 1,
+            "other": 0
+          },
+          "sources": [
+            {
+              "source": "teams.public.onecdn.static.microsoft",
+              "sessions": 1
+            }
+          ],
+          "shortLinkVisits": 0,
+          "views": 8,
+          "engagedSecondsPerView": 27,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
         "strong-type-systems-are-required-for-a-safer-web": {
           "sessions": 5,
           "channels": {
@@ -129,30 +191,6 @@
           "shortLinkVisits": 0,
           "views": 5,
           "engagedSecondsPerView": 0,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
-        "taking-responsibility-for-your-ai-generated-code": {
-          "sessions": 6,
-          "channels": {
-            "direct": 5,
-            "social": 0,
-            "search": 0,
-            "referral": 1,
-            "other": 0
-          },
-          "sources": [
-            {
-              "source": "teams.public.onecdn.static.microsoft",
-              "sessions": 1
-            }
-          ],
-          "shortLinkVisits": 0,
-          "views": 7,
-          "engagedSecondsPerView": 31,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -197,25 +235,6 @@
             "total": 0
           }
         },
-        "i-am-a-web-developer-and-here-is-why-i-dont-use-typescript": {
-          "sessions": 4,
-          "channels": {
-            "direct": 4,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 5,
-          "engagedSecondsPerView": 0,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
         "ai-powered-video-curation-from-naive-search-to-confident-matches": {
           "sessions": 3,
           "channels": {
@@ -235,7 +254,7 @@
             "total": 0
           }
         },
-        "making-my-money-decisions-mechanical-with-ai-and-plain-text-accounting": {
+        "filling-the-test-driven-development-gap-between-figma-and-your-component": {
           "sessions": 3,
           "channels": {
             "direct": 3,
@@ -254,10 +273,10 @@
             "total": 0
           }
         },
-        "filling-the-test-driven-development-gap-between-figma-and-your-component": {
-          "sessions": 2,
+        "i-am-a-web-developer-and-here-is-why-i-dont-use-typescript": {
+          "sessions": 3,
           "channels": {
-            "direct": 2,
+            "direct": 3,
             "social": 0,
             "search": 0,
             "referral": 0,
@@ -265,7 +284,26 @@
           },
           "sources": [],
           "shortLinkVisits": 0,
-          "views": 2,
+          "views": 4,
+          "engagedSecondsPerView": 0,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
+        "making-my-money-decisions-mechanical-with-ai-and-plain-text-accounting": {
+          "sessions": 3,
+          "channels": {
+            "direct": 3,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 3,
           "engagedSecondsPerView": 0,
           "shares": {
             "native": 0,
@@ -400,13 +438,13 @@
       }
     },
     "90": {
-      "startDate": "2026-08-18",
-      "endDate": "2026-11-15",
+      "startDate": "2026-08-19",
+      "endDate": "2026-11-16",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
-          "sessions": 34,
+          "sessions": 35,
           "channels": {
-            "direct": 17,
+            "direct": 18,
             "social": 8,
             "search": 0,
             "referral": 5,
@@ -435,8 +473,8 @@
             }
           ],
           "shortLinkVisits": 3,
-          "views": 43,
-          "engagedSecondsPerView": 15,
+          "views": 44,
+          "engagedSecondsPerView": 14,
           "shares": {
             "native": 1,
             "clipboard": 1,
@@ -532,6 +570,25 @@
           "shortLinkVisits": 0,
           "views": 5,
           "engagedSecondsPerView": 0,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
+        "filling-the-test-driven-development-gap-between-figma-and-your-component": {
+          "sessions": 4,
+          "channels": {
+            "direct": 4,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 5,
+          "engagedSecondsPerView": 10,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -705,25 +762,6 @@
             "total": 0
           }
         },
-        "filling-the-test-driven-development-gap-between-figma-and-your-component": {
-          "sessions": 2,
-          "channels": {
-            "direct": 2,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 3,
-          "engagedSecondsPerView": 17,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
         "the-4-pillars-of-next-gen-web-dev": {
           "sessions": 3,
           "channels": {
@@ -770,8 +808,8 @@
       }
     },
     "prev7": {
-      "startDate": "2026-11-02",
-      "endDate": "2026-11-08",
+      "startDate": "2026-11-03",
+      "endDate": "2026-11-09",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 4,
@@ -836,25 +874,6 @@
           }
         },
         "filling-the-test-driven-development-gap-between-figma-and-your-component": {
-          "sessions": 1,
-          "channels": {
-            "direct": 1,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 1,
-          "engagedSecondsPerView": 0,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
-        "i-am-a-web-developer-and-here-is-why-i-dont-use-typescript": {
           "sessions": 1,
           "channels": {
             "direct": 1,
@@ -972,7 +991,7 @@
     },
     "all": {
       "startDate": "2015-08-14",
-      "endDate": "2026-11-15",
+      "endDate": "2026-11-16",
       "posts": {
         "i-am-a-web-developer-and-here-is-why-i-dont-use-typescript": {
           "sessions": 40,
@@ -1109,9 +1128,9 @@
           }
         },
         "taking-responsibility-for-your-ai-generated-code": {
-          "sessions": 34,
+          "sessions": 35,
           "channels": {
-            "direct": 17,
+            "direct": 18,
             "social": 8,
             "search": 0,
             "referral": 5,
@@ -1140,8 +1159,8 @@
             }
           ],
           "shortLinkVisits": 3,
-          "views": 43,
-          "engagedSecondsPerView": 15,
+          "views": 44,
+          "engagedSecondsPerView": 14,
           "shares": {
             "native": 1,
             "clipboard": 1,
@@ -1355,6 +1374,25 @@
             "total": 0
           }
         },
+        "filling-the-test-driven-development-gap-between-figma-and-your-component": {
+          "sessions": 4,
+          "channels": {
+            "direct": 4,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 5,
+          "engagedSecondsPerView": 10,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
         "making-my-money-decisions-mechanical-with-ai-and-plain-text-accounting": {
           "sessions": 4,
           "channels": {
@@ -1368,25 +1406,6 @@
           "shortLinkVisits": 0,
           "views": 4,
           "engagedSecondsPerView": 0,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
-        "filling-the-test-driven-development-gap-between-figma-and-your-component": {
-          "sessions": 2,
-          "channels": {
-            "direct": 2,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 3,
-          "engagedSecondsPerView": 17,
           "shares": {
             "native": 0,
             "clipboard": 0,
