@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-17T11:01:00.333Z",
+  "generatedAt": "2026-11-18T11:01:01.904Z",
   "ranges": {
     "7": {
-      "startDate": "2026-11-11",
-      "endDate": "2026-11-17",
+      "startDate": "2026-11-12",
+      "endDate": "2026-11-18",
       "posts": {
         "filling-the-test-driven-development-gap-between-figma-and-your-component": {
           "sessions": 2,
@@ -103,33 +103,9 @@
       }
     },
     "30": {
-      "startDate": "2026-10-19",
-      "endDate": "2026-11-17",
+      "startDate": "2026-10-20",
+      "endDate": "2026-11-18",
       "posts": {
-        "taking-responsibility-for-your-ai-generated-code": {
-          "sessions": 7,
-          "channels": {
-            "direct": 6,
-            "social": 0,
-            "search": 0,
-            "referral": 1,
-            "other": 0
-          },
-          "sources": [
-            {
-              "source": "teams.public.onecdn.static.microsoft",
-              "sessions": 1
-            }
-          ],
-          "shortLinkVisits": 0,
-          "views": 8,
-          "engagedSecondsPerView": 27,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
         "strong-type-systems-are-required-for-a-safer-web": {
           "sessions": 5,
           "channels": {
@@ -143,6 +119,30 @@
           "shortLinkVisits": 0,
           "views": 5,
           "engagedSecondsPerView": 0,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
+        "taking-responsibility-for-your-ai-generated-code": {
+          "sessions": 6,
+          "channels": {
+            "direct": 5,
+            "social": 0,
+            "search": 0,
+            "referral": 1,
+            "other": 0
+          },
+          "sources": [
+            {
+              "source": "teams.public.onecdn.static.microsoft",
+              "sessions": 1
+            }
+          ],
+          "shortLinkVisits": 0,
+          "views": 7,
+          "engagedSecondsPerView": 22,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -390,8 +390,8 @@
       }
     },
     "90": {
-      "startDate": "2026-08-20",
-      "endDate": "2026-11-17",
+      "startDate": "2026-08-21",
+      "endDate": "2026-11-18",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 35,
@@ -671,25 +671,6 @@
             "total": 0
           }
         },
-        "5-ways-rescript-fixes-typescript": {
-          "sessions": 2,
-          "channels": {
-            "direct": 2,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 3,
-          "engagedSecondsPerView": 0,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
         "coding-is-not-for-humans": {
           "sessions": 3,
           "channels": {
@@ -738,6 +719,25 @@
             "total": 0
           }
         },
+        "5-ways-rescript-fixes-typescript": {
+          "sessions": 1,
+          "channels": {
+            "direct": 1,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 2,
+          "engagedSecondsPerView": 1,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
         "why-rescript-is-next-gen": {
           "sessions": 1,
           "channels": {
@@ -760,8 +760,8 @@
       }
     },
     "prev7": {
-      "startDate": "2026-11-04",
-      "endDate": "2026-11-10",
+      "startDate": "2026-11-05",
+      "endDate": "2026-11-11",
       "posts": {
         "typescript-has-a-big-problem": {
           "sessions": 3,
@@ -775,25 +775,6 @@
           "sources": [],
           "shortLinkVisits": 0,
           "views": 3,
-          "engagedSecondsPerView": 0,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
-        "ai-powered-video-curation-from-naive-search-to-confident-matches": {
-          "sessions": 1,
-          "channels": {
-            "direct": 1,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 1,
           "engagedSecondsPerView": 0,
           "shares": {
             "native": 0,
@@ -986,7 +967,7 @@
     },
     "all": {
       "startDate": "2015-08-14",
-      "endDate": "2026-11-17",
+      "endDate": "2026-11-18",
       "posts": {
         "i-am-a-web-developer-and-here-is-why-i-dont-use-typescript": {
           "sessions": 40,

@@ -10,11 +10,11 @@ taking-responsibility-for-your-ai-generated-code  (35 sessions)
 why-every-desk-job-is-becoming-an-ai-apprenticeship  (10 sessions)
   100%  Direct              10   (direct) 10
 
-strong-type-systems-are-required-for-a-safer-web  (8 sessions)
-  100%  Direct               8   (direct) 8
-
 typescript-has-a-big-problem  (8 sessions)
   100%  Direct               8   (direct) 8
+
+strong-type-systems-are-required-for-a-safer-web  (7 sessions)
+  100%  Direct               7   (direct) 7
 
 i-am-a-web-developer-and-here-is-why-i-dont-use-typescript  (6 sessions)
   100%  Direct               6   (direct) 6
@@ -59,9 +59,9 @@ the-4-pillars-of-next-gen-web-dev  (3 sessions)
 why-rescript-is-next-gen  (1 sessions)
   100%  Direct               1   (direct) 1
 
-All posts  (107 sessions)
-   80%  Direct              86
+All posts  (106 sessions)
+   80%  Direct              85
     8%  Organic Social       9
-    7%  Referral             8
+    8%  Referral             8
     3%  Unassigned           3
     1%  Organic Video        1
