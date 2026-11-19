@@ -1,10 +1,29 @@
 {
-  "generatedAt": "2026-11-18T11:01:01.904Z",
+  "generatedAt": "2026-11-19T11:01:07.038Z",
   "ranges": {
     "7": {
-      "startDate": "2026-11-12",
-      "endDate": "2026-11-18",
+      "startDate": "2026-11-13",
+      "endDate": "2026-11-19",
       "posts": {
+        "making-my-money-decisions-mechanical-with-ai-and-plain-text-accounting": {
+          "sessions": 3,
+          "channels": {
+            "direct": 3,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 3,
+          "engagedSecondsPerView": 0,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
         "filling-the-test-driven-development-gap-between-figma-and-your-component": {
           "sessions": 2,
           "channels": {
@@ -24,7 +43,7 @@
             "total": 0
           }
         },
-        "making-my-money-decisions-mechanical-with-ai-and-plain-text-accounting": {
+        "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 2,
           "channels": {
             "direct": 2,
@@ -43,7 +62,7 @@
             "total": 0
           }
         },
-        "taking-responsibility-for-your-ai-generated-code": {
+        "teach-claude-your-project-once-benefit-forever": {
           "sessions": 1,
           "channels": {
             "direct": 1,
@@ -103,32 +122,13 @@
       }
     },
     "30": {
-      "startDate": "2026-10-20",
-      "endDate": "2026-11-18",
+      "startDate": "2026-10-21",
+      "endDate": "2026-11-19",
       "posts": {
-        "strong-type-systems-are-required-for-a-safer-web": {
-          "sessions": 5,
-          "channels": {
-            "direct": 5,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 5,
-          "engagedSecondsPerView": 0,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
         "taking-responsibility-for-your-ai-generated-code": {
-          "sessions": 6,
+          "sessions": 7,
           "channels": {
-            "direct": 5,
+            "direct": 6,
             "social": 0,
             "search": 0,
             "referral": 1,
@@ -141,8 +141,8 @@
             }
           ],
           "shortLinkVisits": 0,
-          "views": 7,
-          "engagedSecondsPerView": 22,
+          "views": 8,
+          "engagedSecondsPerView": 19,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -168,6 +168,44 @@
             "total": 0
           }
         },
+        "making-my-money-decisions-mechanical-with-ai-and-plain-text-accounting": {
+          "sessions": 4,
+          "channels": {
+            "direct": 4,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 4,
+          "engagedSecondsPerView": 0,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
+        "strong-type-systems-are-required-for-a-safer-web": {
+          "sessions": 4,
+          "channels": {
+            "direct": 4,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 4,
+          "engagedSecondsPerView": 0,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
         "why-every-desk-job-is-becoming-an-ai-apprenticeship": {
           "sessions": 4,
           "channels": {
@@ -181,25 +219,6 @@
           "shortLinkVisits": 0,
           "views": 4,
           "engagedSecondsPerView": 3,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
-        "ai-powered-video-curation-from-naive-search-to-confident-matches": {
-          "sessions": 3,
-          "channels": {
-            "direct": 3,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 3,
-          "engagedSecondsPerView": 0,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -244,7 +263,7 @@
             "total": 0
           }
         },
-        "making-my-money-decisions-mechanical-with-ai-and-plain-text-accounting": {
+        "teach-claude-your-project-once-benefit-forever": {
           "sessions": 3,
           "channels": {
             "direct": 3,
@@ -255,15 +274,15 @@
           },
           "sources": [],
           "shortLinkVisits": 0,
-          "views": 3,
-          "engagedSecondsPerView": 0,
+          "views": 4,
+          "engagedSecondsPerView": 6,
           "shares": {
             "native": 0,
             "clipboard": 0,
             "total": 0
           }
         },
-        "teach-claude-your-project-once-benefit-forever": {
+        "ai-powered-video-curation-from-naive-search-to-confident-matches": {
           "sessions": 2,
           "channels": {
             "direct": 2,
@@ -274,8 +293,8 @@
           },
           "sources": [],
           "shortLinkVisits": 0,
-          "views": 3,
-          "engagedSecondsPerView": 7,
+          "views": 2,
+          "engagedSecondsPerView": 0,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -390,13 +409,13 @@
       }
     },
     "90": {
-      "startDate": "2026-08-21",
-      "endDate": "2026-11-18",
+      "startDate": "2026-08-22",
+      "endDate": "2026-11-19",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
-          "sessions": 35,
+          "sessions": 36,
           "channels": {
-            "direct": 18,
+            "direct": 19,
             "social": 8,
             "search": 0,
             "referral": 5,
@@ -425,7 +444,7 @@
             }
           ],
           "shortLinkVisits": 3,
-          "views": 44,
+          "views": 45,
           "engagedSecondsPerView": 14,
           "shares": {
             "native": 1,
@@ -528,6 +547,25 @@
             "total": 0
           }
         },
+        "making-my-money-decisions-mechanical-with-ai-and-plain-text-accounting": {
+          "sessions": 5,
+          "channels": {
+            "direct": 5,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 5,
+          "engagedSecondsPerView": 0,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
         "filling-the-test-driven-development-gap-between-figma-and-your-component": {
           "sessions": 4,
           "channels": {
@@ -547,19 +585,24 @@
             "total": 0
           }
         },
-        "making-my-money-decisions-mechanical-with-ai-and-plain-text-accounting": {
-          "sessions": 4,
+        "teach-claude-your-project-once-benefit-forever": {
+          "sessions": 5,
           "channels": {
             "direct": 4,
             "social": 0,
             "search": 0,
-            "referral": 0,
+            "referral": 1,
             "other": 0
           },
-          "sources": [],
+          "sources": [
+            {
+              "source": "teams.public.onecdn.static.microsoft",
+              "sessions": 1
+            }
+          ],
           "shortLinkVisits": 0,
-          "views": 4,
-          "engagedSecondsPerView": 0,
+          "views": 9,
+          "engagedSecondsPerView": 4,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -603,30 +646,6 @@
           "shortLinkVisits": 0,
           "views": 3,
           "engagedSecondsPerView": 7,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
-        "teach-claude-your-project-once-benefit-forever": {
-          "sessions": 4,
-          "channels": {
-            "direct": 3,
-            "social": 0,
-            "search": 0,
-            "referral": 1,
-            "other": 0
-          },
-          "sources": [
-            {
-              "source": "teams.public.onecdn.static.microsoft",
-              "sessions": 1
-            }
-          ],
-          "shortLinkVisits": 0,
-          "views": 8,
-          "engagedSecondsPerView": 4,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -760,13 +779,13 @@
       }
     },
     "prev7": {
-      "startDate": "2026-11-05",
-      "endDate": "2026-11-11",
+      "startDate": "2026-11-06",
+      "endDate": "2026-11-12",
       "posts": {
         "typescript-has-a-big-problem": {
-          "sessions": 3,
+          "sessions": 2,
           "channels": {
-            "direct": 3,
+            "direct": 2,
             "social": 0,
             "search": 0,
             "referral": 0,
@@ -774,7 +793,7 @@
           },
           "sources": [],
           "shortLinkVisits": 0,
-          "views": 3,
+          "views": 2,
           "engagedSecondsPerView": 0,
           "shares": {
             "native": 0,
@@ -887,25 +906,6 @@
             "total": 0
           }
         },
-        "the-reality-of-rescript-optimization-claims": {
-          "sessions": 1,
-          "channels": {
-            "direct": 1,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 1,
-          "engagedSecondsPerView": 1,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
         "using-ai-to-automate-quality-content-delivery": {
           "sessions": 1,
           "channels": {
@@ -967,7 +967,7 @@
     },
     "all": {
       "startDate": "2015-08-14",
-      "endDate": "2026-11-18",
+      "endDate": "2026-11-19",
       "posts": {
         "i-am-a-web-developer-and-here-is-why-i-dont-use-typescript": {
           "sessions": 40,
@@ -1075,38 +1075,10 @@
             "total": 0
           }
         },
-        "why-every-desk-job-is-becoming-an-ai-apprenticeship": {
-          "sessions": 24,
+        "taking-responsibility-for-your-ai-generated-code": {
+          "sessions": 36,
           "channels": {
             "direct": 19,
-            "social": 4,
-            "search": 0,
-            "referral": 0,
-            "other": 1
-          },
-          "sources": [
-            {
-              "source": "linkedin.com",
-              "sessions": 4
-            },
-            {
-              "source": "youtube.com",
-              "sessions": 1
-            }
-          ],
-          "shortLinkVisits": 0,
-          "views": 29,
-          "engagedSecondsPerView": 18,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
-        "taking-responsibility-for-your-ai-generated-code": {
-          "sessions": 35,
-          "channels": {
-            "direct": 18,
             "social": 8,
             "search": 0,
             "referral": 5,
@@ -1135,12 +1107,40 @@
             }
           ],
           "shortLinkVisits": 3,
-          "views": 44,
+          "views": 45,
           "engagedSecondsPerView": 14,
           "shares": {
             "native": 1,
             "clipboard": 1,
             "total": 2
+          }
+        },
+        "why-every-desk-job-is-becoming-an-ai-apprenticeship": {
+          "sessions": 24,
+          "channels": {
+            "direct": 19,
+            "social": 4,
+            "search": 0,
+            "referral": 0,
+            "other": 1
+          },
+          "sources": [
+            {
+              "source": "linkedin.com",
+              "sessions": 4
+            },
+            {
+              "source": "youtube.com",
+              "sessions": 1
+            }
+          ],
+          "shortLinkVisits": 0,
+          "views": 29,
+          "engagedSecondsPerView": 18,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
           }
         },
         "so-it-begins-the-end-of-typescript": {
@@ -1156,6 +1156,34 @@
           "shortLinkVisits": 0,
           "views": 15,
           "engagedSecondsPerView": 3,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
+        "teach-claude-your-project-once-benefit-forever": {
+          "sessions": 23,
+          "channels": {
+            "direct": 15,
+            "social": 7,
+            "search": 0,
+            "referral": 1,
+            "other": 0
+          },
+          "sources": [
+            {
+              "source": "linkedin.com",
+              "sessions": 7
+            },
+            {
+              "source": "teams.public.onecdn.static.microsoft",
+              "sessions": 1
+            }
+          ],
+          "shortLinkVisits": 0,
+          "views": 31,
+          "engagedSecondsPerView": 10,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -1226,34 +1254,6 @@
           "shortLinkVisits": 0,
           "views": 15,
           "engagedSecondsPerView": 0,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
-        "teach-claude-your-project-once-benefit-forever": {
-          "sessions": 22,
-          "channels": {
-            "direct": 14,
-            "social": 7,
-            "search": 0,
-            "referral": 1,
-            "other": 0
-          },
-          "sources": [
-            {
-              "source": "linkedin.com",
-              "sessions": 7
-            },
-            {
-              "source": "teams.public.onecdn.static.microsoft",
-              "sessions": 1
-            }
-          ],
-          "shortLinkVisits": 0,
-          "views": 30,
-          "engagedSecondsPerView": 11,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -1350,6 +1350,25 @@
             "total": 0
           }
         },
+        "making-my-money-decisions-mechanical-with-ai-and-plain-text-accounting": {
+          "sessions": 5,
+          "channels": {
+            "direct": 5,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 5,
+          "engagedSecondsPerView": 0,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
         "filling-the-test-driven-development-gap-between-figma-and-your-component": {
           "sessions": 4,
           "channels": {
@@ -1363,25 +1382,6 @@
           "shortLinkVisits": 0,
           "views": 5,
           "engagedSecondsPerView": 10,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
-        "making-my-money-decisions-mechanical-with-ai-and-plain-text-accounting": {
-          "sessions": 4,
-          "channels": {
-            "direct": 4,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 4,
-          "engagedSecondsPerView": 0,
           "shares": {
             "native": 0,
             "clipboard": 0,
