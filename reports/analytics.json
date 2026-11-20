@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-19T11:01:07.038Z",
+  "generatedAt": "2026-11-20T11:01:10.849Z",
   "ranges": {
     "7": {
-      "startDate": "2026-11-13",
-      "endDate": "2026-11-19",
+      "startDate": "2026-11-14",
+      "endDate": "2026-11-20",
       "posts": {
         "making-my-money-decisions-mechanical-with-ai-and-plain-text-accounting": {
           "sessions": 3,
@@ -81,25 +81,6 @@
             "total": 0
           }
         },
-        "typescript-has-a-big-problem": {
-          "sessions": 1,
-          "channels": {
-            "direct": 1,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 1,
-          "engagedSecondsPerView": 0,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
         "why-every-desk-job-is-becoming-an-ai-apprenticeship": {
           "sessions": 1,
           "channels": {
@@ -122,8 +103,8 @@
       }
     },
     "30": {
-      "startDate": "2026-10-21",
-      "endDate": "2026-11-19",
+      "startDate": "2026-10-22",
+      "endDate": "2026-11-20",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 7,
@@ -143,25 +124,6 @@
           "shortLinkVisits": 0,
           "views": 8,
           "engagedSecondsPerView": 19,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
-        "typescript-has-a-big-problem": {
-          "sessions": 5,
-          "channels": {
-            "direct": 5,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 5,
-          "engagedSecondsPerView": 0,
           "shares": {
             "native": 0,
             "clipboard": 0,
@@ -188,6 +150,25 @@
           }
         },
         "strong-type-systems-are-required-for-a-safer-web": {
+          "sessions": 4,
+          "channels": {
+            "direct": 4,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 4,
+          "engagedSecondsPerView": 0,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
+        "typescript-has-a-big-problem": {
           "sessions": 4,
           "channels": {
             "direct": 4,
@@ -320,25 +301,6 @@
             "total": 0
           }
         },
-        "using-ai-to-automate-quality-content-delivery": {
-          "sessions": 2,
-          "channels": {
-            "direct": 2,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 2,
-          "engagedSecondsPerView": 0,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
         "when-two-ai-pipelines-meet--turning-curated-data-into-a-daily-api": {
           "sessions": 2,
           "channels": {
@@ -405,12 +367,31 @@
             "clipboard": 0,
             "total": 0
           }
+        },
+        "using-ai-to-automate-quality-content-delivery": {
+          "sessions": 1,
+          "channels": {
+            "direct": 1,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 1,
+          "engagedSecondsPerView": 0,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
         }
       }
     },
     "90": {
-      "startDate": "2026-08-22",
-      "endDate": "2026-11-19",
+      "startDate": "2026-08-23",
+      "endDate": "2026-11-20",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 36,
@@ -779,8 +760,8 @@
       }
     },
     "prev7": {
-      "startDate": "2026-11-06",
-      "endDate": "2026-11-12",
+      "startDate": "2026-11-07",
+      "endDate": "2026-11-13",
       "posts": {
         "typescript-has-a-big-problem": {
           "sessions": 2,
@@ -845,25 +826,6 @@
           }
         },
         "making-my-money-decisions-mechanical-with-ai-and-plain-text-accounting": {
-          "sessions": 1,
-          "channels": {
-            "direct": 1,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 1,
-          "engagedSecondsPerView": 0,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
-        "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 1,
           "channels": {
             "direct": 1,
@@ -967,7 +929,7 @@
     },
     "all": {
       "startDate": "2015-08-14",
-      "endDate": "2026-11-19",
+      "endDate": "2026-11-20",
       "posts": {
         "i-am-a-web-developer-and-here-is-why-i-dont-use-typescript": {
           "sessions": 40,
