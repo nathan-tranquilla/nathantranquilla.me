@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-11-22T11:01:00.619Z",
+  "generatedAt": "2026-11-23T11:01:23.737Z",
   "ranges": {
     "7": {
-      "startDate": "2026-11-16",
-      "endDate": "2026-11-22",
+      "startDate": "2026-11-17",
+      "endDate": "2026-11-23",
       "posts": {
-        "taking-responsibility-for-your-ai-generated-code": {
-          "sessions": 2,
+        "making-my-money-decisions-mechanical-with-ai-and-plain-text-accounting": {
+          "sessions": 1,
           "channels": {
-            "direct": 2,
+            "direct": 1,
             "social": 0,
             "search": 0,
             "referral": 0,
@@ -16,7 +16,7 @@
           },
           "sources": [],
           "shortLinkVisits": 0,
-          "views": 2,
+          "views": 1,
           "engagedSecondsPerView": 0,
           "shares": {
             "native": 0,
@@ -24,7 +24,7 @@
             "total": 0
           }
         },
-        "making-my-money-decisions-mechanical-with-ai-and-plain-text-accounting": {
+        "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 1,
           "channels": {
             "direct": 1,
@@ -65,8 +65,8 @@
       }
     },
     "30": {
-      "startDate": "2026-10-24",
-      "endDate": "2026-11-22",
+      "startDate": "2026-10-25",
+      "endDate": "2026-11-23",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 6,
@@ -225,25 +225,6 @@
             "total": 0
           }
         },
-        "the-reality-of-rescript-optimization-claims": {
-          "sessions": 2,
-          "channels": {
-            "direct": 2,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 2,
-          "engagedSecondsPerView": 1,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
         "when-two-ai-pipelines-meet--turning-curated-data-into-a-daily-api": {
           "sessions": 2,
           "channels": {
@@ -311,6 +292,25 @@
             "total": 0
           }
         },
+        "the-reality-of-rescript-optimization-claims": {
+          "sessions": 1,
+          "channels": {
+            "direct": 1,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
+          "views": 1,
+          "engagedSecondsPerView": 1,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
         "using-ai-to-automate-quality-content-delivery": {
           "sessions": 1,
           "channels": {
@@ -333,8 +333,8 @@
       }
     },
     "90": {
-      "startDate": "2026-08-25",
-      "endDate": "2026-11-22",
+      "startDate": "2026-08-26",
+      "endDate": "2026-11-23",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 36,
@@ -619,25 +619,6 @@
             "total": 0
           }
         },
-        "so-it-begins-the-end-of-typescript": {
-          "sessions": 2,
-          "channels": {
-            "direct": 2,
-            "social": 0,
-            "search": 0,
-            "referral": 0,
-            "other": 0
-          },
-          "sources": [],
-          "shortLinkVisits": 0,
-          "views": 2,
-          "engagedSecondsPerView": 11,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
         "the-4-pillars-of-next-gen-web-dev": {
           "sessions": 3,
           "channels": {
@@ -703,8 +684,8 @@
       }
     },
     "prev7": {
-      "startDate": "2026-11-09",
-      "endDate": "2026-11-15",
+      "startDate": "2026-11-10",
+      "endDate": "2026-11-16",
       "posts": {
         "filling-the-test-driven-development-gap-between-figma-and-your-component": {
           "sessions": 2,
@@ -760,6 +741,25 @@
             }
           ],
           "shortLinkVisits": 1,
+          "views": 1,
+          "engagedSecondsPerView": 0,
+          "shares": {
+            "native": 0,
+            "clipboard": 0,
+            "total": 0
+          }
+        },
+        "taking-responsibility-for-your-ai-generated-code": {
+          "sessions": 1,
+          "channels": {
+            "direct": 1,
+            "social": 0,
+            "search": 0,
+            "referral": 0,
+            "other": 0
+          },
+          "sources": [],
+          "shortLinkVisits": 0,
           "views": 1,
           "engagedSecondsPerView": 0,
           "shares": {
@@ -834,7 +834,7 @@
     },
     "all": {
       "startDate": "2015-08-14",
-      "endDate": "2026-11-22",
+      "endDate": "2026-11-23",
       "posts": {
         "i-am-a-web-developer-and-here-is-why-i-dont-use-typescript": {
           "sessions": 40,
