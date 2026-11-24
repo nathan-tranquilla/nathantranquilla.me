@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-23T11:01:23.737Z",
+  "generatedAt": "2026-11-24T11:01:08.886Z",
   "ranges": {
     "7": {
-      "startDate": "2026-11-17",
-      "endDate": "2026-11-23",
+      "startDate": "2026-11-18",
+      "endDate": "2026-11-24",
       "posts": {
         "making-my-money-decisions-mechanical-with-ai-and-plain-text-accounting": {
           "sessions": 1,
@@ -65,8 +65,8 @@
       }
     },
     "30": {
-      "startDate": "2026-10-25",
-      "endDate": "2026-11-23",
+      "startDate": "2026-10-26",
+      "endDate": "2026-11-24",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 6,
@@ -333,8 +333,8 @@
       }
     },
     "90": {
-      "startDate": "2026-08-26",
-      "endDate": "2026-11-23",
+      "startDate": "2026-08-27",
+      "endDate": "2026-11-24",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 36,
@@ -684,8 +684,8 @@
       }
     },
     "prev7": {
-      "startDate": "2026-11-10",
-      "endDate": "2026-11-16",
+      "startDate": "2026-11-11",
+      "endDate": "2026-11-17",
       "posts": {
         "filling-the-test-driven-development-gap-between-figma-and-your-component": {
           "sessions": 2,
@@ -725,30 +725,6 @@
             "total": 0
           }
         },
-        "coding-is-not-for-humans": {
-          "sessions": 1,
-          "channels": {
-            "direct": 0,
-            "social": 0,
-            "search": 0,
-            "referral": 1,
-            "other": 0
-          },
-          "sources": [
-            {
-              "source": "share",
-              "sessions": 1
-            }
-          ],
-          "shortLinkVisits": 1,
-          "views": 1,
-          "engagedSecondsPerView": 0,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
         "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 1,
           "channels": {
@@ -760,30 +736,6 @@
           },
           "sources": [],
           "shortLinkVisits": 0,
-          "views": 1,
-          "engagedSecondsPerView": 0,
-          "shares": {
-            "native": 0,
-            "clipboard": 0,
-            "total": 0
-          }
-        },
-        "the-4-pillars-of-next-gen-web-dev": {
-          "sessions": 1,
-          "channels": {
-            "direct": 0,
-            "social": 0,
-            "search": 0,
-            "referral": 1,
-            "other": 0
-          },
-          "sources": [
-            {
-              "source": "share",
-              "sessions": 1
-            }
-          ],
-          "shortLinkVisits": 1,
           "views": 1,
           "engagedSecondsPerView": 0,
           "shares": {
@@ -834,7 +786,7 @@
     },
     "all": {
       "startDate": "2015-08-14",
-      "endDate": "2026-11-23",
+      "endDate": "2026-11-24",
       "posts": {
         "i-am-a-web-developer-and-here-is-why-i-dont-use-typescript": {
           "sessions": 40,

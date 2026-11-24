@@ -50,17 +50,14 @@ the-4-pillars-of-next-gen-web-dev  (3 sessions)
    67%  Direct               2   (direct) 2
    33%  Referral             1   share 1
 
-so-it-begins-the-end-of-typescript  (2 sessions)
-  100%  Direct               2   (direct) 2
-
 5-ways-rescript-fixes-typescript  (1 sessions)
   100%  Direct               1   (direct) 1
 
 why-rescript-is-next-gen  (1 sessions)
   100%  Direct               1   (direct) 1
 
-All posts  (105 sessions)
-   80%  Direct              84
+All posts  (103 sessions)
+   80%  Direct              82
     9%  Organic Social       9
     8%  Referral             8
     3%  Unassigned           3
