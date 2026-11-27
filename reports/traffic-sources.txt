@@ -13,25 +13,26 @@ why-every-desk-job-is-becoming-an-ai-apprenticeship  (9 sessions)
 typescript-has-a-big-problem  (8 sessions)
   100%  Direct               8   (direct) 8
 
+filling-the-test-driven-development-gap-between-figma-and-your-component  (8 sessions)
+   63%  Direct               5   (direct) 5
+   38%  Organic Search       3   google 3
+
 strong-type-systems-are-required-for-a-safer-web  (7 sessions)
   100%  Direct               7   (direct) 7
 
 i-am-a-web-developer-and-here-is-why-i-dont-use-typescript  (6 sessions)
   100%  Direct               6   (direct) 6
 
+teach-claude-your-project-once-benefit-forever  (6 sessions)
+   67%  Direct               4   (direct) 4
+   17%  Organic Search       1   google 1
+   17%  Referral             1   teams.public.onecdn.static.microsoft 1
+
 ai-powered-video-curation-from-naive-search-to-confident-matches  (5 sessions)
   100%  Direct               5   (direct) 5
 
 making-my-money-decisions-mechanical-with-ai-and-plain-text-accounting  (5 sessions)
   100%  Direct               5   (direct) 5
-
-filling-the-test-driven-development-gap-between-figma-and-your-component  (5 sessions)
-   80%  Direct               4   (direct) 4
-   20%  Organic Search       1   google 1
-
-teach-claude-your-project-once-benefit-forever  (5 sessions)
-   80%  Direct               4   (direct) 4
-   20%  Referral             1   teams.public.onecdn.static.microsoft 1
 
 when-two-ai-pipelines-meet--turning-curated-data-into-a-daily-api  (4 sessions)
    75%  Direct               3   (direct) 3
@@ -57,10 +58,10 @@ the-4-pillars-of-next-gen-web-dev  (3 sessions)
 why-rescript-is-next-gen  (1 sessions)
   100%  Direct               1   (direct) 1
 
-All posts  (105 sessions)
-   79%  Direct              83
-    9%  Organic Social       9
-    8%  Referral             8
+All posts  (109 sessions)
+   77%  Direct              84
+    8%  Organic Social       9
+    7%  Referral             8
+    4%  Organic Search       4
     3%  Unassigned           3
-    1%  Organic Search       1
     1%  Organic Video        1
