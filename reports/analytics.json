@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-27T11:01:15.878Z",
+  "generatedAt": "2026-11-28T11:01:01.234Z",
   "ranges": {
     "7": {
-      "startDate": "2026-11-21",
-      "endDate": "2026-11-27",
+      "startDate": "2026-11-22",
+      "endDate": "2026-11-28",
       "posts": {
         "filling-the-test-driven-development-gap-between-figma-and-your-component": {
           "sessions": 4,
@@ -94,8 +94,8 @@
       }
     },
     "30": {
-      "startDate": "2026-10-29",
-      "endDate": "2026-11-27",
+      "startDate": "2026-10-30",
+      "endDate": "2026-11-28",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 6,
@@ -391,8 +391,8 @@
       }
     },
     "90": {
-      "startDate": "2026-08-30",
-      "endDate": "2026-11-27",
+      "startDate": "2026-08-31",
+      "endDate": "2026-11-28",
       "posts": {
         "taking-responsibility-for-your-ai-generated-code": {
           "sessions": 36,
@@ -751,13 +751,13 @@
       }
     },
     "prev7": {
-      "startDate": "2026-11-14",
-      "endDate": "2026-11-20",
+      "startDate": "2026-11-15",
+      "endDate": "2026-11-21",
       "posts": {
-        "making-my-money-decisions-mechanical-with-ai-and-plain-text-accounting": {
-          "sessions": 3,
+        "filling-the-test-driven-development-gap-between-figma-and-your-component": {
+          "sessions": 2,
           "channels": {
-            "direct": 3,
+            "direct": 2,
             "social": 0,
             "search": 0,
             "referral": 0,
@@ -765,7 +765,7 @@
           },
           "sources": [],
           "shortLinkVisits": 0,
-          "views": 3,
+          "views": 2,
           "engagedSecondsPerView": 0,
           "shares": {
             "native": 0,
@@ -773,7 +773,7 @@
             "total": 0
           }
         },
-        "filling-the-test-driven-development-gap-between-figma-and-your-component": {
+        "making-my-money-decisions-mechanical-with-ai-and-plain-text-accounting": {
           "sessions": 2,
           "channels": {
             "direct": 2,
@@ -853,7 +853,7 @@
     },
     "all": {
       "startDate": "2015-08-14",
-      "endDate": "2026-11-27",
+      "endDate": "2026-11-28",
       "posts": {
         "i-am-a-web-developer-and-here-is-why-i-dont-use-typescript": {
           "sessions": 40,
